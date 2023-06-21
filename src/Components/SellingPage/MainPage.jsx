@@ -1,6 +1,18 @@
-import React from 'react'
+import testimonial from '../../Assests/testimonial/person1.png';
+import React from 'react';
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper";
+
 
 const MainPage = () => {
+
+
     return (
         <>
             <main>
@@ -327,15 +339,201 @@ const MainPage = () => {
                                 <div className='offer-content'>
                                     <h5>Limited Time Offer</h5>
                                     <h2>Discount 50% On All SX40 Model Product</h2>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo illum dolores minus laborum!<br/> Odit minus quaerat saepe voluptatibus, deleniti corporis!</p>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo illum dolores minus laborum!<br /> Odit minus quaerat saepe voluptatibus, deleniti corporis!</p>
                                 </div>
                             </div>
-                            <div className='col-12'>
-
+                            <div className='col-12 margin-top-50'>
+                                <div className='row'>
+                                    <div className='col-4'>
+                                        <div className='offer-boxes'>
+                                        </div>
+                                    </div>
+                                    <div className='col-4'>
+                                        <div className='offer-boxes'>
+                                        </div>
+                                    </div>
+                                    <div className='col-4'>
+                                        <div className='offer-boxes'>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </section>
 
+                <section className='product-demo-area'>
+                    <div className='container'>
+                        <div className='row'>
+                            <div className='co-12'>
+                                <div className='product-demo-content'>
+                                    <h5>Product Demo</h5>
+                                    <h2>Get Product More Information Frome The Video</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos praesentium fuga quam <br />incidunt itaque eum voluptatum harum veniam exercitationem adipisci.</p>
+                                </div>
+                            </div>
+                            <div className='col-12'>
+                                <div className='product-demo-video'>
+                                    <div className='demo-video-box'></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className='testimonal-area'>
+                    <div className='container'>
+                        <div className='row'>
+                            <div className='col-12'>
+                                <div className='sec-title'>
+                                    <h1>Our Testimonial</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolorem deleniti<br /> aut ducimus saepe et praesentium officiis eum error molestiae.</p>
+                                </div>
+                            </div>
+                            <div className='col-12'>
+                                <div className='testimonial-slider margin-top-50'>
+
+                                    <Swiper
+                                        slidesPerView={1}
+                                        spaceBetween={10}
+                                        pagination={{
+                                            clickable: true,
+                                        }}
+                                        breakpoints={{
+                                            "@0.00": {
+                                                slidesPerView: 1,
+                                                spaceBetween: 10,
+                                            },
+                                            "@0.75": {
+                                                slidesPerView: 2,
+                                                spaceBetween: 20,
+                                            },
+                                            "@1.00": {
+                                                slidesPerView: 3,
+                                                spaceBetween: 40,
+                                            },
+                                            "@1.50": {
+                                                slidesPerView: 4,
+                                                spaceBetween: 50,
+                                            },
+                                        }}
+                                        modules={[Pagination]}
+                                        className="mySwiper"
+                                    >
+                                        <SwiperSlide>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
+                                            <div className='testimonial-info'>
+                                                <div className='testimonial-img'>
+                                                    <img src={testimonial} />
+                                                </div>
+                                                <div className='testimonial-title'>
+                                                    <h6>Jonny Wolson</h6>
+                                                    <p>HR Executive</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
+                                            <div className='testimonial-info'>
+                                                <div className='testimonial-img'>
+                                                    <img src={testimonial} />
+                                                </div>
+                                                <div className='testimonial-title'>
+                                                    <h6>Jonny Wolson</h6>
+                                                    <p>HR Executive</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
+                                            <div className='testimonial-info'>
+                                                <div className='testimonial-img'>
+                                                    <img src={testimonial} />
+                                                </div>
+                                                <div className='testimonial-title'>
+                                                    <h6>Jonny Wolson</h6>
+                                                    <p>HR Executive</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
+                                            <div className='testimonial-info'>
+                                                <div className='testimonial-img'>
+                                                    <img src={testimonial} />
+                                                </div>
+                                                <div className='testimonial-title'>
+                                                    <h6>Jonny Wolson</h6>
+                                                    <p>HR Executive</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
+                                            <div className='testimonial-info'>
+                                                <div className='testimonial-img'>
+                                                    <img src={testimonial} />
+                                                </div>
+                                                <div className='testimonial-title'>
+                                                    <h6>Jonny Wolson</h6>
+                                                    <p>HR Executive</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
+                                            <div className='testimonial-info'>
+                                                <div className='testimonial-img'>
+                                                    <img src={testimonial} />
+                                                </div>
+                                                <div className='testimonial-title'>
+                                                    <h6>Jonny Wolson</h6>
+                                                    <p>HR Executive</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
+                                            <div className='testimonial-info'>
+                                                <div className='testimonial-img'>
+                                                    <img src={testimonial} />
+                                                </div>
+                                                <div className='testimonial-title'>
+                                                    <h6>Jonny Wolson</h6>
+                                                    <p>HR Executive</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
+                                            <div className='testimonial-info'>
+                                                <div className='testimonial-img'>
+                                                    <img src={testimonial} />
+                                                </div>
+                                                <div className='testimonial-title'>
+                                                    <h6>Jonny Wolson</h6>
+                                                    <p>HR Executive</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
+                                            <div className='testimonial-info'>
+                                                <div className='testimonial-img'>
+                                                    <img src={testimonial} />
+                                                </div>
+                                                <div className='testimonial-title'>
+                                                    <h6>Jonny Wolson</h6>
+                                                    <p>HR Executive</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                       
+                                    </Swiper>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
         </>
