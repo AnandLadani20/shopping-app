@@ -96,10 +96,12 @@ img {
 /* ///////// Navbar Css ///////// */
 
 .home-nav {
-    padding: 10px 20px;
-    height: 80px;
+    padding: 15px 20px;
+    height: auto;
     width: 100%;
-    box-shadow: rgba(137, 147, 150, 0.2) 0px 7px 20px 0px;
+    border-bottom: 1px solid rgb(232, 229, 229);
+    box-shadow: rgba(214, 220, 222, 0.2) 0px 7px 7px 0px;
+    /* box-shadow: rgba(137, 147, 150, 0.2) 0px 7px 20px 0px; */
 }
 
 .menu-title .selling-btn {
@@ -113,7 +115,7 @@ img {
 /* ///////// Hero Css ///////// */
 
 .hero-area {
-    height: calc(100vh - 80px);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,6 +123,7 @@ img {
 
 .signup-btn {
     float: right;
+    padding: 20px 0px;
 }
 
 .signup-btn button {
@@ -570,7 +573,7 @@ img {
     height: 100%;
     padding: 60px 0px;
     border-radius: 10px;
-    
+
 }
 
 .swiper-slide {
@@ -581,7 +584,6 @@ img {
     width: 100%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 10px;
-    /* Center slide text vertically */
 
 }
 
@@ -598,6 +600,7 @@ img {
     display: flex;
     align-items: center;
 }
+
 .testimonial-title {
     margin-left: 15px;
 }
@@ -606,36 +609,43 @@ img {
 
 .footer-area {
     padding: 60px 0px 40px 0px;
-    background-color:#223f93;
+    background-color: #223f93;
 }
+
 .footer-details h3 {
     color: #fff;
 }
+
 .footer-info {
     margin-top: 25px;
     color: #fff;
 }
+
 .footer-info p {
     color: #fff;
     font-size: 16px;
-    line-height:30px;
-    
-    
+    line-height: 30px;
+
+
 }
+
 .footer-info ul li {
     color: #fff;
     font-size: 16px;
-    line-height:30px;
-    cursor: pointer; 
+    line-height: 30px;
+    cursor: pointer;
 }
-.footer-info ul li:hover{
+
+.footer-info ul li:hover {
     color: var(--blue-light);
 }
+
 .footer-icons {
     display: flex;
     padding-top: 10px;
-   
+
 }
+
 .foot-icon {
     height: 30px;
     width: 30px;

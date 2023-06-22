@@ -5,6 +5,7 @@ import HeroPage from './HeroPage'
 const HomePage = () => {
   return (
     <>
+
     <Navbar/>
     <HeroPage/>
     </>

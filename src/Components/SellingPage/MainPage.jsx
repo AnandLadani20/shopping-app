@@ -1,6 +1,6 @@
 import testimonial from '../../Assests/testimonial/person1.png';
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,7 +11,13 @@ import { Pagination } from "swiper";
 
 
 const MainPage = () => {
+    const navigate = useNavigate();
 
+    const handleLogin = () => {
+      // Perform login logic
+      // Redirect to the home page
+      navigate('/sellingsignup');
+    };
 
     return (
         <>
@@ -23,7 +29,7 @@ const MainPage = () => {
                                 <div className='main-heading'>
                                     <h1>Digital Watches<br /> That Are Best For <br /><span>Daily Use</span></h1>
                                     <p>Lorem ipsum dolor sit amet consectetur <br />adipisicing elit. Odio, cumque.</p>
-                                    <button>Explore More</button>
+                                    <button onClick={handleLogin}>Selling Now</button>
                                 </div>
                             </div>
                             <div className='col-12 col-md-6 col-lg-6'></div>
@@ -421,10 +427,38 @@ const MainPage = () => {
                                         className="mySwiper"
                                     >
                                         <SwiperSlide>
+                                           
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
+                                                <div className='testimonial-info'>
+                                                    <div className='testimonial-img'>
+                                                        <img src={testimonial} alt='testimonial' />
+                                                    </div>
+                                                    <div className='testimonial-title'>
+                                                        <h6>Jonny Wolson</h6>
+                                                        <p>HR Executive</p>
+                                                    </div>
+                                                </div>
+                                            
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                           
+                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
+                                                <div className='testimonial-info'>
+                                                    <div className='testimonial-img'>
+                                                        <img src={testimonial} alt='testimonial'/>
+                                                    </div>
+                                                    <div className='testimonial-title'>
+                                                        <h6>Jonny Wolson</h6>
+                                                        <p>HR Executive</p>
+                                                    </div>
+                                                </div>
+                                         
+                                        </SwiperSlide>
+                                        <SwiperSlide>
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
                                             <div className='testimonial-info'>
                                                 <div className='testimonial-img'>
-                                                    <img src={testimonial} />
+                                                    <img src={testimonial} alt='testimonial'/>
                                                 </div>
                                                 <div className='testimonial-title'>
                                                     <h6>Jonny Wolson</h6>
@@ -436,7 +470,7 @@ const MainPage = () => {
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
                                             <div className='testimonial-info'>
                                                 <div className='testimonial-img'>
-                                                    <img src={testimonial} />
+                                                    <img src={testimonial} alt='testimonial'/>
                                                 </div>
                                                 <div className='testimonial-title'>
                                                     <h6>Jonny Wolson</h6>
@@ -448,7 +482,7 @@ const MainPage = () => {
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
                                             <div className='testimonial-info'>
                                                 <div className='testimonial-img'>
-                                                    <img src={testimonial} />
+                                                    <img src={testimonial} alt='testimonial'/>
                                                 </div>
                                                 <div className='testimonial-title'>
                                                     <h6>Jonny Wolson</h6>
@@ -460,7 +494,7 @@ const MainPage = () => {
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
                                             <div className='testimonial-info'>
                                                 <div className='testimonial-img'>
-                                                    <img src={testimonial} />
+                                                    <img src={testimonial} alt='testimonial'/>
                                                 </div>
                                                 <div className='testimonial-title'>
                                                     <h6>Jonny Wolson</h6>
@@ -472,7 +506,7 @@ const MainPage = () => {
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
                                             <div className='testimonial-info'>
                                                 <div className='testimonial-img'>
-                                                    <img src={testimonial} />
+                                                    <img src={testimonial} alt='testimonial'/>
                                                 </div>
                                                 <div className='testimonial-title'>
                                                     <h6>Jonny Wolson</h6>
@@ -484,7 +518,7 @@ const MainPage = () => {
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
                                             <div className='testimonial-info'>
                                                 <div className='testimonial-img'>
-                                                    <img src={testimonial} />
+                                                    <img src={testimonial} alt='testimonial'/>
                                                 </div>
                                                 <div className='testimonial-title'>
                                                     <h6>Jonny Wolson</h6>
@@ -496,7 +530,7 @@ const MainPage = () => {
                                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
                                             <div className='testimonial-info'>
                                                 <div className='testimonial-img'>
-                                                    <img src={testimonial} />
+                                                    <img src={testimonial} alt='testimonial'/>
                                                 </div>
                                                 <div className='testimonial-title'>
                                                     <h6>Jonny Wolson</h6>
@@ -504,31 +538,6 @@ const MainPage = () => {
                                                 </div>
                                             </div>
                                         </SwiperSlide>
-                                        <SwiperSlide>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
-                                            <div className='testimonial-info'>
-                                                <div className='testimonial-img'>
-                                                    <img src={testimonial} />
-                                                </div>
-                                                <div className='testimonial-title'>
-                                                    <h6>Jonny Wolson</h6>
-                                                    <p>HR Executive</p>
-                                                </div>
-                                            </div>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eum accusantium qui ab veniam dolore?</p>
-                                            <div className='testimonial-info'>
-                                                <div className='testimonial-img'>
-                                                    <img src={testimonial} />
-                                                </div>
-                                                <div className='testimonial-title'>
-                                                    <h6>Jonny Wolson</h6>
-                                                    <p>HR Executive</p>
-                                                </div>
-                                            </div>
-                                        </SwiperSlide>
-                                       
                                     </Swiper>
                                 </div>
                             </div>

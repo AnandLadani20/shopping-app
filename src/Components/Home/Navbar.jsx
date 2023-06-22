@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../../Assests/logo/Dhiyodha (1)n.png';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import { useNavigate } from 'react-router-dom';
@@ -17,18 +16,24 @@ const Navbar = () => {
         <>
             <nav className='home-nav'>
                 <div className='container-fluid'>
-                    <div className='d-flex align-items-center justify-content-between'>
-                        <div className='main-logo d-inline'>
-                            <a href="#"><img src={logo} alt='logo-image' height={60} /></a>
-                        </div>
+                    <div className='d-flex align-item-center justify-content-end'>
                         <div className='menu-title'>
-                            
+
                             <button onClick={handleLogin} className='selling-btn'>Start Selling</button>
                             
                         </div>
                     </div>
                 </div>
             </nav>
+            <div className='container-fluid'>
+                <div className='row'>
+                    <div className='col-12'>
+                    <div className='signup-btn'>
+                            <button type="button">Sign Up</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

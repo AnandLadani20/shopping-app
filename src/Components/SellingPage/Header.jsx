@@ -1,5 +1,7 @@
 import React from 'react'
-import logo from '../../Assests/logo/Dhiyodha (1)n.png'
+import logo from '../../Assests/logo/Dhiyodha (1)n.png';
+import { Link } from 'react-router-dom';
+
 
 const Header = () => {
   return (
@@ -8,16 +10,16 @@ const Header = () => {
                 <div className='container'>
                     <div className='d-flex align-items-center justify-content-between'>
                         <div className='main-logo'>
-                            <a href="#"><img src={logo} alt='logo-image' height={60} /></a>
+                            <Link to="#"><img src={logo} alt='logo' height={60} /></Link>
                         </div>
                         <div className='selling-menu-title'>
                            <ul>
-                            <li><a href='#' className='border-active'>Home</a></li>
-                            <li><a href='#' className='border-show'>Feature</a></li>
-                            <li><a href='#' className='border-show'>Product</a></li>
-                            <li><a href='#' className='border-show'>Contact</a></li>
+                            <li><Link to='#' className='border-active'>Home</Link></li>
+                            <li><Link to='#' className='border-show'>Feature</Link></li>
+                            <li><Link to='#' className='border-show'>Product</Link></li>
+                            <li><Link to='#' className='border-show'>Contact</Link></li>
                            </ul>
-                           <a href='#' className='buy-btn' role='button'>Buy Now</a>
+                           <Link to='#' className='buy-btn' role='button'>Buy Now</Link>
                         </div>
                     </div>
                 </div>

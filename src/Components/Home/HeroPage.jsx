@@ -12,17 +12,12 @@ const HeroPage = () => {
     return (
         <>
             <section className='hero-area'>
-
+                 
                 <div className='container-fluid'>
                     <div className='row d-flex justify-content-center align-items-center'>
                         <div className='col-12'>
-                            <div className='signup-btn'>
-                            <button type="button">Sign Up</button>
-                            </div>
-                        </div>
-                        <div className='col-12'>
                             <div className='hero-logo'>
-                                <img src={hero} alt='logo-image' height={200} />
+                                <img src={hero} alt='logo' height={200} />
                             </div>
                         </div>
                         <div className='col-6 mt-3'>
