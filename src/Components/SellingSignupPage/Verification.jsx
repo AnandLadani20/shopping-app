@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState } from 'react';
+
 
 const Verification = () => {
 
@@ -46,44 +47,44 @@ const Verification = () => {
                         <div className='col-6'>
                             <form action='#' className="row" onSubmit={(e)=>handleSubmitClick(e)}>
                                 <div className='col-md-8'>
-                                    <label for="validationCustom01" class="form-label">Mobile Number</label>
-                                    <input type='number' placeholder='  * Mobile Number' class="form-control" value={number} onChange={(e)=>setNumber(e.target.value)} name='mobile-number' />
+                                    <label htmlFor="validationCustom01" className="form-label">Mobile Number</label>
+                                    <input type='number' placeholder='  * Mobile Number' className="form-control" value={number} onChange={(e)=>setNumber(e.target.value)} name='mobile-number' />
                                     <div className='error-set'>{numberError}</div>
                                 </div>
                                 <div className='col-md-4'>
-                                    <button class="btn btn-primary mt-4">Send OTP</button>
+                                    <button className="btn btn-primary mt-4">Send OTP</button>
                                 </div>
                                 <div className='col-md-8'>
-                                    <label for="validationCustom01" class="form-label">Email Address</label>
-                                    <input type='email' placeholder='  * Email' class="form-control" value={email} onChange={(e)=>setEmail(e.target.value)}  name='email-address' />
+                                    <label htmlFor="validationCustom01" className="form-label">Email Address</label>
+                                    <input type='email' placeholder='  * Email' className="form-control" value={email} onChange={(e)=>setEmail(e.target.value)}  name='email-address' />
                                     <div className='error-set'>{emailError}</div>
                                 </div>
                                 <div className='col-md-4'>
-                                    <button class="btn btn-primary mt-4 mb-0">Verify Email</button>
+                                    <button className="btn btn-primary mt-4 mb-0">Verify Email</button>
                                 </div>
                                 <div className='col-md-8'>
-                                    <label for="validationCustom01" class="form-label">Password</label>
-                                    <input type='password' placeholder='  *Create Password' class="form-control" value={password} onChange={(e)=>setPassword(e.target.value)}  name='password' />
+                                    <label htmlFor="validationCustom01" className="form-label">Password</label>
+                                    <input type='password' placeholder='  *Create Password' className="form-control" value={password} onChange={(e)=>setPassword(e.target.value)}  name='password' />
                                     <div className='error-set'>{passwordError}</div>
                                 </div>
                                 <div className='col-md-8'>
-                                    <label for="validationCustom01" class="form-label">Confirm Password</label>
-                                    <input type='password' placeholder='  *Confirm Password' class="form-control" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}  name='confirm-password' />
+                                    <label htmlFor="validationCustom01" className="form-label">Confirm Password</label>
+                                    <input type='password' placeholder='  *Confirm Password' className="form-control" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}  name='confirm-password' />
                                     <div className='error-set'>{confirmpassError}</div>
                                 </div>
                                 <div className='col-md-8'>
-                                    <label for="validationCustom01" class="form-label">Face Verification</label>
-                                    <input type='file' placeholder='  *Face Verification' class="form-control" value={faceVerify} onChange={(e)=>setFaceVerify(e.target.value)}  name='face-verification' />
+                                    <label htmlFor="validationCustom01" className="form-label">Face Verification</label>
+                                    <input type='file' placeholder='  *Face Verification' accept="image/*" className="form-control" value={faceVerify} onChange={(e)=>setFaceVerify(e.target.value)}  name='face-verification' />
                                     <div className='error-set'>{faceverifyError}</div>
                                 </div>
                                 <div className='col-12'>
-                                    <div class="form-check">
-                                        <input type='checkbox' name='term&condition' class="form-check-input" />
-                                        <label class="form-check-label">Terms & Condition & Privacy Policy</label>
+                                    <div className="form-check">
+                                        <input type='checkbox' name='term&condition' className="form-check-input" />
+                                        <label className="form-check-label">Terms & Condition & Privacy Policy</label>
                                     </div>
                                 </div>
                                 <div className=''>
-                                    <button type="submit" className='btn btn-primary mt-4'>Continue</button>
+                                    <button type="submit"  className='btn btn-primary mt-4'>Continue</button>
                                 </div>
                             </form>
                         </div>
