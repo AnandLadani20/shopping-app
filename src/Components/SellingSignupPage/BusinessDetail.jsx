@@ -5,7 +5,7 @@ import '@progress/kendo-theme-default'
 import { FormInput, FormRadioGroup ,SignatureDraw,FormsignatureUpload} from './form-components';
 import {nogst} from './data'
 import { requiredValidator, gstnumberValidator,businessNameValidator ,pannumberValidator,businessTypeValidator,businessAddressValidator,drawValidator,signatureUploadValidator } from './validators';
-// import SignatureDraw from './SignatureDraw';
+
 export const BusinessDetail = <div>
 
         <Field key={'gstNumber'} id={'gstNumber'} name={'gstNumber'} label={'Enter GST Number'} component={FormInput} validator={gstnumberValidator} />
@@ -16,7 +16,7 @@ export const BusinessDetail = <div>
         <Field key={'businessAddress'} id={'businessAddress'} name={'businessAddress'} label={'Business Address'} component={FormInput} validator={businessAddressValidator} />
         <Field key={'signatureDraw'} id={'signatureDraw'} name={'signatureDraw'} label={'Signature Draw'} component={SignatureDraw} validator={drawValidator}/>
         <Field key={'signatureUpload'} id={'signatureUpload'} name={'signatureUpload'} label={'Signature Upload'} component={FormsignatureUpload} validator={signatureUploadValidator}/>
-        {/* <SignatureDraw/> */}
+       
 
 
 
