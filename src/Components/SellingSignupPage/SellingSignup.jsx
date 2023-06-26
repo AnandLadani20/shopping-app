@@ -3,7 +3,8 @@ import logo from '../../Assests/logo/Dhiyodha (1)n.png'
 import './index.css'
 import { Link } from 'react-router-dom';
 // import HorizontalLinearStepper from './HorizontalLinearStepper';
-import FormStepper from './FormStepper';
+// import FormStepper from './FormStepper';
+import Main from './Main';
 
 
 const SellingSignup = () => {
@@ -19,7 +20,7 @@ const SellingSignup = () => {
                 </div>
             </nav>
         {/* <HorizontalLinearStepper/> */}
-        <FormStepper/>
+        <Main/>
             
         </>
     )
