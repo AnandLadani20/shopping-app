@@ -1,7 +1,6 @@
 import './App.css';
 import HomePage from './Components/Home/HomePage';
 import SellingPage from './Components/SellingPage/SellingPage';
-// import PickUp from './Components/SellingSignupPage/PickUp';
 import SellingSignup from './Components/SellingSignupPage/SellingSignup';
 import './CSS/index.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,8 +11,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      {/* <HomePage /> */}
-      {/* <SellingPage/> */}
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<HomePage/>}/>
