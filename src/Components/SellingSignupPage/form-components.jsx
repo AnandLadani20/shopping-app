@@ -7,6 +7,8 @@ import { Upload } from '@progress/kendo-react-upload';
 import { DropDownList, AutoComplete, MultiSelect, ComboBox, MultiColumnComboBox, DropDownTree } from '@progress/kendo-react-dropdowns';
 import { processTreeData, expandedState } from './tree-data-operations';
 import { Signature } from '@progress/kendo-react-inputs';
+import { saveAs } from '@progress/kendo-file-saver';
+import { Button } from '@progress/kendo-react-buttons';
 
 export const FormInput = fieldRenderProps => {
   const {
@@ -350,6 +352,41 @@ export const FormUpload = fieldRenderProps => {
     {showValidationMessage && <Error id={errorId}>{validationMessage}</Error>}
   </FieldWrapper>;
 };
+export const CheckUpload = fieldRenderProps => {
+  const {
+    value,
+    id,
+    optional,
+    label,
+    hint,
+    validationMessage,
+    touched,
+    ...others
+  } = fieldRenderProps;
+  const showValidationMessage = touched && validationMessage;
+  const showHint = !showValidationMessage && hint;
+  const hintId = showHint ? `${id}_hint` : '';
+  const errorId = showValidationMessage ? `${id}_error` : '';
+  const labelId = label ? `${id}_label` : '';
+  const onChangeHandler = event => {
+    fieldRenderProps.onChange({
+      value: event.newState
+    });
+  };
+  const onRemoveHandler = event => {
+    fieldRenderProps.onChange({
+      value: event.newState
+    });
+  };
+  return <FieldWrapper>
+    <Label id={labelId} editorId={id} optional={optional}>
+      {label}
+    </Label>
+    <Upload id={id} autoUpload={false} showActionButtons={false} multiple={false} files={value} onAdd={onChangeHandler} onRemove={onRemoveHandler} ariaDescribedBy={`${hintId} ${errorId}`} ariaLabelledBy={labelId} {...others} />
+    {showHint && <Hint id={hintId}>{hint}</Hint>}
+    {showValidationMessage && <Error id={errorId}>{validationMessage}</Error>}
+  </FieldWrapper>;
+};
 export const FormsignatureUpload = fieldRenderProps => {
   const {
     value,
@@ -405,11 +442,20 @@ export const SignatureDraw = fieldRenderProps => {
   const errorId = showValidationMessage ? `${id}_error` : '';
   const labelId = label ? `${id}_label` : '';
 
+  const onSave = (event) => {
+    event.preventDefault();
+    if (value) {
+      saveAs(value, 'signature.png');
+    }
+  };
+
   return <FieldWrapper>
     <Label id={labelId} editorId={id} optional={optional}>
       {label}
     </Label>
     <Signature value={value} valid={valid} smooth={true} maximizable={false} hideLine={true} id={id} {...others} ariaDescribedBy={`${hintId} ${errorId}`} ariaLabelledBy={labelId} />
+    <Button icon='save' themeColor='primary' disabled={!value} onClick={onSave}>Save</Button>
+    {/* <Signature value={value} valid={valid} smooth={true} maximizable={false} hideLine={true} id={id} {...others} ariaDescribedBy={`${hintId} ${errorId}`} ariaLabelledBy={labelId} /> */}
     {/* <Upload id={id} autoUpload={false} showActionButtons={false} multiple={false} files={value} onAdd={onChangeHandler} onRemove={onRemoveHandler} ariaDescribedBy={`${hintId} ${errorId}`} ariaLabelledBy={labelId} {...others} /> */}
     {showHint && <Hint id={hintId}>{hint}</Hint>}
     {showValidationMessage && <Error id={errorId}>{validationMessage}</Error>}
