@@ -37,20 +37,5 @@ export const arrivalDateValidator = value => value ? "" : "Arrival Date is requi
 export const colorValidator = value => value ? "" : "Color is required.";
 export const requiredValidator = value => value ? "" : "Error: This field is required.";
 export const passwordValidator = value => value && value.length > 8 ? '' : 'Password must be at least 8 symbols.';
-export const confirmpasswordValidator = value => value === value && value.length > 8 ? '' : 'Confirm Password should be match with password';
-
+export const confirmpasswordValidator = value => value && value.length > 8 ? '' : 'Confirm Password should be match with password';
 export const addressValidator = value => value ? "" : "Address is required.";
-const userNameGetter = getter('username');
-const emailGetter = getter('email');
-export const formValidator = values => {
-  const userName = userNameGetter(values);
-  const emailValue = emailGetter(values);
-  if (userName && emailValue && emailRegex.test(emailValue)) {
-    return {};
-  }
-  return {
-    VALIDATION_SUMMARY: 'Please fill in the following fields.',
-    ['username']: !userName ? 'User Name is required.' : '',
-    ['email']: emailValue && emailRegex.test(emailValue) ? '' : 'Email is required and should be in a valid format.'
-  };
-};
