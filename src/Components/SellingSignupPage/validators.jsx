@@ -1,4 +1,4 @@
-import { getter } from '@progress/kendo-react-common';
+
 const emailRegex = new RegExp(/\S+@\S+\.\S+/);
 const phoneRegex = new RegExp(/^[0-9 ()+-]+$/);
 const ccardRegex = new RegExp(/^[0-9-]+$/);

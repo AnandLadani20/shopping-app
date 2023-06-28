@@ -5,12 +5,15 @@ import { Button } from '@progress/kendo-react-buttons';
 import { Stepper } from '@progress/kendo-react-layout';
 import '@progress/kendo-theme-default'
 import { Verification } from './Verification';
+import { Dashbord } from './Dashbord';
 import { PickUp } from './PickUp';
 import { BusinessDetail } from './BusinessDetail';
-const stepPages = [Verification, PickUp, BusinessDetail];
+import { useNavigate } from 'react-router-dom';
+const stepPages = [Verification, PickUp, BusinessDetail,Dashbord];
 const Main = () => {
   const [step, setStep] = React.useState(0);
   const [formState, setFormState] = React.useState({});
+  
   const [steps, setSteps] = React.useState([{
     label: 'Mobile,Email & Face Verification',
     isValid: undefined
@@ -20,9 +23,16 @@ const Main = () => {
   }, {
     label: 'Business & Bank Detail',
     isValid: undefined
-  }]);
+  }, {
+    label: 'Dashbord',
+    isValid: undefined
+  }
+]);
   const lastStepIndex = steps.length - 1;
   const isLastStep = lastStepIndex === step;
+  const navigate = useNavigate();
+
+
   const onStepSubmit = React.useCallback(event => {
     const {
       isValid,
@@ -41,6 +51,8 @@ const Main = () => {
     if (isLastStep) {
       alert(JSON.stringify(values));
       console.log(JSON.stringify(values));
+      navigate('/Verified');
+    
     }
   }, [steps, isLastStep, step, lastStepIndex]);
   const onPrevClick = React.useCallback(event => {
@@ -69,7 +81,7 @@ const Main = () => {
         }} className={'k-form-buttons k-button k-button-md k-rounded-md k-button-solid k-button-solid-bases-end'}>
                   <span style={{
             alignSelf: 'center'
-          }}>Step {step + 1} of 3</span>
+          }}>Step {step + 1} of 4</span>
                   <div>
                     {step !== 0 ? <Button style={{
               marginRight: '16px'
