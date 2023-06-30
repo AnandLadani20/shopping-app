@@ -545,8 +545,11 @@ const MainPage = () => {
                     </div>
                 </section>
             </main>
+            
         </>
     )
 }
 
 export default MainPage
+
+
