@@ -4,11 +4,26 @@ import React from 'react'
 // import Footer from './Footer'
 import logo from '../../Assests/logo/Dhiyodha (1)n.png';
 import womenImage from '../../Assests/women-seller-hub/shoping.jpg'
+import womenImage2 from '../../Assests/women-seller-hub/shopping3.png';
+import shopingSlide1 from '../../Assests/women-seller-hub/shoping-slider1.jpg'
+import reviwer from '../../Assests/testimonial/testimonial2.jpg';
 import { Link } from 'react-router-dom';
 import './index.css';
+import { Pagination, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useNavigate } from 'react-router-dom';
 
 const SellingPage = () => {
-    // const your =0;
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        // Perform login logic
+        // Redirect to the home page
+        navigate('/sellingsignup');
+    };
     return (
         <>
             {/* <Header />
@@ -70,140 +85,66 @@ const SellingPage = () => {
                                 <h3>See Every Step We take<br /> for Growing up Your Business</h3>
                             </div>
                         </div>
-                        <div className='col-12'>
-                            <div className='working-process-img-area d-flex flex-column align-items-center justify-content-centers'>
-                                <div className='working-process-title'>DhiYodha</div>
-                                <div className='process-vertical-line'></div>
-                                {/* <div className='process-horizontal-line'></div> */}
-                                <div className='process-item-box'>
-                                    <div className='process-items child-item1'>
-                                        <div className='child-vertical-line'> </div>
-                                        <div className='vertical-box'><i class="fa-solid fa-bag-shopping"></i></div>
-                                        <p>Dhibag</p>
-                                    </div>
-                                    <div className='process-items child-item2'>
-                                        <div className='child-vertical-line'> </div>
-                                        <div className='vertical-box'><i class="fa-solid fa-fire-burner"></i></div>
-                                        <p>DhiKitchen</p>
-                                    </div>
-                                    <div className='process-items child-item3'>
-                                        <div className='child-vertical-line'> </div>
-                                        <div className='vertical-box'><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                                        <p>DhiParlour</p>
-                                    </div>
-                                    <div className='process-items child-item4'>
-                                        <div className='child-vertical-line'> </div>
-                                        <div className='vertical-box'><i class="fa-solid fa-wheelchair"></i></div>
-                                        <p>DhiCareTaker</p>
-                                    </div>
-                                    <div className='process-items child-item5'>
-                                        <div className='child-vertical-line'> </div>
-                                        <div className='vertical-box'><i class="fa-solid fa-notes-medical"></i></div>
-                                        <p>DhiHealthCare</p>
-                                    </div>
-                                    <div className='process-items child-item6'>
-                                        <div className='child-vertical-line'> </div>
-                                        <div className='vertical-box'><i class="fa-solid fa-plane-departure"></i></div>
-                                        <p>DhiTravelings</p>
-                                    </div>
-                                    <div className='process-items child-item7'>
-                                        <div className='child-vertical-line'> </div>
-                                        <div className='vertical-box'><i class="fa-solid fa-school"></i></div>
-                                        <p>DhiMentorSchool</p>
-                                    </div>
-                                    <div className='process-items child-item8'>
-                                        <div className='child-vertical-line'> </div>
-                                        <div className='vertical-box'><i class="fa-solid fa-user-plus"></i></div>
-                                        <p>Dhihireme</p>
-                                    </div>
-                                    <div className='process-items child-item9'>
-                                        <div className='child-vertical-line'> </div>
-                                        <div className='vertical-box'><i class="fa-solid fa-calendar-days"></i></div>
-                                        <p>DhiEvent</p>
-                                    </div>
-                                    <div className='process-items child-item10'>
-                                        <div className='child-vertical-line'> </div>
-                                        <div className='vertical-box'><i class="fa-solid fa-lightbulb"></i></div>
-                                        <p>DhiTalentMaster</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
-
-                </div>
-            </section>
-            <section>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-12 col-lg-6'>
-                            <div className='working-process-circle-area'>
-                                <div className='working-process-childCircle-area'>
-                                    <div className='process-title-area'><h1>DhiYodha</h1></div>
-                                    <div className='process-child1 imgBx'>
-                                        <div className='process-child-icon'><i class="fa-solid fa-bag-shopping"></i></div>
-                                        <p>Dhibag</p>
-                                        <div className='process-line1'></div>
+                    <div className='working-process-mainDetails-area'>
+                        <div className='row d-flex align-items-center'>
+                            <div className='col-12 col-lg-6 flex-property'>
+                                <div className='working-process-circle-area'>
+                                    <div className='working-process-childCircle-area'>
+                                        <div className='process-title-area'><h1>DhiYodha</h1></div>
+                                        <div className='process-child1 imgBx'>
+                                            <div className='process-child-icon'><i class="fa-solid fa-bag-shopping"></i></div>
+                                            <p>Dhibag</p>
+                                            <div className='process-line1'></div>
+                                        </div>
+                                        <div className='process-child2 imgBx'>
+                                            <div className='process-child-icon'><i class="fa-solid fa-fire-burner"></i></div>
+                                            <p>DhiKitchen</p>
+                                            <div className='process-line2'></div>
+                                        </div>
+                                        <div className='process-child3 imgBx'>
+                                            <div className='process-child-icon'><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                            <p>DhiParlour</p>
+                                            <div className='process-line3'></div>
+                                        </div>
+                                        <div className='process-child4 imgBx'>
+                                            <div className='process-child-icon '><i class="fa-solid fa-wheelchair"></i></div>
+                                            <p>DhiCareTaker</p>
+                                            <div className='process-line4'></div>
+                                        </div>
+                                        <div className='process-child5 imgBx'>
+                                            <div className='process-child-icon gradient-color'><i class="fa-solid fa-notes-medical"></i></div>
+                                            <p>DhiHealthCare</p>
+                                            <div className='process-line5'></div>
+                                        </div>
+                                        <div className='process-child6 imgBx'>
+                                            <div className='process-child-icon gradient-color'><i class="fa-solid fa-plane-departure"></i></div>
+                                            <p>DhiTravelings</p>
+                                            <div className='process-line6'></div>
+                                        </div>
+                                        <div className='process-child7 imgBx'>
+                                            <div className='process-child-icon gradient-color'><i class="fa-solid fa-school"></i></div>
+                                            <p>DhiMentorSchool</p>
+                                            <div className='process-line7'></div>
+                                        </div>
+                                        <div className='process-child8 imgBx'>
+                                            <div className='process-child-icon gradient-color'><i class="fa-solid fa-user-plus"></i></div>
+                                            <p>Dhihireme</p>
+                                            <div className='process-line8'></div>
+                                        </div>
                                     </div>
-                                    <div className='process-child2 imgBx'>
-                                        <div className='process-child-icon'><i class="fa-solid fa-fire-burner"></i></div>
-                                        <p>DhiKitchen</p>
-                                        <div className='process-line2'></div>
-                                    </div>
-                                    <div className='process-child3 imgBx'>
-                                        <div className='process-child-icon'><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                                        <p>DhiParlour</p>
-                                        <div className='process-line3'></div>
-                                    </div>
-                                    <div className='process-child4 imgBx'>
-                                        <div className='process-child-icon'><i class="fa-solid fa-wheelchair"></i></div>
-                                        <p>DhiCareTaker</p>
-                                        <div className='process-line4'></div>
-                                    </div>
-                                    <div className='process-child5 imgBx'>
-                                        <div className='process-child-icon'><i class="fa-solid fa-notes-medical"></i></div>
-                                        <p>DhiHealthCare</p>
-                                        <div className='process-line5'></div>
-                                    </div>
-                                    <div className='process-child6 imgBx'>
-                                        <div className='process-child-icon'><i class="fa-solid fa-plane-departure"></i></div>
-                                        <p>DhiTravelings</p>
-                                        <div className='process-line6'></div>
-                                    </div>
-                                    <div className='process-child7 imgBx'>
-                                        <div className='process-child-icon'><i class="fa-solid fa-school"></i></div>
-                                        <p>DhiMentorSchool</p>
-                                        <div className='process-line7'></div>
-                                    </div>
-                                    <div className='process-child8 imgBx'>
-                                        <div className='process-child-icon'><i class="fa-solid fa-user-plus"></i></div>
-                                        <p>Dhihireme</p>
-                                        <div className='process-line8'></div>
-                                    </div>
-                                    {/* <div className='process-child9 imgBx'>
-                                        <div className='process-child-icon'></div>
-                                        <p>DhiEvent</p>
-                                    </div>
-                                    <div className='process-child10 imgBx'>
-                                        <div className='process-child-icon'></div>
-                                        <p>DhiTraveling</p>
-                                    </div> */}
-
                                 </div>
-
                             </div>
-                        </div>
-                        <div className='col-12 col-lg-6'>
-                            <div className='working-process-content-area'>
-                                <h2>DhiYodha For You</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo soluta vero eveniet numquam ab ipsam necessitatibus tempore aliquid molestias earum autem sit dolorum quaerat veritatis id eligendi laudantium, dolores iure!</p>
+                            <div className='col-12 col-lg-6'>
+                                <div className='working-process-content-area'>
+                                    <h3>DhiYodha For You</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo soluta vero eveniet numquam ab ipsam necessitatibus tempore aliquid molestias earum autem sit dolorum quaerat veritatis id eligendi laudantium, dolores iure!</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
 
             <section className='women-seller-hub-area'>
                 <div className='container-fluid'>
@@ -238,19 +179,19 @@ const SellingPage = () => {
                         <div className='col-12'>
                             <div className='women-seller-hub-secondPage'>
                                 <div className='row d-flex justify-content-center'>
-                                    <div className='col-6'>
+                                    <div className='col-lg-6 col-md-8 col-sm-12 col-12'>
                                         <div className='women-seller-hub-fact'>
                                             <div className='women-seller-hub-childfacts'>
                                                 <div className='seller-facts-title'>
                                                     <div><i class="fa-solid fa-clock"></i></div>
-                                                    <h4>Set your own<br/> hours</h4>
+                                                    <h4>Set your own<br /> hours</h4>
                                                 </div>
                                                 <p>Lorem ipsum dolor sit, amet consectetur <br />adipisicing elit. Architecto, blanditiis!</p>
                                             </div>
                                             <div className='women-seller-hub-childfacts'>
                                                 <div className='seller-facts-title'>
                                                     <div><i class="fa-solid fa-user"></i></div>
-                                                    <h4>Be your own<br/> boss</h4>
+                                                    <h4>Be your own<br /> boss</h4>
                                                 </div>
                                                 <p>Lorem ipsum dolor sit, amet consectetur <br />adipisicing elit. Architecto, blanditiis!</p>
                                             </div>
@@ -266,9 +207,244 @@ const SellingPage = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className='col-12'>
+                            <div className='women-seller-hub-thirdPage'>
+                                <div className='row d-flex justify-content-center'>
+                                    <div className='col-8'>
+                                        <div className='women-seller-hub-process-box'>
+                                            <h3 className='text-center mb-4'>This is How It Works!</h3>
+                                            <div className='women-seller-hub-process'>
+                                                <div className='stepper1'>
+                                                    <div className='step1'>
+                                                        <span className='hide-step-line'></span>
+                                                        <div className='step1-icon'>1</div>
+                                                        <span></span>
+                                                    </div>
+                                                    <p className='text-center'>Lorem ipsum dolor sit amet<br /> consectetur adipisicing elit.</p>
+                                                </div>
+                                                <div className='stepper1'>
+                                                    <div className='step1'>
+                                                        <span></span>
+                                                        <div className='step1-icon'>1</div>
+                                                        <span></span>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.</p>
+                                                </div>
+                                                <div className='stepper1'>
+                                                    <div className='step1'>
+                                                        <span></span>
+                                                        <div className='step1-icon'>1</div>
+                                                        <span className='hide-step-line'></span>
+                                                    </div>
+                                                    <p>Lorem ipsum dolor sit amet <br />consectetur adipisicing elit.</p>
+                                                </div>
+                                            </div>
+                                            <p className='women-seller-hub-mail text-center'>If you have any queries about work, Please <Link to='#' className='women-seller-hub-mail-mark'>mail us</Link> </p>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='women-seller-hub-process-img-box'>
+                                            <div className='seller-process-child-img-box'>
+                                                <img src={womenImage2} alt='women' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
+            <section className='seller-reviews-area'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-lg-4 col-12'>
+                            <div className='seller-reviews-title'>
+                                <h3>What Seller Says About Dhiyodha?</h3>
+                                <p>See why customers love Dhiyodha</p>
+                                <button className='seller-reviews-why-btn'>Why Dhiyodha</button>
+                            </div>
+                        </div>
+                        <div className='col-lg-8 col-12 p-0'>
+
+                            <div className='row'>
+                                <div className='col-lg-3 g-2 seller-reviews-childbox'>
+
+                                    <div><h1 className='text-center'>logo1</h1></div>
+                                    <div className='rating-star'>
+                                        <span> &#9733;</span>
+                                        <span> &#9733;</span>
+                                        <span> &#9733;</span>
+                                        <span> &#9733;</span>
+                                        <span> &#9733;</span>
+                                    </div>
+                                    <p>64k</p>
+                                    <Link to='#' className='seller-review-learnMore-btn text-center'>Learn More</Link>
+                                </div>
+                                <div className='col-lg-3 g-2 seller-reviews-childbox'>
+                                    <div><h1 className='text-center'>logo2</h1></div>
+                                    <div className='rating-star'>
+                                        <span> &#9733;</span>
+                                        <span> &#9733;</span>
+                                        <span> &#9733;</span>
+                                        <span> &#9733;</span>
+                                    </div>
+                                    <p>11k</p>
+                                    <Link to='#' className='seller-review-learnMore-btn text-center'>Learn More</Link>
+                                </div>
+                                <div className='col-lg-3 g-2 seller-reviews-childbox'>
+                                    <div><h1 className='text-center'>logo3</h1></div>
+                                    <div className='rating-star'>
+                                        <span> &#9733;</span>
+                                        <span> &#9733;</span>
+                                        <span> &#9733;</span>
+                                        <span> &#9733;</span>
+                                    </div>
+                                    <p>32k</p>
+                                    <Link to='#' className='seller-review-learnMore-btn text-center'>Learn More</Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='row d-flex justify-content-center'>
+                        <div className='col-lg-8'>
+                            <div className='seller-reviews-slider'>
+                                <Swiper
+
+                                    spaceBetween={30}
+                                    centeredSlides={true}
+                                    loop={true}
+                                    autoplay={{
+                                        delay: 3000,
+                                        disableOnInteraction: false,
+                                    }}
+                                    pagination={{
+                                        clickable: true,
+                                    }}
+
+                                    modules={[Pagination, Autoplay]}
+                                    className="mySwiper"
+                                >
+                                    <SwiperSlide>
+                                        <div className='row'>
+                                            <div className='col-12 col-lg-6 col-md-4'>
+                                                <div className='seller-review-detail-slide'>
+                                                    <div className='seller-img-box'>
+                                                        <img src={reviwer} alt='Reviewer' />
+                                                    </div>
+                                                    <p>"The quality is amazing. we've had fantastic results all over the company."</p>
+                                                    <h5>Charlotte</h5>
+                                                </div>
+                                            </div>
+                                            <div className='col-12 col-lg-6 col-md-8'>
+                                                <div className='seller-review-img-slide'>
+                                                    <div className=''>
+                                                        <img src={shopingSlide1} alt='shopping-review' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <div className='row'>
+                                            <div className='col-12 col-lg-6 col-md-4'>
+                                                <div className='seller-review-detail-slide'>
+                                                    <div className='seller-img-box'>
+                                                        <img src={reviwer} alt='Reviewer' />
+                                                    </div>
+                                                    <p>"The quality is amazing. we've had fantastic results all over the company."</p>
+                                                    <h5>Charlotte</h5>
+                                                </div>
+                                            </div>
+                                            <div className='col-12 col-lg-6 col-md-8'>
+                                                <div className='seller-review-img-slide'>
+                                                    <div className=''>
+                                                        <img src={shopingSlide1} alt='shopping-review' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div></SwiperSlide>
+                                    <SwiperSlide>     <div className='row'>
+                                        <div className='col-12 col-lg-6 col-md-4'>
+                                            <div className='seller-review-detail-slide'>
+                                                <div className='seller-img-box'>
+                                                    <img src={reviwer} alt='Reviewer' />
+                                                </div>
+                                                <p>"The quality is amazing. we've had fantastic results all over the company."</p>
+                                                <h5>Charlotte</h5>
+                                            </div>
+                                        </div>
+                                        <div className='col-12 col-lg-6 col-md-8'>
+                                            <div className='seller-review-img-slide'>
+                                                <div className=''>
+                                                    <img src={shopingSlide1} alt='shopping-review' />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <div className='row'>
+                                            <div className='col-12 col-lg-6 col-md-4'>
+                                                <div className='seller-review-detail-slide'>
+                                                    <div className='seller-img-box'>
+                                                        <img src={reviwer} alt='Reviewer' />
+                                                    </div>
+                                                    <p>"The quality is amazing. we've had fantastic results all over the company."</p>
+                                                    <h5>Charlotte</h5>
+                                                </div>
+                                            </div>
+                                            <div className='col-12 col-lg-6 col-md-8'>
+                                                <div className='seller-review-img-slide'>
+                                                    <div className=''>
+                                                        <img src={shopingSlide1} alt='shopping-review' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <div className='row'>
+                                            <div className='col-12 col-lg-6 col-md-4'>
+                                                <div className='seller-review-detail-slide'>
+                                                    <div className='seller-img-box'>
+                                                        <img src={reviwer} alt='Reviewer' />
+                                                    </div>
+                                                    <p>"The quality is amazing. we've had fantastic results all over the company."</p>
+                                                    <h5>Charlotte</h5>
+                                                </div>
+                                            </div>
+                                            <div className='col-12 col-lg-6 col-md-8'>
+                                                <div className='seller-review-img-slide'>
+                                                    <div className=''>
+                                                        <img src={shopingSlide1} alt='shopping-review' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                </Swiper>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className='start-seller-journy-area'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-12 col-md-6'>
+                            <div className='start-seller-journy-details'>
+                                <h2>Start Your Seller Journey</h2>
+                                <p>Be DhiYodha and Give Contribution to <br />Your Family and Our Nation.</p>
+                                <button onClick={handleLogin} >Start Selling</button>
+                                <span>It take only 15 minutes to setup your account</span>
+                            </div>
+                        </div>
+                        <div className='col-12 col-md-6'></div>
+                    </div>
+                </div>
+            </section>
+
         </>
     )
 }
