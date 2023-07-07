@@ -76,13 +76,6 @@
     margin-left: 5px;
 }
 
-/* .buy-btn {
-    padding: 6px 25px;
-    border-radius: 20px;
-    background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
-    color: #fff;
-} */
-
 
 /* ///////////////// main-hero-area Css //////////////// */
 
@@ -130,7 +123,7 @@
 
 
 /* ///////////////// working-process-area Css //////////////// */
-.working-process-details-area h5{
+.working-process-details-area h5 {
     font-size: 22px;
     font-weight: 600;
     line-height: 40px;
@@ -138,6 +131,7 @@
     margin-bottom: 10px;
     text-align: center;
 }
+
 .process-title-area {
     height: 200px;
     width: 200px;
@@ -153,25 +147,29 @@
     z-index: 2;
 
 }
+
 .flex-property {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .process-title-area h1 {
     color: var(--blue-dark);
 }
+
 .working-process-mainDetails-area {
     padding: 100px 0px;
 }
+
 .working-process-circle-area {
     height: 400px;
-    width: 400px; 
+    width: 400px;
     border: 1px solid rgb(197, 197, 197);
     border-radius: 50%;
     position: relative;
-  
-   
+
+
 }
 
 .working-process-childCircle-area {
@@ -249,10 +247,12 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 }
-.gradient-color{
-    
+
+.gradient-color {
+
     background: linear-gradient(to right, var(--orange-dark), var(--orange));
 }
+
 .process-child-icon i {
     font-size: 25px;
     color: white;
@@ -356,7 +356,8 @@
     opacity: .4;
 
 }
-.working-process-content-area h3{
+
+.working-process-content-area h3 {
     font-weight: 700;
     line-height: 40px;
     margin-bottom: 15px;
@@ -561,7 +562,7 @@
     width: 100%;
     height: 400px;
     bottom: -60px;
-   
+
     overflow: hidden;
 
 }
@@ -582,11 +583,13 @@
 .seller-reviews-area {
     overflow: hidden;
 }
-.seller-reviews-title h3{
+
+.seller-reviews-title h3 {
     font-weight: 700;
     line-height: 40px;
     margin-bottom: 15px;
 }
+
 .seller-reviews-why-btn {
     padding: 10px 25px;
     background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
@@ -595,82 +598,93 @@
     color: #fff;
     margin-top: 20px;
 }
+
 .seller-reviews-box {
     /* display: flex; */
 }
+
 .seller-reviews-childbox {
     padding: 30px 40px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-left: 20px;
     border-radius: 8px;
 }
+
 .rating-star {
     margin-top: 25px;
     color: var(--orange);
     text-align: center;
 }
+
 .seller-reviews-childbox p {
     font-weight: 600;
     margin-top: 25px;
     text-align: center;
     margin-bottom: 25px;
 }
+
 .seller-review-learnMore-btn {
     font-weight: 600;
     color: var(--blue-dark);
     text-align: center;
-    
+
 }
+
 .seller-reviews-slider {
     margin-top: 80px;
     margin-bottom: 80px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 20px;
-   
+
 }
+
 .swiper {
     width: 100%;
     height: 100%;
-  }
-  
-  .swiper-slide {
+}
+
+.swiper-slide {
     background: #fff;
 
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .swiper-slide img {
+}
+
+.swiper-slide img {
     display: block;
     /* width: 100%;
     height: 100%; */
     object-fit: cover;
-  }
-  
-  .swiper {
+}
+
+.swiper {
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
-  }
-  .seller-img-box {
+}
+
+.seller-img-box {
     height: 80px;
     width: 80px;
-    border-radius:50% ;
+    border-radius: 50%;
     padding: 20px 0px;
-  }
-  .seller-img-box img {
+}
+
+.seller-img-box img {
     height: 80px;
     width: 80px;
-    border-radius:50% ;
-  }
-  .seller-review-detail-slide p {
+    border-radius: 50%;
+}
+
+.seller-review-detail-slide p {
     margin-top: 45px;
     font-size: 18px;
     line-height: 20px;
     margin-bottom: 30px;
-    
-  }
+
+}
+
 .seller-review-detail-slide {
     /* padding: 25px; */
     padding: 25px 25px 80px 25px;
@@ -679,31 +693,37 @@
 .seller-review-detail-slide h5 {
     font-size: 18px
 }
+
 .seller-review-img-slide {
     /* padding: 25px; */
     width: 100%;
     height: 100%;
 }
+
 .seller-review-img-slide div {
     width: 100%;
     height: 100%;
 }
+
 .seller-review-img-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 /* ///////////////// start-seller-journy-area Css //////////////// */
 
 .start-seller-journy-details h2 {
     font-weight: 700;
     line-height: 40px;
 }
+
 .start-seller-journy-details p {
     margin-top: 15px;
     line-height: 20px;
 
 }
+
 .start-seller-journy-details button {
     margin-top: 30px;
     padding: 8px 20px;
@@ -712,11 +732,181 @@
     color: #fff;
     background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
 }
+
 .start-seller-journy-details span {
     display: block;
     font-size: 12px;
     margin-top: 5px;
     line-height: 15px;
 }
-/* //////////////////////////////////////////////////////////////////////////////////////// */
 
+/* ////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////
+///////////////////////////////////////*/
+
+.main-selling-page-area {
+    background-color: var(--blue-dark);
+    position: relative;
+}
+
+.selling-header-page-area {
+    padding: 80px 0px;
+}
+
+.selling-header-logo-area img {
+    height: 80px;
+}
+
+.selling-header-menu-area {
+    position: absolute;
+    height: 100%;
+    z-index: 5;
+}
+
+.selling-header-menu-area ul .select-list-item {
+    margin-top: 15px;
+    padding: 0px 5px;
+    cursor: pointer;
+
+}
+
+.selling-header-menu-area ul .select-list-item>i {
+    color: #fff;
+    font-size: 18px;
+
+}
+
+.selling-header-menu-area ul .select-list-item>a {
+    color: #fff;
+    margin-left: 15px;
+    font-size: 17px;
+}
+
+.menu-hover-home-page,
+.menu-hover-about-page,
+.menu-hover-service-page,
+.menu-hover-product-page,
+.menu-hover-customer-page,
+.menu-hover-contact-page {
+    background-color: #fff;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    z-index: 5;
+    width: 450px;
+    display: none;
+    border-radius: 10px;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
+}
+
+.home-content-img img {
+    height: 100px;
+}
+
+.home-content-detail h1 {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.home-content-detail p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.border-bottom-random {
+    border-bottom: 1px solid rgb(115, 115, 115);
+}
+
+.home-content-links ul li {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.home-content-childlink {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.home-content-links ul li:hover .home-content-childlink,
+.home-content-links ul li:hover i {
+    color: var(--blue-dark);
+}
+
+.header-login-btn {
+    padding: 8px 35px;
+    background: linear-gradient(to right, var(--orange-dark), var(--orange));
+    border-radius: 20px;
+    color: #fff;
+    font-size: 17px;
+    border: 0;
+    margin-top: 15px;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
+}
+
+.selling-header-menu-area ul .home-list-item-area:hover .menu-hover-home-page,
+.selling-header-menu-area ul .about-list-item-area:hover .menu-hover-about-page,
+.selling-header-menu-area ul .service-list-item-area:hover .menu-hover-service-page,
+.selling-header-menu-area ul .product-list-item-area:hover .menu-hover-product-page,
+.selling-header-menu-area ul .customer-list-item-area:hover .menu-hover-customer-page,
+.selling-header-menu-area ul .contact-list-item-area:hover .menu-hover-contact-page {
+    display: block;
+}
+
+
+
+/* ///////////////// selling-mainpage-hero-area Css //////////////// */
+
+.selling-mainpage-hero-area {
+    padding-bottom: 100px;
+}
+
+.selling-mainpage-hero-details-area h6 {
+    font-size: 17px;
+    color: var(--blue-light);
+    line-height: 25px;
+}
+
+.selling-mainpage-hero-details-area h1 {
+    font-size: 60px;
+    font-weight: 100;
+    color: #fff;
+    margin-top: 15px;
+}
+
+.selling-mainpage-hero-details-area p {
+    color: #fff;
+    margin-top: 25px;
+    line-height: 25px;
+}
+
+.selling-mainpage-hero-details-area button {
+    padding: 10px 25px;
+    background: linear-gradient(to right, var(--orange-dark), var(--orange));
+    border-radius: 25px;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 35px;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
+}
+
+.selling-mainpage-hero-details-area button i {
+    margin-left: 7px;
+    font-size: 16px;
+}
+
+.selling-mainpage-hero-img-area {
+    height: 100%;
+    width: 100%;
+}
+
+.selling-mainpage-hero-img-area img {
+    height: 100%;
+    max-width: 600px;
+    object-fit: cover;
+}

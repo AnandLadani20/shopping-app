@@ -1,36 +1,37 @@
 import React from 'react'
-// import Header from './Header'
-// import MainPage from './MainPage'
-// import Footer from './Footer'
-import logo from '../../Assests/logo/Dhiyodha (1)n.png';
-import womenImage from '../../Assests/women-seller-hub/shoping.jpg'
-import womenImage2 from '../../Assests/women-seller-hub/shopping3.png';
-import shopingSlide1 from '../../Assests/women-seller-hub/shoping-slider1.jpg'
-import reviwer from '../../Assests/testimonial/testimonial2.jpg';
-import { Link } from 'react-router-dom';
+import Header from './Header'
+import MainPage from './MainPage'
+import Footer from './Footer'
+// import logo from '../../Assests/logo/Dhiyodha (1)n.png';
+// import womenImage from '../../Assests/women-seller-hub/shoping.jpg'
+// import womenImage2 from '../../Assests/women-seller-hub/shopping3.png';
+// import shopingSlide1 from '../../Assests/women-seller-hub/shoping-slider1.jpg'
+// import reviwer from '../../Assests/testimonial/testimonial2.jpg';
+// import { Link } from 'react-router-dom';
 import './index.css';
-import { Pagination, Autoplay } from "swiper";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useNavigate } from 'react-router-dom';
+// import { Pagination, Autoplay } from "swiper";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { useNavigate } from 'react-router-dom';
+
 
 const SellingPage = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const handleLogin = () => {
-        // Perform login logic
-        // Redirect to the home page
-        navigate('/sellingsignup');
-    };
+    // const handleLogin = () => {
+
+    //     navigate('/sellingsignup');
+    // };
     return (
         <>
-            {/* <Header />
-            <MainPage/>
-            <Footer/> */}
-
-            <nav className='selling-nav'>
+            <section className='main-selling-page-area'>
+                <Header/>
+                <MainPage/>
+                <Footer/>
+            </section>
+            {/* <nav className='selling-nav'>
                 <div className='container'>
                     <div className='d-flex align-items-center justify-content-between'>
                         <div className='main-logo'>
@@ -60,6 +61,7 @@ const SellingPage = () => {
             <section className='main-hero-area'>
                 <div className='container'>
                     <div className='row d-flex flex-column align-items-center justify-content-center'>
+                
                         <div className='col-6'>
                             <div className='main-hero-details-area text-center'>
                                 <h2>DhiYodha : The Strength of Nation</h2>
@@ -443,7 +445,7 @@ const SellingPage = () => {
                         <div className='col-12 col-md-6'></div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
         </>
     )

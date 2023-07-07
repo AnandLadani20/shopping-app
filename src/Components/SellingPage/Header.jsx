@@ -1,29 +1,26 @@
 import React from 'react'
-import logo from '../../Assests/logo/Dhiyodha (1)n.png';
-import { Link } from 'react-router-dom';
+import hero from '../../Assests/logo/Dhiyodha white.png';
+import MenuPage from './MenuPage';
+
+
 
 
 const Header = () => {
   return (
     <>
-            <nav className='selling-nav'>
-                <div className='container'>
-                    <div className='d-flex align-items-center justify-content-between'>
-                        <div className='main-logo'>
-                            <Link to="#"><img src={logo} alt='logo' height={60} /></Link>
-                        </div>
-                        <div className='selling-menu-title'>
-                           <ul>
-                            <li><Link to='#' className='border-active'>Home</Link></li>
-                            <li><Link to='#' className='border-show'>Feature</Link></li>
-                            <li><Link to='#' className='border-show'>Product</Link></li>
-                            <li><Link to='#' className='border-show'>Contact</Link></li>
-                           </ul>
-                           <Link to='#' className='buy-btn' role='button'>Buy Now</Link>
-                        </div>
+          <section className='selling-header-page-area'>
+             <div className='container'>
+               <div className='row'>
+                 <div className='col-10'>
+                    <div className='selling-header-logo-area'>
+                       <img src={hero} alt='logo'/>
                     </div>
-                </div>
-            </nav>
+                 </div>
+                 <MenuPage/>
+               </div>
+             </div>
+          </section>
+     
     </>
   )
 }

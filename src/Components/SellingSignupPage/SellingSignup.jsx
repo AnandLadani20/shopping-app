@@ -19,9 +19,9 @@ const SellingSignup = () => {
                     </div>
                 </div>
             </nav>
-        {/* <HorizontalLinearStepper/> */}
-        <Main/>
-            
+
+            <Main />
+
         </>
     )
 }

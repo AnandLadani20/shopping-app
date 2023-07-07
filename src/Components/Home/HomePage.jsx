@@ -5,9 +5,10 @@ import HeroPage from './HeroPage'
 const HomePage = () => {
   return (
     <>
-
-    <Navbar/>
-    <HeroPage/>
+      <section className='new-hero-page-area'>
+        <Navbar />
+        <HeroPage />
+      </section>
     </>
   )
 }

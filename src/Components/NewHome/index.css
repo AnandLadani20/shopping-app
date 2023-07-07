@@ -1,0 +1,492 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    --black: #000;
+    --blue-dark: #223f93;
+    --blue-light: #4bc2ec;
+    --orange: #f56016;
+    --orange-dark: #ed3337;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    position: relative;
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    font-style: normal;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--black);
+    position: relative;
+    z-index: 1;
+
+}
+
+video,
+iframe,
+img {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+
+.margin-top-80 {
+    margin-top: 80px;
+}
+
+/* ///////// Navbar Css ///////// */
+.main-page-gradient {
+    /* background: linear-gradient(to right, var(--blue-dark), var(--blue-light)); */
+}
+
+.home-nav {
+    padding: 15px 20px;
+    height: auto;
+    width: 100%;
+    /* border-bottom: 1px solid rgba(3, 44, 110, 0.2);
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px; */
+}
+
+.menu-title .selling-btn {
+    padding: 10px 25px;
+    border: 0px;
+    border-radius: 25px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    background-color: #fff;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
+    /* background: linear-gradient(to right, var(--blue-dark), var(--blue-light)); */
+}
+
+/* ///////// Hero Css ///////// */
+
+.hero-area {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-btn {
+    float: right;
+    padding: 20px 0px;
+}
+
+.signup-btn button {
+    padding: 8px 15px;
+    border: 0px;
+    border-radius: 25px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    clear: both;
+    font-weight: 600;
+    color: var(--blue-dark);
+    background-color: #fff;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
+}
+
+.header-around-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: -1;
+
+}
+
+.culture-img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 90vh;
+    z-index: -3;
+}
+
+.culture-img .culture-img-1 {
+    position: absolute;
+    display: block;
+    left: 15%;
+    height: 200px;
+    width: 20%;
+    object-fit: contain;
+
+}
+
+.culture-img .culture-img-2 {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    width: 10%;
+    object-fit: contain;
+}
+
+.culture-img .culture-img-3 {
+    position: absolute;
+    left: 10%;
+    top: 60%;
+    width: 20%;
+    object-fit: contain;
+}
+
+.culture-img .culture-img-4 {
+    position: absolute;
+    left: 40%;
+    width: 20%;
+    object-fit: contain;
+}
+
+.culture-img .culture-img-5 {
+    position: absolute;
+    right: 15%;
+    width: 20%;
+    object-fit: contain;
+}
+
+.culture-img .culture-img-6 {
+    position: absolute;
+    left: 35%;
+    top: 70%;
+    /* width: 500px; */
+    /* max-width: 500px; */
+    width: 30%;
+    /* min-width: 50%; */
+    /* max-width: 50%; */
+    object-fit: cover;
+    height: auto;
+
+}
+
+.culture-img .culture-img-7 {
+    position: absolute;
+    right: 10%;
+    top: 60%;
+    width: 20%;
+    object-fit: contain;
+}
+
+.culture-img .culture-img-8 {
+    position: absolute;
+    right: 5%;
+    top: 35%;
+    width: 10%;
+    object-fit: contain;
+}
+
+.hero-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo img {
+    background-color: transparent;
+    height: 200px;
+    border: none;
+    background-image: radial-gradient(circle, #0b4a7c 10%, transparent, transparent)
+}
+
+.hero-searchbar input {
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
+    background-color: transparent;
+}
+
+.hero-searchbar input::placeholder {
+    color: #fff;
+}
+
+.hero-searchbar button {
+    border-radius: 20px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    border: 1px solid white;
+    background-color: #fff;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
+}
+
+.hero-searchbar button:hover {
+    color: white;
+    background-color: var(--blue-light) !important;
+}
+
+.shortcut-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.product-design {
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-design p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.product1 {
+    height: 60px;
+    width: 60px;
+    background-color: #eeeff1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
+}
+
+.product1 img {
+    height: 40px;
+    width: 40px;
+}
+
+
+/* //////////////////////////////////////////////////////// */
+.new-hero-page-area {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
+    background: linear-gradient(to right, #0c2263, #2899c2);
+    position: relative;
+    z-index: 2;
+}
+
+.main-logo-heropage {
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.hero-svg-center {
+    /* position: relative; */
+}
+
+.hero-svg-center svg {
+    position: absolute;
+    left: 21%;
+    top: 20%;
+    opacity: .1;
+
+
+}
+
+.hero-svg-center svg path {
+    box-shadow: rgba(10, 46, 109, 0.2) 0px 7px 7px 0px;
+}
+
+.hero-svg-leftcorner {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -3;
+}
+
+.hero-svg-leftcorner svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    z-index: -3;
+}
+
+.hero-svg-rightcorner {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -3;
+
+}
+
+.hero-svg-rightcorner svg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1;
+    z-index: -3;
+}
+
+/* ////////////////////////////////////////////////////////////////////// */
+
+.header-around-svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: -1;
+ 
+}
+
+.farm-women-svg {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -2;
+}
+
+.farm-women-svg svg {
+    position: absolute;
+    height: 150px;
+    z-index: -2;
+    width: 40%;
+    left: 10%;
+ 
+  
+}
+
+.worker-men-svg {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -2;
+}
+
+.worker-men-svg svg {
+    position: absolute;
+    top: 20%;
+    height: 150px;
+    z-index: -2;
+    width: 40%;
+    left: -10%;
+}
+.farm-Men2-svg {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -2;
+}
+
+.farm-Men2-svg svg {
+    position: absolute;
+    top: 38%;
+    /* left: %; */
+    height: 150px;
+    z-index: -2;
+    width: 40%;
+   
+}
+.student-svg {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -2;
+}
+
+.student-svg svg {
+    position: absolute;
+    right: 10%;
+    height: 150px;
+    z-index: -2;
+    width: 40%;
+}
+.work-svg {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.work-svg svg {
+    position: absolute;
+    /* right: 10%; */
+    top: 20%;
+    height: 150px;
+    z-index: -2;
+    width: 30%;
+    right: -5%;
+}
+.doctor-men-svg {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -2;
+}
+.doctor-men-svg svg {
+    position: absolute;
+    top: 45%;
+    height: 150px;
+    z-index: -2;
+    width: 30%;
+    right: 0%;
+}
+.mountain-svg {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -2;
+}
+.mountain-svg svg {
+    position: absolute;
+    /* left: 25%; */
+    top: 45%;
+    z-index: -2;
+    width: 100%;
+    /* width: 836px; */
+    height: 416px;
+    object-fit: cover;
+    opacity: 0.4;
+   
+}
