@@ -2,6 +2,8 @@ import React from 'react'
 import Header from './Header'
 import MainPage from './MainPage'
 import Footer from './Footer'
+import BgEllipse from '../../Assests/hero-gif/Bg-ellipse.png'
+import BgEllipse2 from '../../Assests/hero-gif/Bg-ellipse2.png'
 // import logo from '../../Assests/logo/Dhiyodha (1)n.png';
 // import womenImage from '../../Assests/women-seller-hub/shoping.jpg'
 // import womenImage2 from '../../Assests/women-seller-hub/shopping3.png';
@@ -27,9 +29,17 @@ const SellingPage = () => {
     return (
         <>
             <section className='main-selling-page-area'>
-                <Header/>
-                <MainPage/>
-                <Footer/>
+                <div className='gradient-effect-hero-area'>
+                    <div className='left-corner-effect-area'>
+                        <img src={BgEllipse} alt='effect' />
+                    </div>
+                    <div className='right-corner-effect-area'>
+                        <img src={BgEllipse2} alt='effect' />
+                    </div>
+                </div>
+                <Header />
+                <MainPage />
+                <Footer />
             </section>
             {/* <nav className='selling-nav'>
                 <div className='container'>

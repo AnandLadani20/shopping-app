@@ -24,6 +24,7 @@ const ModalButton = () => {
       };
     return (
         <>
+           
             <button onClick={handleOpen}>Start Selling<i className="fa-solid fa-arrow-right-long"></i></button>
 
             <Modal
