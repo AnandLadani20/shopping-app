@@ -775,6 +775,7 @@
     position: absolute;
     height: 100vh;
     width: 100%;
+    z-index: -1;
 }
 .right-corner-effect-area img{
    position: absolute;
@@ -783,6 +784,7 @@
    width: 500px;
    top: 0;
    right: 0;
+   z-index: -1;
 }
 .selling-header-page-area {
     padding: 80px 0px;
@@ -976,7 +978,6 @@
     border-radius: 10px;
     position: relative;
     z-index: 5;
-    /* box-shadow: #122662 0px 8px 29px 0px; */
     box-shadow: rgba(0, 0, 0, 0.45) 0px 20px 15px -20px;
 }
 .dhiyodha-family-ellipse-image {
@@ -991,22 +992,20 @@
     height: 100%;
     width: 100%;
     top: 0;
-    z-index: -1;
-    
-    
-   
+    z-index: -1;  
 }
+
 .dhiyodha-family-logo {
     display: flex;
     justify-content: center;
     align-items:center ;
-    /* border: 1px solid white; */
     border-radius: 10px;
-    background-color: #06133a;
-    background-color: #ebf0ff;
+    background-color: #ffffff12;
     padding: 40px;
     position: relative;
-    box-shadow: #1a3073 0px 8px 29px 0px;
+    z-index: 3;
+    /* box-shadow: #1a3073 0px 6px 15px 0px; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .dhiyodha-family-logo::before {
    content: '';
@@ -1040,7 +1039,7 @@
    /* border: 1px solid gray; */
    top: 50%;
    right: -26%;
-   background: linear-gradient(45deg, #e6fb04 ,#4bc2ec);
+   background: linear-gradient(45deg, #e6fb04 ,#ed3337);
    background-size:300%;
    animation: animate2 10s linear infinite;
    transform: rotate(180deg);
@@ -1054,8 +1053,10 @@
         background-position: 300% 0%;
     }
 }
-.dhiyodha-family-logo img{
+.dhiyodha-family-logo > img{
    height: 200px;
+   /* background-color: white */
+   /* box-shadow: #1a3073 0px 6px 15px 0px; */
 }
 .dhiyodha-family-details-box1 {
     padding: 15px 20px;
@@ -1174,7 +1175,7 @@
     position: relative;
    padding: 10px;
    margin-bottom: 5px;
-   border: 1px solid #3397ff;
+   border: 1px solid #ed3337;
    max-width: 150px;
    height: 100%;
    text-align: center;
@@ -1191,7 +1192,7 @@
     width: 46px;
     top: 50%;
     left: -46px;
-    background: linear-gradient(45deg, yellow , #4bc2ec);
+    background: linear-gradient(45deg, yellow , #ed3337);
     background-size: 300%;
     animation: animate 12s linear infinite;
     transform: rotate(180deg);
@@ -1206,7 +1207,7 @@
     width: 4px;
     top: 50%;
     left: -46px;
-    background: linear-gradient(90deg, yellow , #4bc2ec);
+    background: linear-gradient(90deg, yellow , #ed3337);
     background-size: 300%;
 }
 .dhiyodha-family-details-box2 ul li:nth-child(2)::after{
@@ -1216,7 +1217,7 @@
     height: 100%;
     width: 4px;
     left: -46px;
-    background: linear-gradient(90deg, yellow , #4bc2ec);
+    background: linear-gradient(90deg, yellow , #ed3337);
     background-size: 300%;
 }
 .dhiyodha-family-details-box2 ul li:nth-child(3)::after{
@@ -1227,7 +1228,7 @@
     width: 4px;
     top: 0;
     left: -46px;
-    background: linear-gradient(90deg, yellow , #4bc2ec);
+    background: linear-gradient(90deg, yellow , #ed3337);
     background-size: 300%;
 }
 .dhiyodha-family-details-box2 ul li:nth-child(4)::after{
@@ -1238,7 +1239,7 @@
     width: 4px;
     top: -20%;
     left: -46px;
-    background: linear-gradient(90deg, yellow , #4bc2ec);
+    background: linear-gradient(90deg, yellow , #ed3337);
     background-size: 300%;
 }
 
@@ -1250,7 +1251,7 @@
     width: 4px;
     bottom: 50%;
     left: -46px;
-    background: linear-gradient(90deg, yellow , #4bc2ec);
+    background: linear-gradient(90deg, yellow , #ed3337);
     background-size: 300%;
 }
 .dhiyodha-family-details-box2 ul li:first-child::after,

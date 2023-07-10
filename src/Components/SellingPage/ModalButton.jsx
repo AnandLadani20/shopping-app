@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
-import SellingSignup from '../SellingSignupPage/SellingSignup';
+
 import Main from '../SellingSignupPage/Main';
 
 

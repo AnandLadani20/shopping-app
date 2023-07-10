@@ -1,10 +1,8 @@
 import React from 'react';
 import heroImage from '../../Assests/hero-gif/hero-removebg-preview.png'
 import logoImage from '../../Assests/logo/Dhiyodha color.png'
-import ellipsImage3 from '../../Assests/hero-gif/Bg-ellipse3.png'
+import ellipsImage3 from '../../Assests/hero-gif/Bg-ellipse4.png'
 import ModalButton from './ModalButton';
-
-
 
 
 const MainPage = () => {
@@ -71,6 +69,7 @@ const MainPage = () => {
                                         <div className='dhiyodha-family-logo'>
                                             <img src={logoImage} alt='color-logo' />
                                         </div>
+
                                     </div>
 
                                     <div className='col-4'>
