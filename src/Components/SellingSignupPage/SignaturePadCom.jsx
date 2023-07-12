@@ -1,3 +1,4 @@
+// "set HTTPS=true&&set SSl_CRT_FILE=c:/Windows/System32/cert.crt&&set SSL_KEY_FILE=C:Windows/System32/cert.key&&react-scripts start"
 import React, { useRef, useEffect } from 'react';
 import { Button } from '@mui/material';
 import SignaturePad from 'signature_pad';

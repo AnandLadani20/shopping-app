@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import {  useState } from 'react'
 import {
     Typography,
     TextField,
@@ -6,7 +7,8 @@ import {
     Stepper,
     Step,
     StepLabel,
-    Box
+    Box,
+    // MuiFileInput
 } from "@mui/material";
 
 import {
@@ -16,6 +18,13 @@ import {
     useFormContext,
 } from "react-hook-form";
 import SignaturePadCom from "./SignaturePadCom";
+import ContactForm from "./ContactForm";
+
+
+// import InputLabel from '@mui/material/InputLabel';
+// import MenuItem from '@mui/material/MenuItem';
+
+// import Select from '@mui/material/Select';
 
 
 
@@ -29,7 +38,11 @@ function getSteps() {
     ];
 }
 const BasicForm = () => {
-    const { control, formState: { errors }, getValues } = useFormContext();
+    const { control, formState: { errors }, getValues, } = useFormContext();
+    // const handleFileChange = (event) => {
+    //     const file = event.target.files[0]; 
+    //     setValue("faceverification", file); 
+    //   };
     return (
         <>
 
@@ -37,7 +50,7 @@ const BasicForm = () => {
             <Controller
                 control={control}
                 name="phoneNumber"
-                style={{position:"relative"}}
+                style={{ position: "relative" }}
                 rules={{
                     required: "Phone number is required.",
                     pattern: {
@@ -47,25 +60,28 @@ const BasicForm = () => {
                 }}
                 render={({ field }) => (
                     <>
-                    <TextField
-                        id="phoneNumber"
-                        label="Phone Number"
-                        variant="outlined"
-                        placeholder="Enter Your Phone Number"
-                        style={{width:"100%"}}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.phoneNumber)}
-                        helperText={errors.phoneNumber?.message}
-                        
-                    />
-                    <Button style={{position:"absolute",right:"4%",top:"6%"}}>Send OTP</Button>
+                        <TextField
+                            id="phoneNumber"
+                            label="Phone Number"
+                            variant="outlined"
+                            placeholder="Enter Your Phone Number"
+                            style={{ width: "100%" }}
+                            margin="normal"
+                            {...field}
+                            error={Boolean(errors.phoneNumber)}
+                            helperText={errors.phoneNumber?.message}
+
+                        />
+                        <Button style={{ position: "absolute", right: "4%", top: "6%" }}>Send OTP</Button>
+
+
+
                     </>
                 )}
-                
+
             />
-            
-            
+
+
             <Controller
                 control={control}
                 name="emailAddress"
@@ -82,7 +98,7 @@ const BasicForm = () => {
                         label="E-mail"
                         variant="outlined"
                         placeholder="Enter Your E-mail Address"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.emailAddress)}
@@ -107,7 +123,7 @@ const BasicForm = () => {
                         type="password"
                         variant="outlined"
                         placeholder="Enter Your Password"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.password)}
@@ -129,7 +145,7 @@ const BasicForm = () => {
                         type="password"
                         variant="outlined"
                         placeholder="Enter Your Confirm Password"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.confirmPassword)}
@@ -137,17 +153,21 @@ const BasicForm = () => {
                     />
                 )}
             />
-            <Controller
+            {/* <Controller
                 control={control}
                 name="faceverification"
                 rules={{
                     required: "Face verification is required",
+                    validate:(value) => {
+                        const fileTypes = ["jpg","png","jpeg"]
+                        console.log(value)
+                    }
 
                 }}
                 render={({ field }) => (
                     <label margin="normal"
-                        style={{width:"100%",display: "block" }}
-                       
+                        style={{ width: "100%", display: "block" }}
+
                     >Face Verification
                         <TextField
                             id="faceverification"
@@ -155,8 +175,8 @@ const BasicForm = () => {
                             type="file"
                             accept="image/png, image/jpeg"
                             variant="outlined"
-                            style={{width:"100%",display: "block" }}
-                        
+                            style={{ width: "100%", display: "block" }}
+
                             // margin="normal"
                             {...field}
                             error={Boolean(errors.faceverification)}
@@ -164,68 +184,74 @@ const BasicForm = () => {
                         />
                     </label>
                 )}
-            />
-        </>
-    );
-};
-const ContactForm = () => {
-    const { control, formState: { errors } } = useFormContext();
-    return (
-        <>
+            /> */}
 
-            <Controller
+            {/* <Controller
                 control={control}
-                name="pincode"
+                name="faceverification"
                 rules={{
-                    required: "Pincode is required",
-                    pattern: {
-                        value: new RegExp(/^[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3}$/),
-                        message: "Pincode is not a valid"
+                    required: "Face verification is required",
+                    validate: (value) => {
+                        if (value) {
+                            console.log(value); // The file object
+                            console.log(value.name); // File name
+                            console.log(value.type); // File type
+                            console.log(value.size); // File size
+                        }
                     }
                 }}
                 render={({ field }) => (
-                    <TextField
-                        id="pincode"
-                        label="Pin Code "
-                        variant="outlined"
-                        placeholder="Enter Your City Pincode"
-                        style={{width:"100%"}}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.pincode)}
-                        helperText={errors.pincode?.message}
-                    />
+                    <label margin="normal" style={{ width: "100%", display: "block" }}>
+                        Face Verification
+                        <TextField
+                            id="faceverification"
+                            type="file"
+                            accept="image/png, image/jpeg"
+                            variant="outlined"
+                            style={{ width: "100%", display: "block" }}
+                            onChange={handleFileChange} // Handle file change event
+                            {...field}
+                            error={Boolean(errors.faceverification)}
+                            helperText={errors.faceverification?.message}
+                        />
+                    </label>
                 )}
-            />
-            <Controller
+            /> */}
+
+            {/* <Controller
                 control={control}
-                name="address"
+                name="faceverification"
                 rules={{
-                    required: "Address is required",
-                    minLength: {
-                        value: 4,
-                        message: "Address is min. 4 characters"
+                    required: "Face verification is required",
+                    validate: (value) => {
+                        const fileTypes = ["jpg", "png", "jpeg"]
+                        console.log(value)
                     }
+
                 }}
                 render={({ field }) => (
-                    <TextField
-                        id="address"
-                        label="Address"
-                        variant="outlined"
-                        placeholder="Enter Your Address"
-                        style={{width:"100%"}}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.address)}
-                        helperText={errors.address?.message}
-                    />
+                    <>
+                        <label margin="normal"
+                            style={{ width: "100%", display: "block" }}
+
+                        >Face Verification</label>
+
+                        <MuiFileInput
+                            id="faceverification"
+                            variant="outlined"
+                            // value={file}
+                            label="Upload Image" placeholder='Select a file'
+                            {...field}
+                            error={Boolean(errors.faceverification)}
+                            helperText={errors.faceverification?.message}
+                        />
+                    </>
                 )}
-            />
-
-
+            /> */}
         </>
     );
 };
+
 const PersonalForm = () => {
     const { control, formState: { errors } } = useFormContext();
     return (
@@ -246,7 +272,7 @@ const PersonalForm = () => {
                         label="GST Number"
                         variant="outlined"
                         placeholder="Enter Your GST Number"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.gstNumber)}
@@ -271,7 +297,7 @@ const PersonalForm = () => {
                         label="Business Name"
                         variant="outlined"
                         placeholder="Enter Your Business Name"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.businessName)}
@@ -296,7 +322,7 @@ const PersonalForm = () => {
                         label="PAN Number"
                         variant="outlined"
                         placeholder="Enter Your PAN Number"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.panNumber)}
@@ -321,7 +347,7 @@ const PersonalForm = () => {
                         label="Business Type"
                         variant="outlined"
                         placeholder="Enter Your Business Type"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.businessType)}
@@ -346,7 +372,7 @@ const PersonalForm = () => {
                         label="Business Address"
                         variant="outlined"
                         placeholder="Enter Your Business Address"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.businessAddress)}
@@ -358,8 +384,8 @@ const PersonalForm = () => {
 
             <Box>
                 <label margin="normal"
-                    style={{width:"100%", display: "block"}}
-                    
+                    style={{ width: "100%", display: "block" }}
+
                 >Signature Here
                 </label>
                 <SignaturePadCom />
@@ -374,8 +400,8 @@ const PersonalForm = () => {
                 }}
                 render={({ field }) => (
                     <label margin="normal"
-                        style={{width:"100%",display: "block"}}
-                        
+                        style={{ width: "100%", display: "block" }}
+
                     >Signature Upload
 
                         <TextField
@@ -383,7 +409,7 @@ const PersonalForm = () => {
                             // label="Signature Upload"
                             type="file"
                             variant="outlined"
-                            style={{width:"100%"}}
+                            style={{ width: "100%" }}
 
                             {...field}
                             error={Boolean(errors.signatureUpload)}
@@ -409,7 +435,7 @@ const PersonalForm = () => {
                         label="Account Holder Name"
                         variant="outlined"
                         placeholder="Enter Your Account Holder Name"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.accountHolderName)}
@@ -434,7 +460,7 @@ const PersonalForm = () => {
                         label="Account Holder Number"
                         variant="outlined"
                         placeholder="Enter Your Account Holder Number"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.accountHolderNumber)}
@@ -459,7 +485,7 @@ const PersonalForm = () => {
                         label=" IFSC Code"
                         variant="outlined"
                         placeholder="Enter Your IFSC Code "
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.ifscCode)}
@@ -484,7 +510,7 @@ const PersonalForm = () => {
                         label="Bank Name"
                         variant="outlined"
                         placeholder="Enter Your Bank Name"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.bankName)}
@@ -509,7 +535,7 @@ const PersonalForm = () => {
                         label="Branch Name"
                         variant="outlined"
                         placeholder="Enter Your Bank Branch Name"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.branchName)}
@@ -534,7 +560,7 @@ const PersonalForm = () => {
                         label="City"
                         variant="outlined"
                         placeholder="Enter Your City Name"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.cityName)}
@@ -559,7 +585,7 @@ const PersonalForm = () => {
                         label="State"
                         variant="outlined"
                         placeholder="Enter Your State Name"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.stateName)}
@@ -578,15 +604,15 @@ const PersonalForm = () => {
                 }}
                 render={({ field }) => (
                     <label margin="normal"
-                        style={{width:"100%",display: "block"}}
-                       
+                        style={{ width: "100%", display: "block" }}
+
                     >Check Upload
                         <TextField
                             id="checkUpload"
                             // label="Check Upload"
                             type="file"
                             variant="outlined"
-                            style={{width:"100%"}}
+                            style={{ width: "100%" }}
                             // margin="normal"
                             {...field}
                             error={Boolean(errors.checkUpload)}
@@ -612,8 +638,8 @@ const PaymentForm = () => {
                         label="Card Number"
                         variant="outlined"
                         placeholder="Enter Your Card Number"
-                        style={{width:"100%"}}
-                        
+                        style={{ width: "100%" }}
+
                         margin="normal"
                         {...field}
                     />
@@ -628,7 +654,7 @@ const PaymentForm = () => {
                         label="Card Month"
                         variant="outlined"
                         placeholder="Enter Your Card Month"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                     />
@@ -643,7 +669,7 @@ const PaymentForm = () => {
                         label="Card Year"
                         variant="outlined"
                         placeholder="Enter Your Card Year"
-                        style={{width:"100%"}}
+                        style={{ width: "100%" }}
                         margin="normal"
                         {...field}
                     />
@@ -659,7 +685,7 @@ function getStepContent(step) {
             return <BasicForm />;
 
         case 1:
-            return <ContactForm />;
+            return <ContactForm/>;
         case 2:
             return <PersonalForm />;
         case 3:
@@ -671,6 +697,9 @@ function getStepContent(step) {
 
 const LinaerStepper = () => {
     //   const classes = useStyles();
+
+
+
     const methods = useForm({
         defaultValues: {
             phoneNumber: "",
@@ -681,7 +710,7 @@ const LinaerStepper = () => {
             pincode: "",
             password: "",
             confirmPassword: "",
-            faceverification:[],
+            faceverification: null,
             address: "",
             gstNumber: "",
             businessName: "",
@@ -697,10 +726,12 @@ const LinaerStepper = () => {
             cityName: "",
             stateName: "",
             checkUpload: "",
+            profession: "",
+            categories: "",
         },
     });
     const [activeStep, setActiveStep] = useState(0);
-    const [skippedSteps, setSkippedSteps] = useState([]);
+
     const steps = getSteps();
 
     const isStepFailed = () => {
@@ -712,7 +743,7 @@ const LinaerStepper = () => {
         return step === 1 || step === 2;
     };
 
-   
+
 
     const handleNext = (data) => {
 
@@ -726,9 +757,7 @@ const LinaerStepper = () => {
                 });
         } else {
             setActiveStep(activeStep + 1);
-            setSkippedSteps(
-                skippedSteps.filter((skipItem) => skipItem !== activeStep)
-            );
+
         }
     };
 
@@ -763,7 +792,7 @@ const LinaerStepper = () => {
                         labelProps.error = true;
                     }
 
-                 
+
                     return (
                         <Step {...stepProps} key={index}>
                             <StepLabel {...labelProps}>{step}</StepLabel>
@@ -779,7 +808,7 @@ const LinaerStepper = () => {
             ) : (
                 <>
                     <FormProvider {...methods}>
-                        <form onSubmit={methods.handleSubmit(handleNext)} style={{position:"relative"}}>
+                        <form onSubmit={methods.handleSubmit(handleNext)} style={{ position: "relative" }}>
                             {getStepContent(activeStep)}
 
                             <Button

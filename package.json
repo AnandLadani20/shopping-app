@@ -21,6 +21,7 @@
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.1",
+    "react-otp-input": "^3.0.2",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "signature_pad": "^4.1.5",
@@ -31,7 +32,7 @@
     "yup": "^1.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set HTTPS=true&&set SSl_CRT_FILE=c:/Windows/System32/cert.crt&&set SSL_KEY_FILE=C:Windows/System32/cert.key&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
