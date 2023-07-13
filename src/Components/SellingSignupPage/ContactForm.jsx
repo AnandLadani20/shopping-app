@@ -4,15 +4,12 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
 import {
- 
     TextField,
     Button,
 } from "@mui/material";
 
 import {
-
     Controller,
-
     useFormContext,
 } from "react-hook-form";
 import { useEffect, useState } from 'react'
@@ -39,9 +36,13 @@ const ContactForm = () => {
     // }, []);
 
     const fetchData = async () =>{
-        const user = await (await fetch("https://fifty-spies-repeat.loca.lt/common/services/getServices")).json()
+        try {
+        const user = await (await fetch("https://puny-melons-clap.loca.lt/common/services/getServices")).json()
         console.log(user)
         setProfessionData(user)
+        }catch(error){
+            setProfessionData([])
+        }
     }
 
 
@@ -72,11 +73,12 @@ const ContactForm = () => {
                             variant="outlined"
                             style={{ width: "50%" }}
                             label="profession"
-
+                            placeholder='profession'
                             {...field}
                             error={Boolean(errors.profession)}
                             helperText={errors.profession?.message}
                         >
+                             <MenuItem >Select Profession</MenuItem>
                             {
                                   professionData.map((data) => {
                                     return (

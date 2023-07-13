@@ -1,5 +1,5 @@
 import React from "react";
-import {  useState } from 'react'
+import { useState } from 'react'
 import {
     Typography,
     TextField,
@@ -37,8 +37,28 @@ function getSteps() {
         "Dashbord",
     ];
 }
+// const FileInput = ({ onChange, ...rest }) => {
+//     const [fileName, setFileName] = useState('');
+  
+//     const handleFileChange = (event) => {
+//       const file = event.target.files[0];
+//       setFileName(file.name);
+//       onChange(file);
+//     };
+  
+//     return (
+//       <div>
+//         <input type="file" onChange={handleFileChange} {...rest} />
+//         <span>{fileName}</span>
+//         <button type="button" onClick={() => document.getElementById(rest.id).click()}>
+//           Browse
+//         </button>
+//       </div>
+//     );
+//   };
 const BasicForm = () => {
     const { control, formState: { errors }, getValues, } = useFormContext();
+    // const [selectedFile, setSelectedFile] = useState(null);
     // const handleFileChange = (event) => {
     //     const file = event.target.files[0]; 
     //     setValue("faceverification", file); 
@@ -153,6 +173,56 @@ const BasicForm = () => {
                     />
                 )}
             />
+
+            {/* <Controller
+                control={control}
+                name="faceverification"
+                rules={{
+                    required: 'Face verification is required',
+                    validate: (value) => {
+                        console.log(value);
+                    },
+                }}
+                render={({ field }) => (
+                    <label margin="normal" style={{ width: '100%', display: 'block' }}>
+                        Face Verification
+                        <FileInput {...field} />
+                    </label>
+                )}
+            /> */}
+            {/* <Controller
+                control={control}
+                name="faceverification"
+                rules={{
+                    required: 'Face verification is required',
+                    validate: (value) => {
+                    
+                        console.log(value);
+                    },
+                }}
+                render={({ field }) => (
+                    <label margin="normal" style={{ width: '100%', display: 'block' }}>
+                        Face Verification
+                        <TextField
+                            id="faceverification"
+                            type="file"
+                            accept="image/png, image/jpeg"
+                          
+                            onChange={(e) => {
+                                setSelectedFile(e.target.files[0]);
+                                field.onChange(e);
+                            }}
+                            {...field}
+                            error={Boolean(errors.faceverification)}
+                            helperText={errors.faceverification?.message}
+                        />
+                        <span>{selectedFile && selectedFile.name}</span> 
+                        <button type="button" onClick={() => document.getElementById('faceverification').click()}>
+                            Browse
+                        </button>
+                    </label>
+                )}
+            /> */}
             {/* <Controller
                 control={control}
                 name="faceverification"
@@ -685,7 +755,7 @@ function getStepContent(step) {
             return <BasicForm />;
 
         case 1:
-            return <ContactForm/>;
+            return <ContactForm />;
         case 2:
             return <PersonalForm />;
         case 3:
@@ -710,7 +780,7 @@ const LinaerStepper = () => {
             pincode: "",
             password: "",
             confirmPassword: "",
-            faceverification: null,
+            // faceverification: "",
             address: "",
             gstNumber: "",
             businessName: "",
