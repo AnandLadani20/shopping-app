@@ -19,6 +19,7 @@ const ContactForm = () => {
     const { control, formState: { errors } } = useFormContext();
 
     const [professionData, setProfessionData] = useState([]);
+    const [categoriesData, setCategoriesData] = useState([]);
     // useEffect(() => {
     //     const fetchData = async () => {
     //         try {
@@ -45,12 +46,26 @@ const ContactForm = () => {
         }
     }
 
+ const categoriesFetchData = async() => {
+    try{
+        const user2 = await(await fetch("https://brave-grapes-change.loca.lt/category/getMainCategories")).json()
+        setCategoriesData(user2)
+        console.log(user2)
+    }catch(error){
+        setCategoriesData([])
+        
+    }
+ }
 
   useEffect(() => {
     fetchData();
   }, []);
    
+  useEffect(()=>{
+    
+    categoriesFetchData();
 
+  },[])
 
     return (
         <>
@@ -60,10 +75,10 @@ const ContactForm = () => {
                 control={control}
                 name="profession"
 
-                rules={{
-                    required: "profession is required",
+                // rules={{
+                //     required: "profession is required",
 
-                }}
+                // }}
                 render={({ field }) => (
                     <>
                         <InputLabel id="demo-simple-select-autowidth-label" style={{ marginTop: "20px" }}>profession</InputLabel>
@@ -75,10 +90,10 @@ const ContactForm = () => {
                             label="profession"
                             placeholder='profession'
                             {...field}
-                            error={Boolean(errors.profession)}
-                            helperText={errors.profession?.message}
+                            // error={Boolean(errors.profession)}
+                            // helperText={errors.profession?.message}
                         >
-                             <MenuItem >Select Profession</MenuItem>
+                             <MenuItem value="">Select Profession</MenuItem>
                             {
                                   professionData.map((data) => {
                                     return (
@@ -86,6 +101,7 @@ const ContactForm = () => {
                                     )
                                 })
                             }
+                            <MenuItem value="s"> Profession</MenuItem>
                             
                           
                         </Select>
@@ -99,10 +115,10 @@ const ContactForm = () => {
                 control={control}
                 name="categories"
 
-                rules={{
-                    required: "categories is required",
+                // rules={{
+                //     required: "categories is required",
 
-                }}
+                // }}
                 render={({ field }) => (
                     <>
                         <InputLabel id="demo-simple-select-autowidth-label" style={{ marginTop: "20px" }}>categories</InputLabel>
@@ -114,12 +130,18 @@ const ContactForm = () => {
                             label="categories"
 
                             {...field}
-                            error={Boolean(errors.categories)}
-                            helperText={errors.categories?.message}
+                            // error={Boolean(errors.categories)}
+                            // helperText={errors.categories?.message}
                         >
-                            <MenuItem value="Doctor">Doctor</MenuItem>
-                            <MenuItem value="Teacher">Teacher</MenuItem>
-                            <MenuItem value="Farmer">Farmer</MenuItem>
+                              <MenuItem value="">Select Categories</MenuItem>
+                            {
+                                  categoriesData.map((data)=>{
+                                    return (
+                                        <MenuItem key={data.categoryId} value={data.categoryId}>{data.label}</MenuItem>
+                                        )
+                                  })
+                            }
+                            <MenuItem value="c"> Categories</MenuItem>
                         </Select>
                     </>
                 )}

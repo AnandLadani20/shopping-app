@@ -1,12 +1,11 @@
 import React from 'react';
 import heroImage from '../../Assests/hero-gif/hero-removebg-preview.png'
-import logoImage from '../../Assests/logo/Dhiyodha color.png'
-import ellipsImage3 from '../../Assests/hero-gif/Bg-ellipse4.png'
+
 import ModalButton from './ModalButton';
+import SvgAnimation from './SvgAnimation';
 
 
 const MainPage = () => {
-
 
 
 
@@ -50,44 +49,15 @@ const MainPage = () => {
                         </div>
                         <div className='col-12'>
                             <div className='dhiyodha-family-details'>
-                                <div className='row'>
-                                    <div className='dhiyodha-family-ellipse-image'>
-                                        <img src={ellipsImage3} alt='elipse' />
-                                    </div>
-                                    <div className='col-4'>
-                                        <div className='dhiyodha-family-details-box1'>
-                                            <ul>
-                                                <li>Dhibag</li>
-                                                <li>DhiKitchen</li>
-                                                <li>DhiParlour</li>
-                                                <li>DhiCareTaker</li>
-                                                <li>DhiHealthCare</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className='col-4'>
-                                        <div className='dhiyodha-family-logo'>
-                                            <img src={logoImage} alt='color-logo' />
-                                        </div>
-
-                                    </div>
-
-                                    <div className='col-4'>
-                                        <div className='dhiyodha-family-details-box2'>
-                                            <ul>
-                                                <li>DhiTravelings</li>
-                                                <li>DhiMentorSchool</li>
-                                                <li>Dhihireme</li>
-                                                <li>DhiCareTaker</li>
-                                                <li>DhiHealthCare</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                            <SvgAnimation/>
+                           
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
+            <section>
+               
             </section>
 
         </>

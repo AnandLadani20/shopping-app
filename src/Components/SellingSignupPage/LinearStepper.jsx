@@ -20,6 +20,9 @@ import {
 import SignaturePadCom from "./SignaturePadCom";
 import ContactForm from "./ContactForm";
 
+import Verification from "./Verification";
+
+
 
 // import InputLabel from '@mui/material/InputLabel';
 // import MenuItem from '@mui/material/MenuItem';
@@ -37,293 +40,31 @@ function getSteps() {
         "Dashbord",
     ];
 }
-// const FileInput = ({ onChange, ...rest }) => {
-//     const [fileName, setFileName] = useState('');
-  
-//     const handleFileChange = (event) => {
-//       const file = event.target.files[0];
-//       setFileName(file.name);
-//       onChange(file);
-//     };
-  
-//     return (
-//       <div>
-//         <input type="file" onChange={handleFileChange} {...rest} />
-//         <span>{fileName}</span>
-//         <button type="button" onClick={() => document.getElementById(rest.id).click()}>
-//           Browse
-//         </button>
-//       </div>
-//     );
-//   };
-const BasicForm = () => {
-    const { control, formState: { errors }, getValues, } = useFormContext();
-    // const [selectedFile, setSelectedFile] = useState(null);
-    // const handleFileChange = (event) => {
-    //     const file = event.target.files[0]; 
-    //     setValue("faceverification", file); 
-    //   };
-    return (
-        <>
 
-
-            <Controller
-                control={control}
-                name="phoneNumber"
-                style={{ position: "relative" }}
-                rules={{
-                    required: "Phone number is required.",
-                    pattern: {
-                        value: new RegExp(/^[0-9 ()+-]+$/),
-                        message: "Not a valid phone number."
-                    }
-                }}
-                render={({ field }) => (
-                    <>
-                        <TextField
-                            id="phoneNumber"
-                            label="Phone Number"
-                            variant="outlined"
-                            placeholder="Enter Your Phone Number"
-                            style={{ width: "100%" }}
-                            margin="normal"
-                            {...field}
-                            error={Boolean(errors.phoneNumber)}
-                            helperText={errors.phoneNumber?.message}
-
-                        />
-                        <Button style={{ position: "absolute", right: "4%", top: "6%" }}>Send OTP</Button>
-
-
-
-                    </>
-                )}
-
-            />
-
-
-            <Controller
-                control={control}
-                name="emailAddress"
-                rules={{
-                    required: "Email field is required.",
-                    pattern: {
-                        value: new RegExp(/\S+@\S+\.\S+/),
-                        message: "Email is not in a valid format."
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="email"
-                        label="E-mail"
-                        variant="outlined"
-                        placeholder="Enter Your E-mail Address"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.emailAddress)}
-                        helperText={errors.emailAddress?.message}
-                    />
-                )}
-            />
-            <Controller
-                control={control}
-                name="password"
-                rules={{
-                    required: "Password is required",
-                    pattern: {
-                        value: /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
-                        message: "(UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="password"
-                        label="Password"
-                        type="password"
-                        variant="outlined"
-                        placeholder="Enter Your Password"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.password)}
-                        helperText={errors.password?.message}
-                    />
-                )}
-            />
-            <Controller
-                control={control}
-                name="confirmPassword"
-                rules={{
-                    required: "Confirm password is required",
-                    validate: value => value === getValues("password") || "Confirm Password should be match with password."
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="confirmPassword"
-                        label="Confirm Password"
-                        type="password"
-                        variant="outlined"
-                        placeholder="Enter Your Confirm Password"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.confirmPassword)}
-                        helperText={errors.confirmPassword?.message}
-                    />
-                )}
-            />
-
-            {/* <Controller
-                control={control}
-                name="faceverification"
-                rules={{
-                    required: 'Face verification is required',
-                    validate: (value) => {
-                        console.log(value);
-                    },
-                }}
-                render={({ field }) => (
-                    <label margin="normal" style={{ width: '100%', display: 'block' }}>
-                        Face Verification
-                        <FileInput {...field} />
-                    </label>
-                )}
-            /> */}
-            {/* <Controller
-                control={control}
-                name="faceverification"
-                rules={{
-                    required: 'Face verification is required',
-                    validate: (value) => {
-                    
-                        console.log(value);
-                    },
-                }}
-                render={({ field }) => (
-                    <label margin="normal" style={{ width: '100%', display: 'block' }}>
-                        Face Verification
-                        <TextField
-                            id="faceverification"
-                            type="file"
-                            accept="image/png, image/jpeg"
-                          
-                            onChange={(e) => {
-                                setSelectedFile(e.target.files[0]);
-                                field.onChange(e);
-                            }}
-                            {...field}
-                            error={Boolean(errors.faceverification)}
-                            helperText={errors.faceverification?.message}
-                        />
-                        <span>{selectedFile && selectedFile.name}</span> 
-                        <button type="button" onClick={() => document.getElementById('faceverification').click()}>
-                            Browse
-                        </button>
-                    </label>
-                )}
-            /> */}
-            {/* <Controller
-                control={control}
-                name="faceverification"
-                rules={{
-                    required: "Face verification is required",
-                    validate:(value) => {
-                        const fileTypes = ["jpg","png","jpeg"]
-                        console.log(value)
-                    }
-
-                }}
-                render={({ field }) => (
-                    <label margin="normal"
-                        style={{ width: "100%", display: "block" }}
-
-                    >Face Verification
-                        <TextField
-                            id="faceverification"
-                            // label="Face Verification"
-                            type="file"
-                            accept="image/png, image/jpeg"
-                            variant="outlined"
-                            style={{ width: "100%", display: "block" }}
-
-                            // margin="normal"
-                            {...field}
-                            error={Boolean(errors.faceverification)}
-                            helperText={errors.faceverification?.message}
-                        />
-                    </label>
-                )}
-            /> */}
-
-            {/* <Controller
-                control={control}
-                name="faceverification"
-                rules={{
-                    required: "Face verification is required",
-                    validate: (value) => {
-                        if (value) {
-                            console.log(value); // The file object
-                            console.log(value.name); // File name
-                            console.log(value.type); // File type
-                            console.log(value.size); // File size
-                        }
-                    }
-                }}
-                render={({ field }) => (
-                    <label margin="normal" style={{ width: "100%", display: "block" }}>
-                        Face Verification
-                        <TextField
-                            id="faceverification"
-                            type="file"
-                            accept="image/png, image/jpeg"
-                            variant="outlined"
-                            style={{ width: "100%", display: "block" }}
-                            onChange={handleFileChange} // Handle file change event
-                            {...field}
-                            error={Boolean(errors.faceverification)}
-                            helperText={errors.faceverification?.message}
-                        />
-                    </label>
-                )}
-            /> */}
-
-            {/* <Controller
-                control={control}
-                name="faceverification"
-                rules={{
-                    required: "Face verification is required",
-                    validate: (value) => {
-                        const fileTypes = ["jpg", "png", "jpeg"]
-                        console.log(value)
-                    }
-
-                }}
-                render={({ field }) => (
-                    <>
-                        <label margin="normal"
-                            style={{ width: "100%", display: "block" }}
-
-                        >Face Verification</label>
-
-                        <MuiFileInput
-                            id="faceverification"
-                            variant="outlined"
-                            // value={file}
-                            label="Upload Image" placeholder='Select a file'
-                            {...field}
-                            error={Boolean(errors.faceverification)}
-                            helperText={errors.faceverification?.message}
-                        />
-                    </>
-                )}
-            /> */}
-        </>
-    );
-};
 
 const PersonalForm = () => {
     const { control, formState: { errors } } = useFormContext();
+
+
+    const handlesubmitSignature = async (signdata) => {
+        const url = `https://rich-llamas-cross.loca.lt/common/general/submitSignature`;
+
+        const formData = new FormData();
+        formData.append('file', signdata);
+
+        await fetch(url, {
+            method: 'POST',
+            headers: [],
+            body:formData
+        })
+            .then((res) => res.json())
+            .then((sign) => {
+                console.log(sign)
+            })
+        // .then((val)=> {
+        //    console.log(Boolean(val))
+        // })
+    }
     return (
         <>
             <Controller
@@ -485,6 +226,7 @@ const PersonalForm = () => {
                             error={Boolean(errors.signatureUpload)}
                             helperText={errors.signatureUpload?.message}
                         />
+                         <Button  type="button" onClick={() => handlesubmitSignature({ ...field })}>Verfy OTP</Button>
                     </label>
                 )}
             />
@@ -752,7 +494,7 @@ const PaymentForm = () => {
 function getStepContent(step) {
     switch (step) {
         case 0:
-            return <BasicForm />;
+            return <Verification />;
 
         case 1:
             return <ContactForm />;
@@ -800,6 +542,7 @@ const LinaerStepper = () => {
             categories: "",
         },
     });
+    // console.log(methods)
     const [activeStep, setActiveStep] = useState(0);
 
     const steps = getSteps();
@@ -809,22 +552,86 @@ const LinaerStepper = () => {
         return Boolean(Object.keys(methods.formState.errors).length)
     }
 
-    const isStepOptional = (step) => {
-        return step === 1 || step === 2;
-    };
+    // const isStepOptional = (step) => {
+    //     return step === 1 || step === 2;
+    // };
 
 
 
     const handleNext = (data) => {
 
+
+
         console.log(data);
         if (activeStep === steps.length - 1) {
-            fetch("https://jsonplaceholder.typicode.com/comments")
-                .then((data) => data.json())
-                .then((res) => {
-                    console.log(res);
+
+            fetch('https://swift-boats-bow.loca.lt/common/service-provider-register/personal-details', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(
+                    [
+                        {
+                            "firstName": "anand",
+                            "lastName": "ladani",
+                            "username": "anandladani",
+                            "password": "9265374493",
+                            "confirmPassword":"9265374493",
+                            "email":"anandladani11@gmail.com",
+                            "contactNumber":"9265374493",
+                            "role":"2",
+                            "faceImageUrl": "C:\\fakepath\\signature (9).png",
+                        }
+                    ]
+                ),
+
+            })
+                .then((res) => res.json())
+                .then((post) => {
+                    console.log(post);   
                     setActiveStep(activeStep + 1);
-                });
+                })
+               
+
+                // fetch('https://swift-boats-bow.loca.lt/common/service-provider-register/register/business-and-bank-details', {
+                //     method: 'POST',
+                //     headers: {
+                //         "Content-Type": "application/json",
+                //         "Cookie":"JSESSIONID=7F34F1BAC1A98750B480367C2C5315CD"
+                //     },
+                //     body: JSON.stringify(
+                //         [
+                //             {
+                //                 "accountType":"SAVINGS",
+                //                 "userId":"4796405664891639110",
+                //                 "legalName":"abcde",
+                //                 "isDefault": "false",
+                //                 "docSignature":"C:\\\\Software\\\\rashtra-sakhi\\\\dhiyodha-common\\\\faces\\\\face_1682070189846.jpg",
+                //                 "gstNumberVerified":"true",
+                //                 "defaultGstPercentage":"14",
+                //                 "panNumber":"ADDD12346",
+                //                 "gstNumber":"ACF1234ASDSDF2",
+                //                 "gstNumberAvailable":"true",
+                //                 "gstnumberRequired":"true",
+                //                 "bankAccountHolderName":"abcd",
+                //                 "bankAccountHolderNumber":"2234156",
+                //                 "ifscCode":"123B12",
+                //                 "bankDetailsAvailable":"true",
+                //                 "cancelledCheckUrl":"C:\\\\Software\\\\rashtra-sakhi\\\\dhiyodha-common\\\\faces\\\\face_1682070189846.jpg"
+
+
+                //             }
+                //         ]
+                //     ),
+    
+                // })
+            // fetch("https://jsonplaceholder.typicode.com/comments")
+            //     .then((data) => data.json())
+            //     .then((res) => {
+            //         console.log(res);
+            //         setActiveStep(activeStep + 1);
+            //     });
         } else {
             setActiveStep(activeStep + 1);
 
@@ -846,17 +653,17 @@ const LinaerStepper = () => {
                 {steps.map((step, index) => {
                     const labelProps = {};
                     const stepProps = {};
-                    if (isStepOptional(index)) {
-                        labelProps.optional = (
-                            <Typography
-                                variant="caption"
-                                align="center"
-                                style={{ display: "block" }}
-                            >
-                                optional
-                            </Typography>
-                        );
-                    }
+                    // if (isStepOptional(index)) {
+                    //     labelProps.optional = (
+                    //         <Typography
+                    //             variant="caption"
+                    //             align="center"
+                    //             style={{ display: "block" }}
+                    //         >
+                    //             optional
+                    //         </Typography>
+                    //     );
+                    // }
 
                     if (isStepFailed() && activeStep === index) {
                         labelProps.error = true;
