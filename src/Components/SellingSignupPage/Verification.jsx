@@ -4,34 +4,30 @@ import { useState } from 'react'
 import {
     TextField,
     Button,
-
 } from "@mui/material";
-
+// import { MuiOtpInput } from 'mui-one-time-password-input'
 import {
     Controller,
     useFormContext,
 } from "react-hook-form";
 import OtpInput from 'otp-input-react';
 import toast from 'react-hot-toast';
-;
+import newCommonUrl from "./ApiUrl";
 
 
 const Verification = () => {
     const [verifyotp, setVerifyOtp] = useState("");
     const [showverify, setShowVerify] = useState(false)
     const [showemailverify, setShowEmailVerify] = useState(false)
-    const [verifyemailotp, setVerifyEmailOtp] = useState("");
+    const [verifyemailotpp, setVerifyEmailOtpp] = useState("");
     const { control, formState: { errors }, getValues, } = useFormContext();
 
 
-
-
     const handleSendOTP = async (data) => {
-        // console.log(data)
+
         setShowVerify(true)
         const number = data.value;
-
-        const url = `https://swift-boats-bow.loca.lt/common/general/sendOtp?contactNumber=${number}&countryCode=91`;
+        const url = `${newCommonUrl}/common/general/sendOtp?contactNumber=${number}&countryCode=91`;
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -54,12 +50,10 @@ const Verification = () => {
     };
 
     const handleVerifyOTP = async (otp, data) => {
-
         const number2 = data.value
         console.log(number2);
         console.log(otp)
-
-        const url = `https://swift-boats-bow.loca.lt/common/general/verifyOtp?countryCode=91&contactNumber=${number2}&otp=${otp}`;
+        const url = `${newCommonUrl}/common/general/verifyOtp?countryCode=91&contactNumber=${number2}&otp=${otp}`;
         try {
             await fetch(url, {
                 method: 'POST',
@@ -76,7 +70,6 @@ const Verification = () => {
                     }
 
                 })
-
         } catch (error) {
             console.log(error, "error");
         }
@@ -87,8 +80,9 @@ const Verification = () => {
         const email = data.value;
         setShowEmailVerify(true)
 
+        const makeEmail = email.replace("@", "%40")
 
-        const url = `https://swift-boats-bow.loca.lt/common/general/sendOtpForVerifyEmail?email=${email}`;
+        const url = `${newCommonUrl}/common/general/sendOtpForVerifyEmail?email=${makeEmail}`;
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -109,52 +103,139 @@ const Verification = () => {
         }
     }
 
-    const handleVerifyEmail = async (datas, otpp) => {
+    const handleVerifyEmail = async (otpp, datas) => {
         const emails = datas.value;
-        console.log(datas)
-        const num = parseInt(otpp);
 
-        const url = `https://swift-boats-bow.loca.lt/common/general/verifyEmailOtp?email=${emails}&otp=${num}`;
+        const newEmail = emails.replace("@", "%40")
+        console.log(newEmail)
+        const num = otpp;
+        console.log(num)
+
+        const url = `${newCommonUrl}/common/general/verifyEmailOtp?email=${newEmail}&otp=${num}`;
         try {
-            await fetch(url, {
+            const emailresponse = await fetch(url, {
                 method: 'POST',
-                headers: [],
+                headers: {
+                    'authority': 'six-paths-start.loca.lt',
+                    'accept': '*/*',
+                    'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8,gu;q=0.7',
+                    'cache-control': 'no-cache',
+                    'content-length': '0',
+                    'origin': 'https://localhost:3000',
+                    'pragma': 'no-cache',
+                    'referer': 'https://localhost:3000/',
+                    'sec-ch-ua': '',
+                    'Cookie': 'JSESSIONID=768F95D7F69DAAA91E74108F6B8A1C97',
+                }
+
             })
-                .then((res) => res.json())
-                .then((val) => {
-                    console.log(val.result)
-                })
+            const val = await emailresponse.json()
+            console.log(val)
 
         } catch (error) {
             console.log(error, "error");
         }
-        console.log(typeof (num))
-        console.log(typeof (emails))
+        console.log(url)
     }
 
-    const handleFaceVeri = async () => {
-        const url = `https://swift-boats-bow.loca.lt/common/general/captureFace`;
+    // const handleFaceVeri = async (facedata) => {
+    //     const url = `${newCommonUrl}/common/general/captureFace`;
 
 
-        await fetch(url, {
-            method: 'POST',
-            headers: [],
-        })
-            .then((res) => res.json())
-            .then((face) => {
-                console.log(face)
-            })
-        // .then((val)=> {
-        //    console.log(Boolean(val))
-        // })
-    }
+    //     await fetch(url, {
+    //         method: 'POST',
+    //         headers: [],
+    //     })
+    //         .then((res) => res.json())
+    //         .then((face) => {
+    //             console.log(face)
+    //             facedata.value = face;
+    //         })
+
+    // }
     return (
         <>
 
             <Controller
                 control={control}
+                name="firstName"
+                rules={{
+                    required: "First Name is required",
+                    minLength: {
+                        value: 4,
+                        message: "First Name is min. 2 characters"
+                    }
+                }}
+                render={({ field }) => (
+                    <TextField
+                        id="firstName"
+                        label="First Name"
+                        variant="outlined"
+                        className="textfield"
+                        placeholder="Enter Your First Name"
+                        style={{ width: "100%" }}
+                        margin="normal"
+                        {...field}
+                        error={Boolean(errors.firstName)}
+                        helperText={errors.firstName?.message}
+                    />
+                )}
+            />
+            <Controller
+                control={control}
+                name="lastName"
+                rules={{
+                    required: "Last Name is required",
+                    minLength: {
+                        value: 4,
+                        message: "Last Name is min. 2 characters"
+                    }
+                }}
+                render={({ field }) => (
+                    <TextField
+                        id="lastName"
+                        label="Last Name"
+                        variant="outlined"
+                        placeholder="Enter Your Last Name"
+                        style={{ width: "100%" }}
+                        margin="normal"
+                        {...field}
+                        error={Boolean(errors.lastName)}
+                        helperText={errors.lastName?.message}
+                    />
+                )}
+            />
+
+            <Controller
+                control={control}
+                name="userName"
+                rules={{
+                    required: " UserName is required",
+                    minLength: {
+                        value: 4,
+                        message: "UserName is min. 2 characters"
+                    }
+                }}
+                render={({ field }) => (
+                    <TextField
+                        id="userName"
+                        label="UserName"
+                        variant="outlined"
+                        placeholder="Enter Your UserName"
+                        style={{ width: "100%" }}
+                        margin="normal"
+                        {...field}
+                        error={Boolean(errors.userName)}
+                        helperText={errors.userName?.message}
+                    />
+                )}
+            />
+
+
+            {/* <Controller
+                control={control}
                 name="phoneNumber"
-               
+
                 rules={{
                     required: "Phone number is required.",
                     pattern: {
@@ -164,7 +245,7 @@ const Verification = () => {
                 }}
                 render={({ field }) => (
                     <>
-                        <div  style={{ position: "relative" }}>
+                        <div style={{ position: "relative" }}>
                             <TextField
                                 id="phoneNumber"
                                 label="Phone Number"
@@ -178,23 +259,94 @@ const Verification = () => {
 
                             />
                             {
-                                field.value.length === 10 ? <Button style={{ position: "absolute", right: "4%", top: "25%" }} type="button" onClick={() => handleSendOTP({ ...field })}>Send OTP</Button> : ""
+                                field.value.length === 10 ? <Button style={{ position: "absolute", right: "3%", top: "22px" }} type="button" onClick={() => handleSendOTP({ ...field })}>Send OTP</Button> : ""
                             }
 
                             {
-                                showverify ? (<><OtpInput OTPLength={6} otpType="number" disabled={false} value={verifyotp} onChange={setVerifyOtp} autoFocus classname="border border-primary"></OtpInput>
-                                    <Button style={{ position: "absolute", right: "4%", top: "75%" }} type="button" onClick={() => handleVerifyOTP(verifyotp, { ...field })}>Verfy OTP</Button>
+                                showverify ? (<>
+
                                 </>) : (<></>)
                             }
 
+
+                            <Controller
+                                control={control}
+                                name="phoneOtp"
+
+                                rules={{
+                                    required: "Phone number Otp is required.",
+                                    minLength: {
+                                        value: 2,
+                                        message: "Country Name is min. 2 characters"
+                                    }
+                                }}
+                                render={({ field }) => (
+                                    <>
+                                        {/* <MuiOtpInput
+                                            id="phoneOtp"
+                                            label="phoneOtp "
+                                            variant="outlined"
+                                            placeholder="Enter Your Phone phoneOtp"
+                                            // style={{ width: "100%" }}
+                                            margin="normal"
+                                            {...field}
+                                            error={Boolean(errors.phoneOtp)}
+                                            helperText={errors.phoneOtp?.message}
+                                            length={6}
+                                        /> */}
+            {/* <OtpInput OTPLength={6} otpType="number" disabled={false} value={verifyotp} style={{ margin: "10px 0px" }} onChange={setVerifyOtp} autoFocus classname="border border-primary"></OtpInput>
+                                        <Button type="button" onClick={() => handleVerifyOTP(verifyotp, { ...field })}>Verfy OTP</Button>
+                                    </>
+                                )}
+                            />
+
+                        </div>
+                    </>
+                )}
+
+            /> */}
+
+            <Controller
+                control={control}
+                name="phoneNumber"
+
+                rules={{
+                    required: "Phone number is required.",
+                    pattern: {
+                        value: new RegExp(/^[0-9 ()+-]+$/),
+                        message: "Not a valid phone number."
+                    }
+                }}
+                render={({ field }) => (
+                    <>
+                        <div style={{ position: "relative" }}>
+                            <TextField
+                                id="phoneNumber"
+                                label="Phone Number"
+                                variant="outlined"
+                                placeholder="Enter Your Phone Number"
+                                style={{ width: "100%" }}
+                                margin="normal"
+                                {...field}
+                                error={Boolean(errors.phoneNumber)}
+                                helperText={errors.phoneNumber?.message}
+
+                            />
+                            {
+                                field.value.length === 10 ? <Button style={{ position: "absolute", right: "3%", top: "22px" }} type="button" onClick={() => handleSendOTP({ ...field })}>Send OTP</Button> : ""
+                            }
+
+                            {
+                                showverify ? (<><OtpInput OTPLength={6} otpType="number" disabled={false} value={verifyotp} style={{ margin: "10px 0px" }} onChange={setVerifyOtp} autoFocus classname="border border-primary"></OtpInput>
+                                    <Button type="button" onClick={() => handleVerifyOTP(verifyotp, { ...field })}>Verfy OTP</Button>
+                                </>) : (<></>)
+                            }
 
                         </div>
                     </>
                 )}
 
             />
-
-
 
             <Controller
                 control={control}
@@ -222,19 +374,17 @@ const Verification = () => {
                                 helperText={errors.emailAddress?.message}
                             />
                             {
-                                !errors.emailAddress?.message ? <Button style={{ position: "absolute", right: "4%", top: "25%" }} type="button" onClick={() => handleEmailOTP({ ...field })}>Send Email</Button> : ""
+                                !errors.emailAddress?.message ? <Button style={{ position: "absolute", right: "3%", top: "22px" }} type="button" onClick={() => handleEmailOTP({ ...field })}>Send Email</Button> : ""
                             }
                             {
-                                showemailverify ? (<><OtpInput OTPLength={6} otpType="number" disabled={false} value={verifyemailotp} onChange={setVerifyEmailOtp} autoFocus classname="border border-primary"></OtpInput>
-                                    <Button style={{ position: "absolute", right: "4%", top: "75%" }} type="button" onClick={() => handleVerifyEmail({ ...field }, verifyemailotp)}>Verfy Email OTP</Button></>) : (<></>)
+                                showemailverify ? (<><OtpInput OTPLength={6} otpType="number" style={{ margin: "10px 0px" }} disabled={false} value={verifyemailotpp} onChange={setVerifyEmailOtpp} autoFocus classname="border border-primary"></OtpInput>
+                                    <Button type="button" onClick={() => handleVerifyEmail(verifyemailotpp, { ...field })}>Verfy Email OTP</Button></>) : (<></>)
                             }
                         </div>
                     </>
 
                 )}
             />
-
-
 
             <Controller
                 control={control}
@@ -284,19 +434,14 @@ const Verification = () => {
                 )}
             />
 
-            <Controller
+            {/* <Controller
                 control={control}
                 name="faceverification"
                 rules={{ required: 'Face verification is required' }}
                 render={({ field }) => (
                     <>
-                        <input
-                            type="file"
-                            style={{ width: "100%", display: "block", marginTop: "20px" }}
-                            onChange={(e) => field.onChange(e.target.files[0])}
+                       <Button type="button" onClick={() => handleFaceVeri({...field})}>Face Verify</Button>
 
-                        // style={{ display: 'none' }}
-                        />
                         <label style={{ display: "block" }} htmlFor="faceverification">
                             <TextField
                                 id="faceverification"
@@ -312,10 +457,11 @@ const Verification = () => {
 
                             />
                         </label>
+                        
                     </>
                 )}
-            />
-            <Button type="button" onClick={handleFaceVeri}>Face Verify</Button>
+            /> */}
+
         </>
     )
 }

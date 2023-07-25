@@ -7,8 +7,6 @@ import {
     Stepper,
     Step,
     StepLabel,
-    Box,
-    // MuiFileInput
 } from "@mui/material";
 
 import {
@@ -17,19 +15,9 @@ import {
     FormProvider,
     useFormContext,
 } from "react-hook-form";
-import SignaturePadCom from "./SignaturePadCom";
-import ContactForm from "./ContactForm";
-
+import Profession from "./Profession";
 import Verification from "./Verification";
-
-
-
-// import InputLabel from '@mui/material/InputLabel';
-// import MenuItem from '@mui/material/MenuItem';
-
-// import Select from '@mui/material/Select';
-
-
+import BusinessDetail from "./BusinessDetail";
 
 
 function getSteps() {
@@ -41,402 +29,6 @@ function getSteps() {
     ];
 }
 
-
-const PersonalForm = () => {
-    const { control, formState: { errors } } = useFormContext();
-
-
-    const handlesubmitSignature = async (signdata) => {
-        const url = `https://rich-llamas-cross.loca.lt/common/general/submitSignature`;
-
-        const formData = new FormData();
-        formData.append('file', signdata);
-
-        await fetch(url, {
-            method: 'POST',
-            headers: [],
-            body:formData
-        })
-            .then((res) => res.json())
-            .then((sign) => {
-                console.log(sign)
-            })
-        // .then((val)=> {
-        //    console.log(Boolean(val))
-        // })
-    }
-    return (
-        <>
-            <Controller
-                control={control}
-                name="gstNumber"
-                rules={{
-                    required: "GST Number is required.",
-                    pattern: {
-                        value: new RegExp(/^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/),
-                        message: "GST is not in a valid format."
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="gstNumber"
-                        label="GST Number"
-                        variant="outlined"
-                        placeholder="Enter Your GST Number"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.gstNumber)}
-                        helperText={errors.gstNumber?.message}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="businessName"
-                rules={{
-                    required: "Business Name is required",
-                    minLength: {
-                        value: 4,
-                        message: "Business Name is min. 4 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="businessName"
-                        label="Business Name"
-                        variant="outlined"
-                        placeholder="Enter Your Business Name"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.businessName)}
-                        helperText={errors.businessName?.message}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="panNumber"
-                rules={{
-                    required: "PAN Number is required.",
-                    pattern: {
-                        value: new RegExp(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/),
-                        message: "PAN is not in a valid format."
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="panNumber"
-                        label="PAN Number"
-                        variant="outlined"
-                        placeholder="Enter Your PAN Number"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.panNumber)}
-                        helperText={errors.panNumber?.message}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="businessType"
-                rules={{
-                    required: "Business Type is required",
-                    minLength: {
-                        value: 4,
-                        message: "Business Type is min. 4 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="businessType"
-                        label="Business Type"
-                        variant="outlined"
-                        placeholder="Enter Your Business Type"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.businessType)}
-                        helperText={errors.businessType?.message}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="businessAddress"
-                rules={{
-                    required: "Business Address is required",
-                    minLength: {
-                        value: 4,
-                        message: "Business Address is min. 4 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="businessAddress"
-                        label="Business Address"
-                        variant="outlined"
-                        placeholder="Enter Your Business Address"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.businessAddress)}
-                        helperText={errors.businessAddress?.message}
-                    />
-                )}
-            />
-
-
-            <Box>
-                <label margin="normal"
-                    style={{ width: "100%", display: "block" }}
-
-                >Signature Here
-                </label>
-                <SignaturePadCom />
-            </Box>
-
-            <Controller
-                control={control}
-                name="signatureUpload"
-                rules={{
-                    required: "Signature Upload is required",
-
-                }}
-                render={({ field }) => (
-                    <label margin="normal"
-                        style={{ width: "100%", display: "block" }}
-
-                    >Signature Upload
-
-                        <TextField
-                            id="signatureUpload"
-                            // label="Signature Upload"
-                            type="file"
-                            variant="outlined"
-                            style={{ width: "100%" }}
-
-                            {...field}
-                            error={Boolean(errors.signatureUpload)}
-                            helperText={errors.signatureUpload?.message}
-                        />
-                         <Button  type="button" onClick={() => handlesubmitSignature({ ...field })}>Verfy OTP</Button>
-                    </label>
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="accountHolderName"
-                rules={{
-                    required: "Account Holder Name is required",
-                    minLength: {
-                        value: 2,
-                        message: "Account Holder Name is min. 2 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="accountHolderName"
-                        label="Account Holder Name"
-                        variant="outlined"
-                        placeholder="Enter Your Account Holder Name"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.accountHolderName)}
-                        helperText={errors.accountHolderName?.message}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="accountHolderNumber"
-                rules={{
-                    required: "Account Number is required.",
-                    pattern: {
-                        value: new RegExp(/^[0-9]{9,18}$/),
-                        message: "Account Number is not in a valid."
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="accountHolderNumber"
-                        label="Account Holder Number"
-                        variant="outlined"
-                        placeholder="Enter Your Account Holder Number"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.accountHolderNumber)}
-                        helperText={errors.accountHolderNumber?.message}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="ifscCode"
-                rules={{
-                    required: "IFSC Code is required.",
-                    pattern: {
-                        value: new RegExp(/^[A-Z]{4}0[A-Z0-9]{6}$/),
-                        message: "IFSC Code is not in a valid ."
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="ifscCode"
-                        label=" IFSC Code"
-                        variant="outlined"
-                        placeholder="Enter Your IFSC Code "
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.ifscCode)}
-                        helperText={errors.ifscCode?.message}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="bankName"
-                rules={{
-                    required: "Bank Name is required",
-                    minLength: {
-                        value: 2,
-                        message: "Bank Name is min. 2 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="bankName"
-                        label="Bank Name"
-                        variant="outlined"
-                        placeholder="Enter Your Bank Name"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.bankName)}
-                        helperText={errors.bankName?.message}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="branchName"
-                rules={{
-                    required: "Branch Name is required",
-                    minLength: {
-                        value: 2,
-                        message: "Branch Name is min. 2 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="branchName"
-                        label="Branch Name"
-                        variant="outlined"
-                        placeholder="Enter Your Bank Branch Name"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.branchName)}
-                        helperText={errors.branchName?.message}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="cityName"
-                rules={{
-                    required: "City Name is required",
-                    minLength: {
-                        value: 2,
-                        message: "City Name is min. 2 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="cityName"
-                        label="City"
-                        variant="outlined"
-                        placeholder="Enter Your City Name"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.cityName)}
-                        helperText={errors.cityName?.message}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="stateName"
-                rules={{
-                    required: "State Name is required",
-                    minLength: {
-                        value: 2,
-                        message: "State Name is min. 2 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="stateName"
-                        label="State"
-                        variant="outlined"
-                        placeholder="Enter Your State Name"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.stateName)}
-                        helperText={errors.stateName?.message}
-                    />
-                )}
-            />
-
-
-            <Controller
-                control={control}
-                name="checkUpload"
-                rules={{
-                    required: "Check Upload is required",
-
-                }}
-                render={({ field }) => (
-                    <label margin="normal"
-                        style={{ width: "100%", display: "block" }}
-
-                    >Check Upload
-                        <TextField
-                            id="checkUpload"
-                            // label="Check Upload"
-                            type="file"
-                            variant="outlined"
-                            style={{ width: "100%" }}
-                            // margin="normal"
-                            {...field}
-                            error={Boolean(errors.checkUpload)}
-                            helperText={errors.checkUpload?.message}
-                        />
-                    </label>
-                )}
-            />
-
-        </>
-    );
-};
 const PaymentForm = () => {
     const { control } = useFormContext();
     return (
@@ -451,7 +43,6 @@ const PaymentForm = () => {
                         variant="outlined"
                         placeholder="Enter Your Card Number"
                         style={{ width: "100%" }}
-
                         margin="normal"
                         {...field}
                     />
@@ -491,29 +82,17 @@ const PaymentForm = () => {
     );
 };
 
-function getStepContent(step) {
-    switch (step) {
-        case 0:
-            return <Verification />;
-
-        case 1:
-            return <ContactForm />;
-        case 2:
-            return <PersonalForm />;
-        case 3:
-            return <PaymentForm />;
-        default:
-            return "unknown step";
-    }
-}
 
 const LinaerStepper = () => {
-    //   const classes = useStyles();
 
-
+    const [signupload, setSignUpload] = useState("");
+    const [checkvalue, setCheckValue] = useState("");
 
     const methods = useForm({
         defaultValues: {
+            firstName: "",
+            lastName: "",
+            userName: "",
             phoneNumber: "",
             emailAddress: "",
             cardNumber: "",
@@ -523,7 +102,9 @@ const LinaerStepper = () => {
             password: "",
             confirmPassword: "",
             // faceverification: "",
-            address: "",
+            addressLine1: "",
+            addressLine2: "",
+            countryName: "",
             gstNumber: "",
             businessName: "",
             panNumber: "",
@@ -542,30 +123,20 @@ const LinaerStepper = () => {
             categories: "",
         },
     });
-    // console.log(methods)
+
+
     const [activeStep, setActiveStep] = useState(0);
-
     const steps = getSteps();
-
     const isStepFailed = () => {
-        // console.log(methods.formState.errors)
         return Boolean(Object.keys(methods.formState.errors).length)
     }
 
-    // const isStepOptional = (step) => {
-    //     return step === 1 || step === 2;
-    // };
-
-
-
-    const handleNext = (data) => {
-
-
+    const handleNext = async (data) => {
 
         console.log(data);
         if (activeStep === steps.length - 1) {
 
-            fetch('https://swift-boats-bow.loca.lt/common/service-provider-register/personal-details', {
+            const response1 = await fetch('https://six-paths-start.loca.lt/common/service-provider-register/personal-details', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
@@ -573,65 +144,125 @@ const LinaerStepper = () => {
                 body: JSON.stringify(
                     [
                         {
-                            "firstName": "anand",
-                            "lastName": "ladani",
-                            "username": "anandladani",
-                            "password": "9265374493",
-                            "confirmPassword":"9265374493",
-                            "email":"anandladani11@gmail.com",
-                            "contactNumber":"9265374493",
-                            "role":"2",
-                            "faceImageUrl": "C:\\fakepath\\signature (9).png",
+                            "firstName": data.firstName,
+                            "lastName": data.lastName,
+                            "username": data.userName,
+                            "password": data.password,
+                            "confirmPassword": data.confirmPassword,
+                            "email": data.emailAddress,
+                            "contactNumber": data.phoneNumber,
+                            "role": "ADMIN",
+                            "faceImageUrl": "C:\\Software\\rashtra-sakhi\\dhiyodha-common\\faces\\face_1682070189846.jpg",
+                            "agreed": "true",
+                            "active": "true"
                         }
                     ]
                 ),
 
             })
-                .then((res) => res.json())
-                .then((post) => {
-                    console.log(post);   
-                    setActiveStep(activeStep + 1);
-                })
-               
+            const post1 = await response1.json();
 
-                // fetch('https://swift-boats-bow.loca.lt/common/service-provider-register/register/business-and-bank-details', {
-                //     method: 'POST',
-                //     headers: {
-                //         "Content-Type": "application/json",
-                //         "Cookie":"JSESSIONID=7F34F1BAC1A98750B480367C2C5315CD"
-                //     },
-                //     body: JSON.stringify(
-                //         [
-                //             {
-                //                 "accountType":"SAVINGS",
-                //                 "userId":"4796405664891639110",
-                //                 "legalName":"abcde",
-                //                 "isDefault": "false",
-                //                 "docSignature":"C:\\\\Software\\\\rashtra-sakhi\\\\dhiyodha-common\\\\faces\\\\face_1682070189846.jpg",
-                //                 "gstNumberVerified":"true",
-                //                 "defaultGstPercentage":"14",
-                //                 "panNumber":"ADDD12346",
-                //                 "gstNumber":"ACF1234ASDSDF2",
-                //                 "gstNumberAvailable":"true",
-                //                 "gstnumberRequired":"true",
-                //                 "bankAccountHolderName":"abcd",
-                //                 "bankAccountHolderNumber":"2234156",
-                //                 "ifscCode":"123B12",
-                //                 "bankDetailsAvailable":"true",
-                //                 "cancelledCheckUrl":"C:\\\\Software\\\\rashtra-sakhi\\\\dhiyodha-common\\\\faces\\\\face_1682070189846.jpg"
+            const data1 = await post1[0].userId
+            console.log(post1)
+
+            const response2 = await fetch('https://six-paths-start.loca.lt/common/service-provider-register/register/business-and-bank-details', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    "Cookie": "JSESSIONID=7F34F1BAC1A98750B480367C2C5315CD"
+                },
+                body: JSON.stringify(
+                    [
+                        {
+                            "accountType": "SAVINGS",
+                            "userId": data1,
+                            "legalName": "abcde",
+                            "isDefault": "false",
+                            "docSignature": signupload,
+                            "gstNumberVerified": "true",
+                            "defaultGstPercentage": "14",
+                            "panNumber": data.panNumber,
+                            "gstNumber": data.gstNumber,
+                            "active": "true",
+                            "gstNumberAvailable": "true",
+                            "gstnumberRequired": "true",
+                            "bankAccountHolderName": data.accountHolderName,
+                            "bankAccountHolderNumber": data.accountHolderNumber,
+                            "ifscCode": data.ifscCode,
+                            "bankDetailsAvailable": "true",
+                            "cancelledCheckUrl": checkvalue
+                        }
+                    ]
+                ),
+
+            })
+            const post2 = await response2.json();
+            console.log("data2", post2)
+
+            //   const response3 = await fetch(`https://curly-places-pump.loca.lt/common/service-provider-register/business-and-bank-details?userId=${data1}`, {
+            //         method: 'GET',
+            //         headers: [],
+            //     })
+
+            //     const post3 = await response3.json();
+            //     const data3 = await post3
+            //      console.log("data3",data3)
 
 
-                //             }
-                //         ]
-                //     ),
-    
-                // })
-            // fetch("https://jsonplaceholder.typicode.com/comments")
-            //     .then((data) => data.json())
-            //     .then((res) => {
-            //         console.log(res);
-            //         setActiveStep(activeStep + 1);
-            //     });
+
+            // fetch('https://spotty-candies-sell.loca.lt/common/address/saveAdress', {
+            //     method: 'POST',
+            //     headers: {
+            //         "Content-Type": "application/json"
+            //     },
+            //     body: JSON.stringify(
+
+            //             {
+            //                 "addressLine1":data.addressLine1,
+            //                 "addressLine2":data.addressLine2,
+            //                 "city":data.cityName,
+            //                 "state":data.stateName,
+            //                 "country":data.countryName,
+            //                 "pincode":data.pincode
+            //             }
+
+            //     ),
+            // })
+            //     .then((res) => res.json())
+            //     .then((post5) => {
+            //         console.log("data5",post5);
+            //         // setActiveStep(activeStep + 1);
+            //     })
+
+
+            const response4 = await fetch('https://six-paths-start.loca.lt/common/service-provider-register/register/professional-details', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(
+                    {
+
+                        "userId": data1,
+                        "professionId": ["645a4849103a6368712285c5"],
+                        "categoryId": "1379971031",
+                        "address": {
+                            "addressLine1": data.addressLine1,
+                            "addressLine2": data.addressLine2,
+                            "city": data.cityName,
+                            "state": data.stateName,
+                            "country": data.countryName,
+                            "pincode": data.pincode
+                        }
+                    }
+
+                ),
+
+            })
+            const post4 = await response4.json();
+            const data4 = await post4
+            console.log("data4", data4);
+
         } else {
             setActiveStep(activeStep + 1);
 
@@ -642,33 +273,33 @@ const LinaerStepper = () => {
         setActiveStep(activeStep - 1);
     };
 
+    function getStepContent(step) {
+        switch (step) {
+            case 0:
+                return <Verification />;
+
+            case 1:
+                return <Profession methods={methods} />;
+            case 2:
+                return <BusinessDetail setSignUpload={setSignUpload} setCheckValue={setCheckValue} />;
+            case 3:
+                return <PaymentForm />;
+            default:
+                return "unknown step";
+        }
+    }
 
 
-    // const onSubmit = (data) => {
-    //   console.log(data);
-    // };
     return (
         <div>
             <Stepper alternativeLabel activeStep={activeStep}>
                 {steps.map((step, index) => {
                     const labelProps = {};
                     const stepProps = {};
-                    // if (isStepOptional(index)) {
-                    //     labelProps.optional = (
-                    //         <Typography
-                    //             variant="caption"
-                    //             align="center"
-                    //             style={{ display: "block" }}
-                    //         >
-                    //             optional
-                    //         </Typography>
-                    //     );
-                    // }
 
                     if (isStepFailed() && activeStep === index) {
                         labelProps.error = true;
                     }
-
 
                     return (
                         <Step {...stepProps} key={index}>
