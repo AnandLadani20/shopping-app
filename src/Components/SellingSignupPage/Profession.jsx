@@ -13,42 +13,32 @@ import {
     useFormContext,
 } from "react-hook-form";
 import { useEffect, useState } from 'react'
-
+import authService from './ApiUrl';
 
 const Profession = ({ methods }) => {
-
+    
     const { control, formState: { errors } } = useFormContext();
 
     const [professionData, setProfessionData] = useState([]);
     const [categoriesData, setCategoriesData] = useState(["No service"]);
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await fetch('https://fifty-spies-repeat.loca.lt/common/services/getServices');
 
-    //             const jsonData = await response.json();
-    //             setDatajj(jsonData);
-    //             console.log(jsonData)
-    //         } catch (error) {
-    //             console.error('Error:', error);
-    //         }
-    //     };
 
-    //     fetchData();
-    // }, []);
-    // console.log(methods.control._fields.profession.value)
     const professionFetchData = async () => {
         try {
-            const user = await (await fetch("https://tired-tigers-bake.loca.lt/common/services/getServices")).json()
+            const user = await (await fetch(`${authService.newCommonUrl}/common/services/getServices`)).json()
             console.log(user)
             setProfessionData(user)
             console.log(professionData)
-
+          
         } catch (error) {
             setProfessionData([])
         }
     }
-
+    
+    useEffect(() => {
+        professionFetchData();
+        
+    }, []);
     // const idObject = {
     //     "MY_MAID": "645a4849103a6368712285c5",
     //     "SKILL_TRAINING": "64be48cd07b254806ed90978",
@@ -74,25 +64,28 @@ const Profession = ({ methods }) => {
 
     useEffect(() => {
 
-        fetch("https://major-ideas-join.loca.lt/category/getMainCategories")
-            .then((res) => res.json())
-            .then((user2) => {
-                if (methods.control._fields.profession._f.value === "64be491b07b254806ed9097b") {
-                    setCategoriesData(user2)
-                }
-                else {
-                    setCategoriesData([])
-                }
-                console.log(user2)
-            })
-
+        catagoriesFetchdata()
     }, [methods.control._fields.profession])
 
-    useEffect(() => {
-        professionFetchData();
-        
-    },[]);
+    const catagoriesFetchdata = () =>{
 
+
+        if (methods.control._fields.profession._f.value === "64be491b07b254806ed9097b") {
+            fetch(`${authService.newEcommercUrl}/category/getMainCategories`)
+            .then((res) => res.json())
+            .then((user2) => {
+                setCategoriesData(user2)
+                console.log(user2)
+            })
+            
+        }
+        else {
+            setCategoriesData([])
+        }
+        
+   
+
+} 
 
     return (
         <>
@@ -121,9 +114,9 @@ const Profession = ({ methods }) => {
                         >
                             <MenuItem value="">Select Profession</MenuItem>
                             {
-                                professionData.map((data) => {
+                                professionData.map((data,index) => {
                                     return (
-                                        <MenuItem key={data.serviceId} value={data.serviceId}>{data.name}</MenuItem>
+                                        <MenuItem key={index} value={data.serviceId}>{data.name}</MenuItem>
                                     )
                                 })
                             }
@@ -156,13 +149,13 @@ const Profession = ({ methods }) => {
                         >
                             <MenuItem value="">Select Categories</MenuItem>
                             {
-                                categoriesData.map((data) => {
+                                categoriesData.map((data,index) => {
                                     return (
-                                        <MenuItem key={data.categoryId} value={data.categoryId}>{data.label}</MenuItem>
+                                        <MenuItem key={index} value={data.categoryId}>{data.label}</MenuItem>
                                     )
                                 })
                             }
-                            <MenuItem value=""> No Service Available</MenuItem>
+                            <MenuItem value="n"> No Service Available</MenuItem>
                         </Select>
                     </>
                 )}

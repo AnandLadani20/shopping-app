@@ -796,7 +796,7 @@
 
 .selling-header-menu-area {
     position: absolute;
-    height: 100%;
+    /* height: 100%; */
     z-index: 5;
 }
 
@@ -961,8 +961,8 @@
 
 .dhiyodha-family-title {
     text-align: center;
-    border-bottom: 1px solid white;
-    padding-bottom: 30px;
+   
+    padding-bottom: 10px;
 }
 .dhiyodha-family-title > h1 {
     color: #fff;
@@ -979,4 +979,76 @@
     position: relative;
     z-index: 5;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 20px 15px -20px;
+}
+
+/* ///////////////// dhiyodha-start-your-product Css //////////////// */
+.dhiyodha-start-your-product {
+    padding-bottom: 100px;
+}
+.dhiyodha-start-your-product > h1 {
+    color: #fff;
+}
+.dhiyodha-video-details {
+    background-color: #1a3073;
+    padding: 40px;
+    border: 1px solid #1a3073;
+    border-radius: 0px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+}
+.dhiyodha-product-video {
+   padding-top: 10px;
+   padding: 30px;
+   /* border: 1px solid black; */
+}
+.dhiyodha-product-video video {
+    width: 100%;
+    height: auto;
+    border: 3px solid #152963;
+    border-radius: 5px;
+    
+}
+.product-video-content {
+    padding: 20px 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+.product-video-content > h1 {
+    color: #fff;
+    font-size: 35px;
+    line-height: 50px;
+    margin-bottom: 10px;
+
+} 
+.product-video-content p {
+    color: #fff;
+    font-size: 18px;
+
+}
+.product-video-content .product-brand-logo {
+    height: 80px;
+    width: 80px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.product-video-content .product-brand-logo img {
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
+
+}
+.product-tebular-btn button{
+    background-color: #4bc2ec;
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+}
+.product-tebular-btn button:first-child {
+    background-color: #1a3073 ;
+ 
 }

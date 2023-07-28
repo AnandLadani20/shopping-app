@@ -1,2 +1,8 @@
-const newCommonUrl = "https://six-paths-start.loca.lt";
-export default newCommonUrl;
+const newCommonUrl = "https://four-moose-invite.loca.lt";
+const newEcommercUrl = "https://metal-cycles-cough.loca.lt";
+
+const authService = {
+    newCommonUrl,
+    newEcommercUrl,
+  };
+  export default authService;

@@ -4,36 +4,43 @@ import SignaturePad from 'signature_pad';
 import {
     TextField,
     Button,
+
 } from "@mui/material";
 import {
     Controller,
     useFormContext,
 } from "react-hook-form";
-import newCommonUrl from "./ApiUrl";
+import authService from './ApiUrl';
 
 
 const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
     const { control, formState: { errors } } = useFormContext();
-    const [drawsign, SetDrawsign] = useState("")
+    const [drawsign, setDrawsign] = useState(null)
 
     const canvasRef = useRef(null);
     const signaturePadRef = useRef(null);
 
+    const validateSignatureUpload = (value) => {
+        if (!drawsign && !value) {
+            return "Please draw or upload a signature before saving.";
+        }
+        return true;
+    };
 
     useEffect(() => {
         const canvas = canvasRef.current;
+        const context = canvas.getContext('2d');
+
+        // Set the background color to white
+        context.fillStyle = 'white';
+        context.fillRect(0, 0, canvas.width, canvas.height);
         signaturePadRef.current = new SignaturePad(canvas);
     }, []);
 
     const clearSignature = () => {
         signaturePadRef.current.clear();
     };
-
-
-
-    const handlesubmitSignature = async (signdata) => {
-        const pngDataUrl = signaturePadRef.current.toDataURL("image/jpeg");
-
+    const handleSaveSignature = () => {
 
         const convertDataURItoBlob = (dataURI) => {
             const encodedImage = dataURI.split(',')[1];
@@ -49,32 +56,61 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
             return new Blob([uint8Array], { type: 'image/jpeg' });
         };
 
-        // Usage example:
-        const dataURI = pngDataUrl;
-        const blob = convertDataURItoBlob(dataURI);
-        console.log(blob);
+        // Create a new canvas with white background
+        const newCanvas = document.createElement('canvas');
+        newCanvas.width = canvasRef.current.width;
+        newCanvas.height = canvasRef.current.height;
+        const context = newCanvas.getContext('2d');
+        context.fillStyle = 'white';
+        context.fillRect(0, 0, newCanvas.width, newCanvas.height);
 
-        signdata.value = blob
-        const url = `${newCommonUrl}/common/general/submitSignature`;
-        SetDrawsign(blob)
+        // Draw the signature on the new canvas
+        const signatureDataUrl = signaturePadRef.current.toDataURL('image/png');
+        const signatureImage = new Image();
+        signatureImage.onload = () => {
+            context.drawImage(signatureImage, 0, 0);
+            const jpegDataUrl = newCanvas.toDataURL('image/jpeg');
+
+            // Convert the JPEG data URL to a Blob
+            const blob = convertDataURItoBlob(jpegDataUrl);
+            setDrawsign(blob);
+        };
+        signatureImage.src = signatureDataUrl;
+    }
+
+
+    const handlesubmitSignature = async (signdata) => {
+
+
+        console.log(signdata)
+        const url = `${authService.newCommonUrl}/common/general/submitSignature`;
+
         const formData = new FormData();
         formData.append('signature', signdata.value);
+        try {
 
-        await fetch(url, {
-            method: 'POST',
-            headers: [],
-            body: formData
-        })
-            .then((res) => res.text())
-            .then((sign) => {
-                console.log(sign)
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: [],
+                body: formData
             })
+            const dataString = await response.text();
+            const data = JSON.parse(dataString)
+            console.log(data.url);
+            setSignUpload(data.url)
+
+        }
+        catch (error) {
+            console.error('Error uploading check:', error);
+        }
     }
 
 
     const handleUploadCheck = async (checkdata) => {
+        console.log(checkdata.value.name)
         try {
-            const url = `${newCommonUrl}/common/general/submitCheck`;
+            const url = `${authService.newCommonUrl}/common/general/submitCheck`;
             const formData = new FormData();
             formData.append('check', checkdata.value);
             const options = {
@@ -85,9 +121,10 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
 
             const response = await fetch(url, options);
             if (response.ok) {
-                const data = await response.text();
-                console.log(data);
-                setCheckValue(data)
+                const dataString = await response.text();
+                const data = JSON.parse(dataString)
+                console.log(data.url);
+                setCheckValue(data.url)
 
             } else {
                 console.error('Error uploading check:', response.statusText);
@@ -100,30 +137,31 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
     const handleUploadSignature = async (signdata) => {
         console.log(signdata)
 
-        // try {
-        //     const url = `${newCommonUrl}/common/general/submitSignature`;
-        //     const formData = new FormData();
+        try {
+            const url = `${authService.newCommonUrl}/common/general/submitSignature`;
+            const formData = new FormData();
 
 
-        //     formData.append('signature', signdata.value);
-        //     const options = {
-        //         method: 'POST',
-        //         header: [],
-        //         body: formData,
-        //     };
+            formData.append('signature', signdata.value);
+            const options = {
+                method: 'POST',
+                header: [],
+                body: formData,
+            };
 
-        //     const response = await fetch(url, options);
-        //     if (response.ok) {
-        //         const data = await response.text();
-        //         console.log(data);
-        //         setSignUpload(data)
+            const response = await fetch(url, options);
+            if (response.ok) {
+                const dataString = await response.text();
+                const data = JSON.parse(dataString)
+                console.log("signature upload data", data.url);
+                setSignUpload(data.url)
 
-        //     } else {
-        //         console.error('Error uploading signature:', response.statusText);
-        //     }
-        // } catch (error) {
-        //     console.error('Error uploading signature:', error);
-        // }
+            } else {
+                console.error('Error uploading signature:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error uploading signature:', error);
+        }
 
     }
     return (
@@ -256,11 +294,76 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Controller
                 control={control}
-                name="signatureHere"
+                name="signatureUpload"
                 rules={{
-                    required: "Signature  is required",
+                    validate: validateSignatureUpload,
 
                 }}
+                render={({ field }) => (
+                    <>
+                        <label margin="normal" style={{ width: "100%", display: "block" }}>
+              Signature Here
+            </label>
+            <canvas
+              ref={canvasRef}
+              max-width={600}
+              height={200}
+              style={{ border: '1px solid #ccc' }}
+            />
+            <Button variant="contained" type='button' style={{ marginLeft: "15px" }} margin="normal" onClick={clearSignature}>
+              Clear
+            </Button>
+            <Button type="button" style={{ display: "block", marginTop: "10px" }} variant="contained" onClick={handleSaveSignature}>Save</Button>
+            <Button type="button" style={{ display: "block" }} onClick={() => handlesubmitSignature({ ...field })}>Upload</Button>
+            {/* Render the file input */}
+            <input
+              type="file"
+              style={{ width: "100%", display: "block", marginTop: "20px" }}
+              onChange={(e) => field.onChange(e.target.files[0])}
+            />
+             <TextField
+              id="signatureUpload"
+              variant="filled"
+              type="text"
+              style={{ width: "100%", marginTop: "10px" }}
+              value={field.value ? field.value.name : ''}
+              InputProps={{
+                readOnly: true,
+              }}
+              error={Boolean(errors.signatureUpload)}
+              helperText={errors.signatureUpload?.message}
+            />
+
+                            
+            <Button type="button" onClick={() => handleUploadSignature({ ...field })}>Upload</Button>
+
+                    </>
+                )}
+            />
+ {/* Display the saved signature image if available */}
+      {drawsign && <img src={URL.createObjectURL(drawsign)} alt="Saved Signature" />}
+
+            {/* <Controller
+                control={control}
+                name="signatureUpload"
+                rules={{
+                    required: "Signature Upload is required",
+
+                }}
+                render={({ field }) => (
+                    
+                )}
+            /> */}
+
+
+
+
+            {/* <Controller
+                control={control}
+                name="signatureUpload"
+                rules={{
+                    validate: validateSignatureUpload, 
+                  }}
                 render={({ field }) => (
                     <>
                         <label margin="normal"
@@ -271,30 +374,47 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                             max-width={600}
                             height={200}
                             style={{ border: '1px solid #ccc' }}
+                          
+                            
+
                         />
                         <Button variant="contained" type='button' style={{ marginLeft: "15px" }} margin="normal" onClick={clearSignature}>
                             Clear
                         </Button>
+                        <Button type="button" style={{ display: "block",marginTop:"10px" }} variant="contained"  onClick={handlesaveSignature}>Save</Button>
                         <TextField
-                            id="signatureHere"
-                            variant="outlined"
+                            
+                            variant="filled"
+                            InputProps={{
+                                readOnly: true,
+                            }}
                             style={{ display: 'none' }}
-                            {...field}
-
+                            value={ field.value = drawsign}
+                              
+                        />
+                        <TextField
+                            id="signatureUpload"
+                            variant="filled"
+                            InputProps={{
+                                readOnly: true,
+                            }}                           
+                            value={field.value } 
+                            error={Boolean(errors.signatureUpload)}
+                            helperText={errors.signatureUpload?.message}
+                            
                         />
                         <Button type="button" style={{ display: "block" }} onClick={() => handlesubmitSignature({ ...field })}>Save</Button>
                     </>
                 )}
             />
-            <img src={drawsign} alt='signatueDraw' />
+         
 
             <Controller
                 control={control}
-                name="signatureUpload"
+                name="signatureUpload2"
                 rules={{
-                    required: "Signature Upload is required",
-
-                }}
+                    validate: validateSignatureUpload, 
+                  }}
                 render={({ field }) => (
                     <label margin="normal"
                         style={{ width: "100%", display: "block" }}
@@ -307,23 +427,22 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
 
                         />
                         <TextField
-                            id="signatureUpload"
+                            id="signatureUpload2"
                             variant="filled"
                             type="text"
                             style={{ width: "100%", marginTop: "10px" }}
-
                             value={field.value ? field.value.name : ''}
                             InputProps={{
                                 readOnly: true,
                             }}
-                            error={Boolean(errors.signatureUpload)}
-                            helperText={errors.signatureUpload?.message}
+                            error={Boolean(errors.signatureUpload2)}
+                            helperText={errors.signatureUpload2?.message}
                         />
 
                         <Button type="button" onClick={() => handleUploadSignature({ ...field })}>Upload</Button>
                     </label>
                 )}
-            />
+            /> */}
 
             <Controller
                 control={control}

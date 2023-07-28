@@ -18,7 +18,7 @@ import {
 import Profession from "./Profession";
 import Verification from "./Verification";
 import BusinessDetail from "./BusinessDetail";
-
+import authService from './ApiUrl';
 
 function getSteps() {
     return [
@@ -87,6 +87,7 @@ const LinaerStepper = () => {
 
     const [signupload, setSignUpload] = useState("");
     const [checkvalue, setCheckValue] = useState("");
+    const [requirephoneotp , setRequirePhoneOtp] = useState(false)
 
     const methods = useForm({
         defaultValues: {
@@ -121,6 +122,8 @@ const LinaerStepper = () => {
             checkUpload: "",
             profession: "",
             categories: "",
+            signatureUpload2:"",
+            
         },
     });
 
@@ -136,7 +139,7 @@ const LinaerStepper = () => {
         console.log(data);
         if (activeStep === steps.length - 1) {
 
-            const response1 = await fetch('https://six-paths-start.loca.lt/common/service-provider-register/personal-details', {
+            const response1 = await fetch(`${authService.newCommonUrl}/common/service-provider-register/personal-details`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
@@ -165,7 +168,7 @@ const LinaerStepper = () => {
             const data1 = await post1[0].userId
             console.log(post1)
 
-            const response2 = await fetch('https://six-paths-start.loca.lt/common/service-provider-register/register/business-and-bank-details', {
+            const response2 = await fetch(`${authService.newCommonUrl}/common/service-provider-register/register/business-and-bank-details`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
@@ -191,26 +194,29 @@ const LinaerStepper = () => {
                             "ifscCode": data.ifscCode,
                             "bankDetailsAvailable": "true",
                             "cancelledCheckUrl": checkvalue
+
+                            
                         }
                     ]
                 ),
 
             })
+            // "signaturalUrl" 
             const post2 = await response2.json();
             console.log("data2", post2)
 
-            //   const response3 = await fetch(`https://curly-places-pump.loca.lt/common/service-provider-register/business-and-bank-details?userId=${data1}`, {
-            //         method: 'GET',
-            //         headers: [],
-            //     })
+              const response3 = await fetch(`${authService.newCommonUrl}/common/service-provider-register/business-and-bank-details?userId=${data1}`, {
+                    method: 'GET',
+                    headers: [],
+                })
 
-            //     const post3 = await response3.json();
-            //     const data3 = await post3
-            //      console.log("data3",data3)
+                const post3 = await response3.json();
+                const data3 = await post3
+                 console.log("data3",data3)
 
 
 
-            // fetch('https://spotty-candies-sell.loca.lt/common/address/saveAdress', {
+            // fetch(`${authService.newCommonUrl}/common/address/saveAdress`, {
             //     method: 'POST',
             //     headers: {
             //         "Content-Type": "application/json"
@@ -235,7 +241,7 @@ const LinaerStepper = () => {
             //     })
 
 
-            const response4 = await fetch('https://six-paths-start.loca.lt/common/service-provider-register/register/professional-details', {
+            const response4 = await fetch(`${authService.newCommonUrl}/common/service-provider-register/register/professional-details`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
@@ -244,8 +250,8 @@ const LinaerStepper = () => {
                     {
 
                         "userId": data1,
-                        "professionId": ["645a4849103a6368712285c5"],
-                        "categoryId": "1379971031",
+                        "professionId": [data.profession],
+                        "categoryId": data.categories,
                         "address": {
                             "addressLine1": data.addressLine1,
                             "addressLine2": data.addressLine2,
@@ -263,7 +269,15 @@ const LinaerStepper = () => {
             const data4 = await post4
             console.log("data4", data4);
 
-        } else {
+        }
+        // else if(activeStep === 0) {
+              
+        //     requirephoneotp && (setActiveStep(activeStep + 1))
+
+            
+        // } 
+        else {
+
             setActiveStep(activeStep + 1);
 
         }
@@ -276,12 +290,12 @@ const LinaerStepper = () => {
     function getStepContent(step) {
         switch (step) {
             case 0:
-                return <Verification />;
+                return <BusinessDetail setSignUpload={setSignUpload} setCheckValue={setCheckValue} />;
 
             case 1:
                 return <Profession methods={methods} />;
             case 2:
-                return <BusinessDetail setSignUpload={setSignUpload} setCheckValue={setCheckValue} />;
+                return <Verification  setRequirePhoneOtp={setRequirePhoneOtp}/> ;
             case 3:
                 return <PaymentForm />;
             default:

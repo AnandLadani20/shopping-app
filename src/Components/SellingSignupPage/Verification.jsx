@@ -12,24 +12,25 @@ import {
 } from "react-hook-form";
 import OtpInput from 'otp-input-react';
 import toast from 'react-hot-toast';
-import newCommonUrl from "./ApiUrl";
+import authService from './ApiUrl';
 
+        
 
-const Verification = () => {
+const Verification = ({setRequirePhoneOtp}) => {
     const [verifyotp, setVerifyOtp] = useState("");
     const [showverify, setShowVerify] = useState(false)
     const [showemailverify, setShowEmailVerify] = useState(false)
     const [verifyemailotpp, setVerifyEmailOtpp] = useState("");
     const { control, formState: { errors }, getValues, } = useFormContext();
 
-
+    // ={ newCommonUrl }
     const handleSendOTP = async (data) => {
 
         setShowVerify(true)
         const number = data.value;
-        const url = `${newCommonUrl}/common/general/sendOtp?contactNumber=${number}&countryCode=91`;
+        // const url = ;
         try {
-            const response = await fetch(url, {
+            const response = await fetch(`https://puny-wolves-reply.loca.lt/common/general/sendOtp?contactNumber=${number}&countryCode=91`, {
                 method: 'POST',
                 headers: [],
             });
@@ -53,7 +54,7 @@ const Verification = () => {
         const number2 = data.value
         console.log(number2);
         console.log(otp)
-        const url = `${newCommonUrl}/common/general/verifyOtp?countryCode=91&contactNumber=${number2}&otp=${otp}`;
+        const url = `${authService.newCommonUrl}/common/general/verifyOtp?countryCode=91&contactNumber=${number2}&otp=${otp}`;
         try {
             await fetch(url, {
                 method: 'POST',
@@ -64,9 +65,11 @@ const Verification = () => {
                     console.log(val)
                     if (val.code === 20404) {
                         console.log("Failed to verify OTP")
+                        setRequirePhoneOtp(false)
                     }
                     if (val.valid === true) {
                         console.log("otp is verified")
+                        setRequirePhoneOtp(true)
                     }
 
                 })
@@ -82,7 +85,7 @@ const Verification = () => {
 
         const makeEmail = email.replace("@", "%40")
 
-        const url = `${newCommonUrl}/common/general/sendOtpForVerifyEmail?email=${makeEmail}`;
+        const url = `${authService.newCommonUrl}/common/general/sendOtpForVerifyEmail?email=${makeEmail}`;
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -111,7 +114,7 @@ const Verification = () => {
         const num = otpp;
         console.log(num)
 
-        const url = `${newCommonUrl}/common/general/verifyEmailOtp?email=${newEmail}&otp=${num}`;
+        const url = `${authService.newCommonUrl}/common/general/verifyEmailOtp?email=${newEmail}&otp=${num}`;
         try {
             const emailresponse = await fetch(url, {
                 method: 'POST',
