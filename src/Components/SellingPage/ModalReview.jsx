@@ -12,7 +12,6 @@ const style = {
   transform: 'translate(-50%, -50%)',
   bgcolor: 'transperent',
   boxShadow: 24,
-
 };
 
 export default function BasicModal({reviewData}) {

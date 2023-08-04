@@ -460,6 +460,7 @@ const MainPage = () => {
                     </div>
                 </div>
             </section>
+           
         </>
     )
 }
