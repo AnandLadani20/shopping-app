@@ -3,10 +3,6 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import LinaerStepper from '../SellingSignupPage/LinearStepper';
 
-
-
-
-
 const ModalButton = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);

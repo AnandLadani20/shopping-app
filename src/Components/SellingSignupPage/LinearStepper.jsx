@@ -18,6 +18,8 @@ import {
 import Profession from "./Profession";
 import Verification from "./Verification";
 import BusinessDetail from "./BusinessDetail";
+import Verified from "./Verified";
+
 import authService from './ApiUrl';
 
 function getSteps() {
@@ -87,7 +89,7 @@ const LinaerStepper = () => {
 
     const [signupload, setSignUpload] = useState("");
     const [checkvalue, setCheckValue] = useState("");
-    const [requirephoneotp , setRequirePhoneOtp] = useState(false)
+    const [requirephoneotp, setRequirePhoneOtp] = useState(false)
 
     const methods = useForm({
         defaultValues: {
@@ -122,8 +124,8 @@ const LinaerStepper = () => {
             checkUpload: "",
             profession: "",
             categories: "",
-            signatureUpload2:"",
-            
+            signatureUpload2: "",
+
         },
     });
 
@@ -138,7 +140,7 @@ const LinaerStepper = () => {
 
         console.log(data);
         if (activeStep === steps.length - 1) {
-
+            setActiveStep(activeStep + 1);
             const response1 = await fetch(`${authService.newCommonUrl}/common/service-provider-register/personal-details`, {
                 method: 'POST',
                 headers: {
@@ -195,7 +197,7 @@ const LinaerStepper = () => {
                             "bankDetailsAvailable": "true",
                             "cancelledCheckUrl": checkvalue
 
-                            
+
                         }
                     ]
                 ),
@@ -205,14 +207,14 @@ const LinaerStepper = () => {
             const post2 = await response2.json();
             console.log("data2", post2)
 
-              const response3 = await fetch(`${authService.newCommonUrl}/common/service-provider-register/business-and-bank-details?userId=${data1}`, {
-                    method: 'GET',
-                    headers: [],
-                })
+            const response3 = await fetch(`${authService.newCommonUrl}/common/service-provider-register/business-and-bank-details?userId=${data1}`, {
+                method: 'GET',
+                headers: [],
+            })
 
-                const post3 = await response3.json();
-                const data3 = await post3
-                 console.log("data3",data3)
+            const post3 = await response3.json();
+            const data3 = await post3
+            console.log("data3", data3)
 
 
 
@@ -269,12 +271,13 @@ const LinaerStepper = () => {
             const data4 = await post4
             console.log("data4", data4);
 
+            setActiveStep(activeStep + 1);
         }
         // else if(activeStep === 0) {
-              
+
         //     requirephoneotp && (setActiveStep(activeStep + 1))
 
-            
+
         // } 
         else {
 
@@ -290,14 +293,14 @@ const LinaerStepper = () => {
     function getStepContent(step) {
         switch (step) {
             case 0:
-                return <BusinessDetail setSignUpload={setSignUpload} setCheckValue={setCheckValue} />;
+                return <Verification setRequirePhoneOtp={setRequirePhoneOtp} />;
 
             case 1:
                 return <Profession methods={methods} />;
             case 2:
-                return <Verification  setRequirePhoneOtp={setRequirePhoneOtp}/> ;
+                return <BusinessDetail setSignUpload={setSignUpload} setCheckValue={setCheckValue} />;
             case 3:
-                return <PaymentForm />;
+                return <Verified />;
             default:
                 return "unknown step";
         }
