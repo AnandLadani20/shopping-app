@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef,useEffect } from 'react';
 import heroImage from '../../Assests/hero-gif/hero-removebg-preview.png'
 import womenIcon from '../../Assests/icon/woman.png'
 import womenSupportIcon from '../../Assests/icon/woman-support.png'
@@ -99,9 +99,12 @@ const testimonialDatas = [
 const MainPage = () => {
     const [reviewData, setRevieData] = useState(testimonialDatas)
 
+ useEffect(() => {
+    setRevieData(reviewData)
+ }, [reviewData])
+ 
 
-
-
+   
     const [listitem, setListItem] = useState({
         productVideo: productVideo,
         dhiyodhaLogo: dhiyodhaLogo,
