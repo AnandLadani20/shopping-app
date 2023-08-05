@@ -302,7 +302,7 @@ const MainPage = () => {
 
             <section className='dhiyodha-family-page-area'>
                 <div className='container'>
-                    <div className='row border-family-page p-5'>
+                    <div className='row border-family-page p-lg-5'>
                         <div className='col-12'>
                             <div className='dhiyodha-family-title'>
                                 <h1>DhiYodha Family</h1>
@@ -346,7 +346,6 @@ const MainPage = () => {
                         <div className='col-12 col-md-12 col-lg-6 pt-5'>
                             <div className='dhiyodha-product-video p-0'>
                                 <VideoPlayer productVideo={productVideo} dhiyodhaLogo={listitem.dhiyodhaLogo} title={listitem.title} />
-
                             </div>
                         </div>
                         <div className='col-12 col-md-12 col-lg-6'>
@@ -359,7 +358,6 @@ const MainPage = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section >
             <section className='how-does-dhiyodha-work-area'>
@@ -372,42 +370,45 @@ const MainPage = () => {
                     </div>
                     <div className='row'>
                         <div className='col-12 col-md-12'>
-                            <div className='work-area-main-box'>
-                                <div className='charted-box2-area'>
-                                    <div className='first-chartedlayout2-box2'>DhiShop</div>
-                                    <div className='middle-chartedlayout2-box2'>DhiChef</div>
-                                    <div className='third-chartedlayout2-box2'>DhiCare</div>
-                                    <div className='fourth-chartedlayout2-box2'>DhiArtist</div>
-                                </div>
-                                <div className='charted-box1-area'>
-                                    <div className='flow-start-area'><img src={womenIcon} height={80} alt='' /><h5>Women</h5></div>
-                                    <div className='first-chartedlayout-box'>Register<br /> Business<div className='register-icon-imgbg'><img src={RegisterIcon} alt='' height={60} /></div></div>
-                                    <div className='flow-chart-gradient-orange'><div className='middle-chartedlayout-box '>
-                                        <h6>  Register Business <br />On<br /> Dhiyodha</h6>
-                                        <div className='charted-flow-video-box'>
-                                            <AiFillPlayCircle className='charted-flow-video' />
+                            <div className='flow-chart-box'>
+                                <div className='work-area-main-box'>
+                                    <div className='charted-mainbox2-area'>
+                                    <div className='charted-box2-area'>
+                                        <div className='first-chartedlayout2-box2'>DhiShop</div>
+                                        <div className='middle-chartedlayout2-box2'>DhiChef</div>
+                                        <div className='third-chartedlayout2-box2'>DhiCare</div>
+                                        <div className='fourth-chartedlayout2-box2'>DhiArtist</div>
+                                    </div>
+                                    </div>
+                                    <div className='charted-box1-area'>
+                                        <div className='flow-start-area'><img src={womenIcon} alt='' /><h5>Women</h5></div>
+                                        <div className='first-chartedlayout-box'>Register<br /> Business<div className='register-icon-imgbg'><img src={RegisterIcon} alt=''  /></div></div>
+                                        <div className='flow-chart-gradient-orange'><div className='middle-chartedlayout-box '>
+                                            <h6>  Register Business <br />On<br /> Dhiyodha</h6>
+                                            <div className='charted-flow-video-box'>
+                                                <AiFillPlayCircle className='charted-flow-video' />
+                                            </div>
                                         </div>
-                                    </div>
-                                    </div>
-                                    <div className='third-chartedlayout-box'>Inspector Will<br /> Audit Business<div className='audit-icon-imgbg'><img src={AuditIcon} alt='' height={60} /></div></div>
-                                    <div className='flow-end-area'><img src={womenSupportIcon} height={80} alt='' /><h5>Support<br /> Team</h5></div>
+                                        </div>
+                                        <div className='third-chartedlayout-box'>Inspector Will<br /> Audit Business<div className='audit-icon-imgbg'><img src={AuditIcon} alt='' /></div></div>
+                                        <div className='flow-end-area'><img src={womenSupportIcon} alt='' /><h5>Support<br /> Team</h5></div>
 
-                                </div>
-                                <div className='charted-box3-area'>
-                                    <div className='first-chartedlayout3-box3'>DhiSkill</div>
-                                    <div className='middle-chartedlayout3-box3'>DhiGo</div>
-                                    <div className='third-chartedlayout3-box3'>DhiFace</div>
-                                    <div className='fourth-chartedlayout3-box3'>DhiBank</div>
-                                </div>
-                                <div className='user-business-flow'>
-                                    <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout-box1 flow-box-style'> Invest Money<br /> In DhiBank <div className='dhiyodhaBank-icon-imgbg'><img src={BankIcon} height={40} alt='' /></div></div></div>
-                                    <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout4-box2 flow-box-style'>Earn <br />Money <div className='earnMoney-icon-imgbg'><img src={EarnMoneyIcon} height={40} alt='' /></div></div></div>
-                                    <div className='fourth-chartedlayout4-box3 '>Welcome<br /> To<br /> Dhiyodha Family <div className='dhiyodhafamily-icon-imgbg'><img src={FamilyIcon} height={60} alt='' /></div></div>
-                                    <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout4-box4 flow-box-style'> ProductListing<br /> & Services <div className='productService-icon-imgbg'><img src={ProductServiceIcon} height={40} alt='' /></div></div></div>
-                                    <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout4-box5 flow-box-style'> Dhiyodha<br /> Business Card <div className='businessCard-icon-imgbg'><img src={BusinessCardIcon} height={40} alt='' /></div></div></div>
+                                    </div>
+                                    <div className='charted-box3-area'>
+                                        <div className='first-chartedlayout3-box3'>DhiSkill</div>
+                                        <div className='middle-chartedlayout3-box3'>DhiGo</div>
+                                        <div className='third-chartedlayout3-box3'>DhiFace</div>
+                                        <div className='fourth-chartedlayout3-box3'>DhiBank</div>
+                                    </div>
+                                    <div className='user-business-flow'>
+                                        <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout-box1 flow-box-style'> Invest Money<br /> In DhiBank <div className='dhiyodhaBank-icon-imgbg'><img src={BankIcon} height={40} alt='' /></div></div></div>
+                                        <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout4-box2 flow-box-style'>Earn <br />Money <div className='earnMoney-icon-imgbg'><img src={EarnMoneyIcon} height={40} alt='' /></div></div></div>
+                                        <div className='fourth-chartedlayout4-box3 '>Welcome<br /> To<br /> Dhiyodha Family <div className='dhiyodhafamily-icon-imgbg'><img src={FamilyIcon}  alt='' /></div></div>
+                                        <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout4-box4 flow-box-style'> ProductListing<br /> & Services <div className='productService-icon-imgbg'><img src={ProductServiceIcon} height={40} alt='' /></div></div></div>
+                                        <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout4-box5 flow-box-style'> Dhiyodha<br /> Business Card <div className='businessCard-icon-imgbg'><img src={BusinessCardIcon} height={40} alt='' /></div></div></div>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -422,16 +423,13 @@ const MainPage = () => {
                     <div className='row'>
                         <div className='col-12'>
                             <div className='reviews-carousel-slider'>
-
                                 <div className='pagination-slide'>
-                                    <span><LiaLessThanSolid onClick={handlePreviousSlide}/></span>
+                                    <span><LiaLessThanSolid onClick={handlePreviousSlide} /></span>
                                     <span className='swiper-paginations'></span>
                                     <span onClick={handleNextSlide} ><LiaGreaterThanSolid /></span>
                                 </div>
-
-
                                 <Swiper
-                                    slidesPerView={3}
+                                    slidesPerView={1}
                                     spaceBetween={30}
                                     pagination={{
                                         clickable: true,
@@ -442,9 +440,27 @@ const MainPage = () => {
                                     modules={[Pagination]}
                                     className="mySwiper"
                                     ref={slideRef}
-
+                                    breakpoints={{
+                                        0: {
+                                            slidesPerView: 1,
+                                        },
+                                        390: {
+                                            slidesPerView: 1.5,
+                                        },
+                                        502: {
+                                            slidesPerView: 2,
+                                        },
+                                        802: {
+                                            slidesPerView: 2.5,
+                                        },
+                                        992: {
+                                            slidesPerView: 3,
+                                        },
+                                        1200: {
+                                            slidesPerView: 3
+                                        }
+                                    }}
                                 >
-
                                     {
                                         reviewData.map((reviewData) => {
                                             return <SwiperSlide key={reviewData.id}><img src={reviewData.imgsrc} height={300} style={{ width: "100%" }} alt='' /> <div className='testimonial-reviews-inform'><ModalReview reviewData={reviewData.videosrc} />
@@ -452,15 +468,13 @@ const MainPage = () => {
                                             </SwiperSlide>
                                         })
                                     }
-
-
                                 </Swiper>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-           
+
         </>
     )
 }

@@ -936,12 +936,24 @@ video {
     color: #fff;
     margin-top: 15px;
 }
+.flow-chart-box{
+    display: block;
+    position: relative;
+    max-width: 1285px;
+    height: 100%;
+    overflow: hidden;
+    border: 2px solid white;
+}
 .work-area-main-box {
     padding: 80px 0px;
-    /* border: 1px solid white; */
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+.charted-mainbox2-area{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .charted-box2-area{
     display: flex;
@@ -968,6 +980,9 @@ video {
     color: #fff;
     text-align: center;
 }
+.flow-start-area img,.flow-end-area img {
+    height: 80px;
+}
 .flow-start-area i {
     background: -webkit-linear-gradient( #099cd3,#38bf9b,#099cd3);
     -webkit-background-clip: text;
@@ -981,6 +996,7 @@ video {
     padding: 28px 10px;
     height: 100%;
 }
+
 .flow-end-area i {
     background: -webkit-linear-gradient( #099cd3,#38bf9b,#099cd3);
     -webkit-background-clip: text;
@@ -1209,6 +1225,7 @@ video {
 .first-chartedlayout-box,.third-chartedlayout-box{
     color: #fff;
     text-align: center;
+    /* min-width: 150px; */
     width: 150px;
     padding: 30px 20px;
     background: linear-gradient(to right bottom, #0c62e1, #0998d4, #33bba1) !important;
@@ -1222,6 +1239,9 @@ video {
     padding: 10px 5px;
     margin-top: 10px;
     border-radius: 8px;
+}
+.register-icon-imgbg img,.audit-icon-imgbg img, .dhiyodhafamily-icon-imgbg img {
+    height: 60px;
 }
 .businessCard-icon-imgbg,
 .productService-icon-imgbg,
@@ -1343,4 +1363,283 @@ video {
 }
 .swiper-pagination-current{
     font-size: 26px !important;
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+           
+  }
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .dhiyodha-family-details{
+        margin-top: 0px;
+    }
+    .product-video-content {
+        padding: 20px 0px 20px 0px;
+    }
+    .charted-box1-area {
+        gap: 18px;
+    }
+    .middle-chartedlayout-box{
+        padding: 40px 20px;
+        gap: 0px;
+    }
+    .user-business-flow{
+        gap: 20px;
+    }
+    .flow-box-style{
+        width: 100px;
+        padding: 30px 0px;
+        font-size: 14px;
+    }
+    .fourth-chartedlayout4-box3{
+        padding: 30px 14px;
+        font-size: 14px;
+    }
+    .first-chartedlayout-box, .third-chartedlayout-box{
+        width: 100px;
+        font-size: 14px;
+        padding: 10px 5px;
+    }
+    .flow-start-area h5 ,.flow-end-area h5{
+        font-size: 16px;
+    }
+    .flow-start-area img,.flow-end-area img {
+        height: 60px;
+    }
+    .flow-end-area{
+        padding: 28px 0px;
+    }
+    .first-chartedlayout2-box2, .middle-chartedlayout2-box2, .third-chartedlayout2-box2, .fourth-chartedlayout2-box2{
+        font-size: 12px;
+    }
+    .charted-box2-area{
+        margin-right: 0px
+    }
+    .charted-box3-area{
+        margin-right: 0px;
+    }
+    .first-chartedlayout3-box3, .middle-chartedlayout3-box3, .third-chartedlayout3-box3, .fourth-chartedlayout3-box3{
+        font-size: 12px;
+    }
+  }
+
+  @media only screen and (min-width:576px) and (max-width:768px) {
+    .dhiyodha-family-details{
+        margin-top: 0px;
+        padding: 40px 20px;
+    }
+    .dhiyodha-video-details {
+        padding: 40px 20px;
+    }
+    .product-video-content {
+        padding: 20px 0px 20px 0px;
+    }
+    .start-your-product-area{
+        padding-bottom: 0px;
+    }
+    .charted-box1-area {
+        gap: 18px;
+    }
+    .middle-chartedlayout-box{
+        padding: 40px 20px;
+        gap: 0px;
+    }
+    .user-business-flow{
+        gap: 15px;
+    }
+    .flow-box-style{
+        width: 70px;
+        padding: 10px 0px;
+        font-size: 11px;
+    }
+    .businessCard-icon-imgbg, .productService-icon-imgbg, .earnMoney-icon-imgbg, .dhiyodhaBank-icon-imgbg{
+        padding: 0px 0px;
+    }
+    .fourth-chartedlayout4-box3{
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+    .first-chartedlayout-box, .third-chartedlayout-box{
+        width: 100px;
+        font-size: 11px;
+        padding: 10px 5px;
+    }
+    .middle-chartedlayout-box h6{
+        font-size: 14px;
+    }
+    .flow-start-area h5 ,.flow-end-area h5{
+        font-size: 14px;
+    }
+    .flow-start-area img,.flow-end-area img {
+        height: 40px;
+    }
+    .flow-end-area{
+        padding: 28px 0px;
+    }
+    .first-chartedlayout2-box2, .middle-chartedlayout2-box2, .third-chartedlayout2-box2, .fourth-chartedlayout2-box2{
+        font-size: 9px;
+    }
+    .first-chartedlayout2-box2, .middle-chartedlayout2-box2, .third-chartedlayout2-box2, .fourth-chartedlayout2-box2, .first-chartedlayout3-box3, .middle-chartedlayout3-box3, .third-chartedlayout3-box3, .fourth-chartedlayout3-box3{
+        padding: 3px 7px;
+    }
+    .charted-box2-area{
+        margin-right: 0px;
+        gap: 5px;
+    }
+    .charted-box3-area{
+        margin-right: 0px;
+        gap: 5px;
+    }
+    .first-chartedlayout3-box3, .middle-chartedlayout3-box3, .third-chartedlayout3-box3, .fourth-chartedlayout3-box3{
+        font-size: 9px;
+    }
+}
+  @media only screen and (min-width:480px) and (max-width:576px) {
+    .dhiyodha-family-details{
+        margin-top: 0px;
+        padding: 20px 0px;
+    }
+    .dhiyodha-video-details {
+        padding: 40px 10px;
+    }
+    .product-video-content {
+        padding: 20px 0px 20px 0px;
+    }
+    .start-your-product-area{
+        padding-bottom: 0px;
+    }
+    .charted-box1-area {
+        gap: 18px;
+    }
+    .middle-chartedlayout-box{
+        padding: 20px 10px;
+        gap: 0px;
+    }
+    .user-business-flow{
+        gap: 15px;
+    }
+    .flow-box-style{
+        width: 72px;
+        padding: 15px 0px;
+        font-size: 10px;
+    }
+    .fourth-chartedlayout4-box3{
+        padding: 10px 10px;
+        font-size: 12px;
+    }
+    .first-chartedlayout-box, .third-chartedlayout-box{
+        width: 100px;
+        font-size: 12px;
+        padding: 10px 3px;
+    }
+    .flow-start-area h5 ,.flow-end-area h5{
+        font-size: 12px;
+    }
+    .flow-start-area img,.flow-end-area img {
+        height: 40px;
+    }
+    .flow-end-area{
+        padding: 28px 0px;
+    }
+    .first-chartedlayout2-box2, .middle-chartedlayout2-box2, .third-chartedlayout2-box2, .fourth-chartedlayout2-box2{
+        font-size: 9px;
+    }
+    .first-chartedlayout2-box2, .middle-chartedlayout2-box2, .third-chartedlayout2-box2, .fourth-chartedlayout2-box2, .first-chartedlayout3-box3, .middle-chartedlayout3-box3, .third-chartedlayout3-box3, .fourth-chartedlayout3-box3{
+        padding: 3px 4px;
+    }
+    .charted-box2-area{
+        margin-right: 0px;
+        gap: 3px;
+    }
+    .charted-box3-area{
+        margin-right: 0px;
+        gap: 3px;
+    }
+    .first-chartedlayout3-box3, .middle-chartedlayout3-box3, .third-chartedlayout3-box3, .fourth-chartedlayout3-box3{
+        font-size: 9px;
+    }
+    .middle-chartedlayout-box h6{
+        font-size: 12px;
+    }
+    .register-icon-imgbg img,.audit-icon-imgbg img, .dhiyodhafamily-icon-imgbg img {
+        height: 40px;
+    }
+}
+  @media only screen and (min-width:320px) and (max-width:480px) {
+    .dhiyodha-family-details{
+        margin-top: 0px;
+        padding: 20px 0px;
+    }
+    .dhiyodha-video-details {
+        padding: 40px 10px;
+    }
+    .product-video-content {
+        padding: 20px 0px 20px 0px;
+    }
+    .start-your-product-area{
+        padding-bottom: 0px;
+    }
+    .charted-box1-area {
+        gap: 11px;
+    }
+    .middle-chartedlayout-box{
+        padding: 20px 10px;
+        gap: 0px;
+    }
+    .user-business-flow{
+        gap: 15px;
+    }
+    .flow-box-style{
+        width: 49px;
+        padding: 12px 0px;
+        font-size: 8px;
+    }
+    .fourth-chartedlayout4-box3{
+        padding: 10px 8px;
+        font-size: 10px;
+    }
+    .first-chartedlayout-box, .third-chartedlayout-box{
+        width: 100px;
+        font-size: 10px;
+        padding: 10px 3px;
+    }
+    .flow-start-area h5 ,.flow-end-area h5{
+        font-size: 9px;
+    }
+    .flow-start-area img,.flow-end-area img {
+        height: 40px;
+    }
+    .flow-end-area{
+        padding: 28px 0px;
+    }
+    .first-chartedlayout2-box2, .middle-chartedlayout2-box2, .third-chartedlayout2-box2, .fourth-chartedlayout2-box2{
+        font-size: 9px;
+    }
+    .first-chartedlayout2-box2, .middle-chartedlayout2-box2, .third-chartedlayout2-box2, .fourth-chartedlayout2-box2, .first-chartedlayout3-box3, .middle-chartedlayout3-box3, .third-chartedlayout3-box3, .fourth-chartedlayout3-box3{
+        padding: 3px 4px;
+    }
+    .charted-box2-area{
+        margin-right: 0px;
+        gap: 3px;
+    }
+    .charted-box3-area{
+        margin-right: 0px;
+        gap: 3px;
+    }
+    .first-chartedlayout3-box3, .middle-chartedlayout3-box3, .third-chartedlayout3-box3, .fourth-chartedlayout3-box3{
+        font-size: 9px;
+    }
+    .middle-chartedlayout-box h6{
+        font-size: 10px;
+    }
+    .register-icon-imgbg img,.audit-icon-imgbg img, .dhiyodhafamily-icon-imgbg img {
+        height: 30px;
+    }
+    .charted-flow-video-box .charted-flow-video{
+        font-size: 25px;
+    }
+    .charted-flow-video-box{
+        width: 50px;
+    height: 40px;
+    }
 }

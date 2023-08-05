@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import MainPage from './MainPage'
-import Footer from './Footer'
+// import Footer from './Footer'
 import BgEllipse from '../../Assests/hero-gif/Bg-ellipse.png'
 import BgEllipse2 from '../../Assests/hero-gif/Bg-ellipse2.png'
 // import logo from '../../Assests/logo/Dhiyodha (1)n.png';
@@ -34,7 +34,7 @@ const SellingPage = () => {
                 </div>
                 <Header />
                 <MainPage />
-                <Footer />
+                {/* <Footer /> */}
             </section>
           
 
