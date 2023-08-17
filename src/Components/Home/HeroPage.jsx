@@ -14,7 +14,7 @@ const HeroPage = () => {
                                 <img src={hero} alt='logo' />
                             </div>
                         </div>
-                        <div className='col-6 mt-3'>
+                        <div className='col-12 col-md-8 col-lg-6 mt-3'>
                             <div className='hero-searchbar'>
                                 <div className="input-group ">
                                     <input type="search" className="form-control" placeholder="  Search Here" aria-label="Recipient's username" aria-describedby="button-addon2" />

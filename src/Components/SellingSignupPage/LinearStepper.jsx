@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from 'react'
 import {
     Typography,
-    TextField,
     Button,
     Stepper,
     Step,
@@ -11,9 +10,7 @@ import {
 
 import {
     useForm,
-    Controller,
     FormProvider,
-    useFormContext,
 } from "react-hook-form";
 import Profession from "./Profession";
 import Verification from "./Verification";
@@ -31,58 +28,7 @@ function getSteps() {
     ];
 }
 
-const PaymentForm = () => {
-    const { control } = useFormContext();
-    return (
-        <>
-            <Controller
-                control={control}
-                name="cardNumber"
-                render={({ field }) => (
-                    <TextField
-                        id="cardNumber"
-                        label="Card Number"
-                        variant="outlined"
-                        placeholder="Enter Your Card Number"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                    />
-                )}
-            />
-            <Controller
-                control={control}
-                name="cardMonth"
-                render={({ field }) => (
-                    <TextField
-                        id="cardMonth"
-                        label="Card Month"
-                        variant="outlined"
-                        placeholder="Enter Your Card Month"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                    />
-                )}
-            />
-            <Controller
-                control={control}
-                name="cardYear"
-                render={({ field }) => (
-                    <TextField
-                        id="cardYear"
-                        label="Card Year"
-                        variant="outlined"
-                        placeholder="Enter Your Card Year"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                    />
-                )}
-            />
-        </>
-    );
-};
+
 
 
 const LinaerStepper = () => {
@@ -95,7 +41,8 @@ const LinaerStepper = () => {
         defaultValues: {
             firstName: "",
             lastName: "",
-            userName: "",
+            // userName: "",
+            countrycode:"",
             phoneNumber: "",
             emailAddress: "",
             cardNumber: "",
@@ -104,6 +51,7 @@ const LinaerStepper = () => {
             pincode: "",
             password: "",
             confirmPassword: "",
+            termsandcondition:"",
             // faceverification: "",
             addressLine1: "",
             addressLine2: "",
@@ -112,13 +60,16 @@ const LinaerStepper = () => {
             businessName: "",
             panNumber: "",
             businessType: "",
-            businessAddress: "",
+            pickupAddress: "",
+            addressProof:"",
             signatureUpload: "",
             accountHolderName: "",
             accountHolderNumber: "",
+            confirmbankAccountNo:"",
             ifscCode: "",
-            bankName: "",
-            branchName: "",
+            bankAccountType:"",
+            // bankName: "",
+            // branchName: "",
             cityName: "",
             stateName: "",
             checkUpload: "",
@@ -327,7 +278,7 @@ const LinaerStepper = () => {
             </Stepper>
 
             {activeStep === steps.length ? (
-                <Typography variant="h3" align="center">
+                <Typography variant="h3" align="center" className="mt-5">
                     Thank You
                 </Typography>
             ) : (
@@ -335,7 +286,7 @@ const LinaerStepper = () => {
                     <FormProvider {...methods}>
                         <form onSubmit={methods.handleSubmit(handleNext)} style={{ position: "relative" }}>
                             {getStepContent(activeStep)}
-
+                           <div className="mt-3">
                             <Button
                                 style={{ marginTop: "10px" }}
                                 disabled={activeStep === 0}
@@ -353,6 +304,7 @@ const LinaerStepper = () => {
                             >
                                 {activeStep === steps.length - 1 ? "Finish" : "Next"}
                             </Button>
+                            </div>
                         </form>
                     </FormProvider>
                 </>

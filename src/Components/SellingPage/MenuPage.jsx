@@ -6,7 +6,7 @@ const MenuPage = () => {
     return (
         <>
 
-            <div className='col-2'>
+            <div className='col-12 col-lg-2'>
                 <div className='selling-header-menu-area'>
                     <ul>
                         <li className='home-list-item-area select-list-item'><i className="fa-light fa-greater-than"></i><Link to='#'>Home</Link>
@@ -40,7 +40,7 @@ const MenuPage = () => {
                                 </div>
                             </div>
                         </li>
-                        <li className='about-list-item-area select-list-item'><i className="fa-light fa-greater-than"></i><Link to='#'>About</Link>
+                        {/* <li className='about-list-item-area select-list-item'><i className="fa-light fa-greater-than"></i><Link to='#'>About</Link>
                         <div className='menu-hover-about-page'>
                                 <div className='row'>
                                     <div className='col-12'>
@@ -70,8 +70,8 @@ const MenuPage = () => {
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li className='service-list-item-area select-list-item'><i className="fa-light fa-greater-than"></i><Link to='#'>Service</Link>
+                        </li> */}
+                        <li className='service-list-item-area select-list-item'><i className="fa-light fa-greater-than"></i><Link to='#'>Services</Link>
                         <div className='menu-hover-service-page'>
                                 <div className='row'>
                                     <div className='col-12'>
@@ -83,7 +83,7 @@ const MenuPage = () => {
                                             </div>
                                             <div className='col-8'>
                                                 <div className='home-content-detail'>
-                                                    <h1>Service</h1>
+                                                    <h1>Services</h1>
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nemo culpa beatae blanditiis minima. </p>
                                                 </div>
                                             </div>
@@ -102,7 +102,7 @@ const MenuPage = () => {
                                 </div>
                             </div>
                         </li>
-                        <li className='product-list-item-area select-list-item'><i className="fa-light fa-greater-than"></i><Link to='#'>Product</Link>
+                        <li className='product-list-item-area select-list-item'><i className="fa-light fa-greater-than"></i><Link to='#'>Finance</Link>
                         <div className='menu-hover-product-page'>
                                 <div className='row'>
                                     <div className='col-12'>
@@ -114,7 +114,7 @@ const MenuPage = () => {
                                             </div>
                                             <div className='col-8'>
                                                 <div className='home-content-detail'>
-                                                    <h1>Product</h1>
+                                                    <h1>Finance</h1>
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nemo culpa beatae blanditiis minima. </p>
                                                 </div>
                                             </div>
@@ -133,7 +133,7 @@ const MenuPage = () => {
                                 </div>
                             </div>
                         </li>
-                        <li className='customer-list-item-area select-list-item'><i className="fa-light fa-greater-than"></i><Link to='#'>Customer</Link>
+                        <li className='customer-list-item-area select-list-item'><i className="fa-light fa-greater-than"></i><Link to='#'>Support</Link>
                         <div className='menu-hover-customer-page'>
                                 <div className='row'>
                                     <div className='col-12'>
@@ -145,7 +145,7 @@ const MenuPage = () => {
                                             </div>
                                             <div className='col-8'>
                                                 <div className='home-content-detail'>
-                                                    <h1>Customer</h1>
+                                                    <h1>Support</h1>
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nemo culpa beatae blanditiis minima. </p>
                                                 </div>
                                             </div>

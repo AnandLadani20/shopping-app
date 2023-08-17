@@ -179,7 +179,7 @@ const Profession = ({ methods }) => {
                         label="Address Line 1"
                         variant="outlined"
                         placeholder="Enter Your Address"
-                        style={{ width: "100%" }}
+                        style={{ width: "91%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.addressLine1)}
@@ -204,7 +204,7 @@ const Profession = ({ methods }) => {
                         label="Address Line 2"
                         variant="outlined"
                         placeholder="Enter Your Address"
-                        style={{ width: "100%" }}
+                        style={{ width: "91%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.addressLine2)}
@@ -229,7 +229,7 @@ const Profession = ({ methods }) => {
                         label="City"
                         variant="outlined"
                         placeholder="Enter Your City Name"
-                        style={{ width: "100%" }}
+                        style={{ width: "45%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.cityName)}
@@ -254,7 +254,7 @@ const Profession = ({ methods }) => {
                         label="State"
                         variant="outlined"
                         placeholder="Enter Your State Name"
-                        style={{ width: "100%" }}
+                        style={{ width: "45%",marginLeft:"10px" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.stateName)}
@@ -279,7 +279,7 @@ const Profession = ({ methods }) => {
                         label="Country"
                         variant="outlined"
                         placeholder="Enter Your Country Name"
-                        style={{ width: "100%" }}
+                        style={{ width: "45%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.countryName)}
@@ -304,7 +304,7 @@ const Profession = ({ methods }) => {
                         label="Pin Code "
                         variant="outlined"
                         placeholder="Enter Your City Pincode"
-                        style={{ width: "100%" }}
+                        style={{ width: "45%",marginLeft:"10px" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.pincode)}

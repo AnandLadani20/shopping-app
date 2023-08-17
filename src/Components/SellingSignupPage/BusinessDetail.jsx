@@ -6,15 +6,20 @@ import {
     Button,
 
 } from "@mui/material";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 import {
     Controller,
     useFormContext,
 } from "react-hook-form";
 import authService from './ApiUrl';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
 
 
 const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
-    const { control, formState: { errors } } = useFormContext();
+    const { control, formState: { errors }, getValues } = useFormContext();
     const [drawsign, setDrawsign] = useState(null)
 
     const canvasRef = useRef(null);
@@ -164,6 +169,16 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
         }
 
     }
+    const LightTooltip = styled(({ className, ...props }) => (
+        <Tooltip {...props} classes={{ popper: className }} />
+    ))(({ theme }) => ({
+        [`& .${tooltipClasses.tooltip}`]: {
+            backgroundColor: theme.palette.common.white,
+            color: 'rgba(0, 0, 0, 0.87)',
+            boxShadow: theme.shadows[1],
+            fontSize: 11,
+        },
+    }));
     return (
         <>
             <Controller
@@ -182,36 +197,11 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                         label="GST Number"
                         variant="outlined"
                         placeholder="Enter Your GST Number"
-                        style={{ width: "100%" }}
+                        style={{ width: "45%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.gstNumber)}
                         helperText={errors.gstNumber?.message}
-                    />
-                )}
-            />
-
-            <Controller
-                control={control}
-                name="businessName"
-                rules={{
-                    required: "Business Name is required",
-                    minLength: {
-                        value: 4,
-                        message: "Business Name is min. 4 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="businessName"
-                        label="Business Name"
-                        variant="outlined"
-                        placeholder="Enter Your Business Name"
-                        style={{ width: "100%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.businessName)}
-                        helperText={errors.businessName?.message}
                     />
                 )}
             />
@@ -232,7 +222,7 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                         label="PAN Number"
                         variant="outlined"
                         placeholder="Enter Your PAN Number"
-                        style={{ width: "100%" }}
+                        style={{ width: "45%", marginLeft: "10px" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.panNumber)}
@@ -240,6 +230,33 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                     />
                 )}
             />
+
+            <Controller
+                control={control}
+                name="businessName"
+                rules={{
+                    required: "Business Name is required",
+                    minLength: {
+                        value: 4,
+                        message: "Business Name is min. 4 characters"
+                    }
+                }}
+                render={({ field }) => (
+                    <TextField
+                        id="businessName"
+                        label="Business Name"
+                        variant="outlined"
+                        placeholder="Enter Your Business Name"
+                        style={{ width: "45%" }}
+                        margin="normal"
+                        {...field}
+                        error={Boolean(errors.businessName)}
+                        helperText={errors.businessName?.message}
+                    />
+                )}
+            />
+
+
 
             <Controller
                 control={control}
@@ -257,7 +274,7 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                         label="Business Type"
                         variant="outlined"
                         placeholder="Enter Your Business Type"
-                        style={{ width: "100%" }}
+                        style={{ width: "45%", marginLeft: "10px" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.businessType)}
@@ -268,28 +285,78 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
 
             <Controller
                 control={control}
-                name="businessAddress"
+                name="pickupAddress"
                 rules={{
-                    required: "Business Address is required",
+                    required: "PickUp Address is required",
                     minLength: {
                         value: 4,
-                        message: "Business Address is min. 4 characters"
+                        message: "PickUp Address is min. 4 characters"
                     }
                 }}
                 render={({ field }) => (
                     <TextField
-                        id="businessAddress"
-                        label="Business Address"
+                        id="pickupAddress"
+                        label="PickUp Address"
                         variant="outlined"
-                        placeholder="Enter Your Business Address"
-                        style={{ width: "100%" }}
+                        placeholder="Enter Your PickUp Address"
+                        style={{ width: "45%" }}
                         margin="normal"
                         {...field}
-                        error={Boolean(errors.businessAddress)}
-                        helperText={errors.businessAddress?.message}
+                        error={Boolean(errors.pickupAddress)}
+                        helperText={errors.pickupAddress?.message}
                     />
                 )}
             />
+            <LightTooltip title="Require one of them : AdharCard,PassPort,Driving Licence,Light Bill,Bank PassBook" arrow>
+                <div className='d-inline-block ms-2 mt-4'><p className='d-inline-block' style={{ cursor: "pointer" }}>Upload Address Proof</p></div>
+            </LightTooltip>
+
+            <Controller
+                control={control}
+                name="addressProof"
+                rules={{
+                    required: "Address Proof  is required",
+
+                }}
+                render={({ field }) => (
+                    <>
+                        <div className='d-inline ms-3'>
+                            <Button
+                                type="button"
+                                size="small"
+                                variant="contained"
+                                onClick={() => document.getElementById("file-input").click()}
+                            >
+                                Upload
+                            </Button>
+                            <input
+                                id="file-input"
+                                type="file"
+                                style={{ display: "none" }}
+                                onChange={(e) => field.onChange(e.target.files[0])}
+                            />
+                            <TextField
+                                id="addressProof"
+                                variant="filled"
+                                type="text"
+                                style={{ display: "none" }}
+                                value={field.value ? field.value.name : ''}
+                                InputProps={{
+                                    readOnly: true,
+                                }}
+
+
+                            />
+                            {Boolean(errors.addressProof) && (
+                                <div className="error-message">
+                                    {errors.addressProof.message}
+                                </div>
+                            )}
+                        </div>
+                    </>
+                )}
+            />
+
 
             {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
             <Controller
@@ -302,46 +369,54 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                 render={({ field }) => (
                     <>
                         <label margin="normal" style={{ width: "100%", display: "block" }}>
-              Signature Here
-            </label>
-            <canvas
-              ref={canvasRef}
-              max-width={600}
-              height={200}
-              style={{ border: '1px solid #ccc' }}
-            />
-            <Button variant="contained" type='button' style={{ marginLeft: "15px" }} margin="normal" onClick={clearSignature}>
-              Clear
-            </Button>
-            <Button type="button" style={{ display: "block", marginTop: "10px" }} variant="contained" onClick={handleSaveSignature}>Save</Button>
-            <Button type="button" style={{ display: "block" }} onClick={() => handlesubmitSignature({ ...field })}>Upload</Button>
-            {/* Render the file input */}
-            <input
-              type="file"
-              style={{ width: "100%", display: "block", marginTop: "20px" }}
-              onChange={(e) => field.onChange(e.target.files[0])}
-            />
-             <TextField
-              id="signatureUpload"
-              variant="filled"
-              type="text"
-              style={{ width: "100%", marginTop: "10px" }}
-              value={field.value ? field.value.name : ''}
-              InputProps={{
-                readOnly: true,
-              }}
-              error={Boolean(errors.signatureUpload)}
-              helperText={errors.signatureUpload?.message}
-            />
-
-                            
-            <Button type="button" onClick={() => handleUploadSignature({ ...field })}>Upload</Button>
-
+                            Signature Here
+                        </label>
+                        <canvas
+                            ref={canvasRef}
+                            max-width={600}
+                            height={200}
+                            style={{ border: '1px solid #ccc', display: "inline-block", verticalAlign: "top", marginRight: "10px", marginBottom: "10px" }}
+                        />
+                        {drawsign && <img src={URL.createObjectURL(drawsign)} style={{ display: "inline-block" }} alt="Saved Signature" />}
+                        <div>
+                        <Button variant="contained" size="small" type='button' style={{ display: "inline-block" }} margin="normal" onClick={clearSignature}>
+                            Clear
+                        </Button>
+                        <Button type="button" size="small" style={{ display: "inline-block", marginLeft: "10px" }} variant="contained" onClick={handleSaveSignature}>Save</Button>
+                        <Button type="button" variant="contained" size="small" style={{ display: "inline-block", marginLeft: "10px" }} onClick={() => handlesubmitSignature({ ...field })}>Upload</Button>
+                        </div>
+                        {/* Render the file input */}
+                        <p className='mt-2'>OR</p>
+                        <p className='mt-2'>Signature Upload</p>
+                        <input
+                            type="file"
+                            className='signuploadbusiness'
+                            style={{ width: "45%", display: "inline", marginTop: "10px",marginBottom:"10px" }}
+                            onChange={(e) => field.onChange(e.target.files[0])}
+                        />
+                        <TextField
+                            id="signatureUpload"
+                            variant="filled"
+                            type="text"
+                            style={{ width: "25%", marginTop: "10px", display: "none" }}
+                            value={field.value ? field.value.name : ''}
+                            InputProps={{
+                                readOnly: true,
+                            }}
+                            error={Boolean(errors.signatureUpload)}
+                        // helperText={errors.signatureUpload?.message}
+                        />
+                        <Button type="button" variant="contained" size="small" className='signaturebtnstyle' style={{ marginLeft: "15px" }} onClick={() => handleUploadSignature({ ...field })}>Upload</Button>
+                        {Boolean(errors.signatureUpload) && (
+                            <div className="error-message">
+                                {errors.signatureUpload.message}
+                            </div>
+                        )}
                     </>
                 )}
             />
- {/* Display the saved signature image if available */}
-      {drawsign && <img src={URL.createObjectURL(drawsign)} alt="Saved Signature" />}
+            {/* Display the saved signature image if available */}
+
 
             {/* <Controller
                 control={control}
@@ -460,7 +535,7 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                         label="Account Holder Name"
                         variant="outlined"
                         placeholder="Enter Your Account Holder Name"
-                        style={{ width: "100%" }}
+                        style={{ width: "91%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.accountHolderName)}
@@ -475,6 +550,7 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                 rules={{
                     required: "Account Number is required.",
                     pattern: {
+
                         value: new RegExp(/^[0-9]{9,18}$/),
                         message: "Account Number is not in a valid."
                     }
@@ -482,10 +558,10 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                 render={({ field }) => (
                     <TextField
                         id="accountHolderNumber"
-                        label="Account Holder Number"
+                        label="Bank Account Number"
                         variant="outlined"
-                        placeholder="Enter Your Account Holder Number"
-                        style={{ width: "100%" }}
+                        placeholder="Enter Your Bank Account Number"
+                        style={{ width: "45%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.accountHolderNumber)}
@@ -493,33 +569,84 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                     />
                 )}
             />
-
             <Controller
                 control={control}
-                name="ifscCode"
+                name="confirmbankAccountNo"
                 rules={{
-                    required: "IFSC Code is required.",
-                    pattern: {
-                        value: new RegExp(/^[A-Z]{4}0[A-Z0-9]{6}$/),
-                        message: "IFSC Code is not in a valid ."
-                    }
+                    required: "Confirm Account Number is required.",
+                    validate: value => value === getValues("accountHolderNumber") || "Confirm Account number should be match with Account Number."
                 }}
                 render={({ field }) => (
                     <TextField
-                        id="ifscCode"
-                        label=" IFSC Code"
+                        id="confirmbankAccountNo"
+                        label="Re-Enter Bank Account Number"
                         variant="outlined"
-                        placeholder="Enter Your IFSC Code "
-                        style={{ width: "100%" }}
+                        placeholder="Re-Enter Your Bank Account Number"
+                        style={{ width: "45%", marginLeft: "10px" }}
                         margin="normal"
                         {...field}
-                        error={Boolean(errors.ifscCode)}
-                        helperText={errors.ifscCode?.message}
+                        error={Boolean(errors.confirmbankAccountNo)}
+                        helperText={errors.confirmbankAccountNo?.message}
                     />
                 )}
             />
-
-            <Controller
+            <div style={{ width: "100%" }}>
+                <div className='d-inline-block' style={{ width: "45%", verticalAlign: "top" }}>
+                    <Controller
+                        control={control}
+                        name="ifscCode"
+                        rules={{
+                            required: "IFSC Code is required.",
+                            pattern: {
+                                value: new RegExp(/^[A-Z]{4}0[A-Z0-9]{6}$/),
+                                message: "IFSC Code is not in a valid ."
+                            }
+                        }}
+                        render={({ field }) => (
+                            <TextField
+                                id="ifscCode"
+                                label=" IFSC Code"
+                                variant="outlined"
+                                placeholder="Enter Your IFSC Code "
+                                style={{ width: "100%", }}
+                                margin="normal"
+                                {...field}
+                                error={Boolean(errors.ifscCode)}
+                                helperText={errors.ifscCode?.message}
+                            />
+                        )}
+                    />
+                </div>
+                <div className='d-inline-block' style={{ width: "45%", verticalAlign: "top" }}>
+                    <Controller
+                        control={control}
+                        name="bankAccountType"
+                        rules={{
+                            required: "bankAccountType is required",
+                        }}
+                        render={({ field }) => (
+                            <>
+                                <TextField
+                                    id="bankAccountType-select"
+                                    variant="outlined"
+                                    select
+                                    style={{ width: "100%", marginLeft: "10px", marginTop: "15px" }}
+                                    label="Bank Account Type"
+                                    {...field}
+                                    error={Boolean(errors.bankAccountType)}
+                                    helperText={errors.bankAccountType?.message}
+                                >
+                                    <MenuItem value="">Select Categories</MenuItem>
+                                    <MenuItem value="Saving">Saving</MenuItem>
+                                    <MenuItem value="Current">Current</MenuItem>
+                                    <MenuItem value="OverDraft">Over Draft</MenuItem>
+                                </TextField>
+                            </>
+                        )}
+                    />
+                </div>
+            </div>
+            {/* <Controller
                 control={control}
                 name="bankName"
                 rules={{
@@ -535,7 +662,7 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                         label="Bank Name"
                         variant="outlined"
                         placeholder="Enter Your Bank Name"
-                        style={{ width: "100%" }}
+                        style={{ width: "45%" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.bankName)}
@@ -560,14 +687,14 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                         label="Branch Name"
                         variant="outlined"
                         placeholder="Enter Your Bank Branch Name"
-                        style={{ width: "100%" }}
+                        style={{ width: "45%", marginLeft: "10px" }}
                         margin="normal"
                         {...field}
                         error={Boolean(errors.branchName)}
                         helperText={errors.branchName?.message}
                     />
                 )}
-            />
+            /> */}
 
 
             <Controller
@@ -578,13 +705,15 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
 
                 }}
                 render={({ field }) => (
-                    <label margin="normal"
-                        style={{ width: "100%", display: "block" }}
+                    <>
+                        <label margin="normal"
+                            style={{ width: "100%", display: "block" }}
 
-                    >Check Upload
+                        >Check Upload</label>
                         <input
                             type="file"
-                            style={{ width: "100%", display: "block", marginTop: "20px" }}
+                            className='checkuploadbusiness'
+                            style={{ width: "45%", display: "inline-block", marginTop: "10px" }}
                             onChange={(e) => field.onChange(e.target.files[0])}
 
                         />
@@ -592,7 +721,7 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                             id="checkUpload"
                             variant="filled"
                             type="text"
-                            style={{ width: "100%", marginTop: "10px" }}
+                            style={{ width: "91%", marginTop: "10px", display: "none" }}
 
                             value={field.value ? field.value.name : ''}
                             InputProps={{
@@ -602,8 +731,8 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                             helperText={errors.checkUpload?.message}
                         />
 
-                        <Button type="button" onClick={() => handleUploadCheck({ ...field })}>Upload</Button>
-                    </label>
+                        <Button type="button" variant="contained" size="small" style={{ marginTop: "0px",display:"inline-block" }} onClick={() => handleUploadCheck({ ...field })}>Upload</Button>
+                    </>
                 )}
             />
 
