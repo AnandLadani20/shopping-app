@@ -1,5 +1,5 @@
-const newCommonUrl = "https://four-moose-invite.loca.lt";
-const newEcommercUrl = "https://metal-cycles-cough.loca.lt";
+const newCommonUrl = "https://silly-waves-own.loca.lt";
+const newEcommercUrl = "https://major-donuts-cover.loca.lt";
 
 const authService = {
     newCommonUrl,

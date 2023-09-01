@@ -17,8 +17,25 @@
 /* ///////// Header Css ///////// */
 
 
+#style-2::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
 
-  
+#style-2::-webkit-scrollbar {
+    scroll-behavior: smooth;
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cecece;
+}
+
+
 .main-selling-page-area {
     position: relative;
     overflow: hidden;
@@ -194,63 +211,74 @@
 .selling-header-menu-area ul .contact-list-item-area:hover .menu-hover-contact-page {
     display: block;
 }
+
 /* ///////////////// selling-page-mobile-menubar Css //////////////// */
-.selling-page-mobile-menubar{
-    position: absolute;
+.selling-page-mobile-menubar {
+    position: fixed;
     /* display: none; */
     top: 0;
-    left: 0;
+    right: 0;
     height: 100vh;
+    background-color: #fff;
     width: 0;
-    z-index: 33;
-   
- 
-    /* transform: translateX(-110%); */
-
-    transition: width 0.4s , visibility 0.3s;
+    z-index: 333;
+    transition: width 0.6s, visibility 0.6s;
+    overflow: hidden;
     visibility: hidden;
+
 }
-.selling-menubtn-style{
+
+.selling-menubtn-style {
     font-size: 25px;
     color: #fff;
-    /* transition: all 0.4s; */
 }
-.mobilemenuTopPad{
-    padding: 15px 0px;;
+
+.mobilemenuTopPad {
+    padding: 15px 0px;
 }
-.selling-closemenubtn-style{
+
+.selling-closemenubtn-style {
     font-size: 25px;
     color: #000;
-    /* transition: all 0.4s; */
 }
-.selling-page-mobile-menubar.activeMenu{
+
+.selling-page-mobile-menubar.activeMenu {
     /* display: block; */
-    top:100%;
+    top: 100%;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
- 
-    
-    transition: width 0.4s , visibility 0s;
-    visibility: visible;
-}
-.selling-page-mobile-menu-content{
+    height: 100vh !important;
     background-color: #fff;
+    transition: width 0.6s, visibility 0s;
+    visibility: visible;
 
 }
+
+.selling-page-mobile-menu-content {
+    background-color: #fff;
+
+
+
+
+}
+
 @media (max-width:992px) {
-    .selling-page-mobile-menubar{
-        
+    .selling-page-mobile-menubar {
+
         /* display: block; */
     }
-    .home-content-img{
+
+    .home-content-img {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
     .home-content-img img {
         height: 50px;
     }
+
     .home-content-links ul {
         display: flex;
         justify-content: space-around;
@@ -258,6 +286,7 @@
         flex-wrap: wrap;
     }
 }
+
 /* ///////////////// selling-mainpage-hero-area Css //////////////// */
 
 .selling-mainpage-hero-area {
@@ -2282,7 +2311,7 @@ video {
 .home-tailer__block #textanimie {
     height: 350px;
     width: 310px;
-    
+
 }
 
 .home-arrow__nav-block {
@@ -2298,7 +2327,7 @@ video {
     overflow: hidden;
     border-radius: 50%;
     position: absolute;
-    background-color: #113290 ;
+    background-color: #113290;
     top: -15px;
     left: 0;
     z-index: 4 !important;
@@ -2373,13 +2402,15 @@ video {
     width: 100% !important;
     height: auto !important
 }
-.nav__image-block .home-arrow__nav-image{
+
+.nav__image-block .home-arrow__nav-image {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
 }
+
 .nav__image-block img {
     height: 40px;
     width: 100%;
@@ -2402,7 +2433,7 @@ video {
 }
 
 .nav_item_click {
-  
+
     border-radius: 20px;
     /* border: 1px solid white; */
     padding: 5px 15px;
@@ -2428,7 +2459,7 @@ video {
 .home-arrow__nav-list .home-arrow__nav-item:nth-child(2) {
     margin-right: 110px;
     margin-top: -60px;
-   
+
 }
 
 .home-arrow__nav-list .home-arrow__nav-item:nth-child(2) .nav__image-block {
@@ -2458,7 +2489,7 @@ video {
 .home-arrow__nav-list .home-arrow__nav-item:nth-child(5) {
     margin-right: -50px;
     margin-top: 20px;
-  
+
 }
 
 .home-arrow__nav-list .home-arrow__nav-item:nth-child(5) .nav__image-block {
@@ -2511,29 +2542,28 @@ video {
 
 .home-arrow__nav-item.active {
     transition: all .3s ease-in-out;
-    
-    
-   
+
+
+
 }
 
 .home-arrow__nav-item.active .nav__image-block {
     visibility: visible;
     opacity: 1;
     transition: all .3s ease-in-out;
-    
-    
+
+
 }
 
-.home-arrow__nav-item.active .nav_item_click{
+.home-arrow__nav-item.active .nav_item_click {
     background-image: linear-gradient(to right, #0c52e5, #099cd3, #38bf9b);
     border: 0;
 }
+
 .home-arrow__nav-item.active .home-arrow__nav-text {
     font-size: 22px !important;
     transition: all .3s ease-in-out;
     transform: translateX(10px);
-    
-    
 }
 
 .nav_image-block--border {
@@ -2590,34 +2620,41 @@ video {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-#textanimie path:nth-child(1){
+
+#textanimie path:nth-child(1) {
     stroke-dasharray: 3160 !important;
-    
-    animation: draw 8s linear infinite ;
+
+    animation: draw 8s linear infinite;
     /* stroke-dashoffset: 0; */
 }
-#textanimie path:nth-child(2){
+
+#textanimie path:nth-child(2) {
     stroke-dasharray: 442 !important;
-    
-    animation: draw2 8s linear infinite ;
+
+    animation: draw2 8s linear infinite;
     /* stroke-dashoffset: 0; */
 }
+
 @keyframes draw {
     0% {
-      stroke-dashoffset: 3160;
+        stroke-dashoffset: 3160;
     }
+
     100% {
-      stroke-dashoffset: 0;
+        stroke-dashoffset: 0;
     }
-  }
+}
+
 @keyframes draw2 {
     0% {
-      stroke-dashoffset: 442;
+        stroke-dashoffset: 442;
     }
+
     100% {
-      stroke-dashoffset: 0;
+        stroke-dashoffset: 0;
     }
-  }
+}
+
 @media only screen and (min-width: 1199px) and (max-width: 1400px) {
 
     .home-arrow__nav-list .home-arrow__nav-item:nth-child(8) {
@@ -2642,7 +2679,7 @@ video {
 
     .home-arrow__nav-list .home-arrow__nav-item:nth-child(4) {
         margin-right: -90px;
-    margin-top: 20px;
+        margin-top: 20px;
     }
 
     .home-arrow__nav-list .home-arrow__nav-item:nth-child(3) {
@@ -2667,45 +2704,45 @@ video {
         left: 20%;
         top: 0%;
     }
-    
+
     .nav__image-block.socialmedia-entertainment {
 
         left: 31%;
         top: 2%
     }
-    
+
     .nav__image-block.technology {
 
         left: 36%;
         top: 10%
     }
-    
+
     .nav__image-block.cryptocurrency {
 
         left: 38.4%;
         top: 22%
     }
-    
+
     .nav__image-block.healthcare {
 
         left: 39%;
         top: 39%
     }
-    
+
     .nav__image-block.telecom {
 
         left: 36%;
         top: 55%
     }
-    
+
     .nav__image-block.fintech {
 
         left: 32%;
         top: 63%
     }
-    
+
     .nav__image-block.education {
-      
+
         left: 20%;
         top: 65%
     }
@@ -2734,7 +2771,7 @@ video {
 
     .home-arrow__nav-list .home-arrow__nav-item:nth-child(4) {
         margin-right: -120px;
-    margin-top: 10px;
+        margin-top: 10px;
     }
 
     .home-arrow__nav-list .home-arrow__nav-item:nth-child(3) {
@@ -2758,37 +2795,37 @@ video {
         left: 20%;
         top: 0%;
     }
-    
+
     .nav__image-block.socialmedia-entertainment {
         left: 31%;
         top: 2%
     }
-    
+
     .nav__image-block.technology {
         left: 37%;
         top: 10%
     }
-    
+
     .nav__image-block.cryptocurrency {
         left: 39.5%;
         top: 22%
     }
-    
+
     .nav__image-block.healthcare {
         left: 40%;
         top: 39%
     }
-    
+
     .nav__image-block.telecom {
         left: 37%;
         top: 55%
     }
-    
+
     .nav__image-block.fintech {
         left: 34%;
         top: 62%
     }
-    
+
     .nav__image-block.education {
         left: 20%;
         top: 65%
@@ -2796,332 +2833,648 @@ video {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-    .home-arrow__nav-list{
+    .home-arrow__nav-list {
         width: 81%;
     }
+
     .section-title__block {
         margin-top: 60px;
     }
+
     .nav__image-block.logistics-hospitality {
         left: 30%;
         top: 0%;
     }
-    
+
     .nav__image-block.socialmedia-entertainment {
         left: 46%;
         top: 1%
     }
-    
+
     .nav__image-block.technology {
         left: 55%;
         top: 9%
     }
-    
+
     .nav__image-block.cryptocurrency {
         left: 59%;
         top: 22%
     }
-    
+
     .nav__image-block.healthcare {
         left: 61%;
         top: 40%
     }
-    
+
     .nav__image-block.telecom {
         left: 54%;
         top: 59%
     }
-    
+
     .nav__image-block.fintech {
         left: 50%;
         top: 62%
     }
-    
+
     .nav__image-block.education {
         left: 30%;
         top: 65%
     }
 }
 
-@media only screen and (min-width:480px) and (max-width:768px) {
-  
-
+@media only screen and (min-width:576px) and (max-width:768px) {
     .home-arrow__nav-list {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
         width: 100%;
-        height: 80px;
-        overflow-x: scroll;
-        overflow-y: hidden
     }
 
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(1) {
-
-        margin-right: 0px;
-        margin-top: 0px;
+    .home-tailer__block #textanimie {
+        height: 310px;
+        width: 270px;
 
     }
 
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(2) {
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(3) {
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(4) {
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(5) {
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(6) {
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(7) {
-        margin-right: 0px;
-        margin-top: 0px;
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(8) {
-        margin-right: 0px;
-        margin-top: 0px;
-    }
-
-    .home-arrow__nav-item {
-        margin: 0px 0;
-    }
-
-    .home-arrow__nav-block {
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        height: 100%;
-    }
-
-    .home-arrow__nav-block {
-        top: -20%;
-    }
-
-    .nav__image-block {
-  
-        overflow: hidden;
-    }
-    .home-arrow__nav-list{
-        position: absolute;
-        top: 45px;
-    }
-    .home-arrow__nav-text{
-        margin: 0px 10px;
-    }
-    .nav__image-block.logistics-hospitality {
-        left: 24%;
-        top: 20%
-    }
-
-
-    .nav__image-block.socialmedia-entertainment {
-        left: 40%;
-        top: 21%;
-    }
-
-    .nav__image-block.technology {
-        left: 54%;
-        top: 25%
-    }
-
-    .nav__image-block.cryptocurrency {
-        left: 64%;
-        top: 35%
-    }
-
-    .nav__image-block.healthcare {
-        left: 64%;
-        top: 48%
-    }
-
-    .nav__image-block.telecom {
-        left: 55%;
-        top: 60%
-    }
-
-    .nav__image-block.fintech {
-        left: 40%;
-        top: 64%
-    }
-
-    .nav__image-block.education {
-
-        left: 24%;
-        top: 64%
+    .home-arrow__nav-item.active .nav_item_click {
+        font-size: 19px;
     }
 
     .section-title__block {
-        margin-top: 40px;
-    }
-}
-@media only screen and (min-width:320px) and (max-width:480px) {
-  
-
-    .home-arrow__nav-list {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        width: 100%;
-        height: 80px;
-        overflow-x: scroll;
-        overflow-y: hidden
+        margin-top: 60px;
     }
 
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(1) {
-
-        margin-right: 0px;
-        margin-top: 0px;
-
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(2) {
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(3) {
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(4) {
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(5) {
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(6) {
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(7) {
-        margin-right: 0px;
-        margin-top: 0px;
-    }
-
-    .home-arrow__nav-list .home-arrow__nav-item:nth-child(8) {
-        margin-right: 0px;
-        margin-top: 0px;
-    }
-
-    .home-arrow__nav-item {
-        margin: 0px 0;
-    }
-
-    .home-arrow__nav-block {
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        height: 100%;
-    }
-
-    .home-arrow__nav-block {
-        top: -20%;
-    }
-
-    .nav__image-block {
-  
-        overflow: hidden;
-    }
-    .home-arrow__nav-list{
-        position: absolute;
-        top: 45px;
-    }
-    .home-arrow__nav-text{
-        margin: 0px 10px;
-    }
     .nav__image-block.logistics-hospitality {
-        left: 5%;
-        top: 20%
+        left: 30%;
+        top: 0%;
     }
-
 
     .nav__image-block.socialmedia-entertainment {
-        left: 40%;
-        top: 21%;
+        left: 46%;
+        top: 1%
     }
 
     .nav__image-block.technology {
-        left: 57%;
-        top: 24%
+        left: 55%;
+        top: 9%
     }
 
     .nav__image-block.cryptocurrency {
-        left: 72%;
-        top: 32%
+        left: 61%;
+        top: 22%
     }
 
     .nav__image-block.healthcare {
-        left: 72%;
+        left: 61%;
+        top: 40%
+    }
+
+    .nav__image-block.telecom {
+        left: 56%;
+        top: 52%
+    }
+
+    .nav__image-block.fintech {
+        left: 50%;
+        top: 57%
+    }
+
+    .nav__image-block.education {
+        left: 30%;
+        top: 62%
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(8) {
+        margin-right: 280px;
+        margin-top: -55px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(7) {
+        margin-right: 150px;
+        margin-top: -15px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(6) {
+        margin-right: 50px;
+        margin-top: 10px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(5) {
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(4) {
+        margin-right: -10px;
+        margin-top: 10px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(3) {
+        margin-right: 60px;
+        margin-top: -10px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(2) {
+        margin-right: 150px;
+        margin-top: -60px;
+
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(1) {
+        margin-right: 280px;
+        margin-top: -45px;
+
+    }
+
+}
+
+@media only screen and (min-width:480px) and (max-width:576px) {
+    .home-arrow__nav-list {
+        width: 250px;
+    }
+    .tailer__block{
+        justify-content: start !important;
+        margin-left: 40px;
+    }
+
+    .nav_item_click{
+        font-size: 14px;
+        padding: 3px 12px;
+    }
+    .home-arrow__nav-text{
+        padding: 6px 1px 6px 1px;
+    }
+    .home-tailer__block #textanimie {
+        height: 310px;
+        width: 270px;
+
+    }
+    .home-arrow__nav-item.active .home-arrow__nav-text {
+        padding: 3px 1px 6px 1px;
+    }
+    .home-arrow__nav-item.active .nav_item_click {
+        background-image: linear-gradient(to right, #0c52e5, #099cd3, #38bf9b);
+        border: 0;
+      
+    }
+    .home-arrow__nav-item.active .nav_item_click {
+        font-size: 16px;
+    }
+
+    .section-title__block {
+        margin-top: 60px;
+    }
+
+    .nav__image-block.logistics-hospitality {
+        left: 12%;
+        top: 0%;
+    }
+
+    .nav__image-block.socialmedia-entertainment {
+        left: 32%;
+        top: 1%
+    }
+
+    .nav__image-block.technology {
+        left: 44%;
+        top: 9%
+    }
+
+    .nav__image-block.cryptocurrency {
+        left: 50%;
+        top: 22%
+    }
+
+    .nav__image-block.healthcare {
+        left: 51%;
+        top: 40%
+    }
+
+    .nav__image-block.telecom {
+        left: 45%;
+        top: 54%
+    }
+
+    .nav__image-block.fintech {
+        left: 38%;
+        top: 60%
+    }
+
+    .nav__image-block.education {
+        left: 12%;
+        top: 63%
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(8) {
+        margin-right: 100px;
+        margin-top: -60px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(7) {
+        margin-right: -10px;
+        margin-top: -20px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(6) {
+        margin-right: -110px;
+        margin-top: 10px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(5) {
+        margin-right: -150px;
+        margin-top: 10px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(4) {
+        margin-right: -170px;
+        margin-top: 10px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(3) {
+        margin-right: -100px;
+        margin-top: -10px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(2) {
+        margin-right: -10px;
+        margin-top: -60px;
+
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(1) {
+        margin-right: 100px;
+        margin-top: -45px;
+
+    }
+
+}
+
+@media only screen and (min-width:390px) and (max-width:480px) {
+
+    .home-arrow__nav-list {
+        width: 200px;
+    }
+    .home-arrow__nav-item.active .home-arrow__nav-text {
+        transform: translateX(0px);
+    }
+    .tailer__block{
+        justify-content: start !important;
+        /* margin-left: 20px; */
+    }
+    .nav_item_click{
+        font-size: 14px;
+        padding: 3px 12px;
+    }
+    .home-arrow__nav-text{
+        padding: 6px 1px 6px 1px;
+    }
+    .home-tailer__block #textanimie {
+        height: 360px !important;
+        width: 220px !important;
+        margin-left: 20px;
+
+    }
+    .home-arrow__nav-item.active .home-arrow__nav-text {
+        padding: 3px 1px 6px 1px;
+    }
+    .home-arrow__nav-item.active .nav_item_click {
+        background-image: linear-gradient(to right, #0c52e5, #099cd3, #38bf9b);
+        border: 0;
+      
+    }
+    .home-arrow__nav-item.active .nav_item_click {
+        font-size: 16px;
+    }
+
+    .section-title__block {
+        margin-top: 60px;
+    }
+
+    .nav__image-block.logistics-hospitality {
+        left: 10%;
+        top: 13%;
+    }
+
+    .nav__image-block.socialmedia-entertainment {
+        left: 32%;
+        top: 17%
+    }
+
+    .nav__image-block.technology {
+        left: 38%;
+        top: 22%
+    }
+
+    .nav__image-block.cryptocurrency {
+        left: 42%;
+        top: 28%
+    }
+
+    .nav__image-block.healthcare {
+        left: 42%;
         top: 45%
     }
 
     .nav__image-block.telecom {
-        left: 55%;
-        top: 53%
+        left: 38%;
+        top: 55%
     }
 
     .nav__image-block.fintech {
-        left: 40%;
-        top: 56%
+        left: 34%;
+        top: 59%
     }
 
     .nav__image-block.education {
+        left: 10%;
+        top: 62%
+    }
 
-        left: 6%;
-        top: 58%
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(8) {
+        margin-right: 60px;
+        margin-top: -60px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(7) {
+        margin-right: -40px;
+        margin-top: -15px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(6) {
+        margin-right: -110px;
+        margin-top: 0px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(5) {
+        margin-right: -140px;
+        margin-top: 0px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(4) {
+        margin-right: -160px;
+        margin-top: -5px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(3) {
+        margin-right: -90px;
+        margin-top: -20px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(2) {
+        margin-right: -40px;
+        margin-top: -60px;
+
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(1) {
+        margin-right: 60px;
+        margin-top: 0px;
+
+    }
+}
+@media only screen and (min-width:350px) and (max-width:390px) {
+    .home-arrow__nav-item.active .home-arrow__nav-text {
+        transform: translateX(0px);
+    }
+    .home-arrow__nav-list {
+        width: 150px;
+        
+       
+    }
+    .tailer__block{
+        justify-content: start !important;
+        
+    }
+    .nav_item_click{
+        font-size: 14px;
+        padding: 3px 12px;
+    }
+    .home-arrow__nav-text{
+        padding: 6px 1px 6px 1px;
+    }
+    .home-tailer__block #textanimie {
+        height: 340px !important;
+        width: 200px !important;
+        margin-left: 20px;
+
+    }
+    .home-arrow__nav-item.active .home-arrow__nav-text {
+        padding: 3px 1px 6px 1px;
+    }
+    .home-arrow__nav-item.active .nav_item_click {
+        background-image: linear-gradient(to right, #0c52e5, #099cd3, #38bf9b);
+        border: 0;
+      
+    }
+    .home-arrow__nav-item.active .nav_item_click {
+        font-size: 16px;
     }
 
     .section-title__block {
-        margin-top: 40px;
+        margin-top: 60px;
+    }
+
+    .nav__image-block.logistics-hospitality {
+        left: 8%;
+        top: 13%;
+    }
+
+    .nav__image-block.socialmedia-entertainment {
+        left: 26%;
+        top: 15%
+    }
+
+    .nav__image-block.technology {
+        left: 35%;
+        top: 20%
+    }
+
+    .nav__image-block.cryptocurrency {
+        left: 40%;
+        top: 28%
+    }
+
+    .nav__image-block.healthcare {
+        left: 42%;
+        top: 42%
+    }
+
+    .nav__image-block.telecom {
+        left: 36%;
+        top: 55%
+    }
+
+    .nav__image-block.fintech {
+        left: 32%;
+        top: 57%
+    }
+
+    .nav__image-block.education {
+        left: 8%;
+        top: 60%
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(8) {
+        margin-right: 40px;
+        margin-top: -50px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(7) {
+        margin-right: -60px;
+        margin-top: -20px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(6) {
+        margin-right: -140px;
+        margin-top: -10px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(5) {
+        margin-right: -165px;
+        margin-top: -10px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(4) {
+        margin-right: -180px;
+        margin-top: -10px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(3) {
+        margin-right: -120px;
+        margin-top: -20px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(2) {
+        margin-right: -60px;
+        margin-top: -60px;
+
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(1) {
+        margin-right: 40px;
+        margin-top: 0px;
+
     }
 }
+@media only screen and (min-width:320px) and (max-width:350px) {
+    .home-arrow__nav-list {
+        width: 150px;  
+    }
+    .home-arrow__nav-item.active .home-arrow__nav-text {
+        transform: translateX(0px);
+    }
+    .tailer__block{
+        justify-content: start !important;
+        
+    }
+    .nav_item_click{
+        font-size: 14px;
+        padding: 3px 12px;
+    }
+    .home-arrow__nav-text{
+        padding: 6px 1px 6px 1px;
+    }
+    .home-tailer__block #textanimie {
+        height: 320px !important;
+        width: 180px !important;
+        margin-left: 20px;
 
+    }
+    .home-arrow__nav-item.active .home-arrow__nav-text {
+        padding: 3px 1px 6px 1px;
+    }
+    .home-arrow__nav-item.active .nav_item_click {
+        background-image: linear-gradient(to right, #0c52e5, #099cd3, #38bf9b);
+        border: 0;
+      
+    }
+    .home-arrow__nav-item.active .nav_item_click {
+        font-size: 16px;
+    }
+
+    .section-title__block {
+        margin-top: 60px;
+    }
+
+    .nav__image-block.logistics-hospitality {
+        left: 8%;
+        top: 15%;
+    }
+
+    .nav__image-block.socialmedia-entertainment {
+        left: 30%;
+        top: 17%
+    }
+
+    .nav__image-block.technology {
+        left: 36%;
+        top: 20%
+    }
+
+    .nav__image-block.cryptocurrency {
+        left: 40%;
+        top: 25%
+    }
+
+    .nav__image-block.healthcare {
+        left: 40%;
+        top: 40%
+    }
+
+    .nav__image-block.telecom {
+        left: 35%;
+        top: 50%
+    }
+
+    .nav__image-block.fintech {
+        left: 30%;
+        top: 55%
+    }
+
+    .nav__image-block.education {
+        left: 8%;
+        top: 58%
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(8) {
+        margin-right: 40px;
+        margin-top: -50px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(7) {
+        margin-right: -50px;
+        margin-top: -20px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(6) {
+        margin-right: -120px;
+        margin-top: -15px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(5) {
+        margin-right: -140px;
+        margin-top: -15px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(4) {
+        margin-right: -160px;
+        margin-top: -15px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(3) {
+        margin-right: -110px;
+        margin-top: -25px;
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(2) {
+        margin-right: -60px;
+        margin-top: -60px;
+
+    }
+
+    .home-arrow__nav-list .home-arrow__nav-item:nth-child(1) {
+        margin-right: 40px;
+        margin-top: 0px;
+
+    }
+}
 
 
 /* //////////////////// dhiyodha-sellingpage-reviews-area  //////////////////////////// */
@@ -3225,7 +3578,7 @@ video {
 @media only screen and (min-width: 768px) and (max-width: 992px) {
     .selling-header-page-area {
         padding: 15px 0px;
-  
+
     }
 
     .selling-mainpage-hero-area {
@@ -3321,7 +3674,7 @@ video {
 @media only screen and (min-width:576px) and (max-width:768px) {
     .selling-header-page-area {
         padding: 15px 0px;
-     
+
     }
 
     .selling-mainpage-hero-area {
@@ -3584,7 +3937,7 @@ video {
 @media only screen and (min-width:320px) and (max-width:480px) {
     .selling-header-page-area {
         padding: 15px 0px;
-  
+
     }
 
     .main-selling-page-area {
@@ -3665,9 +4018,11 @@ video {
         font-size: 9px;
         padding: 10px 8px;
     }
-    .flow-chart-gradient-orange{
+
+    .flow-chart-gradient-orange {
         padding: 2px;
     }
+
     .flow-start-area h5,
     .flow-end-area h5 {
         font-size: 8px;
@@ -3733,9 +4088,11 @@ video {
     .businessCard-icon-imgbg img {
         height: 25px;
     }
-.fourth-chartedlayout4-box3 .media-none {
-    display: none;
-}
+
+    .fourth-chartedlayout4-box3 .media-none {
+        display: none;
+    }
+
     .flow-chart-gradient-blue {
         padding: 2px;
     }
@@ -3748,32 +4105,47 @@ video {
         width: 50px;
         height: 40px;
     }
-    .first-chartedlayout2-box2::before, .middle-chartedlayout2-box2::before, .third-chartedlayout2-box2::before, .fourth-chartedlayout2-box2::before{
+
+    .first-chartedlayout2-box2::before,
+    .middle-chartedlayout2-box2::before,
+    .third-chartedlayout2-box2::before,
+    .fourth-chartedlayout2-box2::before {
         width: 2px !important;
     }
-    .first-chartedlayout3-box3::before, .middle-chartedlayout3-box3::before, .third-chartedlayout3-box3::before, .fourth-chartedlayout3-box3::before{
+
+    .first-chartedlayout3-box3::before,
+    .middle-chartedlayout3-box3::before,
+    .third-chartedlayout3-box3::before,
+    .fourth-chartedlayout3-box3::before {
         width: 2px !important;
     }
-    .flow-end-area::before{
+
+    .flow-end-area::before {
         width: 2px !important;
     }
-    .fourth-chartedlayout4-box5::before{
+
+    .fourth-chartedlayout4-box5::before {
         height: 2px;
     }
-    .fourth-chartedlayout4-box4::before{
+
+    .fourth-chartedlayout4-box4::before {
         height: 2px;
         width: 40%;
         left: -40%;
     }
-    .fourth-chartedlayout4-box2::before{
+
+    .fourth-chartedlayout4-box2::before {
         height: 2px;
     }
-    .fourth-chartedlayout4-box3::before{
+
+    .fourth-chartedlayout4-box3::before {
         height: 2px;
         width: 40%;
         left: -40%;
     }
-    .middle-chartedlayout-box::before,.middle-chartedlayout-box::after{
+
+    .middle-chartedlayout-box::before,
+    .middle-chartedlayout-box::after {
         height: 2px;
     }
 }
@@ -3781,7 +4153,7 @@ video {
 @media (max-width:320px) {
     .selling-header-page-area {
         padding: 15px 0px;
-    
+
     }
 
     .selling-mainpage-hero-area {
@@ -3824,18 +4196,3 @@ video {
     transform: scaleY(0);
     z-index: -1;
 } */
-
-.squiggle {
-    /* stroke-dasharray: 450; */
-    /* stroke-dashoffset: 450; */
-   
-    /* 3160 */
-    /* 442 */
-  }
-  
-
- .squiggle{
-
-    /* stroke-dashoffset: 0; */
-    /* stroke-dashoffset: 0; */
-  }  

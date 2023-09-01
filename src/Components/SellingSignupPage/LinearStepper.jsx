@@ -90,7 +90,7 @@ const LinaerStepper = () => {
     const handleNext = async (data) => {
 
         console.log(data);
-        if (activeStep === steps.length - 1) {
+        if (activeStep === steps.length - 2) {
             setActiveStep(activeStep + 1);
             const response1 = await fetch(`${authService.newCommonUrl}/common/service-provider-register/personal-details`, {
                 method: 'POST',

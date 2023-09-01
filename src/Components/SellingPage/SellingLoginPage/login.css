@@ -1,0 +1,57 @@
+.sellingpage-login-headerText{
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+.sellingpage-login-form-description p{
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+.sellingpage-login-newregister {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sellingpage-login-newregister p {
+    margin-bottom: 10px;
+}
+.sellingPage-login-form{
+    position: relative;
+}
+.close-loginpage-icon{
+    font-size: 22px;
+    position: absolute;
+    top: 4px;
+    right: 0;
+    z-index: 2;
+}
+.sellingpage-login-otpForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.sellingpage-login-notreceive-otp ul li button{
+     font-size: 14px;
+     color: var(--blue-dark);
+     background: none;
+     font-weight: 500;
+    
+}
+.sellingpage-login-notreceive-otp ul li::before {
+    content: "\2022";
+    color: var(--blue-dark);
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+  }
+  .loginpage-account-recovery-area{
+    padding-top: 80px;
+  }
+  .loginpage-account-recovery-area ul li{
+    list-style: initial !important;
+  }

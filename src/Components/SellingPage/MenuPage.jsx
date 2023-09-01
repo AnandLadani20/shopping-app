@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import shoppingBag from '../../Assests/hero-gif/online-shopping (1).png'
+import ModalLoginButton from './ModalLoginButton'
 
 const MenuPage = () => {
     return (
@@ -197,7 +198,8 @@ const MenuPage = () => {
                         </li>
                     </ul>
                     <div>
-                        <button className='header-login-btn'>Login</button>
+                        
+                        <ModalLoginButton/>
                     </div>
                 </div>
             </div>

@@ -26,15 +26,16 @@ const Verification = ({ setRequirePhoneOtp }) => {
     const [showemailverify, setShowEmailVerify] = useState(false)
     const [verifyemailotpp, setVerifyEmailOtpp] = useState("");
     const { control, formState: { errors }, getValues, } = useFormContext();
-
+    const [selectedCountryCode, setSelectedCountryCode] = useState("");
     // ={ newCommonUrl }
-    const handleSendOTP = async (data) => {
+    const handleSendOTP = async (data,datacode) => {
 
         setShowVerify(true)
         const number = data.value;
+        // const code = datacode.value
         // const url = ;
         try {
-            const response = await fetch(`https://puny-wolves-reply.loca.lt/common/general/sendOtp?contactNumber=${number}&countryCode=91`, {
+            const response = await fetch(`${authService.newCommonUrl}/common/general/sendOtp?contactNumber=${number}&countryCode=${datacode}`, {
                 method: 'POST',
                 headers: [],
             });
@@ -54,11 +55,13 @@ const Verification = ({ setRequirePhoneOtp }) => {
         }
     };
 
-    const handleVerifyOTP = async (otp, data) => {
+    const handleVerifyOTP = async (otp, data,code) => {
         const number2 = data.value
+        // const countryCode2 = code.value
         console.log(number2);
+        console.log(code);
         console.log(otp)
-        const url = `${authService.newCommonUrl}/common/general/verifyOtp?countryCode=91&contactNumber=${number2}&otp=${otp}`;
+        const url = `${authService.newCommonUrl}/common/general/verifyOtp?countryCode=${code}&contactNumber=${number2}&otp=${otp}`;
         try {
             await fetch(url, {
                 method: 'POST',
@@ -162,57 +165,57 @@ const Verification = ({ setRequirePhoneOtp }) => {
     // }
     return (
         <>
-
-            <Controller
-                control={control}
-                name="firstName"
-                rules={{
-                    required: "First Name is required",
-                    minLength: {
-                        value: 4,
-                        message: "First Name is min. 2 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="firstName"
-                        label="First Name"
-                        variant="outlined"
-                        className="textfield"
-                        placeholder="Enter Your First Name"
-                        style={{ width: "45%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.firstName)}
-                        helperText={errors.firstName?.message}
-                    />
-                )}
-            />
-            <Controller
-                control={control}
-                name="lastName"
-                rules={{
-                    required: "Last Name is required",
-                    minLength: {
-                        value: 4,
-                        message: "Last Name is min. 2 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="lastName"
-                        label="Last Name"
-                        variant="outlined"
-                        placeholder="Enter Your Last Name"
-                        style={{ width: "45%", marginLeft: "10px" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.lastName)}
-                        helperText={errors.lastName?.message}
-                    />
-                )}
-            />
-
+            <div className="d-flex gap-2">
+                <Controller
+                    control={control}
+                    name="firstName"
+                    rules={{
+                        required: "First Name is required",
+                        minLength: {
+                            value: 4,
+                            message: "First Name is min. 2 characters"
+                        }
+                    }}
+                    render={({ field }) => (
+                        <TextField
+                            id="firstName"
+                            label="First Name"
+                            variant="outlined"
+                            className="textfield"
+                            placeholder="Enter Your First Name"
+                            style={{ width: "50%" }}
+                            margin="normal"
+                            {...field}
+                            error={Boolean(errors.firstName)}
+                            helperText={errors.firstName?.message}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="lastName"
+                    rules={{
+                        required: "Last Name is required",
+                        minLength: {
+                            value: 4,
+                            message: "Last Name is min. 2 characters"
+                        }
+                    }}
+                    render={({ field }) => (
+                        <TextField
+                            id="lastName"
+                            label="Last Name"
+                            variant="outlined"
+                            placeholder="Enter Your Last Name"
+                            style={{ width: "50%" }}
+                            margin="normal"
+                            {...field}
+                            error={Boolean(errors.lastName)}
+                            helperText={errors.lastName?.message}
+                        />
+                    )}
+                />
+            </div>
             {/* <Controller
                 control={control}
                 name="userName"
@@ -322,7 +325,7 @@ const Verification = ({ setRequirePhoneOtp }) => {
                     }}
                     render={({ field }) => (
                         <>
-                            <div style={{ width: "15%", marginRight: "10px", marginTop: "16px" }}>
+                            <div style={{ width: "90px", marginRight: "10px", marginTop: "16px" }}>
                                 <Select
                                     labelId="demo-simple-select-autowidth-label"
                                     id="countrycode-select"
@@ -332,11 +335,16 @@ const Verification = ({ setRequirePhoneOtp }) => {
                                     {...field}
                                     error={Boolean(errors.countrycode)}
                                     helperText={errors.countrycode?.message}
+                                    onChange={(e) => {
+                                        setSelectedCountryCode(e.target.value); // Update selected country code
+                                        field.onChange(e); // Notify Controller about the change
+                                    }}
                                 >
 
                                     <MenuItem value="">IN +91</MenuItem>
                                     <MenuItem value="91">IN +91</MenuItem>
                                 </Select>
+                                {/* <Button style={{ position: "absolute", right: "5%", top: "22px",display:"none" }} type="button" onClick={() => handleSendOTP({ ...field })}>Send OTP</Button> */}
                             </div>
                         </>
                     )}
@@ -348,13 +356,13 @@ const Verification = ({ setRequirePhoneOtp }) => {
                     rules={{
                         required: "Phone number is required.",
                         pattern: {
-                            value: new RegExp(/^[0-9 ()+-]+$/),
+                            value: new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/),
                             message: "Not a valid phone number."
                         }
                     }}
                     render={({ field }) => (
                         <>
-                            <div style={{ position: "relative", width: "75%" }}>
+                            <div style={{ position: "relative", width: "calc(100% - 100px)" }}>
                                 <TextField
                                     id="phoneNumber"
                                     label="Phone Number"
@@ -368,12 +376,12 @@ const Verification = ({ setRequirePhoneOtp }) => {
 
                                 />
                                 {
-                                    field.value.length === 10 ? <Button style={{ position: "absolute", right: "10%", top: "22px" }} type="button" onClick={() => handleSendOTP({ ...field })}>Send OTP</Button> : ""
+                                    field.value.length === 10 ? <Button style={{ position: "absolute", right: "5%", top: "22px" }} type="button" onClick={() => handleSendOTP({ ...field },selectedCountryCode)}>Send OTP</Button> : ""
                                 }
 
                                 {
                                     showverify ? (<><OtpInput OTPLength={6} otpType="number" disabled={false} value={verifyotp} style={{ margin: "10px 0px", marginLeft: "-100px" }} onChange={setVerifyOtp} autoFocus classname="border border-primary"></OtpInput>
-                                        <Button type="button" style={{ marginLeft: "-100px" }} onClick={() => handleVerifyOTP(verifyotp, { ...field })}>Verfy OTP</Button>
+                                        <Button type="button" style={{ marginLeft: "-100px" }} onClick={() => handleVerifyOTP(verifyotp, { ...field },selectedCountryCode)}>Verfy OTP</Button>
                                     </>) : (<></>)
                                 }
 
@@ -402,14 +410,14 @@ const Verification = ({ setRequirePhoneOtp }) => {
                                 label="E-mail"
                                 variant="outlined"
                                 placeholder="Enter Your E-mail Address"
-                                style={{ width: "91%" }}
+                                style={{ width: "100%" }}
                                 margin="normal"
                                 {...field}
                                 error={Boolean(errors.emailAddress)}
                                 helperText={errors.emailAddress?.message}
                             />
                             {
-                                !errors.emailAddress?.message ? <Button style={{ position: "absolute", right: "10%", top: "22px" }} type="button" onClick={() => handleEmailOTP({ ...field })}>Send Email</Button> : ""
+                                !errors.emailAddress?.message ? <Button style={{ position: "absolute", right: "5%", top: "22px" }} type="button" onClick={() => handleEmailOTP({ ...field })}>Send Email</Button> : ""
                             }
                             {
                                 showemailverify ? (<><OtpInput OTPLength={6} otpType="number" style={{ margin: "10px 0px" }} disabled={false} value={verifyemailotpp} onChange={setVerifyEmailOtpp} autoFocus classname="border border-primary"></OtpInput>
@@ -420,54 +428,55 @@ const Verification = ({ setRequirePhoneOtp }) => {
 
                 )}
             />
-
-            <Controller
-                control={control}
-                name="password"
-                rules={{
-                    required: "Password is required",
-                    pattern: {
-                        value: /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
-                        message: "(UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="password"
-                        label="Password"
-                        type="password"
-                        variant="outlined"
-                        placeholder="Enter Your Password"
-                        style={{ width: "45%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.password)}
-                        helperText={errors.password?.message}
-                    />
-                )}
-            />
-            <Controller
-                control={control}
-                name="confirmPassword"
-                rules={{
-                    required: "Confirm password is required",
-                    validate: value => value === getValues("password") || "Confirm Password should be match with password."
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="confirmPassword"
-                        label="Confirm Password"
-                        type="password"
-                        variant="outlined"
-                        placeholder="Enter Your Confirm Password"
-                        style={{ width: "45%", marginLeft: "10px" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.confirmPassword)}
-                        helperText={errors.confirmPassword?.message}
-                    />
-                )}
-            />
+            <div className="d-flex gap-2">
+                <Controller
+                    control={control}
+                    name="password"
+                    rules={{
+                        required: "Password is required",
+                        pattern: {
+                            value: /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
+                            message: "(UpperCase, LowerCase, Number/SpecialChar and min 8 Chars)"
+                        }
+                    }}
+                    render={({ field }) => (
+                        <TextField
+                            id="password"
+                            label="Password"
+                            type="password"
+                            variant="outlined"
+                            placeholder="Enter Your Password"
+                            style={{ width: "50%" }}
+                            margin="normal"
+                            {...field}
+                            error={Boolean(errors.password)}
+                            helperText={errors.password?.message}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="confirmPassword"
+                    rules={{
+                        required: "Confirm password is required",
+                        validate: value => value === getValues("password") || "Confirm Password should be match with password."
+                    }}
+                    render={({ field }) => (
+                        <TextField
+                            id="confirmPassword"
+                            label="Confirm Password"
+                            type="password"
+                            variant="outlined"
+                            placeholder="Enter Your Confirm Password"
+                            style={{ width: "50%" }}
+                            margin="normal"
+                            {...field}
+                            error={Boolean(errors.confirmPassword)}
+                            helperText={errors.confirmPassword?.message}
+                        />
+                    )}
+                />
+            </div>
             <div className="d-block" id="checkbx">
                 <Controller
                     control={control}
@@ -477,22 +486,22 @@ const Verification = ({ setRequirePhoneOtp }) => {
                     }}
                     render={({ field }) => (
                         <>
-                             
-                             <div className="checkbox-container-verify">
-                                    <Checkbox
-                                        {...field}
-                                        color="primary"
-                                    />
-                                    <InputLabel htmlFor="termsandcondition">
-                                        terms and condition...
-                                    </InputLabel>
+
+                            <div className="checkbox-container-verify">
+                                <Checkbox
+                                    {...field}
+                                    color="primary"
+                                />
+                                <InputLabel htmlFor="termsandcondition">
+                                    terms and condition...
+                                </InputLabel>
+                            </div>
+                            {Boolean(errors.termsandcondition) && (
+                                <div className="error-message">
+                                    {errors.termsandcondition.message}
                                 </div>
-                                {Boolean(errors.termsandcondition) && (
-                                    <div className="error-message">
-                                        {errors.termsandcondition.message}
-                                    </div>
-                                )}
-                 
+                            )}
+
 
                         </>
                     )}

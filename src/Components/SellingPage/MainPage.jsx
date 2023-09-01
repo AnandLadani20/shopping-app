@@ -15,7 +15,7 @@ import BankIcon from '../../Assests/icon/bank (1).png'
 import AuditIcon from '../../Assests/icon/scale_1200.png'
 import dhiyodhaLogo from '../../Assests/logo/Dhiyodha (1)n.png'
 import productVideo from '../../Assests/video/Production.mp4'
-import ModalButton from './ModalButton';
+import ModalSellingButton from './ModalSellingButton';
 import SvgAnimation from './SvgAnimation';
 import VideoPlayer from './VideoPlayer';
 import { useState } from 'react';
@@ -211,7 +211,9 @@ const MainPage = () => {
         slideRef.current.swiper.slideNext()
     }
 
-
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     return (
         <>
@@ -230,26 +232,26 @@ const MainPage = () => {
                                 <h1>Be Dhiyodha By Launching Your Business</h1>
                                 <p>Women are the Yodha, She can be the Strength of Nation for Selling Your
                                     Product, Services, Skill and Experience.</p>
-
-                                <ModalButton />
+                                <button onClick={handleOpen}>Start Selling<i className="fa-solid fa-arrow-right-long"></i></button>
+                                <ModalSellingButton  handleClose={handleClose} open={open} />
                             </div>
                         </div>
                         <div className='col-lg-6 col-md-6 col-12'>
-                                <div className='selling-mainpage-hero-img-area' data-aos="zoom-in" data-aos-duration="1000">
-                                    <div className='hero-img-area-rounded'>
-                                        <div className='hero-img-area-rounded-cicleicon4'><FaRegCreditCard className='cicleicon4Style' /></div>
-                                        <div className='hero-img-area-rounded-cicleicon5'><BsCart4 className='cicleicon5Style' /></div>
-                                        <div className='hero-img-area-rounded-cicleicon6'><BsCurrencyRupee className='cicleicon6Style' /></div>
-                                    </div>
-                                    <div className='hero-img-area-innerchild-rounded'>
-                                        <div className='hero-img-area-rounded-cicleicon'></div>
-                                        <div className='hero-img-area-rounded-cicleicon2'></div>
-                                        <div className='hero-img-area-rounded-cicleicon3'></div>
-                                    </div>
-                                    <div className='hero-img-area-inner-rounded'>
-                                        <img src={heroImage} alt='shopping' />
-                                    </div>
+                            <div className='selling-mainpage-hero-img-area' data-aos="zoom-in" data-aos-duration="1000">
+                                <div className='hero-img-area-rounded'>
+                                    <div className='hero-img-area-rounded-cicleicon4'><FaRegCreditCard className='cicleicon4Style' /></div>
+                                    <div className='hero-img-area-rounded-cicleicon5'><BsCart4 className='cicleicon5Style' /></div>
+                                    <div className='hero-img-area-rounded-cicleicon6'><BsCurrencyRupee className='cicleicon6Style' /></div>
                                 </div>
+                                <div className='hero-img-area-innerchild-rounded'>
+                                    <div className='hero-img-area-rounded-cicleicon'></div>
+                                    <div className='hero-img-area-rounded-cicleicon2'></div>
+                                    <div className='hero-img-area-rounded-cicleicon3'></div>
+                                </div>
+                                <div className='hero-img-area-inner-rounded'>
+                                    <img src={heroImage} alt='shopping' />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -404,7 +406,7 @@ const MainPage = () => {
                                     <div className='user-business-flow' data-aos="fade-left" data-aos-duration="1000">
                                         <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout-box1 flow-box-style'> Invest Money<br /> In DhiBank <div className='dhiyodhaBank-icon-imgbg'><img src={BankIcon} height={40} alt='' /></div></div></div>
                                         <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout4-box2 flow-box-style'>Earn <br />Money <div className='earnMoney-icon-imgbg'><img src={EarnMoneyIcon} height={40} alt='' /></div></div></div>
-                                        <div className='fourth-chartedlayout4-box3 '>Welcome<br className='media-none'/> To<br /> Dhiyodha Family <div className='dhiyodhafamily-icon-imgbg'><img src={FamilyIcon} alt='' /></div></div>
+                                        <div className='fourth-chartedlayout4-box3 '>Welcome<br className='media-none' /> To<br /> Dhiyodha Family <div className='dhiyodhafamily-icon-imgbg'><img src={FamilyIcon} alt='' /></div></div>
                                         <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout4-box4 flow-box-style'> ProductListing<br /> & Services <div className='productService-icon-imgbg'><img src={ProductServiceIcon} height={40} alt='' /></div></div></div>
                                         <div className='flow-chart-gradient-blue'><div className='fourth-chartedlayout4-box5 flow-box-style'> Dhiyodha<br /> Business Card <div className='businessCard-icon-imgbg'><img src={BusinessCardIcon} height={40} alt='' /></div></div></div>
                                     </div>

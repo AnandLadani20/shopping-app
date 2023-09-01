@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import hero from '../../Assests/logo/Dhiyodha (1)n.png';
+import ModalLoginButton from './ModalLoginButton';
 
 const MobileMenuPage = ({setMobileMenu}) => {
 
@@ -19,17 +20,17 @@ const MobileMenuPage = ({setMobileMenu}) => {
       }
 
     return (
-        <div>
+        <div className='selling-page-mobile-menu-main'>
             <div className='row selling-page-mobile-menu-content'>
 
                 <div className='container-lg container-fluid'>
                     <div className='row mobilemenuTopPad'>
-                        <div className='col-10 col-lg-10'>
+                        <div className='col-8 col-sm-10 col-lg-10'>
                             <div className='selling-header-logo-area ps-2'>
                                 <img src={hero} alt='logo' />
                             </div>
                         </div>
-                        <div className='col-2 selling-header-menu'>
+                        <div className='col-4 col-sm-2 selling-header-menu'>
                             <div className='selling-header-menubtn-area gap-2'  onClick={hanleHideMenu}>
                             <span className='fs-5'>Close</span>
                             {/* <AiFillCloseCircle className='selling-closemenubtn-style' onClick={hanleHideMenu} /> */}
@@ -40,7 +41,7 @@ const MobileMenuPage = ({setMobileMenu}) => {
                 </div>
 
 
-                <Accordion>
+                <Accordion className='py-2'>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
@@ -49,7 +50,7 @@ const MobileMenuPage = ({setMobileMenu}) => {
                         <Typography>Home</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography>
+                       
 
                             <div className='d-flex align-items-center'>
                                 <div className='home-content-img '>
@@ -71,10 +72,10 @@ const MobileMenuPage = ({setMobileMenu}) => {
                                 </div>
                             </div>
 
-                        </Typography>
+                       
                     </AccordionDetails>
                 </Accordion>
-                <Accordion>
+                <Accordion className='py-2'>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2a-content"
@@ -106,7 +107,7 @@ const MobileMenuPage = ({setMobileMenu}) => {
 
                     </AccordionDetails>
                 </Accordion>
-                <Accordion>
+                <Accordion className='py-2'>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2a-content"
@@ -139,7 +140,7 @@ const MobileMenuPage = ({setMobileMenu}) => {
 
                     </AccordionDetails>
                 </Accordion>
-                <Accordion>
+                <Accordion className='py-2'>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2a-content"
@@ -171,7 +172,7 @@ const MobileMenuPage = ({setMobileMenu}) => {
 
                     </AccordionDetails>
                 </Accordion>
-                <Accordion>
+                <Accordion className='py-2'>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2a-content"
@@ -204,8 +205,8 @@ const MobileMenuPage = ({setMobileMenu}) => {
 
                     </AccordionDetails>
                 </Accordion>
-                <div>
-                    <button className='header-login-btn'>Login</button>
+                <div className='py-2 ms-3'> 
+                   <ModalLoginButton/>
                 </div>
 
             </div>

@@ -219,9 +219,9 @@ const VideoPlayer = ({ productVideo, dhiyodhaLogo, title }) => {
                 <div className="controls">
 
                     {/* Add your SVG icons for play and pause here */}
-                    {isPlaying ? (<button className="play-pause-btn" onClick={togglePlay}> <i class="fa-solid fa-pause"></i></button>)
+                    {isPlaying ? (<button className="play-pause-btn" onClick={togglePlay}> <i className="fa-solid fa-pause"></i></button>)
                         :
-                        (<button className="play-play-btn" onClick={togglePlay}>  <i class="fa-solid fa-play"></i></button>)}
+                        (<button className="play-play-btn" onClick={togglePlay}>  <i className="fa-solid fa-play"></i></button>)}
 
 
                     <div className='video-bottom-control'>
@@ -237,9 +237,9 @@ const VideoPlayer = ({ productVideo, dhiyodhaLogo, title }) => {
                             </div>
                         </div>
                         <div className="volume-container">
-                            {volume ? (<button className={`mute-btn ${videoRef.current && videoRef.current.muted ? 'muted' : ''}`} onClick={toggleMute}><i class="fa-solid fa-volume-high"></i> </button>)
+                            {volume ? (<button className={`mute-btn ${videoRef.current && videoRef.current.muted ? 'muted' : ''}`} onClick={toggleMute}><i className="fa-solid fa-volume-high"></i> </button>)
                                 :
-                                (<button className={`mute-btn ${videoRef.current && videoRef.current.muted ? 'muted' : ''}`} onClick={toggleMute}><i class="fa-solid fa-volume-xmark"></i></button>)}
+                                (<button className={`mute-btn ${videoRef.current && videoRef.current.muted ? 'muted' : ''}`} onClick={toggleMute}><i className="fa-solid fa-volume-xmark"></i></button>)}
                             <div className='volume-slider-box'>
                                 <div className='volume-slider-childbox'>
                                     <input
@@ -336,7 +336,7 @@ const VideoPlayer = ({ productVideo, dhiyodhaLogo, title }) => {
 
 
                         <button className="full-screen-btn" onClick={toggleFullScreenMode}>
-                            <i class="fa-solid fa-expand"></i>
+                            <i className="fa-solid fa-expand"></i>
                             {/* Add your SVG icons for full screen mode (open and close) here */}
                         </button>
                     </div>
