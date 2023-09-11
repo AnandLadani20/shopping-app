@@ -10,10 +10,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js'
 import AccountRecovery from './Components/SellingPage/SellingLoginPage/AccountRecovery';
 import SellerDashboardPage from './Components/SellerDashboard/SellerDashboardPage';
-import AddProduct from './Components/SellerDashboard/AddProduct';
-import AddMultipleProduct from './Components/SellerDashboard/AddMultipleProduct';
-import LearnListProducts from './Components/SellerDashboard/LearnListProducts';
-import ProductStepper from './Components/SellerDashboard/ProductSellDetails/ProductStepper';
+import AddProduct from './Components/SellerDashboard/AddProduct/AddProduct';
+import AddMultipleProduct from './Components/SellerDashboard/AddMultipleProduct/AddMultipleProduct';
+import LearnListProducts from './Components/SellerDashboard/LearnListProducts/LearnListProducts';
+import ProductStepper from './Components/SellerDashboard/AddProduct/ProductSellDetails/ProductStepper';
 
 
 

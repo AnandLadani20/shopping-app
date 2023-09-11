@@ -118,6 +118,7 @@ const ProductStepper = () => {
                                     <div></div>
                                     <div>
                                         <ul className='d-flex'>
+                                            <li>Collectibles & Fine Art</li>
                                             <li><GrFormNext className="navigate-next-icon" /></li>
                                             <li>Fine Art</li>
                                             <li><GrFormNext className="navigate-next-icon" /></li>

@@ -12,7 +12,7 @@ import { MdDelete } from 'react-icons/md';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { FiChevronLeft } from 'react-icons/fi';
 import { FiChevronRight } from 'react-icons/fi';
-import demoImage from '../../../Assests/testimonial/testimonial2.jpg'
+
 
 const MAX_UPLOAD_LIMIT = 9;
 

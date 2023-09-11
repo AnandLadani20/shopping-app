@@ -6,8 +6,7 @@ import { BsFillQuestionCircleFill } from 'react-icons/bs'
 import { BsBellFill } from 'react-icons/bs'
 import { FaUser } from 'react-icons/fa'
 import { AiOutlineSearch } from 'react-icons/ai'
-import { Link } from 'react-router-dom';
-import ModalNewProductList from './ModalNewProductList';
+import ModalNewProductList from './AddProduct/ModalNewProductList';
 
 const SellerDashboardPage = () => {
 

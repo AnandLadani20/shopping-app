@@ -8,6 +8,7 @@
 }
 .product-sell-detail-dashboard-Heroarea{
     background-color: rgb(250, 250, 250);
+    min-height: 100vh;
 }
 .product-category-path-wrap{
     padding: 20px 0px;
@@ -58,9 +59,12 @@
     padding: 8px 12px !important;
 }
 .product-sell-detail-dashboard-formarea .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
-    padding: 11px 12px !important;
+    padding: 8px 12px !important;
 }
-
+.product-sell-detail-dashboard-formarea .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
+    bottom: 50% !important;
+    top: initial;
+}
 .uploaded-file-item{
     display: flex;
     gap: 30px;

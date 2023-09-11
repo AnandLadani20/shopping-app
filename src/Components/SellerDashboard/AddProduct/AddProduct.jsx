@@ -7,7 +7,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 // import { AiFillStar } from 'react-icons/ai';
 // import { RiArrowDropRightLine } from 'react-icons/ri';
 // import { useState } from 'react';
-import CategoryHierarchy from './ProductSellDetails/CategoryHierarchy';
+import CategoryHierarchy from './CategoryHierarchy';
 
 const AddProduct = () => {
     return (
@@ -47,14 +47,7 @@ const AddProduct = () => {
                                         <h6>Select Product category</h6>
                                         <div><Link to="#">What is a Product Type?</Link></div>
                                     </div>
-                                    <div className='add-product-category-list'>
-                                        <div className='add-product-category-list-item-title'>
-                                            <p>Please select... </p>
-                                        </div>
-                                      <div>
-                                        <CategoryHierarchy/>
-                                      </div>
-                                    </div>
+                                    <CategoryHierarchy/>
                                 </div>
                             </div>
                         </div>
