@@ -19,7 +19,7 @@ import ProductIdentity from './ProductIdentity';
 import ProductDetails from './ProductDetails';
 import ProductOffer from './ProductOffer';
 import ProductDiscription from './ProductDiscription';
-
+import { useSelector } from 'react-redux';
 
 
 function getSteps() {
@@ -33,7 +33,14 @@ function getSteps() {
 
 const ProductStepper = () => {
     const [activeStep, setActiveStep] = useState(0);
-    const [productfilepath,setProductFilePath] = useState("")
+    const [productfilepath, setProductFilePath] = useState("")
+
+    const otherDehumidifiersDiscSt = useSelector((state) => state.otherDehumidifiersForm)
+    const otherHumidifiersDiscSt = useSelector((state) => state.otherHumidifierForm)
+    const singleRoomHumidifiersDiscSt = useSelector((state) => state.singleRoomHumidifierForm)
+    const wholeHouseHumidifiersDiscSt = useSelector((state) => state.wholeHouseHumidifierForm)
+
+    let hideLastIndexArray = Boolean((otherDehumidifiersDiscSt || otherHumidifiersDiscSt || singleRoomHumidifiersDiscSt || wholeHouseHumidifiersDiscSt) ? true :false);
     const steps = getSteps();
     const isStepFailed = () => {
         return Boolean(Object.keys(methods.formState.errors).length)
@@ -41,48 +48,49 @@ const ProductStepper = () => {
     function getStepContent(step) {
         switch (step) {
             case 0:
-                return  <ProductIdentity />;
+                return <ProductIdentity />;
             case 1:
-                return <ProductDetails/>;
+                return <ProductDetails />;
             case 2:
-                return <ProductOffer/>;
+                return <ProductOffer />;
             case 3:
-                return <ProductDiscription setProductFilePath={setProductFilePath}/>  ;
+                return <ProductDiscription setProductFilePath={setProductFilePath} />;
             default:
                 return "unknown step";
         }
     }
     const methods = useForm({
         defaultValues: {
+            productType:"",
             itemName: "",
-            productVariation:"",
-            productID:"",
-            productSelectcode:"",
-            productIdNot:"",
-            productImages:"",
-            productDesc:"",
-            bulletPoint:"",
-            artistName:"",
-            artworkMedium:"",
-            productDate:"",
-            productFramed:"",
-            productSaleType:"",
-            productSellCountry:"",
-            productSellPrice:"",
-            productSellQuantity:"",
-            productSellCondition:"",
-            productHSNcode:"",
-            productSellMaxRetailPrice:"",
-            productSellLength:"",
-            productSellLengthUnit:"",
-            productSellWidth:"",
-            productSellWidthUnit:"",
-            productSellHeight:"",
-            productSellHeightUnit:"",
+            productVariation: "",
+            productID: "",
+            productSelectcode: "",
+            productIdNot: "",
+            productImages: "",
+            productDesc: "",
+            bulletPoint: "",
+            artistName: "",
+            artworkMedium: "",
+            productDate: "",
+            productFramed: "",
+            productSaleType: "",
+            productSellCountry: "",
+            productSellPrice: "",
+            productSellQuantity: "",
+            productSellCondition: "",
+            productHSNcode: "",
+            productSellMaxRetailPrice: "",
+            productSellLength: "",
+            productSellLengthUnit: "",
+            productSellWidth: "",
+            productSellWidthUnit: "",
+            productSellHeight: "",
+            productSellHeightUnit: "",
 
 
 
-           
+
         },
     });
     const handleBack = () => {
@@ -90,10 +98,10 @@ const ProductStepper = () => {
     };
     const handleNextDetails = (datas) => {
         setActiveStep(activeStep + 1);
-        
-         datas.productImages = productfilepath;
-        console.log( datas.productImages)
-        console.log(datas)
+
+        datas.productImages = productfilepath;
+        console.log(datas.productImages)
+        console.log("final data", datas)
     }
     return (
         <>
@@ -133,22 +141,41 @@ const ProductStepper = () => {
                                 <div className="product-sell-detail-dashboard-titlearea">
                                     <div className='row justify-content-center'>
                                         <div className="col-6">
-                                    <Stepper  activeStep={activeStep}>
-                                        {steps.map((step, index) => {
-                                            const labelProps = {};
-                                            const stepProps = {};
+                                            <Stepper activeStep={activeStep}>
+                                               {
+                                                  hideLastIndexArray ? steps.slice(0, -1).map((step, index) => {
+                                                    const labelProps = {};
+                                                    const stepProps = {};
 
-                                            if (isStepFailed() && activeStep === index) {
-                                                labelProps.error = true;
-                                            }
+                                                    if (isStepFailed() && activeStep === index) {
+                                                        labelProps.error = true;
+                                                    }
 
-                                            return (
-                                                <Step {...stepProps} key={index}>
-                                                    <StepLabel {...labelProps}>{step}</StepLabel>
-                                                </Step>
-                                            );
-                                        })}
-                                    </Stepper></div>
+                                                    return (
+
+                                                        <Step {...stepProps} key={index}>
+                                                            <StepLabel {...labelProps}>{step}</StepLabel>
+                                                        </Step>
+                                                    );
+                                                }) : steps.map((step, index) => {
+                                                    const labelProps = {};
+                                                    const stepProps = {};
+
+                                                    if (isStepFailed() && activeStep === index) {
+                                                        labelProps.error = true;
+                                                    }
+
+                                                    return (
+
+                                                        <Step {...stepProps} key={index}>
+                                                            <StepLabel {...labelProps}>{step}</StepLabel>
+                                                        </Step>
+                                                    );
+                                                })
+                                               } 
+                                                
+                                            </Stepper>
+                                        </div>
                                     </div>
                                     {/* <div className="d-flex justify-content-center">
                                         <h5 className="p-2">Product Identity</h5>
