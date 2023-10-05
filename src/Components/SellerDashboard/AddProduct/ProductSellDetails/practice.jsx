@@ -1,150 +1,37 @@
-
-import React, { useEffect } from 'react'
-
-import { useState } from 'react';
-
-const CategoryHierarchy = () => {
-  const [activeCategory, setActiveCategory] = useState(null);
-  const [activeSubCategory, setActiveSubCategory] = useState(null);
-  const [activeThirdSubCategory, setActiveThirdSubCategory] = useState(null);
-  const [activeFourthSubCategory, setActiveFourthSubCategory] = useState(null);
-  const [listItem, setListItem] = useState([])
-  const [sublistItem, setSubListItem] = useState([])
-  const [subofsublistItem, setSubOfSubListItem] = useState([])
-  const [thirdsublistItem, setThirdsublistItem] = useState([])
-  const [fourthsublistItem, setFourthsublistItem] = useState([])
-
-  useEffect(() => {
-
-    fetch("https://ninety-doodles-create.loca.lt/ecommerce/category/getMainCategories")
-      .then((res) => res.json())
-      .then((data) => {
-        setListItem(data)
-        console.log(data)
-
-      })
-      .catch(error => console.error('Error fetching items:', error))
-
-  }, [])
-
-  useEffect(() => {
+const [activeFourthSubCategory, setActiveFourthSubCategory] = useState(false);
+const [fouthsublistItem, setFouthsublistItem] = useState([])
+const [hidesubofsubCategory, sethidesubofsubCategory] = useState(false)
 
 
-  }, [])
+const handleFourthSubcategory = async (fouthsubItem) => {
+  try {
+    const response = await fetch(`https://thick-grapes-retire.loca.lt/ecommerce/category/getChildCategories?browsePath=${fouthsubItem.browsePath}/${fouthsubItem.categoryId}`);
 
+    if (response.ok) {
+      const fourthitems = await response.json();
+      setFouthsublistItem(fourthitems);
 
+      sethidesubofsubCategory(true)
+      setActiveFourthSubCategory(true);
+      console.log("fourth", fourthitems)
+    } else {
+      setActivebtn(true)
+    }
 
-  const handleSubCategory = (item) => {
-    fetch(`https://ninety-doodles-create.loca.lt/ecommerce/category/getChildCategories?browsePath=${item.browsePath}/${item.categoryId}`)
-      .then((response) => response.json())
-      .then((items) => {
-        setSubListItem(items)
-        console.log(items)
-      })
-    setActiveCategory(item.categoryId === activeCategory ? null : item.categoryId);
-
+  } catch (error) {
+    console.error('Error fetching third-level subcategories:', error);
   }
-  const handleSubOfSubcategory = (items) => {
-    fetch(`https://ninety-doodles-create.loca.lt/ecommerce/category/getChildCategories?browsePath=${items.browsePath}/${items.categoryId}`)
-      .then((response) => response.json())
-      .then((subitems) => {
-        setSubOfSubListItem(subitems)
-        console.log(subitems)
-      })
-    setActiveSubCategory(items.categoryId === activeSubCategory ? null : items.categoryId)
-  }
-  const handleThirdSubcategory = (thirdsubitems) => {
-    fetch(`https://ninety-doodles-create.loca.lt/ecommerce/category/getChildCategories?browsePath=${thirdsubitems.browsePath}/${thirdsubitems.categoryId}`)
-      .then((response) => response.json())
-      .then((thirditems) => {
-        setThirdsublistItem(thirditems)
-        console.log(thirditems)
-      })
-    setActiveThirdSubCategory(thirdsubitems.categoryId === activeThirdSubCategory ? null : thirdsubitems.categoryId)
-  }
-  const handleFourthSubcategory = (fourthsubItems) => {
-    fetch(`https://ninety-doodles-create.loca.lt/ecommerce/category/getChildCategories?browsePath=${fourthsubItems.browsePath}/${fourthsubItems.categoryId}`)
-      .then((response) => response.json())
-      .then((fourthitems) => {
-        setFourthsublistItem(fourthitems)
-        console.log(fourthitems)
-      })
-    setActiveFourthSubCategory(fourthsubItems.categoryId === activeFourthSubCategory ? null : fourthsubItems.categoryId)
-  }
-
-  return (
-    <div>
-      <div className='add-product-category-list-items-parent-box'>
-        <div className='add-product-category-list-items-box'>
-          {listItem.map((item) => (
-            <div className='add-product-category-list-items' key={item.categoryId}>
-              <div
-                style={{ width: "100%" }}
-                className={`d-flex justify-content-between align-items-center px-3 product-list-item-name ${activeCategory === item.categoryId ? 'active' : ''}`}
-                onClick={() => handleSubCategory(item)}
-              >
-                <p>{item.label}</p>
-              </div>
-              {activeCategory === item.categoryId && (
-                <div className='add-product-category-list-items-box2' key={item.categoryId}>
-                  {sublistItem.map((items) => (
-                    <>
-                      <div style={{ width: "100%" }} className='px-3 product-list-item-name' key={items.categoryId}
-                        onClick={() => handleSubOfSubcategory(items)}
-                      >
-                        <p>{items.label}</p>
-                      </div>
-                      {activeSubCategory === items.categoryId && (<div className='add-product-category-list-items-box3' key={item.categoryId}>
-                        {subofsublistItem.map((subofsubItems) => (
-                          <>
-                            <div style={{ width: "100%" }} className='px-3 product-list-item-name' key={subofsubItems.categoryId}
-                              onClick={() => handleThirdSubcategory(subofsubItems)}
-                            >
-                              <p>{subofsubItems.label}</p>
-                            </div>
-                            {activeThirdSubCategory === subofsubItems.categoryId && (<div className='add-product-category-list-items-box4' key={item.categoryId}
-
-                            >
-                              {thirdsublistItem.map((thirdsubItems) => (
-                                <>
-                                  <div style={{ width: "100%" }} className='px-3 product-list-item-name' key={thirdsubItems.categoryId}
-                                    onClick={() => handleFourthSubcategory(thirdsubItems)}
-                                  >
-                                    <p>{thirdsubItems.label}</p>
-                                  </div>
-                                  {activeFourthSubCategory === thirdsubItems.categoryId && (<div className='add-product-category-list-items-box4' key={item.categoryId}>
-                                    {fourthsublistItem.map((fourthsubItems) => (
-                                      <>
-                                        <div style={{ width: "100%" }} className='px-3 product-list-item-name' key={fourthsubItems.categoryId}
-                                        // onClick={() => handleFourthSubcategory(thirdsubItems)}
-                                        >
-                                          <p>{fourthsubItems.label}</p>
-                                        </div>
-                                      </>
-                                    ))}
-                                  </div>)}
-                                </>
-                              ))}
-                            </div>)}
-
-                          </>
-                        ))}
-                      </div>)}
-                    </>
-                  ))}
-                </div>
-              )}
-
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
 }
-
-export default CategoryHierarchy
-
+{activeFourthSubCategory && (<div className='add-product-category-list-items-box2' >
+{fouthsublistItem.map((fouthsubItems) => (
+  <>
+    <div style={{ width: "100%" }} className='px-3 product-list-item-name' key={fouthsubItems.categoryId}>
+      <p>{fouthsubItems.label}</p>
+      <Button type="button" variant="contained" size='small' onClick={() => handleCategoryform(fouthsubItems)}>Select</Button>
+    </div>
+  </>
+))}
+</div>)}
 
 
 
@@ -154,11 +41,31 @@ export default CategoryHierarchy
 import React, { useEffect } from 'react'
 import { Button } from "@mui/material";
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { GrFormNext } from 'react-icons/gr'
+import { useDispatch } from 'react-redux';
+
+// import { setAddProductCategories,setDesertCategories,setSelectedCategory } from '../../../ReduxToolKit/Features/AddProductFormSlice';
+import {setSelectedCategory } from '../../../ReduxToolKit/Features/AddProductFormSlice';
+import {setCategoriesTitlePath} from '../../../ReduxToolKit/Features/CategoriesTitle'
+import {setSubCategoriesTitlePath} from '../../../ReduxToolKit/Features/SubCategoriesTitle'
+import {setSubofSubCategoriesTitlePath} from '../../../ReduxToolKit/Features/SubofSubCategoriesTitle'
+import {setThirdSubCategoriesTitlePath} from '../../../ReduxToolKit/Features/ThirdSubCategoriesTitle'
+
 
 const CategoryHierarchy = () => {
-  const [activeCategory, setActiveCategory] = useState(null);
-  const [activeSubCategory, setActiveSubCategory] = useState(null);
-  const [activeThirdSubCategory, setActiveThirdSubCategory] = useState(null);
+
+  const dispatch = useDispatch()
+
+  const [activeCategory, setActiveCategory] = useState(false);
+  const [categoryTitle, setCategoryTitle] = useState("Please select...");
+  const [subCategoryTitle, setSubCategoryTitle] = useState("");
+  const [thirdCategoryTitle, setThirdCategoryTitle] = useState("");
+  const [activeItems, setactiveItems] = useState(null);
+  const [activeSubCategory, setActiveSubCategory] = useState(false);
+  const [activeThirdSubCategory, setActiveThirdSubCategory] = useState(false);
+  const [activebtn, setActivebtn] = useState(false)
+
 
   const [listItem, setListItem] = useState([])
   const [sublistItem, setSubListItem] = useState([])
@@ -170,11 +77,11 @@ const CategoryHierarchy = () => {
 
   useEffect(() => {
 
-    fetch("https://few-kiwis-ask.loca.lt/ecommerce/category/getMainCategories")
+    fetch("https://thick-grapes-retire.loca.lt/ecommerce/category/getMainCategories")
       .then((res) => res.json())
       .then((data) => {
         setListItem(data)
-        console.log(data)
+        console.log("first", data)
 
       })
       .catch(error => console.error('Error fetching items:', error))
@@ -184,100 +91,148 @@ const CategoryHierarchy = () => {
 
 
   const handleSubCategory = async (item) => {
+    dispatch(setCategoriesTitlePath(item.label))
     try {
-      const response = await fetch(`https://few-kiwis-ask.loca.lt/ecommerce/category/getChildCategories?browsePath=${item.browsePath}/${item.categoryId}`);
+      const response = await fetch(`https://thick-grapes-retire.loca.lt/ecommerce/category/getChildCategories?browsePath=${item.browsePath}/${item.categoryId}`);
       const items = await response.json();
       setSubListItem(items);
       setSubOfSubListItem([]); // Clear subofsublistItem
       setThirdsublistItem([]); // Clear thirdsublistItem
-      setActiveCategory(item.categoryId);
-      setActiveSubCategory(null);
-      setActiveThirdSubCategory(null);
+      setactiveItems(item.categoryId)
+      
+      setActiveCategory(true);
+      setActiveSubCategory(true);
+      setActiveThirdSubCategory(true);
       sethidesubCategory(false)
       sethideCategory(false)
+      console.log("second", items)
     } catch (error) {
       console.error('Error fetching subcategories:', error);
     }
+    setCategoryTitle(item.label)
   }
+  const nextIcon = <GrFormNext className="navigate-next-icon" />;
 
   const handleSubOfSubcategory = async (subItem) => {
+    dispatch(setSubCategoriesTitlePath(subItem.label))
     try {
-      const response = await fetch(`https://few-kiwis-ask.loca.lt/ecommerce/category/getChildCategories?browsePath=${subItem.browsePath}/${subItem.categoryId}`);
+      const response = await fetch(`https://thick-grapes-retire.loca.lt/ecommerce/category/getChildCategories?browsePath=${subItem.browsePath}/${subItem.categoryId}`);
       const subitems = await response.json();
       setSubOfSubListItem(subitems);
-     
+
       setThirdsublistItem([]); // Clear thirdsublistItem
-      setActiveSubCategory(subItem.categoryId);
-      setActiveThirdSubCategory(null);
+      setActiveSubCategory(true);
+      setActiveThirdSubCategory(false);
       sethideCategory(true)
+      console.log("third", subitems)
     } catch (error) {
       console.error('Error fetching sub-subcategories:', error);
     }
+
+    setSubCategoryTitle(
+      <>
+        {nextIcon} {subItem.label}
+      </>
+    );
   }
 
   const handleThirdSubcategory = async (thirdsubItem) => {
+    dispatch(setSubofSubCategoriesTitlePath(thirdsubItem.label))
     try {
-      const response = await fetch(`https://few-kiwis-ask.loca.lt/ecommerce/category/getChildCategories?browsePath=${thirdsubItem.browsePath}/${thirdsubItem.categoryId}`);
-      const thirditems = await response.json();
-      setThirdsublistItem(thirditems);
-      sethidesubCategory(true)
-      setActiveThirdSubCategory(thirdsubItem.categoryId);
+      const response = await fetch(`https://thick-grapes-retire.loca.lt/ecommerce/category/getChildCategories?browsePath=${thirdsubItem.browsePath}/${thirdsubItem.categoryId}`);
+
+      if (response.ok) {
+        const thirditems = await response.json();
+        setThirdsublistItem(thirditems);
+
+        sethidesubCategory(true)
+        setActiveThirdSubCategory(true);
+        console.log("fourth", thirditems)
+      } else {
+        setActivebtn(true)
+      }
 
     } catch (error) {
       console.error('Error fetching third-level subcategories:', error);
     }
+    setThirdCategoryTitle(
+      <>
+        {nextIcon} {thirdsubItem.label}
+      </>
+    )
   }
 
+  const navigate = useNavigate()
+
+  const handleCategoryform = (cateItem) => {
+    dispatch(setThirdSubCategoriesTitlePath(cateItem.label))
+    console.log("handleform", cateItem)
+
+    dispatch(setSelectedCategory(cateItem.categoryId));
+    navigate("/sellerdashboard/addproduct/ProductStepper")
+ 
+  }
 
   return (
-    <div>
-      <div className='add-product-category-list-items-parent-box'>
-        <div className='add-product-category-list-items-box'>
-          {listItem.map((item) => (
-            <div className='add-product-category-list-items' key={item.categoryId}>
-              <div
-                style={{ width: "100%" }}
-                className={`d-flex justify-content-between align-items-center px-3 product-list-item-name ${activeCategory === item.categoryId ? 'active' : ''}`}
-                onClick={() => handleSubCategory(item)}
-              >
-                <p>{item.label}</p>
-              </div>
-              {activeCategory === item.categoryId && (
-                <div className='add-product-category-list-items-box2' key={item.categoryId}>
-                  {sublistItem.map((items) => (
-                    <>
-                      <div style={{ width: "100%" }} className={hideCategory ? "px-3 product-list-item-name d-none" : "px-3 product-list-item-name"} key={items.categoryId}
-                        onClick={() => handleSubOfSubcategory(items)}
-                      >
-                        <p>{items.label}</p>
-                      </div>
-                      {activeSubCategory === items.categoryId && (<div className='add-product-category-list-items-box3' key={item.categoryId}>
-                        {subofsublistItem.map((subofsubItems) => (
-                          <>
-                            <div style={{ width: "100%" }} className={hidesubCategory ? "px-3 product-list-item-name d-none" : "px-3 product-list-item-name"} key={subofsubItems.categoryId}
-                              onClick={() => handleThirdSubcategory(subofsubItems)}
-                            >
-                              <p>{subofsubItems.label}</p>
-                            </div>
-                            {activeThirdSubCategory === subofsubItems.categoryId && (<div className='add-product-category-list-items-box4' key={item.categoryId}>
-                              {thirdsublistItem.map((thirdsubItems) => (
-                                <>
-                                  <div style={{ width: "100%" }} className='px-3 product-list-item-name' key={thirdsubItems.categoryId}>
-                                    <p>{thirdsubItems.label}</p>
-                                    <Button type="button" variant="contained" size='small'>Select</Button>
-                                  </div>
-                                </>
-                              ))}
-                            </div>)}
-                          </>
-                        ))}
-                      </div>)}
-                    </>
-                  ))}
+
+    <div className='add-product-category-list'>
+      <div className='add-product-category-list-item-title'>
+        <p>{categoryTitle} </p>
+        <p>{subCategoryTitle}</p>
+        <p>{thirdCategoryTitle}</p>
+      </div>
+      <div>
+        <div className='add-product-category-list-items-parent-box'>
+          <div className='add-product-category-list-items-box'>
+            {listItem.map((item) => (
+              <div className='add-product-category-list-items' key={item.categoryId}>
+                <div
+                  style={{ width: "100%" }}
+                  className={`d-flex justify-content-between align-items-center px-3 product-list-item-name ${activeItems === item.categoryId ? 'active' : ''}`}
+                  onClick={() => handleSubCategory(item)}
+                >
+                  <p>{item.label}</p>
                 </div>
-              )}
-            </div>
-          ))}
+
+              </div>
+            ))}
+            {activeCategory && (
+              <div className='add-product-category-list-items-box2' >
+                {sublistItem.map((items) => (
+                  <>
+                    <div style={{ width: "100%" }} className={hideCategory ? "px-3 product-list-item-name d-none" : "px-3 product-list-item-name"} key={items.categoryId}
+                      onClick={() => handleSubOfSubcategory(items)}
+                    >
+                      <p>{items.label}</p>
+                    </div>
+
+                  </>
+                ))}
+              </div>
+            )}
+            {activeSubCategory && (<div className='add-product-category-list-items-box2' >
+              {subofsublistItem.map((subofsubItems) => (
+                <>
+                  <div style={{ width: "100%" }} className={hidesubCategory ? "px-3 product-list-item-name d-none" : "px-3 product-list-item-name"} key={subofsubItems.categoryId}
+                    onClick={() => handleThirdSubcategory(subofsubItems)}
+                  >
+                    <p>{subofsubItems.label}</p>
+                    {activebtn ? (<Button type="button" variant="contained" size='small' onClick={() => handleCategoryform(subofsubItems)}>Select</Button>) : ""}
+                  </div>
+                </>
+              ))}
+            </div>)}
+            {activeThirdSubCategory && (<div className='add-product-category-list-items-box2' >
+              {thirdsublistItem.map((thirdsubItems) => (
+                <>
+                  <div style={{ width: "100%" }} className='px-3 product-list-item-name' key={thirdsubItems.categoryId}>
+                    <p>{thirdsubItems.label}</p>
+                    <Button type="button" variant="contained" size='small' onClick={() => handleCategoryform(thirdsubItems)}>Select</Button>
+                  </div>
+                </>
+              ))}
+            </div>)}
+          </div>
         </div>
       </div>
     </div>
@@ -285,3 +240,10 @@ const CategoryHierarchy = () => {
 }
 
 export default CategoryHierarchy
+
+
+// https://sellercentral.amazon.in/abis/listing/create/product_identity?itemType&productType=AIR_COOLER&newCategory=5122348031%2F5122349031%2F2083423031%2F5130993031%2F8641217031&displayPath=Appliances%2FHeating+%26+Cooling%2FAir+Coolers%2FDesert&recommendedBrowseNodeId=8641217031&ref_=xx_catadd_dnav_xx
+// https://sellercentral.amazon.in/abis/listing/create/product_identity?itemType&productType=AIR_COOLER&newCategory=5122348031%2F5122349031%2F2083423031%2F5130993031%2F23034524031&displayPath=Appliances%2FHeating+%26+Cooling%2FAir+Coolers%2FMini&recommendedBrowseNodeId=23034524031&ref_=xx_catadd_dnav_xx
+// https://sellercentral.amazon.in/abis/listing/create/product_identity?itemType&productType=LAUNDRY_DETERGENT&newCategory=1571274031%2F1571275031%2F1953111031%2F8360551031&displayPath=Baby%2FBaby+Care%2FBaby+Laundry+Detergents&recommendedBrowseNodeId=8360551031&ref_=xx_catadd_dnav_xx
+
+

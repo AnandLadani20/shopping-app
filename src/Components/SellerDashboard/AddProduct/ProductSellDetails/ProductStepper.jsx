@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
     Typography,
     Button,
@@ -20,28 +20,146 @@ import ProductDetails from './ProductDetails';
 import ProductOffer from './ProductOffer';
 import ProductDiscription from './ProductDiscription';
 import { useSelector } from 'react-redux';
+import index from 'toastify';
+import ProductVariation from './ProductVariation';
+import { useDispatch } from 'react-redux';
+import { setProductStepperData } from '../../../../ReduxToolKit/Features/ProductStepperData';
+// 19	Ecommerce	Product	save product	curl --location 'http://localhost:8094/product/saveProduct' \ --header 'Content-Type: application/json' \ --data '[ { "productDTO": { "productId": null, "productName": "Mobile12555", "description": "abcm abcbc", "productIdType": "GTIN", "categoryId": { "browsePath": "5122348031/5122349031/4951860031/1380045031/1380050031", "categoryId": "1380050031" }, "brandName": "Nokiaaa", "hsnCode": "1a2ds0nbm", "gstPercentage": 5, "storeId": "123456", "keyword": [ "mobilephone", "smartphone" ], "bulletPoints": "phone", "offerDTO": { "listingPrice": "15000", "countryOfOrigin": "India", "hsnCode": "1a2ds0nbm", "mrp": "18000" }, "imagesUrl": [ "http://abc.com/example" ], "productPreparationType": "HOMEMADE", "createdAt": null, "updatedAt": null }, "variationList": [ { "sellerSKU": "123456", "productId": "product12345", "productIdType": "GTIN", "itemCondition": "NEW", "price": 1365, "quantity": 125, "fields": { "color": "red", "material": "polythene" } } ], "vitalInfoValueDTO": { "productId": 1, "vitalInfoFieldId": "647dc4fdf1149d58a879f77e", "vitalInfoFieldValue": "123", "vitalInfoFieldUnit": null } } ]'	
 
-
-function getSteps() {
-    return [
-        "Product Identity",
-        "Product details",
-        "Offer",
-        "Discription",
-    ];
-}
 
 const ProductStepper = () => {
     const [activeStep, setActiveStep] = useState(0);
     const [productfilepath, setProductFilePath] = useState("")
+    const [removeDiscription, setRemoveDiscription] = useState(false)
+    // const [showVariationProduct, setShowVariationProduct] = useState(false)
+    const [variantionData, setVariationData] = useState([])
 
-    const otherDehumidifiersDiscSt = useSelector((state) => state.otherDehumidifiersForm)
-    const otherHumidifiersDiscSt = useSelector((state) => state.otherHumidifierForm)
-    const singleRoomHumidifiersDiscSt = useSelector((state) => state.singleRoomHumidifierForm)
-    const wholeHouseHumidifiersDiscSt = useSelector((state) => state.wholeHouseHumidifierForm)
+    const categoriesTitle = useSelector((state) => state.categoriesTitle);
+    const subCategoriesTitle = useSelector((state) => state.subCategoriesTitle);
+    const subofSubCategoriesTitle = useSelector((state) => state.subofSubCategoriesTitle);
+    const thirdSubCategoriesTitle = useSelector((state) => state.thirdSubCategoriesTitle);
 
-    let hideLastIndexArray = Boolean((otherDehumidifiersDiscSt || otherHumidifiersDiscSt || singleRoomHumidifiersDiscSt || wholeHouseHumidifiersDiscSt) ? true :false);
-    const steps = getSteps();
+
+    const Category = useSelector((state) => state.addProductForm.selectedCategoryId);
+    let SetselectedCategoryId = Category ? Category.categoryId : ""
+
+    if (SetselectedCategoryId !== '') {
+        localStorage.setItem('selectedCategoryId', SetselectedCategoryId);
+    }
+    let selectedCategoryId = localStorage.getItem('selectedCategoryId')
+    useEffect(() => {
+        // setShowVariationProduct(true)
+        if (selectedCategoryId === "5403405031") {
+            // otherDehumidifiers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "5403407031") {
+            // otherHumidifiers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "51396529031") {
+            // singleRoomHumidifiers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "51396531031") {
+            // wholeHouseHumidifiers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "27961560031") {
+            //"Capsule Drawers"
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380047031") {
+            //"Bread Makers"
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380052031") {
+            //"Crepe Makers"
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380051031") {
+            //"Electric Grills"
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380060031") {
+            //"Electric Skillets"
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380081031") {
+            //"Pop-up Toasters"
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "51396883031") {
+            //Quesadilla Makers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380078031") {
+            //Sandwich Makers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380079031") {
+            //"Slow Cookers"
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380082031") {
+            //"Vacuum Sealers"
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380083031") {
+            //"Waffle Makers & Irons"
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380550031") {
+            // Laundry Baskets
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380580031") {
+            // Lint Shavers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "51397088031") {
+            // Vacuum Tubes
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380260031") {
+            //"Water Purifier Accessories"
+            setRemoveDiscription(true)
+        }
+        if (selectedCategoryId === "51396590031") {
+            //Gas Hoses
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380324031") {
+            //Built-in Timers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "51396840031") {
+            //Hoses
+            setRemoveDiscription(true)
+        }
+    }, [selectedCategoryId])
+
+
+    const baseSteps = [
+        "Product Identity",
+        "Product details",
+        "Variation",
+        "Offer",
+        "Discription",
+    ];
+
+    // Modify the steps array based on conditions
+    let steps = [...baseSteps];
+
+    //   let showVariationProduct = false
+
+    if (removeDiscription) {
+        // Remove "Discription" from the array if removeDiscription is true
+        steps = steps.filter((step) => step !== "Discription");
+    }
+
+
+
     const isStepFailed = () => {
         return Boolean(Object.keys(methods.formState.errors).length)
     }
@@ -52,8 +170,10 @@ const ProductStepper = () => {
             case 1:
                 return <ProductDetails />;
             case 2:
-                return <ProductOffer />;
+                return <ProductVariation setVariationData={setVariationData} />;
             case 3:
+                return <ProductOffer />;
+            case 4:
                 return <ProductDiscription setProductFilePath={setProductFilePath} />;
             default:
                 return "unknown step";
@@ -61,9 +181,12 @@ const ProductStepper = () => {
     }
     const methods = useForm({
         defaultValues: {
-            productType:"",
+            productType: "",
             itemName: "",
+            productName: "",
             productVariation: "",
+            productBrandName: "",
+            productBrandNot: "",
             productID: "",
             productSelectcode: "",
             productIdNot: "",
@@ -87,6 +210,35 @@ const ProductStepper = () => {
             productSellWidthUnit: "",
             productSellHeight: "",
             productSellHeightUnit: "",
+            productVariation: "",
+            itemDepthfrontToback: "",
+            itemDepthfrontTobackUnit: "",
+            itemWidthsideToside: "",
+            itemWidthsideTosideUnit: "",
+            itemHeightbaseTotop: "",
+            itemHeightbaseTotopUnit: "",
+            itemOEMauth: "",
+            modelnumber: "",
+            warrantyDesc: "",
+            includedComponent: "",
+            numberofBoxes: "",
+            itemManufacturer: "",
+            productLifecycleSupplyType: "",
+            materialOrFabricRegulation: "",
+            materialType: "",
+            productColorMap: "",
+            productColor: "",
+            modelname: "",
+            unitCountType: "",
+            unitCount: "",
+            productUserGender: "",
+            productStyle: "",
+            manufacturepartno: "",
+            StyleVariation: false,
+            SizeVariation: false,
+            ColorVariation: false,
+            NumberofItemsVariation: false,
+            sizeVarForm: "",
 
 
 
@@ -96,13 +248,15 @@ const ProductStepper = () => {
     const handleBack = () => {
         setActiveStep(activeStep - 1);
     };
+    const dispatch = useDispatch()
     const handleNextDetails = (datas) => {
         setActiveStep(activeStep + 1);
-
-        datas.productImages = productfilepath;
-        console.log(datas.productImages)
+        dispatch(setProductStepperData(datas))
+        // datas.productImages = productfilepath;
+        // console.log(datas.productImages)
         console.log("final data", datas)
     }
+
     return (
         <>
             <section className='product-sell-detail-dashboard-area'>
@@ -126,13 +280,13 @@ const ProductStepper = () => {
                                     <div></div>
                                     <div>
                                         <ul className='d-flex'>
-                                            <li>Collectibles & Fine Art</li>
+                                            <li>{categoriesTitle}</li>
                                             <li><GrFormNext className="navigate-next-icon" /></li>
-                                            <li>Fine Art</li>
+                                            <li>{subCategoriesTitle}</li>
                                             <li><GrFormNext className="navigate-next-icon" /></li>
-                                            <li>Drawing</li>
+                                            <li>{subofSubCategoriesTitle}</li>
                                             <li><GrFormNext className="navigate-next-icon" /></li>
-                                            <li>Chalk Drawings</li>
+                                            <li>{thirdSubCategoriesTitle}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -142,38 +296,86 @@ const ProductStepper = () => {
                                     <div className='row justify-content-center'>
                                         <div className="col-6">
                                             <Stepper activeStep={activeStep}>
-                                               {
-                                                  hideLastIndexArray ? steps.slice(0, -1).map((step, index) => {
-                                                    const labelProps = {};
-                                                    const stepProps = {};
+                                                {/* {
+                                                    hideLastIndexArray ? steps.slice(0, -1).map((step, index) => {
+                                                        const labelProps = {};
+                                                        const stepProps = {};
 
-                                                    if (isStepFailed() && activeStep === index) {
-                                                        labelProps.error = true;
-                                                    }
+                                                        if (isStepFailed() && activeStep === index) {
+                                                            labelProps.error = true;
+                                                        }
 
-                                                    return (
+                                                        return (
 
-                                                        <Step {...stepProps} key={index}>
-                                                            <StepLabel {...labelProps}>{step}</StepLabel>
-                                                        </Step>
-                                                    );
-                                                }) : steps.map((step, index) => {
-                                                    const labelProps = {};
-                                                    const stepProps = {};
+                                                            <Step {...stepProps} key={index}>
+                                                                <StepLabel {...labelProps}>{step}</StepLabel>
+                                                            </Step>
+                                                        );
+                                                    }) : steps.map((step, index) => {
+                                                        const labelProps = {};
+                                                        const stepProps = {};
 
-                                                    if (isStepFailed() && activeStep === index) {
-                                                        labelProps.error = true;
-                                                    }
+                                                        if (isStepFailed() && activeStep === index) {
+                                                            labelProps.error = true;
+                                                        }
 
-                                                    return (
+                                                        return (
 
-                                                        <Step {...stepProps} key={index}>
-                                                            <StepLabel {...labelProps}>{step}</StepLabel>
-                                                        </Step>
-                                                    );
-                                                })
-                                               } 
-                                                
+                                                            <Step {...stepProps} key={index}>
+                                                                <StepLabel {...labelProps}>{step}</StepLabel>
+                                                            </Step>
+                                                        );
+                                                    })
+                                                }
+
+                                                {
+                                                    activeVariation
+                                                        ? [...steps, "Variation"].map((step, index) => {
+                                                            const labelProps = {};
+                                                            const stepProps = {};
+
+                                                            if (isStepFailed() && activeStep === index) {
+                                                                labelProps.error = true;
+                                                            }
+
+                                                            return (
+                                                                <Step {...stepProps} key={index}>
+                                                                    <StepLabel {...labelProps}>{step}</StepLabel>
+                                                                </Step>
+                                                            );
+                                                        })
+                                                        : steps.map((step, index) => {
+                                                            const labelProps = {};
+                                                            const stepProps = {};
+
+                                                            if (isStepFailed() && activeStep === index) {
+                                                                labelProps.error = true;
+                                                            }
+
+                                                            return (
+                                                                <Step {...stepProps} key={index}>
+                                                                    <StepLabel {...labelProps}>{step}</StepLabel>
+                                                                </Step>
+                                                            );
+                                                        })
+                                                } */}
+                                                {
+                                                    steps.map((step, index) => {
+                                                        const labelProps = {};
+                                                        const stepProps = {};
+
+                                                        if (isStepFailed() && activeStep === index) {
+                                                            labelProps.error = true;
+                                                        }
+
+                                                        return (
+                                                            <Step {...stepProps} key={index}>
+                                                                <StepLabel {...labelProps}>{step}</StepLabel>
+                                                            </Step>
+                                                        );
+                                                    })
+                                                }
+
                                             </Stepper>
                                         </div>
                                     </div>

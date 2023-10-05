@@ -5,7 +5,7 @@ const Verified = () => {
         
     const navigate = useNavigate();
     const handleDashbordPage = ()=>{
-        navigate('/SellerDashboard');
+        navigate('/sellerDashboard');
     }
     return (
         <>

@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './Redux/Store'
+// import store from './Redux/Store'
+import store from './ReduxToolKit/Store/store'
 import { Provider } from 'react-redux';
 
 store.subscribe(()=>console.log(store.getState()))

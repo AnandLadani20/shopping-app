@@ -32,10 +32,10 @@ const AddProduct = () => {
                                         <div><Link to="#" >What is a Product Type?</Link></div>
                                     </div>
                                     <form>
-                                        <div class="form-group">
-                                            <div class="input-group mb-3">
+                                        <div className="form-group">
+                                            <div className="input-group mb-3">
                                                 <input type="text" className="form-control add-product-category-searchInput" style={{ padding: "12px", borderRadius: "0", border: "1px solid gray" }} placeholder="Search for a category" aria-label="Recipient's username" aria-describedby="basic-addon2" />
-                                                <div class="input-group-append">
+                                                <div className="input-group-append">
                                                     <button className="btn btn-outline-secondary" style={{ borderRadius: "0", padding: "12px 14px", border: "1px solid gray" }} type="button"><AiOutlineSearch className='searchIcon-addproduct' /></button>
                                                 </div>
                                             </div>

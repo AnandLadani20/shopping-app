@@ -33,6 +33,7 @@ import 'swiper/css/pagination';
 import Shared from './Shared.js';
 import Vision from './Vision';
 
+
 const MainPage = () => {
 
     const [reviewData, setRevieData] = useState(Shared.testimonialDatas)
@@ -219,7 +220,7 @@ const MainPage = () => {
         <>
 
             {/* //////////////// Hero-page Area /////////////// */}
-
+     
             <section className='selling-mainpage-hero-area'>
 
                 <div className='container'>

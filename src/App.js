@@ -28,7 +28,7 @@ function App() {
           <Route path='/Verified' element={<Verified/>}/>
           <Route path='/newhomepage' element={<NewHomePage/>}/>
           <Route path='/AccountRecovery' element={<AccountRecovery/>}/>
-          <Route path='/SellerDashboard' element={<SellerDashboardPage/>}/>
+          <Route path='/sellerDashboard' element={<SellerDashboardPage/>}/>
           <Route path='/sellerDashboard/addProduct' element={<AddProduct/>}/>
           <Route path='/sellerDashboard/add-multiple-product' element={<AddMultipleProduct/>}/>
           <Route path='/sellerDashboard/learn-list-products' element={<LearnListProducts/>}/>

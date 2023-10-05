@@ -18,50 +18,6 @@ const MAX_UPLOAD_LIMIT = 9;
 
 const ProductDiscription = ({ setProductFilePath }) => {
 
-    const DesertDiscState = useSelector((state) => state.desertForm)
-    const miniCoolersDiscState = useSelector((state) => state.miniCoolersForm)
-    const otherAirCoolersDiscState = useSelector((state) => state.otherAirCoolersForm)
-    const portableCoolersDiscState = useSelector((state) => state.portableCoolersForm)
-    const towerCoolersDiscState = useSelector((state) => state.towerCoolersForm)
-    const windowCoolersDiscState = useSelector((state) => state.windowCoolersForm)
-
-    const airIonizersDiscState = useSelector((state) => state.airIonizersForm)
-    const carAirPurifiersDiscState = useSelector((state) => state.carAirPurifierForm)
-    const charcoalAirPuriDiscSt = useSelector((state) => state.charcoalAirPurifierForm)
-    const electroAirPuriDiscSt = useSelector((state) => state.electroAirPurifierForm)
-    const hepaAirPuriDiscSt = useSelector((state) => state.hepaAirPurifierForm)
-    const otherAirPuriDiscSt = useSelector((state) => state.otherAirPurifierForm)
-    const portableAirPuriDiscSt = useSelector((state) => state.portableAirPurifierForm)
-    const ulpaAirPuriDiscSt = useSelector((state) => state.ulpaAirPurifierForm)
-
-    const otherDeodorisersDiscSt = useSelector((state) => state.otherDeodorisersForm)
-
-    const blowerFansDiscSt = useSelector((state) => state.blowerFansForm)
-    const boxFansDiscSt = useSelector((state) => state.boxFansForm)
-    const ceilingFansDiscSt = useSelector((state) => state.ceilingFansForm)
-    const clipFansDiscSt = useSelector((state) => state.clipFansForm)
-    const drumFansDiscSt = useSelector((state) => state.drumFansForm)
-    const exhaustFansDiscSt = useSelector((state) => state.exhaustFansForm)
-    const floorFansDiscSt = useSelector((state) => state.floorFansForm)
-    const otherFansDiscSt = useSelector((state) => state.otherFansForm)
-    const pedestalFansDiscSt = useSelector((state) => state.pedestalFansForm)
-    const personalFansDiscSt = useSelector((state) => state.personalFansForm)
-    const tableFansDiscSt = useSelector((state) => state.tableFansForm)
-    const towerFansDiscSt = useSelector((state) => state.towerFansForm)
-    const vortexActionFansDiscSt = useSelector((state) => state.vortexActionFansForm)
-    const wallMountedFansDiscSt = useSelector((state) => state.wallMountedFansForm)
-    const windowFansDiscSt = useSelector((state) => state.windowFansForm)
-
-    const otherHeatNCoolingDiscSt = useSelector((state) => state.otherHeatNCoolingForm)
-
-    const airPuriPartNAccessDiscSt = useSelector((state) => state.airPuriPartNAccessForm)
-    const dehumidPartNAccessDiscSt = useSelector((state) => state.dehumidPartNAccessForm)
-    const evaCoolerPartNAccessDiscSt = useSelector((state) => state.evaCoolerPartNAccessForm)
-    const fanPartNAccessDiscSt = useSelector((state) => state.fanPartNAccessForm)
-    const heaterPartNAccessDiscSt = useSelector((state) => state.heaterPartNAccessForm)
-    const humidiPartNAccessDiscSt = useSelector((state) => state.humidiPartNAccessForm)
-    const otherPartNAccessDiscSt = useSelector((state) => state.otherPartNAccessForm)
-    const replaceBelthumidiDiscSt = useSelector((state) => state.replaceBelthumidiForm)
 
 
     const { control, formState: { errors } } = useFormContext();
@@ -170,13 +126,7 @@ const ProductDiscription = ({ setProductFilePath }) => {
     };
     return (
         <>
-            {
-                (DesertDiscState || miniCoolersDiscState || otherAirCoolersDiscState || portableCoolersDiscState || towerCoolersDiscState || windowCoolersDiscState
-                 || airIonizersDiscState || carAirPurifiersDiscState || charcoalAirPuriDiscSt || electroAirPuriDiscSt || hepaAirPuriDiscSt || otherAirPuriDiscSt 
-                || portableAirPuriDiscSt || ulpaAirPuriDiscSt || otherDeodorisersDiscSt || blowerFansDiscSt || boxFansDiscSt || ceilingFansDiscSt || clipFansDiscSt
-                || drumFansDiscSt || exhaustFansDiscSt || floorFansDiscSt || otherFansDiscSt || pedestalFansDiscSt || personalFansDiscSt || tableFansDiscSt || towerFansDiscSt
-                || vortexActionFansDiscSt || wallMountedFansDiscSt || windowFansDiscSt || otherHeatNCoolingDiscSt || airPuriPartNAccessDiscSt || dehumidPartNAccessDiscSt || evaCoolerPartNAccessDiscSt
-                || fanPartNAccessDiscSt || heaterPartNAccessDiscSt || humidiPartNAccessDiscSt || otherPartNAccessDiscSt || replaceBelthumidiDiscSt) && (
+
                     <>
 
                         <div className='row'>
@@ -337,8 +287,7 @@ const ProductDiscription = ({ setProductFilePath }) => {
                             </div>
                         </div>
                     </>
-                )
-            }
+           
 
         </>
     )
