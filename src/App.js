@@ -22,23 +22,23 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<HomePage/>}/>
-          <Route path='/sellingpage' element={<SellingPage/>}/>
-          <Route path='/sellingsignup' element={<SellingSignup/>}/>
-          <Route path='/Verified' element={<Verified/>}/>
-          <Route path='/newhomepage' element={<NewHomePage/>}/>
-          <Route path='/AccountRecovery' element={<AccountRecovery/>}/>
-          <Route path='/sellerDashboard' element={<SellerDashboardPage/>}/>
-          <Route path='/sellerDashboard/addProduct' element={<AddProduct/>}/>
-          <Route path='/sellerDashboard/add-multiple-product' element={<AddMultipleProduct/>}/>
-          <Route path='/sellerDashboard/learn-list-products' element={<LearnListProducts/>}/>
-          <Route path='/sellerdashboard/addproduct/ProductStepper' element={<ProductStepper/>}/>
-          
+          <Route path='/' element={<HomePage />} />
+          <Route path='/sellingpage' element={<SellingPage />} />
+          <Route path='/sellingsignup' element={<SellingSignup />} />
+          <Route path='/Verified' element={<Verified />} />
+          <Route path='/newhomepage' element={<NewHomePage />} />
+          <Route path='/AccountRecovery' element={<AccountRecovery />} />
+          <Route path='/sellerDashboard' element={<SellerDashboardPage />} />
+          <Route path='/sellerDashboard/addProduct' element={<AddProduct />} />
+          <Route path='/sellerDashboard/add-multiple-product' element={<AddMultipleProduct />} />
+          <Route path='/sellerDashboard/learn-list-products' element={<LearnListProducts />} />
+          <Route path='/sellerdashboard/addproduct/ProductStepper' element={<ProductStepper />} />
         </Routes>
       </BrowserRouter>
-   
     </>
   );
 }
 
 export default App;
+
+

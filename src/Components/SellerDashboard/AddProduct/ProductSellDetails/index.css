@@ -163,3 +163,24 @@
     overflow-x: scroll;
     justify-content: space-between;
 }
+.includedComponentBox{
+    position: relative;
+}
+.options-list{
+    border: 1px solid rgb(197, 197, 197);
+    max-height: 300px;
+    width: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    z-index: 3;
+    background-color: rgb(250, 250, 250);
+
+}
+.childOption{
+    padding: 3px;
+   
+}
+.childOption:hover{
+    background-color: #c5d4ff;
+   
+}

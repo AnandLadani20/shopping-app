@@ -137,6 +137,30 @@ const ProductStepper = () => {
             //Hoses
             setRemoveDiscription(true)
         }
+        if (selectedCategoryId === "1380353031") {
+            //Clamps
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380358031") {
+            //Hoses
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1380356031") {
+            //Drain Pumps
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1967939031") {
+            //Balaclavas
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "5866003031") {
+            //Belts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "3659006031") {
+            //Cold Weather Sets
+            setRemoveDiscription(true)
+        }
     }, [selectedCategoryId])
 
 
@@ -186,10 +210,10 @@ const ProductStepper = () => {
             productName: "",
             productVariation: "",
             productBrandName: "",
-            productBrandNot: "",
+            productBrandNot: false,
             productID: "",
             productSelectcode: "",
-            productIdNot: "",
+            productIdNot: false,
             productImages: "",
             productDesc: "",
             bulletPoint: "",
@@ -224,7 +248,6 @@ const ProductStepper = () => {
             numberofBoxes: "",
             itemManufacturer: "",
             productLifecycleSupplyType: "",
-            materialOrFabricRegulation: "",
             materialType: "",
             productColorMap: "",
             productColor: "",
@@ -239,7 +262,9 @@ const ProductStepper = () => {
             ColorVariation: false,
             NumberofItemsVariation: false,
             sizeVarForm: "",
-
+            inputWithOptions:"",
+            materialOrFabricRegulation: [''],
+            bookingDate:""
 
 
 

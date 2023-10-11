@@ -1,0 +1,542 @@
+// import React, { useState } from 'react';
+// import {
+//   TextField,
+//   Button,
+//   Select,
+//   MenuItem,
+// } from "@mui/material";
+// import { useForm } from 'react-hook-form';
+
+// const InputFormWithOptions = () => {
+//   const { control, handleSubmit } = useForm();
+//   const [inputFields, setInputFields] = useState([{ id: 1, value: '', isFocused: false }]);
+
+//   const onSubmit = (data) => {
+//     // Handle form submission here
+//     console.log(data);
+//   };
+
+//   const handleSelectChange = (fieldId, event) => {
+//     const { value } = event.target;
+//     setInputFields((prevInputFields) =>
+//       prevInputFields.map((prevField) =>
+//         prevField.id === fieldId ? { ...prevField, value } : prevField
+//       )
+//     );
+//   };
+
+//   const addMore = () => {
+//     const newFieldId = inputFields.length + 1;
+//     setInputFields([...inputFields, { id: newFieldId, value: '', isFocused: false }]);
+//   };
+
+//   const removeLast = () => {
+//     if (inputFields.length > 1) {
+//       const newInputFields = inputFields.slice(0, -1);
+//       setInputFields(newInputFields);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h1>Input Form with Options</h1>
+//       <form onSubmit={handleSubmit(onSubmit)}>
+//         {inputFields.map((field) => (
+//           <div className="input-container" key={field.id}>
+//             <Select
+//               className="input-field"
+//               label="Choose an option..."
+//               variant="outlined"
+//               fullWidth
+//               value={field.value}
+//               onChange={(e) => handleSelectChange(field.id, e)}
+//             >
+//               <MenuItem value="Option 1">Option 1</MenuItem>
+//               <MenuItem value="Option 2">Option 2</MenuItem>
+//               <MenuItem value="Option 3">Option 3</MenuItem>
+//               <MenuItem value="Option 4">Option 4</MenuItem>
+//             </Select>
+//           </div>
+//         ))}
+//         <Button type="submit" variant="contained">
+//           Submit
+//         </Button>
+//       </form>
+//       <Button id="addMore" onClick={addMore}>
+//         Add More
+//       </Button>
+//       <Button id="removeLast" onClick={removeLast}>
+//         Remove Last
+//       </Button>
+//     </div>
+//   );
+// };
+
+// export default InputFormWithOptions;
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import {
+//     TextField,
+//     Button,
+// } from "@mui/material";
+// import { useForm } from 'react-hook-form';
+
+// const InputFormWithOptions = () => {
+//     const { control, handleSubmit } = useForm();
+//     const [inputFields, setInputFields] = useState([{ id: 1, value: '', isFocused: false }]);
+//     const [options, setOptions] = useState(['Option 1', 'Option 2', 'Option 3', 'Option 4']);
+
+
+
+//     const handleInputFocus = (fieldId) => {
+//         setInputFields((prevInputFields) =>
+//             prevInputFields.map((field) =>
+//                 field.id === fieldId ? { ...field, isFocused: true } : { ...field, isFocused: false }
+//             )
+//         );
+//     };
+
+//     const chooseOption = (fieldId, option) => {
+//         setInputFields((prevInputFields) =>
+//             prevInputFields.map((field) =>
+//                 field.id === fieldId ? { ...field, value: option, isFocused: false } : field
+//             )
+//         );
+//     };
+
+//     const addMore = () => {
+//         const newFieldId = inputFields.length + 1;
+//         setInputFields([...inputFields, { id: newFieldId, value: '', isFocused: false }]);
+//     };
+
+//     const removeLast = () => {
+//         if (inputFields.length > 1) {
+//             const newInputFields = inputFields.slice(0, -1);
+//             setInputFields(newInputFields);
+//         }
+//     };
+
+//     return (
+//         <div>
+//             {inputFields.map((field) => (
+//                 <div className="input-container" key={field.id}>
+//                     <TextField
+//                         className="input-field"
+//                         type="text"
+//                         label="Type here..."
+//                         onFocus={() => handleInputFocus(field.id)}
+//                         variant="outlined"
+//                         fullWidth
+//                         value={field.value}
+//                         onChange={(e) => {
+//                             const { value } = e.target;
+//                             setInputFields((prevInputFields) =>
+//                                 prevInputFields.map((prevField) =>
+//                                     prevField.id === field.id ? { ...prevField, value } : prevField
+//                                 )
+//                             );
+//                         }}
+//                     />
+//                     {field.isFocused && (
+//                         <div className="options-list">
+//                             {options.map((option, index) => (
+//                                 <div
+//                                     className="option"
+//                                     key={index}
+//                                     onClick={() => chooseOption(field.id, option)}
+//                                 >
+//                                     {option}
+//                                 </div>
+//                             ))}
+//                         </div>
+//                     )}
+//                 </div>
+//             ))}
+
+//             <Button id="addMore" onClick={addMore}>
+//                 Add More
+//             </Button>
+//             <Button id="removeLast" onClick={removeLast}>
+//                 Remove Last
+//             </Button>
+//         </div>
+//     );
+// };
+
+// export default InputFormWithOptions;
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { TextField, Button } from '@mui/material';
+// import { useForm, Controller } from 'react-hook-form';
+
+// const OptionsList = ({ setValue, fieldId }) => (
+//   <div className="options-list">
+//     <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 1");
+//       console.log(fieldId)
+//     }}>
+//       Option 1
+//     </div>
+//     <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 2");
+//     }}>
+//       Option 2
+//     </div>
+//     <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 3");
+//     }}>
+//       Option 3
+//     </div>
+//     <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 4");
+//     }}>
+//       Option 4
+//     </div>
+//   </div>
+// );
+
+// const InputWithOptions = () => {
+//   const { control, handleSubmit,setValue } = useForm();
+//   const [isFocused, setIsFocused] = useState(false);
+
+//   const onSubmit = (data) => {
+//     console.log(data);
+//   };
+
+//   return (
+//     <div>
+//       <h1>Input with Options</h1>
+//       <form onSubmit={handleSubmit(onSubmit)}>
+//         <Controller
+//           name="inputWithOptions"
+//           control={control}
+//           defaultValue=""
+//           render={({ field }) => (
+//             <div>
+//               <TextField
+//                 {...field}
+//                 type="text"
+//                 label="Type here..."
+//                 variant="outlined"
+//                 fullWidth
+//                 onFocus={() => setIsFocused(true)}
+//                 // onBlur={() => setIsFocused(false)}
+//               />
+//               {isFocused && <OptionsList setValue={setValue} fieldId={field.name} />}
+//             </div>
+//           )}
+//         />
+//         <Button type="submit" variant="contained">
+//           Submit
+//         </Button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default InputWithOptions;
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { TextField, Button } from '@mui/material';
+// import { useForm, Controller } from 'react-hook-form';
+
+// const OptionsList = ({ setValue, fieldId,setIsFocused }) => (
+//   <div className="options-list">
+//     <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 1");
+//       console.log(fieldId)
+//       setIsFocused(false)
+//     }}>
+//       Option 1
+//     </div>
+//     <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 2");
+//       setIsFocused(false)
+//     }}>
+//       Option 2
+//     </div>
+//     <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 3");
+//       setIsFocused(false)
+//     }}>
+//       Option 3
+//     </div>
+//     <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 4");
+//       setIsFocused(false)
+//     }}>
+//       Option 4
+//     </div>
+//   </div>
+// );
+
+// const InputWithOptions = () => {
+//   const { control, handleSubmit,setValue } = useForm();
+//   const [isFocused, setIsFocused] = useState(false);
+
+//   const onSubmit = (data) => {
+//     console.log(data);
+//   };
+
+//   return (
+//     <div>
+//       <h1>Input with Options</h1>
+//       <form onSubmit={handleSubmit(onSubmit)}>
+//         <Controller
+//           name="inputWithOptions"
+//           control={control}
+//           defaultValue=""
+//           render={({ field }) => (
+//             <div>
+//               <TextField
+//                 {...field}
+//                 type="text"
+//                 label="Type here..."
+//                 variant="outlined"
+//                 fullWidth
+//                 onFocus={() => setIsFocused(true)}
+//                 // onBlur={() => }
+//               />
+//               {isFocused && <OptionsList setValue={setValue} fieldId={field.name} setIsFocused={setIsFocused}/>}
+//             </div>
+//           )}
+//         />
+//         <Button type="submit" variant="contained">
+//           Submit
+//         </Button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default InputWithOptions;
+
+
+
+// import React, { useState } from 'react';
+// import { TextField, Button } from '@mui/material';
+// import { Controller, useFormContext } from 'react-hook-form';
+
+// const OptionsList = ({ setValue, fieldId, setIsFocused }) => (
+//   <div className="options-list">
+//      <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 1");
+//       console.log(fieldId)
+//       setIsFocused(false)
+//     }}>
+//       Option 1
+//     </div>
+//     <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 2");
+//       setIsFocused(false)
+//     }}>
+//       Option 2
+//     </div>
+//     <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 3");
+//       setIsFocused(false)
+//     }}>
+//       Option 3
+//     </div>
+//     <div className="option" onClick={(event) => {
+//       event.stopPropagation();
+//       setValue(fieldId, "Option 4");
+//       setIsFocused(false)
+//     }}>
+//       Option 4
+//     </div>
+//   </div>
+// );
+
+// const InputWithOptions = () => {
+
+//   const { control, setValue } = useFormContext()
+//   const [isFocused, setIsFocused] = useState(false);
+//   const [fields, setFields] = useState([{ id: 'inputWithOptions' }]);
+
+
+
+//   const addField = () => {
+//     setFields([...fields, { id: `inputWithOptions${fields.length}` }]);
+//   };
+
+//   const removeField = () => {
+//     if (fields.length > 1) {
+//       setFields(fields.slice(0, -1));
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h1>Input with Options</h1>
+   
+//         {fields.map((field, index) => (
+//           <Controller
+//             key={field.id}
+//             name={`inputWithOptions[${index}]`}
+//             control={control}
+//             defaultValue=""
+//             render={({ field }) => (
+//               <div>
+//                 <TextField
+//                   {...field}
+//                   type="text"
+//                   label="Type here..."
+//                   variant="outlined"
+//                   fullWidth
+//                   onFocus={() => setIsFocused(true)}
+//                 />
+//                 {isFocused && <OptionsList setValue={setValue} fieldId={field.name} setIsFocused={setIsFocused}/>}
+//               </div>
+//             )}
+//           />
+//         ))}
+//         <Button type="button" variant="contained" onClick={addField}>
+//           Add More
+//         </Button>
+//         <Button type="button" variant="contained" onClick={removeField}>
+//           Remove Last
+//         </Button>
+ 
+
+//     </div>
+//   );
+// };
+
+// export default InputWithOptions;
+
+import React from 'react';
+import { useForm, useFieldArray, Controller, useFormContext } from 'react-hook-form';
+import { TextField, Button, Select, MenuItem } from '@mui/material';
+
+const InputFormWithOptions = () => {
+
+    const { control, formState: { errors } } = useFormContext()
+
+    const { fields, append, remove } = useFieldArray({
+        control,
+        name: "inputFields"
+    });
+
+
+
+    return (
+
+        <div>
+            <h1>Input Form with Options</h1>
+
+            {fields.map((field, index) => (
+                <div className="input-container" key={field.id}>
+                    <Controller
+                        name={`inputFields[${index}].value`}
+                        control={control}
+                        defaultValue={field.value}
+                        render={({ field }) => (
+                            <Select
+                                className="input-field"
+                                label="Choose an option..."
+                                variant="outlined"
+                                fullWidth
+                                {...field}
+                            >
+                                <MenuItem value="Option 1">Option 1</MenuItem>
+                                <MenuItem value="Option 2">Option 2</MenuItem>
+                                <MenuItem value="Option 3">Option 3</MenuItem>
+                                <MenuItem value="Option 4">Option 4</MenuItem>
+                            </Select>
+                        )}
+                    />
+                </div>
+            ))}
+
+
+            <Button id="addMore" onClick={() => append({ value: '' })}>
+                Add More
+            </Button>
+            <Button id="removeLast" onClick={() => remove(fields.length - 1)}>
+                Remove Last
+            </Button>
+        </div>
+
+    );
+};
+
+export default InputFormWithOptions;
+
+
+// const [fields, setFields] = useState(['', '', '']);
+// const [values, setValues] = useState(Array(3).fill(''));
+
+// const handleSelectChange = (index) => (event) => {
+//     const newValues = [...values];
+//     newValues[index] = event.target.value;
+//     setValues(newValues);
+// };
+
+// const remove = () => {
+//     if (fields.length > 1) {
+//         const newFields = [...fields];
+//         newFields.pop();
+//         setFields(newFields);
+
+//         const newValues = [...values];
+//         newValues.pop();
+//         setValues(newValues);
+//     }
+// };
+
+// ...
+
+// {fields.map((field, index) => (
+//     <div className="input-container" key={index}>
+//         <Controller
+//             name={`inputFields[${index}]`}
+//             control={control}
+//             defaultValue={field}
+//             render={({ field }) => (
+//                 <Select
+//                     className="input-field"
+//                     label="Choose an option..."
+//                     variant="outlined"
+//                     fullWidth
+//                     value={values[index]}
+//                     onChange={handleSelectChange(index)}
+//                 >
+//                     <MenuItem value="Option 1">Option 1</MenuItem>
+//                     <MenuItem value="Option 2">Option 2</MenuItem>
+//                     <MenuItem value="Option 3">Option 3</MenuItem>
+//                     <MenuItem value="Option 4">Option 4</MenuItem>
+//                 </Select>
+//             )}
+//         />
+//     </div>
+// ))}
+
+

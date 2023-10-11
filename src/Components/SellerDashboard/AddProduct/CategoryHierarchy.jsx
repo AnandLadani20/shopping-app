@@ -42,7 +42,7 @@ const CategoryHierarchy = () => {
 
   useEffect(() => {
 
-    fetch("https://mighty-dots-speak.loca.lt/ecommerce/category/getMainCategories")
+    fetch("https://nice-turkeys-stop.loca.lt/ecommerce/category/getMainCategories")
       .then((res) => res.json())
       .then((data) => {
         setListItem(data)
@@ -58,7 +58,7 @@ const CategoryHierarchy = () => {
   const handleSubCategory = async (item) => {
     dispatch(setCategoriesTitlePath(item.label))
     try {
-      const response = await fetch(`https://mighty-dots-speak.loca.lt/ecommerce/category/getChildCategories?browsePath=${item.browsePath}/${item.categoryId}`);
+      const response = await fetch(`https://nice-turkeys-stop.loca.lt/ecommerce/category/getChildCategories?browsePath=${item.browsePath}/${item.categoryId}`);
       const items = await response.json();
       setSubListItem(items);
       setSubOfSubListItem([]); // Clear subofsublistItem
@@ -82,7 +82,7 @@ const CategoryHierarchy = () => {
   const handleSubOfSubcategory = async (subItem) => {
     dispatch(setSubCategoriesTitlePath(subItem.label))
     try {
-      const response = await fetch(`https://mighty-dots-speak.loca.lt/ecommerce/category/getChildCategories?browsePath=${subItem.browsePath}/${subItem.categoryId}`);
+      const response = await fetch(`https://nice-turkeys-stop.loca.lt/ecommerce/category/getChildCategories?browsePath=${subItem.browsePath}/${subItem.categoryId}`);
       const subitems = await response.json();
       setSubOfSubListItem(subitems);
 
@@ -107,7 +107,7 @@ const CategoryHierarchy = () => {
   const handleThirdSubcategory = async (thirdsubItem) => {
     dispatch(setSubofSubCategoriesTitlePath(thirdsubItem.label))
     try {
-      const response = await fetch(`https://mighty-dots-speak.loca.lt/ecommerce/category/getChildCategories?browsePath=${thirdsubItem.browsePath}/${thirdsubItem.categoryId}`);
+      const response = await fetch(`https://nice-turkeys-stop.loca.lt/ecommerce/category/getChildCategories?browsePath=${thirdsubItem.browsePath}/${thirdsubItem.categoryId}`);
 
       if (response.ok) {
         const thirditems = await response.json();
@@ -133,7 +133,7 @@ const CategoryHierarchy = () => {
   const handleFourthSubcategory = async (fouthsubItem) => {
 
     try {
-      const response = await fetch(`https://mighty-dots-speak.loca.lt/ecommerce/category/getChildCategories?browsePath=${fouthsubItem.browsePath}/${fouthsubItem.categoryId}`);
+      const response = await fetch(`https://nice-turkeys-stop.loca.lt/ecommerce/category/getChildCategories?browsePath=${fouthsubItem.browsePath}/${fouthsubItem.categoryId}`);
 
       if (response.ok) {
         const fourthitems = await response.json();
@@ -154,7 +154,7 @@ const CategoryHierarchy = () => {
   const handleFifthSubcategory = async (fifthsubItem) => {
 
     try {
-      const response = await fetch(`https://mighty-dots-speak.loca.lt/ecommerce/category/getChildCategories?browsePath=${fifthsubItem.browsePath}/${fifthsubItem.categoryId}`);
+      const response = await fetch(`https://nice-turkeys-stop.loca.lt/ecommerce/category/getChildCategories?browsePath=${fifthsubItem.browsePath}/${fifthsubItem.categoryId}`);
 
       if (response.ok) {
         const fifthitems = await response.json();
@@ -193,8 +193,8 @@ const CategoryHierarchy = () => {
 
     <div className='add-product-category-list'>
       <div className='add-product-category-list-item-title'>
-        <p>{categoryTitle} </p>
-        <p>{subCategoryTitle}</p>
+        <p>{categoryTitle}</p>
+        <p  onClick={() => handleSubOfSubcategory()}>{subCategoryTitle}</p>
         <p>{thirdCategoryTitle}</p>
       </div>
       <div>

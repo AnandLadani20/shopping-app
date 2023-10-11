@@ -1106,7 +1106,7 @@ const ProductOffer = () => {
         }
         else if (selectedCategoryId === "14387569031") {
             //Washing Machine Covers
-              setFormComponent3(true)
+            setFormComponent3(true)
         }
 
         // Appliances
@@ -1257,18 +1257,23 @@ const ProductOffer = () => {
         }
         else if (selectedCategoryId === "1380343031") {
             //Motors
+            setFormComponent3(true)
         }
         else if (selectedCategoryId === "51396843031") {
             //Power Cords
+            setFormComponent3(true)
         }
         else if (selectedCategoryId === "51396838031") {
             //Refrigerator Lighting
+            setFormComponent3(true)
         }
         else if (selectedCategoryId === "51396841031") {
             //Refrigerator Thermometers
+            setFormComponent3(true)
         }
         else if (selectedCategoryId === "1380348031") {
             //Water Filters
+            setFormComponent3(true)
         }
 
         // Appliances
@@ -1277,30 +1282,39 @@ const ProductOffer = () => {
         // Washer Parts & Accessories
         if (selectedCategoryId === "1380353031") {
             //Clamps
+            setFormComponent2(true)
         }
         else if (selectedCategoryId === "1380354031") {
             //Detergent Trays
+            setFormComponent3(true)
         }
         else if (selectedCategoryId === "1380355031") {
             //Doors
+            setFormComponent3(true)
         }
         else if (selectedCategoryId === "1380356031") {
             //Drain Pumps
+            setFormComponent2(true)
         }
         else if (selectedCategoryId === "1380357031") {
             //Floor Trays
+            setFormComponent3(true)
         }
         else if (selectedCategoryId === "1380358031") {
             //Hoses
+            setFormComponent2(true)
         }
         else if (selectedCategoryId === "1380359031") {
             //Lint Filters
+            setFormComponent3(true)
         }
         else if (selectedCategoryId === "1380360031") {
             //Motors
+            setFormComponent3(true)
         }
         else if (selectedCategoryId === "1380352031") {
             //Other (Washer Parts & Accessories)
+            setFormComponent3(true)
         }
 
         // Appliances
@@ -1308,9 +1322,11 @@ const ProductOffer = () => {
         // Washing Machines & Dryers
         if (selectedCategoryId === "1380369031") {
             //Other (Washing Machines & Dryers)
+            setFormComponent3(true)
         }
         else if (selectedCategoryId === "1380372031") {
             //Stacked Washers & Dryers
+            setFormComponent3(true)
         }
     }, [selectedCategoryId])
     return (

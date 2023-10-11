@@ -1,28 +1,27 @@
 import {
-  TextField,
-  Button,
+  TextField
 } from "@mui/material";
 import React, { useState, useEffect } from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
 import InputLabel from '@mui/material/InputLabel';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
+
 import FormControlLabel from '@mui/material/FormControlLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Checkbox from '@mui/material/Checkbox';
 import { useSelector } from 'react-redux';
-import { GrFormNext } from 'react-icons/gr'
+
 
 
 
 
 const ProductIdentity = () => {
 
-  const { control, formState: { errors }, setValue, watch } = useFormContext()
+  const { control, formState: { errors }, setValue } = useFormContext()
   const [showSearchproduct, setShowSearchproduct] = useState(
     localStorage.getItem('showSearchproduct') || 'No'
   );
-
+  const [brandValue, setBrandValue] = useState(false)
+  const [productIDNotValue, setproductIDNotValue] = useState(false)
   useEffect(() => {
     // Retrieve the saved value from local storage when the component mounts
     const savedProductVariation = localStorage.getItem('showSearchproduct');
@@ -49,17 +48,17 @@ const ProductIdentity = () => {
 
   const Category = useSelector((state) => state.addProductForm.selectedCategoryId);
 
-  
+
   let SetselectedCategoryId = Category ? Category.categoryId : ""
   let SetselectedProductType = Category ? Category.productType : ""
-  if(SetselectedCategoryId !== ''){
+  if (SetselectedCategoryId !== '') {
     localStorage.setItem('selectedCategoryId', SetselectedCategoryId);
   }
-  if(SetselectedProductType !== ''){
+  if (SetselectedProductType !== '') {
     localStorage.setItem('selectedProductType', SetselectedProductType);
   }
 
- 
+
   let selectedCategoryId = localStorage.getItem('selectedCategoryId')
   let selectedProductType = localStorage.getItem('selectedProductType')
 
@@ -1306,10 +1305,27 @@ const ProductIdentity = () => {
 
   }, [selectedCategoryId])
 
-  // const handleGetValue = (get) => {
-  //   console.log("val", get)
-  // }
+  const handleBrandCheckbox = (field) => {
+    // console.log(!field.value)
+    setValue('productBrandName', "Generic");
+    setBrandValue(!field.value)
+  }
+  const handleProductIDCheckbox = (field) => {
+    console.log("id", !field.value)
 
+    // setValue('productID', "No Product ID");
+    // setValue('productSelectcode', "");
+    setproductIDNotValue(!field.value)
+  }
+  const validateproductID = (value) => {
+    if (!value) {
+      if (!value && productIDNotValue) {
+        return true;
+      }
+      return false
+    }
+    return true;
+  };
   return (
 
     <div>
@@ -1346,15 +1362,13 @@ const ProductIdentity = () => {
                           readOnly: true,
                         }}
                         {...field}
-
                       />
                     </div>
-                    {/* <button type="button" onClick={() => handleGetValue({ ...field })}>ss</button> */}
                   </>
                 )}
               />
             </div>
-            <div className="row">
+            <div className="row" style={{ marginTop: "10px" }}>
               <Controller
                 control={control}
                 name='productName'
@@ -1384,8 +1398,8 @@ const ProductIdentity = () => {
               />
             </div>
 
-        
-            <div className="row">
+
+            <div className="row" style={{ marginTop: "10px" }}>
               <Controller
                 control={control}
                 name='productBrandName'
@@ -1408,13 +1422,14 @@ const ProductIdentity = () => {
                         style={{ width: "100%" }}
                         {...field}
                         error={Boolean(errors.productBrandName)}
+                        disabled={brandValue}
                       />
                     </div>
                   </>
                 )}
               />
             </div>
-            <div className="row">
+            <div className="row" >
               <Controller
                 control={control}
                 name="productBrandNot"
@@ -1423,7 +1438,7 @@ const ProductIdentity = () => {
                   <>
                     <div className="col-4 col-sm-3 col-lg-2 text-end"></div>
                     <div className="col-8 col-sm-7 col-lg-4">
-                      <div className="d-flex align-items-center">
+                      {/* <div className="d-flex align-items-center">
                         <Checkbox
                           {...field}
                           color="primary"
@@ -1431,7 +1446,23 @@ const ProductIdentity = () => {
                         <InputLabel htmlFor="productBrandNot">
                           This product does not have a brand name
                         </InputLabel>
-                      </div>
+                      </div> */}
+
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            {...field}
+                            color="primary"
+                            checked={field.value}
+                            onChange={(e) => {
+                              field.onChange(e);
+                              handleBrandCheckbox({ ...field });
+                            }}
+
+                          />
+                        }
+                        label=" This product does not have a brand name"
+                      />
                     </div>
 
                   </>
@@ -1443,11 +1474,8 @@ const ProductIdentity = () => {
                 control={control}
                 name="productID"
                 rules={{
-                  required: 'product id is required',
-                  pattern: {
-                    value: new RegExp('^[0-9]+$'),
-                    message: "not a valid formate"
-                  }
+                  validate: validateproductID,
+
                 }}
                 render={({ field }) => (
                   <>
@@ -1460,8 +1488,11 @@ const ProductIdentity = () => {
                         placeholder="5279173125000"
                         {...field}
                         variant="outlined"
-                        error={Boolean(errors.productID)}
+                        // error={Boolean(errors.productID)}
+                        error={Boolean(productIDNotValue ? productIDNotValue : errors.productID)}
                         style={{ width: "100%" }}
+                        // value={productIDNotValue ? "" : field.value}
+                        disabled={productIDNotValue}
                       />
                     </div>
 
@@ -1474,8 +1505,12 @@ const ProductIdentity = () => {
                 control={control}
                 name="productSelectcode"
                 rules={{
-                  required: "productSelectcode is required",
+                  validate: validateproductID,
+
                 }}
+                // rules={{
+                //   required: "productSelectcode is required",
+                // }}
                 render={({ field }) => (
                   <>
                     <div className="col-4 col-sm-3 col-lg-2 "></div>
@@ -1485,9 +1520,12 @@ const ProductIdentity = () => {
                         variant="outlined"
                         select
                         style={{ width: "100%" }}
+                        // value={productIDNotValue ? "" : field.value}
+                        disabled={productIDNotValue}
                         label="-Select-"
                         {...field}
-                        error={Boolean(errors.profession)}
+                        error={Boolean(productIDNotValue ? false : errors.profession)}
+
 
                       >
                         <MenuItem value="">-Select-</MenuItem>
@@ -1513,7 +1551,7 @@ const ProductIdentity = () => {
                   <>
                     <div className="col-4 col-sm-3 col-lg-2 "></div>
                     <div className="col-8 col-sm-7 col-lg-4">
-                      <div className="d-flex align-items-center">
+                      {/* <div className="d-flex align-items-center">
 
                         <Checkbox
                           {...field}
@@ -1522,8 +1560,23 @@ const ProductIdentity = () => {
                         <InputLabel htmlFor="productIdNot">
                           i do not have a Product Id
                         </InputLabel>
-                      </div>
+                      </div> */}
 
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            {...field}
+                            color="primary"
+                            checked={field.value}
+                            onChange={(e) => {
+                              field.onChange(e);
+                              handleProductIDCheckbox({ ...field });
+                            }}
+
+                          />
+                        }
+                        label="  i do not have a Product Id"
+                      />
                     </div>
                   </>
                 )}
@@ -1602,7 +1655,7 @@ const ProductIdentity = () => {
                 )}
               />
             </div>
-          
+
             <div className="row">
               <Controller
                 control={control}
@@ -1816,7 +1869,7 @@ const ProductIdentity = () => {
                 )}
               />
             </div>
-          
+
             <div className="row">
               <Controller
                 control={control}
@@ -2008,7 +2061,7 @@ const ProductIdentity = () => {
                 )}
               />
             </div>
-          
+
             <div className="row">
               <Controller
                 control={control}
@@ -2226,7 +2279,7 @@ const ProductIdentity = () => {
                 )}
               />
             </div>
-         
+
             <div className="row">
               <Controller
                 control={control}
@@ -2444,7 +2497,7 @@ const ProductIdentity = () => {
                   )}
                 />
               </div>
-           
+
               <div className="row">
                 <Controller
                   control={control}
