@@ -125,7 +125,7 @@ const ProductStepper = () => {
             //"Water Purifier Accessories"
             setRemoveDiscription(true)
         }
-        if (selectedCategoryId === "51396590031") {
+        else if (selectedCategoryId === "51396590031") {
             //Gas Hoses
             setRemoveDiscription(true)
         }
@@ -137,7 +137,7 @@ const ProductStepper = () => {
             //Hoses
             setRemoveDiscription(true)
         }
-        if (selectedCategoryId === "1380353031") {
+        else if (selectedCategoryId === "1380353031") {
             //Clamps
             setRemoveDiscription(true)
         }
@@ -159,6 +159,141 @@ const ProductStepper = () => {
         }
         else if (selectedCategoryId === "3659006031") {
             //Cold Weather Sets
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1967937031") {
+            //Other (Accessories)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "3414249031") {
+            //Sport Headbands
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "26111016031") {
+            //Baseball Caps
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1967949031") {
+            //Other (Hats & Caps)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "26111017031") {
+            //Skullies & Beanies
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "26111015031") {
+            //Visors
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "3731695031") {
+            //Dupattas
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "3723386031") {
+            //Lehenga Cholis
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "3659020031") {
+            //Other (Ethnic Wear)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "3723388031") {
+            //Salwar Suit Sets
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968017031") {
+            //Panties
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1967993031") {
+            //Other (Rainwear)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Girls > Clothing > School Uniforms 
+        else if (selectedCategoryId === "1968344031") {
+            //Accessories
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "16085632031") {
+            //Hoodies & Sweatshirts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "10671563031") {
+            //Pullovers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968347031") {
+            //Shorts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968348031") {
+            //Skirts, Scooters & Skorts
+            setRemoveDiscription(true)
+        }
+        // Fashion > Girls > Clothing > Skirts & Shorts
+        else if (selectedCategoryId === "1967984031") {
+            //Shorts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1967985031") {
+            //Skirts
+            setRemoveDiscription(true)
+        }
+        // Fashion > Girls > Clothing > Sleepwear
+        else if (selectedCategoryId === "1967987031") {
+            //Nightdresses
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1967986031") {
+            //Other (Sleepwear)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Girls > Clothing > Sportswear
+        else if (selectedCategoryId === "1967964031") {
+            //Shorts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "5866006031") {
+            //Sports Dresses
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1967961031") {
+            //Sweaters
+            setRemoveDiscription(true)
+        }
+        // Fashion > Girls > Clothing > Sportswear > Base Layers & Compression
+        else if (selectedCategoryId === "22202815031") {
+            //Shorts
+            setRemoveDiscription(true)
+        }
+        // Fashion > Girls > Clothing > Sportswear > Skirts & Skorts
+        if (selectedCategoryId === "1967965031") {
+            //Other (Skirts & Skorts)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "25965190031") {
+            //Skirts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "25965189031") {
+            //Skorts
+            setRemoveDiscription(true)
+        }
+        // Fashion > Girls > Clothing > Sportswear >Sweatshirts & Hoodies
+        if (selectedCategoryId === "1967973031") {
+            //Hoodies
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "11400134031") {
+            //Other (Sweatshirts & Hoodies)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968004031") {
+            //Sweatshirts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1967943031") {
+            //Other (Sunglasses & Spectacle Frames)
             setRemoveDiscription(true)
         }
     }, [selectedCategoryId])
@@ -262,9 +397,9 @@ const ProductStepper = () => {
             ColorVariation: false,
             NumberofItemsVariation: false,
             sizeVarForm: "",
-            inputWithOptions:"",
+            inputWithOptions: "",
             materialOrFabricRegulation: [''],
-            bookingDate:""
+            bookingDate: ""
 
 
 

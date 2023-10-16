@@ -1,0 +1,2 @@
+npm dedupe:These commands will attempt to reduce duplication in your dependency tree1.
+npm ls:These commands will show you a tree of your installed dependencies, which can help you spot duplicates.

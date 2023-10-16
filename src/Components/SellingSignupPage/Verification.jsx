@@ -10,12 +10,13 @@ import {
     Controller,
     useFormContext,
 } from "react-hook-form";
+import { ToastContainer, toast } from 'react-toastify';
 import InputLabel from '@mui/material/InputLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import OtpInput from 'otp-input-react';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 import authService from './ApiUrl';
 
 
@@ -28,7 +29,7 @@ const Verification = ({ setRequirePhoneOtp }) => {
     const { control, formState: { errors }, getValues, } = useFormContext();
     const [selectedCountryCode, setSelectedCountryCode] = useState("");
     // ={ newCommonUrl }
-    const handleSendOTP = async (data,datacode) => {
+    const handleSendOTP = async (data, datacode) => {
 
         setShowVerify(true)
         const number = data.value;
@@ -55,7 +56,7 @@ const Verification = ({ setRequirePhoneOtp }) => {
         }
     };
 
-    const handleVerifyOTP = async (otp, data,code) => {
+    const handleVerifyOTP = async (otp, data, code) => {
         const number2 = data.value
         // const countryCode2 = code.value
         console.log(number2);
@@ -101,6 +102,7 @@ const Verification = ({ setRequirePhoneOtp }) => {
 
             if (response.ok) {
                 console.log("OTP sent in Email successfully");
+                toast.success("OTP sent in Email successfully");
             }
             if (response) {
                 console.log(response)
@@ -114,12 +116,15 @@ const Verification = ({ setRequirePhoneOtp }) => {
     }
 
     const handleVerifyEmail = async (otpp, datas) => {
-        const emails = datas.value;
 
-        const newEmail = emails.replace("@", "%40")
-        console.log(newEmail)
         const num = otpp;
         console.log(num)
+        // Number(otpp)
+        // otpp.toString()
+
+        const emails = datas.value;
+        const newEmail = emails.replace("@", "%40")
+        console.log(newEmail)
 
         const url = `${authService.newCommonUrl}/common/general/verifyEmailOtp?email=${newEmail}&otp=${num}`;
         try {
@@ -216,31 +221,6 @@ const Verification = ({ setRequirePhoneOtp }) => {
                     )}
                 />
             </div>
-            {/* <Controller
-                control={control}
-                name="userName"
-                rules={{
-                    required: " UserName is required",
-                    minLength: {
-                        value: 4,
-                        message: "UserName is min. 2 characters"
-                    }
-                }}
-                render={({ field }) => (
-                    <TextField
-                        id="userName"
-                        label="UserName"
-                        variant="outlined"
-                        placeholder="Enter Your UserName"
-                        style={{ width: "40%" }}
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.userName)}
-                        helperText={errors.userName?.message}
-                    />
-                )}
-            /> */}
-
 
             {/* <Controller
                 control={control}
@@ -292,7 +272,7 @@ const Verification = ({ setRequirePhoneOtp }) => {
                                 }}
                                 render={({ field }) => (
                                     <>
-                                        {/* <MuiOtpInput
+                                     <MuiOtpInput
                                             id="phoneOtp"
                                             label="phoneOtp "
                                             variant="outlined"
@@ -303,8 +283,9 @@ const Verification = ({ setRequirePhoneOtp }) => {
                                             error={Boolean(errors.phoneOtp)}
                                             helperText={errors.phoneOtp?.message}
                                             length={6}
-                                        /> */}
-            {/* <OtpInput OTPLength={6} otpType="number" disabled={false} value={verifyotp} style={{ margin: "10px 0px" }} onChange={setVerifyOtp} autoFocus classname="border border-primary"></OtpInput>
+                                        /> 
+                                       
+                                               <OtpInput OTPLength={6} otpType="number" disabled={false} value={verifyotp} style={{ margin: "10px 0px" }} onChange={setVerifyOtp} autoFocus classname="border border-primary"></OtpInput>
                                         <Button type="button" onClick={() => handleVerifyOTP(verifyotp, { ...field })}>Verfy OTP</Button>
                                     </>
                                 )}
@@ -376,12 +357,12 @@ const Verification = ({ setRequirePhoneOtp }) => {
 
                                 />
                                 {
-                                    field.value.length === 10 ? <Button style={{ position: "absolute", right: "5%", top: "22px" }} type="button" onClick={() => handleSendOTP({ ...field },selectedCountryCode)}>Send OTP</Button> : ""
+                                    field.value.length === 10 ? <Button style={{ position: "absolute", right: "5%", top: "22px" }} type="button" onClick={() => handleSendOTP({ ...field }, selectedCountryCode)}>Send OTP</Button> : ""
                                 }
 
                                 {
                                     showverify ? (<><OtpInput OTPLength={6} otpType="number" disabled={false} value={verifyotp} style={{ margin: "10px 0px", marginLeft: "-100px" }} onChange={setVerifyOtp} autoFocus classname="border border-primary"></OtpInput>
-                                        <Button type="button" style={{ marginLeft: "-100px" }} onClick={() => handleVerifyOTP(verifyotp, { ...field },selectedCountryCode)}>Verfy OTP</Button>
+                                        <Button type="button" style={{ marginLeft: "-100px" }} onClick={() => handleVerifyOTP(verifyotp, { ...field }, selectedCountryCode)}>Verfy OTP</Button>
                                     </>) : (<></>)
                                 }
 
@@ -417,11 +398,11 @@ const Verification = ({ setRequirePhoneOtp }) => {
                                 helperText={errors.emailAddress?.message}
                             />
                             {
-                                !errors.emailAddress?.message ? <Button style={{ position: "absolute", right: "5%", top: "22px" }} type="button" onClick={() => handleEmailOTP({ ...field })}>Send Email</Button> : ""
+                                !errors.emailAddress?.message ? <><Button style={{ position: "absolute", right: "5%", top: "22px" }} type="button" onClick={() => handleEmailOTP({ ...field })}>Send Email</Button> <ToastContainer /></> : ""
                             }
                             {
                                 showemailverify ? (<><OtpInput OTPLength={6} otpType="number" style={{ margin: "10px 0px" }} disabled={false} value={verifyemailotpp} onChange={setVerifyEmailOtpp} autoFocus classname="border border-primary"></OtpInput>
-                                    <Button type="button" onClick={() => handleVerifyEmail(verifyemailotpp, { ...field })}>Verfy Email OTP</Button></>) : (<></>)
+                                  <ToastContainer />  <Button type="button" onClick={() => handleVerifyEmail(verifyemailotpp, { ...field })}>Verfy Email OTP</Button><ToastContainer /></>) : (<></>)
                             }
                         </div>
                     </>

@@ -5,12 +5,14 @@ import React, { useState, useEffect } from 'react'
 import MenuItem from '@mui/material/MenuItem';
 import { useSelector } from 'react-redux';
 import { Controller, useFormContext } from 'react-hook-form';
-import IncludedComponents from "./IncludedComponents";
-import CareInstructions from './CareInstructions';
-import OccasionDescription from "./OccasionDescription";
-import MaterialFabricRegulations from "./MaterialFabricRegulations";
-import TargetAudience from "./TargetAudience";
+import IncludedComponents from "./ProductDetails/IncludedComponents";
+import CareInstructions from './ProductDetails/CareInstructions';
+import OccasionDescription from "./ProductDetails/OccasionDescription";
+import MaterialFabricRegulations from "./ProductDetails/MaterialFabricRegulations";
+import TargetAudience from "./ProductDetails/TargetAudience";
 import BookingDate from "./ProductDetails/BookingDate";
+import ProductStyle from "./ProductDetails/ProductStyle";
+import SpecialFeature from "./ProductDetails/SpecialFeature";
 
 
 const ProductDetails = () => {
@@ -19,6 +21,12 @@ const ProductDetails = () => {
     const [includedComponentOptions, setIncludedComponentOptions] = useState([])
     const [careInstructionOptions, setCareInstructionOptions] = useState([])
     const [occasionDescriptionOptions, setOccasionDescriptionOptions] = useState([])
+    const [styleOptions, setStyleOptions] = useState(
+        ["Backpacks", "Briefcases", "Diaper Bags", "Fashion Waist Packs", "Gym Bags", "Laptop Bags & Cases", "Luggage", "Messenger Bags", "Travel Accessories", "Umbrellas", "Rucksacks", "Arm Warmers",
+            "Balaclavas", "Belt Buckles", "Belts", "Bow Ties", "Cold Weather Sets ", "Cummerbunds", "Earmuffs", "Gloves", "Handkerchiefs", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs",
+            "Neckties", "Pocket Squares", "Tie"]
+    )
+    const [specialFeatureOptions, setSpecialFeatureOptions] = useState([])
 
     const addOptions = (newOptions) => {
         setIncludedComponentOptions((previousOptions) => [...previousOptions, ...newOptions]);
@@ -96,6 +104,14 @@ const ProductDetails = () => {
     const [itemShapeField, setItemShapeField] = useState(false)
     const [searchTearmsField, setSearchTearmsField] = useState(false)
     const [powerandPlugDescriptionField, setPowerandPlugDescriptionField] = useState(false)
+    const [toeStyleField, setToeStyleField] = useState(false)
+    const [itemFurDescriptionField, setItemFurDescriptionField] = useState(false)
+    const [apparelSizeSystemField, setApparelSizeSystemField] = useState(false)
+    const [apparelSizeClassField, setApparelSizeClassField] = useState(false)
+    const [apparelSizeValueField, setApparelSizeValueField] = useState(false)
+    const [apparelSizeToRangeField, setApparelSizeToRangeField] = useState(false)
+    const [apparelSizeBodyTypeField, setApparelSizeBodyTypeField] = useState(false)
+    const [apparelSizeHeightTypeField, setApparelSizeHeightTypeField] = useState(false)
 
     //  Material Type Item
     const [materialTypeItem, setMaterialTypeItem] = useState(
@@ -108,14 +124,16 @@ const ProductDetails = () => {
             'Walnut', 'Cast Iron', 'Rattan & Wicker', 'Tin', 'Ceramic', 'Paper', 'Tritan', 'Nickel', 'Polycast', 'Other']
     )
 
-
+    const [frameMaterialTypeItem, setFrameMaterialTypeItem] = useState([
+        "Nylon", "Wood", "Aluminium", "Plastic", "Acetate", "Metal", "TR90", "Stainless Steel", "Resin", "Titanium", "Carbon Fibre", "Rubber", "Polycarbonate", "Acrylic"
+    ])
 
     // Fashion
     const [closureTypeField, setClosureTypeField] = useState(false)
     const [fabricTypeField, setFabricTypeField] = useState(false)
     const [targetGenderField, setTargetGenderField] = useState(false)
     const [ageRangeDescriptionField, setAgeRangeDescriptionField] = useState(false)
-    const [productStyleTxtField, setProductStyleTxtField] = useState(false)
+    const [productTxtStyleField, setProductTxtStyleField] = useState(false)
     const [outerMaterialTypeField, setOuterMaterialTypeField] = useState(false)
     const [headwearSizeSystemField, setHeadwearSizeSystemField] = useState(false)
     const [headwearSizeClassField, setHeadwearSizeClassField] = useState(false)
@@ -131,6 +149,60 @@ const ProductDetails = () => {
     const [itemPPUCountUnitofMeasureField, setItemPPUCountUnitofMeasureField] = useState(false)
     const [hairTypeField, setHairTypeField] = useState(false)
     const [lifestyleField, setLifestyleField] = useState(false)
+    const [bookingDateField, setBookingDateField] = useState(false)
+    const [itemLengthDescriptionField, setItemLengthDescriptionField] = useState(false)
+    const [neckStyleField, setNeckStyleField] = useState(false)
+    const [bottomsSizeSystemField, setBottomsSizeSystemField] = useState(false)
+    const [bottomsSizeClassField, setBottomsSizeClassField] = useState(false)
+    const [bottomsSizeValueField, setBottomsSizeValueField] = useState(false)
+    const [bottomsSizeToRangeField, setBottomsSizeToRangeField] = useState(false)
+    const [bottomsSizeBodyTypeField, setbottomsSizeBodyTypeField] = useState(false)
+    const [riseStyleField, setRiseStyleField] = useState(false)
+    const [collectionDescriptionField, setCollectionDescriptionField] = useState(false)
+    const [sleeveTypeField, setSleeveTypeField] = useState(false)
+    const [fittingTypeField, setFittingTypeField] = useState(false)
+    const [finishTypeField, setFinishTypeField] = useState(false)
+    const [weaveTypeField, setWeaveTypeField] = useState(false)
+    const [chestSizeField, setChestSizeField] = useState(false)
+    const [itemLengthField, setItemLengthField] = useState(false)
+    const [collarStyleField, setCollarStyleField] = useState(false)
+    const [designNameField, setDesignNameField] = useState(false)
+    const [seasonField, setSeasonField] = useState(false)
+    const [bottomStyleField, setBottomStyleField] = useState(false)
+    const [sizeSystemField, setSizeSystemField] = useState(false)
+    const [sizeClassField, setSizeClassField] = useState(false)
+    const [sizeValueField, setSizeValueField] = useState(false)
+    const [shapewearSizeToRangeField, setShapewearSizeToRangeField] = useState(false)
+    const [bodyTypeField, setBodyTypeField] = useState(false)
+    const [shirtSizeSystemField, setShirtSizeSystemField] = useState(false)
+    const [shirtSizeClassField, setShirtSizeClassField] = useState(false)
+    const [shirtSizeValueField, setShirtSizeValueField] = useState(false)
+    const [shirtSizeToRangeField, setShirtSizeToRangeField] = useState(false)
+    const [shirtSizeBodyTypeField, setShirtSizeBodyTypeField] = useState(false)
+    const [itemStylingField, setItemStylingField] = useState(false)
+    const [underwireTypeField, setUnderwireTypeField] = useState(false)
+    const [strapTypeField, setStrapTypeField] = useState(false)
+    const [braCupSizeField, setBraCupSizeField] = useState(false)
+    const [specialFeatureField, setSpecialFeatureField] = useState(false)
+    const [supportTypeField, setSupportTypeField] = useState(false)
+    const [bandSizeValueField, setBandSizeValueField] = useState(false)
+    const [cupSizeValueField, setCupSizeValueField] = useState(false)
+    const [numberOfPocketsField, setNumberOfPocketsField] = useState(false)
+    const [pocketDescriptionField, setPocketDescriptionField] = useState(false)
+    const [skirtSizeSystemField, setSkirtSizeSystemField] = useState(false)
+    const [skirtSizeClassField, setSkirtSizeClassField] = useState(false)
+    const [skirtSizeValueField, setSkirtSizeValueField] = useState(false)
+    const [skirtSizeToRangeField, setSkirtSizeToRangeField] = useState(false)
+    const [skirtBodyTypeField, setSkirtBodyTypeField] = useState(false)
+    const [polarizationTypeField, setPolarizationTypeField] = useState(false)
+    const [armLengthField, setArmLengthField] = useState(false)
+    const [bridgeWidthField, setBridgeWidthField] = useState(false)
+    const [frameMaterialTypeField, setFrameMaterialTypeField] = useState(false)
+    const [lensColorField, setLensColorField] = useState(false)
+    const [colorOfTheEyewearLensField, setColorOfTheEyewearLensField] = useState(false)
+    const [lensMaterialTypeField, setLensMaterialTypeField] = useState(false)
+    const [lensWidthField, setLensWidthField] = useState(false)
+    const [swimwearBottomStyleField, setSwimwearBottomStyleField] = useState(false)
 
     // formComponents1 =>  Model Number,Warranty Description,Included Components,Is the item OEM authorized?,Number of Boxes,Item Dimensions D x W x H,Manufacturer
     // formComponents2 =>  Model,Number of Items,Unit Count,Unit Count Type,Product Care Instructions,Contains Liquid Contents?,Is Assembly Required,Number of Pieces,Included Components,Size,Color,Color Map,Material Type,Number of Boxes,Manufacturer,Item Dimensions D x W x H
@@ -714,7 +786,7 @@ const ProductDetails = () => {
         setClosureTypeField(true)
         setManuFacturePartNoField(true)
         setModelNumberField(true)
-        setProductStyleTxtField(true)
+        setProductTxtStyleField(true)
         setGenderField(true)
         setNumberOfItemsField(true)
         setFabricTypeField(true)
@@ -788,6 +860,586 @@ const ProductDetails = () => {
         setColorField(true)
         setColorMapField(true)
         setIsProductExpirableField(true)
+    }
+    const handleFormFieldLayout53 = () => {
+        setClosureTypeField(true)
+        setManuFacturePartNoField(true)
+        setModelNumberField(true)
+        setProductTxtStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setModelNameField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setProductSizeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setBookingDateField(true)
+    }
+    const handleFormFieldLayout54 = () => {
+        setIsProductExpirableField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+    }
+    const handleFormFieldLayout55 = () => {
+        setManuFacturePartNoField(true)
+        setModelNumberField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setFabricTypeField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setProductCareInstructionsField(true)
+        setToeStyleField(true)
+        setOccasionDescriptionField(true)
+        setItemFurDescriptionField(true)
+        setPatternField(true)
+        setProductSizeField(true)
+        setProductsizeMapField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setApparelSizeSystemField(true)
+        setApparelSizeClassField(true)
+        setApparelSizeValueField(true)
+        setApparelSizeToRangeField(true)
+        setApparelSizeBodyTypeField(true)
+        setApparelSizeHeightTypeField(true)
+    }
+    const handleFormFieldLayout56 = () => {
+        setManuFacturePartNoField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setLifestyleField(true)
+        setItemLengthDescriptionField(true)
+        setNeckStyleField(true)
+        setPatternField(true)
+        setProductSizeField(true)
+        setProductsizeMapField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setApparelSizeSystemField(true)
+        setApparelSizeClassField(true)
+        setApparelSizeValueField(true)
+        setApparelSizeToRangeField(true)
+        setApparelSizeBodyTypeField(true)
+    }
+    const handleFormFieldLayout57 = () => {
+        setClosureTypeField(true)
+        setManuFacturePartNoField(true)
+        setModelNumberField(true)
+        setProductTxtStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setModelNameField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setBottomsSizeSystemField(true)
+        setBottomsSizeClassField(true)
+        setBottomsSizeValueField(true)
+        setBottomsSizeToRangeField(true)
+        setbottomsSizeBodyTypeField(true)
+    }
+
+    const handleFormFieldLayout58 = () => {
+        setClosureTypeField(true)
+        setManuFacturePartNoField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setModelNameField(true)
+        setRiseStyleField(true)
+        setProductSizeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setBottomsSizeSystemField(true)
+        setBottomsSizeClassField(true)
+        setBottomsSizeValueField(true)
+        setBottomsSizeToRangeField(true)
+        setbottomsSizeBodyTypeField(true)
+
+    }
+    const handleFormFieldLayout59 = () => {
+        setManuFacturePartNoField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setProductCareInstructionsField(true)
+        setCollectionDescriptionField(true)
+        setPatternField(true)
+        setProductSizeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setFabricTypeField(true)
+        setAgeRangeDescriptionField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setBookingDateField(true)
+    }
+    const handleFormFieldLayout60 = () => {
+        setManuFacturePartNoField(true)
+        setModelNumberField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setFittingTypeField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setModelNameField(true)
+        setProductSizeField(true)
+        setSleeveTypeField(true)
+        setColorField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setBookingDateField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setApparelSizeSystemField(true)
+        setApparelSizeClassField(true)
+        setApparelSizeValueField(true)
+        setApparelSizeToRangeField(true)
+        setApparelSizeBodyTypeField(true)
+        setManufactureField(true)
+    }
+    const handleFormFieldLayout61 = () => {
+        setClosureTypeField(true)
+        setManuFacturePartNoField(true)
+        setGenderField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setFinishTypeField(true)
+        setMaterialCompositionField(true)
+        setPatternField(true)
+        setProductSizeField(true)
+        setProductsizeMapField(true)
+        setSleeveTypeField(true)
+        setWeaveTypeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+    }
+    const handleFormFieldLayout62 = () => {
+        setSearchTearmsField(true)
+        setManuFacturePartNoField(true)
+        setCollectionDescriptionField(true)
+        setStyleField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setGenderField(true)
+        setProductSizeField(true)
+        setProductsizeMapField(true)
+        setMaterialTypeField(true)
+        setChestSizeField(true)
+        setItemLengthField(true)
+        setCollarStyleField(true)
+        setDesignNameField(true)
+        setWeaveTypeField(true)
+        setOccasionDescriptionField(true)
+        setNeckStyleField(true)
+        setSleeveTypeField(true)
+        setModelNameField(true)
+        setSeasonField(true)
+        setPatternField(true)
+        setProductCareInstructionsField(true)
+    }
+    const handleFormFieldLayout63 = () => {
+        setClosureTypeField(true)
+        setManufactureField(true)
+        setManuFacturePartNoField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setProductCareInstructionsField(true)
+        setDesignNameField(true)
+        setItemLengthDescriptionField(true)
+        setBottomStyleField(true)
+        setProductsizeMapField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setApparelSizeSystemField(true)
+        setApparelSizeClassField(true)
+        setApparelSizeValueField(true)
+        setApparelSizeToRangeField(true)
+        setApparelSizeBodyTypeField(true)
+        setFabricTypeField(true)
+    }
+    const handleFormFieldLayout64 = () => {
+        setManuFacturePartNoField(true)
+        setModelNumberField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setPatternField(true)
+        setProductSizeField(true)
+        setProductsizeMapField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setApparelSizeSystemField(true)
+        setApparelSizeClassField(true)
+        setApparelSizeValueField(true)
+        setApparelSizeToRangeField(true)
+        setApparelSizeBodyTypeField(true)
+        setApparelSizeHeightTypeField(true)
+    }
+    const handleFormFieldLayout65 = () => {
+        setClosureTypeField(true)
+        setManuFacturePartNoField(true)
+        setModelNumberField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setModelNameField(true)
+        setProductSizeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setSizeSystemField(true)
+        setSizeClassField(true)
+        setSizeValueField(true)
+        setShapewearSizeToRangeField(true)
+        setBodyTypeField(true)
+    }
+    const handleFormFieldLayout66 = () => {
+        setManuFacturePartNoField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setFittingTypeField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setModelNameField(true)
+        setProductSizeField(true)
+        setSleeveTypeField(true)
+        setColorField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setShirtSizeSystemField(true)
+        setShirtSizeClassField(true)
+        setShirtSizeValueField(true)
+        setShirtSizeToRangeField(true)
+        setShirtSizeBodyTypeField(true)
+
+    }
+    const handleFormFieldLayout67 = () => {
+        setClosureTypeField(true)
+        setManuFacturePartNoField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setModelNameField(true)
+        setItemStylingField(true)
+        setUnderwireTypeField(true)
+        setStrapTypeField(true)
+        setChestSizeField(true)
+        setBraCupSizeField(true)
+        setSpecialFeatureField(true)
+        setSupportTypeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setSizeSystemField(true)
+        setSizeClassField(true)
+        setSizeValueField(true)
+        setShapewearSizeToRangeField(true)
+        setBandSizeValueField(true)
+        setCupSizeValueField(true)
+        setBodyTypeField(true)
+    }
+    const handleFormFieldLayout68 = () => {
+        setManuFacturePartNoField(true)
+        setOuterMaterialTypeField(true)
+        setGenderField(true)
+        setProductSizeField(true)
+        setProductsizeMapField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setFabricTypeField(true)
+    }
+    const handleFormFieldLayout69 = () => {
+        setManuFacturePartNoField(true)
+        setClosureTypeField(true)
+        setModelNameField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setItemLengthDescriptionField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setNumberOfPocketsField(true)
+        setPatternField(true)
+        setProductSizeField(true)
+        setProductsizeMapField(true)
+        setSleeveTypeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setApparelSizeSystemField(true)
+        setApparelSizeClassField(true)
+        setApparelSizeValueField(true)
+        setApparelSizeToRangeField(true)
+        setApparelSizeBodyTypeField(true)
+    }
+    const handleFormFieldLayout70 = () => {
+        setClosureTypeField(true)
+        setManuFacturePartNoField(true)
+        setGenderField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setNeckStyleField(true)
+        setPatternField(true)
+        setProductSizeField(true)
+        setProductsizeMapField(true)
+        setSleeveTypeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setApparelSizeSystemField(true)
+        setApparelSizeClassField(true)
+        setApparelSizeValueField(true)
+        setApparelSizeToRangeField(true)
+        setApparelSizeBodyTypeField(true)
+    }
+    const handleFormFieldLayout71 = () => {
+        setClosureTypeField(true)
+        setManuFacturePartNoField(true)
+        setModelNumberField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setModelNameField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setProductSizeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+    }
+    const handleFormFieldLayout72 = () => {
+        setManuFacturePartNoField(true)
+        setClosureTypeField(true)
+        setGenderField(true)
+        setStyleField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setProductCareInstructionsField(true)
+        setOccasionDescriptionField(true)
+        setItemLengthDescriptionField(true)
+        setFabricTypeField(true)
+        setNumberOfPocketsField(true)
+        setPatternField(true)
+        setPocketDescriptionField(true)
+        setRiseStyleField(true)
+        setProductSizeField(true)
+        setProductsizeMapField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setBottomsSizeSystemField(true)
+        setBottomsSizeClassField(true)
+        setBottomsSizeValueField(true)
+        setBottomsSizeToRangeField(true)
+        setbottomsSizeBodyTypeField(true)
+    }
+    const handleFormFieldLayout73 = () => {
+        setManuFacturePartNoField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setProductCareInstructionsField(true)
+        setOccasionDescriptionField(true)
+        setItemLengthDescriptionField(true)
+        setPatternField(true)
+        setProductSizeField(true)
+        setProductsizeMapField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setSkirtSizeSystemField(true)
+        setSkirtSizeClassField(true)
+        setSkirtSizeValueField(true)
+        setSkirtSizeToRangeField(true)
+        setSkirtBodyTypeField(true)
+        setFabricTypeField(true)
+    }
+    const handleFormFieldLayout74 = () => {
+        setManuFacturePartNoField(true)
+        setGenderField(true)
+        setFabricTypeField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setProductCareInstructionsField(true)
+        setAgeRangeDescriptionField(true)
+        setMaterialCompositionField(true)
+        setItemLengthDescriptionField(true)
+        setNeckStyleField(true)
+        setPatternField(true)
+        setProductSizeField(true)
+        setProductsizeMapField(true)
+        setSleeveTypeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+    }
+    const handleFormFieldLayout75 = () => {
+        setManuFacturePartNoField(true)
+        setProductTxtStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setModelNameField(true)
+        setProductSizeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setApparelSizeSystemField(true)
+        setApparelSizeClassField(true)
+        setApparelSizeValueField(true)
+        setApparelSizeToRangeField(true)
+        setApparelSizeBodyTypeField(true)
+        setApparelSizeHeightTypeField(true)
+    }
+    const handleFormFieldLayout76 = () => {
+        setManuFacturePartNoField(true)
+        setModelNumberField(true)
+        setProductTxtStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setItemShapeField(true)
+        setModelNameField(true)
+        setTargetGenderField(true)
+        setPolarizationTypeField(true)
+        setAgeRangeDescriptionField(true)
+        setArmLengthField(true)
+        setBridgeWidthField(true)
+        setFrameMaterialTypeField(true)
+        setLensColorField(true)
+        setColorOfTheEyewearLensField(true)
+        setLensMaterialTypeField(true)
+        setProductSizeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setLensWidthField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setBookingDateField(true)
+    }
+    const handleFormFieldLayout77 = () => {
+        setClosureTypeField(true)
+        setManuFacturePartNoField(true)
+        setModelNumberField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setModelNameField(true)
+        setSwimwearBottomStyleField(true)
+        setProductSizeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setSizeSystemField(true)
+        setSizeClassField(true)
+        setSizeValueField(true)
+        setShapewearSizeToRangeField(true)
+        setBodyTypeField(true)
+    }
+    const handleFormFieldLayout78 = () => {
+        setManuFacturePartNoField(true)
+        setModelNumberField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setModelNameField(true)
+        setProductSizeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setTargetGenderField(true)
+        setBookingDateField(true)
+        setAgeRangeDescriptionField(true)
+        setApparelSizeSystemField(true)
+        setApparelSizeClassField(true)
+        setApparelSizeValueField(true)
+        setApparelSizeToRangeField(true)
+        setApparelSizeBodyTypeField(true)
+        setApparelSizeHeightTypeField(true)
     }
     //   const[ArtistName,setArtistName] = useState(false)
     //   const[ArtworkMedium,setArtworkMedium] = useState(false)
@@ -2166,40 +2818,48 @@ const ProductDetails = () => {
         }
         else if (selectedCategoryId === "1967952031") {
             //Neckerchiefs
-
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
         }
         else if (selectedCategoryId === "1967937031") {
             //Other (Accessories)
-
+            handleFormFieldLayout51()
         }
         else if (selectedCategoryId === "3414249031") {
             //Sport Headbands
-
+            handleFormFieldLayout54()
         }
         else if (selectedCategoryId === "1967940031") {
             //Suspenders
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
-        // Fashion
-        // Girl
-        // Clothing
-        // Accessories
-        // Hats & Caps
+
+        // Fashion > Girls > Clothing > Accessories > Hats & Caps 
         if (selectedCategoryId === "26111016031") {
             //Baseball Caps
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1967949031") {
             //Other (Hats & Caps)
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "26111017031") {
             //Skullies & Beanies
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "26111015031") {
             //Visors
-
+            handleFormFieldLayout49()
         }
         // Fashion
         // Girl
@@ -2208,488 +2868,1084 @@ const ProductDetails = () => {
         // Socks
         if (selectedCategoryId === "1967969031") {
             //Athletic Socks
+            handleFormFieldLayout55()
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968000031") {
             //Knee-High Socks
+            handleFormFieldLayout55()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968001031") {
             //Liners & Ankle Socks
+            handleFormFieldLayout55()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1967999031") {
             //Other (Socks)
+            handleFormFieldLayout55()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
 
         // Fashion > Girls > Clothing > Dresses & Jumpsuits
         if (selectedCategoryId === "1967972031") {
             //Dresses
+            handleFormFieldLayout56();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
 
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+
+            setStyleOptions(["Pinafore", "Wrap", "Tulip", "T-Shirt", "Empire", "Cocktail", "One-Shoulder", "Bubble Hem", "Sheath", "Bustier", "Tunic", "Shirt", "Kimono", "Fit & Flare", "Pleated", "Shift", "A-Line", "Skater", "Peplum", "Kaftan", "Strapless", "Bodycon"])
         }
         else if (selectedCategoryId === "1967983031") {
             //Overalls
-
+            handleFormFieldLayout57();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic"])
         }
         // Fashion > Girls > Clothing > Ethnic Wear
         if (selectedCategoryId === "3731694031") {
             //Bottom Wear
-
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "3731695031") {
             //Dupattas
+            handleFormFieldLayout59();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Chanderi", "Chiffon", "Brasso", "Dupion Silk", "Georgette", "Jute Cotton", "Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Modal", "Net", "Khadi", "Organza"])
 
         }
         else if (selectedCategoryId === "3723384031") {
             //Half Sarees
+            handleFormFieldLayout71();
+            setStyleOptions(["Lehenga Saree", "Half & Half", "Ready Pleated Saree", "Ruffle Saree", "Set Mundu"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Silk", "Linen", "Cotton", "Art Silk", "Cotton Blend", "Jute"])
 
         }
         else if (selectedCategoryId === "3723385031") {
             //Kurtas & Kurtis
+            handleFormFieldLayout60();
+            setStyleOptions(["Pleated", "Empire", "Regular", "Asymmetric", "A-Line", "Anarkali", "Angrakha", "Ruffled", "Layered and Tiered", "Pathani"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Synthetic", "Polycotton", "Voile", "Tussar Silk", "Chiffon", "Dupion Silk", "Modal", "Net", "Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic"])
 
         }
         else if (selectedCategoryId === "3723386031") {
             //Lehenga Cholis
+            handleFormFieldLayout61();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+
 
         }
         else if (selectedCategoryId === "3659020031") {
             //Other (Ethnic Wear)
-
+            handleFormFieldLayout62();
+            setStyleOptions(["Achkan", "Pathan Suit", "Sherwani", "Suit Piece", "Other", "A-Line", "Anarkali", "Angrakha", "Bubble Hem", "Davani", "Dress Material", "Empire", "Halterneck", "Mermaid", "One-Shoulder", "Pleated", "Princess Cut",
+                "Set Mundu", "Sharara", "Shirt", "Straight", "Strapless", "Wrap Kurtas", "Chudidar", "Dhoti", "Jodhpuri", "Legging", "Lungi", "Mundu", "Parallel", "Patialas", "Pyjama", "Salwar", "Sarouel", "Butterfly Pallu", "Dupatta Saree", "Half Saree",
+                "Lehenga Saree", "Ready Pleated Saree", "With Blouse Piece", "Without Blouse Piece", "Back Button", "Backless", "Bustier", "Front Button", "Long Cholis", "Singlets", "Singlets", "Sleeveless"])
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
+            setOccasionDescriptionOptions(["Athletic", "Business", "Casual", "Ceremony", "Evening"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
         }
         else if (selectedCategoryId === "3723388031") {
             //Salwar Suit Sets
+            handleFormFieldLayout63()
+            setStyleOptions(["Pleated", "Empire", "Regular", "Straight", "Panelled", "Asymmetric", "A-Line", "Anarkali", "Angrakha", "Ruffled", "Layered and Tiered", "Pathani"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Chanderi", "Chiffon", "Brasso", "Dupion Silk", "Georgette", "Jute Cotton", "Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Modal", "Net", "Khadi", "Organza"])
 
         }
         else if (selectedCategoryId === "3723389031") {
             //Sarees
+            handleFormFieldLayout71();
+            setStyleOptions(["Lehenga Saree", "Half & Half", "Ready Pleated Saree", "Ruffle Saree", "Set Mundu"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Silk", "Linen", "Cotton", "Art Silk", "Cotton Blend", "Jute"])
 
         }
         // Fashion > Girls > Clothing > Innerwear
         if (selectedCategoryId === "1968016031") {
             //Other (Innerwear)
+            handleFormFieldLayout48();
+
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968017031") {
             //Panties
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "2170168031") {
             //Sets
+            handleFormFieldLayout48()
 
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
         }
         else if (selectedCategoryId === "1968018031") {
             //Slips
-
+            handleFormFieldLayout65()
+            setStyleOptions(["Full Slip", "Underskirt", "Pant Liner Slip"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
         }
         else if (selectedCategoryId === "1968023031") {
             //Vests & Camisoles
-
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
         }
         // Fashion > Girls > Clothing > Innerwear > Beginners Bras
         if (selectedCategoryId === "5836981031") {
             //Other (Beginners Bras)
-
+            handleFormFieldLayout67()
+            setStyleOptions(["Minimalist", "Contemporary", "Casual", "Classic", "Retro", "Modern"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setSpecialFeatureOptions(["Waterproof", "Lightweight", "Pump Compatible Hands Free", "Anti-Sag", "Fade Resistant", "Seamless", "Shrink Resistant", "Removable Strap", "Removable Padding", "Stain Resistant", "Water Resistant"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
         }
         else if (selectedCategoryId === "1967960031") {
             //Sports Bras
-
+            handleFormFieldLayout67()
+            setStyleOptions(["Minimalist", "Contemporary", "Casual", "Classic", "Retro", "Modern"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setSpecialFeatureOptions(["Waterproof", "Lightweight", "Pump Compatible Hands Free", "Anti-Sag", "Fade Resistant", "Seamless", "Shrink Resistant", "Removable Strap", "Removable Padding", "Stain Resistant", "Water Resistant"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
         }
         // Fashion > Girls > Clothing > Innerwear > Thermals
         if (selectedCategoryId === "1968019031") {
             //Other (Thermals)
+            handleFormFieldLayout48()
 
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
         }
         else if (selectedCategoryId === "1968020031") {
             //Thermal Bottoms
-
+            handleFormFieldLayout58()
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "26111018031") {
             //Thermal One-Piece Suits
+            handleFormFieldLayout48()
+
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968021031") {
             //Thermal Sets
+            handleFormFieldLayout53();
+
+            setCareInstructionOptions(["Machine Wash", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968022031") {
             //Thermal Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         // Fashion > Girls > Clothing > Rainwear 
         if (selectedCategoryId === "1967993031") {
             //Other (Rainwear)
-
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
         }
         else if (selectedCategoryId === "1967994031") {
             //Rain Trousers
-
+            handleFormFieldLayout58()
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "1967995031") {
             //Raincoats
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
 
         }
         else if (selectedCategoryId === "1967996031") {
             //Snow Trousers & Bibs
+            handleFormFieldLayout71()
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1967997031") {
             //Snowsuits
+            handleFormFieldLayout71()
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         // Fashion > Girls > Clothing > School Uniforms 
         if (selectedCategoryId === "1968344031") {
             //Accessories
-
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
         }
         else if (selectedCategoryId === "16085632031") {
             //Hoodies & Sweatshirts
-
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
         }
         else if (selectedCategoryId === "1968345031") {
             //Jackets & Coats
-
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
         }
 
         else if (selectedCategoryId === "1968350031") {
             //Pants
+            handleFormFieldLayout58()
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
 
         }
         else if (selectedCategoryId === "10671563031") {
             //Pullovers
-
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
         }
         else if (selectedCategoryId === "1968346031") {
             //Sets
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968349031") {
             //Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "1968347031") {
             //Shorts
-
+            handleFormFieldLayout72()
+            setStyleOptions(["Chino Shorts", "Regular Shorts", "Cargo Shorts", "Bermuda Shorts", "Gym Shorts", "Running Shorts", "Cycling Shorts", "Yoga Shorts", "Outdoor Shorts", "Training Shorts", "Hotpants", "Skorts", "Board Shorts", "Boyfriend Shorts", "Cut Off Shorts", "Skort", "Boy Shorts", "Hybrid Shorts", "Pleated Shorts", "Boxer Shorts"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Home", "Casual", "Evening"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
         }
         else if (selectedCategoryId === "1968348031") {
             //Skirts, Scooters & Skorts
-
+            handleFormFieldLayout73();
+            setStyleOptions(["A-Line", "Bodycon", "Fit and flare", "Pencil", "Peplum", "Pinafore", "Pleated", "Sheath", "Shift", "Skater", "Tulip", "Wrap", "Kilt", "Asymmetric", "Full", "Bubble", "Skort", "Frills", "Slit", "Tutu", "Sarong", "Bustle", "Mermaid", "Culotte", "Trumpet", "Tiered"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Ethnic", "Casual", "Evening", "Business", "Ceremony"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
         }
         else if (selectedCategoryId === "16039025031") {
             //T-Shirts
-
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
         }
         // Fashion > Girls > Clothing > Skirts & Shorts
 
         if (selectedCategoryId === "1967984031") {
             //Shorts
-
+            handleFormFieldLayout72()
+            setStyleOptions(["Chino Shorts", "Regular Shorts", "Cargo Shorts", "Bermuda Shorts", "Gym Shorts", "Running Shorts", "Cycling Shorts", "Yoga Shorts", "Outdoor Shorts", "Training Shorts", "Hotpants", "Skorts", "Board Shorts", "Boyfriend Shorts", "Cut Off Shorts", "Skort", "Boy Shorts", "Hybrid Shorts", "Pleated Shorts", "Boxer Shorts"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Home", "Casual", "Evening"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
         }
         else if (selectedCategoryId === "1967985031") {
             //Skirts
+            handleFormFieldLayout73();
+            setStyleOptions(["A-Line", "Bodycon", "Fit and flare", "Pencil", "Peplum", "Pinafore", "Pleated", "Sheath", "Shift", "Skater", "Tulip", "Wrap", "Kilt", "Asymmetric", "Full", "Bubble", "Skort", "Frills", "Slit", "Tutu", "Sarong", "Bustle", "Mermaid", "Culotte", "Trumpet", "Tiered"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Ethnic", "Casual", "Evening", "Business", "Ceremony"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
         }
         // Fashion > Girls > Clothing > Sleepwear
         if (selectedCategoryId === "1967987031") {
             //Nightdresses
-
+            handleFormFieldLayout74();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Cotton", "Cotton blend", "Lace", "Linen", "Linen Blend", "Modal", "Nylon", "Modal Blend", "Net", "Polyester Blend", "Polyester", "Nylon Blend", "Rayon", "Rayon Blend", "Satin",
+                "Satin blend", "Silk", "Silk Blend", "Viscose Blend", "Wool", "Wool blend", "Acrylic blend"])
         }
         else if (selectedCategoryId === "1967986031") {
             //Other (Sleepwear)
-
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
         }
         else if (selectedCategoryId === "1967989031") {
             //Pyjama Sets
+            handleFormFieldLayout71()
+            setStyleOptions(["Pajamas", "Pajama Set", "Shorts", "Shorts Set", "Capris", "Capris Set", "Salwar", "Salwar Set"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
         }
         else if (selectedCategoryId === "1967990031") {
             //Pyjama Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
         }
         else if (selectedCategoryId === "1967988031") {
             //Pyjamas
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
         }
         else if (selectedCategoryId === "1967991031") {
             //Robes
+            handleFormFieldLayout75();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
         }
         else if (selectedCategoryId === "1967992031") {
             //Sleepsuits
+            handleFormFieldLayout71()
+            setStyleOptions(["Pajamas", "Pajama Set", "Shorts", "Shorts Set", "Capris", "Capris Set", "Salwar", "Salwar Set"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
         }
         // Fashion > Girls > Clothing > Sportswear
         if (selectedCategoryId === "1967969031") {
             //Athletic Socks
-
+            handleFormFieldLayout55()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Cotton", "Cotton blend", "Lace", "Linen", "Linen Blend", "Modal", "Nylon", "Modal Blend", "Net", "Polyester Blend", "Polyester", "Nylon Blend", "Rayon", "Rayon Blend", "Satin",
+                "Satin blend", "Silk", "Silk Blend", "Viscose Blend", "Wool", "Wool blend", "Acrylic blend"])
         }
         else if (selectedCategoryId === "1967966031") {
             //Leggings
-
+            handleFormFieldLayout58()
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
 
         else if (selectedCategoryId === "1967964031") {
             //Shorts
-
+            handleFormFieldLayout72()
+            setStyleOptions(["Chino Shorts", "Regular Shorts", "Cargo Shorts", "Bermuda Shorts", "Gym Shorts", "Running Shorts", "Cycling Shorts", "Yoga Shorts", "Outdoor Shorts", "Training Shorts", "Hotpants", "Skorts", "Board Shorts", "Boyfriend Shorts", "Cut Off Shorts", "Skort", "Boy Shorts", "Hybrid Shorts", "Pleated Shorts", "Boxer Shorts"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Home", "Casual", "Evening"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
         }
         else if (selectedCategoryId === "5866006031") {
             //Sports Dresses
+            handleFormFieldLayout56();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+
+            setStyleOptions(["Pinafore", "Wrap", "Tulip", "T-Shirt", "Empire", "Cocktail", "One-Shoulder", "Bubble Hem", "Sheath", "Bustier", "Tunic", "Shirt", "Kimono", "Fit & Flare", "Pleated", "Shift", "A-Line", "Skater", "Peplum", "Kaftan", "Strapless", "Bodycon"])
 
         }
         else if (selectedCategoryId === "1967961031") {
             //Sweaters
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
 
         }
         else if (selectedCategoryId === "1967970031") {
             //Track Jackets
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "1967957031") {
             //Vests
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
 
         }
         // Fashion > Girls > Clothing > Sportswear > Base Layers & Compression
         if (selectedCategoryId === "3414719031") {
             //Arm Warmers
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "3414723031") {
             //Compression Socks
+            handleFormFieldLayout55()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Cotton", "Cotton blend", "Lace", "Linen", "Linen Blend", "Modal", "Nylon", "Modal Blend", "Net", "Polyester Blend", "Polyester", "Nylon Blend", "Rayon", "Rayon Blend", "Satin",
+                "Satin blend", "Silk", "Silk Blend", "Viscose Blend", "Wool", "Wool blend", "Acrylic blend"])
 
         }
         else if (selectedCategoryId === "3414720031") {
             //Leg Warmers
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
 
         else if (selectedCategoryId === "3414721031") {
             //Pants
-
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "3414722031") {
             //Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
 
         }
         else if (selectedCategoryId === "22202815031") {
             //Shorts
-
+            handleFormFieldLayout72()
+            setStyleOptions(["Chino Shorts", "Regular Shorts", "Cargo Shorts", "Bermuda Shorts", "Gym Shorts", "Running Shorts", "Cycling Shorts", "Yoga Shorts", "Outdoor Shorts", "Training Shorts", "Hotpants", "Skorts", "Board Shorts", "Boyfriend Shorts", "Cut Off Shorts", "Skort", "Boy Shorts", "Hybrid Shorts", "Pleated Shorts", "Boxer Shorts"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Home", "Casual", "Evening"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
         }
         // Fashion > Girls > Clothing > Sportswear > Base Layers & Compression > Thermal Underwear
 
         if (selectedCategoryId === "") {
             //Other (Thermal Underwear)
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         else if (selectedCategoryId === "") {
             //Thermal Bottoms
-
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "") {
             //Thermal One-Piece Suits
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         else if (selectedCategoryId === "") {
             //Thermal Sets
+            handleFormFieldLayout53();
+
+            setCareInstructionOptions(["Machine Wash", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "") {
             //Thermal Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         // Fashion > Girls > Clothing > Sportswear > Innerwear 
         if (selectedCategoryId === "3659009031") {
             //Active Undershirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "1967959031") {
             //Briefs
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1967958031") {
             //Other (Innerwear)
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
         }
         else if (selectedCategoryId === "1967960031") {
             //Sports Bras
+            handleFormFieldLayout67()
+            setStyleOptions(["Minimalist", "Contemporary", "Casual", "Classic", "Retro", "Modern"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setSpecialFeatureOptions(["Waterproof", "Lightweight", "Pump Compatible Hands Free", "Anti-Sag", "Fade Resistant", "Seamless", "Shrink Resistant", "Removable Strap", "Removable Padding", "Stain Resistant", "Water Resistant"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         // Fashion > Girls > Clothing > Sportswear > Sets
         if (selectedCategoryId === "1967962031") {
             //Other (Sets)
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         else if (selectedCategoryId === "25965191031") {
             //Sweatsuits
+            handleFormFieldLayout75();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
 
         }
         else if (selectedCategoryId === "1967967031") {
             //Tracksuits
+            handleFormFieldLayout75();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+
         }
         else if (selectedCategoryId === "3414248031") {
             //Workout Top & Bottom Sets
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         // Fashion > Girls > Clothing > Sportswear > Shirts & Tees
         if (selectedCategoryId === "26978645031") {
             //Button-Down Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "25965193031") {
             //Long Sleeve Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
         }
         else if (selectedCategoryId === "1967963031") {
             //Other (Shirts & Tees)
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+
         }
         else if (selectedCategoryId === "25965194031") {
             //Polos
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
 
         }
         else if (selectedCategoryId === "25965192031") {
             //T-Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
 
         }
         else if (selectedCategoryId === "25965195031") {
             //Tank Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         // Fashion > Girls > Clothing > Sportswear > Skirts & Skorts
         if (selectedCategoryId === "1967965031") {
             //Other (Skirts & Skorts)
-
+            handleFormFieldLayout73();
+            setStyleOptions(["A-Line", "Bodycon", "Fit and flare", "Pencil", "Peplum", "Pinafore", "Pleated", "Sheath", "Shift", "Skater", "Tulip", "Wrap", "Kilt", "Asymmetric", "Full", "Bubble", "Skort", "Frills", "Slit", "Tutu", "Sarong", "Bustle", "Mermaid", "Culotte", "Trumpet", "Tiered"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Ethnic", "Casual", "Evening", "Business", "Ceremony"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
         }
         else if (selectedCategoryId === "25965190031") {
             //Skirts
+            handleFormFieldLayout73();
+            setStyleOptions(["A-Line", "Bodycon", "Fit and flare", "Pencil", "Peplum", "Pinafore", "Pleated", "Sheath", "Shift", "Skater", "Tulip", "Wrap", "Kilt", "Asymmetric", "Full", "Bubble", "Skort", "Frills", "Slit", "Tutu", "Sarong", "Bustle", "Mermaid", "Culotte", "Trumpet", "Tiered"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Ethnic", "Casual", "Evening", "Business", "Ceremony"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
         }
         else if (selectedCategoryId === "25965189031") {
             //Skorts
+            handleFormFieldLayout73();
+            setStyleOptions(["A-Line", "Bodycon", "Fit and flare", "Pencil", "Peplum", "Pinafore", "Pleated", "Sheath", "Shift", "Skater", "Tulip", "Wrap", "Kilt", "Asymmetric", "Full", "Bubble", "Skort", "Frills", "Slit", "Tutu", "Sarong", "Bustle", "Mermaid", "Culotte", "Trumpet", "Tiered"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Ethnic", "Casual", "Evening", "Business", "Ceremony"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
         }
         // Fashion > Girls > Clothing > Sportswear >Sweatshirts & Hoodies
         if (selectedCategoryId === "1967973031") {
             //Hoodies
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "11400134031") {
             //Other (Sweatshirts & Hoodies)
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "1968004031") {
             //Sweatshirts
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         // Fashion > Girls > Clothing > Sportswear >Trousers
         if (selectedCategoryId === "1967968031") {
             //Other (Trousers)
-
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "25965187031") {
             //Sweatpants
-
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "25965188031") {
             //Track Pants
-
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         // Fashion > Girls > Clothing > Sunglasses & Spectacle Frames
         if (selectedCategoryId === "1967944031") {
             //Glasses Cases
-
+            handleFormFieldLayout71();
+            setStyleOptions(["Traditional", "Victorian", "Classic", "Asian", "Retro", "Vintage"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Nylon", "Cardboard", "Leather", "Plastic", "Metal", "Cotton", "Engineered Wood", "Silk", "Polypropylene", "Stainless Steel", "Resin", "Neoprene", "Rubber", "Polycarbonate", "Polyvinyl Chloride", "Faux Leather",
+                "Polyester", "Vinyl", "Wood", "Cork", "Silicone", "Aluminium", "Ethylene Vinyl Acetate", "Suede", "Foam", "Alloy Steel", "Polyurethane", "Paper", "Linen", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Denim", "Wool", "Acrylic"])
         }
         else if (selectedCategoryId === "1967945031") {
             //Glasses Chains & Lanyards
-
+            handleFormFieldLayout71();
+            setStyleOptions(["Classic", "Vintage"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Nylon", "Cardboard", "Leather", "Plastic", "Metal", "Cotton", "Engineered Wood", "Silk", "Polypropylene", "Stainless Steel", "Resin", "Neoprene", "Rubber", "Polycarbonate", "Polyvinyl Chloride", "Faux Leather",
+                "Polyester", "Vinyl", "Wood", "Cork", "Silicone", "Aluminium", "Ethylene Vinyl Acetate", "Suede", "Foam", "Alloy Steel", "Polyurethane", "Paper", "Linen", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Denim", "Wool", "Acrylic"])
         }
         else if (selectedCategoryId === "1967943031") {
             //Other (Sunglasses & Spectacle Frames)
-
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
         }
         else if (selectedCategoryId === "1374602031") {
             //Reading Glasses
+            handleFormFieldLayout76();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1967946031") {
             //Spectacle Frames
-
+            handleFormFieldLayout76();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setFrameMaterialTypeItem(["Horn", "Nylon", "Wood", "Thermoplastic Elastomers", "Plastic", "Acetate", "Metal", "TR90", "Alloy Steel", "Stainless Steel", "Resin", "Titanium", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Rubber", "Polycarbonate", "Acrylic", "Polyvinyl Chloride"])
         }
         else if (selectedCategoryId === "1967947031") {
             //Sunglasses
+            handleFormFieldLayout76();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setFrameMaterialTypeItem(["Vinyl", "Nylon", "Wood", "Thermoplastic Elastomers", "Plastic", "Acetate", "Metal", "TR90", "Alloy Steel", "Stainless Steel", "Resin", "Titanium", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Rubber", "Polycarbonate", "Acrylic", "Polyvinyl Chloride"])
 
         }
         // Fashion > Girls > Clothing > Swimwear
         if (selectedCategoryId === "1968006031") {
             //Cover-Ups
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         else if (selectedCategoryId === "27980970031") {
             //Monokinis
-
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
         }
         else if (selectedCategoryId === "1968007031") {
             //One-Piece Swimsuits
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
 
         else if (selectedCategoryId === "27980971031") {
             //Rash Guards
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
         else if (selectedCategoryId === "1968008031") {
             //Shorts
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
 
         // Fashion > Girls > Clothing > Swimwear > Bikinis
         if (selectedCategoryId === "1968009031") {
             //Other (Bikinis)
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         // Fashion > Girls > Clothing > Swimwear > Bikinis > Bikinis
         if (selectedCategoryId === "") {
             //Bottoms
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
         else if (selectedCategoryId === "") {
             //Other (Bikinis)
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
         else if (selectedCategoryId === "") {
             //Sets
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
         else if (selectedCategoryId === "") {
             //Tops
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
         // Fashion > Girls > Clothing > Swimwear > Bikinis > Tankinis
         if (selectedCategoryId === "") {
             //Other (Tankinis)
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
         else if (selectedCategoryId === "") {
             //Tankini Bottoms
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
         else if (selectedCategoryId === "") {
             //Tankini Sets
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
         else if (selectedCategoryId === "") {
             //Tankini Tops
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
         // Fashion > Girls > Clothing > Swimwear > Swimwear Sets
         if (selectedCategoryId === "27980982031") {
             //Cover-Up Sets
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         else if (selectedCategoryId === "27980982031") {
             //Rash Guard Sets
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
         // Fashion > Girls > Clothing > Tights & Leggings
         if (selectedCategoryId === "1968002031") {
             //Leggings
-
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "1967998031") {
             //Other (Tights & Leggings)
-
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
         }
         else if (selectedCategoryId === "1968003031") {
             //Tights
-
+            handleFormFieldLayout78();
+            setStyleOptions(["Thigh High", "Garter Belt and Thigh High", "High Waist", "Control Top"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+            "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+       
         }
         // Fashion > Girls > Clothing > Tops, T-Shirts & Shirts
         if (selectedCategoryId === "1968010031") {
@@ -12680,65 +13936,7 @@ const ProductDetails = () => {
                 {
                     styleField ? (
                         <>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name="productStyle"
-                                    rules={{
-                                        required: "this field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Style</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    id="productStyle-select"
-                                                    variant="outlined"
-                                                    select
-                                                    style={{ width: "100%" }}
-                                                    placeholder="select"
-                                                    {...field}
-                                                    error={Boolean(errors.productStyle)}
-                                                >
-                                                    <MenuItem value="">-Select-</MenuItem>
-                                                    <MenuItem value="Backpacks">Backpacks</MenuItem>
-                                                    <MenuItem value="Briefcases">Briefcases</MenuItem>
-                                                    <MenuItem value="Diaper Bags">Diaper Bags</MenuItem>
-                                                    <MenuItem value="Fashion Waist Packs">Fashion Waist Packs</MenuItem>
-                                                    <MenuItem value="Gym Bags">Gym Bags</MenuItem>
-                                                    <MenuItem value="Laptop Bags & Cases">Laptop Bags & Cases</MenuItem>
-                                                    <MenuItem value="Luggage">Luggage</MenuItem>
-                                                    <MenuItem value="Messenger Bags">Messenger Bags</MenuItem>
-                                                    <MenuItem value="Travel Accessories">Travel Accessories</MenuItem>
-                                                    <MenuItem value="Umbrellas">Umbrellas</MenuItem>
-                                                    <MenuItem value="Rucksacks">Rucksacks</MenuItem>
-                                                    <MenuItem value="Arm Warmers">Arm Warmers</MenuItem>
-                                                    <MenuItem value="Balaclavas">Balaclavas </MenuItem>
-                                                    <MenuItem value="Belt Buckles">Belt Buckles </MenuItem>
-                                                    <MenuItem value="Belts">Belts</MenuItem>
-                                                    <MenuItem value="Bow Ties">Bow Ties</MenuItem>
-                                                    <MenuItem value="Cold Weather Sets ">Cold Weather Sets </MenuItem>
-                                                    <MenuItem value="Cold Weather Sets ">Cold Weather Sets </MenuItem>
-                                                    <MenuItem value="Cummerbunds ">Cummerbunds </MenuItem>
-                                                    <MenuItem value="Earmuffs ">Earmuffs </MenuItem>
-                                                    <MenuItem value="Gloves">Gloves</MenuItem>
-                                                    <MenuItem value="Handkerchiefs ">Handkerchiefs </MenuItem>
-                                                    <MenuItem value="Headbands ">Headbands </MenuItem>
-                                                    <MenuItem value="Kidney Warmers ">Kidney Warmers </MenuItem>
-                                                    <MenuItem value="Leg Warmers ">Leg Warmers </MenuItem>
-                                                    <MenuItem value="Neckerchiefs ">Neckerchiefs </MenuItem>
-                                                    <MenuItem value="Neckties ">Neckties </MenuItem>
-                                                    <MenuItem value="Pocket Squares ">Pocket Squares </MenuItem>
-                                                    <MenuItem value="Tie">Tie</MenuItem>
-
-                                                </TextField>
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
+                            <ProductStyle styleOptions={styleOptions} />
                         </>) : ""
                 }
                 {
@@ -13032,15 +14230,6 @@ const ProductDetails = () => {
                                                     {materialTypeItem.map((materialItem, index) => {
                                                         return <MenuItem value={`${materialItem}`} key={index}>{materialItem}</MenuItem>
                                                     })
-                                                    }
-                                                    {
-
-
-
-
-
-
-
                                                     }
                                                 </TextField>
                                             </div>
@@ -14757,6 +15946,23 @@ const ProductDetails = () => {
                                                     <MenuItem value="round">round</MenuItem>
                                                     <MenuItem value="square">square</MenuItem>
                                                     <MenuItem value="tonneau">tonneau</MenuItem>
+                                                    <MenuItem value="Pilot">Pilot</MenuItem>
+                                                    <MenuItem value="Panto">Panto</MenuItem>
+                                                    <MenuItem value="Flame">Flame</MenuItem>
+                                                    <MenuItem value="Heart">Heart</MenuItem>
+                                                    <MenuItem value="Teardrop">Teardrop</MenuItem>
+                                                    <MenuItem value="Butterfly">Butterfly</MenuItem>
+                                                    <MenuItem value="Hexagonal">Hexagonal</MenuItem>
+                                                    <MenuItem value="Triangular">Triangular</MenuItem>
+                                                    <MenuItem value="Octagonal">Octagonal</MenuItem>
+                                                    <MenuItem value="Trapezoidal">Trapezoidal</MenuItem>
+                                                    <MenuItem value="Panthos">Panthos</MenuItem>
+                                                    <MenuItem value="Cat Eye">Cat Eye</MenuItem>
+                                                    <MenuItem value="Semi-Circular">Semi-Circular</MenuItem>
+
+
+
+
                                                 </TextField>
                                             </div>
                                         </>
@@ -15010,7 +16216,7 @@ const ProductDetails = () => {
                         </>) : ""
                 }
                 {
-                    productStyleTxtField ? (
+                    productTxtStyleField ? (
                         <>
                             <div className='row' style={{ marginTop: "10px" }}>
                                 <Controller
@@ -15065,6 +16271,7 @@ const ProductDetails = () => {
                                                     {...field}
                                                     error={Boolean(errors.outerMaterialType)}
                                                 >
+
                                                     <MenuItem value="">-Select-</MenuItem>
                                                     <MenuItem value="Alpaca">Alpaca</MenuItem>
                                                     <MenuItem value="Angora">Angora</MenuItem>
@@ -15104,7 +16311,7 @@ const ProductDetails = () => {
                                                     <MenuItem value="Organza">Organza</MenuItem>
                                                     <MenuItem value="Pashmina">Pashmina</MenuItem>
                                                     <MenuItem value="Patent Leather">Patent Leather</MenuItem>
-                                                    <MenuItem value="Patent Leather">Patent Leather</MenuItem>
+
                                                     <MenuItem value="Poly Cotton">Poly Cotton</MenuItem>
                                                     <MenuItem value="Polyester">Polyester</MenuItem>
                                                     <MenuItem value="PVC">PVC</MenuItem>
@@ -15195,7 +16402,7 @@ const ProductDetails = () => {
                                                 >
                                                     <MenuItem value="">-Select-</MenuItem>
                                                     <MenuItem value="Alpha">Alpha</MenuItem>
-                                                    <MenuItem value="Alpha">Age</MenuItem>
+                                                    <MenuItem value="Age">Age</MenuItem>
                                                 </TextField>
                                             </div>
                                         </>
@@ -15404,6 +16611,40 @@ const ProductDetails = () => {
                                                     <MenuItem value="Striped">Striped</MenuItem>
                                                     <MenuItem value="Textured">Textured</MenuItem>
                                                     <MenuItem value="Woven Design">Woven Design</MenuItem>
+                                                    <MenuItem value="Animal Print">Animal Print</MenuItem>
+                                                    <MenuItem value="Checks">Checks</MenuItem>
+                                                    <MenuItem value="Floral">Floral</MenuItem>
+                                                    <MenuItem value="Polka Dot">Polka Dot</MenuItem>
+                                                    <MenuItem value="Cartoon">Cartoon</MenuItem>
+                                                    <MenuItem value="Abstract Print">Abstract Print</MenuItem>
+                                                    <MenuItem value="All Over Print">All Over Print</MenuItem>
+                                                    <MenuItem value="Aztec Print">Aztec Print</MenuItem>
+                                                    <MenuItem value="Camouflage">Camouflage</MenuItem>
+                                                    <MenuItem value="Ombre">Ombre</MenuItem>
+                                                    <MenuItem value="Dobby Print">Dobby Print</MenuItem>
+                                                    <MenuItem value="Block Print">Block Print</MenuItem>
+                                                    <MenuItem value="Graphic Print">Graphic Print</MenuItem>
+                                                    <MenuItem value="Geometric Print">Geometric Print</MenuItem>
+                                                    <MenuItem value="Tribal">Tribal</MenuItem>
+                                                    <MenuItem value="Embroidered">Embroidered</MenuItem>
+                                                    <MenuItem value="Tie-Dye">Tie-Dye</MenuItem>
+                                                    <MenuItem value="Paisley">Paisley</MenuItem>
+                                                    <MenuItem value="Plaid">Plaid</MenuItem>
+                                                    <MenuItem value="Color Block">Color Block</MenuItem>
+                                                    <MenuItem value="Botanic Print">Botanic Print</MenuItem>
+                                                    <MenuItem value="Starred">Starred</MenuItem>
+                                                    <MenuItem value="Kalamkari">Kalamkari</MenuItem>
+                                                    <MenuItem value="Nordic">Nordic</MenuItem>
+                                                    <MenuItem value="Phulkari">Phulkari</MenuItem>
+                                                    <MenuItem value="Half & Half">Half & Half</MenuItem>
+                                                    <MenuItem value="Traditional Prints">Traditional Prints</MenuItem>
+                                                    <MenuItem value="Madhubani">Madhubani</MenuItem>
+                                                    <MenuItem value="Novelty Prints">Novelty Prints</MenuItem>
+                                                    <MenuItem value="Leheriya">Leheriya</MenuItem>
+                                                    <MenuItem value="Bandhani">Bandhani</MenuItem>
+                                                    <MenuItem value="Ajrak">Ajrak</MenuItem>
+                                                    <MenuItem value="3D Prints">3D Prints</MenuItem>
+                                                    <MenuItem value="Self Design">Self Design</MenuItem>
                                                 </TextField>
                                             </div>
                                         </>
@@ -15643,6 +16884,10 @@ const ProductDetails = () => {
                                                     <MenuItem value="">-Select-</MenuItem>
                                                     <MenuItem value="Premium-Beauty">Premium Beauty</MenuItem>
                                                     <MenuItem value="Mass-Beauty">Mass Beauty</MenuItem>
+                                                    <MenuItem value="Party">Party</MenuItem>
+                                                    <MenuItem value="Festive">Festive</MenuItem>
+                                                    <MenuItem value="Casual">Casual</MenuItem>
+                                                    <MenuItem value="Work">Work</MenuItem>
                                                 </TextField>
                                             </div>
                                         </>
@@ -15652,8 +16897,3126 @@ const ProductDetails = () => {
                         </>) : ""
 
                 }
+                {
+                    bookingDateField ? (
+                        <>
+                            <BookingDate />
+                        </>) : ""
+                }
+                {
+                    toeStyleField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="toeStyle"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Toe Style</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="toeStyle-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="flat"
+                                                    {...field}
+                                                    error={Boolean(errors.toeStyle)}
+
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Flat">Flat</MenuItem>
+                                                    <MenuItem value="Thump">Thump </MenuItem>
+                                                    <MenuItem value="All Toes">All Toes </MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    itemFurDescriptionField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='itemFurDescription'
+                                    rules={{
+                                        required: "this field is required",
+
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Fur Description</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    placeholder="Pieced Dyed Calf (Fur Origin: Vietnam)"
+                                                    id="itemFurDescription"
+                                                    variant="outlined"
+                                                    {...field}
+                                                    style={{ width: "100%" }}
+                                                    error={Boolean(errors.itemFurDescription)}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    apparelSizeSystemField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='apparelSizeSystem'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Apparel Size System</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="apparelSizeSystem"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.apparelSizeSystem)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="IN">IN</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    apparelSizeClassField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='apparelSizeClass'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Apparel Size Class</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="apparelSizeClass"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.apparelSizeClass)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Alpha">Alpha</MenuItem>
+                                                    <MenuItem value="Age">Age</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    apparelSizeValueField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='apparelSizeValue'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Apparel Size Value</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="apparelSizeValue"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.apparelSizeValue)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Free Size">Free Size</MenuItem>
+                                                    <MenuItem value="5XS">5XS</MenuItem>
+                                                    <MenuItem value="4XS">4XS</MenuItem>
+                                                    <MenuItem value="3XS">3XS</MenuItem>
+                                                    <MenuItem value="2XS">2XS</MenuItem>
+                                                    <MenuItem value="XS">XS</MenuItem>
+                                                    <MenuItem value="S">S</MenuItem>
+                                                    <MenuItem value="M">M</MenuItem>
+                                                    <MenuItem value="L">L</MenuItem>
+                                                    <MenuItem value="XL">XL</MenuItem>
+                                                    <MenuItem value="2XL">2XL</MenuItem>
+                                                    <MenuItem value="3XL">3XL</MenuItem>
+                                                    <MenuItem value="4XL">4XL</MenuItem>
+                                                    <MenuItem value="5XL">5XL</MenuItem>
+                                                    <MenuItem value="6XL">6XL</MenuItem>
+                                                    <MenuItem value="7XL">7XL</MenuItem>
+                                                    <MenuItem value="8XL">8XL</MenuItem>
+                                                    <MenuItem value="9XL">9XL</MenuItem>
+                                                    <MenuItem value="10XL">10XL</MenuItem>
+                                                    <MenuItem value="0 Months">0 Months</MenuItem>
+                                                    <MenuItem value="3 Months">3 Months</MenuItem>
+                                                    <MenuItem value="6 Months">6 Months</MenuItem>
+                                                    <MenuItem value="9 Months">9 Months</MenuItem>
+                                                    <MenuItem value="12 Months">12 Months</MenuItem>
+                                                    <MenuItem value="18 Months">18 Months</MenuItem>
+                                                    <MenuItem value="24 Months">24 Months</MenuItem>
+                                                    <MenuItem value="2 Years">2 Years</MenuItem>
+                                                    <MenuItem value="3 Years">3 Years</MenuItem>
+                                                    <MenuItem value="4 Years">4 Years</MenuItem>
+                                                    <MenuItem value="5 Years">5 Years</MenuItem>
+                                                    <MenuItem value="6 Years">6 Years</MenuItem>
+                                                    <MenuItem value="7 Years">7 Years</MenuItem>
+                                                    <MenuItem value="8 Years">8 Years</MenuItem>
+                                                    <MenuItem value="9 Years">9 Years</MenuItem>
+                                                    <MenuItem value="10 Years">10 Years</MenuItem>
+                                                    <MenuItem value="11 Years">11 Years</MenuItem>
+                                                    <MenuItem value="12 Years">12 Years</MenuItem>
+                                                    <MenuItem value="13 Years">13 Years</MenuItem>
+                                                    <MenuItem value="14 Years">14 Years</MenuItem>
+                                                    <MenuItem value="15 Years">15 Years</MenuItem>
+                                                    <MenuItem value="16 Years">16 Years</MenuItem>
+                                                    <MenuItem value="17 Years">17 Years</MenuItem>
+                                                    <MenuItem value="18 Years">18 Years</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    apparelSizeToRangeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='apparelSizeToRange'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Apparel Size To Range</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="apparelSizeToRange"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.apparelSizeToRange)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Free Size">Free Size</MenuItem>
+                                                    <MenuItem value="5XS">5XS</MenuItem>
+                                                    <MenuItem value="4XS">4XS</MenuItem>
+                                                    <MenuItem value="3XS">3XS</MenuItem>
+                                                    <MenuItem value="2XS">2XS</MenuItem>
+                                                    <MenuItem value="XS">XS</MenuItem>
+                                                    <MenuItem value="S">S</MenuItem>
+                                                    <MenuItem value="M">M</MenuItem>
+                                                    <MenuItem value="L">L</MenuItem>
+                                                    <MenuItem value="XL">XL</MenuItem>
+                                                    <MenuItem value="2XL">2XL</MenuItem>
+                                                    <MenuItem value="3XL">3XL</MenuItem>
+                                                    <MenuItem value="4XL">4XL</MenuItem>
+                                                    <MenuItem value="5XL">5XL</MenuItem>
+                                                    <MenuItem value="6XL">6XL</MenuItem>
+                                                    <MenuItem value="7XL">7XL</MenuItem>
+                                                    <MenuItem value="8XL">8XL</MenuItem>
+                                                    <MenuItem value="9XL">9XL</MenuItem>
+                                                    <MenuItem value="10XL">10XL</MenuItem>
+                                                    <MenuItem value="0 Months">0 Months</MenuItem>
+                                                    <MenuItem value="3 Months">3 Months</MenuItem>
+                                                    <MenuItem value="6 Months">6 Months</MenuItem>
+                                                    <MenuItem value="9 Months">9 Months</MenuItem>
+                                                    <MenuItem value="12 Months">12 Months</MenuItem>
+                                                    <MenuItem value="18 Months">18 Months</MenuItem>
+                                                    <MenuItem value="24 Months">24 Months</MenuItem>
+                                                    <MenuItem value="2 Years">2 Years</MenuItem>
+                                                    <MenuItem value="3 Years">3 Years</MenuItem>
+                                                    <MenuItem value="4 Years">4 Years</MenuItem>
+                                                    <MenuItem value="5 Years">5 Years</MenuItem>
+                                                    <MenuItem value="6 Years">6 Years</MenuItem>
+                                                    <MenuItem value="7 Years">7 Years</MenuItem>
+                                                    <MenuItem value="8 Years">8 Years</MenuItem>
+                                                    <MenuItem value="9 Years">9 Years</MenuItem>
+                                                    <MenuItem value="10 Years">10 Years</MenuItem>
+                                                    <MenuItem value="11 Years">11 Years</MenuItem>
+                                                    <MenuItem value="12 Years">12 Years</MenuItem>
+                                                    <MenuItem value="13 Years">13 Years</MenuItem>
+                                                    <MenuItem value="14 Years">14 Years</MenuItem>
+                                                    <MenuItem value="15 Years">15 Years</MenuItem>
+                                                    <MenuItem value="16 Years">16 Years</MenuItem>
+                                                    <MenuItem value="17 Years">17 Years</MenuItem>
+                                                    <MenuItem value="18 Years">18 Years</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    apparelSizeBodyTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='apparelSizeBodyType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Apparel Size Body Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="apparelSizeBodyType"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.apparelSizeBodyType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="J">J</MenuItem>
+                                                    <MenuItem value="E">E</MenuItem>
+                                                    <MenuItem value="AB">AB</MenuItem>
+                                                    <MenuItem value="A">A</MenuItem>
+                                                    <MenuItem value="B">B</MenuItem>
+                                                    <MenuItem value="Petite">Petite</MenuItem>
+                                                    <MenuItem value="Y">Y</MenuItem>
+                                                    <MenuItem value="Slim">Slim</MenuItem>
+                                                    <MenuItem value="YA">YA</MenuItem>
+                                                    <MenuItem value="BE">BE</MenuItem>
+                                                    <MenuItem value="Husky">Husky</MenuItem>
+                                                    <MenuItem value="Big">Big</MenuItem>
+                                                    <MenuItem value="BB">BB</MenuItem>
+                                                    <MenuItem value="Regular">Regular</MenuItem>
+                                                    <MenuItem value="Plus">Plus</MenuItem>
+                                                    <MenuItem value="JY">JY</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    apparelSizeHeightTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='apparelSizeHeightType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Apparel Size Height Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="apparelSizeHeightType"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.apparelSizeHeightType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Long">Long</MenuItem>
+                                                    <MenuItem value="Regular">Regular</MenuItem>
+                                                    <MenuItem value="3">3</MenuItem>
+                                                    <MenuItem value="2">2</MenuItem>
+                                                    <MenuItem value="R">R</MenuItem>
+                                                    <MenuItem value="Extra Tall">Extra Tall</MenuItem>
+                                                    <MenuItem value="P">P</MenuItem>
+                                                    <MenuItem value="Tall">Tall</MenuItem>
+                                                    <MenuItem value="Short">Short</MenuItem>
+                                                    <MenuItem value="PP">PP</MenuItem>
+                                                    <MenuItem value="W">W</MenuItem>
+                                                    <MenuItem value="7">7</MenuItem>
+                                                    <MenuItem value="Petite">Petite</MenuItem>
+                                                    <MenuItem value="6">6</MenuItem>
+                                                    <MenuItem value="5">5</MenuItem>
+                                                    <MenuItem value="4">4</MenuItem>
+                                                    <MenuItem value="T">T</MenuItem>
+                                                    <MenuItem value="9">9</MenuItem>
+                                                    <MenuItem value="Y">Y</MenuItem>
+                                                    <MenuItem value="8">8</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    itemLengthDescriptionField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='itemLengthDescription'
+                                    rules={{
+                                        required: "this field is required",
+
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2"> Item Length Description</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    placeholder="Knee Length"
+                                                    id="itemLengthDescription"
+                                                    variant="outlined"
+                                                    {...field}
+                                                    style={{ width: "100%" }}
+                                                    error={Boolean(errors.itemLengthDescription)}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    neckStyleField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='neckStyle'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Neck Style</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="neckStyle"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.neckStyle)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Boat Neck">Boat Neck</MenuItem>
+                                                    <MenuItem value="Halter Neck">Halter Neck</MenuItem>
+                                                    <MenuItem value="Peter Pan Collar">Peter Pan Collar</MenuItem>
+                                                    <MenuItem value="Crew Neck">Crew Neck</MenuItem>
+                                                    <MenuItem value="Polo Neck3">Polo Neck</MenuItem>
+                                                    <MenuItem value="Round Neck">Round Neck</MenuItem>
+                                                    <MenuItem value="Sweetheart Neck">Sweetheart Neck</MenuItem>
+                                                    <MenuItem value="Banded Collar">Banded Collar</MenuItem>
+                                                    <MenuItem value="Off Shoulder">Off Shoulder</MenuItem>
+                                                    <MenuItem value="V-Neck">V-Neck</MenuItem>
+                                                    <MenuItem value="Button Front">Button Front</MenuItem>
+                                                    <MenuItem value="Mandarin Collar">Mandarin Collar</MenuItem>
+                                                    <MenuItem value="One Shoulder">One Shoulder</MenuItem>
+                                                    <MenuItem value="Shawl Collar">Shawl Collar</MenuItem>
+                                                    <MenuItem value="Square Neck">Square Neck</MenuItem>
+                                                    <MenuItem value="Hooded">Hooded</MenuItem>
+                                                    <MenuItem value="Asymmetric Neck">Asymmetric Neck</MenuItem>
+                                                    <MenuItem value="Strapless">Strapless</MenuItem>
+                                                    <MenuItem value="Cowl Neck">Cowl Neck</MenuItem>
+                                                    <MenuItem value="Turtle Neck">Turtle Neck</MenuItem>
+                                                    <MenuItem value="Scoop Neck">Scoop Neck</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    bottomsSizeSystemField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='bottomsSizeSystem'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Bottoms Size System</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="bottomsSizeSystem"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.bottomsSizeSystem)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="IN">IN</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    bottomsSizeClassField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='bottomsSizeClass'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Bottoms Size Class</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="bottomsSizeClass"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.bottomsSizeClass)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Alpha">Alpha</MenuItem>
+                                                    <MenuItem value="Age">Age</MenuItem>
+                                                    <MenuItem value="Numeric">Numeric</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    bottomsSizeValueField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='bottomsSizeValue'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Bottoms Size Value</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="bottomsSizeValue"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.bottomsSizeValue)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="24">24</MenuItem>
+                                                    <MenuItem value="25">25</MenuItem>
+                                                    <MenuItem value="26">26</MenuItem>
+                                                    <MenuItem value="27">27</MenuItem>
+                                                    <MenuItem value="28">28</MenuItem>
+                                                    <MenuItem value="29">29</MenuItem>
+                                                    <MenuItem value="30">30</MenuItem>
+                                                    <MenuItem value="31">31</MenuItem>
+                                                    <MenuItem value="32">32</MenuItem>
+                                                    <MenuItem value="33">33</MenuItem>
+                                                    <MenuItem value="34">34</MenuItem>
+                                                    <MenuItem value="35">35</MenuItem>
+                                                    <MenuItem value="36">36</MenuItem>
+                                                    <MenuItem value="37">37</MenuItem>
+                                                    <MenuItem value="38">38</MenuItem>
+                                                    <MenuItem value="39">39</MenuItem>
+                                                    <MenuItem value="40">40</MenuItem>
+                                                    <MenuItem value="41">41</MenuItem>
+                                                    <MenuItem value="42">42</MenuItem>
+                                                    <MenuItem value="43">43</MenuItem>
+                                                    <MenuItem value="44">44</MenuItem>
+                                                    <MenuItem value="45">45</MenuItem>
+                                                    <MenuItem value="46">46</MenuItem>
+                                                    <MenuItem value="47">47</MenuItem>
+                                                    <MenuItem value="48">48</MenuItem>
+                                                    <MenuItem value="49">49</MenuItem>
+                                                    <MenuItem value="50">50</MenuItem>
+                                                    <MenuItem value="51">51</MenuItem>
+                                                    <MenuItem value="52">52</MenuItem>
+                                                    <MenuItem value="53">53</MenuItem>
+                                                    <MenuItem value="54">54</MenuItem>
+                                                    <MenuItem value="5XS">5XS</MenuItem>
+                                                    <MenuItem value="4XS">4XS</MenuItem>
+                                                    <MenuItem value="3XS">3XS</MenuItem>
+                                                    <MenuItem value="2XS">2XS</MenuItem>
+                                                    <MenuItem value="XS">XS</MenuItem>
+                                                    <MenuItem value="S">S</MenuItem>
+                                                    <MenuItem value="M">M</MenuItem>
+                                                    <MenuItem value="L">L</MenuItem>
+                                                    <MenuItem value="XL">XL</MenuItem>
+                                                    <MenuItem value="2XL">2XL</MenuItem>
+                                                    <MenuItem value="3XL">3XL</MenuItem>
+                                                    <MenuItem value="4XL">4XL</MenuItem>
+                                                    <MenuItem value="5XL">5XL</MenuItem>
+                                                    <MenuItem value="6XL">6XL</MenuItem>
+                                                    <MenuItem value="7XL">7XL</MenuItem>
+                                                    <MenuItem value="8XL">8XL</MenuItem>
+                                                    <MenuItem value="9XL">9XL</MenuItem>
+                                                    <MenuItem value="10XL">10XL</MenuItem>
+                                                    <MenuItem value="0 Months">0 Months</MenuItem>
+                                                    <MenuItem value="3 Months">3 Months</MenuItem>
+                                                    <MenuItem value="6 Months">6 Months</MenuItem>
+                                                    <MenuItem value="9 Months">9 Months</MenuItem>
+                                                    <MenuItem value="12 Months">12 Months</MenuItem>
+                                                    <MenuItem value="18 Months">18 Months</MenuItem>
+                                                    <MenuItem value="24 Months">24 Months</MenuItem>
+                                                    <MenuItem value="2 Years">2 Years</MenuItem>
+                                                    <MenuItem value="3 Years">3 Years</MenuItem>
+                                                    <MenuItem value="4 Years">4 Years</MenuItem>
+                                                    <MenuItem value="5 Years">5 Years</MenuItem>
+                                                    <MenuItem value="6 Years">6 Years</MenuItem>
+                                                    <MenuItem value="7 Years">7 Years</MenuItem>
+                                                    <MenuItem value="8 Years">8 Years</MenuItem>
+                                                    <MenuItem value="9 Years">9 Years</MenuItem>
+                                                    <MenuItem value="10 Years">10 Years</MenuItem>
+                                                    <MenuItem value="11 Years">11 Years</MenuItem>
+                                                    <MenuItem value="12 Years">12 Years</MenuItem>
+                                                    <MenuItem value="13 Years">13 Years</MenuItem>
+                                                    <MenuItem value="14 Years">14 Years</MenuItem>
+                                                    <MenuItem value="15 Years">15 Years</MenuItem>
+                                                    <MenuItem value="16 Years">16 Years</MenuItem>
+                                                    <MenuItem value="17 Years">17 Years</MenuItem>
+                                                    <MenuItem value="18 Years">18 Years</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    bottomsSizeToRangeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='bottomsSizeToRange'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Bottoms Size To Range</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="bottomsSizeToRange"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.bottomsSizeToRange)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="24">24</MenuItem>
+                                                    <MenuItem value="25">25</MenuItem>
+                                                    <MenuItem value="26">26</MenuItem>
+                                                    <MenuItem value="27">27</MenuItem>
+                                                    <MenuItem value="28">28</MenuItem>
+                                                    <MenuItem value="29">29</MenuItem>
+                                                    <MenuItem value="30">30</MenuItem>
+                                                    <MenuItem value="31">31</MenuItem>
+                                                    <MenuItem value="32">32</MenuItem>
+                                                    <MenuItem value="33">33</MenuItem>
+                                                    <MenuItem value="34">34</MenuItem>
+                                                    <MenuItem value="35">35</MenuItem>
+                                                    <MenuItem value="36">36</MenuItem>
+                                                    <MenuItem value="37">37</MenuItem>
+                                                    <MenuItem value="38">38</MenuItem>
+                                                    <MenuItem value="39">39</MenuItem>
+                                                    <MenuItem value="40">40</MenuItem>
+                                                    <MenuItem value="41">41</MenuItem>
+                                                    <MenuItem value="42">42</MenuItem>
+                                                    <MenuItem value="43">43</MenuItem>
+                                                    <MenuItem value="44">44</MenuItem>
+                                                    <MenuItem value="45">45</MenuItem>
+                                                    <MenuItem value="46">46</MenuItem>
+                                                    <MenuItem value="47">47</MenuItem>
+                                                    <MenuItem value="48">48</MenuItem>
+                                                    <MenuItem value="49">49</MenuItem>
+                                                    <MenuItem value="50">50</MenuItem>
+                                                    <MenuItem value="51">51</MenuItem>
+                                                    <MenuItem value="52">52</MenuItem>
+                                                    <MenuItem value="53">53</MenuItem>
+                                                    <MenuItem value="54">54</MenuItem>
+                                                    <MenuItem value="5XS">5XS</MenuItem>
+                                                    <MenuItem value="4XS">4XS</MenuItem>
+                                                    <MenuItem value="3XS">3XS</MenuItem>
+                                                    <MenuItem value="2XS">2XS</MenuItem>
+                                                    <MenuItem value="XS">XS</MenuItem>
+                                                    <MenuItem value="S">S</MenuItem>
+                                                    <MenuItem value="M">M</MenuItem>
+                                                    <MenuItem value="L">L</MenuItem>
+                                                    <MenuItem value="XL">XL</MenuItem>
+                                                    <MenuItem value="2XL">2XL</MenuItem>
+                                                    <MenuItem value="3XL">3XL</MenuItem>
+                                                    <MenuItem value="4XL">4XL</MenuItem>
+                                                    <MenuItem value="5XL">5XL</MenuItem>
+                                                    <MenuItem value="6XL">6XL</MenuItem>
+                                                    <MenuItem value="7XL">7XL</MenuItem>
+                                                    <MenuItem value="8XL">8XL</MenuItem>
+                                                    <MenuItem value="9XL">9XL</MenuItem>
+                                                    <MenuItem value="10XL">10XL</MenuItem>
+                                                    <MenuItem value="0 Months">0 Months</MenuItem>
+                                                    <MenuItem value="3 Months">3 Months</MenuItem>
+                                                    <MenuItem value="6 Months">6 Months</MenuItem>
+                                                    <MenuItem value="9 Months">9 Months</MenuItem>
+                                                    <MenuItem value="12 Months">12 Months</MenuItem>
+                                                    <MenuItem value="18 Months">18 Months</MenuItem>
+                                                    <MenuItem value="24 Months">24 Months</MenuItem>
+                                                    <MenuItem value="2 Years">2 Years</MenuItem>
+                                                    <MenuItem value="3 Years">3 Years</MenuItem>
+                                                    <MenuItem value="4 Years">4 Years</MenuItem>
+                                                    <MenuItem value="5 Years">5 Years</MenuItem>
+                                                    <MenuItem value="6 Years">6 Years</MenuItem>
+                                                    <MenuItem value="7 Years">7 Years</MenuItem>
+                                                    <MenuItem value="8 Years">8 Years</MenuItem>
+                                                    <MenuItem value="9 Years">9 Years</MenuItem>
+                                                    <MenuItem value="10 Years">10 Years</MenuItem>
+                                                    <MenuItem value="11 Years">11 Years</MenuItem>
+                                                    <MenuItem value="12 Years">12 Years</MenuItem>
+                                                    <MenuItem value="13 Years">13 Years</MenuItem>
+                                                    <MenuItem value="14 Years">14 Years</MenuItem>
+                                                    <MenuItem value="15 Years">15 Years</MenuItem>
+                                                    <MenuItem value="16 Years">16 Years</MenuItem>
+                                                    <MenuItem value="17 Years">17 Years</MenuItem>
+                                                    <MenuItem value="18 Years">18 Years</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    bottomsSizeBodyTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='bottomsSizeBodyType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Bottoms Body Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="bottomsSizeBodyType"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.bottomsSizeBodyType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Regular">Regular</MenuItem>
+                                                    <MenuItem value="Plus">Plus</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    riseStyleField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='riseStyle'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Rise Style</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="riseStyle"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.riseStyle)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Low Rise">Low Rise</MenuItem>
+                                                    <MenuItem value="Mid Rise">Mid Rise</MenuItem>
+                                                    <MenuItem value="High Rise">High Rise</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    collectionDescriptionField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='collectionDescription'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Collection description</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="collectionDescription"
+                                                    placeholder="Workwear"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.collectionDescription)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Designer">Designer</MenuItem>
+                                                    <MenuItem value="Indo-Western">Indo-Western</MenuItem>
+                                                    <MenuItem value="Traditional">Traditional</MenuItem>
+                                                    <MenuItem value="Fusion">Fusion</MenuItem>
+                                                    <MenuItem value="Workwear">Workwear</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    fittingTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='fittingType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Fitting type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="fittingType"
+                                                    placeholder="Slim Fit"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.fittingType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Tailored">Tailored</MenuItem>
+                                                    <MenuItem value="Regular">Regular</MenuItem>
+                                                    <MenuItem value="Relaxed">Relaxed</MenuItem>
+                                                    <MenuItem value="Semi">Semi</MenuItem>
+                                                    <MenuItem value="Slim">Slim</MenuItem>
+                                                    <MenuItem value="Classic">Classic</MenuItem>
+                                                    <MenuItem value="Loose">Loose</MenuItem>
+                                                    <MenuItem value="Modern">Modern</MenuItem>
+                                                    <MenuItem value="Straight">Straight</MenuItem>
+                                                    <MenuItem value="Fitted">Fitted</MenuItem>
+                                                    <MenuItem value="Athletic">Athletic</MenuItem>
+                                                    <MenuItem value="Skinny">Skinny</MenuItem>
+                                                    <MenuItem value="Oversized">Oversized</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    sleeveTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='sleeveType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Sleeve Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="sleeveType"
+                                                    placeholder="Sleeveless"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.sleeveType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Sheer Sleeve">Sheer Sleeve</MenuItem>
+                                                    <MenuItem value="Cap Sleeve">Cap Sleeve</MenuItem>
+                                                    <MenuItem value="3/4 Sleeve">3/4 Sleeve</MenuItem>
+                                                    <MenuItem value="Short Sleeve">Short Sleeve</MenuItem>
+                                                    <MenuItem value="Puff Sleeve">Puff Sleeve</MenuItem>
+                                                    <MenuItem value="Elbow Length Sleeve">Elbow Length Sleeve</MenuItem>
+                                                    <MenuItem value="Cape Sleeve">Cape Sleeve</MenuItem>
+                                                    <MenuItem value="Sleeveless">Sleeveless</MenuItem>
+                                                    <MenuItem value="Butterfly Sleeve">Butterfly Sleeve</MenuItem>
+                                                    <MenuItem value="Leg of Mutton Sleeve">Leg of Mutton Sleeve</MenuItem>
+                                                    <MenuItem value="Bishop Sleeve">Bishop Sleeve</MenuItem>
+                                                    <MenuItem value="Sleeveless">Sleeveless</MenuItem>
+                                                    <MenuItem value="Flutter Sleeve">Flutter Sleeve</MenuItem>
+                                                    <MenuItem value="Half Sleeve">Half Sleeve</MenuItem>
+                                                    <MenuItem value="Lantern Sleeve">Lantern Sleeve</MenuItem>
+                                                    <MenuItem value="Kimono Sleeve">Kimono Sleeve</MenuItem>
+                                                    <MenuItem value="Ruffle Sleeve">Ruffle Sleeve</MenuItem>
+                                                    <MenuItem value="Balloon Sleeve">Balloon Sleeve</MenuItem>
+                                                    <MenuItem value="Split Sleeve">Split Sleeve</MenuItem>
+                                                    <MenuItem value="Raglan Sleeve">Raglan Sleeve</MenuItem>
+                                                    <MenuItem value="Long Sleeve">Long Sleeve</MenuItem>
+                                                    <MenuItem value="Cuff Sleeve">Cuff Sleeve</MenuItem>
+                                                    <MenuItem value="Batwing Sleeve">Batwing Sleeve</MenuItem>
+                                                    <MenuItem value="Cold Shoulder Sleeve">Cold Shoulder Sleeve</MenuItem>
+                                                    <MenuItem value="Full Sleeve">Full Sleeve</MenuItem>
+                                                    <MenuItem value="Bell Sleeve">Bell Sleeve</MenuItem>
+                                                    <MenuItem value="Frilled Sleeve">Frilled Sleeve</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    finishTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='finishType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Finish Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="finishType"
+                                                    placeholder="Readymade"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.finishType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Unstitched">Unstitched</MenuItem>
+                                                    <MenuItem value="Readymade">Readymade</MenuItem>
+                                                    <MenuItem value="Semi-stitched">Semi-stitched</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    weaveTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='weaveType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'> Weave Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="weaveType"
+                                                    placeholder="Readymade"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.weaveType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Uppada">Uppada</MenuItem>
+                                                    <MenuItem value="Maheshwari">Maheshwari</MenuItem>
+                                                    <MenuItem value="Gadwaal">Gadwaal</MenuItem>
+                                                    <MenuItem value="Sambalpuri">Sambalpuri</MenuItem>
+                                                    <MenuItem value="Kosa Silk">Kosa Silk</MenuItem>
+                                                    <MenuItem value="Baluchari">Baluchari</MenuItem>
+                                                    <MenuItem value="Dharmavaram">Dharmavaram</MenuItem>
+                                                    <MenuItem value="Kasavu">Kasavu</MenuItem>
+                                                    <MenuItem value="Woven">Woven</MenuItem>
+                                                    <MenuItem value="Mangalagiri">Mangalagiri</MenuItem>
+                                                    <MenuItem value="Patola">Patola</MenuItem>
+                                                    <MenuItem value="Kota Doria">Kota Doria</MenuItem>
+                                                    <MenuItem value="Chanderi">Chanderi</MenuItem>
+                                                    <MenuItem value="Ikat">Ikat</MenuItem>
+                                                    <MenuItem value="Venkatgiri">Venkatgiri</MenuItem>
+                                                    <MenuItem value="Banarasi">Banarasi</MenuItem>
+                                                    <MenuItem value="Jamawar">Jamawar</MenuItem>
+                                                    <MenuItem value="Jaal">Jaal</MenuItem>
+                                                    <MenuItem value="Paithani">Paithani</MenuItem>
+                                                    <MenuItem value="Kanchipuram">Kanchipuram</MenuItem>
+                                                    <MenuItem value="Jamdani">Jamdani</MenuItem>
+                                                    <MenuItem value="Pochampally">Pochampally</MenuItem>
+                                                    <MenuItem value="Narayanpet">Narayanpet</MenuItem>
+                                                    <MenuItem value="Bhagalpuri">Bhagalpuri</MenuItem>
+                                                    <MenuItem value="Brocade">Brocade</MenuItem>
+                                                    <MenuItem value="Mysore Silk">Mysore Silk</MenuItem>
+                                                    <MenuItem value="Jacquard">Jacquard</MenuItem>
+                                                    <MenuItem value="Tant">Tant</MenuItem>
+                                                    <MenuItem value="Apatani">Apatani</MenuItem>
+                                                    <MenuItem value="Bomkai">Bomkai</MenuItem>
+                                                    <MenuItem value="Chettinad">Chettinad</MenuItem>
+                                                    <MenuItem value="Khes">Khes</MenuItem>
+                                                    <MenuItem value="Kotpad">Kotpad</MenuItem>
+                                                    <MenuItem value="Kovai Cora">Kovai Cora</MenuItem>
+                                                    <MenuItem value="Lepcha">Lepcha</MenuItem>
+                                                    <MenuItem value="Loin Loom">Loin Loom</MenuItem>
+                                                    <MenuItem value="Mashru">Mashru</MenuItem>
+                                                    <MenuItem value="Tangail">Tangail</MenuItem>
+                                                    <MenuItem value="Knit">Knit</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    chestSizeField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                    <label className='labelbold'>Chest Size</label>
+                                </div>
+                                <div className="col-8 col-sm-7 col-lg-6">
+
+                                    <div className='row align-items-end'>
+                                        <Controller
+                                            control={control}
+                                            name='chestSize'
+                                            rules={{
+                                                required: "this field is required",
+                                                pattern: {
+                                                    value: new RegExp('^[0-9]+$'),
+                                                    message: "not a valid formate"
+                                                }
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            placeholder="40"
+                                                            id="chestSize"
+                                                            variant="outlined"
+                                                            {...field}
+                                                            style={{ width: "100%" }}
+                                                            error={Boolean(errors.chestSize)}
+                                                        />
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                        <Controller
+                                            control={control}
+                                            name='chestSizeUnit'
+                                            rules={{
+                                                required: "this is required"
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            id="chestSizeUnit"
+                                                            variant="outlined"
+                                                            select
+                                                            style={{ width: "100%" }}
+                                                            {...field}
+                                                            error={Boolean(errors.chestSizeUnit)}
+                                                        >
+                                                            <MenuItem value="">-Select-</MenuItem>
+                                                            <MenuItem value="Centimeters">Centimeters</MenuItem>
+                                                            <MenuItem value="Feet">Feet</MenuItem>
+                                                            <MenuItem value="IN">IN</MenuItem>
+                                                            <MenuItem value="Meters">Meters</MenuItem>
+                                                            <MenuItem value="Milimeters">Milimeters</MenuItem>
+                                                        </TextField>
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </>) : ""
+                }
+                {
+                    itemLengthField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='itemLength'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Item Length</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="itemLength"
+                                                    placeholder="Super Short"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.itemLength)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Super Short">Super Short</MenuItem>
+                                                    <MenuItem value="Mid-Thigh">Mid-Thigh</MenuItem>
+                                                    <MenuItem value="Knee-Long">Knee-Long</MenuItem>
+                                                    <MenuItem value="Calf Long">Calf Long</MenuItem>
+                                                    <MenuItem value="Ankle Length">Ankle Length</MenuItem>
+                                                    <MenuItem value="6 Yard">6 Yard</MenuItem>
+                                                    <MenuItem value="9 Yard">9 Yard</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    collarStyleField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='collarStyle'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Collar Style</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="collarStyle"
+                                                    placeholder="Classic"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.collarStyle)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Button Down">Button Down</MenuItem>
+                                                    <MenuItem value="Classic">Classic</MenuItem>
+                                                    <MenuItem value="Cutaway">Cutaway</MenuItem>
+                                                    <MenuItem value="Detachable Collar">Detachable Collar</MenuItem>
+                                                    <MenuItem value="Grandad">Grandad</MenuItem>
+                                                    <MenuItem value="Mao">Mao</MenuItem>
+                                                    <MenuItem value="Nehru Collar">Nehru Collar</MenuItem>
+                                                    <MenuItem value="Round Collar">Round Collar</MenuItem>
+                                                    <MenuItem value="Tab Collar">Tab Collar</MenuItem>
+                                                    <MenuItem value="Wing Collar">Wing Collar</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    designNameField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='designName'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Design Name</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="designName"
+                                                    placeholder="Leheriya"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.designName)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Bandhej">Bandhej</MenuItem>
+                                                    <MenuItem value="Designer">Designer</MenuItem>
+                                                    <MenuItem value="Ikat">Ikat</MenuItem>
+                                                    <MenuItem value="Jamawar">Jamawar</MenuItem>
+                                                    <MenuItem value="Kalamkari">Kalamkari</MenuItem>
+                                                    <MenuItem value="Kasavu">Kasavu</MenuItem>
+                                                    <MenuItem value="Kashmiri">Kashmiri</MenuItem>
+                                                    <MenuItem value="Leheriya">Leheriya</MenuItem>
+                                                    <MenuItem value="Paithani">Paithani</MenuItem>
+                                                    <MenuItem value="Solid">Solid</MenuItem>
+                                                    <MenuItem value="Printed">Printed</MenuItem>
+                                                    <MenuItem value="Woven">Woven</MenuItem>
+                                                    <MenuItem value="Embellished">Embellished</MenuItem>
+                                                    <MenuItem value="Embroidered">Embroidered</MenuItem>
+                                                    <MenuItem value="Set Mundu">Set Mundu</MenuItem>
+                                                    <MenuItem value="Other">Other</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    seasonField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='itemOfSeason'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Season</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="itemOfSeason"
+                                                    placeholder="Summer"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.itemOfSeason)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Winter">Winter</MenuItem>
+                                                    <MenuItem value="Summer">Summer</MenuItem>
+                                                    <MenuItem value="Fall">Fall</MenuItem>
+                                                    <MenuItem value="Spring">Spring</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    bottomStyleField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='bottomStyle'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Bottom Style</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="bottomStyle"
+                                                    placeholder="Summer"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.bottomStyle)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Skirt">Skirt</MenuItem>
+                                                    <MenuItem value="Palazzo">Palazzo</MenuItem>
+                                                    <MenuItem value="Patiala">Patiala</MenuItem>
+                                                    <MenuItem value="Chudidar">Chudidar</MenuItem>
+                                                    <MenuItem value="Leggings">Leggings</MenuItem>
+                                                    <MenuItem value="Pants">Pants</MenuItem>
+                                                    <MenuItem value="Salwar">Salwar</MenuItem>
+                                                    <MenuItem value="Dhoti">Dhoti</MenuItem>
+                                                    <MenuItem value="Sharara">Sharara</MenuItem>
+                                                    <MenuItem value="Harem Pants">Harem Pants</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    sizeSystemField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='sizeSystem'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Size System</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="sizeSystem"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.sizeSystem)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="IN">IN</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    sizeClassField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='sizeClass'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Size Class</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="sizeClass"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.sizeClass)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Alpha">Alpha</MenuItem>
+                                                    <MenuItem value="Age">Age</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    sizeValueField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='sizeValue'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Size Value</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="sizeValue"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.sizeValue)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Free Size">Free Size</MenuItem>
+                                                    <MenuItem value="5XS">5XS</MenuItem>
+                                                    <MenuItem value="4XS">4XS</MenuItem>
+                                                    <MenuItem value="3XS">3XS</MenuItem>
+                                                    <MenuItem value="2XS">2XS</MenuItem>
+                                                    <MenuItem value="XS">XS</MenuItem>
+                                                    <MenuItem value="S">S</MenuItem>
+                                                    <MenuItem value="M">M</MenuItem>
+                                                    <MenuItem value="L">L</MenuItem>
+                                                    <MenuItem value="XL">XL</MenuItem>
+                                                    <MenuItem value="2XL">2XL</MenuItem>
+                                                    <MenuItem value="3XL">3XL</MenuItem>
+                                                    <MenuItem value="4XL">4XL</MenuItem>
+                                                    <MenuItem value="5XL">5XL</MenuItem>
+                                                    <MenuItem value="6XL">6XL</MenuItem>
+                                                    <MenuItem value="7XL">7XL</MenuItem>
+                                                    <MenuItem value="8XL">8XL</MenuItem>
+                                                    <MenuItem value="9XL">9XL</MenuItem>
+                                                    <MenuItem value="10XL">10XL</MenuItem>
+                                                    <MenuItem value="0 Months">0 Months</MenuItem>
+                                                    <MenuItem value="3 Months">3 Months</MenuItem>
+                                                    <MenuItem value="6 Months">6 Months</MenuItem>
+                                                    <MenuItem value="9 Months">9 Months</MenuItem>
+                                                    <MenuItem value="12 Months">12 Months</MenuItem>
+                                                    <MenuItem value="18 Months">18 Months</MenuItem>
+                                                    <MenuItem value="24 Months">24 Months</MenuItem>
+                                                    <MenuItem value="2 Years">2 Years</MenuItem>
+                                                    <MenuItem value="3 Years">3 Years</MenuItem>
+                                                    <MenuItem value="4 Years">4 Years</MenuItem>
+                                                    <MenuItem value="5 Years">5 Years</MenuItem>
+                                                    <MenuItem value="6 Years">6 Years</MenuItem>
+                                                    <MenuItem value="7 Years">7 Years</MenuItem>
+                                                    <MenuItem value="8 Years">8 Years</MenuItem>
+                                                    <MenuItem value="9 Years">9 Years</MenuItem>
+                                                    <MenuItem value="10 Years">10 Years</MenuItem>
+                                                    <MenuItem value="11 Years">11 Years</MenuItem>
+                                                    <MenuItem value="12 Years">12 Years</MenuItem>
+                                                    <MenuItem value="13 Years">13 Years</MenuItem>
+                                                    <MenuItem value="14 Years">14 Years</MenuItem>
+                                                    <MenuItem value="15 Years">15 Years</MenuItem>
+                                                    <MenuItem value="16 Years">16 Years</MenuItem>
+                                                    <MenuItem value="17 Years">17 Years</MenuItem>
+                                                    <MenuItem value="18 Years">18 Years</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    shapewearSizeToRangeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='shapewearSizeToRange'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Shapewear Size To Range</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="shapewearSizeToRangeField"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.shapewearSizeToRangeField)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Free Size">Free Size</MenuItem>
+                                                    <MenuItem value="5XS">5XS</MenuItem>
+                                                    <MenuItem value="4XS">4XS</MenuItem>
+                                                    <MenuItem value="3XS">3XS</MenuItem>
+                                                    <MenuItem value="2XS">2XS</MenuItem>
+                                                    <MenuItem value="XS">XS</MenuItem>
+                                                    <MenuItem value="S">S</MenuItem>
+                                                    <MenuItem value="M">M</MenuItem>
+                                                    <MenuItem value="L">L</MenuItem>
+                                                    <MenuItem value="XL">XL</MenuItem>
+                                                    <MenuItem value="2XL">2XL</MenuItem>
+                                                    <MenuItem value="3XL">3XL</MenuItem>
+                                                    <MenuItem value="4XL">4XL</MenuItem>
+                                                    <MenuItem value="5XL">5XL</MenuItem>
+                                                    <MenuItem value="6XL">6XL</MenuItem>
+                                                    <MenuItem value="7XL">7XL</MenuItem>
+                                                    <MenuItem value="8XL">8XL</MenuItem>
+                                                    <MenuItem value="9XL">9XL</MenuItem>
+                                                    <MenuItem value="10XL">10XL</MenuItem>
+                                                    <MenuItem value="0 Months">0 Months</MenuItem>
+                                                    <MenuItem value="3 Months">3 Months</MenuItem>
+                                                    <MenuItem value="6 Months">6 Months</MenuItem>
+                                                    <MenuItem value="9 Months">9 Months</MenuItem>
+                                                    <MenuItem value="12 Months">12 Months</MenuItem>
+                                                    <MenuItem value="18 Months">18 Months</MenuItem>
+                                                    <MenuItem value="24 Months">24 Months</MenuItem>
+                                                    <MenuItem value="2 Years">2 Years</MenuItem>
+                                                    <MenuItem value="3 Years">3 Years</MenuItem>
+                                                    <MenuItem value="4 Years">4 Years</MenuItem>
+                                                    <MenuItem value="5 Years">5 Years</MenuItem>
+                                                    <MenuItem value="6 Years">6 Years</MenuItem>
+                                                    <MenuItem value="7 Years">7 Years</MenuItem>
+                                                    <MenuItem value="8 Years">8 Years</MenuItem>
+                                                    <MenuItem value="9 Years">9 Years</MenuItem>
+                                                    <MenuItem value="10 Years">10 Years</MenuItem>
+                                                    <MenuItem value="11 Years">11 Years</MenuItem>
+                                                    <MenuItem value="12 Years">12 Years</MenuItem>
+                                                    <MenuItem value="13 Years">13 Years</MenuItem>
+                                                    <MenuItem value="14 Years">14 Years</MenuItem>
+                                                    <MenuItem value="15 Years">15 Years</MenuItem>
+                                                    <MenuItem value="16 Years">16 Years</MenuItem>
+                                                    <MenuItem value="17 Years">17 Years</MenuItem>
+                                                    <MenuItem value="18 Years">18 Years</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    bodyTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='bodyType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Body Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="bodyTypeField"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.bodyTypeField)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="J">J</MenuItem>
+                                                    <MenuItem value="E">E</MenuItem>
+                                                    <MenuItem value="AB">AB</MenuItem>
+                                                    <MenuItem value="A">A</MenuItem>
+                                                    <MenuItem value="B">B</MenuItem>
+                                                    <MenuItem value="Petite">Petite</MenuItem>
+                                                    <MenuItem value="Y">Y</MenuItem>
+                                                    <MenuItem value="Slim">Slim</MenuItem>
+                                                    <MenuItem value="YA">YA</MenuItem>
+                                                    <MenuItem value="BE">BE</MenuItem>
+                                                    <MenuItem value="Husky">Husky</MenuItem>
+                                                    <MenuItem value="Big">Big</MenuItem>
+                                                    <MenuItem value="BB">BB</MenuItem>
+                                                    <MenuItem value="Regular">Regular</MenuItem>
+                                                    <MenuItem value="Plus">Plus</MenuItem>
+                                                    <MenuItem value="JY">JY</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    shirtSizeSystemField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='shirtSizeSystem'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Shirt Size System</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="shirtSizeSystem"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.shirtSizeSystem)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="IN">IN</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    shirtSizeClassField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='shirtSizeClass'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Shirt Size Class</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="shirtSizeClass"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.shirtSizeClass)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Alpha">Alpha</MenuItem>
+                                                    <MenuItem value="Age">Age</MenuItem>
+                                                    <MenuItem value="Numeric">Numeric</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    shirtSizeValueField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='shirtSizeValue'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Shirt Size Value</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="shirtSizeValue"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.shirtSizeValue)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="24">24</MenuItem>
+                                                    <MenuItem value="25">25</MenuItem>
+                                                    <MenuItem value="26">26</MenuItem>
+                                                    <MenuItem value="27">27</MenuItem>
+                                                    <MenuItem value="28">28</MenuItem>
+                                                    <MenuItem value="29">29</MenuItem>
+                                                    <MenuItem value="30">30</MenuItem>
+                                                    <MenuItem value="31">31</MenuItem>
+                                                    <MenuItem value="32">32</MenuItem>
+                                                    <MenuItem value="33">33</MenuItem>
+                                                    <MenuItem value="34">34</MenuItem>
+                                                    <MenuItem value="35">35</MenuItem>
+                                                    <MenuItem value="36">36</MenuItem>
+                                                    <MenuItem value="37">37</MenuItem>
+                                                    <MenuItem value="38">38</MenuItem>
+                                                    <MenuItem value="39">39</MenuItem>
+                                                    <MenuItem value="40">40</MenuItem>
+                                                    <MenuItem value="41">41</MenuItem>
+                                                    <MenuItem value="42">42</MenuItem>
+                                                    <MenuItem value="43">43</MenuItem>
+                                                    <MenuItem value="44">44</MenuItem>
+                                                    <MenuItem value="45">45</MenuItem>
+                                                    <MenuItem value="46">46</MenuItem>
+                                                    <MenuItem value="47">47</MenuItem>
+                                                    <MenuItem value="48">48</MenuItem>
+                                                    <MenuItem value="49">49</MenuItem>
+                                                    <MenuItem value="50">50</MenuItem>
+                                                    <MenuItem value="51">51</MenuItem>
+                                                    <MenuItem value="52">52</MenuItem>
+                                                    <MenuItem value="53">53</MenuItem>
+                                                    <MenuItem value="54">54</MenuItem>
+                                                    <MenuItem value="5XS">5XS</MenuItem>
+                                                    <MenuItem value="4XS">4XS</MenuItem>
+                                                    <MenuItem value="3XS">3XS</MenuItem>
+                                                    <MenuItem value="2XS">2XS</MenuItem>
+                                                    <MenuItem value="XS">XS</MenuItem>
+                                                    <MenuItem value="S">S</MenuItem>
+                                                    <MenuItem value="M">M</MenuItem>
+                                                    <MenuItem value="L">L</MenuItem>
+                                                    <MenuItem value="XL">XL</MenuItem>
+                                                    <MenuItem value="2XL">2XL</MenuItem>
+                                                    <MenuItem value="3XL">3XL</MenuItem>
+                                                    <MenuItem value="4XL">4XL</MenuItem>
+                                                    <MenuItem value="5XL">5XL</MenuItem>
+                                                    <MenuItem value="6XL">6XL</MenuItem>
+                                                    <MenuItem value="7XL">7XL</MenuItem>
+                                                    <MenuItem value="8XL">8XL</MenuItem>
+                                                    <MenuItem value="9XL">9XL</MenuItem>
+                                                    <MenuItem value="10XL">10XL</MenuItem>
+                                                    <MenuItem value="0 Months">0 Months</MenuItem>
+                                                    <MenuItem value="3 Months">3 Months</MenuItem>
+                                                    <MenuItem value="6 Months">6 Months</MenuItem>
+                                                    <MenuItem value="9 Months">9 Months</MenuItem>
+                                                    <MenuItem value="12 Months">12 Months</MenuItem>
+                                                    <MenuItem value="18 Months">18 Months</MenuItem>
+                                                    <MenuItem value="24 Months">24 Months</MenuItem>
+                                                    <MenuItem value="2 Years">2 Years</MenuItem>
+                                                    <MenuItem value="3 Years">3 Years</MenuItem>
+                                                    <MenuItem value="4 Years">4 Years</MenuItem>
+                                                    <MenuItem value="5 Years">5 Years</MenuItem>
+                                                    <MenuItem value="6 Years">6 Years</MenuItem>
+                                                    <MenuItem value="7 Years">7 Years</MenuItem>
+                                                    <MenuItem value="8 Years">8 Years</MenuItem>
+                                                    <MenuItem value="9 Years">9 Years</MenuItem>
+                                                    <MenuItem value="10 Years">10 Years</MenuItem>
+                                                    <MenuItem value="11 Years">11 Years</MenuItem>
+                                                    <MenuItem value="12 Years">12 Years</MenuItem>
+                                                    <MenuItem value="13 Years">13 Years</MenuItem>
+                                                    <MenuItem value="14 Years">14 Years</MenuItem>
+                                                    <MenuItem value="15 Years">15 Years</MenuItem>
+                                                    <MenuItem value="16 Years">16 Years</MenuItem>
+                                                    <MenuItem value="17 Years">17 Years</MenuItem>
+                                                    <MenuItem value="18 Years">18 Years</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    shirtSizeToRangeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='shirtSizeToRange'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Shirt Size To Range</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="shirtSizeToRange"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.shirtSizeToRange)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="24">24</MenuItem>
+                                                    <MenuItem value="25">25</MenuItem>
+                                                    <MenuItem value="26">26</MenuItem>
+                                                    <MenuItem value="27">27</MenuItem>
+                                                    <MenuItem value="28">28</MenuItem>
+                                                    <MenuItem value="29">29</MenuItem>
+                                                    <MenuItem value="30">30</MenuItem>
+                                                    <MenuItem value="31">31</MenuItem>
+                                                    <MenuItem value="32">32</MenuItem>
+                                                    <MenuItem value="33">33</MenuItem>
+                                                    <MenuItem value="34">34</MenuItem>
+                                                    <MenuItem value="35">35</MenuItem>
+                                                    <MenuItem value="36">36</MenuItem>
+                                                    <MenuItem value="37">37</MenuItem>
+                                                    <MenuItem value="38">38</MenuItem>
+                                                    <MenuItem value="39">39</MenuItem>
+                                                    <MenuItem value="40">40</MenuItem>
+                                                    <MenuItem value="41">41</MenuItem>
+                                                    <MenuItem value="42">42</MenuItem>
+                                                    <MenuItem value="43">43</MenuItem>
+                                                    <MenuItem value="44">44</MenuItem>
+                                                    <MenuItem value="45">45</MenuItem>
+                                                    <MenuItem value="46">46</MenuItem>
+                                                    <MenuItem value="47">47</MenuItem>
+                                                    <MenuItem value="48">48</MenuItem>
+                                                    <MenuItem value="49">49</MenuItem>
+                                                    <MenuItem value="50">50</MenuItem>
+                                                    <MenuItem value="51">51</MenuItem>
+                                                    <MenuItem value="52">52</MenuItem>
+                                                    <MenuItem value="53">53</MenuItem>
+                                                    <MenuItem value="54">54</MenuItem>
+                                                    <MenuItem value="5XS">5XS</MenuItem>
+                                                    <MenuItem value="4XS">4XS</MenuItem>
+                                                    <MenuItem value="3XS">3XS</MenuItem>
+                                                    <MenuItem value="2XS">2XS</MenuItem>
+                                                    <MenuItem value="XS">XS</MenuItem>
+                                                    <MenuItem value="S">S</MenuItem>
+                                                    <MenuItem value="M">M</MenuItem>
+                                                    <MenuItem value="L">L</MenuItem>
+                                                    <MenuItem value="XL">XL</MenuItem>
+                                                    <MenuItem value="2XL">2XL</MenuItem>
+                                                    <MenuItem value="3XL">3XL</MenuItem>
+                                                    <MenuItem value="4XL">4XL</MenuItem>
+                                                    <MenuItem value="5XL">5XL</MenuItem>
+                                                    <MenuItem value="6XL">6XL</MenuItem>
+                                                    <MenuItem value="7XL">7XL</MenuItem>
+                                                    <MenuItem value="8XL">8XL</MenuItem>
+                                                    <MenuItem value="9XL">9XL</MenuItem>
+                                                    <MenuItem value="10XL">10XL</MenuItem>
+                                                    <MenuItem value="0 Months">0 Months</MenuItem>
+                                                    <MenuItem value="3 Months">3 Months</MenuItem>
+                                                    <MenuItem value="6 Months">6 Months</MenuItem>
+                                                    <MenuItem value="9 Months">9 Months</MenuItem>
+                                                    <MenuItem value="12 Months">12 Months</MenuItem>
+                                                    <MenuItem value="18 Months">18 Months</MenuItem>
+                                                    <MenuItem value="24 Months">24 Months</MenuItem>
+                                                    <MenuItem value="2 Years">2 Years</MenuItem>
+                                                    <MenuItem value="3 Years">3 Years</MenuItem>
+                                                    <MenuItem value="4 Years">4 Years</MenuItem>
+                                                    <MenuItem value="5 Years">5 Years</MenuItem>
+                                                    <MenuItem value="6 Years">6 Years</MenuItem>
+                                                    <MenuItem value="7 Years">7 Years</MenuItem>
+                                                    <MenuItem value="8 Years">8 Years</MenuItem>
+                                                    <MenuItem value="9 Years">9 Years</MenuItem>
+                                                    <MenuItem value="10 Years">10 Years</MenuItem>
+                                                    <MenuItem value="11 Years">11 Years</MenuItem>
+                                                    <MenuItem value="12 Years">12 Years</MenuItem>
+                                                    <MenuItem value="13 Years">13 Years</MenuItem>
+                                                    <MenuItem value="14 Years">14 Years</MenuItem>
+                                                    <MenuItem value="15 Years">15 Years</MenuItem>
+                                                    <MenuItem value="16 Years">16 Years</MenuItem>
+                                                    <MenuItem value="17 Years">17 Years</MenuItem>
+                                                    <MenuItem value="18 Years">18 Years</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    shirtSizeBodyTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='shirtSizeBodyType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Shirt Body Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="shirtSizeBodyType"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.shirtSizeBodyType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Regular">Regular</MenuItem>
+                                                    <MenuItem value="Plus">Plus</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    itemStylingField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='itemStyling'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Item Styling</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="itemStyling"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.itemStyling)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Bralette">Bralette</MenuItem>
+                                                    <MenuItem value="Cami">Cami</MenuItem>
+                                                    <MenuItem value="T-Shirt">T-Shirt</MenuItem>
+                                                    <MenuItem value="Molded">Molded</MenuItem>
+                                                    <MenuItem value="Longline">Longline</MenuItem>
+                                                    <MenuItem value="Push-Up">Push-Up</MenuItem>
+                                                    <MenuItem value="Minimiser">Minimiser</MenuItem>
+                                                    <MenuItem value="Nursing">Nursing</MenuItem>
+                                                    <MenuItem value="Seamless">Seamless</MenuItem>
+                                                    <MenuItem value="Balconette">Balconette</MenuItem>
+                                                    <MenuItem value="Padded">Padded</MenuItem>
+                                                    <MenuItem value="Stick-On">Stick-On</MenuItem>
+                                                    <MenuItem value="Bandeau">Bandeau</MenuItem>
+                                                    <MenuItem value="Demi">Demi</MenuItem>
+                                                    <MenuItem value="Non-Padded">Non-Padded</MenuItem>
+                                                    <MenuItem value="Plunge">Plunge</MenuItem>
+                                                    <MenuItem value="Sports">Sports</MenuItem>
+                                                    <MenuItem value="Full-Coverage">Full-Coverage</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    underwireTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='underwireType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Underwire Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="underwireType"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.underwireType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Wired">Wired</MenuItem>
+                                                    <MenuItem value="Wire Free">Wire Free</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    strapTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='strapType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Strap Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="strapType"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.strapType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Convertible">Convertible</MenuItem>
+                                                    <MenuItem value="Spaghetti">Spaghetti</MenuItem>
+                                                    <MenuItem value="Halter">Halter</MenuItem>
+                                                    <MenuItem value="Strapless">Strapless</MenuItem>
+                                                    <MenuItem value="Non-Adjustable">Non-Adjustable</MenuItem>
+                                                    <MenuItem value="Invisible">Invisible</MenuItem>
+                                                    <MenuItem value="Racerback">Racerback</MenuItem>
+                                                    <MenuItem value="Adjustable">Adjustable</MenuItem>
+                                                    <MenuItem value="One Shoulder">One Shoulder</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    braCupSizeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='braCupSize'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Bra cup size</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="braCupSize"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.braCupSize)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="DD">DD</MenuItem>
+                                                    <MenuItem value="FF">FF</MenuItem>
+                                                    <MenuItem value="GG">GG</MenuItem>
+                                                    <MenuItem value="A">A</MenuItem>
+                                                    <MenuItem value="B">B</MenuItem>
+                                                    <MenuItem value="C">C</MenuItem>
+                                                    <MenuItem value="D">D</MenuItem>
+                                                    <MenuItem value="DDD">DDD</MenuItem>
+                                                    <MenuItem value="E">E</MenuItem>
+                                                    <MenuItem value="F">F</MenuItem>
+                                                    <MenuItem value="G">G</MenuItem>
+                                                    <MenuItem value="H">H</MenuItem>
+                                                    <MenuItem value="I">I</MenuItem>
+                                                    <MenuItem value="J">J</MenuItem>
+                                                    <MenuItem value="K">K</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    specialFeatureField ? (
+                        <>
+                            <SpecialFeature specialFeatureOptions={specialFeatureOptions} />
+                        </>) : ""
+                }
+                {
+                    supportTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='supportType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Support Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="supportType"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.supportType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Underwire">Underwire</MenuItem>
+                                                    <MenuItem value="Wire Free">Wire Free</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    bandSizeValueField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='bandSizeValue'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Band Size Value</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="bandSizeValue"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.bandSizeValue)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="24">24</MenuItem>
+                                                    <MenuItem value="26">26</MenuItem>
+                                                    <MenuItem value="28">28</MenuItem>
+                                                    <MenuItem value="30">30</MenuItem>
+                                                    <MenuItem value="32">32</MenuItem>
+                                                    <MenuItem value="34">34</MenuItem>
+                                                    <MenuItem value="36">36</MenuItem>
+                                                    <MenuItem value="38">38</MenuItem>
+                                                    <MenuItem value="40">40</MenuItem>
+                                                    <MenuItem value="42">42</MenuItem>
+                                                    <MenuItem value="44">44</MenuItem>
+                                                    <MenuItem value="46">46</MenuItem>
+                                                    <MenuItem value="48">48</MenuItem>
+                                                    <MenuItem value="50">50</MenuItem>
+                                                    <MenuItem value="52">52</MenuItem>
+                                                    <MenuItem value="54">54</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    cupSizeValueField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='cupSizeValue'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Cup Size Value</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="cupSizeValue"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.cupSizeValue)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="AA">AA</MenuItem>
+                                                    <MenuItem value="A">A</MenuItem>
+                                                    <MenuItem value="B">B</MenuItem>
+                                                    <MenuItem value="C">C</MenuItem>
+                                                    <MenuItem value="D">D</MenuItem>
+                                                    <MenuItem value="DD">DD</MenuItem>
+                                                    <MenuItem value="E">E</MenuItem>
+                                                    <MenuItem value="F">F</MenuItem>
+                                                    <MenuItem value="FF">FF</MenuItem>
+                                                    <MenuItem value="G">G</MenuItem>
+                                                    <MenuItem value="GG">GG</MenuItem>
+                                                    <MenuItem value="H">H</MenuItem>
+                                                    <MenuItem value="HH">HH</MenuItem>
+                                                    <MenuItem value="J">J</MenuItem>
+                                                    <MenuItem value="JJ">JJ</MenuItem>
+                                                    <MenuItem value="K">K</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    numberOfPocketsField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='numberOfPockets'
+                                    rules={{
+                                        required: "this field is required",
+                                        pattern: {
+                                            value: new RegExp('^[0-9]+$'),
+                                            message: "value is invalid"
+                                        }
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Number of Pockets</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    placeholder="2"
+                                                    id="numberOfPockets"
+                                                    variant="outlined"
+                                                    {...field}
+                                                    style={{ width: "100%" }}
+                                                    error={Boolean(errors.numberOfPockets)}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    pocketDescriptionField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='pocketDescription'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Pocket Description</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="pocketDescription"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.pocketDescription)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="With Pocket">With Pocket</MenuItem>
+                                                    <MenuItem value="Without Pocket">Without Pocket</MenuItem>
+                                                    <MenuItem value="Pork Chop Pocket">Pork Chop Pocket</MenuItem>
+                                                    <MenuItem value="Utility Pocket">Utility Pocket</MenuItem>
+                                                    <MenuItem value="Slash Pocket">Slash Pocket</MenuItem>
+                                                    <MenuItem value="Coin Pocket">Coin Pocket</MenuItem>
+                                                    <MenuItem value="Welt Pocket">Welt Pocket</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    skirtSizeSystemField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='skirtSizeSystem'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Skirt Size System</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="skirtSizeSystem"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.skirtSizeSystem)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="IN">IN</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    skirtSizeClassField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='skirtSizeClass'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Skirt Size Class</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="skirtSizeClass"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.skirtSizeClass)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Alpha">Alpha</MenuItem>
+                                                    <MenuItem value="Age">Age</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    skirtSizeValueField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='skirtSizeValue'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Skirt Size Value</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="skirtSizeValue"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.skirtSizeValue)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Free Size">Free Size</MenuItem>
+                                                    <MenuItem value="5XS">5XS</MenuItem>
+                                                    <MenuItem value="4XS">4XS</MenuItem>
+                                                    <MenuItem value="3XS">3XS</MenuItem>
+                                                    <MenuItem value="2XS">2XS</MenuItem>
+                                                    <MenuItem value="XS">XS</MenuItem>
+                                                    <MenuItem value="S">S</MenuItem>
+                                                    <MenuItem value="M">M</MenuItem>
+                                                    <MenuItem value="L">L</MenuItem>
+                                                    <MenuItem value="XL">XL</MenuItem>
+                                                    <MenuItem value="2XL">2XL</MenuItem>
+                                                    <MenuItem value="3XL">3XL</MenuItem>
+                                                    <MenuItem value="4XL">4XL</MenuItem>
+                                                    <MenuItem value="5XL">5XL</MenuItem>
+                                                    <MenuItem value="6XL">6XL</MenuItem>
+                                                    <MenuItem value="7XL">7XL</MenuItem>
+                                                    <MenuItem value="8XL">8XL</MenuItem>
+                                                    <MenuItem value="9XL">9XL</MenuItem>
+                                                    <MenuItem value="10XL">10XL</MenuItem>
+                                                    <MenuItem value="0 Months">0 Months</MenuItem>
+                                                    <MenuItem value="3 Months">3 Months</MenuItem>
+                                                    <MenuItem value="6 Months">6 Months</MenuItem>
+                                                    <MenuItem value="9 Months">9 Months</MenuItem>
+                                                    <MenuItem value="12 Months">12 Months</MenuItem>
+                                                    <MenuItem value="18 Months">18 Months</MenuItem>
+                                                    <MenuItem value="24 Months">24 Months</MenuItem>
+                                                    <MenuItem value="2 Years">2 Years</MenuItem>
+                                                    <MenuItem value="3 Years">3 Years</MenuItem>
+                                                    <MenuItem value="4 Years">4 Years</MenuItem>
+                                                    <MenuItem value="5 Years">5 Years</MenuItem>
+                                                    <MenuItem value="6 Years">6 Years</MenuItem>
+                                                    <MenuItem value="7 Years">7 Years</MenuItem>
+                                                    <MenuItem value="8 Years">8 Years</MenuItem>
+                                                    <MenuItem value="9 Years">9 Years</MenuItem>
+                                                    <MenuItem value="10 Years">10 Years</MenuItem>
+                                                    <MenuItem value="11 Years">11 Years</MenuItem>
+                                                    <MenuItem value="12 Years">12 Years</MenuItem>
+                                                    <MenuItem value="13 Years">13 Years</MenuItem>
+                                                    <MenuItem value="14 Years">14 Years</MenuItem>
+                                                    <MenuItem value="15 Years">15 Years</MenuItem>
+                                                    <MenuItem value="16 Years">16 Years</MenuItem>
+                                                    <MenuItem value="17 Years">17 Years</MenuItem>
+                                                    <MenuItem value="18 Years">18 Years</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    skirtSizeToRangeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='skirtSizeToRange'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Skirt Size To Range</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="skirtSizeToRange"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.skirtSizeToRange)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Free Size">Free Size</MenuItem>
+                                                    <MenuItem value="5XS">5XS</MenuItem>
+                                                    <MenuItem value="4XS">4XS</MenuItem>
+                                                    <MenuItem value="3XS">3XS</MenuItem>
+                                                    <MenuItem value="2XS">2XS</MenuItem>
+                                                    <MenuItem value="XS">XS</MenuItem>
+                                                    <MenuItem value="S">S</MenuItem>
+                                                    <MenuItem value="M">M</MenuItem>
+                                                    <MenuItem value="L">L</MenuItem>
+                                                    <MenuItem value="XL">XL</MenuItem>
+                                                    <MenuItem value="2XL">2XL</MenuItem>
+                                                    <MenuItem value="3XL">3XL</MenuItem>
+                                                    <MenuItem value="4XL">4XL</MenuItem>
+                                                    <MenuItem value="5XL">5XL</MenuItem>
+                                                    <MenuItem value="6XL">6XL</MenuItem>
+                                                    <MenuItem value="7XL">7XL</MenuItem>
+                                                    <MenuItem value="8XL">8XL</MenuItem>
+                                                    <MenuItem value="9XL">9XL</MenuItem>
+                                                    <MenuItem value="10XL">10XL</MenuItem>
+                                                    <MenuItem value="0 Months">0 Months</MenuItem>
+                                                    <MenuItem value="3 Months">3 Months</MenuItem>
+                                                    <MenuItem value="6 Months">6 Months</MenuItem>
+                                                    <MenuItem value="9 Months">9 Months</MenuItem>
+                                                    <MenuItem value="12 Months">12 Months</MenuItem>
+                                                    <MenuItem value="18 Months">18 Months</MenuItem>
+                                                    <MenuItem value="24 Months">24 Months</MenuItem>
+                                                    <MenuItem value="2 Years">2 Years</MenuItem>
+                                                    <MenuItem value="3 Years">3 Years</MenuItem>
+                                                    <MenuItem value="4 Years">4 Years</MenuItem>
+                                                    <MenuItem value="5 Years">5 Years</MenuItem>
+                                                    <MenuItem value="6 Years">6 Years</MenuItem>
+                                                    <MenuItem value="7 Years">7 Years</MenuItem>
+                                                    <MenuItem value="8 Years">8 Years</MenuItem>
+                                                    <MenuItem value="9 Years">9 Years</MenuItem>
+                                                    <MenuItem value="10 Years">10 Years</MenuItem>
+                                                    <MenuItem value="11 Years">11 Years</MenuItem>
+                                                    <MenuItem value="12 Years">12 Years</MenuItem>
+                                                    <MenuItem value="13 Years">13 Years</MenuItem>
+                                                    <MenuItem value="14 Years">14 Years</MenuItem>
+                                                    <MenuItem value="15 Years">15 Years</MenuItem>
+                                                    <MenuItem value="16 Years">16 Years</MenuItem>
+                                                    <MenuItem value="17 Years">17 Years</MenuItem>
+                                                    <MenuItem value="18 Years">18 Years</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    skirtBodyTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='skirtBodyType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Skirt Body Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="skirtBodyType"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.skirtBodyType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="J">J</MenuItem>
+                                                    <MenuItem value="E">E</MenuItem>
+                                                    <MenuItem value="AB">AB</MenuItem>
+                                                    <MenuItem value="A">A</MenuItem>
+                                                    <MenuItem value="B">B</MenuItem>
+                                                    <MenuItem value="Petite">Petite</MenuItem>
+                                                    <MenuItem value="Y">Y</MenuItem>
+                                                    <MenuItem value="Slim">Slim</MenuItem>
+                                                    <MenuItem value="YA">YA</MenuItem>
+                                                    <MenuItem value="BE">BE</MenuItem>
+                                                    <MenuItem value="Husky">Husky</MenuItem>
+                                                    <MenuItem value="Big">Big</MenuItem>
+                                                    <MenuItem value="BB">BB</MenuItem>
+                                                    <MenuItem value="Regular">Regular</MenuItem>
+                                                    <MenuItem value="Plus">Plus</MenuItem>
+                                                    <MenuItem value="JY">JY</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    polarizationTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='polarizationType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'> Polarization Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="polarizationType"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.polarizationType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Non Polarized">Non Polarized</MenuItem>
+                                                    <MenuItem value="Polarized">Polarized</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    armLengthField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                    <label className='labelbold'>Arm Length</label>
+                                </div>
+                                <div className="col-8 col-sm-7 col-lg-6">
+
+                                    <div className='row align-items-end'>
+                                        <Controller
+                                            control={control}
+                                            name='armLength'
+                                            rules={{
+                                                required: "this field is required",
+                                                pattern: {
+                                                    value: new RegExp('^[0-9]+$'),
+                                                    message: "not a valid formate"
+                                                }
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            placeholder="20"
+                                                            id="armLength"
+                                                            variant="outlined"
+                                                            {...field}
+                                                            style={{ width: "100%" }}
+                                                            error={Boolean(errors.armLength)}
+                                                        />
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                        <Controller
+                                            control={control}
+                                            name='armLengthUnit'
+                                            rules={{
+                                                required: "this is required"
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            id="armLengthUnit"
+                                                            variant="outlined"
+                                                            select
+                                                            style={{ width: "100%" }}
+                                                            {...field}
+                                                            error={Boolean(errors.armLengthUnit)}
+                                                        >
+                                                            <MenuItem value="">-Select-</MenuItem>
+                                                            <MenuItem value="Centimeters">Centimeters</MenuItem>
+                                                            <MenuItem value="Feet">Feet</MenuItem>
+                                                            <MenuItem value="IN">IN</MenuItem>
+                                                            <MenuItem value="Meters">Meters</MenuItem>
+                                                            <MenuItem value="Milimeters">Milimeters</MenuItem>
+                                                            <MenuItem value="DM">DM</MenuItem>
+                                                            <MenuItem value="Picometre">Picometre</MenuItem>
+                                                            <MenuItem value="µM">µM</MenuItem>
+                                                            <MenuItem value="Yards">Yards</MenuItem>
+                                                            <MenuItem value="Miles">Miles</MenuItem>
+                                                            <MenuItem value="Nanometre">Nanometre</MenuItem>
+                                                            <MenuItem value="Hundredths-Inches">Hundredths-Inches</MenuItem>
+                                                            <MenuItem value="Kilometres">Kilometres</MenuItem>
+                                                            <MenuItem value="Angstrom">Angstrom</MenuItem>
+                                                            <MenuItem value="Picometre">Picometre</MenuItem>
+                                                        </TextField>
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </>) : ""
+                }
+                {
+                    bridgeWidthField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                    <label className='labelbold'>Bridge Width</label>
+                                </div>
+                                <div className="col-8 col-sm-7 col-lg-6">
+
+                                    <div className='row align-items-end'>
+                                        <Controller
+                                            control={control}
+                                            name='bridgeWidth'
+                                            rules={{
+                                                required: "this field is required",
+                                                pattern: {
+                                                    value: new RegExp('^[0-9]+$'),
+                                                    message: "not a valid formate"
+                                                }
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            placeholder="10"
+                                                            id="bridgeWidth"
+                                                            variant="outlined"
+                                                            {...field}
+                                                            style={{ width: "100%" }}
+                                                            error={Boolean(errors.bridgeWidth)}
+                                                        />
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                        <Controller
+                                            control={control}
+                                            name='bridgeWidthUnit'
+                                            rules={{
+                                                required: "this is required"
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            id="bridgeWidthUnit"
+                                                            variant="outlined"
+                                                            select
+                                                            style={{ width: "100%" }}
+                                                            {...field}
+                                                            error={Boolean(errors.bridgeWidthUnit)}
+                                                        >
+                                                            <MenuItem value="">-Select-</MenuItem>
+                                                            <MenuItem value="Centimeters">Centimeters</MenuItem>
+                                                            <MenuItem value="Feet">Feet</MenuItem>
+                                                            <MenuItem value="IN">IN</MenuItem>
+                                                            <MenuItem value="Meters">Meters</MenuItem>
+                                                            <MenuItem value="Milimeters">Milimeters</MenuItem>
+                                                            <MenuItem value="DM">DM</MenuItem>
+                                                            <MenuItem value="Picometre">Picometre</MenuItem>
+                                                            <MenuItem value="µM">µM</MenuItem>
+                                                            <MenuItem value="Yards">Yards</MenuItem>
+                                                            <MenuItem value="Miles">Miles</MenuItem>
+                                                            <MenuItem value="Nanometre">Nanometre</MenuItem>
+                                                            <MenuItem value="Hundredths-Inches">Hundredths-Inches</MenuItem>
+                                                            <MenuItem value="Kilometres">Kilometres</MenuItem>
+                                                            <MenuItem value="Angstrom">Angstrom</MenuItem>
+                                                            <MenuItem value="Picometre">Picometre</MenuItem>
+                                                        </TextField>
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </>) : ""
+                }
+                {
+                    frameMaterialTypeField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="frameMaterialType"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Frame Material Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="frameMaterialType-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.frameMaterialType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    {frameMaterialTypeItem.map((materialItem, index) => {
+                                                        return <MenuItem value={`${materialItem}`} key={index}>{materialItem}</MenuItem>
+                                                    })
+                                                    }
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    lensColorField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='lensColor'
+                                    rules={{
+                                        required: "this field is required",
+
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Lens Color</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    placeholder="12"
+                                                    id="lensColor"
+                                                    variant="outlined"
+                                                    {...field}
+                                                    style={{ width: "100%" }}
+                                                    error={Boolean(errors.lensColor)}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    colorOfTheEyewearLensField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="colorOfTheEyewearLens"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Color of the eyewear lens</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="colorOfTheEyewearLens-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.colorOfTheEyewearLens)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Bronze">Bronze</MenuItem>
+                                                    <MenuItem value="Brown">Brown</MenuItem>
+                                                    <MenuItem value="Dark brown">Dark brown</MenuItem>
+                                                    <MenuItem value="Light Brown">Light Brown</MenuItem>
+                                                    <MenuItem value="Gold">Gold</MenuItem>
+                                                    <MenuItem value="Blue">Blue</MenuItem>
+                                                    <MenuItem value="Dark Blue">Dark Blue</MenuItem>
+                                                    <MenuItem value="Light Blue">Light Blue</MenuItem>
+                                                    <MenuItem value="Multicolor">Multicolor</MenuItem>
+                                                    <MenuItem value="Black">Black</MenuItem>
+                                                    <MenuItem value="Orange">Orange</MenuItem>
+                                                    <MenuItem value="Clear">Clear</MenuItem>
+                                                    <MenuItem value="Red">Red</MenuItem>
+                                                    <MenuItem value="Silver">Silver</MenuItem>
+                                                    <MenuItem value="Pink">Pink</MenuItem>
+                                                    <MenuItem value="White">White</MenuItem>
+                                                    <MenuItem value="Off-white">Off-white</MenuItem>
+                                                    <MenuItem value="Metalic">Metalic</MenuItem>
+                                                    <MenuItem value="Beige">Beige</MenuItem>
+                                                    <MenuItem value="Purple">Purple</MenuItem>
+                                                    <MenuItem value="Yellow">Yellow</MenuItem>
+                                                    <MenuItem value="Turquoise">Turquoise</MenuItem>
+                                                    <MenuItem value="Khaki">Khaki</MenuItem>
+                                                    <MenuItem value="Maroon">Maroon</MenuItem>
+                                                    <MenuItem value="Green">Green</MenuItem>
+                                                    <MenuItem value="Dark Green">Dark Green</MenuItem>
+                                                    <MenuItem value="Light Green">Light Green</MenuItem>
+                                                    <MenuItem value="Grey">Grey</MenuItem>
+                                                    <MenuItem value="Charcoal Grey">Charcoal Grey</MenuItem>
+                                                    <MenuItem value="Nude">Nude</MenuItem>
+                                                    <MenuItem value="Clear">Clear</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    lensMaterialTypeField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="lensMaterialType"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Lens Material Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="lensMaterialType-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.lensMaterialType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Gradient">Gradient</MenuItem>
+                                                    <MenuItem value="Nylon">Nylon</MenuItem>
+                                                    <MenuItem value="Tri Acetate Cellulose">Tri Acetate Cellulose</MenuItem>
+                                                    <MenuItem value="Glass">Glass</MenuItem>
+                                                    <MenuItem value="Plastic">Plastic</MenuItem>
+                                                    <MenuItem value="Polarized">Polarized</MenuItem>
+                                                    <MenuItem value="Acetate">Acetate</MenuItem>
+                                                    <MenuItem value="Mirrored">Mirrored</MenuItem>
+                                                    <MenuItem value="Resin">Resin</MenuItem>
+                                                    <MenuItem value="Photochromic">Photochromic</MenuItem>
+                                                    <MenuItem value="Polycarbonate">Polycarbonate</MenuItem>
+                                                    <MenuItem value="Acrylic">Acrylic</MenuItem>
+                                                    <MenuItem value="Polyvinyl Chloride">Polyvinyl Chloride</MenuItem>
+                                                    <MenuItem value="Crystal">Crystal</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    lensWidthField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                    <label className='labelbold'>Lens Width</label>
+                                </div>
+                                <div className="col-8 col-sm-7 col-lg-6">
+
+                                    <div className='row align-items-end'>
+                                        <Controller
+                                            control={control}
+                                            name='lensWidth'
+                                            rules={{
+                                                required: "this field is required",
+                                                pattern: {
+                                                    value: new RegExp('^[0-9]+$'),
+                                                    message: "not a valid formate"
+                                                }
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            placeholder="10"
+                                                            id="lensWidth"
+                                                            variant="outlined"
+                                                            {...field}
+                                                            style={{ width: "100%" }}
+                                                            error={Boolean(errors.lensWidth)}
+                                                        />
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                        <Controller
+                                            control={control}
+                                            name='lensWidthUnit'
+                                            rules={{
+                                                required: "this is required"
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            id="lensWidthUnit"
+                                                            variant="outlined"
+                                                            select
+                                                            style={{ width: "100%" }}
+                                                            {...field}
+                                                            error={Boolean(errors.lensWidthUnit)}
+                                                        >
+                                                            <MenuItem value="">-Select-</MenuItem>
+                                                            <MenuItem value="Centimeters">Centimeters</MenuItem>
+                                                            <MenuItem value="Feet">Feet</MenuItem>
+                                                            <MenuItem value="IN">IN</MenuItem>
+                                                            <MenuItem value="Meters">Meters</MenuItem>
+                                                            <MenuItem value="Milimeters">Milimeters</MenuItem>
+                                                            <MenuItem value="Yards">Yards</MenuItem>
+                                                        </TextField>
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </>) : ""
+                }
+                {
+                    swimwearBottomStyleField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="swimwearBottomStyle"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Swimwear bottom style</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="swimwearBottomStyle-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.swimwearBottomStyle)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Scoop">Scoop</MenuItem>
+                                                    <MenuItem value="Thong">Thong</MenuItem>
+                                                    <MenuItem value="High Waisted">High Waisted</MenuItem>
+                                                    <MenuItem value="High-Cut Briefs">High-Cut Briefs</MenuItem>
+                                                    <MenuItem value="Skirted">Skirted</MenuItem>
+                                                    <MenuItem value="Banded Bottoms">Banded Bottoms</MenuItem>
+                                                    <MenuItem value="Boy Shorts">Boy Shorts</MenuItem>
+                                                    <MenuItem value="Cheeky">Cheeky</MenuItem>
+                                                    <MenuItem value="Hipster">Hipster</MenuItem>
+                                                    <MenuItem value="G-String">G-String</MenuItem>
+                                                    <MenuItem value="Low Rise">Low Rise</MenuItem>
+                                                    <MenuItem value="Skimpy">Skimpy</MenuItem>
+                                                    <MenuItem value="Brazilian">Brazilian</MenuItem>
+                                                    <MenuItem value="Tie Side">Tie Side</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
             </div>
-           <BookingDate/>
+
         </>
     )
 }
