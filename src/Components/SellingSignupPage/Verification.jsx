@@ -49,6 +49,7 @@ const Verification = ({ setRequirePhoneOtp }) => {
                 console.log(response)
             }
             else {
+                toast.error("Failed to send OTP");
                 throw new Error("Failed to send OTP");
             }
         } catch (error) {
@@ -73,11 +74,13 @@ const Verification = ({ setRequirePhoneOtp }) => {
                     console.log(val)
                     if (val.code === 20404) {
                         console.log("Failed to verify OTP")
+                        toast.error("Failed to verify OTP");
                         setRequirePhoneOtp(false)
                     }
                     if (val.valid === true) {
                         console.log("otp is verified")
                         setRequirePhoneOtp(true)
+                        toast.success('OTP is Verified')
                     }
 
                 })
@@ -108,7 +111,9 @@ const Verification = ({ setRequirePhoneOtp }) => {
                 console.log(response)
             }
             else {
+                toast.error("Failed to send OTP");
                 throw new Error("Failed to send OTP");
+                
             }
         } catch (error) {
             console.log(error, "error");
@@ -117,16 +122,17 @@ const Verification = ({ setRequirePhoneOtp }) => {
 
     const handleVerifyEmail = async (otpp, datas) => {
 
-        const num = otpp;
+        const num = Number(otpp);
         console.log(num)
+        console.log(typeof(num))
         // Number(otpp)
         // otpp.toString()
 
         const emails = datas.value;
-        const newEmail = emails.replace("@", "%40")
-        console.log(newEmail)
+        // const newEmail = emails.replace("@", "%40")
+        // console.log(newEmail)
 
-        const url = `${authService.newCommonUrl}/common/general/verifyEmailOtp?email=${newEmail}&otp=${num}`;
+        const url = `${authService.newCommonUrl}/common/general/verifyEmailOtp?email=${emails}&otp=${num}`;
         try {
             const emailresponse = await fetch(url, {
                 method: 'POST',
@@ -146,9 +152,14 @@ const Verification = ({ setRequirePhoneOtp }) => {
             })
             const val = await emailresponse.json()
             console.log(val)
+            if(val.result === false){
+                toast.error("OTP is not verified");
+            }
 
         } catch (error) {
             console.log(error, "error");
+            toast.error("OTP is not verified");
+            
         }
         console.log(url)
     }
