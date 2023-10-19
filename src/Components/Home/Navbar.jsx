@@ -14,9 +14,9 @@ const Navbar = () => {
         // Redirect to the home page
         navigate('/sellingpage');
     };
-    const handleSignup = () => {
-        navigate('/newhomepage');
-    }
+    // const handleSignup = () => {
+    //     navigate('/newhomepage');
+    // }
     return (
         <>
             <div className='hero-svg-leftcorner'>
@@ -41,7 +41,7 @@ const Navbar = () => {
                 <div className='row'>
                     <div className='col-12'>
                         <div className='signup-btn'>
-                            <button type="button" onClick={handleSignup}>Sign Up</button>
+                            <button type="button" >Sign Up</button>
                         </div>
                     </div>
                 </div>

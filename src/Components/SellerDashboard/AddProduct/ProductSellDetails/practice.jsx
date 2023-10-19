@@ -1,42 +1,3 @@
-const [activeFourthSubCategory, setActiveFourthSubCategory] = useState(false);
-const [fouthsublistItem, setFouthsublistItem] = useState([])
-const [hidesubofsubCategory, sethidesubofsubCategory] = useState(false)
-
-
-const handleFourthSubcategory = async (fouthsubItem) => {
-  try {
-    const response = await fetch(`https://thick-grapes-retire.loca.lt/ecommerce/category/getChildCategories?browsePath=${fouthsubItem.browsePath}/${fouthsubItem.categoryId}`);
-
-    if (response.ok) {
-      const fourthitems = await response.json();
-      setFouthsublistItem(fourthitems);
-
-      sethidesubofsubCategory(true)
-      setActiveFourthSubCategory(true);
-      console.log("fourth", fourthitems)
-    } else {
-      setActivebtn(true)
-    }
-
-  } catch (error) {
-    console.error('Error fetching third-level subcategories:', error);
-  }
-}
-{activeFourthSubCategory && (<div className='add-product-category-list-items-box2' >
-{fouthsublistItem.map((fouthsubItems) => (
-  <>
-    <div style={{ width: "100%" }} className='px-3 product-list-item-name' key={fouthsubItems.categoryId}>
-      <p>{fouthsubItems.label}</p>
-      <Button type="button" variant="contained" size='small' onClick={() => handleCategoryform(fouthsubItems)}>Select</Button>
-    </div>
-  </>
-))}
-</div>)}
-
-
-
-
-
 
 import React, { useEffect } from 'react'
 import { Button } from "@mui/material";
@@ -46,11 +7,11 @@ import { GrFormNext } from 'react-icons/gr'
 import { useDispatch } from 'react-redux';
 
 // import { setAddProductCategories,setDesertCategories,setSelectedCategory } from '../../../ReduxToolKit/Features/AddProductFormSlice';
-import {setSelectedCategory } from '../../../ReduxToolKit/Features/AddProductFormSlice';
-import {setCategoriesTitlePath} from '../../../ReduxToolKit/Features/CategoriesTitle'
-import {setSubCategoriesTitlePath} from '../../../ReduxToolKit/Features/SubCategoriesTitle'
-import {setSubofSubCategoriesTitlePath} from '../../../ReduxToolKit/Features/SubofSubCategoriesTitle'
-import {setThirdSubCategoriesTitlePath} from '../../../ReduxToolKit/Features/ThirdSubCategoriesTitle'
+import { setSelectedCategory } from '../../../ReduxToolKit/Features/AddProductFormSlice';
+import { setCategoriesTitlePath } from '../../../ReduxToolKit/Features/CategoriesTitle'
+import { setSubCategoriesTitlePath } from '../../../ReduxToolKit/Features/SubCategoriesTitle'
+import { setSubofSubCategoriesTitlePath } from '../../../ReduxToolKit/Features/SubofSubCategoriesTitle'
+import { setThirdSubCategoriesTitlePath } from '../../../ReduxToolKit/Features/ThirdSubCategoriesTitle'
 
 
 const CategoryHierarchy = () => {
@@ -66,7 +27,6 @@ const CategoryHierarchy = () => {
   const [activeThirdSubCategory, setActiveThirdSubCategory] = useState(false);
   const [activebtn, setActivebtn] = useState(false)
 
-
   const [listItem, setListItem] = useState([])
   const [sublistItem, setSubListItem] = useState([])
   const [subofsublistItem, setSubOfSubListItem] = useState([])
@@ -74,10 +34,15 @@ const CategoryHierarchy = () => {
   const [hidesubCategory, sethidesubCategory] = useState(false)
   const [hideCategory, sethideCategory] = useState(false)
 
-
+  const [activeFourthSubCategory, setActiveFourthSubCategory] = useState(false);
+  const [fouthsublistItem, setFouthsublistItem] = useState([])
+  const [activeFifthSubCategory, setActiveFifthSubCategory] = useState(false);
+  const [fifthsublistItem, setFifthsublistItem] = useState([])
+  const [hidesubofsubCategory, sethidesubofsubCategory] = useState(false)
+  // let firstData = '';
   useEffect(() => {
 
-    fetch("https://thick-grapes-retire.loca.lt/ecommerce/category/getMainCategories")
+    fetch("https://vast-peaches-yell.loca.lt/ecommerce/category/getMainCategories")
       .then((res) => res.json())
       .then((data) => {
         setListItem(data)
@@ -88,79 +53,50 @@ const CategoryHierarchy = () => {
 
   }, [])
 
+  // const handleNewFirstCategories = async () =>{
+  //   let first_api = "https://vast-peaches-yell.loca.lt/ecommerce/category/getMainCategories";
+
+  //   let fethFirstApi = await fetch(first_api);
+  //    firstData = await fethFirstApi.json();
+  // }
+
+  // useEffect(()=> {
+  //   handleNewFirstCategories()
+  // })
 
 
   const handleSubCategory = async (item) => {
     dispatch(setCategoriesTitlePath(item.label))
     try {
-      const response = await fetch(`https://thick-grapes-retire.loca.lt/ecommerce/category/getChildCategories?browsePath=${item.browsePath}/${item.categoryId}`);
+      const response = await fetch(`https://vast-peaches-yell.loca.lt/ecommerce/category/getChildCategories?browsePath=${item.browsePath}/${item.categoryId}`);
       const items = await response.json();
-      setSubListItem(items);
-      setSubOfSubListItem([]); // Clear subofsublistItem
-      setThirdsublistItem([]); // Clear thirdsublistItem
-      setactiveItems(item.categoryId)
-      
-      setActiveCategory(true);
-      setActiveSubCategory(true);
-      setActiveThirdSubCategory(true);
-      sethidesubCategory(false)
-      sethideCategory(false)
-      console.log("second", items)
+
+      if (response.ok) {
+        setListItem(items);
+      }
+      else {
+        setActivebtn(true)
+      }
+
     } catch (error) {
       console.error('Error fetching subcategories:', error);
     }
     setCategoryTitle(item.label)
   }
-  const nextIcon = <GrFormNext className="navigate-next-icon" />;
 
-  const handleSubOfSubcategory = async (subItem) => {
-    dispatch(setSubCategoriesTitlePath(subItem.label))
-    try {
-      const response = await fetch(`https://thick-grapes-retire.loca.lt/ecommerce/category/getChildCategories?browsePath=${subItem.browsePath}/${subItem.categoryId}`);
-      const subitems = await response.json();
-      setSubOfSubListItem(subitems);
 
-      setThirdsublistItem([]); // Clear thirdsublistItem
-      setActiveSubCategory(true);
-      setActiveThirdSubCategory(false);
-      sethideCategory(true)
-      console.log("third", subitems)
-    } catch (error) {
-      console.error('Error fetching sub-subcategories:', error);
-    }
 
-    setSubCategoryTitle(
-      <>
-        {nextIcon} {subItem.label}
-      </>
-    );
-  }
 
-  const handleThirdSubcategory = async (thirdsubItem) => {
-    dispatch(setSubofSubCategoriesTitlePath(thirdsubItem.label))
-    try {
-      const response = await fetch(`https://thick-grapes-retire.loca.lt/ecommerce/category/getChildCategories?browsePath=${thirdsubItem.browsePath}/${thirdsubItem.categoryId}`);
 
-      if (response.ok) {
-        const thirditems = await response.json();
-        setThirdsublistItem(thirditems);
 
-        sethidesubCategory(true)
-        setActiveThirdSubCategory(true);
-        console.log("fourth", thirditems)
-      } else {
-        setActivebtn(true)
-      }
 
-    } catch (error) {
-      console.error('Error fetching third-level subcategories:', error);
-    }
-    setThirdCategoryTitle(
-      <>
-        {nextIcon} {thirdsubItem.label}
-      </>
-    )
-  }
+
+
+
+
+
+
+
 
   const navigate = useNavigate()
 
@@ -168,17 +104,17 @@ const CategoryHierarchy = () => {
     dispatch(setThirdSubCategoriesTitlePath(cateItem.label))
     console.log("handleform", cateItem)
 
-    dispatch(setSelectedCategory(cateItem.categoryId));
+    dispatch(setSelectedCategory(cateItem));
     navigate("/sellerdashboard/addproduct/ProductStepper")
- 
+
   }
 
   return (
 
     <div className='add-product-category-list'>
       <div className='add-product-category-list-item-title'>
-        <p>{categoryTitle} </p>
-        <p>{subCategoryTitle}</p>
+        <p>{categoryTitle}</p>
+        <p onClick={() => handleSubOfSubcategory()}>{subCategoryTitle}</p>
         <p>{thirdCategoryTitle}</p>
       </div>
       <div>
@@ -192,46 +128,11 @@ const CategoryHierarchy = () => {
                   onClick={() => handleSubCategory(item)}
                 >
                   <p>{item.label}</p>
+                  {activebtn ? (<Button type="button" variant="contained" size='small' onClick={() => handleCategoryform(item)}>Select</Button>) : ""}
                 </div>
 
               </div>
             ))}
-            {activeCategory && (
-              <div className='add-product-category-list-items-box2' >
-                {sublistItem.map((items) => (
-                  <>
-                    <div style={{ width: "100%" }} className={hideCategory ? "px-3 product-list-item-name d-none" : "px-3 product-list-item-name"} key={items.categoryId}
-                      onClick={() => handleSubOfSubcategory(items)}
-                    >
-                      <p>{items.label}</p>
-                    </div>
-
-                  </>
-                ))}
-              </div>
-            )}
-            {activeSubCategory && (<div className='add-product-category-list-items-box2' >
-              {subofsublistItem.map((subofsubItems) => (
-                <>
-                  <div style={{ width: "100%" }} className={hidesubCategory ? "px-3 product-list-item-name d-none" : "px-3 product-list-item-name"} key={subofsubItems.categoryId}
-                    onClick={() => handleThirdSubcategory(subofsubItems)}
-                  >
-                    <p>{subofsubItems.label}</p>
-                    {activebtn ? (<Button type="button" variant="contained" size='small' onClick={() => handleCategoryform(subofsubItems)}>Select</Button>) : ""}
-                  </div>
-                </>
-              ))}
-            </div>)}
-            {activeThirdSubCategory && (<div className='add-product-category-list-items-box2' >
-              {thirdsublistItem.map((thirdsubItems) => (
-                <>
-                  <div style={{ width: "100%" }} className='px-3 product-list-item-name' key={thirdsubItems.categoryId}>
-                    <p>{thirdsubItems.label}</p>
-                    <Button type="button" variant="contained" size='small' onClick={() => handleCategoryform(thirdsubItems)}>Select</Button>
-                  </div>
-                </>
-              ))}
-            </div>)}
           </div>
         </div>
       </div>
@@ -242,8 +143,59 @@ const CategoryHierarchy = () => {
 export default CategoryHierarchy
 
 
-// https://sellercentral.amazon.in/abis/listing/create/product_identity?itemType&productType=AIR_COOLER&newCategory=5122348031%2F5122349031%2F2083423031%2F5130993031%2F8641217031&displayPath=Appliances%2FHeating+%26+Cooling%2FAir+Coolers%2FDesert&recommendedBrowseNodeId=8641217031&ref_=xx_catadd_dnav_xx
-// https://sellercentral.amazon.in/abis/listing/create/product_identity?itemType&productType=AIR_COOLER&newCategory=5122348031%2F5122349031%2F2083423031%2F5130993031%2F23034524031&displayPath=Appliances%2FHeating+%26+Cooling%2FAir+Coolers%2FMini&recommendedBrowseNodeId=23034524031&ref_=xx_catadd_dnav_xx
-// https://sellercentral.amazon.in/abis/listing/create/product_identity?itemType&productType=LAUNDRY_DETERGENT&newCategory=1571274031%2F1571275031%2F1953111031%2F8360551031&displayPath=Baby%2FBaby+Care%2FBaby+Laundry+Detergents&recommendedBrowseNodeId=8360551031&ref_=xx_catadd_dnav_xx
+
+// import React,{ Component } from "react";
+
+// export default function asyncComponent(importComponent){
+//   class AsyncComponent extends Component {
+//     constructor(props){
+//       super(props);
+
+//       this.state = {
+//         component: null
+//       };
+//     }
+//     async componentDidMount() {
+//       const {default: component } = await importComponent();
+  
+//       this.setState({
+//         component: component
+//       });
+//     }
+//     render() {
+//       const C = this.state.component;
+  
+//       return C ? <C {...this.props} /> : null;
+//     }
+//   }
+
+//   return AsyncComponent;
+
+// }
+
+import React, { Suspense } from "react";
+const HomePage = React.lazy(() => import("./Components/Home/HomePage"));
+const NewHomePage = React.lazy(() => import("./Components/NewHome/NewHomePage"));
+const SellingPage = React.lazy(() => import("./Components/SellingPage/SellingPage"));
+
+const SellingSignup = React.lazy(() => import('./Components/SellingSignupPage/SellingSignup'))
+const Verified = React.lazy(() => import('./Components/SellingSignupPage/Verified'))
+const AccountRecovery = React.lazy(() => import('./Components/SellingPage/SellingLoginPage/AccountRecovery'))
+const SellerDashboardPage = React.lazy(() => import('./Components/SellerDashboard/SellerDashboardPage'))
+const AddProduct = React.lazy(() => import('./Components/SellerDashboard/AddProduct/AddProduct'))
+const AddMultipleProduct = React.lazy(() => import('./Components/SellerDashboard/AddMultipleProduct/AddMultipleProduct'))
+const LearnListProducts = React.lazy(() => import('./Components/SellerDashboard/LearnListProducts/LearnListProducts'))
+const ProductStepper = React.lazy(() => import('./Components/SellerDashboard/AddProduct/ProductSellDetails/ProductStepper'))
 
 
+<Route path="/" element={<Suspense fallback={<div>Loading...</div>}><HomePage /></Suspense>} />
+<Route path="/sellingpage" element={<Suspense fallback={<div>Loading...</div>}><SellingPage /></Suspense>} />
+<Route path="/sellingsignup" element={<Suspense fallback={<div>Loading...</div>}><SellingSignup /></Suspense>} />
+<Route path="/Verified" element={<Suspense fallback={<div>Loading...</div>}><Verified /></Suspense>} />
+<Route path="/newhomepage" element={<Suspense fallback={<div>Loading...</div>}><NewHomePage /></Suspense>} />
+<Route path="/AccountRecovery" element={<Suspense fallback={<div>Loading...</div>}><AccountRecovery /></Suspense>} />
+<Route path="/sellerDashboard" element={<Suspense fallback={<div>Loading...</div>}><SellerDashboardPage /></Suspense>} />
+<Route path="/sellerDashboard/addProduct" element={<Suspense fallback={<div>Loading...</div>}><AddProduct /></Suspense>} />
+<Route path="/sellerDashboard/add-multiple-product" element={<Suspense fallback={<div>Loading...</div>}><AddMultipleProduct /></Suspense>} />
+<Route path="/sellerDashboard/learn-list-products" element={<Suspense fallback={<div>Loading...</div>}><LearnListProducts /></Suspense>} />
+<Route path="/sellerdashboard/addproduct/ProductStepper" element={<Suspense fallback={<div>Loading...</div>}><ProductStepper /></Suspense>} />

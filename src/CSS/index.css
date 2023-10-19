@@ -17,8 +17,6 @@ body,
 html {
     width: 100%;
     height: 100%;
-    font-family: 'Roboto', sans-serif;
-    scroll-behavior: smooth;
 }
 
 :root {
@@ -63,6 +61,7 @@ a {
     transition: all 0.3s;
     position: relative;
     z-index: 1;
+
 }
 
 p {
@@ -75,6 +74,7 @@ p {
     color: var(--black);
     position: relative;
     z-index: 1;
+
 }
 
 video,
@@ -95,23 +95,24 @@ img {
 }
 
 /* ///////// Navbar Css ///////// */
-.main-page-gradient {
-    background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
-}
+
 .home-nav {
     padding: 15px 20px;
     height: auto;
     width: 100%;
-    border-bottom: 1px solid rgb(232, 229, 229);
-    box-shadow: rgba(214, 220, 222, 0.2) 0px 7px 7px 0px;
+    /* border-bottom: 1px solid rgba(3, 44, 110, 0.2);
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px; */
 }
 
 .menu-title .selling-btn {
     padding: 10px 25px;
     border: 0px;
     border-radius: 25px;
-    color: #fff;
-    background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
+    font-weight: 600;
+    color: var(--blue-dark);
+    background-color: #fff;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
+    /* background: linear-gradient(to right, var(--blue-dark), var(--blue-light)); */
 }
 
 /* ///////// Hero Css ///////// */
@@ -135,8 +136,10 @@ img {
     margin-right: 40px;
     margin-bottom: 40px;
     clear: both;
-    color: #fff;
-    background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
+    font-weight: 600;
+    color: var(--blue-dark);
+    background-color: #fff;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
 }
 
 .hero-logo {
@@ -145,15 +148,31 @@ img {
     align-items: center;
 }
 
+.hero-logo img {
+    background-color: transparent;
+    height: 200px;
+    border: none;
+    background-image: radial-gradient(circle, #0b4a7c 10%, transparent, transparent)
+}
+
 .hero-searchbar input {
+    border: 1px solid white;
     border-radius: 20px;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
+    background-color: transparent;
+}
+
+.hero-searchbar input::placeholder {
+    color: #fff;
 }
 
 .hero-searchbar button {
     border-radius: 20px;
-    background: linear-gradient(to right, var(--blue-dark), var(--blue-light));
-    color: #fff;
-    border: var(--blue-dark);
+    font-weight: 600;
+    color: var(--blue-dark);
+    border: 1px solid white;
+    background-color: #fff;
+    box-shadow: rgba(3, 44, 110, 0.2) 0px 7px 7px 0px;
 }
 
 .hero-searchbar button:hover {
@@ -161,39 +180,7 @@ img {
     background-color: var(--blue-light) !important;
 }
 
-.shortcut-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.product-design {
-    margin: 0px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.product-design p {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.product1 {
-    height: 60px;
-    width: 60px;
-    background-color: #eeeff1;
-    /* border: 1px solid gray; */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.product1 img {
-    height: 40px;
-    width: 40px;
-}
+/* //////////////////////////////////////////////////////// */
 .new-hero-page-area {
     height: 100vh;
     width: 100%;
@@ -204,30 +191,11 @@ img {
     overflow: hidden;
 }
 
-.main-logo-heropage {
-    font-size: 25px;
-    font-weight: 600;
-    color: #fff;
-}
-
-.hero-svg-center svg {
-    position: absolute;
-    left: 21%;
-    top: 20%;
-    opacity: .1;
-}
-
-.hero-svg-center svg path {
-    box-shadow: rgba(10, 46, 109, 0.2) 0px 7px 7px 0px;
-}
-
 .hero-svg-leftcorner {
     position: absolute;
     width: 100%;
-    width: 50%;
     height: 100vh;
     z-index: -3;
-    overflow: hidden !important;
 }
 
 .hero-svg-leftcorner svg {
@@ -240,11 +208,10 @@ img {
 
 .hero-svg-rightcorner {
     position: absolute;
-    overflow: hidden !important;
     width: 100%;
     height: 100vh;
     z-index: -3;
-   
+
 }
 
 .hero-svg-rightcorner svg {
@@ -254,20 +221,5 @@ img {
     opacity: 0.1;
     z-index: -3;
 }
-@media only screen and (min-width:320px) and (max-width:480px){
-    .home-nav{
-        padding: 15px 5px;
-    }
-    .signup-btn{
-        padding: 10px 0px;
-    }
-    .hero-svg-rightcorner svg{
-        width: 441px;
-        height: 295px;
-    }
-    .hero-svg-leftcorner svg{
-        width: 441px;
-        height: 295px;
-    }
-   
-}
+
+/* ////////////////////////////////////////////////////////////////////// */

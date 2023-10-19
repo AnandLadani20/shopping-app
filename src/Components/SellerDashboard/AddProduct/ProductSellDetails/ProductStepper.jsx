@@ -279,6 +279,7 @@ const ProductStepper = () => {
             //Skorts
             setRemoveDiscription(true)
         }
+
         // Fashion > Girls > Clothing > Sportswear >Sweatshirts & Hoodies
         if (selectedCategoryId === "1967973031") {
             //Hoodies
@@ -294,6 +295,79 @@ const ProductStepper = () => {
         }
         else if (selectedCategoryId === "1967943031") {
             //Other (Sunglasses & Spectacle Frames)
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Girls > Clothing > Winter Wear > Sweaters
+        if (selectedCategoryId === "") {
+            //Cardigans
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Sweaters)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "") {
+            //Pullovers
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Girls > Clothing > Winter Wear > Sweatshirts & Hoodies
+        if (selectedCategoryId === "") {
+            //Hoodies
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Sweatshirts & Hoodies)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "") {
+            //Sweatshirts
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Girls > Jewellery 
+        if (selectedCategoryId === "") {
+            //Other (Jewellery)
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Girls > Jewellery > Bangles & Bracelets
+        if (selectedCategoryId === "") {
+            //Other (Bangles & Bracelets)
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Girls > Jewellery > Beads & Charms
+        if (selectedCategoryId === "") {
+            //Bead Spacers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "") {
+            //Beads
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "") {
+            //Charm & Bead Carriers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Beads & Charms)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Girls > Jewellery > Body Jewellery
+        else if (selectedCategoryId === "") {
+            //Other (Body Jewellery)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Girls > Jewellery > Body Jewellery > Piercings
+        else if (selectedCategoryId === "") {
+            //Other (Piercings)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Girls > Jewellery > Coins & Bars
+        if (selectedCategoryId === "") {
+            //Bars
             setRemoveDiscription(true)
         }
     }, [selectedCategoryId])
@@ -399,7 +473,77 @@ const ProductStepper = () => {
             sizeVarForm: "",
             inputWithOptions: "",
             materialOrFabricRegulation: [''],
-            bookingDate: ""
+            bookingDate: "",
+            toeStyle:"",
+            itemFurDescription:"",
+            apparelSizeSystem:"",
+            apparelSizeClass:"",
+            apparelSizeValue:"",
+            apparelSizeToRange:"",
+            apparelSizeBodyType:"",
+            apparelSizeHeightType:"",
+            itemLengthDescription:"",
+            neckStyle:"",
+            bottomsSizeSystem:"",
+            bottomsSizeClass:"",
+            bottomsSizeValue:"",
+            bottomsSizeToRange:"",
+            bottomsSizeBodyType:"",
+            riseStyle:"",
+            collectionDescription:"",
+            fittingType:"",
+            sleeveType:"",
+            finishType:"",
+            weaveType:"",
+            chestSize:"",
+            chestSizeUnit:"",
+            itemLength:"",
+            collarStyle:"",
+            designName:"",
+            itemOfSeason:"",
+            bottomStyle:"",
+            sizeSystem:"",
+            sizeClass:"",
+            sizeValue:"",
+            shapewearSizeToRange:"",
+            bodyType:"",
+            shirtSizeSystem:"",
+            shirtSizeClass:"",
+            shirtSizeValue:"",
+            shirtSizeToRange:"",
+            shirtSizeBodyType:"",
+            itemStyling:"",
+            underwireType:"",
+            strapType:"",
+            braCupSize:"",
+            specialFeature:"",
+            supportType:"",
+            bandSizeValue:"",
+            cupSizeValue:"",
+            numberOfPockets:"",
+            pocketDescription:"",
+            skirtSizeSystem:"",
+            skirtSizeClass:"",
+            skirtSizeValue:"",
+            skirtSizeToRange:"",
+            skirtBodyType:"",
+            polarizationType:"",
+            armLength:"",
+            armLengthUnit:"",
+            bridgeWidth:"",
+            bridgeWidthUnit:"",
+            frameMaterialType:"",
+            lensColor:"",
+            colorOfTheEyewearLens:"",
+            lensMaterialType:"",
+            lensWidth:"",
+            lensWidthUnit:"",
+            swimwearBottomStyle:"",
+            gemstoneType:"",
+            metalType:"",
+            claspType:"",
+            embellishmentFeature:"",
+            resizable:"",
 
 
 

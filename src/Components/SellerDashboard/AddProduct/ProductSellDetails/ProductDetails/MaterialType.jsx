@@ -1,0 +1,3 @@
+setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+"Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+"Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])

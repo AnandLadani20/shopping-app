@@ -128,6 +128,20 @@ const ProductDetails = () => {
         "Nylon", "Wood", "Aluminium", "Plastic", "Acetate", "Metal", "TR90", "Stainless Steel", "Resin", "Titanium", "Carbon Fibre", "Rubber", "Polycarbonate", "Acrylic"
     ])
 
+    //Gemstone Type
+    const [gemstoneTypeItem, setGemstoneTypeItem] = useState(["Lava Stone", "Amber", "Agate", "Opal", "Stabilized Turquoise", "Amazonite", "Amethyst", "Created Aquamarine", "Created Sapphire", "Created Diamond", "Garnet", "Created Peridot",
+        "Cubic Zirconia", "Sapphire", "Emerald", "Created Tanzanite", "Rhinestone", "Ruby", "Aventurine", "Created Amethyst", "Diamond", "Created Emerald", "Created Opal", "Quartz",
+        "Lapis Lazuli", "Pearl", "Jasper", "Created Turquoise", "Apatite", "Created Ruby", "Jade", "Onyx", "Created Topaz", "Topaz", "Peridot", "Tourmaline"])
+
+    //Metal Type
+    const [metalTypeItem, setMetalTypeItem] = useState(["Bronze", "Brass", "Sterling Silver", "No Metal Type", "Rose Gold", "Aluminium", "Iron", "Zinc", "Yellow Gold", "Silver",
+        "Alloy Steel", "Platinum", "Pewter", "Stainless Steel", "Tungsten", "Titanium", "White Gold", "Nickel", "Copper"])
+
+    //Clasp Type
+    const [claspTypeItem, setClaspTypeItem] = useState(["Snap", "S-Hook", "Ball", "Slide Lock", "Box", "Hook and Eye", "Fishhook", "Swivel", "Pinch Clip", "Bolt Ring", "Easy Hook", "Magnetic",
+        "Fold Over", "Slide", "Spring Ring", "Toggle", "Lobster Claw", "Double Locking Fold Over", "Spring Hook", "Lobster with Spring and Safety", "Single Locking Fold Over",
+        "Buckle", "Bolo", "Screw Barrel", "Fish Hook", "Box With Tongue And Safety", "Screw", "Box With Tongue", "Push Button", "S Hook", "Carabiner", "Lobster Spring", "Hook and Loop"])
+
     // Fashion
     const [closureTypeField, setClosureTypeField] = useState(false)
     const [fabricTypeField, setFabricTypeField] = useState(false)
@@ -203,6 +217,11 @@ const ProductDetails = () => {
     const [lensMaterialTypeField, setLensMaterialTypeField] = useState(false)
     const [lensWidthField, setLensWidthField] = useState(false)
     const [swimwearBottomStyleField, setSwimwearBottomStyleField] = useState(false)
+    const [gemstoneTypeField, setGemstoneTypeField] = useState(false)
+    const [metalTypeField, setMetalTypeField] = useState(false)
+    const [claspTypeField, setClaspTypeField] = useState(false)
+    const [embellishmentFeatureField, setEmbellishmentFeatureField] = useState(false)
+    const [resizableField, setResizableField] = useState(false)
 
     // formComponents1 =>  Model Number,Warranty Description,Included Components,Is the item OEM authorized?,Number of Boxes,Item Dimensions D x W x H,Manufacturer
     // formComponents2 =>  Model,Number of Items,Unit Count,Unit Count Type,Product Care Instructions,Contains Liquid Contents?,Is Assembly Required,Number of Pieces,Included Components,Size,Color,Color Map,Material Type,Number of Boxes,Manufacturer,Item Dimensions D x W x H
@@ -1441,6 +1460,91 @@ const ProductDetails = () => {
         setApparelSizeBodyTypeField(true)
         setApparelSizeHeightTypeField(true)
     }
+
+    const handleFormFieldLayout79 = () => {
+        setManuFacturePartNoField(true)
+        setGenderField(true)
+        setGemstoneTypeField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setMetalTypeField(true)
+        setClaspTypeField(true)
+        setProductSizeField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setItemLengthEndtoEndField(true)
+        setColorField(true)
+    }
+    const handleFormFieldLayout80 = () => {
+        setManuFacturePartNoField(true)
+        setGenderField(true)
+        setGemstoneTypeField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setMetalTypeField(true)
+        setProductSizeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+    }
+    const handleFormFieldLayout81 = () => {
+        setManuFacturePartNoField(true)
+        setGenderField(true)
+        setGemstoneTypeField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setMetalTypeField(true)
+        setClaspTypeField(true)
+        setProductSizeField(true)
+        setMaterialTypeField(true)
+        setEmbellishmentFeatureField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setItemLengthEndtoEndField(true)
+        setColorField(true)
+    }
+    const handleFormFieldLayout82 = () => {
+        setManuFacturePartNoField(true)
+        setGenderField(true)
+        setModelNumberField(true)
+        setGemstoneTypeField(true)
+        setMetalTypeField(true)
+    }
+    const handleFormFieldLayout83 = () => {
+        setManuFacturePartNoField(true)
+        setGenderField(true)
+        setGemstoneTypeField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setResizableField(true)
+        setMetalTypeField(true)
+        setProductSizeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+    }
+    const handleFormFieldLayout84 = () => {
+        setManuFacturePartNoField(true)
+        setGenderField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setGemstoneTypeField(true)
+        setMaterialTypeField(true)
+        setMetalTypeField(true)
+    }
+    const handleFormFieldLayout85 = () => {
+        setManuFacturePartNoField(true)
+        setIsProductExpirableField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setMaterialTypeField(true)
+    }
+
     //   const[ArtistName,setArtistName] = useState(false)
     //   const[ArtworkMedium,setArtworkMedium] = useState(false)
     //   const[ProductDate,setProductDate] = useState(false)
@@ -3944,62 +4048,143 @@ const ProductDetails = () => {
             setStyleOptions(["Thigh High", "Garter Belt and Thigh High", "High Waist", "Control Top"])
             setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
             setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
-            "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
-       
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
         }
         // Fashion > Girls > Clothing > Tops, T-Shirts & Shirts
         if (selectedCategoryId === "1968010031") {
             //Other (Tops, T-Shirts & Shirts)
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
 
         }
         else if (selectedCategoryId === "1968012031") {
             //Polos
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
 
         }
         else if (selectedCategoryId === "1967971031") {
             //Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
 
         }
         else if (selectedCategoryId === "1968013031") {
             //T-Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
 
         }
         else if (selectedCategoryId === "1968014031") {
             //Tanks & Camis
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
 
         }
         else if (selectedCategoryId === "1968011031") {
             //Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
 
         }
         // Fashion > Girls > Clothing > Unstitched Fabrics
         if (selectedCategoryId === "5250457031") {
             //Dresses
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         else if (selectedCategoryId === "5250454031") {
             //Other (Unstitched Fabrics)
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         else if (selectedCategoryId === "5250455031") {
             //Shirts
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         else if (selectedCategoryId === "5250458031") {
             //Skirts
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         else if (selectedCategoryId === "5250456031") {
             //Trousers
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         // Fashion > Girls > Clothing > Winter Wear
         if (selectedCategoryId === "1967942031") {
             //Earmuffs
+            handleFormFieldLayout71();
+            setStyleOptions(["Traditional", "Contemporary", "Classic", "Retro", "Vintage", "Modern", "Casual"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Nylon", "Thermoplastic Polyurethane", "Leather", "Plastic", "Metal", "Cotton", "Cashmere", "Silk", "Polypropylene", "Stainless Steel", "Resin", "Neoprene", "Rubber", "Polycarbonate", "Polyvinyl Chloride", "Faux Leather",
+                "Polyester", "Vinyl", "Wood", "Cork", "Silicone", "Aluminium", "Ethylene Vinyl Acetate", "Suede", "Foam", "Alloy Steel", "Polyurethane", "Paper", "Linen", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Denim", "Wool", "Acrylic", "Fur"])
 
         }
         else if (selectedCategoryId === "1967948031") {
             //Gloves
+            handleFormFieldLayout71();
+            setStyleOptions(["Half-Finger", "Full-Finger", "Fingerless"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Nylon", "Thermoplastic Polyurethane", "Leather", "Plastic", "Metal", "Cotton", "Cashmere", "Silk", "Polypropylene", "Stainless Steel", "Resin", "Neoprene", "Rubber", "Polycarbonate", "Polyvinyl Chloride", "Faux Leather",
+                "Polyester", "Vinyl", "Wood", "Cork", "Silicone", "Aluminium", "Ethylene Vinyl Acetate", "Suede", "Foam", "Alloy Steel", "Polyurethane", "Paper", "Linen", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Denim", "Wool", "Acrylic", "Fur"])
 
         }
 
@@ -4007,44 +4192,628 @@ const ProductDetails = () => {
         // Fashion > Girls > Clothing > Winter Wear >Coats, Jackets & Vests
         if (selectedCategoryId === "") {
             //Coats
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "") {
             //Jackets
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "") {
             //Other (Coats, Jackets & Vests)
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "") {
             //Vests
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         // Fashion > Girls > Clothing > Winter Wear > Sweaters
         if (selectedCategoryId === "") {
             //Cardigans
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
 
         }
         else if (selectedCategoryId === "") {
             //Other (Sweaters)
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
 
         }
         else if (selectedCategoryId === "") {
             //Pullovers
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
 
         }
         // Fashion > Girls > Clothing > Winter Wear > Sweatshirts & Hoodies
         if (selectedCategoryId === "") {
             //Hoodies
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "") {
             //Other (Sweatshirts & Hoodies)
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "") {
             //Sweatshirts
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        // Fashion > Girls > Jewellery 
+        if (selectedCategoryId === "") {
+            //Anklets
+            handleFormFieldLayout79()
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Brooches & Pins
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Chains & Necklaces
+            handleFormFieldLayout81();
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Earrings
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Jewellery Sets
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Loose Gemstones & Diamonds
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Jewellery)
+            handleFormFieldLayout82()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Pendants
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Rings
+            handleFormFieldLayout83();
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Wood", "Glass", "Ceramic", "Plastic", "Metal"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Toe Rings
+            handleFormFieldLayout83();
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Wood", "Glass", "Ceramic", "Plastic", "Metal"])
+
+        }
+        // Fashion > Girls > Jewellery > Bangles & Bracelets
+        if (selectedCategoryId === "") {
+            //Bangles
+            handleFormFieldLayout79()
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Bracelets
+            handleFormFieldLayout79()
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Bangles & Bracelets)
+            handleFormFieldLayout82()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+        }
+        // Fashion > Girls > Jewellery > Beads & Charms
+        if (selectedCategoryId === "") {
+            //Bead Spacers
+            handleFormFieldLayout84();
+            setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
+                "Tungsten", "Vermeil", "White Gold", "Yellow Gold", "Oxidized Silver", "Oxidized Gold"])
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
+        }
+        else if (selectedCategoryId === "") {
+            //Beads
+            handleFormFieldLayout85();
+            setMaterialTypeItem(["Adhesive Sheets", "Adhesive Sprays", "Adhesive Waxing", "Art Glues", "Art Pastes", "Arts & Crafts Tape", "Fabric Adhesives", "Glue Sticks & Pens", "Hot Glue Sticks", "Mounting Adhesive Systems", "Clayboard", "Gessoboard", "Hardboard", "Pastelboard", "Wood Art Boards", "Banner & Sign Cloth", "Canvas Pads",
+                "Canvas Panels", "Canvas Tools & Accessories", "Pre-Stretched Canvas", "Rolled Canvas", "Art Backpacks", "Art Media Storage Contain", "Art Storage Cabinets", "Art Supply Carrier Bags", "Art Supply Totes", "Art Tubes", "Canvas Carriers", "Flat Files", "Grips", "Handles", "Paint Brush Holders", "Paint Brush Organisers", "Portfolios", "Print Racks", "Scrapbooking Storage", "Tool & Sketch Boxes", "Vertical Files", "Art Blades",
+                "Art Knives", "Cutting Rails", "Glass Cutting Tools", "Mat Cutter Blades", "Cutting Mats", "Paper Trimmers & Blades", "Scissors", "Art Blenders", "Charcoals", "Inks", "Markers", "Pastels", "Coloured Pencils", "Mechanical Pencil Leads", "Mechanical Pencils", "Wooden Pencils", "Fixatives", "Light Boxes", "Manikins", "Rubbing Wax", "Sharpeners", "Application Tools", "Dyes",
+                "Fabric & Textile Paints", "Fabric Decorating Kits", "Repellants", "Waxes", "Frame Molding", "Frame Rulers", "Frame Sections & Parts", "Framing Tools", "Matting & Mounting Materials", "Picture Hanging Materials", "Straight Edges", "Templates", "Glitter", "Airbrush Materials", "Kits", "Mixing Trays", "Paint Finishes", "Paint Making Materials", "Paint Primers", "Paint Reducers", "Paint Sealers", "Paint Sponges", "Paint Strainers",
+                "Paint Thinners", "Paint Tube Wringers", "Paintbrush Sets", "Paintbrushes", "Paints", "Palette Cups", "Palette Knives", "Palettes", "Crimpers", "Folders", "Scorers", "Botanicals", "Casting Sheets", "Dry Leaves", "Hand Molds", "Paper Press", "Papermaking Kits", "Papermaking Screens", "Pulp", "Punches", "Stencils", "Adhesive Removers", "Art Tool Cleaners", "Artist's Soap", "Dust Control Equipment", "Protective Clothing", "Protective Gear", "Protective Hand Cream",
+                "Spray Booths", "Albums & Refills", "Chipboard", "Die-Cut Machines", "Die-Cuts", "Embellishments", "Ink Pads", "Photo Mounting Corners", "Quilling Strips", "Scrapbooking Tools", "Stamps", "Stickers", "Texture Plates",])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Charm & Bead Carriers
+            handleFormFieldLayout84();
+            setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
+                "Tungsten", "Vermeil", "White Gold", "Yellow Gold", "Oxidized Silver", "Oxidized Gold"])
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Charms
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Chunks
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Beads & Charms)
+            handleFormFieldLayout84();
+            setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
+                "Tungsten", "Vermeil", "White Gold", "Yellow Gold", "Oxidized Silver", "Oxidized Gold"])
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
+
+        }
+
+
+        // Fashion > Girls > Jewellery > Body Jewellery
+        if (selectedCategoryId === "") {
+            //Armlets
+            handleFormFieldLayout81();
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+            "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+            "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Belly Chains & Kamarband
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Body Jewellery)
+            handleFormFieldLayout84();
+            setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
+                "Tungsten", "Vermeil", "White Gold", "Yellow Gold", "Oxidized Silver", "Oxidized Gold"])
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
+
+        }
+
+        // Fashion > Girls > Jewellery > Body Jewellery > Piercings
+        if (selectedCategoryId === "") {
+            //Bananabells
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+       
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Piercings)
+            handleFormFieldLayout84();
+            setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
+                "Tungsten", "Vermeil", "White Gold", "Yellow Gold", "Oxidized Silver", "Oxidized Gold"])
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Plugs
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+       
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Retainers
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+       
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Screws
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+       
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Studs
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+       
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Tapers
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+       
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "") {
+            //Tunnels
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+       
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+
+        // Fashion > Girls > Jewellery > Coins & Bars
+        if (selectedCategoryId === "") {
+            //Bars
+
+        }
+        else if (selectedCategoryId === "") {
+            //Coins
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Coins & Bars)
+
+        }
+
+        // Fashion > Girls > Jewellery > Hair Accessories
+        if (selectedCategoryId === "") {
+            //Bands
+
+        }
+        else if (selectedCategoryId === "") {
+            //Clips
+
+        }
+        else if (selectedCategoryId === "") {
+            //Combs
+
+        }
+        else if (selectedCategoryId === "") {
+            //Maang Tikkas
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Hair Accessories)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Pins
+
+        }
+        else if (selectedCategoryId === "") {
+            //Tiaras
 
         }
 
@@ -20007,6 +20776,184 @@ const ProductDetails = () => {
                                                     <MenuItem value="Skimpy">Skimpy</MenuItem>
                                                     <MenuItem value="Brazilian">Brazilian</MenuItem>
                                                     <MenuItem value="Tie Side">Tie Side</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    gemstoneTypeField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="gemstoneType"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Gemstone Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="gemstoneType-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.gemstoneType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    {gemstoneTypeItem.map((gemstoneItem, index) => {
+                                                        return <MenuItem value={`${gemstoneItem}`} key={index}>{gemstoneItem}</MenuItem>
+                                                    })}
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    metalTypeField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="metalType"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Metal Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="metalType-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.metalType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    {metalTypeItem.map((metalItem, index) => {
+                                                        return <MenuItem value={`${metalItem}`} key={index}>{metalItem}</MenuItem>
+                                                    })}
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    claspTypeField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="claspType"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Clasp Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="claspType-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.claspType)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    {claspTypeItem.map((claspItem, index) => {
+                                                        return <MenuItem value={`${claspItem}`} key={index}>{claspItem}</MenuItem>
+                                                    })}
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    embellishmentFeatureField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='embellishmentFeature'
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Embellishment Feature</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    placeholder="Aluminium scales,Decorative elements"
+                                                    id="embellishmentFeature"
+                                                    variant="outlined"
+                                                    {...field}
+                                                    style={{ width: "100%" }}
+                                                    error={Boolean(errors.embellishmentFeature)}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    resizableField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="resizable"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Resizable?</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="resizable-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.resizable)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Yes">Yes</MenuItem>
+                                                    <MenuItem value="No">No</MenuItem>
                                                 </TextField>
                                             </div>
                                         </>
