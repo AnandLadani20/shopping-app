@@ -71,27 +71,27 @@ const Profession = ({ methods }) => {
 
 
         if (methods.control._fields.profession._f.value === "64be491b07b254806ed9097b") {
-            fetch(`${authService.newEcommercUrl}/ecommerce/category/getMainCategories`)
-                .then((res) => res.json())
-                .then((user2) => {
-                    setCategoriesData(user2)
-                    console.log(user2)
-                })
-
+            try {
+                fetch(`${authService.newEcommercUrl}/ecommerce/category/getMainCategories`)
+                    .then((res) => res.json())
+                    .then((user2) => {
+                        setCategoriesData(user2)
+                        console.log(user2)
+                    })
+            }
+            catch (error) {
+                console.log(error)
+                setCategoriesData([])
+            }
         }
         else {
             setCategoriesData([])
         }
 
-
-
     }
 
     return (
         <>
-
-
-
             <Controller
                 control={control}
                 name="profession"
@@ -235,7 +235,7 @@ const Profession = ({ methods }) => {
                     )}
                 />
             </div>
-            
+
             <div className='d-flex gap-2'>
                 <Controller
                     control={control}

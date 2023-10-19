@@ -42,7 +42,7 @@
     "yup": "^1.2.0"
   },
   "scripts": {
-    "start": "set HTTPS=true&&set SSl_CRT_FILE=c:/Windows/System32/cert.crt&&set SSL_KEY_FILE=C:Windows/System32/cert.key&&react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

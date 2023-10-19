@@ -1,5 +1,5 @@
-const newCommonUrl = "https://red-glasses-stare.loca.lt";
-const newEcommercUrl = "https://vast-peaches-yell.loca.lt";
+const newCommonUrl = "http://3.109.81.62:8081";
+const newEcommercUrl = "http://3.109.81.62:8081";
 
 const authService = {
     newCommonUrl,
