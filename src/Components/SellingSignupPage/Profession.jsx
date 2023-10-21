@@ -92,72 +92,89 @@ const Profession = ({ methods }) => {
 
     return (
         <>
-            <Controller
-                control={control}
-                name="profession"
-                rules={{
-                    required: "profession is required",
-                }}
-                render={({ field }) => (
-                    <>
-                        <TextField
-                            id="profession-select"
-                            variant="outlined"
-                            select
-                            style={{ width: "50%", marginTop: "20px" }}
-                            label="Profession"
-                            {...field}
-                            error={Boolean(errors.profession)}
-                            helperText={errors.profession?.message}
-                        >
-                            <MenuItem value="">Select Profession</MenuItem>
-                            {
-                                professionData.map((data, index) => {
-                                    return (
-                                        <MenuItem key={index} value={data.serviceId}>{data.name}</MenuItem>
-                                    )
-                                })
-                            }
-                            <MenuItem value="s"> Profession</MenuItem>
-                        </TextField>
-                    </>
-                )}
-            />
-            <Button variant="contained" style={{ marginLeft: "10px", width: "40%", marginTop: "20px" }}>Take a video Toure</Button>
+            <div className='d-flex gap-2'>
+                <Controller
+                    control={control}
+                    name="profession"
+                    rules={{
+                        required: "profession is required",
+                    }}
+                    render={({ field }) => (
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="profession-select"
+                                variant="outlined"
+                                select
+                                style={{ width: "100%", marginTop: "20px" }}
+                                label="Profession"
+                                {...field}
+                                error={Boolean(errors.profession)}
+                            // helperText={errors.profession?.message}
+                            >
+                                <MenuItem value="">Select Profession</MenuItem>
+                                {
+                                    professionData.map((data, index) => {
+                                        return (
+                                            <MenuItem key={index} value={data.serviceId}>{data.name}</MenuItem>
+                                        )
+                                    })
+                                }
+                                <MenuItem value="s"> Profession</MenuItem>
+                            </TextField>
+                            {Boolean(errors.profession) && (
+                                <div className="error-message">
+                                    {errors.profession?.message}
+                                </div>
+                            )}
+                        </div>
+                    )}
+                />
+                <div style={{ width: "50%" }}>
+                    <Button variant="contained" style={{ marginLeft: "10px", width: "100%", marginTop: "20px" }}>Take a video Toure</Button>
+                </div>
+            </div>
 
-
-            <Controller
-                control={control}
-                name="categories"
-                rules={{
-                    required: "categories is required",
-                }}
-                render={({ field }) => (
-                    <>
-                        <TextField
-                            id="categories-select"
-                            variant="outlined"
-                            select
-                            style={{ width: "50%", marginTop: "20px" }}
-                            label="Categories"
-                            {...field}
-                            error={Boolean(errors.categories)}
-                            helperText={errors.categories?.message}
-                        >
-                            <MenuItem value="">Select Categories</MenuItem>
-                            {
-                                categoriesData.map((data, index) => {
-                                    return (
-                                        <MenuItem key={index} value={data.categoryId}>{data.label}</MenuItem>
-                                    )
-                                })
-                            }
-                            <MenuItem value="n"> No Service Available</MenuItem>
-                        </TextField>
-                    </>
-                )}
-            />
-            <Button variant="contained" style={{ marginLeft: "10px", width: "40%", marginTop: "20px" }}>Take a video Toure</Button>
+            <div className='d-flex gap-2'>
+                <Controller
+                    control={control}
+                    name="categories"
+                    rules={{
+                        required: "categories is required",
+                    }}
+                    render={({ field }) => (
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="categories-select"
+                                variant="outlined"
+                                select
+                                style={{ width: "100%", marginTop: "20px" }}
+                                label="Categories"
+                                {...field}
+                                error={Boolean(errors.categories)}
+                            // helperText={errors.categories?.message}
+                            >
+                                <MenuItem value="">Select Categories</MenuItem>
+                                {
+                                    categoriesData.map((data, index) => {
+                                        return (
+                                            <MenuItem key={index} value={data.categoryId}>{data.label}</MenuItem>
+                                        )
+                                    })
+                                }
+                                <MenuItem value="n"> No Service Available</MenuItem>
+                            </TextField>
+                            {Boolean(errors.categories) && (
+                                <div className="error-message">
+                                    {errors.categories?.message}
+                                </div>
+                            )}
+                        </div>
+                    )}
+                />
+                <div style={{ width: "50%" }}>
+                    <Button variant="contained" style={{ marginLeft: "10px", width: "100%", marginTop: "20px" }}>Take a video Toure</Button>
+                </div>
+            </div>
 
             <Controller
                 control={control}
@@ -170,17 +187,24 @@ const Profession = ({ methods }) => {
                     }
                 }}
                 render={({ field }) => (
-                    <TextField
-                        id="pickupAddress"
-                        label="PickUp Address"
-                        variant="outlined"
-                        placeholder="Enter Your PickUp Address"
-                        className='w-100 w-md-50'
-                        margin="normal"
-                        {...field}
-                        error={Boolean(errors.pickupAddress)}
-                        helperText={errors.pickupAddress?.message}
-                    />
+                    <>
+                        <TextField
+                            id="pickupAddress"
+                            label="PickUp Address"
+                            variant="outlined"
+                            placeholder="Enter Your PickUp Address"
+                            style={{ width: "100%" }}
+                            margin="normal"
+                            {...field}
+                            error={Boolean(errors.pickupAddress)}
+                        // helperText={errors.pickupAddress?.message}
+                        />
+                        {Boolean(errors.pickupAddress) && (
+                            <div className="error-message">
+                                {errors.pickupAddress?.message}
+                            </div>
+                        )}
+                    </>
                 )}
             />
 
@@ -196,17 +220,24 @@ const Profession = ({ methods }) => {
                         }
                     }}
                     render={({ field }) => (
-                        <TextField
-                            id="addressLine1"
-                            label="Address Line 1"
-                            variant="outlined"
-                            placeholder="Enter Your Address"
-                            style={{ width: "50%" }}
-                            margin="normal"
-                            {...field}
-                            error={Boolean(errors.addressLine1)}
-                            helperText={errors.addressLine1?.message}
-                        />
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="addressLine1"
+                                label="Address Line 1"
+                                variant="outlined"
+                                placeholder="Enter Your Address"
+                                style={{ width: "100%" }}
+                                margin="normal"
+                                {...field}
+                                error={Boolean(errors.addressLine1)}
+                            // helperText={errors.addressLine1?.message}
+                            />
+                            {Boolean(errors.addressLine1) && (
+                                <div className="error-message">
+                                    {errors.addressLine1?.message}
+                                </div>
+                            )}
+                        </div>
                     )}
                 />
 
@@ -221,17 +252,24 @@ const Profession = ({ methods }) => {
                         }
                     }}
                     render={({ field }) => (
-                        <TextField
-                            id="addressLine2"
-                            label="Address Line 2"
-                            variant="outlined"
-                            placeholder="Enter Your Address"
-                            style={{ width: "50%" }}
-                            margin="normal"
-                            {...field}
-                            error={Boolean(errors.addressLine2)}
-                            helperText={errors.addressLine2?.message}
-                        />
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="addressLine2"
+                                label="Address Line 2"
+                                variant="outlined"
+                                placeholder="Enter Your Address"
+                                style={{ width: "100%" }}
+                                margin="normal"
+                                {...field}
+                                error={Boolean(errors.addressLine2)}
+                            // helperText={errors.addressLine2?.message}
+                            />
+                            {Boolean(errors.addressLine2) && (
+                                <div className="error-message">
+                                    {errors.addressLine2?.message}
+                                </div>
+                            )}
+                        </div>
                     )}
                 />
             </div>
@@ -245,20 +283,26 @@ const Profession = ({ methods }) => {
 
                     }}
                     render={({ field }) => (
-
-                        <TextField
-                            id="cityName-select"
-                            variant="outlined"
-                            select
-                            style={{ width: "50%", marginTop: "17px" }}
-                            label="City"
-                            {...field}
-                            error={Boolean(errors.cityName)}
-                            helperText={errors.cityName?.message}
-                        >
-                            <MenuItem value="">Select City</MenuItem>
-                            <MenuItem value="Rajkot"> Rajkot</MenuItem>
-                        </TextField>
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="cityName-select"
+                                variant="outlined"
+                                select
+                                style={{ width: "100%", marginTop: "17px" }}
+                                label="City"
+                                {...field}
+                                error={Boolean(errors.cityName)}
+                            // helperText={errors.cityName?.message}
+                            >
+                                <MenuItem value="">Select City</MenuItem>
+                                <MenuItem value="Rajkot"> Rajkot</MenuItem>
+                            </TextField>
+                            {Boolean(errors.cityName) && (
+                                <div className="error-message">
+                                    {errors.cityName?.message}
+                                </div>
+                            )}
+                        </div>
                     )}
                 />
                 <Controller
@@ -272,17 +316,24 @@ const Profession = ({ methods }) => {
                         }
                     }}
                     render={({ field }) => (
-                        <TextField
-                            id="pincode"
-                            label="Pin Code "
-                            variant="outlined"
-                            placeholder="Enter Your City Pincode"
-                            style={{ width: "50%" }}
-                            margin="normal"
-                            {...field}
-                            error={Boolean(errors.pincode)}
-                            helperText={errors.pincode?.message}
-                        />
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="pincode"
+                                label="Pin Code "
+                                variant="outlined"
+                                placeholder="Enter Your City Pincode"
+                                style={{ width: "100%" }}
+                                margin="normal"
+                                {...field}
+                                error={Boolean(errors.pincode)}
+                            // helperText={errors.pincode?.message}
+                            />
+                            {Boolean(errors.pincode) && (
+                                <div className="error-message">
+                                    {errors.pincode?.message}
+                                </div>
+                            )}
+                        </div>
                     )}
                 />
             </div>
@@ -299,17 +350,24 @@ const Profession = ({ methods }) => {
                         }
                     }}
                     render={({ field }) => (
-                        <TextField
-                            id="stateName"
-                            label="State"
-                            variant="outlined"
-                            placeholder="Enter Your State Name"
-                            style={{ width: "50%" }}
-                            margin="normal"
-                            {...field}
-                            error={Boolean(errors.stateName)}
-                            helperText={errors.stateName?.message}
-                        />
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="stateName"
+                                label="State"
+                                variant="outlined"
+                                placeholder="Enter Your State Name"
+                                style={{ width: "100%" }}
+                                margin="normal"
+                                {...field}
+                                error={Boolean(errors.stateName)}
+                            // helperText={errors.stateName?.message}
+                            />
+                            {Boolean(errors.stateName) && (
+                                <div className="error-message">
+                                    {errors.stateName?.message}
+                                </div>
+                            )}
+                        </div>
                     )}
                 />
 
@@ -324,17 +382,24 @@ const Profession = ({ methods }) => {
                         }
                     }}
                     render={({ field }) => (
-                        <TextField
-                            id="countryName"
-                            label="Country"
-                            variant="outlined"
-                            placeholder="Enter Your Country Name"
-                            style={{ width: "50%" }}
-                            margin="normal"
-                            {...field}
-                            error={Boolean(errors.countryName)}
-                            helperText={errors.countryName?.message}
-                        />
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="countryName"
+                                label="Country"
+                                variant="outlined"
+                                placeholder="Enter Your Country Name"
+                                style={{ width: "100%" }}
+                                margin="normal"
+                                {...field}
+                                error={Boolean(errors.countryName)}
+                            // helperText={errors.countryName?.message}
+                            />
+                            {Boolean(errors.countryName) && (
+                                <div className="error-message">
+                                    {errors.countryName?.message}
+                                </div>
+                            )}
+                        </div>
                     )}
                 />
             </div>

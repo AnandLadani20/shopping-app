@@ -113,7 +113,7 @@ const Verification = ({ setRequirePhoneOtp }) => {
             else {
                 toast.error("Failed to send OTP");
                 throw new Error("Failed to send OTP");
-                
+
             }
         } catch (error) {
             console.log(error, "error");
@@ -124,7 +124,7 @@ const Verification = ({ setRequirePhoneOtp }) => {
 
         const num = Number(otpp);
         console.log(num)
-        console.log(typeof(num))
+        console.log(typeof (num))
         // Number(otpp)
         // otpp.toString()
 
@@ -152,14 +152,14 @@ const Verification = ({ setRequirePhoneOtp }) => {
             })
             const val = await emailresponse.json()
             console.log(val)
-            if(val.result === false){
+            if (val.result === false) {
                 toast.error("OTP is not verified");
             }
 
         } catch (error) {
             console.log(error, "error");
             toast.error("OTP is not verified");
-            
+
         }
         console.log(url)
     }
@@ -193,18 +193,25 @@ const Verification = ({ setRequirePhoneOtp }) => {
                         }
                     }}
                     render={({ field }) => (
-                        <TextField
-                            id="firstName"
-                            label="First Name"
-                            variant="outlined"
-                            className="textfield"
-                            placeholder="Enter Your First Name"
-                            style={{ width: "50%" }}
-                            margin="normal"
-                            {...field}
-                            error={Boolean(errors.firstName)}
-                            helperText={errors.firstName?.message}
-                        />
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="firstName"
+                                label="First Name"
+                                variant="outlined"
+                                className="textfield"
+                                placeholder="Enter Your First Name"
+                                style={{ width: "100%" }}
+                                margin="normal"
+                                {...field}
+                                error={Boolean(errors.firstName)}
+                            // helperText={errors.firstName?.message}
+                            />
+                            {Boolean(errors.firstName) && (
+                                <div className="error-message">
+                                    {errors.firstName?.message}
+                                </div>
+                            )}
+                        </div>
                     )}
                 />
                 <Controller
@@ -218,17 +225,24 @@ const Verification = ({ setRequirePhoneOtp }) => {
                         }
                     }}
                     render={({ field }) => (
-                        <TextField
-                            id="lastName"
-                            label="Last Name"
-                            variant="outlined"
-                            placeholder="Enter Your Last Name"
-                            style={{ width: "50%" }}
-                            margin="normal"
-                            {...field}
-                            error={Boolean(errors.lastName)}
-                            helperText={errors.lastName?.message}
-                        />
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="lastName"
+                                label="Last Name"
+                                variant="outlined"
+                                placeholder="Enter Your Last Name"
+                                style={{ width: "100%" }}
+                                margin="normal"
+                                {...field}
+                                error={Boolean(errors.lastName)}
+                            // helperText={errors.lastName?.message}
+                            />
+                            {Boolean(errors.lastName) && (
+                                <div className="error-message">
+                                    {errors.lastName?.message}
+                                </div>
+                            )}
+                        </div>
                     )}
                 />
             </div>
@@ -326,7 +340,7 @@ const Verification = ({ setRequirePhoneOtp }) => {
                                     displayEmpty
                                     {...field}
                                     error={Boolean(errors.countrycode)}
-                                    helperText={errors.countrycode?.message}
+                                    // helperText={errors.countrycode?.message}
                                     onChange={(e) => {
                                         setSelectedCountryCode(e.target.value); // Update selected country code
                                         field.onChange(e); // Notify Controller about the change
@@ -336,7 +350,7 @@ const Verification = ({ setRequirePhoneOtp }) => {
                                     <MenuItem value="">select</MenuItem>
                                     <MenuItem value="91">IN +91</MenuItem>
                                 </Select>
-                                {/* <Button style={{ position: "absolute", right: "5%", top: "22px",display:"none" }} type="button" onClick={() => handleSendOTP({ ...field })}>Send OTP</Button> */}
+
                             </div>
                         </>
                     )}
@@ -364,11 +378,16 @@ const Verification = ({ setRequirePhoneOtp }) => {
                                     margin="normal"
                                     {...field}
                                     error={Boolean(errors.phoneNumber)}
-                                    helperText={errors.phoneNumber?.message}
+                                // helperText={errors.phoneNumber?.message}
 
                                 />
+                                {Boolean(errors.phoneNumber) && (
+                                    <div className="error-message">
+                                        {errors.phoneNumber?.message}
+                                    </div>
+                                )}
                                 {
-                                    field.value.length === 10 ? <Button style={{ position: "absolute", right: "5%", top: "22px" }} type="button" onClick={() => handleSendOTP({ ...field }, selectedCountryCode)}>Send OTP</Button> : ""
+                                    !errors.phoneNumber?.message ? <Button style={{ position: "absolute", right: "5%", top: "22px" }} type="button" onClick={() => handleSendOTP({ ...field }, selectedCountryCode)}>Send OTP</Button> : ""
                                 }
 
                                 {
@@ -406,14 +425,19 @@ const Verification = ({ setRequirePhoneOtp }) => {
                                 margin="normal"
                                 {...field}
                                 error={Boolean(errors.emailAddress)}
-                                helperText={errors.emailAddress?.message}
+                            // helperText={errors.emailAddress?.message}
                             />
+                            {Boolean(errors.emailAddress) && (
+                                <div className="error-message">
+                                    {errors.emailAddress?.message}
+                                </div>
+                            )}
                             {
                                 !errors.emailAddress?.message ? <><Button style={{ position: "absolute", right: "5%", top: "22px" }} type="button" onClick={() => handleEmailOTP({ ...field })}>Send Email</Button> <ToastContainer /></> : ""
                             }
                             {
                                 showemailverify ? (<><OtpInput OTPLength={6} otpType="number" style={{ margin: "10px 0px" }} disabled={false} value={verifyemailotpp} onChange={setVerifyEmailOtpp} autoFocus classname="border border-primary"></OtpInput>
-                                  <ToastContainer />  <Button type="button" onClick={() => handleVerifyEmail(verifyemailotpp, { ...field })}>Verfy Email OTP</Button><ToastContainer /></>) : (<></>)
+                                    <ToastContainer />  <Button type="button" onClick={() => handleVerifyEmail(verifyemailotpp, { ...field })}>Verfy Email OTP</Button><ToastContainer /></>) : (<></>)
                             }
                         </div>
                     </>
@@ -432,18 +456,25 @@ const Verification = ({ setRequirePhoneOtp }) => {
                         }
                     }}
                     render={({ field }) => (
-                        <TextField
-                            id="password"
-                            label="Password"
-                            type="password"
-                            variant="outlined"
-                            placeholder="Enter Your Password"
-                            style={{ width: "50%" }}
-                            margin="normal"
-                            {...field}
-                            error={Boolean(errors.password)}
-                            helperText={errors.password?.message}
-                        />
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="password"
+                                label="Password"
+                                type="password"
+                                variant="outlined"
+                                placeholder="Enter Your Password"
+                                style={{ width: "100%" }}
+                                margin="normal"
+                                {...field}
+                                error={Boolean(errors.password)}
+                            // helperText={errors.password?.message}
+                            />
+                            {Boolean(errors.password) && (
+                                <div className="error-message">
+                                    {errors.password?.message}
+                                </div>
+                            )}
+                        </div>
                     )}
                 />
                 <Controller
@@ -454,18 +485,25 @@ const Verification = ({ setRequirePhoneOtp }) => {
                         validate: value => value === getValues("password") || "Confirm Password should be match with password."
                     }}
                     render={({ field }) => (
-                        <TextField
-                            id="confirmPassword"
-                            label="Confirm Password"
-                            type="password"
-                            variant="outlined"
-                            placeholder="Enter Your Confirm Password"
-                            style={{ width: "50%" }}
-                            margin="normal"
-                            {...field}
-                            error={Boolean(errors.confirmPassword)}
-                            helperText={errors.confirmPassword?.message}
-                        />
+                        <div style={{ width: "50%" }}>
+                            <TextField
+                                id="confirmPassword"
+                                label="Confirm Password"
+                                type="password"
+                                variant="outlined"
+                                placeholder="Enter Your Confirm Password"
+                                style={{ width: "100%" }}
+                                margin="normal"
+                                {...field}
+                                error={Boolean(errors.confirmPassword)}
+                            // helperText={errors.confirmPassword?.message}
+                            />
+                            {Boolean(errors.confirmPassword) && (
+                                <div className="error-message">
+                                    {errors.confirmPassword?.message}
+                                </div>
+                            )}
+                        </div>
                     )}
                 />
             </div>

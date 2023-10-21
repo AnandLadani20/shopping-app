@@ -19,10 +19,12 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { FaUpload } from 'react-icons/fa'
+import { BsQuestionDiamond } from 'react-icons/bs'
 
 
 const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
-    const { control, formState: { errors }, getValues } = useFormContext();
+    const { control, formState: { errors }, getValues, setValue ,watch} = useFormContext();
     const [drawsign, setDrawsign] = useState(null)
 
     const canvasRef = useRef(null);
@@ -82,15 +84,16 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
             // Convert the JPEG data URL to a Blob
             const blob = convertDataURItoBlob(jpegDataUrl);
             setDrawsign(blob);
+            console.log("blob", blob)
+            setValue("signatureUpload", blob)
         };
         signatureImage.src = signatureDataUrl;
+
     }
-
-
     const handlesubmitSignature = async (signdata) => {
 
 
-        console.log(signdata)
+        console.log("drawSignData", signdata)
         const url = `${authService.newCommonUrl}/common/general/submitSignature`;
 
         const formData = new FormData();
@@ -117,8 +120,9 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
 
     const handleUploadCheck = async (checkdata) => {
 
+
         console.log(checkdata.value.name)
-     
+
         try {
             const url = `${authService.newCommonUrl}/common/general/submitCheck`;
             const formData = new FormData();
@@ -145,7 +149,8 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
     }
 
     const handleUploadSignature = async (signdata) => {
-        console.log(signdata)
+        console.log("signData", signdata)
+        // setValue("signatureUpload", signdata.value)
 
         try {
             const url = `${authService.newCommonUrl}/common/general/submitSignature`;
@@ -190,6 +195,36 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
     const handleChange = (panel) => (event, newExpanded) => {
         setExpanded(newExpanded ? panel : false);
     };
+
+    const gstNumber = watch("gstNumber");
+    const panNumber = watch("panNumber");
+    const businessName = watch("businessName");
+    const businessType = watch("businessType");
+    const addressProof = watch("addressProof");
+    const signatureUpload = watch("signatureUpload");
+// console.log(errors)
+    useEffect(() => {
+       
+        if (gstNumber && panNumber && businessName && businessType && addressProof && signatureUpload) {
+            // All conditions are met, so setExpanded to false and update the state
+            setExpanded(false);
+            console.log("OK");
+        }
+    }, [gstNumber,panNumber,businessName,businessType,addressProof,signatureUpload]);
+// console.log("render")
+// console.log(Boolean(errors.gstNumber))
+    // useEffect(() => {
+       
+    //     if (Boolean(errors.gstNumber) && Boolean(errors.panNumber) && Boolean(errors.businessName)) {
+    //         // All conditions are met, so setExpanded to false and update the state
+    //         setExpanded(true);
+    //         console.log("OK");
+    //     }
+    //     else{
+    //         setExpanded(false);
+    //     }
+    // }, [errors.gstNumber,errors.panNumber,errors.businessName]);
+
     return (
         <>
 
@@ -218,18 +253,27 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                                 }
                             }}
                             render={({ field }) => (
-                                <TextField
-                                    id="gstNumber"
-                                    label="GST Number"
-                                    variant="outlined"
-                                    placeholder="Enter Your GST Number"
-                                    className='w-100 w-md-50'
-                                    // style={{ width: "50%" }}
-                                    margin="normal"
-                                    {...field}
-                                    error={Boolean(errors.gstNumber)}
-                                    helperText={errors.gstNumber?.message}
-                                />
+                                <>
+                                    <div style={{ width: "50%" }}>
+                                        <TextField
+                                            id="gstNumber"
+                                            label="GST Number"
+                                            variant="outlined"
+                                            placeholder="Enter Your GST Number"
+                                            className='w-100 w-md-50'
+                                            // style={{ width: "50%" }}
+                                            margin="normal"
+                                            {...field}
+                                            error={Boolean(errors.gstNumber)}
+                                        // helperText={errors.gstNumber?.message}
+                                        />
+                                        {Boolean(errors.gstNumber) && (
+                                            <div className="error-message">
+                                                {errors.gstNumber?.message}
+                                            </div>
+                                        )}
+                                    </div>
+                                </>
                             )}
                         />
 
@@ -244,18 +288,25 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                                 }
                             }}
                             render={({ field }) => (
-                                <TextField
-                                    id="panNumber"
-                                    label="PAN Number"
-                                    variant="outlined"
-                                    placeholder="Enter Your PAN Number"
-                                    className='w-100 w-md-50'
-                                    // style={{ width: "50%" }}
-                                    margin="normal"
-                                    {...field}
-                                    error={Boolean(errors.panNumber)}
-                                    helperText={errors.panNumber?.message}
-                                />
+                                <div style={{ width: "50%" }}>
+                                    <TextField
+                                        id="panNumber"
+                                        label="PAN Number"
+                                        variant="outlined"
+                                        placeholder="Enter Your PAN Number"
+                                        className='w-100 w-md-50'
+                                        // style={{ width: "50%" }}
+                                        margin="normal"
+                                        {...field}
+                                        error={Boolean(errors.panNumber)}
+                                    // helperText={errors.panNumber?.message}
+                                    />
+                                    {Boolean(errors.panNumber) && (
+                                        <div className="error-message">
+                                            {errors.panNumber?.message}
+                                        </div>
+                                    )}
+                                </div>
                             )}
                         />
                     </div>
@@ -271,17 +322,24 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                                 }
                             }}
                             render={({ field }) => (
-                                <TextField
-                                    id="businessName"
-                                    label="Business Name"
-                                    variant="outlined"
-                                    placeholder="Enter Your Business Name"
-                                    style={{ width: "50%" }}
-                                    margin="normal"
-                                    {...field}
-                                    error={Boolean(errors.businessName)}
-                                    helperText={errors.businessName?.message}
-                                />
+                                <div style={{ width: "50%" }}>
+                                    <TextField
+                                        id="businessName"
+                                        label="Business Name"
+                                        variant="outlined"
+                                        placeholder="Enter Your Business Name"
+                                        style={{ width: "100%" }}
+                                        margin="normal"
+                                        {...field}
+                                        error={Boolean(errors.businessName)}
+                                    // helperText={errors.businessName?.message}
+                                    />
+                                    {Boolean(errors.businessName) && (
+                                        <div className="error-message">
+                                            {errors.businessName?.message}
+                                        </div>
+                                    )}
+                                </div>
                             )}
                         />
 
@@ -298,25 +356,32 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                                 }
                             }}
                             render={({ field }) => (
-                                <TextField
-                                    id="businessType"
-                                    label="Business Type"
-                                    variant="outlined"
-                                    placeholder="Enter Your Business Type"
-                                    style={{ width: "50%" }}
-                                    margin="normal"
-                                    {...field}
-                                    error={Boolean(errors.businessType)}
-                                    helperText={errors.businessType?.message}
-                                />
+                                <div style={{ width: "50%" }}>
+                                    <TextField
+                                        id="businessType"
+                                        label="Business Type"
+                                        variant="outlined"
+                                        placeholder="Enter Your Business Type"
+                                        style={{ width: "100%" }}
+                                        margin="normal"
+                                        {...field}
+                                        error={Boolean(errors.businessType)}
+                                    // helperText={errors.businessType?.message}
+                                    />
+                                    {Boolean(errors.businessType) && (
+                                        <div className="error-message">
+                                            {errors.businessType?.message}
+                                        </div>
+                                    )}
+                                </div>
                             )}
                         />
                     </div>
 
 
-                    <div className='w-100 w-md-50 d-flex gap-4'>
+                    <div className='w-100 w-md-50 d-flex flex-column gap-1 addressProofArea'>
                         <LightTooltip title="Require one of them : AdharCard,PassPort,Driving Licence,Light Bill,Bank PassBook" arrow>
-                            <div className='ms-2 mt-lg-4 mt-2 flex-shrink-0'><p style={{ cursor: "pointer" }}>Upload Address Proof</p></div>
+                            <div className='ms-2 d-flex align-items-center gap-1'><p style={{ cursor: "pointer" }}>Upload Address Proof</p><BsQuestionDiamond /></div>
                         </LightTooltip>
                         <Controller
                             control={control}
@@ -327,16 +392,22 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                             }}
                             render={({ field }) => (
                                 <>
-                                    <div className='mt-lg-4 mt-2'>
-                                        <Button
+                                    <div className='d-flex p-1'>
+                                        <div className='adaddressProof-uploadArea' onClick={() => document.getElementById("file-input").click()}>
+                                            <p>Upload a File</p>
+                                            <FaUpload className='fileUploadIcon' />
+                                        </div>
+
+                                        {/* <Button
                                             type="button"
                                             size="small"
 
                                             variant="contained"
                                             onClick={() => document.getElementById("file-input").click()}
                                         >
+
                                             Upload
-                                        </Button>
+                                        </Button> */}
                                         <input
                                             id="file-input"
                                             type="file"
@@ -345,22 +416,20 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                                         />
                                         <TextField
                                             id="addressProof"
-                                            variant="filled"
+                                            variant="standard"
                                             type="text"
-                                            style={{ display: "none" }}
-                                            value={field.value ? field.value.name : ''}
+                                            style={{ display: "block" }}
+                                            value={field.value ? field.value.name : "No file chosen"}
                                             InputProps={{
                                                 readOnly: true,
                                             }}
-
-
                                         />
-                                        {Boolean(errors.addressProof) && (
-                                            <div className="error-message mt-1 mt-lg-0">
-                                                {errors.addressProof.message}
-                                            </div>
-                                        )}
                                     </div>
+                                    {Boolean(errors.addressProof) && (
+                                        <div className="error-message mt-1 mt-lg-0">
+                                            {errors.addressProof.message}
+                                        </div>
+                                    )}
                                 </>
                             )}
                         />
@@ -401,7 +470,6 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                                     <input
                                         type="file"
                                         className='signuploadbusiness'
-
                                         onChange={(e) => field.onChange(e.target.files[0])}
                                     />
                                     <TextField
@@ -538,7 +606,7 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2d-content"
-                     id="panel2d-header"
+                    id="panel2d-header"
                     className='py-2'
                     style={{ backgroundColor: "#F3F3F3" }}
                 >
@@ -556,17 +624,24 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                             }
                         }}
                         render={({ field }) => (
-                            <TextField
-                                id="accountHolderName"
-                                label="Account Holder Name"
-                                variant="outlined"
-                                placeholder="Enter Your Account Holder Name"
-                                style={{ width: "100%" }}
-                                margin="normal"
-                                {...field}
-                                error={Boolean(errors.accountHolderName)}
-                                helperText={errors.accountHolderName?.message}
-                            />
+                            <>
+                                <TextField
+                                    id="accountHolderName"
+                                    label="Account Holder Name"
+                                    variant="outlined"
+                                    placeholder="Enter Your Account Holder Name"
+                                    style={{ width: "100%" }}
+                                    margin="normal"
+                                    {...field}
+                                    error={Boolean(errors.accountHolderName)}
+                                // helperText={errors.accountHolderName?.message}
+                                />
+                                {Boolean(errors.accountHolderName) && (
+                                    <div className="error-message mt-1 mt-lg-0">
+                                        {errors.accountHolderName?.message}
+                                    </div>
+                                )}
+                            </>
                         )}
                     />
                     <div className='d-flex  flex-column flex-md-row gap-md-2'>
@@ -582,17 +657,24 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                                 }
                             }}
                             render={({ field }) => (
-                                <TextField
-                                    id="accountHolderNumber"
-                                    label="Bank Account Number"
-                                    variant="outlined"
-                                    placeholder="Enter Your Bank Account Number"
-                                    className='w-100 w-md-50'
-                                    margin="normal"
-                                    {...field}
-                                    error={Boolean(errors.accountHolderNumber)}
-                                    helperText={errors.accountHolderNumber?.message}
-                                />
+                                <div style={{ width: "50%" }}>
+                                    <TextField
+                                        id="accountHolderNumber"
+                                        label="Bank Account Number"
+                                        variant="outlined"
+                                        placeholder="Enter Your Bank Account Number"
+                                        className='w-100 w-md-50'
+                                        margin="normal"
+                                        {...field}
+                                        error={Boolean(errors.accountHolderNumber)}
+                                    // helperText={errors.accountHolderNumber?.message}
+                                    />
+                                    {Boolean(errors.accountHolderNumber) && (
+                                        <div className="error-message mt-1 mt-lg-0">
+                                            {errors.accountHolderNumber?.message}
+                                        </div>
+                                    )}
+                                </div>
                             )}
                         />
                         <Controller
@@ -603,17 +685,24 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                                 validate: value => value === getValues("accountHolderNumber") || "Confirm Account number should be match with Account Number."
                             }}
                             render={({ field }) => (
-                                <TextField
-                                    id="confirmbankAccountNo"
-                                    label="Re-Enter Bank Account Number"
-                                    variant="outlined"
-                                    placeholder="Re-Enter Your Bank Account Number"
-                                    className='w-100 w-md-50'
-                                    margin="normal"
-                                    {...field}
-                                    error={Boolean(errors.confirmbankAccountNo)}
-                                    helperText={errors.confirmbankAccountNo?.message}
-                                />
+                                <div style={{ width: "50%" }}>
+                                    <TextField
+                                        id="confirmbankAccountNo"
+                                        label="Re-Enter Bank Account Number"
+                                        variant="outlined"
+                                        placeholder="Re-Enter Your Bank Account Number"
+                                        className='w-100 w-md-50'
+                                        margin="normal"
+                                        {...field}
+                                        error={Boolean(errors.confirmbankAccountNo)}
+                                    // helperText={errors.confirmbankAccountNo?.message}
+                                    />
+                                    {Boolean(errors.confirmbankAccountNo) && (
+                                        <div className="error-message mt-1 mt-lg-0">
+                                            {errors.confirmbankAccountNo?.message}
+                                        </div>
+                                    )}
+                                </div>
                             )}
                         />
                     </div>
@@ -630,17 +719,25 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                                 }
                             }}
                             render={({ field }) => (
-                                <TextField
-                                    id="ifscCode"
-                                    label=" IFSC Code"
-                                    variant="outlined"
-                                    placeholder="Enter Your IFSC Code "
-                                    style={{ width: "50%", }}
-                                    margin="normal"
-                                    {...field}
-                                    error={Boolean(errors.ifscCode)}
-                                    helperText={errors.ifscCode?.message}
-                                />
+                                <div style={{ width: "50%" }}>
+                                    <TextField
+                                        id="ifscCode"
+                                        label=" IFSC Code"
+                                        variant="outlined"
+                                        placeholder="Enter Your IFSC Code "
+                                        style={{ width: "100%", }}
+                                        margin="normal"
+                                        {...field}
+                                        error={Boolean(errors.ifscCode)}
+                                    // helperText={errors.ifscCode?.message}
+                                    />
+                                    {Boolean(errors.ifscCode) && (
+                                        <div className="error-message mt-1 mt-lg-0">
+                                            {errors.ifscCode?.message}
+                                        </div>
+                                    )}
+                                </div>
+
                             )}
                         />
 
@@ -652,23 +749,28 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                                 required: "bankAccountType is required",
                             }}
                             render={({ field }) => (
-                                <>
+                                <div style={{ width: "50%" }}>
                                     <TextField
                                         id="bankAccountType-select"
                                         variant="outlined"
                                         select
-                                        style={{ width: "50%", marginTop: "15px" }}
+                                        style={{ width: "100%", marginTop: "15px" }}
                                         label="Bank Account Type"
                                         {...field}
                                         error={Boolean(errors.bankAccountType)}
-                                        helperText={errors.bankAccountType?.message}
+                                    // helperText={errors.bankAccountType?.message}
                                     >
                                         <MenuItem value="">Select Categories</MenuItem>
                                         <MenuItem value="Saving">Saving</MenuItem>
                                         <MenuItem value="Current">Current</MenuItem>
                                         <MenuItem value="OverDraft">Over Draft</MenuItem>
                                     </TextField>
-                                </>
+                                    {Boolean(errors.bankAccountType) && (
+                                        <div className="error-message mt-1 mt-lg-0">
+                                            {errors.bankAccountType?.message}
+                                        </div>
+                                    )}
+                                </div>
                             )}
                         />
 
