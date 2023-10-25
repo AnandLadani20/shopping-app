@@ -17,7 +17,7 @@ import Verification from "./Verification";
 import BusinessDetail from "./BusinessDetail";
 import Verified from "./Verified";
 
-import authService from './ApiUrl';
+import authService from './../../Config/ApiUrl';
 
 function getSteps() {
     return [

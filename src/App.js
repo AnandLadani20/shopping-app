@@ -12,6 +12,7 @@ import AddProduct from './Components/SellerDashboard/AddProduct/AddProduct';
 import AddMultipleProduct from './Components/SellerDashboard/AddMultipleProduct/AddMultipleProduct';
 import LearnListProducts from './Components/SellerDashboard/LearnListProducts/LearnListProducts';
 import ProductStepper from './Components/SellerDashboard/AddProduct/ProductSellDetails/ProductStepper';
+import ErrorPage from './Components/ErrorPage';
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route path='/sellerDashboard/add-multiple-product' element={<AddMultipleProduct />} />
           <Route path='/sellerDashboard/learn-list-products' element={<LearnListProducts />} />
           <Route path='/sellerdashboard/addproduct/ProductStepper' element={<ProductStepper />} />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </>

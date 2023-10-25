@@ -295,7 +295,7 @@ import { setSelectedCategory } from '../../../ReduxToolKit/Features/AddProductFo
 import { setCategoriesTitlePath } from '../../../ReduxToolKit/Features/CategoriesTitle'
 
 import { setThirdSubCategoriesTitlePath } from '../../../ReduxToolKit/Features/ThirdSubCategoriesTitle'
-
+import authService from './../../../Config/ApiUrl';
 
 const CategoryHierarchy = () => {
 
@@ -308,13 +308,12 @@ const CategoryHierarchy = () => {
   const [activeItems, setactiveItems] = useState(null);
   const [hideCategory, sethideCategory] = useState(false)
   const [activebtn, setActivebtn] = useState(false)
-
   const [listItem, setListItem] = useState([])
 
   // let firstData = '';
   useEffect(() => {
 
-    fetch("https://crazy-cows-ask.loca.lt/ecommerce/category/getMainCategories")
+    fetch(`${authService.newEcommercUrl}/ecommerce/category/getMainCategories`)
       .then((res) => res.json())
       .then((data) => {
         setListItem(data)
@@ -331,12 +330,13 @@ const CategoryHierarchy = () => {
   const handleSubCategory = async (item) => {
     dispatch(setCategoriesTitlePath(item.label))
     try {
-      const response = await fetch(`https://crazy-cows-ask.loca.lt/ecommerce/category/getChildCategories?browsePath=${item.browsePath}/${item.categoryId}`);
+      const response = await fetch(`${authService.newEcommercUrl}/ecommerce/category/getChildCategories?browsePath=${item.browsePath}/${item.categoryId}`);
       const items = await response.json();
 
       if (response.ok) {
         setSubListItem(items);
         setActiveCategory(true)
+        console.log("second", items)
       }
       else {
         setActivebtn(true)

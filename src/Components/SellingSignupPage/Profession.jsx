@@ -13,7 +13,7 @@ import {
     useFormContext,
 } from "react-hook-form";
 import { useEffect, useState } from 'react'
-import authService from './ApiUrl';
+import authService from './../../Config/ApiUrl';
 
 const Profession = ({ methods }) => {
 

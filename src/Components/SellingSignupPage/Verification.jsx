@@ -17,7 +17,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import OtpInput from 'otp-input-react';
 // import toast from 'react-hot-toast';
-import authService from './ApiUrl';
+import authService from './../../Config/ApiUrl';
 
 
 
