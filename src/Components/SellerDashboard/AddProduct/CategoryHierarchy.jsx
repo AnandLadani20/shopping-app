@@ -396,6 +396,7 @@ const CategoryHierarchy = () => {
                 ))}
               </div>
             )}
+            <Button type="button" variant="contained" size='small' onClick={handleCategoryform}>Select</Button>
           </div>
         </div>
       </div>

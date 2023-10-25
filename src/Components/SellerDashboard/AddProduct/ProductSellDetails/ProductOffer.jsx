@@ -47,6 +47,7 @@ const ProductOffer = () => {
 
 
     useEffect(() => {
+        setFormComponent1(true)
         if (selectedCategoryId === "8641217031") {
             // DesertCoolers
             setFormComponent1(true)

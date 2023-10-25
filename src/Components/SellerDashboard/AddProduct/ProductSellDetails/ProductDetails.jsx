@@ -1721,6 +1721,8 @@ const ProductDetails = () => {
     //     setProductSaleType(true)
     //    }
     useEffect(() => {
+        handleFormFieldLayout3();
+        addOptions(["Cups, Mugs & Saucers", "Lid", "Saucer", "Batteries included", "Dough Hook", "Mixers", "Fan Blade included", "Includes 1 leaf", "Stainless Steel Bowl", "Light kit inlcuded", "Bulb included", "Flat Beater", "Pouring Shield", "Tables", "Wire Whip", "Glass Bowl", "Shade included", "Includes 2 leaves", "Includes 3 leaves", "Includes 4 leaves", "Cups"]);
 
         if (selectedCategoryId === "8641217031") {
             // DesertCoolers
