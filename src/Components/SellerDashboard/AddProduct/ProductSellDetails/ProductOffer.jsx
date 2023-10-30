@@ -45,7 +45,7 @@ const ProductOffer = () => {
     }
     let selectedCategoryId = localStorage.getItem('selectedCategoryId')
 
-
+    console.log("render"," ProductOffer Page")
     useEffect(() => {
         setFormComponent1(true)
         if (selectedCategoryId === "8641217031") {

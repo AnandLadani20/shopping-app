@@ -124,6 +124,7 @@ const ProductDiscription = ({ setProductFilePath }) => {
             setFilePaths(newFilePaths);
         }
     };
+    console.log("render"," ProductDiscription Page")
     return (
         <>
 

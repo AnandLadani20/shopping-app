@@ -389,9 +389,417 @@ const ProductStepper = () => {
             setRemoveDiscription(true)
         }
 
+        // Fashion > Women > Clothing > Accessories
+        else if (selectedCategoryId === "1968393031") {
+            //Belts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968391031") {
+            //Other (Accessories)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "3414272031") {
+            //Sport Headbands
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing > Accessories > Caps & Hats
+
+        if (selectedCategoryId === "3659016031") {
+            //Balaclavas
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968405031") {
+            //Baseball Caps
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968406031") {
+            //Berets
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968407031") {
+            //Bomber Hats
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968408031") {
+            //Bowler Hats
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968409031") {
+            //Bucket Hats
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968410031") {
+            //Cowboy Hats
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968411031") {
+            //Fedoras & Trilby Hats
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968412031") {
+            //Flat Caps
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968413031") {
+            //Panama Hats
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968414031") {
+            //Porkpie Hats
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968415031") {
+            //Skullies & Beanies
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968416031") {
+            //Sun Hats
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968417031") {
+            //Visors
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Accessories > Socks & Stockings
+        else if (selectedCategoryId === "1968517031") {
+            //Other (Socks & Stockings)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Ethnic Wear
+        if (selectedCategoryId === "3731690031") {
+            //Blouses
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968257031") {
+            //Chunnis & Dupattas
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "14107214031") {
+            //Gowns
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "3723378031") {
+            //Lehenga Cholis
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968253031") {
+            //Other (Ethnic Wear)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "3723380031") {
+            //Salwar Suits
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Ethnic Wear > Islamic & Modest Wear
+        else if (selectedCategoryId === "5836984031") {
+            //Other (Islamic & Modest Wear)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Lingerie
+        else if (selectedCategoryId === "1968473031") {
+            //Garters & Suspenders
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968457031") {
+            //Other (Lingerie)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Lingerie > Accessories
+        if (selectedCategoryId === "1968459031") {
+            //Bra Extenders
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "26249581031") {
+            //Breast Lift Tape
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968461031") {
+            //Lingerie Bags
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968462031") {
+            //Lingerie Tape
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968458031") {
+            //Other (Accessories)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968463031") {
+            //Pads & Enhancers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968464031") {
+            //Straps
+            setRemoveDiscription(true)
+
+        }
+        // Fashion > Women > Clothing > Lingerie > Panties
+        if (selectedCategoryId === "1968475031") {
+            //Bikinis
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968476031") {
+            //Boyshorts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "18233647031") {
+            //Brazilian Tangas
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968477031") {
+            //Briefs
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968478031") {
+            //G-Strings & Thongs
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968479031") {
+            //Hipsters
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968474031") {
+            //Other (Panties)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Lingerie > Shapewear
+        if (selectedCategoryId === "1968483031") {
+            //Control Panties
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Maternity >Ethnic Wear
+        else if (selectedCategoryId === "3659022031") {
+            //Other (Ethnic Wear)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "3723375031") {
+            //Salwar Suits
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Maternity >Lingerie
+        else if (selectedCategoryId === "1953310031") {
+            //Other (Lingerie)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1953312031") {
+            //Panties
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing > Maternity > Sleep & Loungewear
+        if (selectedCategoryId === "1953317031") {
+            //Nighties & Nightdresses
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1953315031") {
+            //Other (Sleep & Loungewear)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Maternity > Sportswear
+        if (selectedCategoryId === "1953302031") {
+            // Hoodies
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1953297031") {
+            // Sports Shorts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1953298031") {
+            // Sports Skirts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1953328031") {
+            // Sweatshirts
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing > Maternity > Western Wear
+        if (selectedCategoryId === "1953301031") {
+            //Dresses
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Maternity > Western Wear > Dresses & Jumpsuits
+        if (selectedCategoryId === "1953301031") {
+            //Dresses
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Maternity > Western Wear > Skirts & Shorts
+        if (selectedCategoryId === "1953325031") {
+            //Shorts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1953326031") {
+            //Skirts
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing > Maternity > Western Wear > Winterwear
+        else if (selectedCategoryId === "1953302031") {
+            //Hoodies
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Maternity > Western Wear > Winterwear > Sweaters
+        if (selectedCategoryId === "1953305031") {
+            //Cardigans
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1953304031") {
+            //Other (Sweaters)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1953307031") {
+            //Pullovers
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing > Maternity > Western Wear > Winterwear > Thermals
+        if (selectedCategoryId === "16085624031") {
+            //Other (Thermals)
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing > Sleep & Lounge Wear
+        if (selectedCategoryId === "1968465031") {
+            //Babydolls
+
+        }
+        else if (selectedCategoryId === "15759866031") {
+            //Lounge Shorts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968501031") {
+            //Nighties & Nightdresses
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968498031") {
+            //Other (Sleep & Lounge Wear)
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing > Sportswear
+        if (selectedCategoryId === "6264311031") {
+            //Active Dresses
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968437031") {
+            //Shorts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968434031") {
+            //Sweaters
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Sportswear > Innerwear
+        else if (selectedCategoryId === "1968432031") {
+            //Briefs
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968431031") {
+            //Other (Innerwear)
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing > Sportswear > Skirts & Skorts
+        if (selectedCategoryId === "25965165031") {
+            //Other (Skirts & Skorts)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968438031") {
+            //Skirts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "25965179031") {
+            //Skorts
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Sportswear > Sweatshirts & Hoodies
+        if (selectedCategoryId === "1968446031") {
+            //Hoodies
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "11400133031") {
+            //Other (Sweatshirts & Hoodies)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968532031") {
+            //Sweatshirts
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing >  Sunglasses & Spectacle Frames
+        else if (selectedCategoryId === "1968397031") {
+            //Other (Sunglasses & Spectacle Frames)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing > Swim & Beachwear
+        else if (selectedCategoryId === "1968540031") {
+            //Shorts
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing > Western Wear
+        else if (selectedCategoryId === "1968452031") {
+            //Ponchos & Capes
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968453031") {
+            //Shrugs
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing > Western Wear > Dresses & Jumpsuits
+        if (selectedCategoryId === "1968445031") {
+            //Dresses
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing > Western Wear >Rainwear
+        if (selectedCategoryId === "1968512031") {
+            //Other (Rainwear)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Clothing >  Western Wear >Skirts & Shorts
+
+        if (selectedCategoryId === "1968510031") {
+            //Shorts
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968511031") {
+            //Skirts
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing >  Western Wear > Winter Wear > Sweaters
+        if (selectedCategoryId === "1968450031") {
+            //Cardigans
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968449031") {
+            //Other (Sweaters)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968451031") {
+            //Pullover Sweaters
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Clothing >  Western Wear > Winter Wear > Sweatshirts & Hoodies
+        if (selectedCategoryId === "1968446031") {
+            //Hoodies
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "11400133031") {
+            //Other (Sweatshirts & Hoodies)
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "1968532031") {
+            //Sweatshirts
+            setRemoveDiscription(true)
+        }
     }, [selectedCategoryId])
 
-
+    console.log("render", " ProductStepper Page")
     const baseSteps = [
         "Product Identity",
         "Product details",
@@ -702,11 +1110,7 @@ const ProductStepper = () => {
                                             </Stepper>
                                         </div>
                                     </div>
-                                    {/* <div className="d-flex justify-content-center">
-                                        <h5 className="p-2">Product Identity</h5>
-                                        <h5 className="p-2">Product details</h5>
-                                        <h5 className="p-2">Offer</h5>
-                                    </div> */}
+
 
                                 </div>
                                 <div className='product-sell-detail-dashboard-formarea'>

@@ -30,7 +30,7 @@ const ProductIdentity = () => {
     }
   }, []);
 
-
+  console.log("render"," ProductIdentity Page")
   const [productTypestate, setProductTypestate] = useState(''); // Initialize with an empty string
   const [formComponents1, setFormComponent1] = useState(false)
   const [formComponents2, setFormComponent2] = useState(false)

@@ -1,15 +1,11 @@
-
-
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
-// import { AiOutlineStar } from 'react-icons/ai';
-// import { AiFillStar } from 'react-icons/ai';
-// import { RiArrowDropRightLine } from 'react-icons/ri';
-// import { useState } from 'react';
 import CategoryHierarchy from './CategoryHierarchy';
 
+
 const AddProduct = () => {
+    console.log("hello")
     return (
         <div>
             <section className='seller-dashboard-add-product-category-area'>

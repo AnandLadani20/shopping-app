@@ -287,7 +287,7 @@ import React, { useEffect } from 'react'
 import { Button } from "@mui/material";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { GrFormNext } from 'react-icons/gr'
 import { useDispatch } from 'react-redux';
 
 // import { setAddProductCategories,setDesertCategories,setSelectedCategory } from '../../../ReduxToolKit/Features/AddProductFormSlice';
@@ -302,9 +302,9 @@ const CategoryHierarchy = () => {
   const dispatch = useDispatch()
   const [sublistItem, setSubListItem] = useState([])
   const [activeCategory, setActiveCategory] = useState(false);
-  const [categoryTitle, setCategoryTitle] = useState("Please select...");
-  const [subCategoryTitle, setSubCategoryTitle] = useState("");
-  const [thirdCategoryTitle, setThirdCategoryTitle] = useState("");
+  const [categoryTitle, setCategoryTitle] = useState([]);
+
+
   const [activeItems, setactiveItems] = useState(null);
   const [hideCategory, sethideCategory] = useState(false)
   const [activebtn, setActivebtn] = useState(false)
@@ -318,11 +318,13 @@ const CategoryHierarchy = () => {
       .then((data) => {
         setListItem(data)
         console.log("first", data)
-
       })
       .catch(error => console.error('Error fetching items:', error))
-
+    console.log("render useEffect", " CategoryHierachy ")
   }, [])
+
+
+  const nextIcon = <GrFormNext className="navigate-next-icon" />;
 
 
 
@@ -345,7 +347,32 @@ const CategoryHierarchy = () => {
     } catch (error) {
       console.error('Error fetching subcategories:', error);
     }
-    setCategoryTitle(item.label)
+
+    setCategoryTitle((prev) => [...prev, item])
+    console.log(categoryTitle)
+  }
+
+  const handleTitleCategory = async (item, index) => {
+    dispatch(setCategoriesTitlePath(item.label))
+    try {
+      const response = await fetch(`${authService.newEcommercUrl}/ecommerce/category/getChildCategories?browsePath=${item.browsePath}/${item.categoryId}`);
+      const items = await response.json();
+
+      if (response.ok) {
+        setSubListItem(items);
+        setActiveCategory(true)
+        console.log("title", items)
+      }
+      else {
+        setActivebtn(true)
+      }
+
+    } catch (error) {
+      console.error('Error fetching subcategories:', error);
+    }
+
+    setCategoryTitle((prev) => prev.slice(0, index + 1));
+
   }
   const navigate = useNavigate()
 
@@ -358,35 +385,49 @@ const CategoryHierarchy = () => {
 
   }
 
+  console.log("render", " CategoryHierachy Page")
+      
   return (
 
     <div className='add-product-category-list'>
       <div className='add-product-category-list-item-title'>
-        <p>{categoryTitle}</p>
-        <p >{subCategoryTitle}</p>
-        <p>{thirdCategoryTitle}</p>
+        {categoryTitle.length > 0 ? (
+          categoryTitle.map((cateTitle, index) => (
+            <p key={index} onClick={() => handleTitleCategory(cateTitle, index)}>
+
+
+              {/* handleTitleCategory */}
+              {cateTitle.label}
+              {nextIcon}
+            </p>
+          )
+          )) : (
+          <p>Please select...</p>
+        )}
+
       </div>
       <div>
         <div className='add-product-category-list-items-parent-box'>
           <div className='add-product-category-list-items-box'>
-            {listItem.map((item) => (
-              <div className='add-product-category-list-items' key={item.categoryId}>
+        
+            {listItem.map((item,index) => (
+              <div className='add-product-category-list-items' key={index}>
                 <div
                   style={{ width: "100%" }}
                   className={`d-flex justify-content-between align-items-center px-3 product-list-item-name ${activeItems === item.categoryId ? 'active' : ''}`}
                   onClick={() => handleSubCategory(item)}
                 >
                   <p>{item.label}</p>
-                 
+
                 </div>
 
               </div>
             ))}
             {activeCategory && (
               <div className='add-product-category-list-items-box2'>
-                {sublistItem.map((items) => (
+                {sublistItem.map((items,index) => (
                   <>
-                    <div style={{ width: "100%" }} className={hideCategory ? "px-3 product-list-item-name d-none" : "px-3 product-list-item-name"} key={items.categoryId}
+                    <div style={{ width: "100%" }} className={hideCategory ? "px-3 product-list-item-name d-none" : "px-3 product-list-item-name"} key={index}
                       onClick={() => handleSubCategory(items)}
                     >
                       <p>{items.label}</p>

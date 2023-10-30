@@ -54,7 +54,7 @@ const ProductVariation = ({ setVariationData }) => {
 
   };
 
-
+  console.log("render"," ProductVariation Page")
 
 
 

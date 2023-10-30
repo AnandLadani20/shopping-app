@@ -165,6 +165,7 @@ const ProductDetails = () => {
     const [itemPPUCountUnitofMeasureField, setItemPPUCountUnitofMeasureField] = useState(false)
     const [hairTypeField, setHairTypeField] = useState(false)
     const [lifestyleField, setLifestyleField] = useState(false)
+    // Item Booking Date
     const [bookingDateField, setBookingDateField] = useState(false)
     const [itemLengthDescriptionField, setItemLengthDescriptionField] = useState(false)
     const [neckStyleField, setNeckStyleField] = useState(false)
@@ -253,6 +254,9 @@ const ProductDetails = () => {
     const [bandSizeField, setBandSizeField] = useState(false)
     const [caseThicknessField, setCaseThicknessField] = useState(false)
     const [calendarTypeField, setCalendarTypeField] = useState(false)
+    const [capacityField, setCapacityField] = useState(false)
+    const [handleTypeField, setHandleTypeField] = useState(false)
+    const [sizeDisplayNameField, setSizeDisplayNameField] = useState(false)
 
     // formComponents1 =>  Model Number,Warranty Description,Included Components,Is the item OEM authorized?,Number of Boxes,Item Dimensions D x W x H,Manufacturer
     // formComponents2 =>  Model,Number of Items,Unit Count,Unit Count Type,Product Care Instructions,Contains Liquid Contents?,Is Assembly Required,Number of Pieces,Included Components,Size,Color,Color Map,Material Type,Number of Boxes,Manufacturer,Item Dimensions D x W x H
@@ -1690,9 +1694,43 @@ const ProductDetails = () => {
         setPackerField(true)
     }
     const handleFormFieldLayout90 = () => {
-
+        setManuFacturePartNoField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setFittingTypeField(true)
+        setProductSizeField(true)
+        setSleeveTypeField(true)
+        setMaterialTypeField(true)
 
     }
+    const handleFormFieldLayout91 = () => {
+        setManuFacturePartNoField(true)
+        setClosureTypeField(true)
+        setModelNumberField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setFabricTypeField(true)
+        setProductCareInstructionsField(true)
+        setNumberOfPocketsField(true)
+        setPatternField(true)
+        setOccasionDescriptionField(true)
+        setProductSizeField(true)
+        setSleeveTypeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setApparelSizeSystemField(true)
+        setApparelSizeClassField(true)
+        setApparelSizeValueField(true)
+        setApparelSizeToRangeField(true)
+        setApparelSizeBodyTypeField(true)
+    }
+
     //   const[ArtistName,setArtistName] = useState(false)
     //   const[ArtworkMedium,setArtworkMedium] = useState(false)
     //   const[ProductDate,setProductDate] = useState(false)
@@ -1723,7 +1761,7 @@ const ProductDetails = () => {
     useEffect(() => {
         handleFormFieldLayout3();
         addOptions(["Cups, Mugs & Saucers", "Lid", "Saucer", "Batteries included", "Dough Hook", "Mixers", "Fan Blade included", "Includes 1 leaf", "Stainless Steel Bowl", "Light kit inlcuded", "Bulb included", "Flat Beater", "Pouring Shield", "Tables", "Wire Whip", "Glass Bowl", "Shade included", "Includes 2 leaves", "Includes 3 leaves", "Includes 4 leaves", "Cups"]);
-
+        // console.log(selectedCategoryId);
         if (selectedCategoryId === "8641217031") {
             // DesertCoolers
             setFormComponent1(true)
@@ -5559,46 +5597,97 @@ const ProductDetails = () => {
 
         if (selectedCategoryId === "2886870031") {
             //Belt Buckles 
+            handleFormFieldLayout71();
+            setStyleOptions(["Classic", "Military", "Modern", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Brass", "Leather", "Aluminium", "Iron", "Plastic", "Metal", "Zinc", "Alloy Steel", "Pewter", "Stainless Steel", "Resin", "Titanium", "Nickel", "Acrylonitrile Butadiene Styrene",
+                "Rhinestone", "Copper", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968393031") {
             //Belts
+            handleFormFieldLayout50()
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+            setOccasionDescriptionOptions(["Formal", "Casual"])
+            setCareInstructionOptions(["Non Washable", "Machine Wash", "Hand Wash", "Dry Clean Only", "Wet Cloth Wipe", "Dry Cloth Clean", "Hand Wash Only", "Wet Wipe Clean"])
 
         }
         else if (selectedCategoryId === "3659015031") {
             //Cold Weather Sets
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
 
         }
         else if (selectedCategoryId === "1968396031") {
             //Earmuffs
+            handleFormFieldLayout71();
+            setStyleOptions(["Traditional", "Contemporary", "Classic", "Retro", "Vintage", "Modern", "Casual"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Nylon", "Thermoplastic Polyurethane", "Leather", "Plastic", "Metal", "Cotton", "Cashmere", "Silk", "Polypropylene", "Stainless Steel", "Resin", "Neoprene", "Rubber", "Polycarbonate", "Polyvinyl Chloride", "Faux Leather",
+                "Polyester", "Vinyl", "Wood", "Cork", "Silicone", "Aluminium", "Ethylene Vinyl Acetate", "Suede", "Foam", "Alloy Steel", "Polyurethane", "Paper", "Linen", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Denim", "Wool", "Acrylic", "Fur"])
 
         }
         else if (selectedCategoryId === "27076128031") {
             //Fashion Headbands
-
+            handleFormFieldLayout52()
         }
         else if (selectedCategoryId === "1968403031") {
             //Handkerchiefs
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968419031") {
             //Kidney Warmers
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968391031") {
             //Other (Accessories)
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
 
         }
         else if (selectedCategoryId === "1968425031") {
             //Shawls
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "3414272031") {
             //Sport Headbands
-
+            handleFormFieldLayout54()
         }
         else if (selectedCategoryId === "1968394031") {
             //Suspenders
+            handleFormFieldLayout71();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
 
@@ -5606,386 +5695,781 @@ const ProductDetails = () => {
 
         if (selectedCategoryId === "3659016031") {
             //Balaclavas
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968405031") {
             //Baseball Caps
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968406031") {
             //Berets
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968407031") {
             //Bomber Hats
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968408031") {
             //Bowler Hats
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968409031") {
             //Bucket Hats
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968410031") {
             //Cowboy Hats
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968411031") {
             //Fedoras & Trilby Hats
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968412031") {
             //Flat Caps
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968404031") {
             //Other (Caps & Hats)
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968413031") {
             //Panama Hats
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968414031") {
             //Porkpie Hats
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968415031") {
             //Skullies & Beanies
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968416031") {
             //Sun Hats
-
+            handleFormFieldLayout49()
         }
         else if (selectedCategoryId === "1968417031") {
             //Visors
-
+            handleFormFieldLayout49()
         }
 
         // Fashion > Women > Clothing > Accessories > Gloves & Arm Warmers
         if (selectedCategoryId === "1968392031") {
             //Arm Warmers
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968402031") {
             //Cold Weather Gloves
+            handleFormFieldLayout71();
+            setStyleOptions(["Half-Finger", "Full-Finger", "Fingerless"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Nylon", "Thermoplastic Polyurethane", "Leather", "Plastic", "Metal", "Cotton", "Cashmere", "Silk", "Polypropylene", "Stainless Steel", "Resin", "Neoprene", "Rubber", "Polycarbonate", "Polyvinyl Chloride", "Faux Leather",
+                "Polyester", "Vinyl", "Wood", "Cork", "Silicone", "Aluminium", "Ethylene Vinyl Acetate", "Suede", "Foam", "Alloy Steel", "Polyurethane", "Paper", "Linen", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Denim", "Wool", "Acrylic", "Fur"])
 
         }
 
         // Fashion > Women > Clothing > Accessories > Scarves, Stoles & Wraps
         if (selectedCategoryId === "1968421031") {
             //Head Scarves
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968422031") {
             //Neckerchiefs
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968420031") {
             //Other (Scarves, Stoles & Wraps)
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
 
         }
         else if (selectedCategoryId === "1968424031") {
             //Scarves
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968426031") {
             //Stoles
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
 
         // Fashion > Women > Clothing > Accessories > Socks & Stockings
         if (selectedCategoryId === "1968521031") {
             //Leg Warmers
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968517031") {
             //Other (Socks & Stockings)
-
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
         }
         else if (selectedCategoryId === "1968523031") {
             //Sock Slippers
-
+            handleFormFieldLayout86()
+            setStyleOptions(["Bohemian", "Casual", "Classic", "Retro", "Modern"])
         }
         else if (selectedCategoryId === "1968520031") {
             //Stockings
+            handleFormFieldLayout78();
+            setStyleOptions(["Thigh High", "Garter Belt and Thigh High", "High Waist", "Control Top"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968525031") {
             //Tights
+            handleFormFieldLayout78();
+            setStyleOptions(["Thigh High", "Garter Belt and Thigh High", "High Waist", "Control Top"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
 
         // Fashion > Women > Clothing > Accessories > Socks & Stockings > Socks
         if (selectedCategoryId === "26894244031") {
             //Ankle Socks
+            handleFormFieldLayout55()
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968442031") {
             //Athletic Socks
+            handleFormFieldLayout55()
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968519031") {
             //Knee-High Socks
+            handleFormFieldLayout55()
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968522031") {
             //Liners & Ankle Socks
+            handleFormFieldLayout55()
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968518031") {
             //Other (Socks)
+            handleFormFieldLayout55()
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
 
         // Fashion > Women > Clothing > Ethnic Wear
         if (selectedCategoryId === "3731690031") {
             //Blouses
+            handleFormFieldLayout90();
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setMaterialTypeItem(["Chiffon", "Polyester", "Silk", "Spandex", "Satin", "Polycotton", "Velvet", "Cotton", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968254031") {
             //Bottom Wear
-
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "1968257031") {
             //Chunnis & Dupattas
+            handleFormFieldLayout59();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Chanderi", "Chiffon", "Brasso", "Dupion Silk", "Georgette", "Jute Cotton", "Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Modal", "Net", "Khadi", "Organza"])
 
         }
         else if (selectedCategoryId === "3723377031") {
             //Dress Material
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "14107214031") {
             //Gowns
+            handleFormFieldLayout56();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+
+            setStyleOptions(["Pinafore", "Wrap", "Tulip", "T-Shirt", "Empire", "Cocktail", "One-Shoulder", "Bubble Hem", "Sheath", "Bustier", "Tunic", "Shirt", "Kimono", "Fit & Flare", "Pleated", "Shift", "A-Line", "Skater", "Peplum", "Kaftan", "Strapless", "Bodycon"])
 
         }
         else if (selectedCategoryId === "1968255031") {
             //Kurtas & Kurtis
+            handleFormFieldLayout60();
+            setStyleOptions(["Pleated", "Empire", "Regular", "Asymmetric", "A-Line", "Anarkali", "Angrakha", "Ruffled", "Layered and Tiered", "Pathani"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Synthetic", "Polycotton", "Voile", "Tussar Silk", "Chiffon", "Dupion Silk", "Modal", "Net", "Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic"])
 
         }
         else if (selectedCategoryId === "3723378031") {
             //Lehenga Cholis
+            handleFormFieldLayout61();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+
 
         }
         else if (selectedCategoryId === "1968253031") {
             //Other (Ethnic Wear)
-
+            handleFormFieldLayout62();
+            setStyleOptions(["Achkan", "Pathan Suit", "Sherwani", "Suit Piece", "Other", "A-Line", "Anarkali", "Angrakha", "Bubble Hem", "Davani", "Dress Material", "Empire", "Halterneck", "Mermaid", "One-Shoulder", "Pleated", "Princess Cut",
+                "Set Mundu", "Sharara", "Shirt", "Straight", "Strapless", "Wrap Kurtas", "Chudidar", "Dhoti", "Jodhpuri", "Legging", "Lungi", "Mundu", "Parallel", "Patialas", "Pyjama", "Salwar", "Sarouel", "Butterfly Pallu", "Dupatta Saree", "Half Saree",
+                "Lehenga Saree", "Ready Pleated Saree", "With Blouse Piece", "Without Blouse Piece", "Back Button", "Backless", "Bustier", "Front Button", "Long Cholis", "Singlets", "Singlets", "Sleeveless"])
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
+            setOccasionDescriptionOptions(["Athletic", "Business", "Casual", "Ceremony", "Evening"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
         }
         else if (selectedCategoryId === "1968492031") {
             //Petticoats
+            handleFormFieldLayout65()
+            setStyleOptions(["Full Slip", "Underskirt", "Pant Liner Slip"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "3723380031") {
             //Salwar Suits
+            handleFormFieldLayout63()
+            setStyleOptions(["Pleated", "Empire", "Regular", "Straight", "Panelled", "Asymmetric", "A-Line", "Anarkali", "Angrakha", "Ruffled", "Layered and Tiered", "Pathani"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Chanderi", "Chiffon", "Brasso", "Dupion Silk", "Georgette", "Jute Cotton", "Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Modal", "Net", "Khadi", "Organza"])
 
         }
         else if (selectedCategoryId === "1968256031") {
             //Sarees
-
+            handleFormFieldLayout71();
+            setStyleOptions(["Lehenga Saree", "Half & Half", "Ready Pleated Saree", "Ruffle Saree", "Set Mundu"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Silk", "Linen", "Cotton", "Art Silk", "Cotton Blend", "Jute"])
         }
 
         // Fashion > Women > Clothing > Ethnic Wear > Islamic & Modest Wear
         if (selectedCategoryId === "3915424031") {
             //Abayas
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "3731691031") {
             //Burqas
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "3915425031") {
             //Hijabs
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "3731692031") {
             //Niqabs
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "5836984031") {
             //Other (Islamic & Modest Wear)
-
+            setStyleOptions(["Achkan", "Pathan Suit", "Sherwani", "Suit Piece", "Other", "A-Line", "Anarkali", "Angrakha", "Bubble Hem", "Davani", "Dress Material", "Empire", "Halterneck", "Mermaid", "One-Shoulder", "Pleated", "Princess Cut",
+                "Set Mundu", "Sharara", "Shirt", "Straight", "Strapless", "Wrap Kurtas", "Chudidar", "Dhoti", "Jodhpuri", "Legging", "Lungi", "Mundu", "Parallel", "Patialas", "Pyjama", "Salwar", "Sarouel", "Butterfly Pallu", "Dupatta Saree", "Half Saree",
+                "Lehenga Saree", "Ready Pleated Saree", "With Blouse Piece", "Without Blouse Piece", "Back Button", "Backless", "Bustier", "Front Button", "Long Cholis", "Singlets", "Singlets", "Sleeveless"])
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
+            setOccasionDescriptionOptions(["Athletic", "Business", "Casual", "Ceremony", "Evening"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
         }
 
         // Fashion > Women > Clothing > Lingerie
         if (selectedCategoryId === "1968466031") {
             //Bodysuits
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968470031") {
             //Bustiers & Corsets
+            handleFormFieldLayout65()
+            setStyleOptions(["Longline", "Lingerie", "Hourglass", "Bustier"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968471031") {
             //Camisoles & Tanks
+            handleFormFieldLayout65()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968473031") {
             //Garters & Suspenders
-
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
         }
         else if (selectedCategoryId === "1968480031") {
             //Lingerie Sets
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968457031") {
             //Other (Lingerie)
-
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
         }
         else if (selectedCategoryId === "1968524031") {
             //Pantyhose & Stockings
+            handleFormFieldLayout78();
+            setStyleOptions(["Thigh High", "Garter Belt and Thigh High", "High Waist", "Control Top"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
 
         // Fashion > Women > Clothing > Lingerie > Accessories
         if (selectedCategoryId === "1968459031") {
             //Bra Extenders
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
 
         }
         else if (selectedCategoryId === "26249581031") {
             //Breast Lift Tape
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
 
         }
         else if (selectedCategoryId === "1968460031") {
             //Breast Petals
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968461031") {
             //Lingerie Bags
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
 
         }
         else if (selectedCategoryId === "1968462031") {
             //Lingerie Tape
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
 
         }
         else if (selectedCategoryId === "1968458031") {
             //Other (Accessories)
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
 
         }
         else if (selectedCategoryId === "1968463031") {
             //Pads & Enhancers
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
 
         }
         else if (selectedCategoryId === "1968464031") {
             //Straps
-
-
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
         }
 
         // Fashion > Women > Clothing > Lingerie > Bras
         if (selectedCategoryId === "1968468031") {
             //Adhesive Bras
+            handleFormFieldLayout67()
+            setStyleOptions(["Minimalist", "Contemporary", "Casual", "Classic", "Retro", "Modern"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setSpecialFeatureOptions(["Waterproof", "Lightweight", "Pump Compatible Hands Free", "Anti-Sag", "Fade Resistant", "Seamless", "Shrink Resistant", "Removable Strap", "Removable Padding", "Stain Resistant", "Water Resistant"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "1968469031") {
             //Everyday Bras
+            handleFormFieldLayout67()
+            setStyleOptions(["Minimalist", "Contemporary", "Casual", "Classic", "Retro", "Modern"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setSpecialFeatureOptions(["Waterproof", "Lightweight", "Pump Compatible Hands Free", "Anti-Sag", "Fade Resistant", "Seamless", "Shrink Resistant", "Removable Strap", "Removable Padding", "Stain Resistant", "Water Resistant"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "5866009031") {
             //Mastectomy Bras
+            handleFormFieldLayout67()
+            setStyleOptions(["Minimalist", "Contemporary", "Casual", "Classic", "Retro", "Modern"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setSpecialFeatureOptions(["Waterproof", "Lightweight", "Pump Compatible Hands Free", "Anti-Sag", "Fade Resistant", "Seamless", "Shrink Resistant", "Removable Strap", "Removable Padding", "Stain Resistant", "Water Resistant"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "1968467031") {
             //Other (Bras)
+            handleFormFieldLayout67()
+            setStyleOptions(["Minimalist", "Contemporary", "Casual", "Classic", "Retro", "Modern"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setSpecialFeatureOptions(["Waterproof", "Lightweight", "Pump Compatible Hands Free", "Anti-Sag", "Fade Resistant", "Seamless", "Shrink Resistant", "Removable Strap", "Removable Padding", "Stain Resistant", "Water Resistant"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "1968433031") {
             //Sports Bras
+            handleFormFieldLayout67()
+            setStyleOptions(["Minimalist", "Contemporary", "Casual", "Classic", "Retro", "Modern"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setSpecialFeatureOptions(["Waterproof", "Lightweight", "Pump Compatible Hands Free", "Anti-Sag", "Fade Resistant", "Seamless", "Shrink Resistant", "Removable Strap", "Removable Padding", "Stain Resistant", "Water Resistant"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
 
         // Fashion > Women > Clothing > Lingerie > Panties
         if (selectedCategoryId === "1968475031") {
             //Bikinis
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968476031") {
             //Boyshorts
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "18233647031") {
             //Brazilian Tangas
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968477031") {
             //Briefs
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968478031") {
             //G-Strings & Thongs
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968479031") {
             //Hipsters
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968474031") {
             //Other (Panties)
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
 
         // Fashion > Women > Clothing > Lingerie > Shapewear
         if (selectedCategoryId === "1968483031") {
             //Control Panties
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968486031") {
             //Leggings
-
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "1968481031") {
             //Other (Shapewear)
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
 
         }
         else if (selectedCategoryId === "1968482031") {
             //Shaping Bodysuits
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968487031") {
             //Thigh Slimmers
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
 
         }
         else if (selectedCategoryId === "1968488031") {
             //Tops
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968489031") {
             //Waist Shapers
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
 
         // Fashion > Women > Clothing > Lingerie > Shapewear > Control Slips
         if (selectedCategoryId === "17752560031") {
             //Other (Control Slips)
+            handleFormFieldLayout65()
+            setStyleOptions(["Full Slip", "Underskirt", "Pant Liner Slip"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968484031") {
             //Shaping Full Slips
+            handleFormFieldLayout65()
+            setStyleOptions(["Full Slip", "Underskirt", "Pant Liner Slip"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968485031") {
             //Shaping Half Slips
+            handleFormFieldLayout65()
+            setStyleOptions(["Full Slip", "Underskirt", "Pant Liner Slip"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
 
         // Fashion > Women > Clothing > Lingerie > Slips
         if (selectedCategoryId === "1968491031") {
             //Full Slips
+            handleFormFieldLayout65()
+            setStyleOptions(["Full Slip", "Underskirt", "Pant Liner Slip"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968492031") {
             //Half Slips
+            handleFormFieldLayout65()
+            setStyleOptions(["Full Slip", "Underskirt", "Pant Liner Slip"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968490031") {
             //Other (Slips)
+            handleFormFieldLayout65()
+            setStyleOptions(["Full Slip", "Underskirt", "Pant Liner Slip"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1968493031") {
             //Pant Liner Slips
+            handleFormFieldLayout65()
+            setStyleOptions(["Full Slip", "Underskirt", "Pant Liner Slip"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
 
@@ -5993,37 +6477,82 @@ const ProductDetails = () => {
         // Fashion > Women > Clothing > Lingerie > Thermals
         if (selectedCategoryId === "1968495031") {
             //Bottoms
-
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "1968494031") {
             //Other (Thermals)
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1968496031") {
             //Sets
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
 
         }
         else if (selectedCategoryId === "1968497031") {
             //Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
 
         // Fashion > Women > Clothing > Maternity >Ethnic Wear
         if (selectedCategoryId === "3723373031") {
             //Bottom Wear
-
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
         else if (selectedCategoryId === "3723374031") {
             //Maternity Kurtas & Kurtis
+            handleFormFieldLayout60();
+            setStyleOptions(["Pleated", "Empire", "Regular", "Asymmetric", "A-Line", "Anarkali", "Angrakha", "Ruffled", "Layered and Tiered", "Pathani"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Synthetic", "Polycotton", "Voile", "Tussar Silk", "Chiffon", "Dupion Silk", "Modal", "Net", "Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic"])
 
         }
         else if (selectedCategoryId === "3659022031") {
             //Other (Ethnic Wear)
-
+            handleFormFieldLayout62();
+            setStyleOptions(["Achkan", "Pathan Suit", "Sherwani", "Suit Piece", "Other", "A-Line", "Anarkali", "Angrakha", "Bubble Hem", "Davani", "Dress Material", "Empire", "Halterneck", "Mermaid", "One-Shoulder", "Pleated", "Princess Cut",
+                "Set Mundu", "Sharara", "Shirt", "Straight", "Strapless", "Wrap Kurtas", "Chudidar", "Dhoti", "Jodhpuri", "Legging", "Lungi", "Mundu", "Parallel", "Patialas", "Pyjama", "Salwar", "Sarouel", "Butterfly Pallu", "Dupatta Saree", "Half Saree",
+                "Lehenga Saree", "Ready Pleated Saree", "With Blouse Piece", "Without Blouse Piece", "Back Button", "Backless", "Bustier", "Front Button", "Long Cholis", "Singlets", "Singlets", "Sleeveless"])
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
+            setOccasionDescriptionOptions(["Athletic", "Business", "Casual", "Ceremony", "Evening"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
         }
         else if (selectedCategoryId === "3723375031") {
             //Salwar Suits
+            handleFormFieldLayout63()
+            setStyleOptions(["Pleated", "Empire", "Regular", "Straight", "Panelled", "Asymmetric", "A-Line", "Anarkali", "Angrakha", "Ruffled", "Layered and Tiered", "Pathani"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Chanderi", "Chiffon", "Brasso", "Dupion Silk", "Georgette", "Jute Cotton", "Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Modal", "Net", "Khadi", "Organza"])
 
         }
 
@@ -6031,63 +6560,1549 @@ const ProductDetails = () => {
         // Fashion > Women > Clothing > Maternity >Lingerie
         if (selectedCategoryId === "1953311031") {
             //Belly Bands & Supports
-
+            handleFormFieldLayout46()
         }
         else if (selectedCategoryId === "2107034031") {
             //Camisoles & Tanks
+            handleFormFieldLayout65()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
 
         }
         else if (selectedCategoryId === "1953313031") {
             //Lingerie Sets
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1953314031") {
             //Nursing Bras
+            handleFormFieldLayout67()
+            setStyleOptions(["Minimalist", "Contemporary", "Casual", "Classic", "Retro", "Modern"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setSpecialFeatureOptions(["Waterproof", "Lightweight", "Pump Compatible Hands Free", "Anti-Sag", "Fade Resistant", "Seamless", "Shrink Resistant", "Removable Strap", "Removable Padding", "Stain Resistant", "Water Resistant"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
         else if (selectedCategoryId === "1953310031") {
             //Other (Lingerie)
-
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
         }
         else if (selectedCategoryId === "1953312031") {
             //Panties
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1953338031") {
             //Pantyhose & Stockings
+            handleFormFieldLayout78();
+            setStyleOptions(["Thigh High", "Garter Belt and Thigh High", "High Waist", "Control Top"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "16039207031") {
             //Shapewear
-
+            handleFormFieldLayout71();
+            setStyleOptions(["Body Shaper", "Tummy Tucker", "Shaping Vest", "Tummy and Thigh Shaper", "Waist Cincher"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Nylon", "Thermoplastic Polyurethane", "Leather", "Plastic", "Metal", "Cotton", "Cashmere", "Silk", "Polypropylene", "Stainless Steel", "Resin", "Neoprene", "Rubber", "Polycarbonate", "Polyvinyl Chloride", "Faux Leather",
+                "Polyester", "Vinyl", "Wood", "Cork", "Silicone", "Aluminium", "Ethylene Vinyl Acetate", "Suede", "Foam", "Alloy Steel", "Polyurethane", "Paper", "Linen", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Denim", "Wool", "Acrylic", "Fur"])
         }
 
         // Fashion > Women > Clothing > Maternity > Sleep & Loungewear
         if (selectedCategoryId === "1953317031") {
             //Nighties & Nightdresses
+            handleFormFieldLayout74();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Cotton", "Cotton blend", "Lace", "Linen", "Linen Blend", "Modal", "Nylon", "Modal Blend", "Net", "Polyester Blend", "Polyester", "Nylon Blend", "Rayon", "Rayon Blend", "Satin",
+                "Satin blend", "Silk", "Silk Blend", "Viscose Blend", "Wool", "Wool blend", "Acrylic blend"])
 
         }
         else if (selectedCategoryId === "16085628031") {
             //Nightwear Sets
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1953315031") {
             //Other (Sleep & Loungewear)
-
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
         }
         else if (selectedCategoryId === "1953316031") {
             //Pajama Bottoms
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
 
         }
         else if (selectedCategoryId === "1953318031") {
             //Pyjama Sets
+            handleFormFieldLayout71()
+            setStyleOptions(["Pajamas", "Pajama Set", "Shorts", "Shorts Set", "Capris", "Capris Set", "Salwar", "Salwar Set"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
         else if (selectedCategoryId === "1953319031") {
             //Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
 
+        // Fashion > Women > Clothing > Maternity > Sportswear
+        if (selectedCategoryId === "1953302031") {
+            // Hoodies
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        else if (selectedCategoryId === "1953296031") {
+            // Sports Shirts & Tees
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+        }
+        else if (selectedCategoryId === "1953297031") {
+            // Sports Shorts
+            handleFormFieldLayout72()
+            setStyleOptions(["Chino Shorts", "Regular Shorts", "Cargo Shorts", "Bermuda Shorts", "Gym Shorts", "Running Shorts", "Cycling Shorts", "Yoga Shorts", "Outdoor Shorts", "Training Shorts", "Hotpants", "Skorts", "Board Shorts", "Boyfriend Shorts", "Cut Off Shorts", "Skort", "Boy Shorts", "Hybrid Shorts", "Pleated Shorts", "Boxer Shorts"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Home", "Casual", "Evening"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+        else if (selectedCategoryId === "1953298031") {
+            // Sports Skirts
+            handleFormFieldLayout73();
+            setStyleOptions(["A-Line", "Bodycon", "Fit and flare", "Pencil", "Peplum", "Pinafore", "Pleated", "Sheath", "Shift", "Skater", "Tulip", "Wrap", "Kilt", "Asymmetric", "Full", "Bubble", "Skort", "Frills", "Slit", "Tutu", "Sarong", "Bustle", "Mermaid", "Culotte", "Trumpet", "Tiered"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Ethnic", "Casual", "Evening", "Business", "Ceremony"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+        else if (selectedCategoryId === "1953299031") {
+            // Sports Trousers
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+        else if (selectedCategoryId === "1953328031") {
+            // Sweatshirts
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        // Fashion > Women > Clothing > Maternity > Swim & Beachwear
+        if (selectedCategoryId === "1953334031") {
+            // Cover-Ups & Sarongs
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+        else if (selectedCategoryId === "1953335031") {
+            // One-Piece Swimsuits
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+
+        else if (selectedCategoryId === "27980992031") {
+            // Rash Guard Shirts
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+        else if (selectedCategoryId === "1953336031") {
+            //Shorts
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+        else if (selectedCategoryId === "1953337031") {
+            //Tankinis
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+
+        // Fashion > Women > Clothing > Maternity > Swim & Beachwear > Bikinis
+        if (selectedCategoryId === "1953331031") {
+            //Bottoms
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+        else if (selectedCategoryId === "1953330031") {
+            //Other (Bikinis)
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+        else if (selectedCategoryId === "1953332031") {
+            //Sets
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+        else if (selectedCategoryId === "1953333031") {
+            //Tops
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+
+        // Fashion > Women > Clothing > Maternity > Western Wear
+        if (selectedCategoryId === "1953301031") {
+            //Dresses
+            handleFormFieldLayout56();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Pinafore", "Wrap", "Tulip", "T-Shirt", "Empire", "Cocktail", "One-Shoulder", "Bubble Hem", "Sheath", "Bustier", "Tunic", "Shirt", "Kimono", "Fit & Flare", "Pleated", "Shift", "A-Line", "Skater", "Peplum", "Kaftan", "Strapless", "Bodycon"])
+
+        }
+        else if (selectedCategoryId === "1953303031") {
+            //Jeans
+            handleFormFieldLayout58()
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+        else if (selectedCategoryId === "1953309031") {
+            //Leggings
+            handleFormFieldLayout58()
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+
+        else if (selectedCategoryId === "") {
+            //Suits & Blazers
+            handleFormFieldLayout78();
+            setStyleOptions(["Bandhgala", "Double breasted", "Open front", "Single breasted", "Tuxedo"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "1953299031") {
+            //Track Pants & Joggers
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+        else if (selectedCategoryId === "1953344031") {
+            //Trousers
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+
+        // Fashion > Women > Clothing > Maternity > Western Wear > Dresses & Jumpsuits
+        if (selectedCategoryId === "1953301031") {
+            //Dresses
+            handleFormFieldLayout56();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Pinafore", "Wrap", "Tulip", "T-Shirt", "Empire", "Cocktail", "One-Shoulder", "Bubble Hem", "Sheath", "Bustier", "Tunic", "Shirt", "Kimono", "Fit & Flare", "Pleated", "Shift", "A-Line", "Skater", "Peplum", "Kaftan", "Strapless", "Bodycon"])
+
+        }
+        // else if (selectedCategoryId === "") {
+        //     //Jumpsuits & Overalls
+
+        // }
+        // else if (selectedCategoryId === "") {
+        //     //Other (Dresses & Jumpsuits)
+
+        // }
+
+        // Fashion > Women > Clothing > Maternity > Western Wear > Skirts & Shorts
+        if (selectedCategoryId === "1953325031") {
+            //Shorts
+            handleFormFieldLayout72()
+            setStyleOptions(["Chino Shorts", "Regular Shorts", "Cargo Shorts", "Bermuda Shorts", "Gym Shorts", "Running Shorts", "Cycling Shorts", "Yoga Shorts", "Outdoor Shorts", "Training Shorts", "Hotpants", "Skorts", "Board Shorts", "Boyfriend Shorts", "Cut Off Shorts", "Skort", "Boy Shorts", "Hybrid Shorts", "Pleated Shorts", "Boxer Shorts"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Home", "Casual", "Evening"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+        else if (selectedCategoryId === "1953326031") {
+            //Skirts
+            handleFormFieldLayout73();
+            setStyleOptions(["A-Line", "Bodycon", "Fit and flare", "Pencil", "Peplum", "Pinafore", "Pleated", "Sheath", "Shift", "Skater", "Tulip", "Wrap", "Kilt", "Asymmetric", "Full", "Bubble", "Skort", "Frills", "Slit", "Tutu", "Sarong", "Bustle", "Mermaid", "Culotte", "Trumpet", "Tiered"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Ethnic", "Casual", "Evening", "Business", "Ceremony"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+
+        // Fashion > Women > Clothing > Maternity > Western Wear > Tops, T-Shirts & Shirts
+        if (selectedCategoryId === "1968542031") {
+            //Other (Tops, T-Shirts & Shirts)
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968544031") {
+            //Polos
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968444031") {
+            //Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968545031") {
+            //T-Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968546031") {
+            //Tanks & Camis
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968543031") {
+            //Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        // Fashion > Women > Clothing > Maternity > Western Wear > Winterwear
+        if (selectedCategoryId === "1953321031") {
+            //Coats
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1953302031") {
+            //Hoodies
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1953323031") {
+            //Jackets
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        else if (selectedCategoryId === "1953328031") {
+            //Sweatshirts
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1953322031") {
+            //Vests
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        // Fashion > Women > Clothing > Maternity > Western Wear > Winterwear > Sweaters
+        if (selectedCategoryId === "1953305031") {
+            //Cardigans
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+        else if (selectedCategoryId === "1953304031") {
+            //Other (Sweaters)
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+        else if (selectedCategoryId === "1953307031") {
+            //Pullovers
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+        else if (selectedCategoryId === "1953306031") {
+            //Vests
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+
+
+        // Fashion > Women > Clothing > Maternity > Western Wear > Winterwear > Thermals
+        if (selectedCategoryId === "16085624031") {
+            //Other (Thermals)
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
+        }
+        else if (selectedCategoryId === "16085626031") {
+            //Thermal Bottoms
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "16085627031") {
+            //Thermal Sets
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+        else if (selectedCategoryId === "16085625031") {
+            //Thermal Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        // Fashion > Women > Clothing > Sleep & Lounge Wear
+        if (selectedCategoryId === "1968465031") {
+            //Babydolls
+            handleFormFieldLayout74();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Cotton", "Cotton blend", "Lace", "Linen", "Linen Blend", "Modal", "Nylon", "Modal Blend", "Net", "Polyester Blend", "Polyester", "Nylon Blend", "Rayon", "Rayon Blend", "Satin",
+                "Satin blend", "Silk", "Silk Blend", "Viscose Blend", "Wool", "Wool blend", "Acrylic blend"])
+        }
+        else if (selectedCategoryId === "15759866031") {
+            //Lounge Shorts
+            handleFormFieldLayout72()
+            setStyleOptions(["Chino Shorts", "Regular Shorts", "Cargo Shorts", "Bermuda Shorts", "Gym Shorts", "Running Shorts", "Cycling Shorts", "Yoga Shorts", "Outdoor Shorts", "Training Shorts", "Hotpants", "Skorts", "Board Shorts", "Boyfriend Shorts", "Cut Off Shorts", "Skort", "Boy Shorts", "Hybrid Shorts", "Pleated Shorts", "Boxer Shorts"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Home", "Casual", "Evening"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+        else if (selectedCategoryId === "1968501031") {
+            //Nighties & Nightdresses
+            handleFormFieldLayout74();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Cotton", "Cotton blend", "Lace", "Linen", "Linen Blend", "Modal", "Nylon", "Modal Blend", "Net", "Polyester Blend", "Polyester", "Nylon Blend", "Rayon", "Rayon Blend", "Satin",
+                "Satin blend", "Silk", "Silk Blend", "Viscose Blend", "Wool", "Wool blend", "Acrylic blend"])
+
+        }
+        else if (selectedCategoryId === "16085623031") {
+            //Nightwear Sets
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+        else if (selectedCategoryId === "1968502031") {
+            //Onesies
+            handleFormFieldLayout71()
+            setStyleOptions(["Pajamas", "Pajama Set", "Shorts", "Shorts Set", "Capris", "Capris Set", "Salwar", "Salwar Set"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "1968498031") {
+            //Other (Sleep & Lounge Wear)
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
+        }
+        else if (selectedCategoryId === "1968504031") {
+            //Pajama Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968503031") {
+            //Pyjama Sets
+            handleFormFieldLayout71()
+            setStyleOptions(["Pajamas", "Pajama Set", "Shorts", "Shorts Set", "Capris", "Capris Set", "Salwar", "Salwar Set"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "1968499031") {
+            //Pyjamas & Lounge Pants
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+        else if (selectedCategoryId === "1968500031") {
+            //Sleep Robes
+            handleFormFieldLayout75();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+
+        // Fashion > Women > Clothing > Sportswear
+        if (selectedCategoryId === "6264311031") {
+            //Active Dresses
+            handleFormFieldLayout56();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Pinafore", "Wrap", "Tulip", "T-Shirt", "Empire", "Cocktail", "One-Shoulder", "Bubble Hem", "Sheath", "Bustier", "Tunic", "Shirt", "Kimono", "Fit & Flare", "Pleated", "Shift", "A-Line", "Skater", "Peplum", "Kaftan", "Strapless", "Bodycon"])
+
+        }
+        else if (selectedCategoryId === "1968442031") {
+            //Athletic Socks
+            handleFormFieldLayout55()
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+        else if (selectedCategoryId === "1968439031") {
+            //Leggings
+            handleFormFieldLayout58()
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+
+        else if (selectedCategoryId === "1968437031") {
+            //Shorts
+            handleFormFieldLayout72()
+            setStyleOptions(["Chino Shorts", "Regular Shorts", "Cargo Shorts", "Bermuda Shorts", "Gym Shorts", "Running Shorts", "Cycling Shorts", "Yoga Shorts", "Outdoor Shorts", "Training Shorts", "Hotpants", "Skorts", "Board Shorts", "Boyfriend Shorts", "Cut Off Shorts", "Skort", "Boy Shorts", "Hybrid Shorts", "Pleated Shorts", "Boxer Shorts"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Home", "Casual", "Evening"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+        else if (selectedCategoryId === "1968434031") {
+            //Sweaters
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+        else if (selectedCategoryId === "1968443031") {
+            //Track Jackets
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968430031") {
+            //Vests
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+
+        // Fashion > Women > Clothing > Sportswear > Base Layers & Compression
+        if (selectedCategoryId === "3414761031") {
+            //Arm Warmers
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+        else if (selectedCategoryId === "3414765031") {
+            //Compression Socks
+            handleFormFieldLayout55()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setOccasionDescriptionOptions(["Formal", "Casual", "Sports", "Baptism", "Easter", "Christmas", "Graduation", "Prom", "Anniversary", "Birthday", "St. Patricks Day", "Thanksgiving", "Hanukkah", "Kwanzaa", "Bridal Shower", "Mothers Day", "Wedding", "Baby Shower", "Baby Shower", "Fathers Day", "Halloween", "Retirement", "Valentines Day"])
+            setStyleOptions(["Ankle Length", "No-Show", "Calf Length", "Knee Length", "Regular", "Over the Knee", "Thigh High"])
+            setMaterialTypeItem(["Cotton", "Cotton blend", "Lace", "Linen", "Linen Blend", "Modal", "Nylon", "Modal Blend", "Net", "Polyester Blend", "Polyester", "Nylon Blend", "Rayon", "Rayon Blend", "Satin",
+                "Satin blend", "Silk", "Silk Blend", "Viscose Blend", "Wool", "Wool blend", "Acrylic blend"])
+
+        }
+        else if (selectedCategoryId === "3414762031") {
+            //Leg Warmers
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+
+        }
+
+        else if (selectedCategoryId === "3414763031") {
+            //Pants
+            handleFormFieldLayout58()
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+        else if (selectedCategoryId === "3414764031") {
+            //Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "22202816031") {
+            //Shorts
+            handleFormFieldLayout72()
+            setStyleOptions(["Chino Shorts", "Regular Shorts", "Cargo Shorts", "Bermuda Shorts", "Gym Shorts", "Running Shorts", "Cycling Shorts", "Yoga Shorts", "Outdoor Shorts", "Training Shorts", "Hotpants", "Skorts", "Board Shorts", "Boyfriend Shorts", "Cut Off Shorts", "Skort", "Boy Shorts", "Hybrid Shorts", "Pleated Shorts", "Boxer Shorts"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Home", "Casual", "Evening"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+
+        // Fashion > Women > Clothing > Sportswear > Base Layers & Compression > Thermal Underwear
+        if (selectedCategoryId === "1968495031") {
+            //Bottoms
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+        else if (selectedCategoryId === "1968494031") {
+            //Other (Thermal Underwear)
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+        else if (selectedCategoryId === "1968496031") {
+            //Sets
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+
+        }
+        else if (selectedCategoryId === "1968497031") {
+            //Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        // Fashion > Women > Clothing > Sportswear > Innerwear
+        if (selectedCategoryId === "3659019031") {
+            //Active Undershirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968432031") {
+            //Briefs
+            handleFormFieldLayout64();
+            setStyleOptions(["Active Undershorts", "Bikinis", "Bloomers", "Boxers", "Boyshorts", "Brazilian Tangas", "Briefs", "G-strings", "Hipsters", "Nappy",
+                "Panties", "Thongs", "Training Pants", "Trunks"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only", "Hand Wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "1968431031") {
+            //Other (Innerwear)
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
+        }
+        else if (selectedCategoryId === "27065028031") {
+            //Protective Sports Bras
+            handleFormFieldLayout67()
+            setStyleOptions(["Minimalist", "Contemporary", "Casual", "Classic", "Retro", "Modern"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setSpecialFeatureOptions(["Waterproof", "Lightweight", "Pump Compatible Hands Free", "Anti-Sag", "Fade Resistant", "Seamless", "Shrink Resistant", "Removable Strap", "Removable Padding", "Stain Resistant", "Water Resistant"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968433031") {
+            //Sports Bras
+            handleFormFieldLayout67()
+            setStyleOptions(["Minimalist", "Contemporary", "Casual", "Classic", "Retro", "Modern"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setSpecialFeatureOptions(["Waterproof", "Lightweight", "Pump Compatible Hands Free", "Anti-Sag", "Fade Resistant", "Seamless", "Shrink Resistant", "Removable Strap", "Removable Padding", "Stain Resistant", "Water Resistant"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        // Fashion > Women > Clothing > Sportswear > Sets
+        if (selectedCategoryId === "1968435031") {
+            //Other (Sets)
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+        else if (selectedCategoryId === "25965182031") {
+            //Sweatsuits
+            handleFormFieldLayout75();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "1968440031") {
+            //Tracksuits
+            handleFormFieldLayout75();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "3414271031") {
+            //Workout Top & Bottom Sets
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+
+        // Fashion > Women > Clothing > Sportswear > Shirts & Tees
+        if (selectedCategoryId === "26978647031") {
+            //Button-Down Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "25965186031") {
+            //Long Sleeve Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968436031") {
+            //Other (Shirts & Tees)
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+
+        }
+        else if (selectedCategoryId === "25965185031") {
+            //Polos
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "25965183031") {
+            //T-Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "25965184031") {
+            //Tank Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        // Fashion > Women > Clothing > Sportswear > Skirts & Skorts
+        if (selectedCategoryId === "25965165031") {
+            //Other (Skirts & Skorts)
+            handleFormFieldLayout73();
+            setStyleOptions(["A-Line", "Bodycon", "Fit and flare", "Pencil", "Peplum", "Pinafore", "Pleated", "Sheath", "Shift", "Skater", "Tulip", "Wrap", "Kilt", "Asymmetric", "Full", "Bubble", "Skort", "Frills", "Slit", "Tutu", "Sarong", "Bustle", "Mermaid", "Culotte", "Trumpet", "Tiered"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Ethnic", "Casual", "Evening", "Business", "Ceremony"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+        else if (selectedCategoryId === "1968438031") {
+            //Skirts
+            handleFormFieldLayout73();
+            setStyleOptions(["A-Line", "Bodycon", "Fit and flare", "Pencil", "Peplum", "Pinafore", "Pleated", "Sheath", "Shift", "Skater", "Tulip", "Wrap", "Kilt", "Asymmetric", "Full", "Bubble", "Skort", "Frills", "Slit", "Tutu", "Sarong", "Bustle", "Mermaid", "Culotte", "Trumpet", "Tiered"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Ethnic", "Casual", "Evening", "Business", "Ceremony"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+        else if (selectedCategoryId === "25965179031") {
+            //Skorts
+            handleFormFieldLayout73();
+            setStyleOptions(["A-Line", "Bodycon", "Fit and flare", "Pencil", "Peplum", "Pinafore", "Pleated", "Sheath", "Shift", "Skater", "Tulip", "Wrap", "Kilt", "Asymmetric", "Full", "Bubble", "Skort", "Frills", "Slit", "Tutu", "Sarong", "Bustle", "Mermaid", "Culotte", "Trumpet", "Tiered"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Ethnic", "Casual", "Evening", "Business", "Ceremony"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+
+        // Fashion > Women > Clothing > Sportswear > Sweatshirts & Hoodies
+        if (selectedCategoryId === "1968446031") {
+            //Hoodies
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "11400133031") {
+            //Other (Sweatshirts & Hoodies)
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968532031") {
+            //Sweatshirts
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        // Fashion > Women > Clothing > Sportswear > Trousers
+        if (selectedCategoryId === "1968441031") {
+            //Other (Trousers)
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+        else if (selectedCategoryId === "25965180031") {
+            //Sweatpants
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+        else if (selectedCategoryId === "25965181031") {
+            //Track Pants
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+
+        // Fashion > Women > Clothing >  Sunglasses & Spectacle Frames
+        if (selectedCategoryId === "1968398031") {
+            //Glasses Cases
+            handleFormFieldLayout71();
+            setStyleOptions(["Traditional", "Victorian", "Classic", "Asian", "Retro", "Vintage"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Nylon", "Cardboard", "Leather", "Plastic", "Metal", "Cotton", "Engineered Wood", "Silk", "Polypropylene", "Stainless Steel", "Resin", "Neoprene", "Rubber", "Polycarbonate", "Polyvinyl Chloride", "Faux Leather",
+                "Polyester", "Vinyl", "Wood", "Cork", "Silicone", "Aluminium", "Ethylene Vinyl Acetate", "Suede", "Foam", "Alloy Steel", "Polyurethane", "Paper", "Linen", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Denim", "Wool", "Acrylic"])
+
+        }
+        else if (selectedCategoryId === "1968399031") {
+            //Glasses Chains & Lanyards
+            handleFormFieldLayout71();
+            setStyleOptions(["Classic", "Vintage"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Nylon", "Cardboard", "Leather", "Plastic", "Metal", "Cotton", "Engineered Wood", "Silk", "Polypropylene", "Stainless Steel", "Resin", "Neoprene", "Rubber", "Polycarbonate", "Polyvinyl Chloride", "Faux Leather",
+                "Polyester", "Vinyl", "Wood", "Cork", "Silicone", "Aluminium", "Ethylene Vinyl Acetate", "Suede", "Foam", "Alloy Steel", "Polyurethane", "Paper", "Linen", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Denim", "Wool", "Acrylic"])
+
+        }
+        else if (selectedCategoryId === "1968397031") {
+            //Other (Sunglasses & Spectacle Frames)
+            handleFormFieldLayout51();
+            setStyleOptions(["Arm Warmers ", "Balaclavas ", "Belt Buckles ", "Belts ", "Bow Ties ", "Cold Weather Sets ", "Cummerbunds ", "Earmuffs ", "Gloves", "Handkerchiefs ", "Headbands", "Kidney Warmers", "Leg Warmers", "Neckerchiefs", "Neckties", "Pocket Squares", "Suspenders", "Tie"])
+
+        }
+        else if (selectedCategoryId === "1374602031") {
+            //Reading Glasses
+            handleFormFieldLayout76();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "1968400031") {
+            //Spectacle Frames
+            handleFormFieldLayout76();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setFrameMaterialTypeItem(["Horn", "Nylon", "Wood", "Thermoplastic Elastomers", "Plastic", "Acetate", "Metal", "TR90", "Alloy Steel", "Stainless Steel", "Resin", "Titanium", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Rubber", "Polycarbonate", "Acrylic", "Polyvinyl Chloride"])
+
+        }
+        else if (selectedCategoryId === "1968401031") {
+            //Sunglasses
+            handleFormFieldLayout76();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setFrameMaterialTypeItem(["Vinyl", "Nylon", "Wood", "Thermoplastic Elastomers", "Plastic", "Acetate", "Metal", "TR90", "Alloy Steel", "Stainless Steel", "Resin", "Titanium", "Acrylonitrile Butadiene Styrene", "Carbon Fibre", "Rubber", "Polycarbonate", "Acrylic", "Polyvinyl Chloride"])
+
+        }
+
+        // Fashion > Women > Clothing > Swim & Beachwear
+
+        if (selectedCategoryId === "27980977031") {
+            //Monokinis
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+        else if (selectedCategoryId === "1968539031") {
+            //One-Piece Swimsuits
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+
+        else if (selectedCategoryId === "27980976031") {
+            //Rash Guard Sets
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+        else if (selectedCategoryId === "1968540031") {
+            //Shorts
+            handleFormFieldLayout72()
+            setStyleOptions(["Chino Shorts", "Regular Shorts", "Cargo Shorts", "Bermuda Shorts", "Gym Shorts", "Running Shorts", "Cycling Shorts", "Yoga Shorts", "Outdoor Shorts", "Training Shorts", "Hotpants", "Skorts", "Board Shorts", "Boyfriend Shorts", "Cut Off Shorts", "Skort", "Boy Shorts", "Hybrid Shorts", "Pleated Shorts", "Boxer Shorts"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Home", "Casual", "Evening"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+
+        // Fashion > Women > Clothing > Swim & Beachwear > Bikinis
+        if (selectedCategoryId === "1968535031") {
+            //Bottoms
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+        else if (selectedCategoryId === "1968534031") {
+            //Other (Bikinis)
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+        else if (selectedCategoryId === "1968536031") {
+            //Sets
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+        else if (selectedCategoryId === "1968537031") {
+            //Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        // Fashion > Women > Clothing > Swim & Beachwear > Tankinis
+
+        if (selectedCategoryId === "1968541031") {
+            //Other (Tankinis)
+            handleFormFieldLayout77()
+            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
+
+        }
+        else if (selectedCategoryId === "27980993031") {
+            //Sets
+            handleFormFieldLayout53();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+        else if (selectedCategoryId === "27980994031") {
+            //Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+        // Fashion > Women > Clothing > Western Wear
+        if (selectedCategoryId === "1968447031") {
+            //Jeans & Jeggings
+            handleFormFieldLayout58()
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+        else if (selectedCategoryId === "1968456031") {
+            //Leggings
+            handleFormFieldLayout58()
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+
+        else if (selectedCategoryId === "1968452031") {
+            //Ponchos & Capes
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+        else if (selectedCategoryId === "1968453031") {
+            //Shrugs
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+        else if (selectedCategoryId === "1968547031") {
+            //Trousers
+            handleFormFieldLayout58();
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+
+        }
+
+        // Fashion > Women > Clothing > Western Wear > Dresses & Jumpsuits
+        if (selectedCategoryId === "1968445031") {
+            //Dresses
+            handleFormFieldLayout56();
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Pinafore", "Wrap", "Tulip", "T-Shirt", "Empire", "Cocktail", "One-Shoulder", "Bubble Hem", "Sheath", "Bustier", "Tunic", "Shirt", "Kimono", "Fit & Flare", "Pleated", "Shift", "A-Line", "Skater", "Peplum", "Kaftan", "Strapless", "Bodycon"])
+
+        }
+        else if (selectedCategoryId === "1968448031") {
+            //Jumpsuits
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+
+
+        // Fashion > Women > Clothing > Western Wear >Rainwear
+        if (selectedCategoryId === "1968512031") {
+            //Other (Rainwear)
+            handleFormFieldLayout68();
+            setMaterialTypeItem(["Alpaca", "Angora", "Blended", "Brasso", "Brasso & Net", "Brocade & Georgette", "Cashmere", "Chiffon", "Corduroy", "Cotton", "Cotton & Crush", "Cotton Silk",
+                "Crepe", "Crepe Chiffon", "Crepe Georgette", "Crepe Net", "Crepe Silk", "Crush", "Denim", "Down", "Faux Crepe", "Faux Fur", "Faux Leather", "Felt", "Fleece",
+                "Fur", "Hemp", "Jute", "Khadi", "Kora Silk", "Leather", "Linen", "Merino", "Mohair", "Net", "Organza", "Pashmina", "Patent Leather", "Poly Cotton", "Polyester",
+                "PVC", "Raw Silk", "Rubber", "Satin", "Sequined", "Silk", "Silk & Georgette", "Silk Cotton", "Smooth Leather", "Suede", "Synthetic", "Tassar Silk", "Tissue",
+                "Velvet", "Velvet & Net", "Viscose", "Wool", "Other", "Georgette", "Faux Georgette"])
+        }
+        else if (selectedCategoryId === "1968513031") {
+            //Rain Trousers
+            handleFormFieldLayout58()
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+        }
+        else if (selectedCategoryId === "1968514031") {
+            //Raincoats
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+
+        }
+        else if (selectedCategoryId === "1968515031") {
+            //Snow Trousers & Bibs
+            handleFormFieldLayout71()
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "1968516031") {
+            //Snowsuits
+            handleFormFieldLayout71()
+            setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+
+        // Fashion > Women > Clothing >  Western Wear >Skirts & Shorts
+
+        if (selectedCategoryId === "1968510031") {
+            //Shorts
+            handleFormFieldLayout72()
+            setStyleOptions(["Chino Shorts", "Regular Shorts", "Cargo Shorts", "Bermuda Shorts", "Gym Shorts", "Running Shorts", "Cycling Shorts", "Yoga Shorts", "Outdoor Shorts", "Training Shorts", "Hotpants", "Skorts", "Board Shorts", "Boyfriend Shorts", "Cut Off Shorts", "Skort", "Boy Shorts", "Hybrid Shorts", "Pleated Shorts", "Boxer Shorts"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Home", "Casual", "Evening"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "1968511031") {
+            //Skirts
+            handleFormFieldLayout73();
+            setStyleOptions(["A-Line", "Bodycon", "Fit and flare", "Pencil", "Peplum", "Pinafore", "Pleated", "Sheath", "Shift", "Skater", "Tulip", "Wrap", "Kilt", "Asymmetric", "Full", "Bubble", "Skort", "Frills", "Slit", "Tutu", "Sarong", "Bustle", "Mermaid", "Culotte", "Trumpet", "Tiered"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setOccasionDescriptionOptions(["Athletic", "Ethnic", "Casual", "Evening", "Business", "Ceremony"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+        }
+
+        // Fashion > Women > Clothing >  Western Wear > Suits & Blazers
+        if (selectedCategoryId === "1968529031") {
+            //Blazers
+            handleFormFieldLayout91()
+            setStyleOptions(["Bandhgala", "Double breasted", "Open front", "Single breasted", "Tuxedo"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "1968528031") {
+            //Skirt Suits
+            handleFormFieldLayout78();
+            setStyleOptions(["Bandhgala", "Double breasted", "Open front", "Single breasted", "Tuxedo"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "1968530031") {
+            //Trouser Suits
+            handleFormFieldLayout78();
+            setStyleOptions(["Bandhgala", "Double breasted", "Open front", "Single breasted", "Tuxedo"])
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
+
+        }
+        else if (selectedCategoryId === "1968531031") {
+            //Waistcoats & Suit Vests
+            handleFormFieldLayout48()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
+            setMaterialTypeItem(["Faux Fur", "Faux Leather", "Fur", "Polyester", "Polyethylene", "Nitrile", "Nylon", "Spandex", "Vinyl", "Leather", "Plastic", "Cotton", "Cotton Blend", "Aramid Fibre", "Silk",
+                "Polyurethane", "Neoprene", "Rayon", "Carbon Fibre", "Wool", "Acrylic", "Lace", "Linen", "Linen Blend", "Modal", "Modal Blend", "Net", "Nylon Blend", "Polyester Blend",
+                "Rayon Blend", "Satin", "Satin blend", "Silk Blend", "Viscose Blend", "Wool blend", "Acrylic blend", "Genuine Leather", "Synthetic Leather",
+                "Canvas", "Faux Leather", "Silicone", "Leather", "Metal", "Suede", "Rhinestone", "Acrylonitrile Butadiene Styrene", "Rubber", "Polycarbonate", "Polyvinyl Chloride"])
+
+        }
+
+        // Fashion > Women > Clothing >  Western Wear > Tops, T-Shirts & Shirts
+        if (selectedCategoryId === "1968542031") {
+            //Other (Tops, T-Shirts & Shirts)
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968544031") {
+            //Polos
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968444031") {
+            //Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968545031") {
+            //T-Shirts
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968546031") {
+            //Tanks & Camis
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968543031") {
+            //Tops
+            handleFormFieldLayout66()
+            setStyleOptions(["Western", "Bohemian", "Retro"])
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+
+
+
+        // Fashion > Women > Clothing >  Western Wear > Winter Wear > Coats, Jackets & Vests
+        if (selectedCategoryId === "1968506031") {
+            //Coats
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968508031") {
+            //Jackets
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968505031") {
+            //Other (Coats, Jackets & Vests)
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968507031") {
+            //Vests
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+
+        // Fashion > Women > Clothing >  Western Wear > Winter Wear > Sweaters
+        if (selectedCategoryId === "1968450031") {
+            //Cardigans
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+        else if (selectedCategoryId === "1968449031") {
+            //Other (Sweaters)
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+        else if (selectedCategoryId === "1968451031") {
+            //Pullover Sweaters
+            handleFormFieldLayout70();
+            setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
+            setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
+                "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
+
+        }
+
+        // Fashion > Women > Clothing >  Western Wear > Winter Wear > Sweatshirts & Hoodies
+        if (selectedCategoryId === "1968446031") {
+            //Hoodies
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "11400133031") {
+            //Other (Sweatshirts & Hoodies)
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        else if (selectedCategoryId === "1968532031") {
+            //Sweatshirts
+            handleFormFieldLayout69()
+            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
+            setMaterialTypeItem(["Polyester", "Polyester blend", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk", "Satin", "Satin blend", "Viscose blend", "Stretch Cotton", "Velvet", "Microfiber", "Pure Cotton",
+                "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
+
+        }
+        // Fashion > Women > Handbags 
+        if (selectedCategoryId === "1983350031") {
+            //Clutches
+
+        }
+        else if (selectedCategoryId === "2917442031") {
+            //Messenger Bags
+
+        }
+        else if (selectedCategoryId === "1983351031") {
+            //Sling & Cross-Body Bags
+
+        }
+        else if (selectedCategoryId === "1983347031") {
+            //Women's Backpacks
+
+        }
+        else if (selectedCategoryId === "2917497031") {
+            //Women's Wallets
+
+        }
+        // Fashion > Women > Handbags  > Handbags
+        if (selectedCategoryId === "1983352031") {
+            //Hobos & Shoulder Bags
+
+        }
+        else if (selectedCategoryId === "1983354031") {
+            //Satchels
+
+        }
+        else if (selectedCategoryId === "1983355031") {
+            //Top-Handle Bags
+
+        }
+        else if (selectedCategoryId === "1983356031") {
+            //Totes
+
+        }
     }, [selectedCategoryId])
 
 
@@ -6116,7 +8131,7 @@ const ProductDetails = () => {
 
     // const [inputValue, setInputValue] = React.useState('');
 
-
+    console.log("render", " ProductDetails Page")
     const handleSetIncludedValue = () => {
 
     }
@@ -16910,33 +18925,7 @@ const ProductDetails = () => {
                 {
                     productCareInstructionsField ? (
                         <>
-                            {/* <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='productCareInstruction'
-                                    rules={{
-                                        required: "this field is required",
 
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2"></label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="Dry clean only"
-                                                    id="productCareInstruction"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.productCareInstruction)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div> */}
 
                             <CareInstructions careInstructionOptions={careInstructionOptions} />
                         </>) : ""
@@ -19879,6 +21868,9 @@ const ProductDetails = () => {
                                                     <MenuItem value="Athletic">Athletic</MenuItem>
                                                     <MenuItem value="Skinny">Skinny</MenuItem>
                                                     <MenuItem value="Oversized">Oversized</MenuItem>
+                                                    <MenuItem value="Western">Western</MenuItem>
+                                                    <MenuItem value="Overall">Overall</MenuItem>
+                                                    <MenuItem value="Compression">Compression</MenuItem>
                                                 </TextField>
                                             </div>
                                         </>
@@ -21050,6 +23042,8 @@ const ProductDetails = () => {
                                                     <MenuItem value="Racerback">Racerback</MenuItem>
                                                     <MenuItem value="Adjustable">Adjustable</MenuItem>
                                                     <MenuItem value="One Shoulder">One Shoulder</MenuItem>
+                                                    <MenuItem value="Hand-Carry">Hand-Carry</MenuItem>
+                                                    <MenuItem value="Strapless">Strapless</MenuItem>
                                                 </TextField>
                                             </div>
                                         </>
@@ -23850,6 +25844,146 @@ const ProductDetails = () => {
                                                     <MenuItem value="Date-Week-Month">Date-Week-Month</MenuItem>
                                                     <MenuItem value="Date-Week">Date-Week</MenuItem>
                                                 </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+
+                {
+                    capacityField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                    <label className='labelbold'>Capacity</label>
+                                </div>
+                                <div className="col-8 col-sm-7 col-lg-6">
+
+                                    <div className='row align-items-end'>
+                                        <Controller
+                                            control={control}
+                                            name='productCapacity'
+                                            rules={{
+                                                required: "this field is required",
+                                                pattern: {
+                                                    value: new RegExp('^[0-9]+$'),
+                                                    message: "not a valid formate"
+                                                }
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            placeholder="5"
+                                                            id="productCapacity"
+                                                            variant="outlined"
+                                                            {...field}
+                                                            style={{ width: "100%" }}
+                                                            error={Boolean(errors.productCapacity)}
+                                                        />
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                        <Controller
+                                            control={control}
+                                            name='productCapacityUnit'
+                                            rules={{
+                                                required: "this is required"
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            id="productCapacityUnit"
+                                                            variant="outlined"
+                                                            select
+                                                            style={{ width: "100%" }}
+                                                            {...field}
+                                                            error={Boolean(errors.productCapacityUnit)}
+                                                        >
+                                                            <MenuItem value="">-Select-</MenuItem>
+                                                            <MenuItem value="Liters">Liters</MenuItem>
+                                                            <MenuItem value="Quarts">Quarts</MenuItem>
+                                                            <MenuItem value="Fluid Ounces">Fluid Ounces</MenuItem>
+                                                            <MenuItem value="Ounces">Ounces</MenuItem>
+                                                            <MenuItem value="Mililiters">Mililiters</MenuItem>
+                                                            <MenuItem value="Cubic Feet">Cubic Feet</MenuItem>
+                                                            <MenuItem value="Microliters">Microliters</MenuItem>
+                                                            <MenuItem value="Cubic Centimeters">Cubic Centimeters</MenuItem>
+                                                            <MenuItem value="Pints">Pints</MenuItem>
+                                                            <MenuItem value="Gallons">Gallons</MenuItem>
+                                                            <MenuItem value="Pounds">Pounds</MenuItem>
+                                                            <MenuItem value="Tons">Tons</MenuItem>
+                                                            <MenuItem value="Cubic Inches">Cubic Inches</MenuItem>
+                                                            <MenuItem value="Kilogram">Kilogram</MenuItem>
+                                                        </TextField>
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </>) : ""
+                }
+                {
+                    handleTypeField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='handleType'
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Handle Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    placeholder="single"
+                                                    id="handleType"
+                                                    variant="outlined"
+                                                    {...field}
+                                                    style={{ width: "100%" }}
+                                                    error={Boolean(errors.handleType)}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    sizeDisplayNameField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='sizeDisplayName'
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Size Display Name</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    placeholder="single"
+                                                    id="sizeDisplayName"
+                                                    variant="outlined"
+                                                    {...field}
+                                                    style={{ width: "100%" }}
+                                                    error={Boolean(errors.sizeDisplayName)}
+                                                />
                                             </div>
                                         </>
                                     )}
