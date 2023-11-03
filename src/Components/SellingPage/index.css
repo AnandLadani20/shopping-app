@@ -109,7 +109,7 @@
 
 .selling-header-menu-area {
     display: block;
-    ;
+    
 
 }
 
@@ -350,7 +350,6 @@
 .hero-img-area-innerchild-rounded {
     width: 380px;
     height: 380px;
-
     border-radius: 50%;
     border: 1px solid #4bbee1;
     display: flex;

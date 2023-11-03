@@ -6,24 +6,24 @@ import {
 
 } from "@mui/material";
 import TextareaAutosize from '@mui/base/TextareaAutosize';
-import { RiImageAddFill } from 'react-icons/ri';
-import { FaUpload } from 'react-icons/fa';
-import { MdDelete } from 'react-icons/md';
-import { AiOutlinePlus } from 'react-icons/ai';
-import { FiChevronLeft } from 'react-icons/fi';
-import { FiChevronRight } from 'react-icons/fi';
-import { useSelector } from 'react-redux';
+// import { RiImageAddFill } from 'react-icons/ri';
+// import { FaUpload } from 'react-icons/fa';
+// import { MdDelete } from 'react-icons/md';
+// import { AiOutlinePlus } from 'react-icons/ai';
+// import { FiChevronLeft } from 'react-icons/fi';
+// import { FiChevronRight } from 'react-icons/fi';
+// import { useSelector } from 'react-redux';
 
 const MAX_UPLOAD_LIMIT = 9;
 
-const ProductDiscription = ({ setProductFilePath }) => {
+const ProductDiscription = () => {
 
 
 
     const { control, formState: { errors } } = useFormContext();
 
     const [uploadedFiles, setUploadedFiles] = useState([]);
-    const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+    // const [selectedImageIndex, setSelectedImageIndex] = useState(null);
     const [filePaths, setFilePaths] = useState(Array(MAX_UPLOAD_LIMIT).fill(null));
 
     const handleFileChange = async (e, index) => {
@@ -203,7 +203,8 @@ const ProductDiscription = ({ setProductFilePath }) => {
                                     <div className='my-4'>
 
                                         <label htmlFor='file-upload-9' className='upload-multipleFiles-txt'>
-                                            <FaUpload className='upload-multipleFiles-icon' />
+                                            <span className='upload-multipleFiles-icon'>upload icon</span>
+                                            {/* <FaUpload className='upload-multipleFiles-icon' /> */}
                                             Upload 9 Images 	&nbsp;
                                             <input
                                                 id='file-upload-9'
@@ -235,12 +236,22 @@ const ProductDiscription = ({ setProductFilePath }) => {
                                                                 style={{ display: 'none' }}
                                                             />
                                                             <label htmlFor={`file-input-replace-${index}`} className='product-image-show-box-replace-label'>
-                                                                <AiOutlinePlus className='product-image-show-box-replace' />
+                                                                <span className='product-image-show-box-replace'>plus icon</span>
+                                                                {/* <AiOutlinePlus className='product-image-show-box-replace' /> */}
                                                             </label>
 
-                                                            <button type='button' onClick={() => handleDeleteImage(index)} className='product-image-show-box-delete-btn'><MdDelete className='product-image-show-box-delete' /></button>
-                                                            <button type='button' onClick={() => handleMoveImageLeft(index)} className='product-image-show-box-left-position-btn'><FiChevronLeft className='product-image-show-box-left-position' /></button>
-                                                            <button type='button' onClick={() => handleMoveImageRight(index)} className='product-image-show-box-right-position-btn'><FiChevronRight className='product-image-show-box-right-position' /></button>
+                                                            <button type='button' onClick={() => handleDeleteImage(index)} className='product-image-show-box-delete-btn'>
+                                                                <span className='product-image-show-box-delete'>delete icon</span>
+                                                                {/* <MdDelete className='product-image-show-box-delete' /> */}
+                                                                </button>
+                                                            <button type='button' onClick={() => handleMoveImageLeft(index)} className='product-image-show-box-left-position-btn'>
+                                                                <span className='product-image-show-box-left-position' >left icon</span>
+                                                                {/* <FiChevronLeft className='product-image-show-box-left-position' /> */}
+                                                                </button>
+                                                            <button type='button' onClick={() => handleMoveImageRight(index)} className='product-image-show-box-right-position-btn'>
+                                                                <span className='product-image-show-box-right-position'>right icon</span>
+                                                                {/* <FiChevronRight className='product-image-show-box-right-position' /> */}
+                                                                </button>
                                                         </div>
                                                     </div>
                                                 )}
@@ -261,7 +272,8 @@ const ProductDiscription = ({ setProductFilePath }) => {
                                                                             }
                                                                         }}
                                                                     >
-                                                                        <RiImageAddFill className='product-image-upload-icon' />
+                                                                        <span className='product-image-upload-icon'>Add icon</span>
+                                                                        {/* <RiImageAddFill className='product-image-upload-icon' /> */}
                                                                         <input
                                                                             type='file'
                                                                             id={`file-input-${index}`}

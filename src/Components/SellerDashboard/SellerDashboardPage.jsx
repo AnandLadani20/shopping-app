@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import headerLogo from '../../Assests/logo/Dhiyodha white.png'
 import './index.css';
-import { AiFillWechat } from 'react-icons/ai'
-import { BsFillQuestionCircleFill } from 'react-icons/bs'
-import { BsBellFill } from 'react-icons/bs'
-import { FaUser } from 'react-icons/fa'
-import { AiOutlineSearch } from 'react-icons/ai'
+
 import ModalNewProductList from './AddProduct/ModalNewProductList';
 
 const SellerDashboardPage = () => {
@@ -70,16 +66,19 @@ const SellerDashboardPage = () => {
                 <div className='seller-dashbord-header-rightside'>
                   <div className='seller-dashbord-header-account-content'>
                     <div className='seller-dashbord-chatbot d-flex align-items-center gap-1'>
-                      <AiFillWechat className='chat-icon' /><p>CHAT</p>
+                      {/* <AiFillWechat className='chat-icon' /> */}
+                      <p>CHAT</p>
                     </div>
                     <div className='seller-dashboard-questions'>
-                      <BsFillQuestionCircleFill className='question-icon' />
+                      {/* <BsFillQuestionCircleFill className='question-icon' /> */}
                     </div>
                     <div className='seller-dashboard-bell'>
-                      <BsBellFill className='bell-icon' />
+                      {/* <BsBellFill className='bell-icon' /> */}
                     </div>
                     <div className='seller-dashboard-user-account d-flex align-items-center gap-2'>
-                      <div><FaUser className='guest-icon' /></div>
+                      <div>
+                        {/* <FaUser className='guest-icon' /> */}
+                      </div>
                       <div>
                         <p>Guest</p>
                         <p>User@123.com</p>
@@ -122,40 +121,15 @@ const SellerDashboardPage = () => {
                                 className='seller-dashboard-searchbtn'
                                 onClick={handleSearch}
                               >
-                                <AiOutlineSearch className='searchIcon-addproduct-seller-deshboard' />Search
+                                {/* <AiOutlineSearch className='searchIcon-addproduct-seller-deshboard' /> */}
+                                Search
                               </button>
                             </div>
                           </div>
                         </form>
                       </div>
 
-                      {/* <div className='seller-dashboard-search-product-bar'>
-                        <form>
-                          <div className="form-group">
-                            <div className='row'>
-                              <div className='col-8'>
-                                <div className='d-flex justify-content-between'>
-                                  <div>
-                                    <input type='radio' name='searchProduct' id='singleProduct' value='singleProduct' checked={showSearchproduct === 'singleProduct'} onChange={handleChange} />
-                                    <label htmlFor='singleProduct' className='searchradiolabel'>Search for a product</label>
-                                  </div>
-                                  <div>
-                                    <input type='radio' name='searchProduct' id='multipleProduct' value='multipleProduct' checked={showSearchproduct === 'multipleProduct'} onChange={handleChange} />
-                                    <label htmlFor='multipleProduct' className='searchradiolabel'>Search Multiples products</label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className='mt-3 mb-3 d-flex justify-content-between align-items-start'>
-                              {
-                                showSearchproduct === "singleProduct" ? (<input type='text' className='form-control' style={{ width: "80%", padding: "12px", borderRadius: "0", border: "1px solid grey" }} placeholder='Product name,UPC, EAN, ISBN, or ASIN' />) :
-                                  (<textarea rows="5" className="form-control" style={{ width: "80%", padding: "12px", borderRadius: "0", border: "1px solid grey" }} placeholder='You can search for multiple UPC, EAN,ISBN or ASIN ID'></textarea>)
-                              }
-                              <button type="button" style={{ padding: "10px 20px", borderRadius: "0" }} className=" d-flex align-items-center seller-dashboard-searchbtn"> <AiOutlineSearch className='searchIcon-product-sellerdashbord' />Search</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div> */}
+               
                       <div className='seller-dashboard-product-options my-4'>
                         <div className='row '>
                           <div className='col'>

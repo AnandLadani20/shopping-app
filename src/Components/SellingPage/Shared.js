@@ -1,7 +1,6 @@
 import testimonial3 from '../../Assests/testimonial/testimonial3.jpg'
 import testimonial4 from '../../Assests/testimonial/testimonial4.jpg'
 import testimonial5 from '../../Assests/testimonial/testimonial5.jpg'
-import customerVideo from '../../Assests/video/Customer-Testimonial.mp4'
 import productVideo from '../../Assests/video/Production.mp4'
 
 
@@ -11,7 +10,7 @@ const testimonialDatas = [
         testimonialName: "vani",
         desc: "Project Lead...",
         date: "27 January",
-        videosrc: customerVideo,
+        videosrc: productVideo,
         imgsrc: testimonial3
     },
     {
@@ -27,7 +26,7 @@ const testimonialDatas = [
         testimonialName: "vani",
         desc: "Project Lead...",
         date: "27 January",
-        videosrc: customerVideo,
+        videosrc: productVideo,
         imgsrc: testimonial5
     },
     {
@@ -35,7 +34,7 @@ const testimonialDatas = [
         testimonialName: "vani",
         desc: "Project Lead...",
         date: "27 January",
-        videosrc: customerVideo,
+        videosrc: productVideo,
         imgsrc: testimonial3
     },
     {
@@ -43,7 +42,7 @@ const testimonialDatas = [
         testimonialName: "vani",
         desc: "Project Lead...",
         date: "27 January",
-        videosrc: customerVideo,
+        videosrc: productVideo,
         imgsrc: testimonial3
     },
     {
@@ -51,7 +50,7 @@ const testimonialDatas = [
         testimonialName: "vani",
         desc: "Project Lead...",
         date: "27 January",
-        videosrc: customerVideo,
+        videosrc: productVideo,
         imgsrc: testimonial3
     },
     {
@@ -59,7 +58,7 @@ const testimonialDatas = [
         testimonialName: "vani",
         desc: "Project Lead...",
         date: "27 January",
-        videosrc: customerVideo,
+        videosrc: productVideo,
         imgsrc: testimonial3
     },
     {
@@ -67,7 +66,7 @@ const testimonialDatas = [
         testimonialName: "vani",
         desc: "Project Lead...",
         date: "27 January",
-        videosrc: customerVideo,
+        videosrc: productVideo,
         imgsrc: testimonial3
     },
 ]

@@ -1,8 +1,8 @@
 import React from 'react'
 import VideoPlayer from '../VideoPlayer'
-import productVideo from '../../../Assests/video/two-step verification.mp4'
+import productVideo from '../../../Assests/video/Production.mp4'
 import {
-    Button,
+    Button
 } from "@mui/material";
 
 const AccountRecovery = () => {

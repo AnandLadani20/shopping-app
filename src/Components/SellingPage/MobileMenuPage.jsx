@@ -2,12 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import shoppingBag from '../../Assests/hero-gif/online-shopping (1).png';
 // import { AiFillCloseCircle } from 'react-icons/ai';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
+// import { AiOutlineCloseCircle } from 'react-icons/ai';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import hero from '../../Assests/logo/Dhiyodha (1)n.png';
 import ModalLoginButton from './ModalLoginButton';
@@ -34,7 +34,8 @@ const MobileMenuPage = ({setMobileMenu}) => {
                             <div className='selling-header-menubtn-area gap-2'  onClick={hanleHideMenu}>
                             <span className='fs-5'>Close</span>
                             {/* <AiFillCloseCircle className='selling-closemenubtn-style' onClick={hanleHideMenu} /> */}
-                            <AiOutlineCloseCircle className='selling-closemenubtn-style'/>
+                            {/* <AiOutlineCloseCircle className='selling-closemenubtn-style'/> */}
+
                             </div>
                         </div>
                     </div>
@@ -43,7 +44,7 @@ const MobileMenuPage = ({setMobileMenu}) => {
 
                 <Accordion className='py-2'>
                     <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
+                        // expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
@@ -77,7 +78,7 @@ const MobileMenuPage = ({setMobileMenu}) => {
                 </Accordion>
                 <Accordion className='py-2'>
                     <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
+                        // expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2a-content"
                         id="panel2a-header"
                     >
@@ -109,7 +110,7 @@ const MobileMenuPage = ({setMobileMenu}) => {
                 </Accordion>
                 <Accordion className='py-2'>
                     <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
+                        // expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2a-content"
                         id="panel2a-header"
                     >
@@ -142,7 +143,7 @@ const MobileMenuPage = ({setMobileMenu}) => {
                 </Accordion>
                 <Accordion className='py-2'>
                     <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
+                        // expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2a-content"
                         id="panel2a-header"
                     >
@@ -174,7 +175,7 @@ const MobileMenuPage = ({setMobileMenu}) => {
                 </Accordion>
                 <Accordion className='py-2'>
                     <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
+                        // expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2a-content"
                         id="panel2a-header"
                     >

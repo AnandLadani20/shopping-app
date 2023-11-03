@@ -1,8 +1,8 @@
 import React from 'react'
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import { PiPlayThin } from 'react-icons/pi';
-import { AiFillCloseCircle } from 'react-icons/ai';
+// import { PiPlayThin } from 'react-icons/pi';
+// import { AiFillCloseCircle } from 'react-icons/ai';
 
 
 const style = {
@@ -21,7 +21,8 @@ export default function BasicModal({reviewData}) {
 
   return (
     <div>
-        <PiPlayThin className='testimonial-reviws-play' onClick={handleOpen} />
+        {/* <PiPlayThin className='testimonial-reviws-play' onClick={handleOpen} /> */}
+        <span className='testimonial-reviws-play' onClick={handleOpen} >Play</span>
    
       <Modal
         open={open}
@@ -29,7 +30,10 @@ export default function BasicModal({reviewData}) {
 
       >
         <Box sx={style}>
-         <button onClick={handleClose} className='bg-transparent border-0' style={{position:"absolute",zIndex:"3",right:"0",top:"-8%"}}><AiFillCloseCircle style={{fontSize:"28px",color:"#fff"}}/></button>   
+         <button onClick={handleClose} className='bg-transparent border-0' style={{position:"absolute",zIndex:"3",right:"0",top:"-8%"}}>
+          {/* <AiFillCloseCircle style={{fontSize:"28px",color:"#fff"}}/> */}
+          <span style={{fontSize:"28px",color:"#fff"}}>close</span>
+          </button>   
         <video src={reviewData}  controls></video>
         </Box>
       </Modal>

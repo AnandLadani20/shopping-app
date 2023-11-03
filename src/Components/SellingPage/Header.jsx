@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import hero from '../../Assests/logo/Dhiyodha white.png';
 import MenuPage from './MenuPage';
-import { GiHamburgerMenu } from 'react-icons/gi';
+
 
 import MobileMenuPage from './MobileMenuPage';
 
@@ -28,7 +28,8 @@ const Header = () => {
             </div>
             <div className='col-2 selling-header-menu'>
               <div className='selling-header-menubtn-area'>
-              <GiHamburgerMenu className='selling-menubtn-style' onClick={handleShowMenu} />
+                <p className='selling-menubtn-style' onClick={handleShowMenu} >menu</p>
+              {/* <GiHamburgerMenu /> */}
               </div>
             </div>
             <MenuPage />

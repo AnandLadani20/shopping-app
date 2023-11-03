@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react'
 import {
-    Typography,
+  
     Button,
     Stepper,
     Step,
@@ -13,14 +13,14 @@ import {
     FormProvider,
 } from "react-hook-form";
 import './index.css'
-import { MdHome } from 'react-icons/md';
-import { GrFormNext } from 'react-icons/gr'
+// import { MdHome } from 'react-icons/md';
+// import { GrFormNext } from 'react-icons/gr'
 import ProductIdentity from './ProductIdentity';
 import ProductDetails from './ProductDetails';
 import ProductOffer from './ProductOffer';
 import ProductDiscription from './ProductDiscription';
 import { useSelector } from 'react-redux';
-import index from 'toastify';
+
 import ProductVariation from './ProductVariation';
 import { useDispatch } from 'react-redux';
 import { setProductStepperData } from '../../../../ReduxToolKit/Features/ProductStepperData';
@@ -29,10 +29,10 @@ import { setProductStepperData } from '../../../../ReduxToolKit/Features/Product
 
 const ProductStepper = () => {
     const [activeStep, setActiveStep] = useState(0);
-    const [productfilepath, setProductFilePath] = useState("")
+    // const [productfilepath, setProductFilePath] = useState("")
     const [removeDiscription, setRemoveDiscription] = useState(false)
     // const [showVariationProduct, setShowVariationProduct] = useState(false)
-    const [variantionData, setVariationData] = useState([])
+    
 
     const categoriesTitle = useSelector((state) => state.categoriesTitle);
     const subCategoriesTitle = useSelector((state) => state.subCategoriesTitle);
@@ -797,6 +797,40 @@ const ProductStepper = () => {
             //Sweatshirts
             setRemoveDiscription(true)
         }
+        // Fashion > Women > Jewellery
+        else if (selectedCategoryId === "7124358031") {
+            //Other (Jewellery)
+            setRemoveDiscription(true)
+        }
+
+        // Fashion > Women > Jewellery > Beads & Charms
+        if (selectedCategoryId === "2152534031") {
+            //Bead Spacers
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "2152535031") {
+            //Beads
+            setRemoveDiscription(true)
+        }
+        else if (selectedCategoryId === "4330648031") {
+            //Charm & Bead Carriers
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Jewellery > Body Jewellery
+        else if (selectedCategoryId === "2152536031") {
+            //Other (Body Jewellery)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Jewellery > Body Jewellery > Piercings
+        else if (selectedCategoryId === "2152538031") {
+            //Other (Piercings)
+            setRemoveDiscription(true)
+        }
+        // Fashion > Women > Jewellery > Hair Accessories
+        else if (selectedCategoryId === "2152556031") {
+            //Other (Hair Accessories)
+            setRemoveDiscription(true)
+        }
     }, [selectedCategoryId])
 
     console.log("render", " ProductStepper Page")
@@ -830,11 +864,11 @@ const ProductStepper = () => {
             case 1:
                 return <ProductDetails />;
             case 2:
-                return <ProductVariation setVariationData={setVariationData} />;
+                return <ProductVariation />;
             case 3:
                 return <ProductOffer />;
             case 4:
-                return <ProductDiscription setProductFilePath={setProductFilePath} />;
+                return <ProductDiscription />;
             default:
                 return "unknown step";
         }
@@ -870,7 +904,6 @@ const ProductStepper = () => {
             productSellWidthUnit: "",
             productSellHeight: "",
             productSellHeightUnit: "",
-            productVariation: "",
             itemDepthfrontToback: "",
             itemDepthfrontTobackUnit: "",
             itemWidthsideToside: "",
@@ -1007,16 +1040,20 @@ const ProductStepper = () => {
                                 <div className='product-category-path-wrap'>
                                     <h4>Category</h4>
                                     <h4>|</h4>
-                                    <div><MdHome className='home-icon' /></div>
+                                    <div>
+                                        <span>home icon</span>
+                                        {/* <MdHome className='home-icon' /> */}
+                                        </div>
                                     <div></div>
                                     <div>
                                         <ul className='d-flex'>
                                             <li>{categoriesTitle}</li>
-                                            <li><GrFormNext className="navigate-next-icon" /></li>
+
+                                            <li><span className="navigate-next-icon">next icon</span></li>
                                             <li>{subCategoriesTitle}</li>
-                                            <li><GrFormNext className="navigate-next-icon" /></li>
+                                            <li><span className="navigate-next-icon">next icon</span></li>
                                             <li>{subofSubCategoriesTitle}</li>
-                                            <li><GrFormNext className="navigate-next-icon" /></li>
+                                            <li><span className="navigate-next-icon">next icon</span></li>
                                             <li>{thirdSubCategoriesTitle}</li>
                                         </ul>
                                     </div>

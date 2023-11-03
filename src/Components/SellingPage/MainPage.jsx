@@ -19,12 +19,7 @@ import ModalSellingButton from './ModalSellingButton';
 import SvgAnimation from './SvgAnimation';
 import VideoPlayer from './VideoPlayer';
 import { useState } from 'react';
-import { AiFillPlayCircle } from 'react-icons/ai'
-import { LiaLessThanSolid } from 'react-icons/lia'
-import { LiaGreaterThanSolid } from 'react-icons/lia'
-import { BsCart4 } from 'react-icons/bs'
-import { BsCurrencyRupee } from 'react-icons/bs'
-import { FaRegCreditCard } from 'react-icons/fa'
+
 import ModalReview from './ModalReview'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
@@ -240,9 +235,18 @@ const MainPage = () => {
                         <div className='col-lg-6 col-md-6 col-12'>
                             <div className='selling-mainpage-hero-img-area' data-aos="zoom-in" data-aos-duration="1000">
                                 <div className='hero-img-area-rounded'>
-                                    <div className='hero-img-area-rounded-cicleicon4'><FaRegCreditCard className='cicleicon4Style' /></div>
-                                    <div className='hero-img-area-rounded-cicleicon5'><BsCart4 className='cicleicon5Style' /></div>
-                                    <div className='hero-img-area-rounded-cicleicon6'><BsCurrencyRupee className='cicleicon6Style' /></div>
+                                    <div className='hero-img-area-rounded-cicleicon4'>
+                                        <span className='cicleicon4Style'></span>
+                                        {/* <FaRegCreditCard className='cicleicon4Style' /> */}
+                                        </div>
+                                    <div className='hero-img-area-rounded-cicleicon5'>
+                                        {/* <BsCart4 className='cicleicon5Style' /> */}
+                                        <span className='cicleicon5Style'>cart</span>
+                                        </div>
+                                    <div className='hero-img-area-rounded-cicleicon6'>
+                                        <span className='cicleicon6Style'>currency</span>
+                                        {/* <BsCurrencyRupee className='cicleicon6Style' /> */}
+                                        </div>
                                 </div>
                                 <div className='hero-img-area-innerchild-rounded'>
                                     <div className='hero-img-area-rounded-cicleicon'></div>
@@ -389,7 +393,8 @@ const MainPage = () => {
                                         <div className='flow-chart-gradient-orange'><div className='middle-chartedlayout-box '>
                                             <h6>  Register Business <br />On<br /> Dhiyodha</h6>
                                             <div className='charted-flow-video-box'>
-                                                <AiFillPlayCircle className='charted-flow-video' />
+                                                <p className='charted-flow-video'>video play</p>
+                                                {/* <AiFillPlayCircle  /> */}
                                             </div>
                                         </div>
                                         </div>
@@ -431,9 +436,12 @@ const MainPage = () => {
                         <div className='col-12'>
                             <div className='reviews-carousel-slider'>
                                 <div className='pagination-slide'>
-                                    <span><LiaLessThanSolid onClick={handlePreviousSlide} /></span>
+                                    <span>
+                                        <span onClick={handlePreviousSlide}>previous</span>
+                                        {/* <LiaLessThanSolid  /> */}
+                                    </span>
                                     <span className='swiper-paginations'></span>
-                                    <span onClick={handleNextSlide} ><LiaGreaterThanSolid /></span>
+                                    <span onClick={handleNextSlide} ><span>Next</span></span>
                                 </div>
                                 <Swiper
                                     slidesPerView={1}

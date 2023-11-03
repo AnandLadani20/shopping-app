@@ -18,9 +18,8 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { FaUpload } from 'react-icons/fa'
-import { BsQuestionDiamond } from 'react-icons/bs'
+// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 
 const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
@@ -230,7 +229,7 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
 
             <Accordion className='mt-3 rounded-top' expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
+                    // expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1d-content"
                     id="panel1d-header"
                     className='py-2'
@@ -381,7 +380,10 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
 
                     <div className='w-100 w-md-50 d-flex flex-column gap-1 addressProofArea'>
                         <LightTooltip title="Require one of them : AdharCard,PassPort,Driving Licence,Light Bill,Bank PassBook" arrow>
-                            <div className='ms-2 d-flex align-items-center gap-1'><p style={{ cursor: "pointer" }}>Upload Address Proof</p><BsQuestionDiamond /></div>
+                            <div className='ms-2 d-flex align-items-center gap-1'><p style={{ cursor: "pointer" }}>Upload Address Proof</p>
+                           
+                            
+                            </div>
                         </LightTooltip>
                         <Controller
                             control={control}
@@ -395,7 +397,8 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
                                     <div className='d-flex p-1'>
                                         <div className='adaddressProof-uploadArea' onClick={() => document.getElementById("file-input").click()}>
                                             <p>Upload a File</p>
-                                            <FaUpload className='fileUploadIcon' />
+                                            <span className='fileUploadIcon'>upload icon</span>
+                                            {/* <FaUpload className='fileUploadIcon' /> */}
                                         </div>
 
                                         {/* <Button
@@ -604,7 +607,7 @@ const BusinessDetail = ({ setSignUpload, setCheckValue }) => {
 
             <Accordion className='mt-3 rounded-top' expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                 <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
+                    // expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2d-content"
                     id="panel2d-header"
                     className='py-2'

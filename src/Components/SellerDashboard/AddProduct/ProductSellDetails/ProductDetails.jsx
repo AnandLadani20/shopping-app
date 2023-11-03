@@ -32,21 +32,6 @@ const ProductDetails = () => {
         setIncludedComponentOptions((previousOptions) => [...previousOptions, ...newOptions]);
     };
 
-
-    const [formComponents1, setFormComponent1] = useState(false)
-    const [formComponents2, setFormComponent2] = useState(false)
-    const [formComponents3, setFormComponent3] = useState(false)
-    const [formComponents4, setFormComponent4] = useState(false)
-    const [formComponents5, setFormComponent5] = useState(false)
-    const [formComponents6, setFormComponent6] = useState(false)
-    const [formComponents7, setFormComponent7] = useState(false)
-    const [formComponents8, setFormComponent8] = useState(false)
-    const [formComponents9, setFormComponent9] = useState(false)
-    const [formComponents10, setFormComponent10] = useState(false)
-    const [formComponents11, setFormComponent11] = useState(false)
-    const [formComponents12, setFormComponent12] = useState(false)
-    const [formComponents13, setFormComponent13] = useState(false)
-    const [formComponents14, setFormComponent14] = useState(false)
     const [formComponents15, setFormComponent15] = useState(false)
     const [formComponents16, setFormComponent16] = useState(false)
     const [formComponents17, setFormComponent17] = useState(false)
@@ -64,6 +49,8 @@ const ProductDetails = () => {
     const [manuFacturePartNoField, setManuFacturePartNoField] = useState(false)
     const [modelNumberField, setModelNumberField] = useState(false)
     const [styleField, setStyleField] = useState(false)
+    const [itemOEMauthorizedField, setItemOEMauthorizedField] = useState(false)
+
     const [genderField, setGenderField] = useState(false)
     const [unitCountField, setUnitCountField] = useState(false)
     const [unitCountTypeField, setUnitCountTypeField] = useState(false)
@@ -151,6 +138,7 @@ const ProductDetails = () => {
     const [ageRangeDescriptionField, setAgeRangeDescriptionField] = useState(false)
     const [productTxtStyleField, setProductTxtStyleField] = useState(false)
     const [outerMaterialTypeField, setOuterMaterialTypeField] = useState(false)
+    const [innerMaterialTypeField, setInnerMaterialTypeField] = useState(false)
     const [headwearSizeSystemField, setHeadwearSizeSystemField] = useState(false)
     const [headwearSizeClassField, setHeadwearSizeClassField] = useState(false)
     const [headwearSizeValueField, setHeadwearSizeValueField] = useState(false)
@@ -257,6 +245,14 @@ const ProductDetails = () => {
     const [capacityField, setCapacityField] = useState(false)
     const [handleTypeField, setHandleTypeField] = useState(false)
     const [sizeDisplayNameField, setSizeDisplayNameField] = useState(false)
+    const [liningDescriptionField, setLiningDescriptionField] = useState(false)
+    const [storageVolumeField, setStorageVolumeField] = useState(false)
+    const [targetRegionField, setTargetRegionField] = useState(false)
+    const [networkConnectivityTechnologyField, setNetworkConnectivityTechnologyField] = useState(false)
+    const [subjectKeywordField, setSubjectKeywordField] = useState(false)
+    const [itemHeatSensitiveField, setItemHeatSensitiveField] = useState(false)
+    const [maximumRecommendedAgeField, setMaximumRecommendedAgeField] = useState(false)
+
 
     // formComponents1 =>  Model Number,Warranty Description,Included Components,Is the item OEM authorized?,Number of Boxes,Item Dimensions D x W x H,Manufacturer
     // formComponents2 =>  Model,Number of Items,Unit Count,Unit Count Type,Product Care Instructions,Contains Liquid Contents?,Is Assembly Required,Number of Pieces,Included Components,Size,Color,Color Map,Material Type,Number of Boxes,Manufacturer,Item Dimensions D x W x H
@@ -284,6 +280,35 @@ const ProductDetails = () => {
     // formComponents24 =>  Model (Number),Number of Items,Item Dimensions D x W x H,Unit Count,Unit Count Type,Product Care Instructions, Contains Liquid Contents?, Is Assembly Required, Number of Pieces, Included Components, Size, Color, Material Type, Manufacturer
     // formComponents25 =>  Manufacturer Part Number, Model Number,Style,Gender,Unit Count,Unit Count Type,Model Name, Color,Colour Map,Material Type,Material/Fabric Regulations, Product Lifecycle Supply Type
 
+    const handleFormComponent1 = () => {
+        setModelNumberField(true)
+        setWarrantyDescField(true)
+        setIncludedComponentsField(true)
+        setItemOEMauthorizedField(true)
+        setNumberOfBoxesField(true)
+        setItemDimensionsDxWxHField(true)
+        setManufactureField(true)
+    }
+    const handleFormComponent2 = () => {
+        setSearchTearmsField(true)
+        setManuFacturePartNoField(true)
+        setIsProductExpirableField(true)
+        setNumberOfItemsField(true)
+        setContainsLiquidContentField(true)
+        setIncludedComponentsField(true)
+        setNumberOfBoxesField(true)
+        setManufactureField(true)
+        setModelNumberField(true)
+
+    }
+    const handleFormComponent3 = () => {
+        setModelNumberField(true)
+        setItemDimensionsDxWxHField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setModelNameField(true)
+        setIncludedComponentsField(true)
+    }
     const handleFormFieldLayout1 = () => {
         setManuFacturePartNoField(true)
         setModelNumberField(true)
@@ -1730,6 +1755,79 @@ const ProductDetails = () => {
         setApparelSizeToRangeField(true)
         setApparelSizeBodyTypeField(true)
     }
+    const handleFormFieldLayout92 = () => {
+        setClosureTypeField(true)
+        setManuFacturePartNoField(true)
+        setOuterMaterialTypeField(true)
+        setInnerMaterialTypeField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setModelNameField(true)
+        setCapacityField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setStrapTypeField(true)
+        setHandleTypeField(true)
+        setNumberOfPocketsField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setSizeDisplayNameField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+    }
+    const handleFormFieldLayout93 = () => {
+        setClosureTypeField(true)
+        setModelNumberField(true)
+        setOuterMaterialTypeField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setNumberOfItemsField(true)
+        setModelNameField(true)
+        setTargetGenderField(true)
+        setAgeRangeDescriptionField(true)
+        setLiningDescriptionField(true)
+        setStrapTypeField(true)
+        setProductSizeField(true)
+        setStorageVolumeField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+        setItemDimensionsDxWxHField(true)
+    }
+    const handleFormFieldLayout94 = () => {
+        setClosureTypeField(true)
+        setManuFacturePartNoField(true)
+        setModelNumberField(true)
+        setOuterMaterialTypeField(true)
+        setInnerMaterialTypeField(true)
+        setStyleField(true)
+        setGenderField(true)
+        setItemDimensionsDxWxHField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setModelNameField(true)
+        setColorField(true)
+        setColorMapField(true)
+        setMaterialTypeField(true)
+        setMaterialOrFabricRegulationField(true)
+        setProductLifecycleSupplyTypeField(true)
+
+    }
+    const handleFormFieldLayout95 = () => {
+        setNumberOfItemsField(true)
+        setUnitCountField(true)
+        setUnitCountTypeField(true)
+        setWarrantyDescField(true)
+        setNetworkConnectivityTechnologyField(true)
+        setBoxContentsField(true)
+        setProductSizeField(true)
+        setTargetRegionField(true)
+        setManufactureField(true)
+    }
 
     //   const[ArtistName,setArtistName] = useState(false)
     //   const[ArtworkMedium,setArtworkMedium] = useState(false)
@@ -1764,236 +1862,236 @@ const ProductDetails = () => {
         // console.log(selectedCategoryId);
         if (selectedCategoryId === "8641217031") {
             // DesertCoolers
-            setFormComponent1(true)
+            handleFormComponent1()
 
         }
         else if (selectedCategoryId === "23034524031") {
             // miniCoolers
-            setFormComponent1(true)
+            handleFormComponent1()
         }
         else if (selectedCategoryId === "5130993031") {
             // otherAirCoolers
-            setFormComponent1(true)
+            handleFormComponent1()
         }
         else if (selectedCategoryId === "8641218031") {
             // portableCoolers
-            setFormComponent1(true)
+            handleFormComponent1()
         }
         else if (selectedCategoryId === "8641219031") {
             // towerCoolers
-            setFormComponent1(true)
+            handleFormComponent1()
         }
         else if (selectedCategoryId === "23034523031") {
             // windowCoolers
-            setFormComponent1(true)
+            handleFormComponent1()
         }
 
         // Air Purifiers category list item
         if (selectedCategoryId === "9290351031") {
             // airIonizers
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "10279697031") {
             // carAirPurifier
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "9290352031") {
             // charcoalAirPuri
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "9290353031") {
             // electroAirPuri
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "9290354031") {
             // hepaAirPuri
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "5403404031") {
             // otherAirPuri
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "9290355031") {
             // portableAirPuri
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "9290356031") {
             // ulpaAirPuri
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
 
         //Dehumidifiers category list item
         if (selectedCategoryId === "5403405031") {
             // otherDehumidifiers
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
 
         //Deodorisers category list item
         if (selectedCategoryId === "51396498031") {
             // otherDeodorisers
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
 
         //Fans category list item
         if (selectedCategoryId === "51396515031") {
             // blowerFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "51396510031") {
             // boxFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "4369221031") {
             // ceilingFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "51396517031") {
             // clipFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "51396508031") {
             // drumFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "8641216031") {
             // exhaustFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "51396512031") {
             // floorFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "2083427031") {
             // otherFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "4369223031") {
             // pedestalFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "51396514031") {
             // personalFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "4369222031") {
             // tableFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "4369224031") {
             // towerFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "51396519031") {
             // vortexActionFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "51396521031") {
             // wallMountedFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "51396507031") {
             // windowFans
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
 
 
         //Humidifier category list item
         if (selectedCategoryId === "5403407031") {
             // otherHumidifiers
-            setFormComponent3(true)
+            handleFormFieldLayout6()
         }
         else if (selectedCategoryId === "51396529031") {
             // singleRoomHumidifiers
-            setFormComponent3(true)
+            handleFormFieldLayout6()
         }
         else if (selectedCategoryId === "51396531031") {
             // wholeHouseHumidifiers
-            setFormComponent3(true)
+            handleFormFieldLayout6()
         }
 
         //Other(Heating & Cooling) category list item
         if (selectedCategoryId === "2083423031") {
             //Other(Heating & Cooling)
-            setFormComponent4(true)
+            handleFormFieldLayout5()
         }
 
         // Parts & Accessories category list item
         if (selectedCategoryId === "5403409031") {
             // airPuriPartNAccess
-            setFormComponent4(true)
+            handleFormFieldLayout5()
         }
         else if (selectedCategoryId === "5403413031") {
             // dehumidPartNAccess
-            setFormComponent4(true)
+            handleFormFieldLayout5()
         }
         else if (selectedCategoryId === "23034522031") {
             // evaCoolerPartNAccess
-            setFormComponent4(true)
+            handleFormFieldLayout5()
         }
         else if (selectedCategoryId === "5403417031") {
             // fanPartNAccess
-            setFormComponent4(true)
+            handleFormFieldLayout5()
         }
         else if (selectedCategoryId === "5403422031") {
             // heaterPartNAccess
-            setFormComponent4(true)
+            handleFormFieldLayout5()
         }
         else if (selectedCategoryId === "5403423031") {
             // humidiPartNAccess
-            setFormComponent4(true)
+            handleFormFieldLayout5()
         }
         else if (selectedCategoryId === "5403408031") {
             // otherPartNAccess
-            setFormComponent4(true)
+            handleFormFieldLayout5()
         }
 
 
         //Room Heater category list item
         if (selectedCategoryId === "8641221031") {
             // electricHeaters
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "8641222031") {
             // fanHeaters
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "8641223031") {
             // halogenHeaters
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "8641220031") {
             // heatConvertors
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "51396527031") {
             // keroseneSpaceHeaters
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "51396523031") {
             // naturalgasSpaceHeaters
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "2083424031") {
             // otherRoomHeaters
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
         else if (selectedCategoryId === "51396525031") {
             // propaneSpaceHeaters
-            setFormComponent2(true)
+            handleFormFieldLayout8()
         }
 
         //Water Heaters & Geysers category list item
         if (selectedCategoryId === "4375455031") {
             // immersionRods
-            setFormComponent8(true)
+            handleFormComponent2()
         }
         else if (selectedCategoryId === "4375456031") {
             // instantWaterHeaters
-            setFormComponent9(true)
+            handleFormFieldLayout34()
         }
         else if (selectedCategoryId === "4375457031") {
             // storageWaterHeaters
-            setFormComponent9(true)
+            handleFormFieldLayout34()
         }
 
         // Kitchen & Home Appliances
@@ -2002,41 +2100,41 @@ const ProductDetails = () => {
         // Electric Grinder
         if (selectedCategoryId === "51397085031") {
             // "Burr Grinders"
-            setFormComponent10(true)
+            handleFormFieldLayout5()
         }
         else if (selectedCategoryId === "51397081031") {
             // "Cone Grinders"
-            setFormComponent10(true)
+            handleFormFieldLayout5()
         }
         else if (selectedCategoryId === "51397083031") {
             // Electric Grinders
-            setFormComponent10(true)
+            handleFormFieldLayout5()
         }
         else if (selectedCategoryId === "1379975031") {
             // "Other (Electric Grinders)"
-            setFormComponent10(true)
+            handleFormFieldLayout5()
         }
 
         // Manual Grinder
         if (selectedCategoryId === "1379976031") {
             // "Manual Grinder"
-            setFormComponent11(true)
+            handleFormFieldLayout5()
         }
 
         // "Other (Coffee Grinders)"
         if (selectedCategoryId === "1379974031") {
             // "Other (Coffee Grinders)"
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
 
         // "Coffee Capsule Holders"
         if (selectedCategoryId === "27961558031") {
             //"Capsule Baskets"
-            setFormComponent13(true)
+            handleFormComponent3();
         }
         else if (selectedCategoryId === "27961560031") {
             //"Capsule Drawers"
-            setFormComponent14(true)
+            handleFormComponent3();
         }
         else if (selectedCategoryId === "27961559031") {
             //"Capsule Stands"
@@ -2044,7 +2142,7 @@ const ProductDetails = () => {
         }
         else if (selectedCategoryId === "27345416031") {
             //"Other (Coffee Capsule Holders)"
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
 
         // "Coffee Filters"
@@ -2068,7 +2166,7 @@ const ProductDetails = () => {
         // "Drip Trays"
         if (selectedCategoryId === "1379963031") {
             //""Other (Drip Trays)"
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
 
         // "Measuring Spoons"
@@ -2080,13 +2178,13 @@ const ProductDetails = () => {
         // "Other (Coffee Maker Accessories)"
         if (selectedCategoryId === "1379961031") {
             // "Other (Coffee Maker Accessories)"
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
 
         // "Pod Holders"
         if (selectedCategoryId === "1379966031") {
             // "Pod Holders"
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
         else if (selectedCategoryId === "1379972031") {
             // "Tea Filters"
@@ -2094,7 +2192,7 @@ const ProductDetails = () => {
         }
         else if (selectedCategoryId === "1379973031") {
             // "Water Tanks"
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
 
 
@@ -2121,7 +2219,7 @@ const ProductDetails = () => {
         }
         else if (selectedCategoryId === "1379960031") {
             // Other (Coffee, Tea & Espresso)
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
         else if (selectedCategoryId === "1379985031") {
             // Stovetop Espresso Pots
@@ -2133,7 +2231,7 @@ const ProductDetails = () => {
         }
         else if (selectedCategoryId === "1379988031") {
             // Tea Presses
-            setFormComponent12(true)
+            handleFormFieldLayout20()
 
         }
         else if (selectedCategoryId === "51396617031") {
@@ -2176,7 +2274,7 @@ const ProductDetails = () => {
         }
         else if (selectedCategoryId === "1379987031") {
             // Hot Tea Machines
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
         else if (selectedCategoryId === "22938887031") {
             // Hot Water Dispensers
@@ -2184,11 +2282,11 @@ const ProductDetails = () => {
         }
         else if (selectedCategoryId === "22938886031") {
             // Iced Tea Machines
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
         else if (selectedCategoryId === "22938883031") {
             // Other (Kettles & Tea Machines)
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
         else if (selectedCategoryId === "22938885031") {
             // Stovetop Tea Kettles
@@ -2221,7 +2319,7 @@ const ProductDetails = () => {
         }
         else if (selectedCategoryId === "32075768031") {
             // Inverter & Battery Sets
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
         else if (selectedCategoryId === "11870706031") {
             // Inverters
@@ -2229,18 +2327,18 @@ const ProductDetails = () => {
         }
         else if (selectedCategoryId === "32075766031") {
             // Other (Inverters & Sets)
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
         else if (selectedCategoryId === "32075769031") {
             // Trolleys
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
 
 
         // Other (Kitchen & Home Appliances)
         if (selectedCategoryId === "4951860031") {
             // Other (Kitchen & Home Appliances)
-            setFormComponent12(true)
+            handleFormFieldLayout20()
         }
 
         // Sewing Machines & Accessories
@@ -3753,9 +3851,9 @@ const ProductDetails = () => {
                 "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
                 "Brasso", "Jacquard", "Modal", "Art Silk"])
         }
-        // Fashion > Girls > Clothing > Sportswear > Base Layers & Compression > Thermal Underwear
 
-        if (selectedCategoryId === "") {
+        // Fashion > Girls > Clothing > Sportswear > Base Layers & Compression > Thermal Underwear
+        if (selectedCategoryId === "1968019031") {
             //Other (Thermal Underwear)
             handleFormFieldLayout48()
             setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
@@ -3766,7 +3864,7 @@ const ProductDetails = () => {
 
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1968020031") {
             //Thermal Bottoms
             handleFormFieldLayout58();
             setMaterialTypeItem(["Faux Leather", "Polyester", "Nylon", "Vinyl", "Leather", "Cashmere", "Linen Blend", "Cotton", "Silk Blend", "Silk",
@@ -3774,7 +3872,7 @@ const ProductDetails = () => {
             setStyleOptions(["Cargo", "Jogger", "Art Deco", "Carrot", "Chino", "Punk", "Harem", "Bohemian", "Rustic", "Victorian", "Classic", "Retro", "Modern", "Drop Crotch", "Renaissance", "Palazzo", "Medieval", "Capri", "Sweatpants", "Boyfriend", "Culotte", "Sailor"])
             setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "26111018031") {
             //Thermal One-Piece Suits
             handleFormFieldLayout48()
             setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
@@ -3785,7 +3883,7 @@ const ProductDetails = () => {
 
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1968021031") {
             //Thermal Sets
             handleFormFieldLayout53();
 
@@ -3794,7 +3892,7 @@ const ProductDetails = () => {
                 "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1968022031") {
             //Thermal Tops
             handleFormFieldLayout66()
             setStyleOptions(["Western", "Bohemian", "Retro"])
@@ -4127,7 +4225,7 @@ const ProductDetails = () => {
 
         }
         // Fashion > Girls > Clothing > Swimwear > Bikinis > Bikinis
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "27980997031") {
             //Bottoms
             handleFormFieldLayout77()
             setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
@@ -4135,7 +4233,7 @@ const ProductDetails = () => {
             setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "27980980031") {
             //Other (Bikinis)
             handleFormFieldLayout77()
             setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
@@ -4143,7 +4241,7 @@ const ProductDetails = () => {
             setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "27980996031") {
             //Sets
             handleFormFieldLayout77()
             setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
@@ -4151,7 +4249,7 @@ const ProductDetails = () => {
             setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "27980995031") {
             //Tops
             handleFormFieldLayout77()
             setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
@@ -4160,7 +4258,7 @@ const ProductDetails = () => {
 
         }
         // Fashion > Girls > Clothing > Swimwear > Bikinis > Tankinis
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "27980981031") {
             //Other (Tankinis)
             handleFormFieldLayout77()
             setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
@@ -4168,30 +4266,7 @@ const ProductDetails = () => {
             setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
         }
-        else if (selectedCategoryId === "") {
-            //Tankini Bottoms
-            handleFormFieldLayout77()
-            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
-            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
-            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
 
-        }
-        else if (selectedCategoryId === "") {
-            //Tankini Sets
-            handleFormFieldLayout77()
-            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
-            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
-            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
-
-        }
-        else if (selectedCategoryId === "") {
-            //Tankini Tops
-            handleFormFieldLayout77()
-            setStyleOptions(["Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
-            setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only"])
-            setFrameMaterialTypeItem(["Nylon", "Polycotton", "Satin Blend", "Linen Blend", "Cotton", "Cotton Blend", "Crepe", "Georgette", "Polyamide Blend", "Chiffon", "Nylon Blend", "Lace", "Viscose Blend", "Satin", "Acrylic Blend", "Rayon Blend", "Neoprene", "Rayon", "Microfiber Blend", "Polyester Blend", "Modal Blend", "Polyester", "Spandex", "Jacquard", "Polyamide", "Linen", "Modal", "Net", "Acrylic"])
-
-        }
         // Fashion > Girls > Clothing > Swimwear > Swimwear Sets
         if (selectedCategoryId === "27980982031") {
             //Cover-Up Sets
@@ -4378,7 +4453,7 @@ const ProductDetails = () => {
 
 
         // Fashion > Girls > Clothing > Winter Wear >Coats, Jackets & Vests
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "1967979031") {
             //Coats
             handleFormFieldLayout69()
             setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
@@ -4386,7 +4461,7 @@ const ProductDetails = () => {
                 "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1967981031") {
             //Jackets
             handleFormFieldLayout69()
             setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
@@ -4394,7 +4469,7 @@ const ProductDetails = () => {
                 "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1967978031") {
             //Other (Coats, Jackets & Vests)
             handleFormFieldLayout69()
             setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
@@ -4402,7 +4477,7 @@ const ProductDetails = () => {
                 "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1967980031") {
             //Vests
             handleFormFieldLayout69()
             setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
@@ -4411,7 +4486,7 @@ const ProductDetails = () => {
 
         }
         // Fashion > Girls > Clothing > Winter Wear > Sweaters
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "1967976031") {
             //Cardigans
             handleFormFieldLayout70();
             setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
@@ -4419,7 +4494,7 @@ const ProductDetails = () => {
                 "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1967975031") {
             //Other (Sweaters)
             handleFormFieldLayout70();
             setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
@@ -4427,7 +4502,7 @@ const ProductDetails = () => {
                 "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Recycled Polyester", "Recycled Polyester Blend"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1967977031") {
             //Pullovers
             handleFormFieldLayout70();
             setCareInstructionOptions(["Machine Wash", "Dry Clean Only", "Hand Wash Only"])
@@ -4436,7 +4511,7 @@ const ProductDetails = () => {
 
         }
         // Fashion > Girls > Clothing > Winter Wear > Sweatshirts & Hoodies
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "1967973031") {
             //Hoodies
             handleFormFieldLayout69()
             setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
@@ -4444,7 +4519,7 @@ const ProductDetails = () => {
                 "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "11400134031") {
             //Other (Sweatshirts & Hoodies)
             handleFormFieldLayout69()
             setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
@@ -4452,7 +4527,7 @@ const ProductDetails = () => {
                 "Tactel Nylon", "Tencel", "Polyamide", "Lyocell", "Cotton Polyester", "Suede", "Cotton Blend", "Wool Blend", "Acrylic Blend", "Polyurethane", "Neoprene", "Rayon", "Rayon blend", "Wool", "Acrylic", "Polycotton", "Raw Silk", "Linen", "Art Silk", "Jute"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1968004031") {
             //Sweatshirts
             handleFormFieldLayout69()
             setCareInstructionOptions(["Machine Wash", "Hand Wash", "Dry Clean Only", "First Time Dry-Clean followed by hand wash", "First Time Dry-Clean followed by machine wash"])
@@ -4462,7 +4537,7 @@ const ProductDetails = () => {
         }
 
         // Fashion > Girls > Jewellery 
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "7124370031") {
             //Anklets
             handleFormFieldLayout79()
             setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
@@ -4470,7 +4545,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124372031") {
             //Brooches & Pins
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4498,7 +4573,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124388031") {
             //Chains & Necklaces
             handleFormFieldLayout81();
             setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
@@ -4511,7 +4586,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124380031") {
             //Earrings
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
@@ -4525,7 +4600,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124387031") {
             //Jewellery Sets
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
@@ -4539,7 +4614,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "4330651031") {
             //Loose Gemstones & Diamonds
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4567,7 +4642,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124361031") {
             //Other (Jewellery)
             handleFormFieldLayout82()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4591,7 +4666,7 @@ const ProductDetails = () => {
                 "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124394031") {
             //Pendants
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
@@ -4605,7 +4680,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124395031") {
             //Rings
             handleFormFieldLayout83();
             setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
@@ -4616,7 +4691,7 @@ const ProductDetails = () => {
             setMaterialTypeItem(["Wood", "Glass", "Ceramic", "Plastic", "Metal"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152548031") {
             //Toe Rings
             handleFormFieldLayout83();
             setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
@@ -4628,7 +4703,7 @@ const ProductDetails = () => {
 
         }
         // Fashion > Girls > Jewellery > Bangles & Bracelets
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "15752582031") {
             //Bangles
             handleFormFieldLayout79()
             setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
@@ -4636,7 +4711,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "15752583031") {
             //Bracelets
             handleFormFieldLayout79()
             setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
@@ -4644,7 +4719,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124371031") {
             //Other (Bangles & Bracelets)
             handleFormFieldLayout82()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4669,7 +4744,7 @@ const ProductDetails = () => {
 
         }
         // Fashion > Girls > Jewellery > Beads & Charms
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "2152534031") {
             //Bead Spacers
             handleFormFieldLayout84();
             setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
@@ -4681,7 +4756,7 @@ const ProductDetails = () => {
 
             setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152535031") {
             //Beads
             handleFormFieldLayout85();
             setMaterialTypeItem(["Adhesive Sheets", "Adhesive Sprays", "Adhesive Waxing", "Art Glues", "Art Pastes", "Arts & Crafts Tape", "Fabric Adhesives", "Glue Sticks & Pens", "Hot Glue Sticks", "Mounting Adhesive Systems", "Clayboard", "Gessoboard", "Hardboard", "Pastelboard", "Wood Art Boards", "Banner & Sign Cloth", "Canvas Pads",
@@ -4692,7 +4767,7 @@ const ProductDetails = () => {
                 "Spray Booths", "Albums & Refills", "Chipboard", "Die-Cut Machines", "Die-Cuts", "Embellishments", "Ink Pads", "Photo Mounting Corners", "Quilling Strips", "Scrapbooking Tools", "Stamps", "Stickers", "Texture Plates",])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "4330648031") {
             //Charm & Bead Carriers
             handleFormFieldLayout84();
             setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
@@ -4705,7 +4780,7 @@ const ProductDetails = () => {
             setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152551031") {
             //Charms
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
@@ -4719,7 +4794,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "4330649031") {
             //Chunks
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
@@ -4733,7 +4808,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "4330647031") {
             //Other (Beads & Charms)
             handleFormFieldLayout84();
             setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
@@ -4749,7 +4824,7 @@ const ProductDetails = () => {
 
 
         // Fashion > Girls > Jewellery > Body Jewellery
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "15752578031") {
             //Armlets
             handleFormFieldLayout81();
             setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
@@ -4757,7 +4832,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152537031") {
             //Belly Chains & Kamarband
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4785,7 +4860,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152536031") {
             //Other (Body Jewellery)
             handleFormFieldLayout84();
             setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
@@ -4800,7 +4875,7 @@ const ProductDetails = () => {
         }
 
         // Fashion > Girls > Jewellery > Body Jewellery > Piercings
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "2152539031") {
             //Bananabells
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4821,7 +4896,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152538031") {
             //Other (Piercings)
             handleFormFieldLayout84();
             setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
@@ -4834,7 +4909,7 @@ const ProductDetails = () => {
             setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152541031") {
             //Plugs
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4855,7 +4930,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152542031") {
             //Retainers
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4876,7 +4951,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152544031") {
             //Screws
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4897,7 +4972,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152545031") {
             //Studs
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4918,7 +4993,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152546031") {
             //Tapers
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4939,7 +5014,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152547031") {
             //Tunnels
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4962,7 +5037,7 @@ const ProductDetails = () => {
         }
 
         // Fashion > Girls > Jewellery > Coins & Bars
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "15752573031") {
             //Bars
             handleFormFieldLayout82()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -4986,7 +5061,7 @@ const ProductDetails = () => {
                 "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "15752574031") {
             //Coins
             handleFormFieldLayout82()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -5010,7 +5085,7 @@ const ProductDetails = () => {
                 "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2908910031") {
             //Other (Coins & Bars)
             handleFormFieldLayout82()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -5036,19 +5111,19 @@ const ProductDetails = () => {
         }
 
         // Fashion > Girls > Jewellery > Hair Accessories
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "7124382031") {
             //Bands
             handleFormFieldLayout52()
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124383031") {
             //Clips
             handleFormFieldLayout52()
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124384031") {
             //Combs
             handleFormFieldLayout52()
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "15752584031") {
             //Maang Tikkas
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -5075,7 +5150,7 @@ const ProductDetails = () => {
                 "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124381031") {
             //Other (Hair Accessories)
             handleFormFieldLayout82()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -5099,11 +5174,11 @@ const ProductDetails = () => {
                 "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124385031") {
             //Pins
             handleFormFieldLayout52()
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "7124386031") {
             //Tiaras
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -5134,7 +5209,7 @@ const ProductDetails = () => {
 
 
         // Fashion > Girls > Jewellery > Nose Rings & Pins
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "2152540031") {
             //Nose Pins
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -5153,7 +5228,7 @@ const ProductDetails = () => {
                 "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "2152543031") {
             //Nose Rings & Nath
             handleFormFieldLayout80()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -5173,7 +5248,7 @@ const ProductDetails = () => {
                 "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "13169697031") {
             //Other (Nose Rings & Pins)
             handleFormFieldLayout82()
             setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
@@ -5198,46 +5273,41 @@ const ProductDetails = () => {
 
         }
         // Fashion > Girls > Shoes
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "1983505031") {
             //Ballet Flats
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983507031") {
             //Boots
             handleFormFieldLayout87();
             setStyleOptions(["Combat Boots", "Derby Boots", "Cowboy Boots", "Jodhpur Boots", "Desert Boots", "Slouch Boots", "Classic Boots", "Chelsea Boots", "Biker Boots", "Brogue Boots", "Wellington Boots", "Winter Boots", "Chukka Boots", "Moccasin Boots", "Snow Boots", "Wading Boots", "Caulk Boots", "Rain Boots", "Riding Boots", "Oxford Boots", "Tactical Boots"])
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983511031") {
             //Fashion Sandals
             handleFormFieldLayout88();
             setStyleOptions(["Clog", "Fashion Sandal", "Fisherman Sandal", "Floater", "Gladiator", "Outdoor Sandal", "Sport Sandal", "Thong", "Slide", "Ankle Strap", "T-Strap", "Slingback", "Flip Flop", "Wedge", "Fisherman"])
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983516031") {
             //Fashion Slippers
             handleFormFieldLayout88();
             setStyleOptions(["Clog", "Fashion Sandal", "Fisherman Sandal", "Floater", "Gladiator", "Outdoor Sandal", "Sport Sandal", "Thong", "Slide", "Ankle Strap", "T-Strap", "Slingback", "Flip Flop", "Wedge", "Fisherman"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983515031") {
             //Flip-Flops & Slippers
             handleFormFieldLayout86()
             setStyleOptions(["Bohemian", "Casual", "Classic", "Retro", "Modern"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983512031") {
             //Formal Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
-            //Other (Shoes)
-            handleFormFieldLayout86()
-            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
-        }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983509031") {
             //Pumps
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
@@ -5250,7 +5320,7 @@ const ProductDetails = () => {
 
         }
         // Fashion > Girls > Shoes > Athletic & Outdoor Sandals
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "1983460031") {
             //Other (Athletic & Outdoor Sandals)
             handleFormFieldLayout88();
             setStyleOptions(["Clog", "Fashion Sandal", "Fisherman Sandal", "Floater", "Gladiator", "Outdoor Sandal", "Sport Sandal", "Thong", "Slide", "Ankle Strap", "T-Strap", "Slingback", "Flip Flop", "Wedge", "Fisherman"])
@@ -5258,37 +5328,32 @@ const ProductDetails = () => {
         }
 
         // Fashion > Girls > Shoes > Casual Shoes
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "1983506031") {
             //Boat Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983508031") {
             //Clogs & Mules
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983510031") {
             //Espadrille Flats
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983513031") {
             //Loafers & Moccasins
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
-            //Other (Casual Shoes)
-            handleFormFieldLayout86()
-            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
-        }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983517031") {
             //Sneakers
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
@@ -5296,7 +5361,7 @@ const ProductDetails = () => {
         }
 
         // Fashion > Girls > Shoes > Ethnic Footwear
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "4068647031") {
             //Other (Ethnic Footwear)
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
@@ -5304,235 +5369,230 @@ const ProductDetails = () => {
         }
 
         // Fashion > Girls > Shoes > Sports & Outdoor Shoes
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "1983458031") {
             //American Football Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983459031") {
             //American Handball Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983461031") {
             //Badminton Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983462031") {
             //Baseball Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983463031") {
             //Basketball Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983465031") {
             //Boating Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983466031") {
             //Bowling Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983467031") {
             //Boxing Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983468031") {
             //Cheerleading Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983469031") {
             //Climbing Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983470031") {
             //Cricket Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983471031") {
             //Cycling Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983473031") {
             //Equestrian Sports Boots
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983476031") {
             //Football Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983477031") {
             //Futsal Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983478031") {
             //Golf Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983479031") {
             //Gymnastics Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983474031") {
             //Hockey Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983480031") {
             //Hunting Boots
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983481031") {
             //Indoor Court Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983482031") {
             //Lacrosse Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983483031") {
             //Martial Arts Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
-            //Other (Sports & Outdoor Shoes)
-            handleFormFieldLayout86()
-            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
-        }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983486031") {
             //Racquetball Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983487031") {
             //Rugby Boots
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983488031") {
             //Running Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983489031") {
             //Skateboarding Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983490031") {
             //Soft Tennis Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983491031") {
             //Softball Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983492031") {
             //Squash Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983493031") {
             //Table Tennis Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983494031") {
             //Team Handball Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983495031") {
             //Tennis Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983496031") {
             //Track & Field Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983485031") {
             //Training Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983502031") {
             //Volleyball Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983484031") {
             //Walking Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983503031") {
             //Water Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983504031") {
             //Wrestling Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
@@ -5540,19 +5600,14 @@ const ProductDetails = () => {
         }
 
         // Fashion > Girls > Shoes > Sports & Outdoor Shoes > Trekking & Hiking Footwear
-        if (selectedCategoryId === "") {
-            //Other (Trekking & Hiking Footwear)
-            handleFormFieldLayout86()
-            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
 
-        }
-        else if (selectedCategoryId === "") {
+        if (selectedCategoryId === "1983499031") {
             //Trekking & Hiking Boots
             handleFormFieldLayout87();
             setStyleOptions(["Combat Boots", "Derby Boots", "Cowboy Boots", "Jodhpur Boots", "Desert Boots", "Slouch Boots", "Classic Boots", "Chelsea Boots", "Biker Boots", "Brogue Boots", "Wellington Boots", "Winter Boots", "Chukka Boots", "Moccasin Boots", "Snow Boots", "Wading Boots", "Caulk Boots", "Rain Boots", "Riding Boots", "Oxford Boots", "Tactical Boots"])
 
         }
-        else if (selectedCategoryId === "") {
+        else if (selectedCategoryId === "1983500031") {
             //Trekking & Hiking Shoes
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
@@ -5560,7 +5615,7 @@ const ProductDetails = () => {
         }
 
         // Fashion > Girls > Shoes > Sports & Outdoor Shoes > Triathlon Shoes
-        if (selectedCategoryId === "") {
+        if (selectedCategoryId === "1983501031") {
             //Other (Triathlon Shoes)
             handleFormFieldLayout86()
             setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
@@ -5568,19 +5623,8 @@ const ProductDetails = () => {
         }
 
         // Fashion > Girls > Watches
-        if (selectedCategoryId === "") {
-            //Other (Watches)
-            handleFormFieldLayout89();
-            setClaspTypeItem(["Bangle", "Box Safety Clasp", "Box with Tongue & Safety Clasp", "Box with Tongue Clasp", "Buckle", "Deployment Buckle", "Deployment Clasp", "Deployment Clasp with Push Button", "Deployment Push Button Clasp with Buckle",
-                "Double Locking Fold-Over Clasp", "Expansion Band", "Fancy Clasp", "Fold-Over Clasp", "Fold-Over Clasp with Double Push Button Safety", "Fold-Over Clasp with Hidden Double Push Button", "Fold-Over Clasp with Safety", "Fold-Over Clasp with Single Push Button Safety",
-                "Fold-Over Push Button Clasp with Safety", "Hook Buckle", "Invisible Double Locking Clasp", "Jewellery Clasp", "Jewellery Clasp with Push Button", "Leather Deployment Buckle", "Leather Deployment Buckle with Safety", "Lobster Claw Clasp", "Multi-Strand Box Clasp",
-                "Pearl Clasp", "Push & Slide Clasp", "Push Button Clasp", "Single Locking Fold-Over Clasp", "Spring Ring Clasp", "Toggle Clasp", "Velcro", "Push Button Hidden Clasp", "Box With Tongue And Safety", "Flip Clasp", "Push Button Foldover Clasp With Safety", "Tang Buckle",
-                "Jewelry Clasp", "Deployment Clasp With Safety", "Hidden Clasp", "Push Button Deployment Clasp", "Hook and Loop", "Sliding Clasp"])
 
-            setItemTypeName(["Touchscreen", "Watch Repair Tool", "Hybrid", "Casual Watch", "Golfing Watch", "Running Watch", "Pocket Watch", "Fitness Watch", "Pocket Watch Chain", "Watch Winder", "Camping Watch", "Certified Pre-Owned Watch", "Triathlon Watch", "Watch", "Automatic Watch", "Dress Watch",
-                "Smart Watch", "Sport Watch", "Diving Watch", "Aviator Watch", "Watch Repair Kit", "Watch Storage Case"])
-        }
-        else if (selectedCategoryId === "") {
+        if (selectedCategoryId === "5518825031") {
             //Watchbands
             handleFormFieldLayout79()
             setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
@@ -5593,8 +5637,9 @@ const ProductDetails = () => {
                 "Pearl Clasp", "Push & Slide Clasp", "Push Button Clasp", "Single Locking Fold-Over Clasp", "Spring Ring Clasp", "Toggle Clasp", "Velcro", "Push Button Hidden Clasp", "Box With Tongue And Safety", "Flip Clasp", "Push Button Foldover Clasp With Safety", "Tang Buckle",
                 "Jewelry Clasp", "Deployment Clasp With Safety", "Hidden Clasp", "Push Button Deployment Clasp", "Hook and Loop", "Sliding Clasp"])
         }
-        // Fashion > Women > Clothing > Accessories
 
+
+        // Fashion > Women > Clothing > Accessories
         if (selectedCategoryId === "2886870031") {
             //Belt Buckles 
             handleFormFieldLayout71();
@@ -8068,41 +8113,1579 @@ const ProductDetails = () => {
         // Fashion > Women > Handbags 
         if (selectedCategoryId === "1983350031") {
             //Clutches
-
+            handleFormFieldLayout92();
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Western", "Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
         }
         else if (selectedCategoryId === "2917442031") {
             //Messenger Bags
-
+            handleFormFieldLayout92();
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Western", "Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
         }
         else if (selectedCategoryId === "1983351031") {
             //Sling & Cross-Body Bags
-
+            handleFormFieldLayout92();
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Western", "Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
         }
         else if (selectedCategoryId === "1983347031") {
             //Women's Backpacks
-
+            handleFormFieldLayout93();
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Antique", "Eclectic", "Art Deco", "Cape Cod", "American", "Shaker", "Rustic", "Asian", "Retro", "Modern", "Vintage", "French Country", "French", "Scandinavian", "Mission", "Lodge", "Garden", "Colonial", "Contemporary", "Casual", "Tropical", "Victorian",
+                "Classic", "Moroccan", "Italianate", "Shabby Chic", "English", "Mediterranean", "Cottage", "Latin", "Country", "Traditional", "Old World", "Southwestern", "Baroque"])
         }
         else if (selectedCategoryId === "2917497031") {
             //Women's Wallets
-
+            handleFormFieldLayout94();
+            setStyleOptions(["American", "Minimalist", "Contemporary", "Casual", "Classic", "Modern", "Retro"])
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
         }
         // Fashion > Women > Handbags  > Handbags
         if (selectedCategoryId === "1983352031") {
             //Hobos & Shoulder Bags
-
+            handleFormFieldLayout92();
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Western", "Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
         }
         else if (selectedCategoryId === "1983354031") {
             //Satchels
-
+            handleFormFieldLayout92();
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Western", "Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
         }
         else if (selectedCategoryId === "1983355031") {
             //Top-Handle Bags
-
+            handleFormFieldLayout92();
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Western", "Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
         }
         else if (selectedCategoryId === "1983356031") {
             //Totes
+            handleFormFieldLayout92();
+            setMaterialTypeItem(["Corduroy", "Velvet", "Georgette", "Faux Crepe", "Chiffon", "Lace", "Nylon", "Poly Cotton", "Acrylic Blend", "Polyester Blend", "Polyester", "Suede", "Organza", "Viscose", "Cotton Silk",
+                "Linen", "Denim", "Jute", "Synthetic", "Silk Cotton", "Leather", "Linen Blend", "Silk Blend", "Cotton", "Cotton Blend", "Crepe", "Net", "Nylon Blend", "Tissue",
+                "Silk", "Satin", "Satin blend", "Viscose Blend", "Patent Leather", "Sequined", "Rayon Blend", "Rayon", "Khadi", "Raw Silk", "Modal Blend", "Faux Leather", "Kora Silk",
+                "Brasso", "Jacquard", "Modal", "Art Silk"])
+            setStyleOptions(["Western", "Utility", "Deconstructed", "Bohemian", "Contemporary", "Minimal", "Retro"])
+        }
+
+        // Fashion > Women > Jewellery
+        if (selectedCategoryId === "2152533031") {
+            //Anklets
+            handleFormFieldLayout79()
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
 
         }
+        else if (selectedCategoryId === "2152550031") {
+            //Brooches & Pins
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "2152555031") {
+            //Earrings
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "2152562031") {
+            //Jewelry Sets
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "4330651031") {
+            //Loose Gemstones & Diamonds
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "2152564031") {
+            //Necklaces
+            handleFormFieldLayout81();
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "7124358031") {
+            //Other (Jewellery)
+            handleFormFieldLayout82()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+        }
+        else if (selectedCategoryId === "2152566031") {
+            //Pendants
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "2152567031") {
+            //Rings
+            handleFormFieldLayout83();
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Wood", "Glass", "Ceramic", "Plastic", "Metal"])
+
+        }
+        else if (selectedCategoryId === "2152548031") {
+            //Toe Rings
+            handleFormFieldLayout83();
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Wood", "Glass", "Ceramic", "Plastic", "Metal"])
+
+        }
+
+
+        // Fashion > Women > Jewellery > Bangles & Bracelets
+        if (selectedCategoryId === "15752575031") {
+            //Bangles
+            handleFormFieldLayout79()
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "15752576031") {
+            //Bracelets
+            handleFormFieldLayout79()
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "2152549031") {
+            //Other (Bangles & Bracelets)
+            handleFormFieldLayout79()
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+
+        // Fashion > Women > Jewellery > Beads & Charms
+        if (selectedCategoryId === "2152534031") {
+            //Bead Spacers
+            handleFormFieldLayout84();
+            setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
+                "Tungsten", "Vermeil", "White Gold", "Yellow Gold", "Oxidized Silver", "Oxidized Gold"])
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
+
+        }
+        else if (selectedCategoryId === "2152535031") {
+            //Beads
+            handleFormFieldLayout85();
+            setMaterialTypeItem(["Adhesive Sheets", "Adhesive Sprays", "Adhesive Waxing", "Art Glues", "Art Pastes", "Arts & Crafts Tape", "Fabric Adhesives", "Glue Sticks & Pens", "Hot Glue Sticks", "Mounting Adhesive Systems", "Clayboard", "Gessoboard", "Hardboard", "Pastelboard", "Wood Art Boards", "Banner & Sign Cloth", "Canvas Pads",
+                "Canvas Panels", "Canvas Tools & Accessories", "Pre-Stretched Canvas", "Rolled Canvas", "Art Backpacks", "Art Media Storage Contain", "Art Storage Cabinets", "Art Supply Carrier Bags", "Art Supply Totes", "Art Tubes", "Canvas Carriers", "Flat Files", "Grips", "Handles", "Paint Brush Holders", "Paint Brush Organisers", "Portfolios", "Print Racks", "Scrapbooking Storage", "Tool & Sketch Boxes", "Vertical Files", "Art Blades",
+                "Art Knives", "Cutting Rails", "Glass Cutting Tools", "Mat Cutter Blades", "Cutting Mats", "Paper Trimmers & Blades", "Scissors", "Art Blenders", "Charcoals", "Inks", "Markers", "Pastels", "Coloured Pencils", "Mechanical Pencil Leads", "Mechanical Pencils", "Wooden Pencils", "Fixatives", "Light Boxes", "Manikins", "Rubbing Wax", "Sharpeners", "Application Tools", "Dyes",
+                "Fabric & Textile Paints", "Fabric Decorating Kits", "Repellants", "Waxes", "Frame Molding", "Frame Rulers", "Frame Sections & Parts", "Framing Tools", "Matting & Mounting Materials", "Picture Hanging Materials", "Straight Edges", "Templates", "Glitter", "Airbrush Materials", "Kits", "Mixing Trays", "Paint Finishes", "Paint Making Materials", "Paint Primers", "Paint Reducers", "Paint Sealers", "Paint Sponges", "Paint Strainers",
+                "Paint Thinners", "Paint Tube Wringers", "Paintbrush Sets", "Paintbrushes", "Paints", "Palette Cups", "Palette Knives", "Palettes", "Crimpers", "Folders", "Scorers", "Botanicals", "Casting Sheets", "Dry Leaves", "Hand Molds", "Paper Press", "Papermaking Kits", "Papermaking Screens", "Pulp", "Punches", "Stencils", "Adhesive Removers", "Art Tool Cleaners", "Artist's Soap", "Dust Control Equipment", "Protective Clothing", "Protective Gear", "Protective Hand Cream",
+                "Spray Booths", "Albums & Refills", "Chipboard", "Die-Cut Machines", "Die-Cuts", "Embellishments", "Ink Pads", "Photo Mounting Corners", "Quilling Strips", "Scrapbooking Tools", "Stamps", "Stickers", "Texture Plates",])
+
+        }
+        else if (selectedCategoryId === "4330648031") {
+            //Charm & Bead Carriers
+            handleFormFieldLayout84();
+            setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
+                "Tungsten", "Vermeil", "White Gold", "Yellow Gold", "Oxidized Silver", "Oxidized Gold"])
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
+
+        }
+        else if (selectedCategoryId === "2152551031") {
+            //Charms
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "4330649031") {
+            //Chunks
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "4330647031") {
+            //Other (Beads & Charms)
+            handleFormFieldLayout84();
+            setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
+                "Tungsten", "Vermeil", "White Gold", "Yellow Gold", "Oxidized Silver", "Oxidized Gold"])
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
+
+        }
+
+        // Fashion > Women > Jewellery > Body Jewellery
+        if (selectedCategoryId === "15752578031") {
+            //Armlets
+            handleFormFieldLayout81();
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "2152537031") {
+            //Belly Chains & Kamarband
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "2152536031") {
+            //Other (Body Jewellery)
+            handleFormFieldLayout84();
+            setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
+                "Tungsten", "Vermeil", "White Gold", "Yellow Gold", "Oxidized Silver", "Oxidized Gold"])
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
+
+        }
+
+        // Fashion > Women > Jewellery > Body Jewellery > Piercings
+        if (selectedCategoryId === "2152539031") {
+            //Bananabells
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "2152538031") {
+            //Other (Piercings)
+            handleFormFieldLayout84();
+            setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
+                "Tungsten", "Vermeil", "White Gold", "Yellow Gold", "Oxidized Silver", "Oxidized Gold"])
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+            setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
+
+        }
+        else if (selectedCategoryId === "2152541031") {
+            //Plugs
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "2152542031") {
+            //Retainers
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+
+        }
+        else if (selectedCategoryId === "2152544031") {
+            //Screws
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "2152545031") {
+            //Studs
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "2152546031") {
+            //Tapers
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+
+        }
+        else if (selectedCategoryId === "2152547031") {
+            //Tunnels
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+
+        // Fashion > Women > Jewellery > Coins & Bars
+        if (selectedCategoryId === "15752573031") {
+            //Bars
+            handleFormFieldLayout82()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+        }
+        else if (selectedCategoryId === "15752574031") {
+            //Coins
+            handleFormFieldLayout82()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+        }
+        else if (selectedCategoryId === "2908910031") {
+            //Other (Coins & Bars)
+            handleFormFieldLayout82()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+        }
+
+        // Fashion > Women > Jewellery > Hair Accessories
+        if (selectedCategoryId === "2152557031") {
+            //Bands
+            handleFormFieldLayout52()
+        }
+        else if (selectedCategoryId === "2152558031") {
+            //Clips
+            handleFormFieldLayout52()
+        }
+        else if (selectedCategoryId === "2152559031") {
+            //Combs
+            handleFormFieldLayout52()
+        }
+        else if (selectedCategoryId === "15752577031") {
+            //Maang Tikkas
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "2152556031") {
+            //Other (Hair Accessories)
+            handleFormFieldLayout84();
+            setMetalTypeItem(["2 Colour Gold", "3 Colour Gold", "Base Metal", "Brass", "Copper", "Gold Plated", "Palladium", "Platinum", "Platinum Plated", "Rose Gold", "Silver", "Silver Plated", "Stainless Steel", "Titanium",
+                "Tungsten", "Vermeil", "White Gold", "Yellow Gold", "Oxidized Silver", "Oxidized Gold"])
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Bamboo", "Ceramic", "Coral", "Crystal", "Enamel", "Glass", "Leather", "Mother of Pearl", "Plastic", "Resin", "Rhinestone", "Rubber", "Shell", "Wood", "Brass", "Copper", "Fabric", "Gold Plated", "Lac", "Metal", "Non-Precious Metal", "Oxidized Silver", "Pearl", "Silver", "Silver Plated"])
+
+        }
+        else if (selectedCategoryId === "2152560031") {
+            //Pins
+            handleFormFieldLayout52()
+        }
+        else if (selectedCategoryId === "2152561031") {
+            //Tiaras
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+
+        // Fashion > Women > Jewellery > Mangalsutras & Tanmaniyas
+        if (selectedCategoryId === "11124458031") {
+            //Mangalsutras
+            handleFormFieldLayout81();
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "11124457031") {
+            //Other (Mangalsutras & Tanmaniyas)
+            handleFormFieldLayout81();
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+        else if (selectedCategoryId === "11124459031") {
+            //Tanmaniyas
+            handleFormFieldLayout81();
+            setGemstoneTypeItem(["Created Alexandrite", "Lava Stone", "Abalone", "Alexandrite", "Amber", "Larimar", "Chrysoprase", "Amazonite", "Amethyst", "Created Sapphire", "Zircon", "Aquamarine", "Beryl", "Andesine", "No Gemstone", "Ammolite", "Created Pearl", "Hematite", "Tigers Eye",
+                "Sodalite", "Obsidian", "Serpentine", "Labradorite", "Created Emerald", "Moonstone", "Pearl", "Selenite", "Howlite", "Bloodstone", "Tanzanite", "Jade",
+                "Morganite", "Rhodonite", "Tourmaline", "Moldavite", "Sunstone", "Agate", "Opal", "Shungite", "Created Diamond", "Garnet", "Cubic Zirconia", "Sapphire", "Emerald", "Citrine", "Rhinestone", "Ruby", "Turquoise", "Sandstone", "Aventurine", "Diamond", "Created Opal", "Quartz", "Carnelian",
+                "Lapis Lazuli", "Cats Eye", "Jasper", "Kundan", "Created Turquoise", "Moissanite", "Coral", "Jet", "Created Ruby", "Onyx", "Created Topaz", "Topaz", "Peridot"])
+
+            setMaterialTypeItem(["Nylon", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool"])
+
+        }
+
+        // Fashion > Women > Jewellery > Nose Rings & Pins
+        if (selectedCategoryId === "2152540031") {
+            //Nose Pins
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "2152543031") {
+            //Nose Rings & Nath
+            handleFormFieldLayout80()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMaterialTypeItem(["Nylon", "Alumide", "Sterling Silver", "Metal", "Stone", "Porcelain", "Pewter", "Stainless Steel", "Resin", "Titanium", "White Gold", "Copper", "Polycarbonate", "Polyvinyl Chloride", "Bronze", "Hemp", "Polyester", "Vinyl", "Epoxy", "Enamel", "Horn", "Mineral Powder", "Mother Of Pearl", "Natural Fiber", "Non-Precious Metal",
+                "Silicone", "Rose Gold", "Aluminium", "Acetate", "Suede", "Yellow Gold", "Silver", "Alloy Steel", "Polyurethane", "Faux Suede", "Acrylic", "Tibetan Silver", "Crystal", "Gemstone", "Brass", "Glass", "Leather", "Iron", "Plastic", "Cotton", "Thermoplastic Polyurethane", "Silk", "Shell", "Straw",
+                "Cubic Zirconia", "Platinum", "Rhinestone", "Rubber", "Sandalwood", "Faux Leather", "Fur", "Rosewood", "Rudraksha", "Wood", "Ebony", "Zinc", "Zirconium", "Agarwood", "Ceramic", "Paper", "German Silver", "Nickel", "Acrylonitrile Butadiene Styrene", "Wool", "Bamboo", "Bodhi", "Bone"])
+
+        }
+        else if (selectedCategoryId === "13169697031") {
+            //Other (Nose Rings & Pins)
+            handleFormFieldLayout82()
+            setGemstoneTypeItem(["Agate", "Alexandrite", "Almandine Garnet", "Amazonite", "Amber", "Amblygonite", "Amethyst", "Ametrine", "Ammolite", "Andalusite", "Andradite Garnet", "Apatite", "Aquamarine", "Aventurine", "Azurite", "Beryl", "Black Diamond", "Black Opal", "Bloodstone", "Blue Agate", "Blue Amber",
+                "Blue Chalcedony", "Blue Diamond", "Blue Opal", "Blue Sapphire", "Blue Topaz", "Blue Zircon", "Botswana Agate", "Boulder Opal", "Brazanite", "Brown Diamond", "Butterscotch Amber", "Calcite", "Caribbean Amber", "Carnelian", "Cats Eye", "Celestite", "Chalcedony", "Champagne Diamond", "Charoite",
+                "Cherry Amber", "Chrome Diopside", "Chrome Tourmaline", "Chrysoberyl", "Chrysocolla", "Chrysoprase", "Cinnabar", "Citrine", "Compressed Turquoise", "Copper Sunstone", "Coral", "Corundum", "Cream Amber", "Created Alexandrite", "Created Amethyst", "Created Aquamarine", "Created Blue Sapphire", "Created Citrine", "Created Emerald",
+                "Created Garnet", "Created Morganite", "Created Opal", "Created Padparadscha", "Created Peridot", "Created Pink Sapphire", "Created Pink Tourmaline", "Created Quartz", "Created Ruby", "Created Sapphire", "Created Spinel", "Created Tanzanite", "Created Topaz", "Created Turquoise", "Created White Sapphire", "Created Yellow Sapphire",
+                "Created Zircon Gemstone", "Crystal", "Cubic Zirconia", "Danburite", "Demantoid Garnet", "Diamond", "Diaspore", "Diopside", "Drusy Quartz", "Dumortierite", "Dyed Howlite", "Emerald", "Epidote", "Ethiopian Opal", "Fire Citrine", "Fire Opal", "Fluorite", "Fuchsite", "Garnet", "Gaspeite", "Golden Topaz", "Goldstone", "Goshenite",
+                "Granite", "Green Amber", "Green Amethyst", "Green Chalcedony", "Green Garnet", "Green Quartz", "Green Sapphire", "Green Tourmaline", "Grossular Garnet", "Gypsum", "Hauyne", "Heliodor", "Hematite", "Hessonite", "Hickoryite", "Hiddenite", "Honey Amber", "Howlite", "Imperial Topaz", "Inclusion Citrine", "Indicolite", "Indicolite Tourmaline", "Iolite", "Iron Pyrite",
+                "Jade", "Jadeite", "Jasper", "Jet", "Kunzite", "Kyanite", "Lab Grown Diamond", "Labradorite", "Lapis Lazuli", "Larimar", "Lava Rock", "Lavender Chalcedony", "Lemon Amber", "Lemon Quartz", "London Blue Topaz", "Madeira Citrine", "Magnesite", "Malachite", "Mandarin Garnet", "Marcasite", "Medusa Quartz", "Mint Tourmaline",
+                "Moissanite", "Moldavite", "Moonstone", "Morganite", "Multi Color Amber", "Nephrite Jade", "Obsidian", "Onyx", "Opal", "Orange Agate", "Orange Chalcedony", "Ouro Verde Quartz", "Padparadscha", "Paraiba", "Paraiba Topaz", "Paraiba Tourmaline", "Pearl", "Peridot", "Peruvian Opal", "Petalite", "Pezzottaite", "Pink Amethyst", "Pink Chalcedony",
+                "Pink Diamond", "Pink Quartz", "Pink Sapphire", "Pink Topaz", "Pink Tourmaline", "Prasiolite Quartz", "Prehnite", "Purple Jade", "Purple Spinel", "Pyrope Garnet", "Quartz", "Quartzite", "Red Agate", "Red Diamond", "Rhodochrosite", "Rhodolite Garnet", "Rhodonite", "Rose De France", "Rose Quartz", "Rubelite", "Rubellite Tourmaline", "Ruby", "Rutilated Quartz", "Sandstone", "Sapphire", "Sardonyx",
+                "Scapolite", "Sea Blue Chalcedony", "Selenite", "Seraphinite", "Serpentine", "Smoky Quartz", "Smoky Topaz", "Sodalite", "Spectrolite", "Spessartite Garnet", "Sphalerite", "Sphene", "Spinel", "Stabilized Turquoise", "Star Ruby", "Star Sapphire", "Strontium Titanate", "Sugilite", "Sunstone Feldspar", "Swedish Slag", "Swiss Blue Topaz", "Tanzanite", "Tashmarine Diopside", "Tiger Eye",
+                "Topaz", "Tourmaline", "Triplet Opal", "Tsavorite", "Turquoise", "Watermelon Tourmaline", "White Agate", "White Diamond", "White Sapphire", "White Topaz", "Yellow Diamond", "Yellow Sapphire", "Yellow Scapolite", "Yellow Topaz", "Yttrium Aluminium Garnet", "Zandrite", "Zircon Gemstone", "Zoisite", "No Gemstone"])
+
+            setMetalTypeItem(["Alloy", "Argentium Plated Base", "Argentium Plated Brass", "Argentium Plated Bronze", "Argentium Plated Silver", "Argentium Plated Stainless Steel", "Argentium Plated Titanium", "Base", "Black Rhodium Plated Silver", "Bonded Gold and Silver", "Brass", "Brass Plated Gold", "Bronze", "Chocolate Gold", "Cobalt",
+                "Copper", "Gold Filled", "Gold Filled Silver", "Gold Foiled", "Gold Plated Base", "Gold Plated Brass", "Gold Plated Bronze", "Gold Plated Copper", "Gold Plated Silver", "Gold Plated Stainless Steel", "Gold Plated Titanium", "Green Gold", "Nickel", "No Metal Type", "Palladium", "Pewter", "Platinum", "Platinum and Gold Plated Base", "Platinum and Sterling Silver", "Platinum and White Gold",
+                "Platinum and Yellow Gold", "Platinum Flashed Silver", "Platinum Plated Base", "Platinum Plated Brass", "Platinum Plated Bronze", "Platinum Plated Gold", "Platinum Plated Silver", "Platinum Plated Stainless Steel", "Platinum Plated Titanium", "Rhodium Flashed Silver", "Rhodium Plated Base Metal", "Rhodium Plated Brass", "Rhodium Plated Bronze",
+                "Rhodium Plated Gold", "Rhodium Plated Gold and Silver", "Rhodium Plated Silver", "Rhodium Plated Stainless Steel", "Rhodium Plated Titanium", "Rhodium Plated White Gold", "Rhodium Plated Yellow Gold", "Rose and White Gold", "Rose and Yellow Gold", "Rose Gold", "Rose Gold and Sterling Silver", "Rose Gold Flashed Silver", "Rose Gold Plated Base", "Rose Gold Plated Brass",
+                "Rose Gold Plated Bronze", "Rose Gold Plated Silver", "Rose Gold Plated Stainless Steel", "Rose Gold Plated Titanium", "Silver and Gold Plated Base", "Silver and Stainless Steel", "Silver Plated Base", "Silver Plated Brass", "Silver Plated Bronze", "Silver Plated Stainless Steel", "Silver Plated Titanium", "Stainless Steel", "Stainless Steel and Gold", "Sterling Silver", "Tantalum", "Titanium", "Titanium and Gold",
+                "Titanium and Platinum", "Titanium and Silver", "Titanium and Stainless Steel", "Tri Color Gold", "Tungsten", "Two Tone Silver and Gold Plated", "Vermeil", "White and Yellow Gold", "White Gold", "White Gold and Sterling Silver", "White Gold Plated Base", "White Gold Plated Brass", "White Gold Plated Bronze", "White Gold Plated Silver", "White Gold Plated Stainless Steel", "White Gold Plated Titanium", "Yellow Gold",
+                "Yellow Gold and Sterling Silver", "Yellow Gold Flashed Silver", "Yellow Gold Plated Base", "Yellow Gold Plated Brass", "Yellow Gold Plated Bronze", "Yellow Gold Plated Silver", "Yellow Gold Plated Stainless Steel", "Yellow Gold Plated Titanium", "Zirconium"])
+
+        }
+
+        // Fashion > Women > Shoes
+        if (selectedCategoryId === "1983627031") {
+            //Ballet Flats
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983629031") {
+            //Boots
+            handleFormFieldLayout87();
+            setStyleOptions(["Combat Boots", "Derby Boots", "Cowboy Boots", "Jodhpur Boots", "Desert Boots", "Slouch Boots", "Classic Boots", "Chelsea Boots", "Biker Boots", "Brogue Boots", "Wellington Boots", "Winter Boots", "Chukka Boots", "Moccasin Boots", "Snow Boots", "Wading Boots", "Caulk Boots", "Rain Boots", "Riding Boots", "Oxford Boots", "Tactical Boots"])
+
+        }
+        else if (selectedCategoryId === "1983633031") {
+            //Fashion Sandals
+            handleFormFieldLayout88();
+            setStyleOptions(["Clog", "Fashion Sandal", "Fisherman Sandal", "Floater", "Gladiator", "Outdoor Sandal", "Sport Sandal", "Thong", "Slide", "Ankle Strap", "T-Strap", "Slingback", "Flip Flop", "Wedge", "Fisherman"])
+
+        }
+        else if (selectedCategoryId === "1983639031") {
+            //Fashion Slippers
+            handleFormFieldLayout88();
+            setStyleOptions(["Clog", "Fashion Sandal", "Fisherman Sandal", "Floater", "Gladiator", "Outdoor Sandal", "Sport Sandal", "Thong", "Slide", "Ankle Strap", "T-Strap", "Slingback", "Flip Flop", "Wedge", "Fisherman"])
+
+        }
+        else if (selectedCategoryId === "1983638031") {
+            //Flip-Flops & Slippers
+            handleFormFieldLayout86()
+            setStyleOptions(["Bohemian", "Casual", "Classic", "Retro", "Modern"])
+
+        }
+        else if (selectedCategoryId === "1983634031") {
+            //Formal Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983631031") {
+            //Pumps
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+
+        // Fashion > Women > Shoes > Athletic & Outdoor Sandals
+        if (selectedCategoryId === "1983582031") {
+            //Other (Athletic & Outdoor Sandals)
+            handleFormFieldLayout88();
+            setStyleOptions(["Clog", "Fashion Sandal", "Fisherman Sandal", "Floater", "Gladiator", "Outdoor Sandal", "Sport Sandal", "Thong", "Slide", "Ankle Strap", "T-Strap", "Slingback", "Flip Flop", "Wedge", "Fisherman"])
+
+        }
+
+        // Fashion > Women > Shoes > Casual Shoes
+        if (selectedCategoryId === "1983628031") {
+            //Boat Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983630031") {
+            //Clogs & Mules
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983632031") {
+            //Espadrille Flats
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983635031") {
+            //Loafers & Moccasins
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983640031") {
+            //Sneakers
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+
+
+
+        // Fashion > Women > Shoes > Sports & Outdoor Shoes
+        if (selectedCategoryId === "1983580031") {
+            //American Football Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983581031") {
+            //American Handball Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983583031") {
+            //Badminton Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983584031") {
+            //Baseball Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983585031") {
+            //Basketball Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983587031") {
+            //Boating Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983588031") {
+            //Bowling Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983589031") {
+            //Boxing Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983590031") {
+            //Cheerleading Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983591031") {
+            //Climbing Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983592031") {
+            //Cricket Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983593031") {
+            //Cycling Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983595031") {
+            //Equestrian Sports Boots
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983598031") {
+            //Football Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983599031") {
+            //Futsal Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983600031") {
+            //Golf Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983601031") {
+            //Gymnastics Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983596031") {
+            //Hockey Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983602031") {
+            //Hunting Boots
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983603031") {
+            //Indoor Court Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983604031") {
+            //Lacrosse Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983605031") {
+            //Martial Arts Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983608031") {
+            //Racquetball Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983609031") {
+            //Rugby Boots
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983610031") {
+            //Running Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983611031") {
+            //Skateboarding Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983612031") {
+            //Soft Tennis Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983613031") {
+            //Softball Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983614031") {
+            //Squash Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983615031") {
+            //Table Tennis Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983616031") {
+            //Team Handball Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983617031") {
+            //Tennis Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983618031") {
+            //Track & Field Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983607031") {
+            //Training Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983624031") {
+            //Volleyball Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983606031") {
+            //Walking Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983625031") {
+            //Water Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+        else if (selectedCategoryId === "1983626031") {
+            //Wrestling Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+
+        // Fashion > Women > Shoes > Sports & Outdoor Shoes > Trekking & Hiking Footwear
+
+        if (selectedCategoryId === "1983621031") {
+            //Trekking & Hiking Boots
+            handleFormFieldLayout87();
+            setStyleOptions(["Combat Boots", "Derby Boots", "Cowboy Boots", "Jodhpur Boots", "Desert Boots", "Slouch Boots", "Classic Boots", "Chelsea Boots", "Biker Boots", "Brogue Boots", "Wellington Boots", "Winter Boots", "Chukka Boots", "Moccasin Boots", "Snow Boots", "Wading Boots", "Caulk Boots", "Rain Boots", "Riding Boots", "Oxford Boots", "Tactical Boots"])
+
+        }
+        else if (selectedCategoryId === "1983622031") {
+            //Trekking & Hiking Shoes
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+
+        // Fashion > Women > Shoes > Sports & Outdoor Shoes > Triathlon Shoes
+        if (selectedCategoryId === "1983623031") {
+            //Other (Triathlon Shoes)
+            handleFormFieldLayout86()
+            setStyleOptions(["Brogue", "Tap", "Drivers", "Platform", "Ballroom", "Espadrille", "Oxfords", "Clogs", "Mid-Top", "Loafers", "Boat Shoes", "Monk", "Slingback", "Mary Jane", "Jazz and Modern", "Watershoes", "Derby", "Mule", "Ballet", "Moccasin", "Stiletto", "Wedges", "Walking", "Pumps", "Sneaker", "Flat", "Wingtip", "Low-Top", "High-Top"])
+
+        }
+
+        // Fashion > Women > Watches
+        if (selectedCategoryId === "15723943031") {
+            //Certified Refurbished
+            handleFormFieldLayout89();
+            setItemTypeName(["Touchscreen", "Watch Repair Tool", "Hybrid", "Casual Watch", "Golfing Watch", "Running Watch", "Pocket Watch", "Fitness Watch", "Pocket Watch Chain", "Watch Winder", "Camping Watch", "Certified Pre-Owned Watch", "Triathlon Watch", "Watch", "Automatic Watch", "Dress Watch", "Smart Watch", "Sport Watch", "Diving Watch", "Aviator Watch", "Watch Repair Kit", "Watch Storage Case"])
+            setClaspTypeItem(["Bangle", "Box Safety Clasp", "Box with Tongue & Safety Clasp", "Box with Tongue Clasp", "Buckle", "Deployment Buckle", "Deployment Clasp", "Deployment Clasp with Push Button", "Deployment Push Button Clasp with Buckle",
+                "Double Locking Fold-Over Clasp", "Expansion Band", "Fancy Clasp", "Fold-Over Clasp", "Fold-Over Clasp with Double Push Button Safety", "Fold-Over Clasp with Hidden Double Push Button", "Fold-Over Clasp with Safety", "Fold-Over Clasp with Single Push Button Safety",
+                "Fold-Over Push Button Clasp with Safety", "Hook Buckle", "Invisible Double Locking Clasp", "Jewellery Clasp", "Jewellery Clasp with Push Button", "Leather Deployment Buckle", "Leather Deployment Buckle with Safety", "Lobster Claw Clasp", "Multi-Strand Box Clasp",
+                "Pearl Clasp", "Push & Slide Clasp", "Push Button Clasp", "Single Locking Fold-Over Clasp", "Spring Ring Clasp", "Toggle Clasp", "Velcro", "Push Button Hidden Clasp", "Box With Tongue And Safety", "Flip Clasp", "Push Button Foldover Clasp With Safety", "Tang Buckle",
+                "Jewelry Clasp", "Deployment Clasp With Safety", "Hidden Clasp", "Push Button Deployment Clasp", "Hook and Loop", "Sliding Clasp"])
+
+        }
+        else if (selectedCategoryId === "15723942031") {
+            //Fashion Smartwatches
+            handleFormFieldLayout95();
+        }
+        else if (selectedCategoryId === "15723939031") {
+            //Pocket & Fob Watch
+            handleFormFieldLayout89();
+            setItemTypeName(["Touchscreen", "Watch Repair Tool", "Hybrid", "Casual Watch", "Golfing Watch", "Running Watch", "Pocket Watch", "Fitness Watch", "Pocket Watch Chain", "Watch Winder", "Camping Watch", "Certified Pre-Owned Watch", "Triathlon Watch", "Watch", "Automatic Watch", "Dress Watch", "Smart Watch", "Sport Watch", "Diving Watch", "Aviator Watch", "Watch Repair Kit", "Watch Storage Case"])
+            setClaspTypeItem(["Bangle", "Box Safety Clasp", "Box with Tongue & Safety Clasp", "Box with Tongue Clasp", "Buckle", "Deployment Buckle", "Deployment Clasp", "Deployment Clasp with Push Button", "Deployment Push Button Clasp with Buckle",
+                "Double Locking Fold-Over Clasp", "Expansion Band", "Fancy Clasp", "Fold-Over Clasp", "Fold-Over Clasp with Double Push Button Safety", "Fold-Over Clasp with Hidden Double Push Button", "Fold-Over Clasp with Safety", "Fold-Over Clasp with Single Push Button Safety",
+                "Fold-Over Push Button Clasp with Safety", "Hook Buckle", "Invisible Double Locking Clasp", "Jewellery Clasp", "Jewellery Clasp with Push Button", "Leather Deployment Buckle", "Leather Deployment Buckle with Safety", "Lobster Claw Clasp", "Multi-Strand Box Clasp",
+                "Pearl Clasp", "Push & Slide Clasp", "Push Button Clasp", "Single Locking Fold-Over Clasp", "Spring Ring Clasp", "Toggle Clasp", "Velcro", "Push Button Hidden Clasp", "Box With Tongue And Safety", "Flip Clasp", "Push Button Foldover Clasp With Safety", "Tang Buckle",
+                "Jewelry Clasp", "Deployment Clasp With Safety", "Hidden Clasp", "Push Button Deployment Clasp", "Hook and Loop", "Sliding Clasp"])
+
+        }
+        else if (selectedCategoryId === "15723941031") {
+            //Wrist Watches
+            handleFormFieldLayout89();
+            setItemTypeName(["Touchscreen", "Watch Repair Tool", "Hybrid", "Casual Watch", "Golfing Watch", "Running Watch", "Pocket Watch", "Fitness Watch", "Pocket Watch Chain", "Watch Winder", "Camping Watch", "Certified Pre-Owned Watch", "Triathlon Watch", "Watch", "Automatic Watch", "Dress Watch", "Smart Watch", "Sport Watch", "Diving Watch", "Aviator Watch", "Watch Repair Kit", "Watch Storage Case"])
+            setClaspTypeItem(["Bangle", "Box Safety Clasp", "Box with Tongue & Safety Clasp", "Box with Tongue Clasp", "Buckle", "Deployment Buckle", "Deployment Clasp", "Deployment Clasp with Push Button", "Deployment Push Button Clasp with Buckle",
+                "Double Locking Fold-Over Clasp", "Expansion Band", "Fancy Clasp", "Fold-Over Clasp", "Fold-Over Clasp with Double Push Button Safety", "Fold-Over Clasp with Hidden Double Push Button", "Fold-Over Clasp with Safety", "Fold-Over Clasp with Single Push Button Safety",
+                "Fold-Over Push Button Clasp with Safety", "Hook Buckle", "Invisible Double Locking Clasp", "Jewellery Clasp", "Jewellery Clasp with Push Button", "Leather Deployment Buckle", "Leather Deployment Buckle with Safety", "Lobster Claw Clasp", "Multi-Strand Box Clasp",
+                "Pearl Clasp", "Push & Slide Clasp", "Push Button Clasp", "Single Locking Fold-Over Clasp", "Spring Ring Clasp", "Toggle Clasp", "Velcro", "Push Button Hidden Clasp", "Box With Tongue And Safety", "Flip Clasp", "Push Button Foldover Clasp With Safety", "Tang Buckle",
+                "Jewelry Clasp", "Deployment Clasp With Safety", "Hidden Clasp", "Push Button Deployment Clasp", "Hook and Loop", "Sliding Clasp"])
+
+        }
+        // Fashion > Baby 
+        if (selectedCategoryId === "") {
+            //Other (Baby)
+
+        }
+        // Fashion > Baby > Baby Boys 
+        if (selectedCategoryId === "") {
+            //Jewellery
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Baby Boys)
+
+        }
+        // Fashion > Baby > Baby Boys > Clothing
+        if (selectedCategoryId === "") {
+            //Bodysuits
+
+        }
+        else if (selectedCategoryId === "") {
+            //Christening Wear
+
+        }
+        else if (selectedCategoryId === "") {
+            //Clothing Sets
+
+        }
+        else if (selectedCategoryId === "") {
+            //Dungarees
+
+        }
+        else if (selectedCategoryId === "") {
+            //Footies
+
+        }
+        else if (selectedCategoryId === "") {
+            //Jeans
+
+        }
+        else if (selectedCategoryId === "") {
+            //Leggings
+
+        }
+        else if (selectedCategoryId === "") {
+            //Pants
+
+        }
+        else if (selectedCategoryId === "") {
+            //Rompers
+
+        }
+        else if (selectedCategoryId === "") {
+            //Shirts
+
+        }
+        else if (selectedCategoryId === "") {
+            //Shorts
+
+        }
+        else if (selectedCategoryId === "") {
+            //Trackpants & Joggers
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > Accessories
+        if (selectedCategoryId === "") {
+            //Hats & Caps
+
+        }
+        else if (selectedCategoryId === "") {
+            //Leg Warmers
+
+        }
+        else if (selectedCategoryId === "") {
+            //Neckerchiefs
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Accessories)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Sunglasses
+
+        }
+        else if (selectedCategoryId === "") {
+            //Tights
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > Accessories > Socks
+        if (selectedCategoryId === "") {
+            //Ankle Socks
+
+        }
+        else if (selectedCategoryId === "") {
+            //Crew Socks
+
+        }
+        else if (selectedCategoryId === "") {
+            //Knee-High Socks
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Socks)
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > Ethnic Wear
+        if (selectedCategoryId === "") {
+            //Dhotis, Mundus & Lungis
+
+        }
+        else if (selectedCategoryId === "") {
+            //Kurta Sets
+
+        }
+        else if (selectedCategoryId === "") {
+            //Kurtas
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Ethnic Wear)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Pyjamas
+
+        }
+        else if (selectedCategoryId === "") {
+            //Sherwanis
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > Innerwear
+        if (selectedCategoryId === "") {
+            //Bloomers
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Innerwear)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Sets
+
+        }
+        else if (selectedCategoryId === "") {
+            //Training Pants
+
+        }
+        else if (selectedCategoryId === "") {
+            //Undershirts
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > Sleepwear
+        if (selectedCategoryId === "") {
+            //Other (Sleepwear)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Pyjama Sets
+
+        }
+        else if (selectedCategoryId === "") {
+            //Pyjama Tops
+
+        }
+        else if (selectedCategoryId === "") {
+            //Pyjamas
+
+        }
+        else if (selectedCategoryId === "") {
+            //Robes
+
+        }
+        else if (selectedCategoryId === "") {
+            //Sleepsuits
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > Snow & Rainwear
+        if (selectedCategoryId === "") {
+            //Other (Snow & Rainwear)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Rain Trousers
+
+        }
+        else if (selectedCategoryId === "") {
+            //Raincoats
+
+        }
+        else if (selectedCategoryId === "") {
+            //Snow Trousers & Bibs
+
+        }
+        else if (selectedCategoryId === "") {
+            //Snowsuits
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > Suits & Blazers
+        if (selectedCategoryId === "") {
+            //Blazers
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Suits & Blazers)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Suits
+
+        }
+        else if (selectedCategoryId === "") {
+            //Tuxedos
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > Swimwear
+        if (selectedCategoryId === "") {
+            //One Pieces
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Swimwear)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Rash Guard Shirts
+
+        }
+        else if (selectedCategoryId === "") {
+            //Swim Nappies
+
+        }
+        // Fashion > Baby > Baby Boys > Clothing > Swimwear > Board Shorts & Trunks
+        if (selectedCategoryId === "") {
+            //Board Shorts
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Board Shorts & Trunks)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Trunks
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > Swimwear > Swimwear Sets
+        if (selectedCategoryId === "") {
+            //Cover-Up Sets
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Swimwear Sets)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Rash Guard Sets
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > T-Shirts & Polos
+        if (selectedCategoryId === "") {
+            //Long Sleeves
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (T-Shirts & Polos)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Polos
+
+        }
+        else if (selectedCategoryId === "") {
+            //Tank Tops
+
+        }
+        else if (selectedCategoryId === "") {
+            //Tees
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > Winter Wear
+        if (selectedCategoryId === "") {
+            //Coats
+
+        }
+        else if (selectedCategoryId === "") {
+            //Earmuffs
+
+        }
+        else if (selectedCategoryId === "") {
+            //Gloves & Mittens
+
+        }
+        else if (selectedCategoryId === "") {
+            //Jackets
+
+        }
+        else if (selectedCategoryId === "") {
+            //Scarves
+
+        }
+        else if (selectedCategoryId === "") {
+            //Sweaters
+
+        }
+        else if (selectedCategoryId === "") {
+            //Vests
+
+        }
+        else if (selectedCategoryId === "") {
+            //Winter Overalls & Snowsuits
+
+        }
+
+        // Fashion > Baby > Baby Boys > Clothing > Winter Wear > Sweatshirts & Hoodies
+        if (selectedCategoryId === "") {
+            //Hoodies
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Sweatshirts & Hoodies)
+
+        }
+        else if (selectedCategoryId === "") {
+            //Sweatshirts
+
+        }
+        else if (selectedCategoryId === "") {
+            //Tracksuits
+
+        }
+
+        // Fashion > Baby > Baby Boys > Shoes
+        if (selectedCategoryId === "") {
+            //Boots & Booties
+
+        }
+        else if (selectedCategoryId === "") {
+            //First Walking Shoes
+
+        }
+        else if (selectedCategoryId === "") {
+            //Other (Shoes)
+
+        }
+
+
+
+
     }, [selectedCategoryId])
 
 
@@ -8137,5288 +9720,7 @@ const ProductDetails = () => {
     }
     return (
         <>
-            {
-                formComponents1 && (
-                    <>
-                        {/* Model Number,Warranty Description,Included Components,Is the item OEM authorized?,Number of Boxes,Item Dimensions D x W x H,Manufacturer */}
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name='modelnumber'
-                                rules={{
-                                    required: "Modal Number is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Model Number </label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="AZL20"
-                                                id="modelnumber"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.modelnumber)}
-                                            />
-                                        </div>
-
-                                    </>
-                                )}
-                            />
-
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name='warrantyDesc'
-                                rules={{
-                                    required: "warranty description is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Warranty Description </label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="1 year manufacturer warranty is non-transferable and valid for 1 year from the original date of purchase."
-                                                id="warrantyDesc"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.warrantyDesc)}
-                                            />
-                                        </div>
-
-                                    </>
-                                )}
-                            />
-
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name="includedComponent"
-                                rules={{
-                                    required: "This field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Included Components</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="1 year manufacturer."
-                                                id="includedComponent"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                onFocus={() => setIsFocused(true)}
-                                                onBlur={() => setIsFocused(false)}
-                                                error={Boolean(errors.includedComponent)}
-                                            />
-                                            {errors.inputValue && <p>{errors.inputValue.message}</p>}
-
-                                            {isFocused && (
-                                                <ul>
-                                                    <li onClick={handleSetIncludedValue} value="remote">remote</li>
-                                                    <li>cover</li>
-                                                    <li>wheels</li>
-                                                </ul>
-                                            )}
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name="itemOEMauth"
-                                rules={{
-                                    required: "This field  is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2"> Is the item OEM authorized?</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                id="itemOEMauth-select"
-                                                variant="outlined"
-                                                select
-                                                style={{ width: "100%" }}
-                                                placeholder="women"
-                                                {...field}
-                                                error={Boolean(errors.itemOEMauth)}
-
-                                            >
-                                                <MenuItem value="">-Select-</MenuItem>
-                                                <MenuItem value="Yes">Yes</MenuItem>
-                                                <MenuItem value="No">No</MenuItem>
-
-                                            </TextField>
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name='numberofBoxes'
-                                rules={{
-                                    required: "this field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2"> Number of Boxes </label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="5"
-                                                id="numberofBoxes"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.numberofBoxes)}
-                                            />
-                                        </div>
-
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                <label className='labelbold'>Item Dimensions D x W x H</label>
-                            </div>
-                            <div className="col-8 col-sm-7 col-lg-6">
-                                <div>
-                                    <div className='row align-items-end'>
-                                        <Controller
-                                            control={control}
-                                            name='itemDepthfrontToback'
-                                            rules={{
-                                                required: "this field is required",
-                                                pattern: {
-                                                    value: new RegExp('^[0-9]+$'),
-                                                    message: "not a valid formate"
-                                                }
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-                                                    <div className="col-12 col-sm-6">
-                                                        <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                            <label className="labelbold me-2">Item Depth Front To Back</label>
-                                                            <TextField
-                                                                placeholder="30"
-                                                                id="itemDepthfrontToback"
-                                                                variant="outlined"
-                                                                {...field}
-
-                                                                error={Boolean(errors.itemDepthfrontToback)}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </>
-                                            )}
-                                        />
-                                        <Controller
-                                            control={control}
-                                            name='itemDepthfrontTobackUnit'
-                                            rules={{
-                                                required: "this is required"
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-
-                                                    <div className="col-12 col-sm-6">
-                                                        <TextField
-                                                            id="itemDepthfrontTobackUnit"
-                                                            variant="outlined"
-                                                            select
-                                                            style={{ width: "100%" }}
-                                                            {...field}
-                                                            error={Boolean(errors.itemDepthfrontTobackUnit)}
-                                                        >
-                                                            <MenuItem value="">-Select-</MenuItem>
-                                                            <MenuItem value="New">Centimeters</MenuItem>
-                                                        </TextField>
-                                                    </div>
-                                                </>
-                                            )}
-
-                                        />
-
-                                    </div>
-                                    <div className='row align-items-end'>
-                                        <Controller
-                                            control={control}
-                                            name='itemWidthsideToside'
-                                            rules={{
-                                                required: "this field is required",
-                                                pattern: {
-                                                    value: new RegExp('^[0-9]+$'),
-                                                    message: "not a valid formate"
-                                                }
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-                                                    <div className="col-12 col-sm-6">
-                                                        <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                            <label className="labelbold me-2">Item Width Side to Side</label>
-                                                            <TextField
-                                                                placeholder="25"
-                                                                id="itemWidthsideToside"
-                                                                variant="outlined"
-                                                                {...field}
-                                                                error={Boolean(errors.itemWidthsideToside)}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </>
-                                            )}
-                                        />
-                                        <Controller
-                                            control={control}
-                                            name='itemWidthsideTosideUnit'
-                                            rules={{
-                                                required: "this field is required"
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-                                                    <div className="col-12 col-sm-6">
-                                                        <TextField
-                                                            id="itemWidthsideTosideUnit"
-                                                            variant="outlined"
-                                                            select
-                                                            style={{ width: "100%" }}
-                                                            {...field}
-                                                            error={Boolean(errors.itemWidthsideTosideUnit)}
-                                                        >
-                                                            <MenuItem value="">-Select-</MenuItem>
-                                                            <MenuItem value="New">Centimeters</MenuItem>
-                                                        </TextField>
-                                                    </div>
-                                                </>
-                                            )}
-                                        />
-                                    </div>
-                                    <div className='row align-items-end'>
-                                        <Controller
-                                            control={control}
-                                            name='itemHeightbaseTotop'
-                                            rules={{
-                                                required: "this field is required",
-                                                pattern: {
-                                                    value: new RegExp('^[0-9]+$'),
-                                                    message: "not a valid formate"
-                                                }
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-                                                    <div className="col-12 col-sm-6">
-                                                        <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                            <label className="labelbold me-2">Height Base to Top</label>
-                                                            <TextField
-                                                                placeholder="80"
-                                                                id="itemHeightbaseTotop"
-                                                                variant="outlined"
-                                                                {...field}
-
-                                                                error={Boolean(errors.itemHeightbaseTotop)}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </>
-                                            )}
-                                        />
-                                        <Controller
-                                            control={control}
-                                            name='itemHeightbaseTotopUnit'
-                                            rules={{
-                                                required: "this field is required"
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-                                                    <div className="col-12 col-sm-6">
-                                                        <TextField
-                                                            id="itemHeightbaseTotopUnit"
-                                                            variant="outlined"
-                                                            select
-                                                            style={{ width: "100%" }}
-                                                            {...field}
-                                                            error={Boolean(errors.itemHeightbaseTotopUnit)}
-                                                        >
-                                                            <MenuItem value="">-Select-</MenuItem>
-                                                            <MenuItem value="New">Centimeters</MenuItem>
-
-                                                        </TextField>
-                                                    </div>
-                                                </>
-                                            )}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name='itemManufacturer'
-                                rules={{
-                                    required: "this field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Manufacturer</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="XYZ Pvt Ltd"
-                                                id="itemManufacturer"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.itemManufacturer)}
-                                            />
-                                        </div>
-
-                                    </>
-                                )}
-                            />
-
-                        </div>
-                    </>
-                )
-            }
-
-            {
-                (formComponents2) && (
-                    <>
-
-                        {/* Model,Number of Items,Unit Count,Unit Count Type,Product Care Instructions,Contains Liquid Contents?,Is Assembly Required,Number of Pieces,Included Components,Size,Color,Color Map,Material Type,Number of Boxes,Manufacturer,Item Dimensions D x W x H */}
-
-                        <div className="row">
-                            <Controller
-                                control={control}
-                                name='modelname'
-                                rules={{
-                                    required: "this field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">model</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="model"
-                                                id="modelname"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.modelname)}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name='numberofitems'
-                                rules={{
-                                    required: "Number of Items is required",
-                                    pattern: {
-                                        value: new RegExp('^[0-9]+$'),
-                                        message: "value is invalid"
-                                    }
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Number of Items</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="1"
-                                                id="numberofitems"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.numberofitems)}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name='unitCount'
-                                rules={{
-                                    required: "this field is required",
-                                    pattern: {
-                                        value: new RegExp('^[0-9]+$'),
-                                        message: "value is invalid"
-                                    }
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Unit Count</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="12"
-                                                id="unitCount"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.unitCount)}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name="unitCountType"
-                                rules={{
-                                    required: "this field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Unit Count Type</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                id="unitCountType-select"
-                                                variant="outlined"
-                                                select
-                                                style={{ width: "100%" }}
-                                                placeholder="women"
-                                                {...field}
-                                                error={Boolean(errors.unitCountType)}
-
-                                            >
-                                                <MenuItem value="">-Select-</MenuItem>
-                                                <MenuItem value="Women">Meters</MenuItem>
-                                                <MenuItem value="Unisex Children">Pouch</MenuItem>
-                                                <MenuItem value="Men">Grams</MenuItem>
-                                                <MenuItem value="Boys">Liters</MenuItem>
-                                                <MenuItem value="Girls">Mililiters</MenuItem>
-                                                <MenuItem value="Set">Set</MenuItem>
-                                                <MenuItem value="Kilograms">Kilograms</MenuItem>
-                                                <MenuItem value="Count">Count</MenuItem>
-                                                <MenuItem value="Square Meters">Square Meters</MenuItem>
-                                                <MenuItem value="Case">Case</MenuItem>
-                                                <MenuItem value="Feet">Feet</MenuItem>
-                                                <MenuItem value="Can">Can</MenuItem>
-                                                <MenuItem value="Pounds">Pounds</MenuItem>
-                                                <MenuItem value="Piece">Piece</MenuItem>
-                                                <MenuItem value="Ounce">Ounce</MenuItem>
-                                                <MenuItem value="Pint">Pint</MenuItem>
-                                                <MenuItem value="Pack">Pack</MenuItem>
-                                                <MenuItem value="Square feet">Square feet</MenuItem>
-                                                <MenuItem value="Fluid Ounces">Fluid Ounces</MenuItem>
-                                            </TextField>
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name='productCareInstruction'
-                                rules={{
-                                    required: "this field is required",
-
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Product Care Instructions</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="Dry clean only"
-                                                id="productCareInstruction"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.productCareInstruction)}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name="containsliquidcontent"
-                                rules={{
-                                    required: "Contains liquid content is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Contains Liquid Contents?</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                id="containsliquidcontent-select"
-                                                variant="outlined"
-                                                select
-                                                style={{ width: "100%" }}
-                                                placeholder="select"
-                                                {...field}
-                                                error={Boolean(errors.containsliquidcontent)}
-                                            >
-                                                <MenuItem value="">-Select-</MenuItem>
-                                                <MenuItem value="Yes">Yes</MenuItem>
-                                                <MenuItem value="No">No</MenuItem>
-                                            </TextField>
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name="assemblyRequired"
-                                rules={{
-                                    required: "this field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Is Assembly Required</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                id="assemblyRequired-select"
-                                                variant="outlined"
-                                                select
-                                                style={{ width: "100%" }}
-                                                placeholder="select"
-                                                {...field}
-                                                error={Boolean(errors.assemblyRequired)}
-                                            >
-                                                <MenuItem value="">-Select-</MenuItem>
-                                                <MenuItem value="Yes">Yes</MenuItem>
-                                                <MenuItem value="No">No</MenuItem>
-                                            </TextField>
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name='numberofPieces'
-                                rules={{
-                                    required: "this field is required",
-                                    pattern: {
-                                        value: new RegExp('^[0-9]+$'),
-                                        message: "value is invalid"
-                                    }
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Number of Pieces</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="5"
-                                                id="numberofPieces"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.numberofPieces)}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                <label className="labelbold me-2">Included Components</label>
-                            </div>
-                            <div className="col-8 col-sm-7 col-lg-6"></div>
-
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name='productSize'
-                                rules={{
-                                    required: "this field is required",
-
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Size</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder=""
-                                                id="productSize"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.productSize)}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name='productColor'
-                                rules={{
-                                    required: "this field is required",
-
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Color</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder=""
-                                                id="productColor"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.productColor)}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name="productColorMap"
-                                rules={{
-                                    required: "this field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Color Map</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                id="productColorMap-select"
-                                                variant="outlined"
-                                                select
-                                                style={{ width: "100%" }}
-                                                placeholder="select"
-                                                {...field}
-                                                error={Boolean(errors.productColorMap)}
-                                            >
-                                                <MenuItem value="">-Select-</MenuItem>
-                                                <MenuItem value="Bronze">Bronze</MenuItem>
-                                                <MenuItem value="Brown">Brown</MenuItem>
-                                                <MenuItem value="Gold">Gold</MenuItem>
-                                                <MenuItem value="Blue">Blue</MenuItem>
-                                                <MenuItem value="Multicolor">Multicolor</MenuItem>
-                                                <MenuItem value="Black">Black</MenuItem>
-                                                <MenuItem value="Orange">Orange</MenuItem>
-                                                <MenuItem value="Clear">Clear</MenuItem>
-                                                <MenuItem value="Red">Red</MenuItem>
-                                                <MenuItem value="Silver">Silver</MenuItem>
-                                                <MenuItem value="Pink">Pink</MenuItem>
-                                                <MenuItem value="White">White</MenuItem>
-                                                <MenuItem value="Metalic">Metalic</MenuItem>
-                                                <MenuItem value="Beige">Beige</MenuItem>
-                                                <MenuItem value="Purple">Purple</MenuItem>
-                                                <MenuItem value="Yellow">Yellow</MenuItem>
-                                                <MenuItem value="Turquoise">Turquoise</MenuItem>
-                                                <MenuItem value="Green">Green</MenuItem>
-                                                <MenuItem value="Grey">Grey</MenuItem>
-                                                <MenuItem value="Offwhite">Offwhite</MenuItem>
-                                            </TextField>
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name="materialType"
-                                rules={{
-                                    required: "this field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Material Type</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                id="materialType-select"
-                                                variant="outlined"
-                                                select
-                                                style={{ width: "100%" }}
-                                                placeholder="select"
-                                                {...field}
-                                                error={Boolean(errors.materialType)}
-                                            >
-                                                <MenuItem value="">-Select-</MenuItem>
-                                                <MenuItem value="Nylon">Nylon</MenuItem>
-                                                <MenuItem value="Aluminum">Aluminum</MenuItem>
-                                                <MenuItem value="Solid Gold">Solid Gold</MenuItem>
-                                                <MenuItem value="Cedar">Cedar</MenuItem>
-                                                <MenuItem value="Stone">Stone</MenuItem>
-                                                <MenuItem value="Porcelain">Porcelain</MenuItem>
-                                                <MenuItem value="Porcelain Bone China">Porcelain Bone China</MenuItem>
-                                                <MenuItem value="Pewter">Pewter</MenuItem>
-                                                <MenuItem value="Stainless Steel">Stainless Steel</MenuItem>
-                                                <MenuItem value="Teracotta">Teracotta</MenuItem>
-                                                <MenuItem value="Neoprene">Neoprene</MenuItem>
-                                                <MenuItem value="Copper">Copper</MenuItem>
-                                                <MenuItem value="Polycarbonate">Polycarbonate</MenuItem>
-                                                <MenuItem value="Recycled">Recycled</MenuItem>
-                                                <MenuItem value="Bronze">Bronze</MenuItem>
-                                                <MenuItem value="Clay">Clay</MenuItem>
-                                                <MenuItem value="Elmwood">Elmwood</MenuItem>
-                                                <MenuItem value="Polyester">Polyester</MenuItem>
-                                                <MenuItem value="Hard-Anodized Aluminum">Hard-Anodized Aluminum</MenuItem>
-                                                <MenuItem value="Leaded Crystal">Leaded Crystal</MenuItem>
-                                                <MenuItem value="Silicone">Silicone</MenuItem>
-                                                <MenuItem value="Cherrywood">Cherrywood</MenuItem>
-                                                <MenuItem value="Marble">Marble</MenuItem>
-                                                <MenuItem value="Nonstick">Nonstick</MenuItem>
-                                                <MenuItem value="Silver">Silver</MenuItem>
-                                                <MenuItem value="Pine">Pine</MenuItem>
-                                                <MenuItem value="Oak">Oak</MenuItem>
-                                                <MenuItem value="Non-Leaded Crystal">Non-Leaded Crystal</MenuItem>
-                                                <MenuItem value="Bamboo">Bamboo</MenuItem>
-                                                <MenuItem value="Fabric">Fabric</MenuItem>
-                                                <MenuItem value="Acrylic">Acrylic</MenuItem>
-                                                <MenuItem value="Crystal">Crystal</MenuItem>
-                                                <MenuItem value="Silver-Plated">Silver-Plated</MenuItem>
-                                                <MenuItem value="Synthetic">Synthetic</MenuItem>
-                                                <MenuItem value="Birch">Birch</MenuItem>
-                                                <MenuItem value="18/8 Steel">18/8 Steel</MenuItem>
-                                                <MenuItem value="Beechwood">Beechwood</MenuItem>
-                                                <MenuItem value="Stoneware">Stoneware</MenuItem>
-                                                <MenuItem value="Brass">Brass</MenuItem>
-                                                <MenuItem value="Multi-ply">Multi-ply</MenuItem>
-                                                <MenuItem value="Glass">Glass</MenuItem>
-                                                <MenuItem value="Leather">Leather</MenuItem>
-                                                <MenuItem value="Iron">Iron</MenuItem>
-                                                <MenuItem value="Plastic">Plastic</MenuItem>
-                                                <MenuItem value="Cotton">Cotton</MenuItem>
-                                                <MenuItem value="Paraffin">Paraffin</MenuItem>
-                                                <MenuItem value="Polyresin">Polyresin</MenuItem>
-                                                <MenuItem value="Wax">Wax</MenuItem>
-                                                <MenuItem value="Bone China">Bone China</MenuItem>
-                                                <MenuItem value="Platinume">Platinume</MenuItem>
-                                                <MenuItem value="Chrome">Chrome</MenuItem>
-                                                <MenuItem value="Mahogany">Mahogany</MenuItem>
-                                                <MenuItem value="Olive Wood">Olive Wood</MenuItem>
-                                                <MenuItem value="18/10 Steel">18/10 Steel</MenuItem>
-                                                <MenuItem value="Rubber">Rubber</MenuItem>
-                                                <MenuItem value="Teak">Teak</MenuItem>
-                                                <MenuItem value="Maple">Maple</MenuItem>
-                                                <MenuItem value="Acrylic Coated Cotton">Acrylic Coated Cotton</MenuItem>
-                                                <MenuItem value="Rosewood">Rosewood</MenuItem>
-                                                <MenuItem value="Cork">Cork</MenuItem>
-                                                <MenuItem value="Melamine">Melamine</MenuItem>
-                                                <MenuItem value="Gilded Gold">Gilded Gold</MenuItem>
-                                                <MenuItem value="HardWood">HardWood</MenuItem>
-                                                <MenuItem value="Steel">Steel</MenuItem>
-                                                <MenuItem value="Carbon">Carbon</MenuItem>
-                                                <MenuItem value="Zinc">Zinc</MenuItem>
-                                                <MenuItem value="Earthenware">Earthenware</MenuItem>
-                                                <MenuItem value="Chromium Steel">Chromium Steel</MenuItem>
-                                                <MenuItem value="Walnut">Walnut</MenuItem>
-                                                <MenuItem value="Cast Iron">Cast Iron</MenuItem>
-                                                <MenuItem value="Rattan & Wicker">Rattan & Wicker</MenuItem>
-                                                <MenuItem value="Tin">Tin</MenuItem>
-                                                <MenuItem value="Ceramic">Ceramic</MenuItem>
-                                                <MenuItem value="Paper">Paper</MenuItem>
-                                                <MenuItem value="Tritan">Tritan</MenuItem>
-                                                <MenuItem value="Nickel">Nickel</MenuItem>
-                                                <MenuItem value="Polycast">Polycast</MenuItem>
-                                                <MenuItem value="Other">Other</MenuItem>
-                                            </TextField>
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <Controller
-                                control={control}
-                                name='numberofBoxes'
-                                rules={{
-                                    required: "this field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2"> Number of Boxes </label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="5"
-                                                id="numberofBoxes"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                error={Boolean(errors.numberofBoxes)}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                <label className='labelbold'>Item Dimensions D x W x H</label>
-                            </div>
-                            <div className="col-8 col-sm-7 col-lg-6">
-
-                                <div className='row align-items-end'>
-                                    <Controller
-                                        control={control}
-                                        name='itemDepthfrontToback'
-                                        rules={{
-                                            required: "this field is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "not a valid formate"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-12 col-sm-6 col-lg-6">
-                                                    <label className="labelbold me-2">Item Depth Front To Back</label>
-                                                    <TextField
-                                                        placeholder="30"
-                                                        id="itemDepthfrontToback"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.itemDepthfrontToback)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                    <Controller
-                                        control={control}
-                                        name='itemDepthfrontTobackUnit'
-                                        rules={{
-                                            required: "this is required"
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-
-                                                <div className="col-12 col-sm-6 col-lg-6">
-                                                    <TextField
-                                                        id="itemDepthfrontTobackUnit"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        {...field}
-                                                        error={Boolean(errors.itemDepthfrontTobackUnit)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="New">Centimeters</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-
-                                    />
-
-                                </div>
-                                <div className='row align-items-end'>
-                                    <Controller
-                                        control={control}
-                                        name='itemWidthsideToside'
-                                        rules={{
-                                            required: "this field is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "not a valid formate"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-12 col-sm-6 col-lg-6">
-                                                    <label className="labelbold me-2">Item Width Side to Side</label>
-                                                    <TextField
-                                                        placeholder="25"
-                                                        id="itemWidthsideToside"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.itemWidthsideToside)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                    <Controller
-                                        control={control}
-                                        name='itemWidthsideTosideUnit'
-                                        rules={{
-                                            required: "this field is required"
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-12 col-sm-6 col-lg-6">
-                                                    <TextField
-                                                        id="itemWidthsideTosideUnit"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        {...field}
-                                                        error={Boolean(errors.itemWidthsideTosideUnit)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="New">Centimeters</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className='row align-items-end'>
-                                    <Controller
-                                        control={control}
-                                        name='itemHeightbaseTotop'
-                                        rules={{
-                                            required: "this field is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "not a valid formate"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-12 col-sm-6 col-lg-6">
-                                                    <label className="labelbold me-2">Height Base to Top</label>
-                                                    <TextField
-                                                        placeholder="80"
-                                                        id="itemHeightbaseTotop"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.itemHeightbaseTotop)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                    <Controller
-                                        control={control}
-                                        name='itemHeightbaseTotopUnit'
-                                        rules={{
-                                            required: "this field is required"
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-12 col-sm-6 col-lg-6">
-                                                    <TextField
-                                                        id="itemHeightbaseTotopUnit"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        {...field}
-                                                        error={Boolean(errors.itemHeightbaseTotopUnit)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="New">Centimeters</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </>)}
-
-            {formComponents5 && (
-                <>
-                    {/* Target Audience,Manufacturer Part Number,Number of Items,Safety Warning,PPU Count,PPU Count Unit of Measure,Contains Liquid Contents?,Is the Item Heat Sensitive?,Item Form,Lifestyle,Skin Type,Scent,Melting Temperature (degrees Celsius) */}
-                    <h5>Baby care / Bathing / Babyshop</h5>
-                    <div>
-                        <Controller
-                            control={control}
-                            name="targetAudience"
-                            rules={{
-                                required: "Target Audience is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">Target Audience</label>
-                                        <TextField
-                                            id="targetAudience-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "50%" }}
-                                            placeholder="women"
-                                            {...field}
-                                            error={Boolean(errors.targetAudience)}
-
-                                        >
-                                            <MenuItem value="">-Select-</MenuItem>
-                                            <MenuItem value="Women">Women</MenuItem>
-                                            <MenuItem value="Unisex Children">Unisex Children</MenuItem>
-                                            <MenuItem value="Men">Men</MenuItem>
-                                            <MenuItem value="Boys">Boys</MenuItem>
-                                            <MenuItem value="Girls">Girls</MenuItem>
-                                            <MenuItem value="Unisex Audit">Unisex Adult</MenuItem>
-                                        </TextField>
-                                    </div>
-                                </>
-                            )}
-                        />
-                    </div>
-
-                    <div>
-                        <Controller
-                            control={control}
-                            name='manufacturepartno'
-                            rules={{
-                                required: "Manufacturer Part Number is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">Manufacturer Part Number </label>
-                                        <TextField
-                                            placeholder="SB-122"
-                                            id="manufacturepartno"
-                                            variant="outlined"
-                                            {...field}
-                                            style={{ width: "50%" }}
-                                            error={Boolean(errors.manufacturepartno)}
-                                        />
-                                    </div>
-                                </>
-                            )}
-                        />
-
-                    </div>
-                    {/* <div>
-                <Controller
-                    control={control}
-                    name="variationTheme"
-                    rules={{
-                        required: "Variation Theme is required",
-                    }}
-                    render={({ field }) => (
-                        <>
-                            <div className='d-flex align-items-center mb-3'>
-                                <label className="labelbold me-2">Variation Theme</label>
-                                <TextField
-                                    id="variationTheme-select"
-                                    variant="outlined"
-                                    select
-                                    style={{ width: "50%" }}
-                                    placeholder="women"
-                                    {...field}
-                                    error={Boolean(errors.variationTheme)}
-
-                                >
-                                    <MenuItem value="">-Select-</MenuItem>
-                                    <MenuItem value="Numberofitems">Numberofitems</MenuItem>
-                                    <MenuItem value="Itemform">Itemform</MenuItem>
-                                    <MenuItem value="Sizename-numberofitems">Sizename-numberofitems</MenuItem>
-                                    <MenuItem value="Color">Color</MenuItem>
-                                    <MenuItem value="Size-unitcount">Size-unitcount</MenuItem>
-                                    <MenuItem value="Itemform-sizename">Itemform-sizename</MenuItem>
-                                    <MenuItem value="ColourAndScent">Colour & Scent</MenuItem>
-                                    <MenuItem value="Size-Color">Size-Color</MenuItem>
-                                    <MenuItem value="Sizename-colorname-numberofitems">Sizename-colorname-numberofitems</MenuItem>
-                                    <MenuItem value="Size-Scent">Size-Scent</MenuItem>
-                                    <MenuItem value="SizeName">SizeName</MenuItem>
-                                    <MenuItem value="colorname-numberofitems">colorname-numberofitems</MenuItem>
-                                    <MenuItem value="size">size</MenuItem>
-                                    <MenuItem value="Scent">Scent</MenuItem>
-                                    <MenuItem value="model-sizename">model-sizename</MenuItem>
-                                    <MenuItem value="model">model</MenuItem>
-                                    <MenuItem value="ColorName">ColorName</MenuItem>
-                                    <MenuItem value="itemweight">itemweight</MenuItem>
-                                </TextField>
-                            </div>
-                        </>
-                    )}
-                />
-            </div> */}
-                    <div>
-                        <Controller
-                            control={control}
-                            name='numberofitems'
-                            rules={{
-                                required: "Number of Items is required",
-                                pattern: {
-                                    value: new RegExp('^[0-9]+$'),
-                                    message: "value is invalid"
-                                }
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">Number of Items</label>
-                                        <TextField
-                                            placeholder="1"
-                                            id="numberofitems"
-                                            variant="outlined"
-                                            {...field}
-                                            style={{ width: "50%" }}
-                                            error={Boolean(errors.numberofitems)}
-                                        />
-                                    </div>
-                                </>
-                            )}
-                        />
-
-                    </div>
-                    <div>
-                        <Controller
-                            control={control}
-                            name='safetyWarning'
-                            rules={{
-                                required: "safety warning is required"
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">Safety Warning</label>
-                                        <TextField
-                                            placeholder="Consult with a doctor before using this product."
-                                            id="safetyWarning"
-                                            variant="outlined"
-                                            {...field}
-                                            style={{ width: "50%" }}
-                                            error={Boolean(errors.safetyWarning)}
-                                        />
-                                    </div>
-                                </>
-                            )}
-                        />
-
-                    </div>
-                    <div>
-                        <Controller
-                            control={control}
-                            name='ppuCount'
-                            rules={{
-                                required: "PPU Count is required",
-                                pattern: {
-                                    value: new RegExp('^[0-9]+$'),
-                                    message: "value is invalid"
-                                }
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">PPU Count</label>
-                                        <TextField
-                                            placeholder="6"
-                                            id="ppuCount"
-                                            variant="outlined"
-                                            {...field}
-                                            style={{ width: "50%" }}
-                                            error={Boolean(errors.ppuCount)}
-                                        />
-                                    </div>
-                                </>
-                            )}
-                        />
-
-                    </div>
-                    <div>
-                        <Controller
-                            control={control}
-                            name="ppuCountUnit"
-                            rules={{
-                                required: "PPU Count Unit of Measure is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">PPU Count Unit of Measure</label>
-                                        <TextField
-                                            id="ppuCountUnit-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "50%" }}
-                                            placeholder="women"
-                                            {...field}
-                                            error={Boolean(errors.ppuCountUnit)}
-
-                                        >
-                                            <MenuItem value="">-Select-</MenuItem>
-                                            <MenuItem value="count">count</MenuItem>
-                                            <MenuItem value="gram">gram</MenuItem>
-                                            <MenuItem value="metre">metre</MenuItem>
-                                            <MenuItem value="mililitre">mililitre</MenuItem>
-                                            <MenuItem value="Gsquare metreirls">square metre</MenuItem>
-
-                                        </TextField>
-                                    </div>
-                                </>
-                            )}
-                        />
-                    </div>
-                    <div>
-                        <Controller
-                            control={control}
-                            name="containsliquidcontent"
-                            rules={{
-                                required: "Contains liquid content is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">Contains Liquid Contents?</label>
-                                        <TextField
-                                            id="containsliquidcontent-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "50%" }}
-                                            placeholder="select"
-                                            {...field}
-                                            error={Boolean(errors.containsliquidcontent)}
-
-                                        >
-                                            <MenuItem value="">-Select-</MenuItem>
-                                            <MenuItem value="Yes">Yes</MenuItem>
-                                            <MenuItem value="No">No</MenuItem>
-
-
-                                        </TextField>
-                                    </div>
-                                </>
-                            )}
-                        />
-                    </div>
-                    <div>
-                        <Controller
-                            control={control}
-                            name="itemHeatSensitive"
-                            rules={{
-                                required: "this field is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">Is the Item Heat Sensitive?</label>
-                                        <TextField
-                                            id="itemHeatSensitive-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "50%" }}
-                                            placeholder="select"
-                                            {...field}
-                                            error={Boolean(errors.itemHeatSensitive)}
-
-                                        >
-                                            <MenuItem value="">-Select-</MenuItem>
-                                            <MenuItem value="Yes">Yes</MenuItem>
-                                            <MenuItem value="No">No</MenuItem>
-
-
-                                        </TextField>
-                                    </div>
-                                </>
-                            )}
-                        />
-                    </div>
-                    <div>
-                        <Controller
-                            control={control}
-                            name="itemForm"
-                            rules={{
-                                required: "this field is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">Item Form</label>
-                                        <TextField
-                                            id="itemForm-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "50%" }}
-                                            placeholder="Cream"
-                                            {...field}
-                                            error={Boolean(errors.itemForm)}
-
-                                        >
-                                            <MenuItem value="">-Select-</MenuItem>
-                                            <MenuItem value="Bar">Bar</MenuItem>
-                                            <MenuItem value="Cream">Cream</MenuItem>
-                                            <MenuItem value="Gel">Gel</MenuItem>
-                                            <MenuItem value="Paste">Paste</MenuItem>
-                                            <MenuItem value="Lotion">Lotion</MenuItem>
-                                            <MenuItem value="Mousse">Mousse</MenuItem>
-                                            <MenuItem value="Oil">Oil</MenuItem>
-                                            <MenuItem value="Serum">Serum</MenuItem>
-                                            <MenuItem value="Flake">Flake</MenuItem>
-                                            <MenuItem value="Blam">Blam</MenuItem>
-                                            <MenuItem value="Powder">Powder</MenuItem>
-                                            <MenuItem value="Wipe">Wipe</MenuItem>
-                                            <MenuItem value="Capsule">Capsule</MenuItem>
-                                            <MenuItem value="Aerosol">Aerosol</MenuItem>
-
-
-                                        </TextField>
-                                    </div>
-                                </>
-                            )}
-                        />
-                    </div>
-                    <div>
-                        <Controller
-                            control={control}
-                            name="lifestyle"
-                            rules={{
-                                required: "this field is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">Lifestyle</label>
-                                        <TextField
-                                            id="lifestyle-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "50%" }}
-                                            placeholder="Mass Beauty,Premium Beauty"
-                                            {...field}
-                                            error={Boolean(errors.lifestyle)}
-
-                                        >
-                                            <MenuItem value="">-Select-</MenuItem>
-                                            <MenuItem value="Premium-Beauty">Premium Beauty</MenuItem>
-                                            <MenuItem value="Mass-Beauty">Mass Beauty</MenuItem>
-                                        </TextField>
-                                    </div>
-                                </>
-                            )}
-                        />
-                    </div>
-                    <div>
-                        <Controller
-                            control={control}
-                            name="skinType"
-                            rules={{
-                                required: "this field is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">Skin Type</label>
-                                        <TextField
-                                            id="skinType-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "50%" }}
-                                            placeholder="Sensitive"
-                                            {...field}
-                                            error={Boolean(errors.skinType)}
-
-                                        >
-                                            <MenuItem value="">-Select-</MenuItem>
-                                            <MenuItem value="All">All</MenuItem>
-                                            <MenuItem value="Oily">Oily</MenuItem>
-                                            <MenuItem value="Combination">Combination</MenuItem>
-                                            <MenuItem value="Sensitive">Sensitive</MenuItem>
-                                            <MenuItem value="Dry">Dry</MenuItem>
-                                            <MenuItem value="Normal">Normal</MenuItem>
-                                        </TextField>
-                                    </div>
-                                </>
-                            )}
-                        />
-                    </div>
-                    <div>
-                        <Controller
-                            control={control}
-                            name="scent"
-                            rules={{
-                                required: "this field is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">Scent</label>
-                                        <TextField
-                                            id="scent-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "50%" }}
-                                            placeholder="Musk"
-                                            {...field}
-                                            error={Boolean(errors.scent)}
-
-                                        >
-                                            <MenuItem value="">-Select-</MenuItem>
-                                            <MenuItem value="Orchid">Orchid</MenuItem>
-                                            <MenuItem value="Fresh">Fresh</MenuItem>
-                                            <MenuItem value="Passion Fruit">Passion Fruit</MenuItem>
-                                            <MenuItem value="Amber">Amber</MenuItem>
-                                            <MenuItem value="Cherry">Cherry</MenuItem>
-                                            <MenuItem value="Musk">Musk</MenuItem>
-                                            <MenuItem value="Apricot">Apricot</MenuItem>
-                                            <MenuItem value="Honeysuckel">Honeysuckel</MenuItem>
-                                            <MenuItem value="Ginger">Ginger</MenuItem>
-                                            <MenuItem value="Cedar">Cedar</MenuItem>
-                                            <MenuItem value="Lemon">Lemon</MenuItem>
-                                            <MenuItem value="Orange">Orange</MenuItem>
-                                            <MenuItem value="Blueberry">Blueberry</MenuItem>
-                                            <MenuItem value="Strawberry">Strawberry</MenuItem>
-                                            <MenuItem value="Geranium">Geranium</MenuItem>
-                                            <MenuItem value="Neem">Neem</MenuItem>
-                                            <MenuItem value="Verbena">Verbena</MenuItem>
-                                            <MenuItem value="Pomegranate">Pomegranate</MenuItem>
-                                            <MenuItem value="Oat Blossom">Oat Blossom</MenuItem>
-                                            <MenuItem value="Oriental">Oriental</MenuItem>
-                                            <MenuItem value="Pear">Pear</MenuItem>
-                                            <MenuItem value="Mint">Mint</MenuItem>
-                                            <MenuItem value="Peppermint">Peppermint</MenuItem>
-                                            <MenuItem value="Coriander">Coriander</MenuItem>
-                                            <MenuItem value="Magnolia">Magnolia</MenuItem>
-                                            <MenuItem value="Ylang Ylang">Ylang Ylang</MenuItem>
-                                            <MenuItem value="Bergamot">Bergamot</MenuItem>
-                                            <MenuItem value="Cantaloupe">Cantaloupe</MenuItem>
-                                            <MenuItem value="Banana">Banana</MenuItem>
-                                            <MenuItem value="Cranberry">Cranberry</MenuItem>
-                                            <MenuItem value="Honey">Honey</MenuItem>
-                                            <MenuItem value="Starfruit">Starfruit</MenuItem>
-                                            <MenuItem value="Tobacco">Tobacco</MenuItem>
-                                            <MenuItem value="Almond">Almond</MenuItem>
-                                            <MenuItem value="Pine">Pine</MenuItem>
-                                            <MenuItem value="Unscented">Unscented</MenuItem>
-                                            <MenuItem value="Rosemary">Rosemary</MenuItem>
-                                            <MenuItem value="Parsley">Parsley</MenuItem>
-                                            <MenuItem value="Cucumber">Cucumber</MenuItem>
-                                            <MenuItem value="Cherry Blossom">Cherry Blossom</MenuItem>
-                                            <MenuItem value="Papaya">Papaya</MenuItem>
-                                            <MenuItem value="Vanilla">Vanilla</MenuItem>
-                                            <MenuItem value="Coconut">Coconut</MenuItem>
-                                            <MenuItem value="Peach">Peach</MenuItem>
-                                            <MenuItem value="Tea Tree">Tea Tree</MenuItem>
-                                            <MenuItem value="Mango">Mango</MenuItem>
-                                            <MenuItem value="Rose">Rose</MenuItem>
-                                            <MenuItem value="Coffee">Coffee</MenuItem>
-                                            <MenuItem value="Lily">Lily</MenuItem>
-                                            <MenuItem value="Eucalyptus">Eucalyptus</MenuItem>
-                                            <MenuItem value="Lavender">Lavender</MenuItem>
-                                            <MenuItem value="Myrhh">Myrhh</MenuItem>
-                                            <MenuItem value="Peony">Peony</MenuItem>
-                                            <MenuItem value="Lemongrass">Lemongrass</MenuItem>
-                                            <MenuItem value="Aquatic">Aquatic</MenuItem>
-                                            <MenuItem value="Jasmine">Jasmine</MenuItem>
-                                            <MenuItem value="Basil">Basil</MenuItem>
-                                            <MenuItem value="Grapefruit">Grapefruit</MenuItem>
-                                            <MenuItem value="Pineapple">Pineapple</MenuItem>
-                                            <MenuItem value="Vetiver">Vetiver</MenuItem>
-                                            <MenuItem value="Chamomile">Chamomile</MenuItem>
-                                            <MenuItem value="Bay Rum">Bay Rum</MenuItem>
-                                            <MenuItem value="Guava">Guava</MenuItem>
-                                            <MenuItem value="Sandalwood">Sandalwood</MenuItem>
-                                            <MenuItem value="Watermelon">Watermelon</MenuItem>
-                                            <MenuItem value="Chocolate">Chocolate</MenuItem>
-                                            <MenuItem value="Aloe Vera">Aloe Vera</MenuItem>
-                                            <MenuItem value="Sage">Sage</MenuItem>
-                                            <MenuItem value="Frankincense">Frankincense</MenuItem>
-                                            <MenuItem value="Thyme">Thyme</MenuItem>
-                                            <MenuItem value="Patchouli">Patchouli</MenuItem>
-                                            <MenuItem value="Citrus">Citrus</MenuItem>
-                                            <MenuItem value="Turmeric">Turmeric</MenuItem>
-                                            <MenuItem value="Kiwi">Kiwi</MenuItem>
-                                            <MenuItem value="Green Apple">Green Apple</MenuItem>
-                                            <MenuItem value="Cypress">Cypress</MenuItem>
-                                            <MenuItem value="Tangerine">Tangerine</MenuItem>
-                                            <MenuItem value="Raspberry">Raspberry</MenuItem>
-                                            <MenuItem value="Carnation">Carnation</MenuItem>
-                                        </TextField>
-                                    </div>
-                                </>
-                            )}
-                        />
-                    </div>
-                    <div>
-                        <Controller
-                            control={control}
-                            name='meltingTemperature'
-                            rules={{
-                                required: "This field is required",
-                                max: {
-                                    value: 1100,
-                                    message: "The value in this field exceeds the maximum quantity allowed: 1100"
-                                }
-
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-                                        <label className="labelbold me-2">Melting Temperature (degrees Celsius)</label>
-                                        <TextField
-                                            placeholder="100,200"
-                                            id="meltingTemperature"
-                                            variant="outlined"
-                                            {...field}
-                                            style={{ width: "50%" }}
-                                            error={Boolean(errors.meltingTemperature)}
-                                        />
-                                        {Boolean(errors.meltingTemperature) && (
-                                            <div className="error-message mt-1 mt-lg-0">
-                                                {errors.meltingTemperature.message}
-                                            </div>
-                                        )}
-                                    </div>
-                                </>
-                            )}
-                        />
-
-                    </div>
-                    <div>
-                        <Controller
-                            control={control}
-                            name="meltingTemperatureUnit"
-                            rules={{
-                                required: "this field is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className='d-flex align-items-center mb-3'>
-
-                                        <TextField
-                                            id="meltingTemperatureUnit-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "50%" }}
-                                            placeholder="Sensitive"
-                                            {...field}
-                                            error={Boolean(errors.meltingTemperatureUnit)}
-
-                                        >
-                                            <MenuItem value="">-Select-</MenuItem>
-                                            <MenuItem value="degrees_fahrenheit">degrees_fahrenheit</MenuItem>
-                                            <MenuItem value="Kelvin">Kelvin</MenuItem>
-                                            <MenuItem value="degrees_celsius">degrees_celsius</MenuItem>
-
-                                        </TextField>
-                                    </div>
-                                </>
-                            )}
-                        />
-                    </div>
-                    {/* <div>
-                <Controller
-                    control={control}
-                    name='size'
-                    rules={{
-                        required: "This field is required",
-                     
-                    }}
-                    render={({ field }) => (
-                        <>
-                            <div className='d-flex align-items-center mb-3'>
-                                <label className="labelbold me-2">Size</label>
-                                <TextField
-                                    placeholder="6"
-                                    id="ppuCount"
-                                    variant="outlined"
-                                    {...field}
-                                    style={{ width: "50%" }}
-                                    error={Boolean(errors.ppuCount)}
-                                />
-                            </div>
-                        </>
-                    )}
-                />
-
-            </div> */}
-                </>
-            )
-            }
-
-            {formComponents6 && (
-                <>
-                    {/* Artist,Artwork Medium,Date,Framed,Sale Type */}
-                    <h5>Fine Art/
-                        Drawing/
-                        Chalk Drawings</h5>
-                    <div className="row">
-                        <Controller
-                            control={control}
-                            name='artistName'
-                            rules={{
-                                required: "artist Name is required"
-                            }}
-                            render={({ field }) => (
-                                <>
-
-                                    <div className="col-4 col-sm-3 col-lg-2 text-end">
-                                        <label className="labelbold me-2">Artist</label>
-                                    </div>
-                                    <div className="col-8 col-sm-7 col-lg-6">
-                                        <TextField
-                                            placeholder="Artist"
-                                            id="artistName"
-                                            variant="outlined"
-                                            {...field}
-                                            style={{ width: "100%" }}
-                                            error={Boolean(errors.artistName)}
-                                        />
-                                    </div>
-
-                                </>
-                            )}
-                        />
-
-                    </div>
-                    <div className="row" style={{ marginTop: "10px" }}>
-                        <Controller
-                            control={control}
-                            name="artworkMedium"
-                            rules={{
-                                required: "artworkMedium is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className="col-4 col-sm-3 col-lg-2 text-end">
-                                        <label className="labelbold me-2">Artwork Medium</label>
-                                    </div>
-                                    <div className="col-8 col-sm-7 col-lg-6">
-                                        <TextField
-                                            id="artworkMedium-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "100%" }}
-                                            placeholder="Oil"
-                                            {...field}
-                                            error={Boolean(errors.artworkMedium)}
-
-                                        >
-                                            <MenuItem value="">-Select-</MenuItem>
-                                            <MenuItem value="Encaustic">Encaustic</MenuItem>
-                                            <MenuItem value="Textile">Textile</MenuItem>
-                                            <MenuItem value="Ink">Ink</MenuItem>
-                                            <MenuItem value="Pastel">Pastel</MenuItem>
-                                            <MenuItem value="Drypoint">Drypoint</MenuItem>
-                                        </TextField>
-                                    </div>
-
-                                </>
-                            )}
-                        />
-                    </div>
-                    <div className="row" style={{ marginTop: "10px" }}>
-                        <Controller
-                            control={control}
-                            name='productDate'
-                            rules={{
-                                required: "productDate is required",
-                                pattern: {
-                                    value: new RegExp('^[0-9]+$'),
-                                    message: "not a valid formate"
-                                }
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className="col-4 col-sm-3 col-lg-2 text-end">
-                                        <label className="labelbold me-2">Date</label>
-                                    </div>
-                                    <div className="col-8 col-sm-7 col-lg-6">
-                                        <TextField
-                                            placeholder="1998"
-                                            id="productDate"
-                                            variant="outlined"
-                                            {...field}
-                                            style={{ width: "100%" }}
-                                            error={Boolean(errors.productDate)}
-                                        />
-                                    </div>
-                                </>
-                            )}
-                        />
-
-                    </div>
-                    <div className="row" style={{ marginTop: "10px" }}>
-                        <Controller
-                            control={control}
-                            name="productFramed"
-                            rules={{
-                                required: "productFramed is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className="col-4 col-sm-3 col-lg-2 text-end">
-                                        <label className="labelbold me-2">Framed</label>
-                                    </div>
-                                    <div className="col-8 col-sm-7 col-lg-6">
-                                        <TextField
-                                            id="productFramed-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "100%" }}
-                                            placeholder="Oil"
-                                            {...field}
-                                            error={Boolean(errors.productFramed)}
-
-                                        >
-                                            <MenuItem value="">-Select-</MenuItem>
-                                            <MenuItem value="Yes">Yes</MenuItem>
-                                            <MenuItem value="No">No</MenuItem>
-
-                                        </TextField>
-                                    </div>
-                                </>
-                            )}
-                        />
-                    </div>
-                    <div className="row" style={{ marginTop: "10px" }}>
-                        <Controller
-                            control={control}
-                            name="productSaleType"
-                            rules={{
-                                required: "productSaleType is required",
-                            }}
-                            render={({ field }) => (
-                                <>
-                                    <div className="col-4 col-sm-3 col-lg-2 text-end">
-                                        <label className="labelbold me-2">Sale Type</label>
-                                    </div>
-                                    <div className="col-8 col-sm-7 col-lg-6">
-                                        <TextField
-                                            id="productSaleType-select"
-                                            variant="outlined"
-                                            select
-                                            style={{ width: "100%" }}
-                                            placeholder="Oil"
-                                            {...field}
-                                            error={Boolean(errors.productSaleType)}
-
-                                        >
-
-                                            <MenuItem value="Primary">Primary</MenuItem>
-                                            <MenuItem value="Secondary">Secondary</MenuItem>
-
-                                        </TextField>
-                                    </div>
-
-                                </>
-                            )}
-                        />
-                    </div>
-                </>
-            )}
-            {
-                (formComponents3) && (
-                    <div>
-                        {/* model,Number of Items,Item Dimensions D x W x H,Included Components,Size,Material Type */}
-                        <div>
-                            <Controller
-                                control={control}
-                                name='modelname'
-                                rules={{
-                                    required: "this field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className='d-flex align-items-center my-3'>
-                                            <label className="labelbold me-2">model</label>
-                                            <TextField
-                                                placeholder="model"
-                                                id="modelname"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "50%" }}
-                                                error={Boolean(errors.modelname)}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            />
-
-                        </div>
-                        <div>
-                            <Controller
-                                control={control}
-                                name='numberofitems'
-                                rules={{
-                                    required: "Number of Items is required",
-                                    pattern: {
-                                        value: new RegExp('^[0-9]+$'),
-                                        message: "value is invalid"
-                                    }
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className='d-flex align-items-center mb-3'>
-                                            <label className="labelbold me-2">Number of Items</label>
-                                            <TextField
-                                                placeholder="1"
-                                                id="numberofitems"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "50%" }}
-                                                error={Boolean(errors.numberofitems)}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            />
-
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                <label className='labelbold'>Item Dimensions D x W x H</label>
-                            </div>
-                            <div className="col-8 col-sm-7 col-lg-6">
-                                <div>
-                                    <div className='row align-items-end'>
-                                        <Controller
-                                            control={control}
-                                            name='itemDepthfrontToback'
-                                            rules={{
-                                                required: "this field is required",
-                                                pattern: {
-                                                    value: new RegExp('^[0-9]+$'),
-                                                    message: "not a valid formate"
-                                                }
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-                                                    <div className="col-12 col-sm-6">
-                                                        <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                            <label className="labelbold me-2">Item Depth Front To Back</label>
-                                                            <TextField
-                                                                placeholder="30"
-                                                                id="itemDepthfrontToback"
-                                                                variant="outlined"
-                                                                {...field}
-
-                                                                error={Boolean(errors.itemDepthfrontToback)}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </>
-                                            )}
-                                        />
-                                        <Controller
-                                            control={control}
-                                            name='itemDepthfrontTobackUnit'
-                                            rules={{
-                                                required: "this is required"
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-
-                                                    <div className="col-12 col-sm-6">
-                                                        <TextField
-                                                            id="itemDepthfrontTobackUnit"
-                                                            variant="outlined"
-                                                            select
-                                                            style={{ width: "100%" }}
-                                                            {...field}
-                                                            error={Boolean(errors.itemDepthfrontTobackUnit)}
-                                                        >
-                                                            <MenuItem value="">-Select-</MenuItem>
-                                                            <MenuItem value="New">Centimeters</MenuItem>
-                                                        </TextField>
-                                                    </div>
-                                                </>
-                                            )}
-
-                                        />
-
-                                    </div>
-                                    <div className='row align-items-end'>
-                                        <Controller
-                                            control={control}
-                                            name='itemWidthsideToside'
-                                            rules={{
-                                                required: "this field is required",
-                                                pattern: {
-                                                    value: new RegExp('^[0-9]+$'),
-                                                    message: "not a valid formate"
-                                                }
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-                                                    <div className="col-12 col-sm-6">
-                                                        <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                            <label className="labelbold me-2">Item Width Side to Side</label>
-                                                            <TextField
-                                                                placeholder="25"
-                                                                id="itemWidthsideToside"
-                                                                variant="outlined"
-                                                                {...field}
-                                                                error={Boolean(errors.itemWidthsideToside)}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </>
-                                            )}
-                                        />
-                                        <Controller
-                                            control={control}
-                                            name='itemWidthsideTosideUnit'
-                                            rules={{
-                                                required: "this field is required"
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-                                                    <div className="col-12 col-sm-6">
-                                                        <TextField
-                                                            id="itemWidthsideTosideUnit"
-                                                            variant="outlined"
-                                                            select
-                                                            style={{ width: "100%" }}
-                                                            {...field}
-                                                            error={Boolean(errors.itemWidthsideTosideUnit)}
-                                                        >
-                                                            <MenuItem value="">-Select-</MenuItem>
-                                                            <MenuItem value="New">Centimeters</MenuItem>
-                                                        </TextField>
-                                                    </div>
-                                                </>
-                                            )}
-                                        />
-                                    </div>
-                                    <div className='row align-items-end'>
-                                        <Controller
-                                            control={control}
-                                            name='itemHeightbaseTotop'
-                                            rules={{
-                                                required: "this field is required",
-                                                pattern: {
-                                                    value: new RegExp('^[0-9]+$'),
-                                                    message: "not a valid formate"
-                                                }
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-                                                    <div className="col-12 col-sm-6">
-                                                        <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                            <label className="labelbold me-2">Height Base to Top</label>
-                                                            <TextField
-                                                                placeholder="80"
-                                                                id="itemHeightbaseTotop"
-                                                                variant="outlined"
-                                                                {...field}
-
-                                                                error={Boolean(errors.itemHeightbaseTotop)}
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </>
-                                            )}
-                                        />
-                                        <Controller
-                                            control={control}
-                                            name='itemHeightbaseTotopUnit'
-                                            rules={{
-                                                required: "this field is required"
-                                            }}
-                                            render={({ field }) => (
-                                                <>
-                                                    <div className="col-12 col-sm-6">
-                                                        <TextField
-                                                            id="itemHeightbaseTotopUnit"
-                                                            variant="outlined"
-                                                            select
-                                                            style={{ width: "100%" }}
-                                                            {...field}
-                                                            error={Boolean(errors.itemHeightbaseTotopUnit)}
-                                                        >
-                                                            <MenuItem value="">-Select-</MenuItem>
-                                                            <MenuItem value="New">Centimeters</MenuItem>
-
-                                                        </TextField>
-                                                    </div>
-                                                </>
-                                            )}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row" style={{ marginTop: "10px" }}>
-
-                            <Controller
-                                control={control}
-                                name="includedComponent"
-                                rules={{
-                                    required: "This field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                            <label className="labelbold me-2">Included Components</label>
-                                        </div>
-                                        <div className="col-8 col-sm-7 col-lg-6">
-                                            <TextField
-                                                placeholder="1 year manufacturer."
-                                                id="includedComponent"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "100%" }}
-                                                onFocus={() => setIsFocused(true)}
-                                                onBlur={() => setIsFocused(false)}
-                                                error={Boolean(errors.includedComponent)}
-                                            />
-                                            {errors.inputValue && <p>{errors.inputValue.message}</p>}
-
-                                            {isFocused && (
-                                                <ul>
-                                                    <li onClick={handleSetIncludedValue} value="remote">remote</li>
-                                                    <li>cover</li>
-                                                    <li>wheels</li>
-                                                </ul>
-                                            )}
-                                        </div>
-
-
-                                    </>
-                                )}
-                            />
-
-
-                        </div>
-                        <div>
-                            <Controller
-                                control={control}
-                                name='productSize'
-                                rules={{
-                                    required: "this field is required",
-
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className='d-flex align-items-center mb-3'>
-                                            <label className="labelbold me-2">Size</label>
-                                            <TextField
-                                                placeholder=""
-                                                id="productSize"
-                                                variant="outlined"
-                                                {...field}
-                                                style={{ width: "50%" }}
-                                                error={Boolean(errors.productSize)}
-                                            />
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-                        <div>
-                            <Controller
-                                control={control}
-                                name="materialType"
-                                rules={{
-                                    required: "this field is required",
-                                }}
-                                render={({ field }) => (
-                                    <>
-                                        <div className='d-flex align-items-center mb-3'>
-                                            <label className="labelbold me-2">Material Type</label>
-                                            <TextField
-                                                id="materialType-select"
-                                                variant="outlined"
-                                                select
-                                                style={{ width: "50%" }}
-                                                placeholder="select"
-                                                {...field}
-                                                error={Boolean(errors.materialType)}
-                                            >
-                                                <MenuItem value="">-Select-</MenuItem>
-                                                <MenuItem value="Nylon">Nylon</MenuItem>
-                                                <MenuItem value="Aluminum">Aluminum</MenuItem>
-                                                <MenuItem value="Solid Gold">Solid Gold</MenuItem>
-                                                <MenuItem value="Cedar">Cedar</MenuItem>
-                                                <MenuItem value="Stone">Stone</MenuItem>
-                                                <MenuItem value="Porcelain">Porcelain</MenuItem>
-                                                <MenuItem value="Porcelain Bone China">Porcelain Bone China</MenuItem>
-                                                <MenuItem value="Pewter">Pewter</MenuItem>
-                                                <MenuItem value="Stainless Steel">Stainless Steel</MenuItem>
-                                                <MenuItem value="Teracotta">Teracotta</MenuItem>
-                                                <MenuItem value="Neoprene">Neoprene</MenuItem>
-                                                <MenuItem value="Copper">Copper</MenuItem>
-                                                <MenuItem value="Polycarbonate">Polycarbonate</MenuItem>
-                                                <MenuItem value="Recycled">Recycled</MenuItem>
-                                                <MenuItem value="Bronze">Bronze</MenuItem>
-                                                <MenuItem value="Clay">Clay</MenuItem>
-                                                <MenuItem value="Elmwood">Elmwood</MenuItem>
-                                                <MenuItem value="Polyester">Polyester</MenuItem>
-                                                <MenuItem value="Hard-Anodized Aluminum">Hard-Anodized Aluminum</MenuItem>
-                                                <MenuItem value="Leaded Crystal">Leaded Crystal</MenuItem>
-                                                <MenuItem value="Silicone">Silicone</MenuItem>
-                                                <MenuItem value="Cherrywood">Cherrywood</MenuItem>
-                                                <MenuItem value="Marble">Marble</MenuItem>
-                                                <MenuItem value="Nonstick">Nonstick</MenuItem>
-                                                <MenuItem value="Silver">Silver</MenuItem>
-                                                <MenuItem value="Pine">Pine</MenuItem>
-                                                <MenuItem value="Oak">Oak</MenuItem>
-                                                <MenuItem value="Non-Leaded Crystal">Non-Leaded Crystal</MenuItem>
-                                                <MenuItem value="Bamboo">Bamboo</MenuItem>
-                                                <MenuItem value="Fabric">Fabric</MenuItem>
-                                                <MenuItem value="Acrylic">Acrylic</MenuItem>
-                                                <MenuItem value="Crystal">Crystal</MenuItem>
-                                                <MenuItem value="Silver-Plated">Silver-Plated</MenuItem>
-                                                <MenuItem value="Synthetic">Synthetic</MenuItem>
-                                                <MenuItem value="Birch">Birch</MenuItem>
-                                                <MenuItem value="18/8 Steel">18/8 Steel</MenuItem>
-                                                <MenuItem value="Beechwood">Beechwood</MenuItem>
-                                                <MenuItem value="Stoneware">Stoneware</MenuItem>
-                                                <MenuItem value="Brass">Brass</MenuItem>
-                                                <MenuItem value="Multi-ply">Multi-ply</MenuItem>
-                                                <MenuItem value="Glass">Glass</MenuItem>
-                                                <MenuItem value="Leather">Leather</MenuItem>
-                                                <MenuItem value="Iron">Iron</MenuItem>
-                                                <MenuItem value="Plastic">Plastic</MenuItem>
-                                                <MenuItem value="Cotton">Cotton</MenuItem>
-                                                <MenuItem value="Paraffin">Paraffin</MenuItem>
-                                                <MenuItem value="Polyresin">Polyresin</MenuItem>
-                                                <MenuItem value="Wax">Wax</MenuItem>
-                                                <MenuItem value="Bone China">Bone China</MenuItem>
-                                                <MenuItem value="Platinume">Platinume</MenuItem>
-                                                <MenuItem value="Chrome">Chrome</MenuItem>
-                                                <MenuItem value="Mahogany">Mahogany</MenuItem>
-                                                <MenuItem value="Olive Wood">Olive Wood</MenuItem>
-                                                <MenuItem value="18/10 Steel">18/10 Steel</MenuItem>
-                                                <MenuItem value="Rubber">Rubber</MenuItem>
-                                                <MenuItem value="Teak">Teak</MenuItem>
-                                                <MenuItem value="Maple">Maple</MenuItem>
-                                                <MenuItem value="Acrylic Coated Cotton">Acrylic Coated Cotton</MenuItem>
-                                                <MenuItem value="Rosewood">Rosewood</MenuItem>
-                                                <MenuItem value="Cork">Cork</MenuItem>
-                                                <MenuItem value="Melamine">Melamine</MenuItem>
-                                                <MenuItem value="Gilded Gold">Gilded Gold</MenuItem>
-                                                <MenuItem value="HardWood">HardWood</MenuItem>
-                                                <MenuItem value="Steel">Steel</MenuItem>
-                                                <MenuItem value="Carbon">Carbon</MenuItem>
-                                                <MenuItem value="Zinc">Zinc</MenuItem>
-                                                <MenuItem value="Earthenware">Earthenware</MenuItem>
-                                                <MenuItem value="Chromium Steel">Chromium Steel</MenuItem>
-                                                <MenuItem value="Walnut">Walnut</MenuItem>
-                                                <MenuItem value="Cast Iron">Cast Iron</MenuItem>
-                                                <MenuItem value="Rattan & Wicker">Rattan & Wicker</MenuItem>
-                                                <MenuItem value="Tin">Tin</MenuItem>
-                                                <MenuItem value="Ceramic">Ceramic</MenuItem>
-                                                <MenuItem value="Paper">Paper</MenuItem>
-                                                <MenuItem value="Tritan">Tritan</MenuItem>
-                                                <MenuItem value="Nickel">Nickel</MenuItem>
-                                                <MenuItem value="Polycast">Polycast</MenuItem>
-                                                <MenuItem value="Other">Other</MenuItem>
-                                            </TextField>
-                                        </div>
-                                    </>
-                                )}
-                            />
-                        </div>
-
-
-                    </div>
-                )
-            }
-
-            <div className="row" style={{ marginTop: "10px" }}>
-
-
-                {
-                    (formComponents4) && (
-                        <>
-                            {/* model,Number of Items,Product Care Instructions,Contains Liquid Contents?,Is Assembly Required,Number of Pieces,Included Components,Size,Material Type,Number of Boxes,Color */}
-                            <div className="row">
-                                <Controller
-                                    control={control}
-                                    name='modelname'
-                                    rules={{
-                                        required: "this field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">model</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="model"
-                                                    id="modelname"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.modelname)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='numberofitems'
-                                    rules={{
-                                        required: "Number of Items is required",
-                                        pattern: {
-                                            value: new RegExp('^[0-9]+$'),
-                                            message: "value is invalid"
-                                        }
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Number of Items</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="1"
-                                                    id="numberofitems"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.numberofitems)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='productCareInstruction'
-                                    rules={{
-                                        required: "this field is required",
-
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Product Care Instructions</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="Dry clean only"
-                                                    id="productCareInstruction"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.productCareInstruction)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name="containsliquidcontent"
-                                    rules={{
-                                        required: "Contains liquid content is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Contains Liquid Contents?</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    id="containsliquidcontent-select"
-                                                    variant="outlined"
-                                                    select
-                                                    style={{ width: "100%" }}
-                                                    placeholder="select"
-                                                    {...field}
-                                                    error={Boolean(errors.containsliquidcontent)}
-                                                >
-                                                    <MenuItem value="">-Select-</MenuItem>
-                                                    <MenuItem value="Yes">Yes</MenuItem>
-                                                    <MenuItem value="No">No</MenuItem>
-                                                </TextField>
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name="assemblyRequired"
-                                    rules={{
-                                        required: "this field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Is Assembly Required</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    id="assemblyRequired-select"
-                                                    variant="outlined"
-                                                    select
-                                                    style={{ width: "100%" }}
-                                                    placeholder="select"
-                                                    {...field}
-                                                    error={Boolean(errors.assemblyRequired)}
-                                                >
-                                                    <MenuItem value="">-Select-</MenuItem>
-                                                    <MenuItem value="Yes">Yes</MenuItem>
-                                                    <MenuItem value="No">No</MenuItem>
-                                                </TextField>
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='numberofPieces'
-                                    rules={{
-                                        required: "this field is required",
-                                        pattern: {
-                                            value: new RegExp('^[0-9]+$'),
-                                            message: "value is invalid"
-                                        }
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Number of Pieces</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="5"
-                                                    id="numberofPieces"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.numberofPieces)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-
-                                <Controller
-                                    control={control}
-                                    name="includedComponent"
-                                    rules={{
-                                        required: "This field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Included Components</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="1 year manufacturer."
-                                                    id="includedComponent"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    onFocus={() => setIsFocused(true)}
-                                                    onBlur={() => setIsFocused(false)}
-                                                    error={Boolean(errors.includedComponent)}
-                                                />
-                                                {errors.inputValue && <p>{errors.inputValue.message}</p>}
-
-                                                {isFocused && (
-                                                    <ul>
-                                                        <li onClick={handleSetIncludedValue} value="remote">remote</li>
-                                                        <li>cover</li>
-                                                        <li>wheels</li>
-                                                    </ul>
-                                                )}
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='productSize'
-                                    rules={{
-                                        required: "this field is required",
-
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Size</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder=""
-                                                    id="productSize"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.productSize)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name="materialType"
-                                    rules={{
-                                        required: "this field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Material Type</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    id="materialType-select"
-                                                    variant="outlined"
-                                                    select
-                                                    style={{ width: "100%" }}
-                                                    placeholder="select"
-                                                    {...field}
-                                                    error={Boolean(errors.materialType)}
-                                                >
-                                                    <MenuItem value="">-Select-</MenuItem>
-                                                    <MenuItem value="Nylon">Nylon</MenuItem>
-                                                    <MenuItem value="Aluminum">Aluminum</MenuItem>
-                                                    <MenuItem value="Solid Gold">Solid Gold</MenuItem>
-                                                    <MenuItem value="Cedar">Cedar</MenuItem>
-                                                    <MenuItem value="Stone">Stone</MenuItem>
-                                                    <MenuItem value="Porcelain">Porcelain</MenuItem>
-                                                    <MenuItem value="Porcelain Bone China">Porcelain Bone China</MenuItem>
-                                                    <MenuItem value="Pewter">Pewter</MenuItem>
-                                                    <MenuItem value="Stainless Steel">Stainless Steel</MenuItem>
-                                                    <MenuItem value="Teracotta">Teracotta</MenuItem>
-                                                    <MenuItem value="Neoprene">Neoprene</MenuItem>
-                                                    <MenuItem value="Copper">Copper</MenuItem>
-                                                    <MenuItem value="Polycarbonate">Polycarbonate</MenuItem>
-                                                    <MenuItem value="Recycled">Recycled</MenuItem>
-                                                    <MenuItem value="Bronze">Bronze</MenuItem>
-                                                    <MenuItem value="Clay">Clay</MenuItem>
-                                                    <MenuItem value="Elmwood">Elmwood</MenuItem>
-                                                    <MenuItem value="Polyester">Polyester</MenuItem>
-                                                    <MenuItem value="Hard-Anodized Aluminum">Hard-Anodized Aluminum</MenuItem>
-                                                    <MenuItem value="Leaded Crystal">Leaded Crystal</MenuItem>
-                                                    <MenuItem value="Silicone">Silicone</MenuItem>
-                                                    <MenuItem value="Cherrywood">Cherrywood</MenuItem>
-                                                    <MenuItem value="Marble">Marble</MenuItem>
-                                                    <MenuItem value="Nonstick">Nonstick</MenuItem>
-                                                    <MenuItem value="Silver">Silver</MenuItem>
-                                                    <MenuItem value="Pine">Pine</MenuItem>
-                                                    <MenuItem value="Oak">Oak</MenuItem>
-                                                    <MenuItem value="Non-Leaded Crystal">Non-Leaded Crystal</MenuItem>
-                                                    <MenuItem value="Bamboo">Bamboo</MenuItem>
-                                                    <MenuItem value="Fabric">Fabric</MenuItem>
-                                                    <MenuItem value="Acrylic">Acrylic</MenuItem>
-                                                    <MenuItem value="Crystal">Crystal</MenuItem>
-                                                    <MenuItem value="Silver-Plated">Silver-Plated</MenuItem>
-                                                    <MenuItem value="Synthetic">Synthetic</MenuItem>
-                                                    <MenuItem value="Birch">Birch</MenuItem>
-                                                    <MenuItem value="18/8 Steel">18/8 Steel</MenuItem>
-                                                    <MenuItem value="Beechwood">Beechwood</MenuItem>
-                                                    <MenuItem value="Stoneware">Stoneware</MenuItem>
-                                                    <MenuItem value="Brass">Brass</MenuItem>
-                                                    <MenuItem value="Multi-ply">Multi-ply</MenuItem>
-                                                    <MenuItem value="Glass">Glass</MenuItem>
-                                                    <MenuItem value="Leather">Leather</MenuItem>
-                                                    <MenuItem value="Iron">Iron</MenuItem>
-                                                    <MenuItem value="Plastic">Plastic</MenuItem>
-                                                    <MenuItem value="Cotton">Cotton</MenuItem>
-                                                    <MenuItem value="Paraffin">Paraffin</MenuItem>
-                                                    <MenuItem value="Polyresin">Polyresin</MenuItem>
-                                                    <MenuItem value="Wax">Wax</MenuItem>
-                                                    <MenuItem value="Bone China">Bone China</MenuItem>
-                                                    <MenuItem value="Platinume">Platinume</MenuItem>
-                                                    <MenuItem value="Chrome">Chrome</MenuItem>
-                                                    <MenuItem value="Mahogany">Mahogany</MenuItem>
-                                                    <MenuItem value="Olive Wood">Olive Wood</MenuItem>
-                                                    <MenuItem value="18/10 Steel">18/10 Steel</MenuItem>
-                                                    <MenuItem value="Rubber">Rubber</MenuItem>
-                                                    <MenuItem value="Teak">Teak</MenuItem>
-                                                    <MenuItem value="Maple">Maple</MenuItem>
-                                                    <MenuItem value="Acrylic Coated Cotton">Acrylic Coated Cotton</MenuItem>
-                                                    <MenuItem value="Rosewood">Rosewood</MenuItem>
-                                                    <MenuItem value="Cork">Cork</MenuItem>
-                                                    <MenuItem value="Melamine">Melamine</MenuItem>
-                                                    <MenuItem value="Gilded Gold">Gilded Gold</MenuItem>
-                                                    <MenuItem value="HardWood">HardWood</MenuItem>
-                                                    <MenuItem value="Steel">Steel</MenuItem>
-                                                    <MenuItem value="Carbon">Carbon</MenuItem>
-                                                    <MenuItem value="Zinc">Zinc</MenuItem>
-                                                    <MenuItem value="Earthenware">Earthenware</MenuItem>
-                                                    <MenuItem value="Chromium Steel">Chromium Steel</MenuItem>
-                                                    <MenuItem value="Walnut">Walnut</MenuItem>
-                                                    <MenuItem value="Cast Iron">Cast Iron</MenuItem>
-                                                    <MenuItem value="Rattan & Wicker">Rattan & Wicker</MenuItem>
-                                                    <MenuItem value="Tin">Tin</MenuItem>
-                                                    <MenuItem value="Ceramic">Ceramic</MenuItem>
-                                                    <MenuItem value="Paper">Paper</MenuItem>
-                                                    <MenuItem value="Tritan">Tritan</MenuItem>
-                                                    <MenuItem value="Nickel">Nickel</MenuItem>
-                                                    <MenuItem value="Polycast">Polycast</MenuItem>
-                                                    <MenuItem value="Other">Other</MenuItem>
-                                                </TextField>
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='numberofBoxes'
-                                    rules={{
-                                        required: "this field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2"> Number of Boxes </label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="5"
-                                                    id="numberofBoxes"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.numberofBoxes)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='productColor'
-                                    rules={{
-                                        required: "this field is required",
-
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Color</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder=""
-                                                    id="productColor"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.productColor)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                        </>
-                    )
-                }
-                {
-                    formComponents7 && (
-                        <>
-                            {/* Manufacturer Part Number,Number of Items,Contains Liquid Contents?,Box Contents,Number of Boxes,Manufacturer */}
-                            <div>
-                                <Controller
-                                    control={control}
-                                    name='manufacturepartno'
-                                    rules={{
-                                        required: "Manufacturer Part Number is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className='d-flex align-items-center mb-3'>
-                                                <label className="labelbold me-2">Manufacturer Part Number </label>
-                                                <TextField
-                                                    placeholder="SB-122"
-                                                    id="manufacturepartno"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "50%" }}
-                                                    error={Boolean(errors.manufacturepartno)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='numberofitems'
-                                    rules={{
-                                        required: "Number of Items is required",
-                                        pattern: {
-                                            value: new RegExp('^[0-9]+$'),
-                                            message: "value is invalid"
-                                        }
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Number of Items</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="1"
-                                                    id="numberofitems"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.numberofitems)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name="containsliquidcontent"
-                                    rules={{
-                                        required: "Contains liquid content is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Contains Liquid Contents?</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    id="containsliquidcontent-select"
-                                                    variant="outlined"
-                                                    select
-                                                    style={{ width: "100%" }}
-                                                    placeholder="select"
-                                                    {...field}
-                                                    error={Boolean(errors.containsliquidcontent)}
-                                                >
-                                                    <MenuItem value="">-Select-</MenuItem>
-                                                    <MenuItem value="Yes">Yes</MenuItem>
-                                                    <MenuItem value="No">No</MenuItem>
-                                                </TextField>
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='boxContents'
-                                    rules={{
-                                        required: "Box Contents is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Box Contents</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="speaker,power cable,user manual,warranty certificate"
-                                                    id="boxContents"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.boxContents)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='numberofBoxes'
-                                    rules={{
-                                        required: "this field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2"> Number of Boxes </label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="5"
-                                                    id="numberofBoxes"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.numberofBoxes)}
-                                                />
-                                            </div>
-
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='itemManufacturer'
-                                    rules={{
-                                        required: "this field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Manufacturer</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="XYZ Pvt Ltd"
-                                                    id="itemManufacturer"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.itemManufacturer)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                        </>
-                    )
-                }
-                {
-                    formComponents8 && (
-                        <>
-                            {/* Search Terms,Manufacturer Part Number, Is Product Expirable, Number of Items,Contains Liquid Contents?, Included Components,Number of Boxes,Manufacturer,model */}
-                            <div>
-                                <div>
-                                    <Controller
-                                        control={control}
-                                        name='searchTerms'
-                                        rules={{
-                                            required: "Search Terms is required"
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className='d-flex align-items-center mb-3'>
-                                                    <label className="labelbold me-2">Search Tearms</label>
-                                                    <TextField
-                                                        placeholder="Electric"
-                                                        id="searchTerms"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "50%" }}
-                                                        error={Boolean(errors.searchTerms)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-
-                                </div>
-                                <div>
-                                    <Controller
-                                        control={control}
-                                        name='manufacturepartno'
-                                        rules={{
-                                            required: "Manufacturer Part Number is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className='d-flex align-items-center mb-3'>
-                                                    <label className="labelbold me-2">Manufacturer Part Number </label>
-                                                    <TextField
-                                                        placeholder="SB-122"
-                                                        id="manufacturepartno"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "50%" }}
-                                                        error={Boolean(errors.manufacturepartno)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className='row' style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='productExpirable'
-                                        rules={{
-                                            required: "productExpirable is required"
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className='labelbold me-2'>Is Product Expirable</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="productExpirable"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        {...field}
-                                                        error={Boolean(errors.productExpirable)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Yes">Yes</MenuItem>
-                                                        <MenuItem value="No">No</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='numberofitems'
-                                        rules={{
-                                            required: "Number of Items is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "value is invalid"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Number of Items</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="1"
-                                                        id="numberofitems"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.numberofitems)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="containsliquidcontent"
-                                        rules={{
-                                            required: "Contains liquid content is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Contains Liquid Contents?</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="containsliquidcontent-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.containsliquidcontent)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Yes">Yes</MenuItem>
-                                                        <MenuItem value="No">No</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="includedComponent"
-                                        rules={{
-                                            required: "This field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Included Components</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="1 year manufacturer."
-                                                        id="includedComponent"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        onFocus={() => setIsFocused(true)}
-                                                        onBlur={() => setIsFocused(false)}
-                                                        error={Boolean(errors.includedComponent)}
-                                                    />
-                                                    {errors.inputValue && <p>{errors.inputValue.message}</p>}
-
-                                                    {isFocused && (
-                                                        <ul>
-                                                            <li onClick={handleSetIncludedValue} value="remote">remote</li>
-                                                            <li>cover</li>
-                                                            <li>wheels</li>
-                                                        </ul>
-                                                    )}
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='numberofBoxes'
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2"> Number of Boxes </label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="5"
-                                                        id="numberofBoxes"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.numberofBoxes)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='itemManufacturer'
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Manufacturer</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="XYZ Pvt Ltd"
-                                                        id="itemManufacturer"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.itemManufacturer)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row">
-                                    <Controller
-                                        control={control}
-                                        name='modelname'
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">model</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="model"
-                                                        id="modelname"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.modelname)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                            </div>
-
-                        </>
-                    )
-                }
-                {
-                    formComponents9 && (
-                        <>
-                            {/* Model,Number of Items,Unit Count,Unit Count Type,Included Components,Color,Manufacturer */}
-                            <div>
-                                <div className="row">
-                                    <Controller
-                                        control={control}
-                                        name='modelname'
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">model</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="model"
-                                                        id="modelname"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.modelname)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='numberofitems'
-                                    rules={{
-                                        required: "Number of Items is required",
-                                        pattern: {
-                                            value: new RegExp('^[0-9]+$'),
-                                            message: "value is invalid"
-                                        }
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Number of Items</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="1"
-                                                    id="numberofitems"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.numberofitems)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='unitCount'
-                                    rules={{
-                                        required: "this field is required",
-                                        pattern: {
-                                            value: new RegExp('^[0-9]+$'),
-                                            message: "value is invalid"
-                                        }
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Unit Count</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="12"
-                                                    id="unitCount"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.unitCount)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name="unitCountType"
-                                    rules={{
-                                        required: "this field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Unit Count Type</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    id="unitCountType-select"
-                                                    variant="outlined"
-                                                    select
-                                                    style={{ width: "100%" }}
-                                                    placeholder="women"
-                                                    {...field}
-                                                    error={Boolean(errors.unitCountType)}
-
-                                                >
-                                                    <MenuItem value="">-Select-</MenuItem>
-                                                    <MenuItem value="Women">Meters</MenuItem>
-                                                    <MenuItem value="Unisex Children">Pouch</MenuItem>
-                                                    <MenuItem value="Men">Grams</MenuItem>
-                                                    <MenuItem value="Boys">Liters</MenuItem>
-                                                    <MenuItem value="Girls">Mililiters</MenuItem>
-                                                    <MenuItem value="Set">Set</MenuItem>
-                                                    <MenuItem value="Kilograms">Kilograms</MenuItem>
-                                                    <MenuItem value="Count">Count</MenuItem>
-                                                    <MenuItem value="Square Meters">Square Meters</MenuItem>
-                                                    <MenuItem value="Case">Case</MenuItem>
-                                                    <MenuItem value="Feet">Feet</MenuItem>
-                                                    <MenuItem value="Can">Can</MenuItem>
-                                                    <MenuItem value="Pounds">Pounds</MenuItem>
-                                                    <MenuItem value="Piece">Piece</MenuItem>
-                                                    <MenuItem value="Ounce">Ounce</MenuItem>
-                                                    <MenuItem value="Pint">Pint</MenuItem>
-                                                    <MenuItem value="Pack">Pack</MenuItem>
-                                                    <MenuItem value="Square feet">Square feet</MenuItem>
-                                                    <MenuItem value="Fluid Ounces">Fluid Ounces</MenuItem>
-                                                </TextField>
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name="includedComponent"
-                                    rules={{
-                                        required: "This field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Included Components</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="1 year manufacturer."
-                                                    id="includedComponent"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    onFocus={() => setIsFocused(true)}
-                                                    onBlur={() => setIsFocused(false)}
-                                                    error={Boolean(errors.includedComponent)}
-                                                />
-                                                {errors.inputValue && <p>{errors.inputValue.message}</p>}
-
-                                                {isFocused && (
-                                                    <ul>
-                                                        <li onClick={handleSetIncludedValue} value="remote">remote</li>
-                                                        <li>cover</li>
-                                                        <li>wheels</li>
-                                                    </ul>
-                                                )}
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='productColor'
-                                    rules={{
-                                        required: "this field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Color</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder=""
-                                                    id="productColor"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.productColor)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                            <div className="row" style={{ marginTop: "10px" }}>
-                                <Controller
-                                    control={control}
-                                    name='itemManufacturer'
-                                    rules={{
-                                        required: "this field is required",
-                                    }}
-                                    render={({ field }) => (
-                                        <>
-                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                <label className="labelbold me-2">Manufacturer</label>
-                                            </div>
-                                            <div className="col-8 col-sm-7 col-lg-6">
-                                                <TextField
-                                                    placeholder="XYZ Pvt Ltd"
-                                                    id="itemManufacturer"
-                                                    variant="outlined"
-                                                    {...field}
-                                                    style={{ width: "100%" }}
-                                                    error={Boolean(errors.itemManufacturer)}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
-                                />
-                            </div>
-                        </>
-                    )
-                }
-                {
-                    formComponents10 && (
-                        <>
-                            {/* Model Number,Number of Items,Product Care Instructions,Contains Liquid Contents?,Is Assembly Required,Model Name,Number of Pieces,Included Components,Size,Color Map,Material Type */}
-                            <div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='modelnumber'
-                                        rules={{
-                                            required: "Modal Number is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Model Number </label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="AZL20"
-                                                        id="modelnumber"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.modelnumber)}
-                                                    />
-                                                </div>
-
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='numberofitems'
-                                        rules={{
-                                            required: "Number of Items is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "value is invalid"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Number of Items</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="1"
-                                                        id="numberofitems"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.numberofitems)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='productCareInstruction'
-                                        rules={{
-                                            required: "this field is required",
-
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Product Care Instructions</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="Dry clean only"
-                                                        id="productCareInstruction"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.productCareInstruction)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="containsliquidcontent"
-                                        rules={{
-                                            required: "Contains liquid content is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Contains Liquid Contents?</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="containsliquidcontent-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.containsliquidcontent)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Yes">Yes</MenuItem>
-                                                        <MenuItem value="No">No</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="assemblyRequired"
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Is Assembly Required</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="assemblyRequired-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.assemblyRequired)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Yes">Yes</MenuItem>
-                                                        <MenuItem value="No">No</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row">
-                                    <Controller
-                                        control={control}
-                                        name='modelname'
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Model Name</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="model"
-                                                        id="modelname"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.modelname)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='numberofPieces'
-                                        rules={{
-                                            required: "this field is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "value is invalid"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Number of Pieces</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="5"
-                                                        id="numberofPieces"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.numberofPieces)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="includedComponent"
-                                        rules={{
-                                            required: "This field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Included Components</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="1 year manufacturer."
-                                                        id="includedComponent"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        onFocus={() => setIsFocused(true)}
-                                                        onBlur={() => setIsFocused(false)}
-                                                        error={Boolean(errors.includedComponent)}
-                                                    />
-                                                    {errors.inputValue && <p>{errors.inputValue.message}</p>}
-
-                                                    {isFocused && (
-                                                        <ul>
-                                                            <li onClick={handleSetIncludedValue} value="remote">remote</li>
-                                                            <li>cover</li>
-                                                            <li>wheels</li>
-                                                        </ul>
-                                                    )}
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='productSize'
-                                        rules={{
-                                            required: "this field is required",
-
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Size</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder=""
-                                                        id="productSize"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.productSize)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="productColorMap"
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Colour Map</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="productColorMap-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.productColorMap)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Bronze">Bronze</MenuItem>
-                                                        <MenuItem value="Brown">Brown</MenuItem>
-                                                        <MenuItem value="Gold">Gold</MenuItem>
-                                                        <MenuItem value="Blue">Blue</MenuItem>
-                                                        <MenuItem value="Multicolor">Multicolor</MenuItem>
-                                                        <MenuItem value="Black">Black</MenuItem>
-                                                        <MenuItem value="Orange">Orange</MenuItem>
-                                                        <MenuItem value="Clear">Clear</MenuItem>
-                                                        <MenuItem value="Red">Red</MenuItem>
-                                                        <MenuItem value="Silver">Silver</MenuItem>
-                                                        <MenuItem value="Pink">Pink</MenuItem>
-                                                        <MenuItem value="White">White</MenuItem>
-                                                        <MenuItem value="Metalic">Metalic</MenuItem>
-                                                        <MenuItem value="Beige">Beige</MenuItem>
-                                                        <MenuItem value="Purple">Purple</MenuItem>
-                                                        <MenuItem value="Yellow">Yellow</MenuItem>
-                                                        <MenuItem value="Turquoise">Turquoise</MenuItem>
-                                                        <MenuItem value="Green">Green</MenuItem>
-                                                        <MenuItem value="Grey">Grey</MenuItem>
-                                                        <MenuItem value="Offwhite">Offwhite</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="materialType"
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Material Type</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="materialType-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.materialType)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Nylon">Nylon</MenuItem>
-                                                        <MenuItem value="Aluminum">Aluminum</MenuItem>
-                                                        <MenuItem value="Solid Gold">Solid Gold</MenuItem>
-                                                        <MenuItem value="Cedar">Cedar</MenuItem>
-                                                        <MenuItem value="Stone">Stone</MenuItem>
-                                                        <MenuItem value="Porcelain">Porcelain</MenuItem>
-                                                        <MenuItem value="Porcelain Bone China">Porcelain Bone China</MenuItem>
-                                                        <MenuItem value="Pewter">Pewter</MenuItem>
-                                                        <MenuItem value="Stainless Steel">Stainless Steel</MenuItem>
-                                                        <MenuItem value="Teracotta">Teracotta</MenuItem>
-                                                        <MenuItem value="Neoprene">Neoprene</MenuItem>
-                                                        <MenuItem value="Copper">Copper</MenuItem>
-                                                        <MenuItem value="Polycarbonate">Polycarbonate</MenuItem>
-                                                        <MenuItem value="Recycled">Recycled</MenuItem>
-                                                        <MenuItem value="Bronze">Bronze</MenuItem>
-                                                        <MenuItem value="Clay">Clay</MenuItem>
-                                                        <MenuItem value="Elmwood">Elmwood</MenuItem>
-                                                        <MenuItem value="Polyester">Polyester</MenuItem>
-                                                        <MenuItem value="Hard-Anodized Aluminum">Hard-Anodized Aluminum</MenuItem>
-                                                        <MenuItem value="Leaded Crystal">Leaded Crystal</MenuItem>
-                                                        <MenuItem value="Silicone">Silicone</MenuItem>
-                                                        <MenuItem value="Cherrywood">Cherrywood</MenuItem>
-                                                        <MenuItem value="Marble">Marble</MenuItem>
-                                                        <MenuItem value="Nonstick">Nonstick</MenuItem>
-                                                        <MenuItem value="Silver">Silver</MenuItem>
-                                                        <MenuItem value="Pine">Pine</MenuItem>
-                                                        <MenuItem value="Oak">Oak</MenuItem>
-                                                        <MenuItem value="Non-Leaded Crystal">Non-Leaded Crystal</MenuItem>
-                                                        <MenuItem value="Bamboo">Bamboo</MenuItem>
-                                                        <MenuItem value="Fabric">Fabric</MenuItem>
-                                                        <MenuItem value="Acrylic">Acrylic</MenuItem>
-                                                        <MenuItem value="Crystal">Crystal</MenuItem>
-                                                        <MenuItem value="Silver-Plated">Silver-Plated</MenuItem>
-                                                        <MenuItem value="Synthetic">Synthetic</MenuItem>
-                                                        <MenuItem value="Birch">Birch</MenuItem>
-                                                        <MenuItem value="18/8 Steel">18/8 Steel</MenuItem>
-                                                        <MenuItem value="Beechwood">Beechwood</MenuItem>
-                                                        <MenuItem value="Stoneware">Stoneware</MenuItem>
-                                                        <MenuItem value="Brass">Brass</MenuItem>
-                                                        <MenuItem value="Multi-ply">Multi-ply</MenuItem>
-                                                        <MenuItem value="Glass">Glass</MenuItem>
-                                                        <MenuItem value="Leather">Leather</MenuItem>
-                                                        <MenuItem value="Iron">Iron</MenuItem>
-                                                        <MenuItem value="Plastic">Plastic</MenuItem>
-                                                        <MenuItem value="Cotton">Cotton</MenuItem>
-                                                        <MenuItem value="Paraffin">Paraffin</MenuItem>
-                                                        <MenuItem value="Polyresin">Polyresin</MenuItem>
-                                                        <MenuItem value="Wax">Wax</MenuItem>
-                                                        <MenuItem value="Bone China">Bone China</MenuItem>
-                                                        <MenuItem value="Platinume">Platinume</MenuItem>
-                                                        <MenuItem value="Chrome">Chrome</MenuItem>
-                                                        <MenuItem value="Mahogany">Mahogany</MenuItem>
-                                                        <MenuItem value="Olive Wood">Olive Wood</MenuItem>
-                                                        <MenuItem value="18/10 Steel">18/10 Steel</MenuItem>
-                                                        <MenuItem value="Rubber">Rubber</MenuItem>
-                                                        <MenuItem value="Teak">Teak</MenuItem>
-                                                        <MenuItem value="Maple">Maple</MenuItem>
-                                                        <MenuItem value="Acrylic Coated Cotton">Acrylic Coated Cotton</MenuItem>
-                                                        <MenuItem value="Rosewood">Rosewood</MenuItem>
-                                                        <MenuItem value="Cork">Cork</MenuItem>
-                                                        <MenuItem value="Melamine">Melamine</MenuItem>
-                                                        <MenuItem value="Gilded Gold">Gilded Gold</MenuItem>
-                                                        <MenuItem value="HardWood">HardWood</MenuItem>
-                                                        <MenuItem value="Steel">Steel</MenuItem>
-                                                        <MenuItem value="Carbon">Carbon</MenuItem>
-                                                        <MenuItem value="Zinc">Zinc</MenuItem>
-                                                        <MenuItem value="Earthenware">Earthenware</MenuItem>
-                                                        <MenuItem value="Chromium Steel">Chromium Steel</MenuItem>
-                                                        <MenuItem value="Walnut">Walnut</MenuItem>
-                                                        <MenuItem value="Cast Iron">Cast Iron</MenuItem>
-                                                        <MenuItem value="Rattan & Wicker">Rattan & Wicker</MenuItem>
-                                                        <MenuItem value="Tin">Tin</MenuItem>
-                                                        <MenuItem value="Ceramic">Ceramic</MenuItem>
-                                                        <MenuItem value="Paper">Paper</MenuItem>
-                                                        <MenuItem value="Tritan">Tritan</MenuItem>
-                                                        <MenuItem value="Nickel">Nickel</MenuItem>
-                                                        <MenuItem value="Polycast">Polycast</MenuItem>
-                                                        <MenuItem value="Other">Other</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                            </div>
-                        </>
-                    )
-                }
-                {
-                    formComponents11 && (
-                        <>
-                            {/* Model Number,Number of Items,Product Care Instructions,Contains Liquid Contents?,Is Assembly Required,Model Name,Number of Pieces,Included Components,Size,Color Map,Material Type,Number of Boxes */}
-                            <div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='modelnumber'
-                                        rules={{
-                                            required: "Modal Number is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Model Number </label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="AZL20"
-                                                        id="modelnumber"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.modelnumber)}
-                                                    />
-                                                </div>
-
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='numberofitems'
-                                        rules={{
-                                            required: "Number of Items is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "value is invalid"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Number of Items</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="1"
-                                                        id="numberofitems"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.numberofitems)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='productCareInstruction'
-                                        rules={{
-                                            required: "this field is required",
-
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Product Care Instructions</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="Dry clean only"
-                                                        id="productCareInstruction"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.productCareInstruction)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="containsliquidcontent"
-                                        rules={{
-                                            required: "Contains liquid content is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Contains Liquid Contents?</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="containsliquidcontent-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.containsliquidcontent)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Yes">Yes</MenuItem>
-                                                        <MenuItem value="No">No</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="assemblyRequired"
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Is Assembly Required</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="assemblyRequired-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.assemblyRequired)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Yes">Yes</MenuItem>
-                                                        <MenuItem value="No">No</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row">
-                                    <Controller
-                                        control={control}
-                                        name='modelname'
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Model Name</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="model"
-                                                        id="modelname"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.modelname)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='numberofPieces'
-                                        rules={{
-                                            required: "this field is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "value is invalid"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Number of Pieces</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="5"
-                                                        id="numberofPieces"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.numberofPieces)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="includedComponent"
-                                        rules={{
-                                            required: "This field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Included Components</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="1 year manufacturer."
-                                                        id="includedComponent"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        onFocus={() => setIsFocused(true)}
-                                                        onBlur={() => setIsFocused(false)}
-                                                        error={Boolean(errors.includedComponent)}
-                                                    />
-                                                    {errors.inputValue && <p>{errors.inputValue.message}</p>}
-
-                                                    {isFocused && (
-                                                        <ul>
-                                                            <li onClick={handleSetIncludedValue} value="remote">remote</li>
-                                                            <li>cover</li>
-                                                            <li>wheels</li>
-                                                        </ul>
-                                                    )}
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='productSize'
-                                        rules={{
-                                            required: "this field is required",
-
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Size</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder=""
-                                                        id="productSize"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.productSize)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="productColorMap"
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Colour Map</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="productColorMap-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.productColorMap)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Bronze">Bronze</MenuItem>
-                                                        <MenuItem value="Brown">Brown</MenuItem>
-                                                        <MenuItem value="Gold">Gold</MenuItem>
-                                                        <MenuItem value="Blue">Blue</MenuItem>
-                                                        <MenuItem value="Multicolor">Multicolor</MenuItem>
-                                                        <MenuItem value="Black">Black</MenuItem>
-                                                        <MenuItem value="Orange">Orange</MenuItem>
-                                                        <MenuItem value="Clear">Clear</MenuItem>
-                                                        <MenuItem value="Red">Red</MenuItem>
-                                                        <MenuItem value="Silver">Silver</MenuItem>
-                                                        <MenuItem value="Pink">Pink</MenuItem>
-                                                        <MenuItem value="White">White</MenuItem>
-                                                        <MenuItem value="Metalic">Metalic</MenuItem>
-                                                        <MenuItem value="Beige">Beige</MenuItem>
-                                                        <MenuItem value="Purple">Purple</MenuItem>
-                                                        <MenuItem value="Yellow">Yellow</MenuItem>
-                                                        <MenuItem value="Turquoise">Turquoise</MenuItem>
-                                                        <MenuItem value="Green">Green</MenuItem>
-                                                        <MenuItem value="Grey">Grey</MenuItem>
-                                                        <MenuItem value="Offwhite">Offwhite</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="materialType"
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Material Type</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="materialType-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.materialType)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Nylon">Nylon</MenuItem>
-                                                        <MenuItem value="Aluminum">Aluminum</MenuItem>
-                                                        <MenuItem value="Solid Gold">Solid Gold</MenuItem>
-                                                        <MenuItem value="Cedar">Cedar</MenuItem>
-                                                        <MenuItem value="Stone">Stone</MenuItem>
-                                                        <MenuItem value="Porcelain">Porcelain</MenuItem>
-                                                        <MenuItem value="Porcelain Bone China">Porcelain Bone China</MenuItem>
-                                                        <MenuItem value="Pewter">Pewter</MenuItem>
-                                                        <MenuItem value="Stainless Steel">Stainless Steel</MenuItem>
-                                                        <MenuItem value="Teracotta">Teracotta</MenuItem>
-                                                        <MenuItem value="Neoprene">Neoprene</MenuItem>
-                                                        <MenuItem value="Copper">Copper</MenuItem>
-                                                        <MenuItem value="Polycarbonate">Polycarbonate</MenuItem>
-                                                        <MenuItem value="Recycled">Recycled</MenuItem>
-                                                        <MenuItem value="Bronze">Bronze</MenuItem>
-                                                        <MenuItem value="Clay">Clay</MenuItem>
-                                                        <MenuItem value="Elmwood">Elmwood</MenuItem>
-                                                        <MenuItem value="Polyester">Polyester</MenuItem>
-                                                        <MenuItem value="Hard-Anodized Aluminum">Hard-Anodized Aluminum</MenuItem>
-                                                        <MenuItem value="Leaded Crystal">Leaded Crystal</MenuItem>
-                                                        <MenuItem value="Silicone">Silicone</MenuItem>
-                                                        <MenuItem value="Cherrywood">Cherrywood</MenuItem>
-                                                        <MenuItem value="Marble">Marble</MenuItem>
-                                                        <MenuItem value="Nonstick">Nonstick</MenuItem>
-                                                        <MenuItem value="Silver">Silver</MenuItem>
-                                                        <MenuItem value="Pine">Pine</MenuItem>
-                                                        <MenuItem value="Oak">Oak</MenuItem>
-                                                        <MenuItem value="Non-Leaded Crystal">Non-Leaded Crystal</MenuItem>
-                                                        <MenuItem value="Bamboo">Bamboo</MenuItem>
-                                                        <MenuItem value="Fabric">Fabric</MenuItem>
-                                                        <MenuItem value="Acrylic">Acrylic</MenuItem>
-                                                        <MenuItem value="Crystal">Crystal</MenuItem>
-                                                        <MenuItem value="Silver-Plated">Silver-Plated</MenuItem>
-                                                        <MenuItem value="Synthetic">Synthetic</MenuItem>
-                                                        <MenuItem value="Birch">Birch</MenuItem>
-                                                        <MenuItem value="18/8 Steel">18/8 Steel</MenuItem>
-                                                        <MenuItem value="Beechwood">Beechwood</MenuItem>
-                                                        <MenuItem value="Stoneware">Stoneware</MenuItem>
-                                                        <MenuItem value="Brass">Brass</MenuItem>
-                                                        <MenuItem value="Multi-ply">Multi-ply</MenuItem>
-                                                        <MenuItem value="Glass">Glass</MenuItem>
-                                                        <MenuItem value="Leather">Leather</MenuItem>
-                                                        <MenuItem value="Iron">Iron</MenuItem>
-                                                        <MenuItem value="Plastic">Plastic</MenuItem>
-                                                        <MenuItem value="Cotton">Cotton</MenuItem>
-                                                        <MenuItem value="Paraffin">Paraffin</MenuItem>
-                                                        <MenuItem value="Polyresin">Polyresin</MenuItem>
-                                                        <MenuItem value="Wax">Wax</MenuItem>
-                                                        <MenuItem value="Bone China">Bone China</MenuItem>
-                                                        <MenuItem value="Platinume">Platinume</MenuItem>
-                                                        <MenuItem value="Chrome">Chrome</MenuItem>
-                                                        <MenuItem value="Mahogany">Mahogany</MenuItem>
-                                                        <MenuItem value="Olive Wood">Olive Wood</MenuItem>
-                                                        <MenuItem value="18/10 Steel">18/10 Steel</MenuItem>
-                                                        <MenuItem value="Rubber">Rubber</MenuItem>
-                                                        <MenuItem value="Teak">Teak</MenuItem>
-                                                        <MenuItem value="Maple">Maple</MenuItem>
-                                                        <MenuItem value="Acrylic Coated Cotton">Acrylic Coated Cotton</MenuItem>
-                                                        <MenuItem value="Rosewood">Rosewood</MenuItem>
-                                                        <MenuItem value="Cork">Cork</MenuItem>
-                                                        <MenuItem value="Melamine">Melamine</MenuItem>
-                                                        <MenuItem value="Gilded Gold">Gilded Gold</MenuItem>
-                                                        <MenuItem value="HardWood">HardWood</MenuItem>
-                                                        <MenuItem value="Steel">Steel</MenuItem>
-                                                        <MenuItem value="Carbon">Carbon</MenuItem>
-                                                        <MenuItem value="Zinc">Zinc</MenuItem>
-                                                        <MenuItem value="Earthenware">Earthenware</MenuItem>
-                                                        <MenuItem value="Chromium Steel">Chromium Steel</MenuItem>
-                                                        <MenuItem value="Walnut">Walnut</MenuItem>
-                                                        <MenuItem value="Cast Iron">Cast Iron</MenuItem>
-                                                        <MenuItem value="Rattan & Wicker">Rattan & Wicker</MenuItem>
-                                                        <MenuItem value="Tin">Tin</MenuItem>
-                                                        <MenuItem value="Ceramic">Ceramic</MenuItem>
-                                                        <MenuItem value="Paper">Paper</MenuItem>
-                                                        <MenuItem value="Tritan">Tritan</MenuItem>
-                                                        <MenuItem value="Nickel">Nickel</MenuItem>
-                                                        <MenuItem value="Polycast">Polycast</MenuItem>
-                                                        <MenuItem value="Other">Other</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='numberofBoxes'
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2"> Number of Boxes </label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="5"
-                                                        id="numberofBoxes"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.numberofBoxes)}
-                                                    />
-                                                </div>
-
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                            </div>
-                        </>
-                    )
-                }
-                {
-                    formComponents12 && (
-                        <>
-                            {/* =>  Model,Number of Items,Unit Count,Unit Count Type,Product Care Instructions,Contains Liquid Contents?,Model Name,Number of Pieces,Included Components,Size,Size Map,Color,Material Type,Manufacturer */}
-                            <div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='modelnumber'
-                                        rules={{
-                                            required: "Modal Number is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Model Number </label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="AZL20"
-                                                        id="modelnumber"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.modelnumber)}
-                                                    />
-                                                </div>
-
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='numberofitems'
-                                        rules={{
-                                            required: "Number of Items is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "value is invalid"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Number of Items</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="1"
-                                                        id="numberofitems"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.numberofitems)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='unitCount'
-                                        rules={{
-                                            required: "this field is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "value is invalid"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Unit Count</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="12"
-                                                        id="unitCount"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.unitCount)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="unitCountType"
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Unit Count Type</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="unitCountType-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="women"
-                                                        {...field}
-                                                        error={Boolean(errors.unitCountType)}
-
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Women">Meters</MenuItem>
-                                                        <MenuItem value="Unisex Children">Pouch</MenuItem>
-                                                        <MenuItem value="Men">Grams</MenuItem>
-                                                        <MenuItem value="Boys">Liters</MenuItem>
-                                                        <MenuItem value="Girls">Mililiters</MenuItem>
-                                                        <MenuItem value="Set">Set</MenuItem>
-                                                        <MenuItem value="Kilograms">Kilograms</MenuItem>
-                                                        <MenuItem value="Count">Count</MenuItem>
-                                                        <MenuItem value="Square Meters">Square Meters</MenuItem>
-                                                        <MenuItem value="Case">Case</MenuItem>
-                                                        <MenuItem value="Feet">Feet</MenuItem>
-                                                        <MenuItem value="Can">Can</MenuItem>
-                                                        <MenuItem value="Pounds">Pounds</MenuItem>
-                                                        <MenuItem value="Piece">Piece</MenuItem>
-                                                        <MenuItem value="Ounce">Ounce</MenuItem>
-                                                        <MenuItem value="Pint">Pint</MenuItem>
-                                                        <MenuItem value="Pack">Pack</MenuItem>
-                                                        <MenuItem value="Square feet">Square feet</MenuItem>
-                                                        <MenuItem value="Fluid Ounces">Fluid Ounces</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='productCareInstruction'
-                                        rules={{
-                                            required: "this field is required",
-
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Product Care Instructions</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="Dry clean only"
-                                                        id="productCareInstruction"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.productCareInstruction)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="containsliquidcontent"
-                                        rules={{
-                                            required: "Contains liquid content is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Contains Liquid Contents?</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="containsliquidcontent-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.containsliquidcontent)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Yes">Yes</MenuItem>
-                                                        <MenuItem value="No">No</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row">
-                                    <Controller
-                                        control={control}
-                                        name='modelname'
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Model Name</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="model"
-                                                        id="modelname"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.modelname)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='numberofPieces'
-                                        rules={{
-                                            required: "this field is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "value is invalid"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Number of Pieces</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="5"
-                                                        id="numberofPieces"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.numberofPieces)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="includedComponent"
-                                        rules={{
-                                            required: "This field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Included Components</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="1 year manufacturer."
-                                                        id="includedComponent"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        onFocus={() => setIsFocused(true)}
-                                                        onBlur={() => setIsFocused(false)}
-                                                        error={Boolean(errors.includedComponent)}
-                                                    />
-                                                    {errors.inputValue && <p>{errors.inputValue.message}</p>}
-
-                                                    {isFocused && (
-                                                        <ul>
-                                                            <li onClick={handleSetIncludedValue} value="remote">remote</li>
-                                                            <li>cover</li>
-                                                            <li>wheels</li>
-                                                        </ul>
-                                                    )}
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='productSize'
-                                        rules={{
-                                            required: "this field is required",
-
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Size</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder=""
-                                                        id="productSize"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.productSize)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="productSizeMap"
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Size Map</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="productSizeMap-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.productSizeMap)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Extra Large">Extra Large</MenuItem>
-                                                        <MenuItem value="Large">Large</MenuItem>
-                                                        <MenuItem value="Medium">Medium</MenuItem>
-                                                        <MenuItem value="Small">Small</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='productColor'
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Color</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder=""
-                                                        id="productColor"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.productColor)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="materialType"
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Material Type</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="materialType-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="select"
-                                                        {...field}
-                                                        error={Boolean(errors.materialType)}
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Nylon">Nylon</MenuItem>
-                                                        <MenuItem value="Aluminum">Aluminum</MenuItem>
-                                                        <MenuItem value="Solid Gold">Solid Gold</MenuItem>
-                                                        <MenuItem value="Cedar">Cedar</MenuItem>
-                                                        <MenuItem value="Stone">Stone</MenuItem>
-                                                        <MenuItem value="Porcelain">Porcelain</MenuItem>
-                                                        <MenuItem value="Porcelain Bone China">Porcelain Bone China</MenuItem>
-                                                        <MenuItem value="Pewter">Pewter</MenuItem>
-                                                        <MenuItem value="Stainless Steel">Stainless Steel</MenuItem>
-                                                        <MenuItem value="Teracotta">Teracotta</MenuItem>
-                                                        <MenuItem value="Neoprene">Neoprene</MenuItem>
-                                                        <MenuItem value="Copper">Copper</MenuItem>
-                                                        <MenuItem value="Polycarbonate">Polycarbonate</MenuItem>
-                                                        <MenuItem value="Recycled">Recycled</MenuItem>
-                                                        <MenuItem value="Bronze">Bronze</MenuItem>
-                                                        <MenuItem value="Clay">Clay</MenuItem>
-                                                        <MenuItem value="Elmwood">Elmwood</MenuItem>
-                                                        <MenuItem value="Polyester">Polyester</MenuItem>
-                                                        <MenuItem value="Hard-Anodized Aluminum">Hard-Anodized Aluminum</MenuItem>
-                                                        <MenuItem value="Leaded Crystal">Leaded Crystal</MenuItem>
-                                                        <MenuItem value="Silicone">Silicone</MenuItem>
-                                                        <MenuItem value="Cherrywood">Cherrywood</MenuItem>
-                                                        <MenuItem value="Marble">Marble</MenuItem>
-                                                        <MenuItem value="Nonstick">Nonstick</MenuItem>
-                                                        <MenuItem value="Silver">Silver</MenuItem>
-                                                        <MenuItem value="Pine">Pine</MenuItem>
-                                                        <MenuItem value="Oak">Oak</MenuItem>
-                                                        <MenuItem value="Non-Leaded Crystal">Non-Leaded Crystal</MenuItem>
-                                                        <MenuItem value="Bamboo">Bamboo</MenuItem>
-                                                        <MenuItem value="Fabric">Fabric</MenuItem>
-                                                        <MenuItem value="Acrylic">Acrylic</MenuItem>
-                                                        <MenuItem value="Crystal">Crystal</MenuItem>
-                                                        <MenuItem value="Silver-Plated">Silver-Plated</MenuItem>
-                                                        <MenuItem value="Synthetic">Synthetic</MenuItem>
-                                                        <MenuItem value="Birch">Birch</MenuItem>
-                                                        <MenuItem value="18/8 Steel">18/8 Steel</MenuItem>
-                                                        <MenuItem value="Beechwood">Beechwood</MenuItem>
-                                                        <MenuItem value="Stoneware">Stoneware</MenuItem>
-                                                        <MenuItem value="Brass">Brass</MenuItem>
-                                                        <MenuItem value="Multi-ply">Multi-ply</MenuItem>
-                                                        <MenuItem value="Glass">Glass</MenuItem>
-                                                        <MenuItem value="Leather">Leather</MenuItem>
-                                                        <MenuItem value="Iron">Iron</MenuItem>
-                                                        <MenuItem value="Plastic">Plastic</MenuItem>
-                                                        <MenuItem value="Cotton">Cotton</MenuItem>
-                                                        <MenuItem value="Paraffin">Paraffin</MenuItem>
-                                                        <MenuItem value="Polyresin">Polyresin</MenuItem>
-                                                        <MenuItem value="Wax">Wax</MenuItem>
-                                                        <MenuItem value="Bone China">Bone China</MenuItem>
-                                                        <MenuItem value="Platinume">Platinume</MenuItem>
-                                                        <MenuItem value="Chrome">Chrome</MenuItem>
-                                                        <MenuItem value="Mahogany">Mahogany</MenuItem>
-                                                        <MenuItem value="Olive Wood">Olive Wood</MenuItem>
-                                                        <MenuItem value="18/10 Steel">18/10 Steel</MenuItem>
-                                                        <MenuItem value="Rubber">Rubber</MenuItem>
-                                                        <MenuItem value="Teak">Teak</MenuItem>
-                                                        <MenuItem value="Maple">Maple</MenuItem>
-                                                        <MenuItem value="Acrylic Coated Cotton">Acrylic Coated Cotton</MenuItem>
-                                                        <MenuItem value="Rosewood">Rosewood</MenuItem>
-                                                        <MenuItem value="Cork">Cork</MenuItem>
-                                                        <MenuItem value="Melamine">Melamine</MenuItem>
-                                                        <MenuItem value="Gilded Gold">Gilded Gold</MenuItem>
-                                                        <MenuItem value="HardWood">HardWood</MenuItem>
-                                                        <MenuItem value="Steel">Steel</MenuItem>
-                                                        <MenuItem value="Carbon">Carbon</MenuItem>
-                                                        <MenuItem value="Zinc">Zinc</MenuItem>
-                                                        <MenuItem value="Earthenware">Earthenware</MenuItem>
-                                                        <MenuItem value="Chromium Steel">Chromium Steel</MenuItem>
-                                                        <MenuItem value="Walnut">Walnut</MenuItem>
-                                                        <MenuItem value="Cast Iron">Cast Iron</MenuItem>
-                                                        <MenuItem value="Rattan & Wicker">Rattan & Wicker</MenuItem>
-                                                        <MenuItem value="Tin">Tin</MenuItem>
-                                                        <MenuItem value="Ceramic">Ceramic</MenuItem>
-                                                        <MenuItem value="Paper">Paper</MenuItem>
-                                                        <MenuItem value="Tritan">Tritan</MenuItem>
-                                                        <MenuItem value="Nickel">Nickel</MenuItem>
-                                                        <MenuItem value="Polycast">Polycast</MenuItem>
-                                                        <MenuItem value="Other">Other</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='itemManufacturer'
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Manufacturer</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="XYZ Pvt Ltd"
-                                                        id="itemManufacturer"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.itemManufacturer)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                            </div>
-                        </>
-                    )
-                }
-                {
-                    formComponents13 && (
-                        <>
-                            {/* =>  Model Number(Style Number),Item Dimensions D x W x H,Unit Count,Unit Count Type,Model Name,Included Components */}
-                            <div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='modelnumber'
-                                        rules={{
-                                            required: "Modal Number is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Model Number </label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="AZL20"
-                                                        id="modelnumber"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.modelnumber)}
-                                                    />
-                                                </div>
-
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                        <label className='labelbold'>Item Dimensions D x W x H</label>
-                                    </div>
-                                    <div className="col-8 col-sm-7 col-lg-6">
-                                        <div>
-                                            <div className='row align-items-end'>
-                                                <Controller
-                                                    control={control}
-                                                    name='itemDepthfrontToback'
-                                                    rules={{
-                                                        required: "this field is required",
-                                                        pattern: {
-                                                            value: new RegExp('^[0-9]+$'),
-                                                            message: "not a valid formate"
-                                                        }
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-                                                            <div className="col-12 col-sm-6">
-                                                                <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                                    <label className="labelbold me-2">Item Depth Front To Back</label>
-                                                                    <TextField
-                                                                        placeholder="30"
-                                                                        id="itemDepthfrontToback"
-                                                                        variant="outlined"
-                                                                        {...field}
-
-                                                                        error={Boolean(errors.itemDepthfrontToback)}
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                />
-                                                <Controller
-                                                    control={control}
-                                                    name='itemDepthfrontTobackUnit'
-                                                    rules={{
-                                                        required: "this is required"
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-
-                                                            <div className="col-12 col-sm-6">
-                                                                <TextField
-                                                                    id="itemDepthfrontTobackUnit"
-                                                                    variant="outlined"
-                                                                    select
-                                                                    style={{ width: "100%" }}
-                                                                    {...field}
-                                                                    error={Boolean(errors.itemDepthfrontTobackUnit)}
-                                                                >
-                                                                    <MenuItem value="">-Select-</MenuItem>
-                                                                    <MenuItem value="New">Centimeters</MenuItem>
-                                                                </TextField>
-                                                            </div>
-                                                        </>
-                                                    )}
-
-                                                />
-
-                                            </div>
-                                            <div className='row align-items-end'>
-                                                <Controller
-                                                    control={control}
-                                                    name='itemWidthsideToside'
-                                                    rules={{
-                                                        required: "this field is required",
-                                                        pattern: {
-                                                            value: new RegExp('^[0-9]+$'),
-                                                            message: "not a valid formate"
-                                                        }
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-                                                            <div className="col-12 col-sm-6">
-                                                                <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                                    <label className="labelbold me-2">Item Width Side to Side</label>
-                                                                    <TextField
-                                                                        placeholder="25"
-                                                                        id="itemWidthsideToside"
-                                                                        variant="outlined"
-                                                                        {...field}
-                                                                        error={Boolean(errors.itemWidthsideToside)}
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                />
-                                                <Controller
-                                                    control={control}
-                                                    name='itemWidthsideTosideUnit'
-                                                    rules={{
-                                                        required: "this field is required"
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-                                                            <div className="col-12 col-sm-6">
-                                                                <TextField
-                                                                    id="itemWidthsideTosideUnit"
-                                                                    variant="outlined"
-                                                                    select
-                                                                    style={{ width: "100%" }}
-                                                                    {...field}
-                                                                    error={Boolean(errors.itemWidthsideTosideUnit)}
-                                                                >
-                                                                    <MenuItem value="">-Select-</MenuItem>
-                                                                    <MenuItem value="New">Centimeters</MenuItem>
-                                                                </TextField>
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                />
-                                            </div>
-                                            <div className='row align-items-end'>
-                                                <Controller
-                                                    control={control}
-                                                    name='itemHeightbaseTotop'
-                                                    rules={{
-                                                        required: "this field is required",
-                                                        pattern: {
-                                                            value: new RegExp('^[0-9]+$'),
-                                                            message: "not a valid formate"
-                                                        }
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-                                                            <div className="col-12 col-sm-6">
-                                                                <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                                    <label className="labelbold me-2">Height Base to Top</label>
-                                                                    <TextField
-                                                                        placeholder="80"
-                                                                        id="itemHeightbaseTotop"
-                                                                        variant="outlined"
-                                                                        {...field}
-
-                                                                        error={Boolean(errors.itemHeightbaseTotop)}
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                />
-                                                <Controller
-                                                    control={control}
-                                                    name='itemHeightbaseTotopUnit'
-                                                    rules={{
-                                                        required: "this field is required"
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-                                                            <div className="col-12 col-sm-6">
-                                                                <TextField
-                                                                    id="itemHeightbaseTotopUnit"
-                                                                    variant="outlined"
-                                                                    select
-                                                                    style={{ width: "100%" }}
-                                                                    {...field}
-                                                                    error={Boolean(errors.itemHeightbaseTotopUnit)}
-                                                                >
-                                                                    <MenuItem value="">-Select-</MenuItem>
-                                                                    <MenuItem value="New">Centimeters</MenuItem>
-
-                                                                </TextField>
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='unitCount'
-                                        rules={{
-                                            required: "this field is required",
-                                            pattern: {
-                                                value: new RegExp('^[0-9]+$'),
-                                                message: "value is invalid"
-                                            }
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Unit Count</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="12"
-                                                        id="unitCount"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.unitCount)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="unitCountType"
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Unit Count Type</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        id="unitCountType-select"
-                                                        variant="outlined"
-                                                        select
-                                                        style={{ width: "100%" }}
-                                                        placeholder="women"
-                                                        {...field}
-                                                        error={Boolean(errors.unitCountType)}
-
-                                                    >
-                                                        <MenuItem value="">-Select-</MenuItem>
-                                                        <MenuItem value="Women">Meters</MenuItem>
-                                                        <MenuItem value="Unisex Children">Pouch</MenuItem>
-                                                        <MenuItem value="Men">Grams</MenuItem>
-                                                        <MenuItem value="Boys">Liters</MenuItem>
-                                                        <MenuItem value="Girls">Mililiters</MenuItem>
-                                                        <MenuItem value="Set">Set</MenuItem>
-                                                        <MenuItem value="Kilograms">Kilograms</MenuItem>
-                                                        <MenuItem value="Count">Count</MenuItem>
-                                                        <MenuItem value="Square Meters">Square Meters</MenuItem>
-                                                        <MenuItem value="Case">Case</MenuItem>
-                                                        <MenuItem value="Feet">Feet</MenuItem>
-                                                        <MenuItem value="Can">Can</MenuItem>
-                                                        <MenuItem value="Pounds">Pounds</MenuItem>
-                                                        <MenuItem value="Piece">Piece</MenuItem>
-                                                        <MenuItem value="Ounce">Ounce</MenuItem>
-                                                        <MenuItem value="Pint">Pint</MenuItem>
-                                                        <MenuItem value="Pack">Pack</MenuItem>
-                                                        <MenuItem value="Square feet">Square feet</MenuItem>
-                                                        <MenuItem value="Fluid Ounces">Fluid Ounces</MenuItem>
-                                                    </TextField>
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row">
-                                    <Controller
-                                        control={control}
-                                        name='modelname'
-                                        rules={{
-                                            required: "this field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Model Name</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="model"
-                                                        id="modelname"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.modelname)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="includedComponent"
-                                        rules={{
-                                            required: "This field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Included Components</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="Camera Body,Battery Pack"
-                                                        id="includedComponent"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.includedComponent)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                            </div>
-                        </>
-                    )
-                }
-                {
-                    formComponents14 && (
-                        <>
-                            {/* =>  Model Number(Style Number),Item Dimensions D x W x H,Included Components */}
-                            <div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name='modelnumber'
-                                        rules={{
-                                            required: "Modal Number is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Model Number </label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="AZL20"
-                                                        id="modelnumber"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.modelnumber)}
-                                                    />
-                                                </div>
-
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                        <label className='labelbold'>Item Dimensions D x W x H</label>
-                                    </div>
-                                    <div className="col-8 col-sm-7 col-lg-6">
-                                        <div>
-                                            <div className='row align-items-end'>
-                                                <Controller
-                                                    control={control}
-                                                    name='itemDepthfrontToback'
-                                                    rules={{
-                                                        required: "this field is required",
-                                                        pattern: {
-                                                            value: new RegExp('^[0-9]+$'),
-                                                            message: "not a valid formate"
-                                                        }
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-                                                            <div className="col-12 col-sm-6">
-                                                                <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                                    <label className="labelbold me-2">Item Depth Front To Back</label>
-                                                                    <TextField
-                                                                        placeholder="30"
-                                                                        id="itemDepthfrontToback"
-                                                                        variant="outlined"
-                                                                        {...field}
-
-                                                                        error={Boolean(errors.itemDepthfrontToback)}
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                />
-                                                <Controller
-                                                    control={control}
-                                                    name='itemDepthfrontTobackUnit'
-                                                    rules={{
-                                                        required: "this is required"
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-
-                                                            <div className="col-12 col-sm-6">
-                                                                <TextField
-                                                                    id="itemDepthfrontTobackUnit"
-                                                                    variant="outlined"
-                                                                    select
-                                                                    style={{ width: "100%" }}
-                                                                    {...field}
-                                                                    error={Boolean(errors.itemDepthfrontTobackUnit)}
-                                                                >
-                                                                    <MenuItem value="">-Select-</MenuItem>
-                                                                    <MenuItem value="New">Centimeters</MenuItem>
-                                                                </TextField>
-                                                            </div>
-                                                        </>
-                                                    )}
-
-                                                />
-
-                                            </div>
-                                            <div className='row align-items-end'>
-                                                <Controller
-                                                    control={control}
-                                                    name='itemWidthsideToside'
-                                                    rules={{
-                                                        required: "this field is required",
-                                                        pattern: {
-                                                            value: new RegExp('^[0-9]+$'),
-                                                            message: "not a valid formate"
-                                                        }
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-                                                            <div className="col-12 col-sm-6">
-                                                                <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                                    <label className="labelbold me-2">Item Width Side to Side</label>
-                                                                    <TextField
-                                                                        placeholder="25"
-                                                                        id="itemWidthsideToside"
-                                                                        variant="outlined"
-                                                                        {...field}
-                                                                        error={Boolean(errors.itemWidthsideToside)}
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                />
-                                                <Controller
-                                                    control={control}
-                                                    name='itemWidthsideTosideUnit'
-                                                    rules={{
-                                                        required: "this field is required"
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-                                                            <div className="col-12 col-sm-6">
-                                                                <TextField
-                                                                    id="itemWidthsideTosideUnit"
-                                                                    variant="outlined"
-                                                                    select
-                                                                    style={{ width: "100%" }}
-                                                                    {...field}
-                                                                    error={Boolean(errors.itemWidthsideTosideUnit)}
-                                                                >
-                                                                    <MenuItem value="">-Select-</MenuItem>
-                                                                    <MenuItem value="New">Centimeters</MenuItem>
-                                                                </TextField>
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                />
-                                            </div>
-                                            <div className='row align-items-end'>
-                                                <Controller
-                                                    control={control}
-                                                    name='itemHeightbaseTotop'
-                                                    rules={{
-                                                        required: "this field is required",
-                                                        pattern: {
-                                                            value: new RegExp('^[0-9]+$'),
-                                                            message: "not a valid formate"
-                                                        }
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-                                                            <div className="col-12 col-sm-6">
-                                                                <div className='d-flex flex-column' style={{ width: "100%" }}>
-                                                                    <label className="labelbold me-2">Height Base to Top</label>
-                                                                    <TextField
-                                                                        placeholder="80"
-                                                                        id="itemHeightbaseTotop"
-                                                                        variant="outlined"
-                                                                        {...field}
-
-                                                                        error={Boolean(errors.itemHeightbaseTotop)}
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                />
-                                                <Controller
-                                                    control={control}
-                                                    name='itemHeightbaseTotopUnit'
-                                                    rules={{
-                                                        required: "this field is required"
-                                                    }}
-                                                    render={({ field }) => (
-                                                        <>
-                                                            <div className="col-12 col-sm-6">
-                                                                <TextField
-                                                                    id="itemHeightbaseTotopUnit"
-                                                                    variant="outlined"
-                                                                    select
-                                                                    style={{ width: "100%" }}
-                                                                    {...field}
-                                                                    error={Boolean(errors.itemHeightbaseTotopUnit)}
-                                                                >
-                                                                    <MenuItem value="">-Select-</MenuItem>
-                                                                    <MenuItem value="New">Centimeters</MenuItem>
-
-                                                                </TextField>
-                                                            </div>
-                                                        </>
-                                                    )}
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div className="row" style={{ marginTop: "10px" }}>
-                                    <Controller
-                                        control={control}
-                                        name="includedComponent"
-                                        rules={{
-                                            required: "This field is required",
-                                        }}
-                                        render={({ field }) => (
-                                            <>
-                                                <div className="col-4 col-sm-3 col-lg-3 text-end">
-                                                    <label className="labelbold me-2">Included Components</label>
-                                                </div>
-                                                <div className="col-8 col-sm-7 col-lg-6">
-                                                    <TextField
-                                                        placeholder="Camera Body,Battery Pack"
-                                                        id="includedComponent"
-                                                        variant="outlined"
-                                                        {...field}
-                                                        style={{ width: "100%" }}
-                                                        error={Boolean(errors.includedComponent)}
-                                                    />
-                                                </div>
-                                            </>
-                                        )}
-                                    />
-                                </div>
-                            </div>
-                        </>
-                    )
-                }
+           <div>
                 {
                     formComponents15 && (
                         <>
@@ -17993,6 +14295,43 @@ const ProductDetails = () => {
                             <ProductStyle styleOptions={styleOptions} />
                         </>) : ""
                 }
+                {itemOEMauthorizedField ? (
+                    <>
+                        <div className="row" style={{ marginTop: "10px" }}>
+                            <Controller
+                                control={control}
+                                name="itemOEMauth"
+                                rules={{
+                                    required: "This field  is required",
+                                }}
+                                render={({ field }) => (
+                                    <>
+                                        <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                            <label className="labelbold me-2"> Is the item OEM authorized?</label>
+                                        </div>
+                                        <div className="col-8 col-sm-7 col-lg-6">
+                                            <TextField
+                                                id="itemOEMauth-select"
+                                                variant="outlined"
+                                                select
+                                                style={{ width: "100%" }}
+                                                placeholder="women"
+                                                {...field}
+                                                error={Boolean(errors.itemOEMauth)}
+
+                                            >
+                                                <MenuItem value="">-Select-</MenuItem>
+                                                <MenuItem value="Yes">Yes</MenuItem>
+                                                <MenuItem value="No">No</MenuItem>
+
+                                            </TextField>
+                                        </div>
+                                    </>
+                                )}
+                            />
+                        </div>
+                    </>) : ""
+                }
                 {
                     genderField ? (
                         <>
@@ -19008,6 +15347,7 @@ const ProductDetails = () => {
                 {
                     includedComponentsField ? (
                         <>
+                            {/* Included Components */}
                             <IncludedComponents includedComponentOptions={includedComponentOptions} />
                         </>) : ""
                 }
@@ -20379,6 +16719,107 @@ const ProductDetails = () => {
                                 />
                             </div>
                         </>) : ''
+                }
+                {
+                    innerMaterialTypeField ? (
+                        <>
+                            <div className='row' style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='InnerMaterialType'
+                                    rules={{
+                                        required: "this field is required"
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className='labelbold me-2'>Inner Material Type</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="InnerMaterialType"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    {...field}
+                                                    error={Boolean(errors.InnerMaterialType)}
+                                                >
+
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Alpaca">Alpaca</MenuItem>
+                                                    <MenuItem value="Acrylic">Acrylic</MenuItem>
+                                                    <MenuItem value="Angora">Angora</MenuItem>
+                                                    <MenuItem value="Blended">Blended</MenuItem>
+                                                    <MenuItem value="Brasso">Brasso</MenuItem>
+                                                    <MenuItem value="Brasso & Net">Brasso & Net</MenuItem>
+                                                    <MenuItem value="Brocade & Georgette">Brocade & Georgette</MenuItem>
+                                                    <MenuItem value="Cashmere">Cashmere</MenuItem>
+                                                    <MenuItem value="Chiffon">Chiffon</MenuItem>
+                                                    <MenuItem value="Corduroy">Corduroy</MenuItem>
+                                                    <MenuItem value="Cotton">Cotton</MenuItem>
+                                                    <MenuItem value="Cotton & Crush">Cotton & Crush</MenuItem>
+                                                    <MenuItem value="Cotton Silk">Cotton Silk</MenuItem>
+                                                    <MenuItem value="Crepe">Crepe</MenuItem>
+                                                    <MenuItem value="Crepe Chiffon">Crepe Chiffon</MenuItem>
+                                                    <MenuItem value="Crepe Georgette">Crepe Georgette</MenuItem>
+                                                    <MenuItem value="Crepe Net">Crepe Net</MenuItem>
+                                                    <MenuItem value="Crepe Silk">Crepe Silk</MenuItem>
+                                                    <MenuItem value="Crush">Crush</MenuItem>
+                                                    <MenuItem value="Denim">Denim</MenuItem>
+                                                    <MenuItem value="Down">Down</MenuItem>
+                                                    <MenuItem value="Faux Crepe">Faux Crepe</MenuItem>
+                                                    <MenuItem value="Faux Fur">Faux Fur</MenuItem>
+                                                    <MenuItem value="Faux Leather">Faux Leather</MenuItem>
+                                                    <MenuItem value="Felt">Felt</MenuItem>
+                                                    <MenuItem value="Fleece">Fleece</MenuItem>
+                                                    <MenuItem value="Fur">Fur</MenuItem>
+                                                    <MenuItem value="Hemp">Hemp</MenuItem>
+                                                    <MenuItem value="Mesh">Mesh</MenuItem>
+                                                    <MenuItem value="Shearling">Shearling</MenuItem>
+                                                    <MenuItem value="Jute">Jute</MenuItem>
+                                                    <MenuItem value="EVA">EVA</MenuItem>
+                                                    <MenuItem value="Khadi">Khadi</MenuItem>
+                                                    <MenuItem value="Kora Silk">Kora Silk</MenuItem>
+                                                    <MenuItem value="Leather">Leather</MenuItem>
+                                                    <MenuItem value="Linen">Linen</MenuItem>
+                                                    <MenuItem value="Merino">Merino</MenuItem>
+                                                    <MenuItem value="Mohair">Mohair</MenuItem>
+                                                    <MenuItem value="Net">Net</MenuItem>
+                                                    <MenuItem value="Nylon">Nylon</MenuItem>
+                                                    <MenuItem value="Organza">Organza</MenuItem>
+                                                    <MenuItem value="Pashmina">Pashmina</MenuItem>
+                                                    <MenuItem value="Patent Leather">Patent Leather</MenuItem>
+                                                    <MenuItem value="Poly Cotton">Poly Cotton</MenuItem>
+                                                    <MenuItem value="Polyester">Polyester</MenuItem>
+                                                    <MenuItem value="PVC">PVC</MenuItem>
+                                                    <MenuItem value="Raw Silk">Raw Silk</MenuItem>
+                                                    <MenuItem value="Rubber">Rubber</MenuItem>
+                                                    <MenuItem value="Satin">Satin</MenuItem>
+                                                    <MenuItem value="Sequined">Sequined</MenuItem>
+                                                    <MenuItem value="Silk">Silk</MenuItem>
+                                                    <MenuItem value="Silk & Georgette">Silk & Georgette</MenuItem>
+                                                    <MenuItem value="Silk Cotton">Silk Cotton</MenuItem>
+                                                    <MenuItem value="Smooth Leather">Smooth Leather</MenuItem>
+                                                    <MenuItem value="Suede">Suede</MenuItem>
+                                                    <MenuItem value="Synthetic">Synthetic</MenuItem>
+                                                    <MenuItem value="Microfiber">Microfiber</MenuItem>
+                                                    <MenuItem value="Tassar Silk">Tassar Silk</MenuItem>
+                                                    <MenuItem value="Tissue">Tissue</MenuItem>
+                                                    <MenuItem value="Velvet">Velvet</MenuItem>
+                                                    <MenuItem value="Velvet & Net">Velvet & Net</MenuItem>
+                                                    <MenuItem value="Viscose">Viscose</MenuItem>
+                                                    <MenuItem value="Wool">Wool</MenuItem>
+                                                    <MenuItem value="Other">Other</MenuItem>
+                                                    <MenuItem value="Georgette">Georgette</MenuItem>
+                                                    <MenuItem value="Faux Georgette">Faux Georgette</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+
                 }
                 {
                     headwearSizeSystemField ? (
@@ -23043,7 +19484,9 @@ const ProductDetails = () => {
                                                     <MenuItem value="Adjustable">Adjustable</MenuItem>
                                                     <MenuItem value="One Shoulder">One Shoulder</MenuItem>
                                                     <MenuItem value="Hand-Carry">Hand-Carry</MenuItem>
-                                                    <MenuItem value="Strapless">Strapless</MenuItem>
+                                                    <MenuItem value="Shoulder">Shoulder</MenuItem>
+                                                    <MenuItem value="Cross-Body">Cross-Body</MenuItem>
+                                                    <MenuItem value="Waist Strap">Waist Strap</MenuItem>
                                                 </TextField>
                                             </div>
                                         </>
@@ -25989,6 +22432,290 @@ const ProductDetails = () => {
                                     )}
                                 />
                             </div>
+                        </>) : ""
+                }
+                {
+                    liningDescriptionField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="liningDescription"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Lining Description</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="liningDescription-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.liningDescription)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Faux Leather">Faux Leather</MenuItem>
+                                                    <MenuItem value="Polyester">Polyester</MenuItem>
+                                                    <MenuItem value="Polyvinyl Alcohol">Polyvinyl Alcohol</MenuItem>
+                                                    <MenuItem value="Nylon">Nylon</MenuItem>
+                                                    <MenuItem value="Vinyl">Vinyl</MenuItem>
+                                                    <MenuItem value="Polycotton">Polycotton</MenuItem>
+                                                    <MenuItem value="Polyurethane">Polyurethane</MenuItem>
+                                                    <MenuItem value="Leather">Leather</MenuItem>
+                                                    <MenuItem value="Linen">Linen</MenuItem>
+                                                    <MenuItem value="Cotton">Cotton</MenuItem>
+                                                    <MenuItem value="Polyvinyl Chloride">Polyvinyl Chloride</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    storageVolumeField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                    <label className='labelbold'>Storage Volume</label>
+                                </div>
+                                <div className="col-8 col-sm-7 col-lg-6">
+
+                                    <div className='row align-items-end'>
+                                        <Controller
+                                            control={control}
+                                            name='storageVolume'
+                                            rules={{
+                                                required: "this field is required",
+                                                pattern: {
+                                                    value: new RegExp('^[0-9]+$'),
+                                                    message: "not a valid formate"
+                                                }
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            placeholder="5"
+                                                            id="storageVolume"
+                                                            variant="outlined"
+                                                            {...field}
+                                                            style={{ width: "100%" }}
+                                                            error={Boolean(errors.storageVolume)}
+                                                        />
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                        <Controller
+                                            control={control}
+                                            name='storageVolumeUnit'
+                                            rules={{
+                                                required: "this is required"
+                                            }}
+                                            render={({ field }) => (
+                                                <>
+                                                    <div className="col-12 col-sm-6 col-lg-6">
+                                                        <TextField
+                                                            id="storageVolumeUnit"
+                                                            variant="outlined"
+                                                            select
+                                                            style={{ width: "100%" }}
+                                                            {...field}
+                                                            error={Boolean(errors.storageVolumeUnit)}
+                                                        >
+                                                            <MenuItem value="">-Select-</MenuItem>
+                                                            <MenuItem value="Liters">Liters</MenuItem>
+                                                            <MenuItem value="Quarts">Quarts</MenuItem>
+                                                            <MenuItem value="Fluid Ounces">Fluid Ounces</MenuItem>
+                                                            <MenuItem value="Ounces">Ounces</MenuItem>
+                                                            <MenuItem value="Mililiters">Mililiters</MenuItem>
+                                                            <MenuItem value="Cubic Feet">Cubic Feet</MenuItem>
+                                                            <MenuItem value="Microliters">Microliters</MenuItem>
+                                                            <MenuItem value="Cubic Centimeters">Cubic Centimeters</MenuItem>
+                                                            <MenuItem value="Pints">Pints</MenuItem>
+                                                            <MenuItem value="Gallons">Gallons</MenuItem>
+                                                            <MenuItem value="Pounds">Pounds</MenuItem>
+                                                            <MenuItem value="Tons">Tons</MenuItem>
+                                                            <MenuItem value="Cubic Inches">Cubic Inches</MenuItem>
+                                                            <MenuItem value="Kilogram">Kilogram</MenuItem>
+                                                            <MenuItem value="centiliters">centiliters</MenuItem>
+                                                            <MenuItem value="Picolitres">Picolitres</MenuItem>
+                                                            <MenuItem value="Nanolitres">Nanolitres</MenuItem>
+                                                            <MenuItem value="Cups">Cups</MenuItem>
+                                                            <MenuItem value="cubic-m">cubic-m</MenuItem>
+                                                            <MenuItem value="cubic-yd">cubic-yd</MenuItem>
+                                                            <MenuItem value="deciliters">deciliters</MenuItem>
+                                                            <MenuItem value="Unknown modifier">Unknown modifier</MenuItem>
+                                                            <MenuItem value="imperial_gallons">imperial_gallons</MenuItem>
+                                                        </TextField>
+                                                    </div>
+                                                </>
+                                            )}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </>) : ""
+                }
+                {
+                    networkConnectivityTechnologyField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="networkConnectivityTechnology"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Network Connectivity Technology</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="networkConnectivityTechnology-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.networkConnectivityTechnology)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Bluetooth">Bluetooth</MenuItem>
+                                                    <MenuItem value="Cellular">Cellular</MenuItem>
+                                                    <MenuItem value="Wi-Fi">Wi-Fi</MenuItem>
+                                                    <MenuItem value="USB">USB</MenuItem>
+                                                    <MenuItem value="HDMI">HDMI</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    targetRegionField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="targetRegion"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Target Region</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="targetRegion-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.targetRegion)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="United Kingdom and Ireland">United Kingdom and Ireland</MenuItem>
+                                                    <MenuItem value="Asia">Asia</MenuItem>
+                                                    <MenuItem value="Eastern Europe">Eastern Europe</MenuItem>
+                                                    <MenuItem value="Europe">Europe</MenuItem>
+                                                    <MenuItem value="North America">North America</MenuItem>
+                                                    <MenuItem value="Global">Global</MenuItem>
+                                                    <MenuItem value="Western Europe">Western Europe</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    subjectKeywordField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name='subjectKeyword'
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Subject Keyword</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    placeholder="single"
+                                                    id="subjectKeyword"
+                                                    variant="outlined"
+                                                    {...field}
+                                                    style={{ width: "100%" }}
+                                                    error={Boolean(errors.subjectKeyword)}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    itemHeatSensitiveField ? (
+                        <>
+                            <div className="row" style={{ marginTop: "10px" }}>
+                                <Controller
+                                    control={control}
+                                    name="itemHeatSensitive"
+                                    rules={{
+                                        required: "this field is required",
+                                    }}
+                                    render={({ field }) => (
+                                        <>
+                                            <div className="col-4 col-sm-3 col-lg-3 text-end">
+                                                <label className="labelbold me-2">Is the Item Heat Sensitive?</label>
+                                            </div>
+                                            <div className="col-8 col-sm-7 col-lg-6">
+                                                <TextField
+                                                    id="itemHeatSensitive-select"
+                                                    variant="outlined"
+                                                    select
+                                                    style={{ width: "100%" }}
+                                                    placeholder="select"
+                                                    {...field}
+                                                    error={Boolean(errors.itemHeatSensitive)}
+                                                >
+                                                    <MenuItem value="">-Select-</MenuItem>
+                                                    <MenuItem value="Yes">Yes</MenuItem>
+                                                    <MenuItem value="No">No</MenuItem>
+                                                </TextField>
+                                            </div>
+                                        </>
+                                    )}
+                                />
+                            </div>
+                        </>) : ""
+                }
+                {
+                    maximumRecommendedAgeField ? (
+                        <>
+
                         </>) : ""
                 }
             </div>

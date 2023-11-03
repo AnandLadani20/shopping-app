@@ -1,10 +1,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
-import { RiPictureInPicture2Fill } from 'react-icons/ri'
-import { AiFillSetting } from 'react-icons/ai'
-import { PiShareFatFill } from 'react-icons/pi'
-import { MdOutlineWatchLater } from 'react-icons/md'
-import { AiOutlineHeart } from 'react-icons/ai'
+
+
 
 
 
@@ -257,7 +254,8 @@ const VideoPlayer = ({ productVideo, dhiyodhaLogo, title }) => {
 
 
                         <button className="setting-btn" onClick={toggleSettingsMenu}>
-                            <AiFillSetting />
+                            <span>setting</span>
+                            {/* <AiFillSetting /> */}
                         </button>
                         {isSettingsMenuVisible && (
                             (
@@ -331,7 +329,8 @@ const VideoPlayer = ({ productVideo, dhiyodhaLogo, title }) => {
 
                         <button className="mini-player-btn" onClick={toggleMiniPlayerMode}>
                             {/* Add your SVG icon for mini player mode here */}
-                            <RiPictureInPicture2Fill />
+                            {/* <RiPictureInPicture2Fill /> */}
+                            <span>miniPicture</span>
                         </button>
 
 
@@ -344,10 +343,17 @@ const VideoPlayer = ({ productVideo, dhiyodhaLogo, title }) => {
 
             </div>
             <div className='video-rightside-controls'>
-                <button className="control-button"><PiShareFatFill /></button>
-                <button className="control-button"><MdOutlineWatchLater /></button>
                 <button className="control-button">
-                    <AiOutlineHeart />
+                    {/* <PiShareFatFill /> */}
+                    <span>share</span>
+                    </button>
+                <button className="control-button">
+                    {/* <MdOutlineWatchLater /> */}
+                    <span>watch later</span>
+                    </button>
+                <button className="control-button">
+                    {/* <AiOutlineHeart /> */}
+                    <span>heart</span>
                 </button>
             </div>
             <div className='video-title-control'>

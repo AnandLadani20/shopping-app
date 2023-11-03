@@ -13,7 +13,7 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 
 
-const ProductVariation = ({ setVariationData }) => {
+const ProductVariation = () => {
   const [styleVarForm, setStyleVarForm] = useState(false)
   const [sizeVarForm, setSizeVarForm] = useState(false)
   const [colorVarForm, setColorVarForm] = useState(false)
@@ -165,7 +165,7 @@ const ProductVariation = ({ setVariationData }) => {
 
     // Update the state with all combinations
     setDataValue(allCombinations);
-    setVariationData(allCombinations)
+    // setVariationData(allCombinations)
   }, [sizeValue, colorValue]);
   return (
     <>

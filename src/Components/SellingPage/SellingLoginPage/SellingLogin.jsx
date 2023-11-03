@@ -6,7 +6,7 @@ import {
 } from "react-hook-form";
 
 import './login.css'
-import { AiOutlineClose } from 'react-icons/ai';
+
 import LoginOtpVerify from './LoginOtpVerify';
 import VerifiedLogin from './VerifiedLogin';
 import TwoStepVerify from './TwoStepVerify';
@@ -55,7 +55,8 @@ const SellingLogin = ({setOpenLogin}) => {
             <div className='sellingpage-login-header'>
                 <div className='text-center border-bottom-random'>
                     <p className='sellingpage-login-headerText'>Login</p>
-                    <AiOutlineClose className='close-loginpage-icon' onClick={handleCloseLogin}/>
+                    <p className='close-loginpage-icon' onClick={handleCloseLogin}>close</p>
+                    {/* <AiOutlineClose /> */}
                 </div>
             </div>
             <div className='sellingpage-login-form-element'>
