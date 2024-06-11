@@ -4169,29 +4169,3 @@ video {
     }
 }
 
-/* layer-drop */
-/* .main-menu__right-top-social a:after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background-color: var(--oxpins-base);
-    -webkit-transition-delay: .1s;
-    transition-delay: .1s;
-    -webkit-transition-timing-function: ease-in-out;
-    transition-timing-function: ease-in-out;
-    -webkit-transition-duration: .4s;
-    transition-duration: .4s;
-    -webkit-transition-property: all;
-    transition-property: all;
-    opacity: 1;
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform: scaleY(0);
-    transform: scaleY(0);
-    z-index: -1;
-} */

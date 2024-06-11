@@ -1,14 +1,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
-
-
-
-
-
-
 const VideoPlayer = ({ productVideo, dhiyodhaLogo, title }) => {
     const videoRef = useRef(null);
-
     const timelineContainerRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(1);
@@ -362,9 +355,7 @@ const VideoPlayer = ({ productVideo, dhiyodhaLogo, title }) => {
                 </div>
                 <div className="video-childtitle-control"><h3>{title}</h3></div>
             </div>
-            <video ref={videoRef} src={productVideo}>
-
-            </video>
+            <video ref={videoRef} src={productVideo}></video>
         </div>
     );
 };

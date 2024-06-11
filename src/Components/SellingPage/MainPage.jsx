@@ -27,7 +27,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import Shared from './Shared.js';
 import Vision from './Vision';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import ImageUpload from '../SellingSignupPage/ImageUpload.jsx';
 
 const MainPage = () => {
 
@@ -206,7 +208,16 @@ const MainPage = () => {
     const handleNextSlide = () => {
         slideRef.current.swiper.slideNext()
     }
-
+    useEffect(() => {
+        AOS.init({
+          once: true, // This will make the animation happen only once
+        });
+    
+        // Clean up AOS on component unmount
+        return () => {
+          AOS.refresh(); // Optional: reset AOS when the component is unmounted
+        };
+      }, []);
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -215,7 +226,7 @@ const MainPage = () => {
         <>
 
             {/* //////////////// Hero-page Area /////////////// */}
-     
+
             <section className='selling-mainpage-hero-area'>
 
                 <div className='container'>
@@ -224,12 +235,12 @@ const MainPage = () => {
                             <div className='selling-mainpage-hero-details-area' data-aos="fade-right"
                                 data-aos-duration="1000"
                                 data-aos-easing="ease-in-sine">
-
+           <ImageUpload />
                                 <h1>Be Dhiyodha By Launching Your Business</h1>
                                 <p>Women are the Yodha, She can be the Strength of Nation for Selling Your
                                     Product, Services, Skill and Experience.</p>
                                 <button onClick={handleOpen}>Start Selling<i className="fa-solid fa-arrow-right-long"></i></button>
-                                <ModalSellingButton  handleClose={handleClose} open={open} />
+                                <ModalSellingButton handleClose={handleClose} open={open} />
                             </div>
                         </div>
                         <div className='col-lg-6 col-md-6 col-12'>
@@ -238,15 +249,15 @@ const MainPage = () => {
                                     <div className='hero-img-area-rounded-cicleicon4'>
                                         <span className='cicleicon4Style'></span>
                                         {/* <FaRegCreditCard className='cicleicon4Style' /> */}
-                                        </div>
+                                    </div>
                                     <div className='hero-img-area-rounded-cicleicon5'>
                                         {/* <BsCart4 className='cicleicon5Style' /> */}
                                         <span className='cicleicon5Style'>cart</span>
-                                        </div>
+                                    </div>
                                     <div className='hero-img-area-rounded-cicleicon6'>
                                         <span className='cicleicon6Style'>currency</span>
                                         {/* <BsCurrencyRupee className='cicleicon6Style' /> */}
-                                        </div>
+                                    </div>
                                 </div>
                                 <div className='hero-img-area-innerchild-rounded'>
                                     <div className='hero-img-area-rounded-cicleicon'></div>
